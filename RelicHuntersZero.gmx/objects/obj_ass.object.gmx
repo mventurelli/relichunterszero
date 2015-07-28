@@ -30,7 +30,9 @@ image_speed = 0.2;
 image_xscale = -1;
 depth = -y;
 
-draw_balloon = false;
+drawBalloon = true;
+drawSelf = true;
+myBalloon = noone;
 
 reflection_object_setup(0,-1,image_index);
 
@@ -39,7 +41,8 @@ alarm[0] = room_speed*1.5;
 
 if (room == room_start) || (room == room_shop) sprite_index = spr_ass_idle;
 
-
+mySwap = noone;
+if (room == room_start) mySwap = instance_create(x,y,obj_swap_ass);
 
 
 </string>
@@ -98,16 +101,75 @@ if (!instance_exists(myTeleporter)) &amp;&amp; (room != room_start) &amp;&amp; (
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Character Swap
+
+if (global.unlockAss)
+{
+    drawSelf = false;
+}
+else drawSelf = true;
+
+if (global.character == char_ass) drawBalloon = false;
+else drawBalloon = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Talk when player is nearby
 if instance_exists(class_player)
 {
     if point_distance(x,y,class_player.x,class_player.y) &lt;= 350
     if (!instance_exists(obj_ass_baloon))
     {
-        if (image_xscale) instance_create(x,y,obj_ass_baloon);
-        else instance_create(x-50,y,obj_ass_baloon);
+        myBalloon = instance_create(x,y,obj_ass_baloon);
+        if (!image_xscale) myBalloon.x -= 50;
     }
 }
+
+if (myBalloon) &amp;&amp; instance_exists(myBalloon)
+{
+    if (drawBalloon) myBalloon.drawSelf = true;
+    else myBalloon.drawSelf = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (drawSelf) draw_self();
 </string>
           </argument>
         </arguments>

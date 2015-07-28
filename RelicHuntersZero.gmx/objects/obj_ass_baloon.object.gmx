@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Text Initialization
 image_speed = 0.2;
+drawSelf = true;
 draw_stuff = false;
 
 text_speed = 0.5;
@@ -195,32 +196,32 @@ draw_stuff = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-
-if (draw_stuff)
+            <string>///Draw
+if (drawSelf)
 {
-    target_lenght = string_length(myTextTarget);
- 
-    parser = '|';
+    draw_self();
     
-    if text_count &lt; target_lenght
+    if (draw_stuff)
     {
-        text_count++;
-        insert_char = string_char_at(myTextTarget, text_count);
-        myText += insert_char;
-    }
-    else parser = '';
-    
-    draw_set_font(font_pic_balloon);
-    draw_set_colour(c_black);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_top);
-    draw_text_ext(x+42, y-124, myText+parser, 10, 186);
- }
- 
- 
- 
-
+        target_lenght = string_length(myTextTarget);
+     
+        parser = '|';
+        
+        if text_count &lt; target_lenght
+        {
+            text_count++;
+            insert_char = string_char_at(myTextTarget, text_count);
+            myText += insert_char;
+        }
+        else parser = '';
+        
+        draw_set_font(font_pic_balloon);
+        draw_set_colour(c_black);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_top);
+        draw_text_ext(x+42, y-124, myText+parser, 10, 186);
+     }
+}
 </string>
           </argument>
         </arguments>

@@ -237,10 +237,13 @@ if (myTime &gt;= life_time)
             <string>///Pickup
 if (vertical_speed_start &lt; interactive_speed) &amp;&amp; (instance_exists(other))
 {
-    global.score_total += 10;
-    global.statTotalBounty += 10;
+    var myScore = 10;
+    if (global.character == char_ass) myScore = 20;
+    
+    global.score_total += myScore;
+    global.statTotalBounty += myScore;
     gui = instance_create(0,0,gui_score);
-    gui.value += 10;
+    gui.value += myScore;
     gui.coin = true;
     
     if (instance_exists(global.dynamicBounty)) global.dynamicBounty.timedActive = true;

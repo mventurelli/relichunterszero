@@ -31,7 +31,6 @@ myCharacter = char_pinky;
 
 oldWeapon1 = obj_gloves;
 oldWeapon2 = noone;
-//oldWeapon2 = obj_pistol;
 </string>
           </argument>
         </arguments>

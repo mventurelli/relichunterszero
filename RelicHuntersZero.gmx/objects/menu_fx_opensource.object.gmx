@@ -54,7 +54,7 @@
     
     if mouse_check_button_pressed(mb_left)
     {
-        url_open( "http://www.twitter.com/roguesnail" );
+        url_open( "http://www.relichunters.com.br/forums/categories/relic-hunters-open-source" );
     }
 }
 else image_index = 0;

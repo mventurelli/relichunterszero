@@ -384,6 +384,7 @@
       <sprite>sprites\spr_hud_face_biu</sprite>
       <sprite>sprites\spr_hud_face_raff</sprite>
       <sprite>sprites\spr_hud_face_punny</sprite>
+      <sprite>sprites\spr_hud_face_ass</sprite>
       <sprite>sprites\spr_hud_ammo_bar</sprite>
       <sprite>sprites\spr_hud_ammo_selected</sprite>
       <sprite>sprites\spr_hud_weapon_selected</sprite>
@@ -511,6 +512,13 @@
       </sprites>
       <sprites name="Ass">
         <sprite>sprites\spr_ass_idle</sprite>
+        <sprite>sprites\spr_ass_dash</sprite>
+        <sprite>sprites\spr_ass_dash_fx</sprite>
+        <sprite>sprites\spr_ass_hit</sprite>
+        <sprite>sprites\spr_ass_death</sprite>
+        <sprite>sprites\spr_ass_sprint</sprite>
+        <sprite>sprites\spr_ass_walk</sprite>
+        <sprite>sprites\spr_ass_melee</sprite>
         <sprite>sprites\spr_ass_holo</sprite>
         <sprite>sprites\spr_ass_balloon</sprite>
       </sprites>

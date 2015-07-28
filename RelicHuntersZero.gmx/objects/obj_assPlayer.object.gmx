@@ -29,30 +29,46 @@
 event_inherited();
     playerName = "ASS";
     
-    energy_max = 100;
+    melee_damage = 75;
+    
+    energy_max = 50;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 100;
+    hp_max = 50;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     hp = global.hp;
     
-    base_accuracy = 1;
+    base_accuracy = 4;
+    //Weapon Skills, "1" is perfect, higher is worse
+    accPistol = 4;
+    accMachinegun = 4;
+    accShotgun = 2;
+    accSniper = 9;
+    accSmg = 4;
+    accRocket = 8;
+    accRifle = 9;
+    
     stamina_max = 100;
     stamina = stamina_max;
+    stamina_regen = 0.5;
     energy_regen_speed = 2;
     
+    move_speed_max = 4.5;
+    move_speed_sprint = 6;
+    move_speed_aiming = 3.5;
+    
     //Sprites
-    sprite_idle = spr_raff_idle;
-    sprite_walk = spr_raff_walk;
-    sprite_sprint = spr_raff_sprint;
-    sprite_dash = spr_raff_dash;
-    sprite_hit = spr_raff_hit;
-    sprite_death = spr_raff_death;
-    sprite_melee = spr_jimmy_melee;
-    sprite_dash_fx = spr_raff_dash_fx;
+    sprite_idle = spr_ass_idle;
+    sprite_walk = spr_ass_walk;
+    sprite_sprint = spr_ass_sprint;
+    sprite_dash = spr_ass_dash;
+    sprite_hit = spr_ass_hit;
+    sprite_death = spr_ass_death;
+    sprite_melee = spr_ass_melee;
+    sprite_dash_fx = spr_ass_dash_fx;
     
     if global.weapon2 != noone
     {

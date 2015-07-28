@@ -36,6 +36,7 @@ if (global.character == char_pinky) sprite_index = spr_pinky_death;
 if (global.character == char_raff) sprite_index = spr_raff_death;
 if (global.character == char_biu) sprite_index = spr_biu_death;
 if (global.character == char_punny) sprite_index = spr_punny_death;
+if (global.character == char_ass) sprite_index = spr_ass_death;
 
 audio_stop_all();
 
