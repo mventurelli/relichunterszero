@@ -62,4 +62,3 @@ switch (argument0)
 }
 
 return to_return;
-

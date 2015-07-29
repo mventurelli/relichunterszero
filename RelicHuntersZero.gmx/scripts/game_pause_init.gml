@@ -35,4 +35,3 @@ instance_deactivate_object(global.pauseWeapon2);
 instance_deactivate_object(global.pauseController);
 instance_deactivate_object(global.pauseMenuButtonController);
 
-

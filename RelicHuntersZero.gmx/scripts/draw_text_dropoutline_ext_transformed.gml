@@ -43,4 +43,3 @@ draw_text_transformed(tX,tY,text,xScale,yScale,myRotation);
 //Revert to previous values
 draw_set_color(oldColor);
 draw_set_alpha(oldAlpha);
-

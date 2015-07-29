@@ -16,4 +16,3 @@ draw_text_transformed(argument0+1,argument1-1,argument2,argument5,argument6,argu
 draw_set_color(argument3);
 draw_text_transformed(argument0,argument1,argument2,argument5,argument6,argument7);
 draw_set_color(oldColor);
-

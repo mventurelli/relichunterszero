@@ -193,8 +193,8 @@ else
 {
     reflection_object_setup(0,spr_casing_blob,0);
     draw_set_font(font_wendy12);
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_center);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_bottom);
     draw_set_color(c_white);
     
     var stringUnlockCharacter = '';
@@ -206,7 +206,7 @@ else
     if (myCharacter == char_jimmy) stringUnlockCharacter = 'This is a bug';
     
     
-    draw_text_ext(x+75, y-52, stringUnlockCharacter, 19, 150);
+    draw_text_ext(x, y-28, stringUnlockCharacter, 19, 150);
 }
 </string>
           </argument>
