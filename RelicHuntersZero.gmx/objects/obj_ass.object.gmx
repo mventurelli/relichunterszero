@@ -103,13 +103,17 @@ if (!instance_exists(myTeleporter)) &amp;&amp; (room != room_start) &amp;&amp; (
             <kind>1</kind>
             <string>///Character Swap
 
-if (global.unlockAss)
+if ((global.unlockAss) &amp;&amp; (room==room_start))
 {
     drawSelf = false;
 }
 else drawSelf = true;
 
-if (global.character == char_ass) drawBalloon = false;
+if (global.character == char_ass)
+{
+    drawBalloon = false;
+    drawSelf = false;
+}
 else drawBalloon = true;
 </string>
           </argument>

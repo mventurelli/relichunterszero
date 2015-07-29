@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-//sprite = sprite_index;
+
 gun = obj_pistol;
-//gun_ammo_current = 9999;
+
 </string>
           </argument>
         </arguments>

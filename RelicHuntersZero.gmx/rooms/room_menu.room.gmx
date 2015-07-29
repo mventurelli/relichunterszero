@@ -61,9 +61,8 @@
     <instance objName="menu_fx_rogue" x="952" y="672" name="inst_D28B2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_zoeira" x="1176" y="672" name="inst_7908CBC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_forums" x="1176" y="592" name="inst_F373C891" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_fx_twitter" x="1120" y="520" name="inst_D148771D" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="menu_fx_facebook" x="1176" y="520" name="inst_AC576F95" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="menu_fx_opensource" x="1232" y="520" name="inst_CE69FB97" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="menu_fx_twitter" x="1136" y="520" name="inst_D148771D" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="menu_fx_facebook" x="1216" y="520" name="inst_AC576F95" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

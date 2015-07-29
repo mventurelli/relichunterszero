@@ -28,4 +28,3 @@ draw_text_transformed(tX,tY,text,xScale,yScale,myRotation);
 draw_set_color(oldColor);
 draw_set_alpha(oldAlpha);
 
-

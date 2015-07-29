@@ -47,6 +47,8 @@ image_speed = 0;
 
 wantToActivate = false;
 activationClient = noone;
+
+sprite = sprite_index;
 </string>
           </argument>
         </arguments>

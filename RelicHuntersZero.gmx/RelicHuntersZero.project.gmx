@@ -327,6 +327,7 @@
       <sprite>sprites\spr_grenadeTarget</sprite>
     </sprites>
     <sprites name="Guns">
+      <sprite>sprites\spr_sawedoff</sprite>
       <sprite>sprites\spr_pistol</sprite>
       <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
@@ -613,7 +614,6 @@
       <sprite>sprites\spr_forums_menu</sprite>
       <sprite>sprites\spr_facebook_menu</sprite>
       <sprite>sprites\spr_twitter_menu</sprite>
-      <sprite>sprites\spr_opensource_menu</sprite>
       <sprite>sprites\spr_intro_animated</sprite>
     </sprites>
   </sprites>
@@ -867,6 +867,7 @@
       <object>objects\obj_buckler</object>
       <object>objects\fx_melee_arc</object>
       <objects name="Guns">
+        <object>objects\obj_sawedoff</object>
         <object>objects\obj_pistol</object>
         <object>objects\obj_pistol_jimmy</object>
         <object>objects\obj_pistol_heavy</object>
@@ -1090,7 +1091,6 @@
         <object>objects\menu_fx_forums</object>
         <object>objects\menu_fx_twitter</object>
         <object>objects\menu_fx_facebook</object>
-        <object>objects\menu_fx_opensource</object>
         <object>objects\menu_fx_zoeira</object>
         <object>objects\menu_fx_logo</object>
       </objects>
@@ -1192,6 +1192,7 @@
       <object>objects\obj_pickup_heavyammo</object>
       <object>objects\obj_pickup_grenade</object>
       <object>objects\obj_pickup_shotgun</object>
+      <object>objects\obj_pickup_sawedoff</object>
       <object>objects\obj_pickup_keytar</object>
       <object>objects\obj_pickup_shotgun_heavy</object>
       <object>objects\obj_pickup_rocketlauncher</object>
