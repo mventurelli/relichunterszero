@@ -137,5 +137,3 @@ if (global.shadows)
 
 
 
-
-

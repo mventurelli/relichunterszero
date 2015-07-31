@@ -4,7 +4,8 @@
 ini_open(working_directory + "\saveData.ini");
     
     global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.1');
-
+    global.language = ini_read_real('Language','Language',lang_english);
+    
     // Temporary Values
     global.character = ini_read_real('Character','Character',char_jimmy);
     global.weapon1 = ini_read_real('Character','Weapon1',noone);

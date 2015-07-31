@@ -28,8 +28,8 @@
             <string>///Config
 event_inherited();
 
-myTextKeyboard = 'Tap SPACE to Dodge';
-myTextJoystick = 'Tap A to Dodge';
+myTextKeyboard = loc_key("TUTORIAL_3_KEY");
+myTextJoystick = loc_key("TUTORIAL_3_JOY");
 </string>
           </argument>
         </arguments>

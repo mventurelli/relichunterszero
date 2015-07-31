@@ -88,10 +88,10 @@ if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
         if (want_to_die)
         {
             guiInfo = instance_create(player.x,player.y,gui_info);
-            if (sprite_index == spr_pickup_light) { guiInfo.myString = '+ Light Ammo'; guiInfo.colorMain = K_BETU_GREEN; }
-            if (sprite_index == spr_pickup_medium)  { guiInfo.myString = '+ Medium Ammo'; guiInfo.colorMain = K_BETU_RED; }
-            if (sprite_index == spr_pickup_heavy) { guiInfo.myString = '+ Heavy Ammo'; guiInfo.colorMain = K_BETU_BLUE; } 
-            if (sprite_index == spr_pickup_grenade)  { guiInfo.myString = '+ Grenades'; guiInfo.colorMain = K_BETU_ORANGE; }
+            if (sprite_index == spr_pickup_light) { guiInfo.myString = '+ '+ loc_key("GENERAL_LIGHTAMMO"); guiInfo.colorMain = K_BETU_GREEN; }
+            if (sprite_index == spr_pickup_medium)  { guiInfo.myString = '+ '+ loc_key("GENERAL_MEDIUMAMMO"); guiInfo.colorMain = K_BETU_RED; }
+            if (sprite_index == spr_pickup_heavy) { guiInfo.myString = '+ '+ loc_key("GENERAL_HEAVYAMMO"); guiInfo.colorMain = K_BETU_BLUE; } 
+            if (sprite_index == spr_pickup_grenade)  { guiInfo.myString = '+ '+ loc_key("GENERAL_GRENADES"); guiInfo.colorMain = K_BETU_ORANGE; }
             //teste
             guiInfo.colorMain = c_white;
             //
@@ -104,7 +104,7 @@ if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
         if (isAmmoFull)
         {
             guiInfo = instance_create(player.x,player.y,gui_info);
-            guiInfo.myString = 'Ammo is Full';
+            guiInfo.myString = loc_key("INFO_FULLAMMO");
             guiInfo.colorMain = c_white;
             guiInfo.owner = player;
             audio_play(player.audio_emitter, false, 1, sfx_pickup_full);

@@ -30,24 +30,24 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'CONTROLLER VIBRATION';
+labelString = loc_key("GAMEPLAY_VIBRATION");
 
 if (global.vibrationRatio &gt;= 0.7)
 {
     myVariable = 2;
-    myValueString = 'FULL';
+    myValueString = loc_key("SETTINGS_FULL");
 }
 
 if (global.vibrationRatio &gt; 0) &amp;&amp; (global.vibrationRatio &lt; 0.7)
 {
     myVariable = 1;
-    myValueString = 'LOW';
+    myValueString = loc_key("SETTINGS_LOW");
 }
 
 if (global.vibrationRatio &lt;= 0)
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 2;
@@ -84,19 +84,19 @@ if (executeAction)
 if (myVariable == 2)
 {
     global.vibrationRatio = 1;
-    myValueString = 'FULL';
+    myValueString = loc_key("SETTINGS_FULL");
 }
 
 if (myVariable == 1)
 {
     global.vibrationRatio = 0.5;
-    myValueString = 'LOW';
+    myValueString = loc_key("SETTINGS_LOW");
 }
 
 if (myVariable == 0)
 {
     global.vibrationRatio = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

@@ -66,7 +66,7 @@ view_xview[0] = x;
 view_yview[0] = y;
 
 //Combat Options
-global.precisionAngle = 50;
+global.precisionAngle = 35;
 global.precisionDistance = 35;
 
 //Level Build
@@ -1558,7 +1558,7 @@ if (!ds_list_empty(global.particle_list)) &amp;&amp; (!global.pause)
 
 var pauseKeyPressed = false;
 
-if (!global.gameOver)
+if (!global.gameOver) &amp;&amp; instance_exists(class_player)
 {
     if keyboard_check_pressed(vk_escape) pauseKeyPressed = true;
     if (global.input == 'joystick') if joy_check_pressed(0,8)  pauseKeyPressed = true;
@@ -1771,8 +1771,8 @@ if (global.statTotalBounty &gt;= 80000) &amp;&amp; (!global.unlockPunny)
     global.unlockPunny = true;
     achievement_give("ACHIEVEMENT_UNLOCKPUNNY");
     announce = instance_create(x,y,fx_bigMessage);
-    announce.textBig = "NEW HUNTER UNLOCKED!";
-    announce.textSmall = "YOU CAN NOW PLAY WITH PUNNY";
+    announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
+    announce.textSmall = loc_key("HUD_UNLOCK_PUNNY");
     announce.hunterUnlockSprite = spr_hud_face_punny;
 }
 
@@ -1781,8 +1781,8 @@ if (global.statKilledByBoss &gt;= 5) &amp;&amp; (!global.unlockAss)
     global.unlockAss = true;
     achievement_give("ACHIEVEMENT_UNLOCKASS");
     announce = instance_create(x,y,fx_bigMessage);
-    announce.textBig = "NEW HUNTER UNLOCKED!";
-    announce.textSmall = "YOU CAN NOW PLAY WITH ASS";
+    announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
+    announce.textSmall = loc_key("HUD_UNLOCK_ASS");
     announce.hunterUnlockSprite = spr_hud_face_ass;
 }
 
@@ -1907,7 +1907,7 @@ if instance_exists(class_player)
     draw_sprite_ext(spr_icon_health,0,charLifeBarTopX+20,charLifeBarTopY+20,1.5,1.5,0,c_white,main_hud_alpha);
     
     draw_set_color(c_white);
-    draw_set_font(font_wendy30);
+    draw_set_font(global.font_numberLarge);
     draw_text(charLifeBarTopX+charLifeBarWidth-14, charLifeBarTopY+14,string(hp));
     
     //Shields &amp; Stamina
@@ -1920,7 +1920,7 @@ if instance_exists(class_player)
     if (energy_max) draw_healthbar_delayed(delayedCharShieldBar1, charShieldBarTopX-5,charShieldBarTopY-5,charShieldBarTopX+charShieldBarWidth-5,charShieldBarTopY+charShieldBarHeight-5, energy, energy_max, charShieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
     draw_sprite_ext(spr_icon_shield,0,charShieldBarTopX+20,charShieldBarTopY+(charShieldBarHeight/2),1.5,1.5,0,c_white,main_hud_alpha);
     draw_set_color(c_white);
-    draw_set_font(font_wendy15);
+    draw_set_font(global.font_numberMedium);
     draw_text(charLifeBarTopX+charShieldBarWidth-16, charShieldBarTopY+12,string(energy));
     
     var staminaColor1,staminaColor2;
@@ -2029,7 +2029,7 @@ if instance_exists(class_player)
         //Gun Ammo
         draw_set_halign(fa_right);
         draw_set_valign(fa_center);
-        draw_set_font(font_wendy50);
+        draw_set_font(global.font_numberVeryLarge);
         draw_text_dropoutline_ext_transformed(p1AmmoNumberGunX, p1AmmoNumberGunY, string(p1WeaponSelected.ammo_current), c_white, c_white, c_black, 1, 5, 1, 1, 0, main_hud_alpha);
         
         //Total Ammo
@@ -2041,7 +2041,7 @@ if instance_exists(class_player)
         if (p1WeaponSelected.ammo_type == type_heavy)   { p1AmmoTotal = global.ammo_heavy;    p1AmmoTotalMax = global.ammo_heavy_max;   p1AmmoBarId =  delayedAmmoHeavyBar; }
         draw_set_halign(fa_left);
         draw_set_valign(fa_center);
-        draw_set_font(font_wendy15);
+        draw_set_font(global.font_numberMedium);
         draw_text_dropshadow_ext_transformed(p1AmmoNumberTotalX, p1AmmoNumberTotalY, string(round(p1AmmoTotal/p1WeaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
     
         //Total Ammo Bar
@@ -2087,10 +2087,10 @@ if instance_exists(class_player)
         var drawScoreX = width*0.5;
         var drawScoreY = height*0.15;
         
-        draw_set_font(font_wendy30);
+        draw_set_font(global.font_numberLarge);
         draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY,gui_score.myString,c_white,c_white,c_black,0.7,4,1,1,0,main_hud_alpha);
         
-        draw_set_font(font_wendy50);
+        draw_set_font(global.font_numberVeryLarge);
         draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY+43,'+'+string(gui_score.value),c_white,c_white,c_black,0.7,4,gui_score.size_current,gui_score.size_current,0,main_hud_alpha);
     }
     
@@ -2141,9 +2141,9 @@ if instance_exists(class_player)
     var dynamicAmmoBarHeight = 32;
     var dynamicAmmoBarWidth = 160;
         
-    var dynamicAmmoString1 = "LIGHT AMMO";
-    var dynamicAmmoString2 = "MEDIUM AMMO";
-    var dynamicAmmoString3 = "HEAVY AMMO";
+    var dynamicAmmoString1 = loc_key("GENERAL_LIGHTAMMO");
+    var dynamicAmmoString2 = loc_key("GENERAL_MEDIUMAMMO");
+    var dynamicAmmoString3 = loc_key("GENERAL_HEAVYAMMO");
         
     if (instance_exists(gui_dynamic_ammo1))
     {
@@ -2177,7 +2177,7 @@ if instance_exists(class_player)
         draw_healthbar_delayed(delayedAmmoMediumBar, bgX1-2,bg2Y1-2,bgX2-2,bg2Y2-2, global.ammo_medium, global.ammo_medium_max, ammoBarMediumColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
         draw_healthbar_delayed(delayedAmmoHeavyBar, bgX1-2,bg3Y1-2,bgX2-2,bg3Y2-2, global.ammo_heavy, global.ammo_heavy_max, ammoBarHeavyColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
     
-        draw_set_font(font_wendy12);
+        draw_set_font(global.font_numberSmall);
         draw_set_halign(fa_left);
         
         draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY1+gui_dynamic_ammo1.offsetY,dynamicAmmoString1,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
@@ -2205,7 +2205,7 @@ if instance_exists(class_player)
         var drawBossDelaySpeed = 0.0025;
         
         var allowBossDraw = true;
-        var drawBossText = 'DUCAN COMMANDER';
+        var drawBossText = loc_key("BOSS_DUCANCOMMANDER");
         
         //Draw Generator1 Healthbar
         if (obj_boss.hpMilestoneCurrent == 1) &amp;&amp; (instance_exists(obj_generator1))
@@ -2256,9 +2256,9 @@ if instance_exists(class_player)
                 else { isBossSetup = true; fakeBarFill=0; }
             }
         }
-        else drawBossText = 'SHIELD GENERATOR';
+        else drawBossText = loc_key("BOSS_SHIELDGENERATOR");
         
-        draw_set_font(font_menu18);
+        draw_set_font(global.font_menuLarge);
         draw_set_color(c_white);
         draw_set_halign(fa_center);
         draw_set_valign(fa_center);
@@ -2270,7 +2270,7 @@ if instance_exists(class_player)
 //Dynamic Bounty
 draw_set_halign(fa_right);
 draw_set_valign(fa_center);
-draw_set_font(font_wendy30);
+draw_set_font(global.font_numberLarge);
 draw_set_color(c_white);
 if (!global.pauseMenu) draw_set_alpha(main_hud_alpha);
 else draw_set_alpha(1);
@@ -2297,7 +2297,7 @@ var offsetRelicStringY = -8;
  
 draw_set_alpha(main_hud_alpha);
 draw_set_color(c_white);
-draw_set_font(font_wendy15);
+draw_set_font(global.font_numberMedium);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 var relicTextSep = 30;
@@ -2330,14 +2330,14 @@ if (global.gameOver)
     draw_set_alpha(1);
     draw_set_halign(fa_center);
     draw_set_valign(fa_center);
-    draw_set_font(font_wendy50);
+    draw_set_font(global.font_numberVeryLarge);
     var gameOverMagenta = make_colour_rgb(204,10,68);
             
     var gameOverX = width*0.5;
     var gameOverY = height*0.42;
-    draw_text_dropoutline_ext_transformed(gameOverX,gameOverY,'GAME OVER',gameOverMagenta,gameOverMagenta,c_black,0.6,4,1,1,0,1);
+    draw_text_dropoutline_ext_transformed(gameOverX,gameOverY,loc_key("HUD_GAMEOVER"),gameOverMagenta,gameOverMagenta,c_black,0.6,4,1,1,0,1);
             
-    draw_set_font(font_wendy15);
+    draw_set_font(global.font_numberMedium);
     gameOverY2 = height*0.5;
     gameOverY3 = height*0.55;
             
@@ -2345,14 +2345,14 @@ if (global.gameOver)
             
     if (global.input == 'keyboard') 
     {
-        gameOverString1 = 'Press Space to Retry';
-        gameOverString2 = 'Press ESC to return to Menu';
+        gameOverString1 = loc_key("HUD_GAMEOVER_RETRY");
+        gameOverString2 = loc_key("HUD_GAMEOVER_MENU");
     }
             
     if (global.input == 'joystick') 
     {
-        gameOverString1 = 'Press A to Retry';
-        gameOverString2 = 'Press B return to Menu';
+        gameOverString1 = loc_key("HUD_GAMEOVER_RETRY_JOY");
+        gameOverString2 = loc_key("HUD_GAMEOVER_MENU_JOY");
     }
             
     draw_text_dropoutline_ext_transformed(gameOverX,gameOverY2,gameOverString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
@@ -2428,7 +2428,7 @@ if instance_exists(class_player)
 draw_set_halign(fa_right);
 draw_set_valign(fa_center);
 draw_set_color(c_white);
-draw_set_font(font_wendy12);
+draw_set_font(global.font_numberSmall);
 
 //Draw FPS if it is low!
 if ((fps/room_speed) &lt; 0.9) draw_text(window_get_width()*0.99, window_get_height()*0.95, "FPS " + string(fps) + '/' + string(room_speed) );

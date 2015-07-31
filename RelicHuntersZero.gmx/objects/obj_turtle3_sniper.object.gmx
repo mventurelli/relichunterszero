@@ -52,6 +52,7 @@ sprite_dash = spr_turtle3_walk;
 sprite_death = spr_turtle3_death;
 sprite_death2 = spr_turtle3_death2;
 sprite_death3 = spr_turtle3_death3;
+sprite_death_precision = spr_turtle3_precision;
 
 if my_gun == noone
 {

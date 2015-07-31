@@ -30,7 +30,7 @@
 myString = 'No String Inserted';
 colorMain = c_white;
 colorOutline = c_black;
-myFont = font_info_pickup;
+myFont = global.font_tinyText;
 drawOutline = false;
 
 lifeMax = room_speed*0.25;
@@ -64,17 +64,6 @@ scaleSpeedGrow = 0;
 scaleSpeedShrink = 0;
 
 owner=noone;
-
-
-
-/* OLD WAY OF SCALING
-myScale = 1;
-scaleFinal = 1;
-scaleOrientation = 1;
-scaleSpeed = 0;
-
-owner=noone;
-
 </string>
           </argument>
         </arguments>
@@ -264,12 +253,7 @@ if (drawOutline)
     draw_text_outline_ext(x+offsetX,y+offsetY,myString,colorMain,colorOutline);
     draw_set_alpha(1);
 }
-else
-{
-    draw_text_dropshadow_ext_transformed(x+offsetX,y+offsetY,myString,colorMain,c_black,0.4,1,myScale,myScale,image_angle,myAlpha);
-    //draw_text_transformed_colour(x+offsetX,y+offsetY,myString,myScale,myScale,image_angle,colorMain,colorMain,colorMain,colorMain,myAlpha);
-}
-
+else draw_text_dropshadow_ext_transformed(x+offsetX,y+offsetY,myString,colorMain,c_black,0.4,1,myScale,myScale,image_angle,myAlpha);
 
 
 

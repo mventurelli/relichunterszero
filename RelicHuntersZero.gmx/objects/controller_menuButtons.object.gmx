@@ -414,15 +414,15 @@ if (global.input == 'keyboard')
           <argument>
             <kind>1</kind>
             <string>///DEBUG: Draw grid feedback on button
-
 /*
+
 // Global button DEBUG:
 
 if (keyboard_check(vk_space))
 {
     if (instance_exists(class_menu_button))
     {
-        draw_set_font(font_menu10);
+        draw_set_font(global.font_menuSmall);
         draw_set_color(c_purple);
         with (class_menu_button)
         {
@@ -444,7 +444,7 @@ else
     // Internal Button Debug
     if (instance_exists(class_menu_button))
     {
-        draw_set_font(font_menu10);
+        draw_set_font(global.font_menuSmall);
         draw_set_color(c_purple);
         with (class_menu_button)
         {

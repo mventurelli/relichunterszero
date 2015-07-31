@@ -71,8 +71,8 @@ if (global.hasUsedCheckpoint == false) &amp;&amp; (!global.unlockBiu)
     global.unlockBiu = true;
     achievement_give("ACHIEVEMENT_UNLOCKBIU");
     announce = instance_create(x,y,fx_bigMessage);
-    announce.textBig = "NEW HUNTER UNLOCKED!";
-    announce.textSmall = "YOU CAN NOW PLAY WITH BIU";
+    announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
+    announce.textSmall = loc_key("HUD_UNLOCK_BIU");
     announce.hunterUnlockSprite = spr_hud_face_biu; 
 }
 

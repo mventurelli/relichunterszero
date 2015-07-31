@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'YES! DELETE!';
+labelString = loc_key("SETTINGS_DELETESAVE_CONFIRM");
 </string>
           </argument>
         </arguments>
@@ -98,9 +98,9 @@ event_inherited();
 
 draw_set_valign(fa_center);
 draw_set_halign(fa_center);
-draw_set_font(font_menu18);
+draw_set_font(global.font_menuLarge);
 draw_set_color(c_white);
-draw_text_ext(x,y-128,'CONFIRM YOU REALLY WANT TO DELETE ALL OF YOUR SAVED DATA',32,600);
+draw_text_ext(x,y-128,loc_key("SETTINGS_DELETESAVE_TEXT"),32,600);
 </string>
           </argument>
         </arguments>

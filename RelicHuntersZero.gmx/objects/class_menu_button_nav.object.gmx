@@ -32,7 +32,7 @@ event_inherited();
 textXOffset = 0;
 textYOffset = -14;
 
-myFont = font_menu18;
+myFont = global.font_menuLarge;
 
 starPositionX = 0;
 starPositionY = -1*(point_distance(x,y,x,bbox_top));

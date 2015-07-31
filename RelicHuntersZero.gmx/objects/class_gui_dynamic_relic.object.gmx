@@ -95,14 +95,14 @@ if (global.pauseMenu)
 mySprite = noone;
 myString = "";
 
-if (global.relic_slot[myNumber] == 'pineapple') { mySprite = spr_pineapple_pudding; myString = 'Extra Health';   }
-if (global.relic_slot[myNumber] == 'yottabyte') { mySprite = spr_yottabyte_drive; myString = 'Extra Shield';   }
-if (global.relic_slot[myNumber] == 'alcoholic') { mySprite = spr_alcoholic_carrot; myString = '+Stamina Regen';   }
-if (global.relic_slot[myNumber] == 'infinity') { mySprite = spr_infinity_battery; myString = '+Shield Regen';   }
-if (global.relic_slot[myNumber] == 'midnight') { mySprite = spr_midnight_beer; myString = 'Extra Damage';   }
-if (global.relic_slot[myNumber] == 'watchful') { mySprite = spr_watchful_eye; myString = 'Extra Ammo';   }
-if (global.relic_slot[myNumber] == 'crystal') { mySprite = spr_crystal_bacon; myString = 'Health on Kill';   }
-if (global.relic_slot[myNumber] == 'dev') { mySprite = spr_dev_potion; myString = 'Ammo Regen';   }
+if (global.relic_slot[myNumber] == 'pineapple') { mySprite = spr_pineapple_pudding; myString = loc_key("RELIC_PINEAPPLE_SHORT");   }
+if (global.relic_slot[myNumber] == 'yottabyte') { mySprite = spr_yottabyte_drive; myString = loc_key("RELIC_YOTTABYTE_SHORT");   }
+if (global.relic_slot[myNumber] == 'alcoholic') { mySprite = spr_alcoholic_carrot; myString = loc_key("RELIC_ALCOHOLIC_SHORT");   }
+if (global.relic_slot[myNumber] == 'infinity') { mySprite = spr_infinity_battery; myString = loc_key("RELIC_INFINITY_SHORT");   }
+if (global.relic_slot[myNumber] == 'midnight') { mySprite = spr_midnight_beer; myString = loc_key("RELIC_MIDNIGHT_SHORT");   }
+if (global.relic_slot[myNumber] == 'watchful') { mySprite = spr_watchful_eye; myString = loc_key("RELIC_WATCHFUL_SHORT");   }
+if (global.relic_slot[myNumber] == 'crystal') { mySprite = spr_crystal_bacon; myString = loc_key("RELIC_CRYSTAL_SHORT");   }
+if (global.relic_slot[myNumber] == 'dev') { mySprite = spr_dev_potion; myString = loc_key("RELIC_DEV_SHORT");   }
 </string>
           </argument>
         </arguments>

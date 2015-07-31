@@ -30,24 +30,24 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'CONTROLLER AUTO-AIM';
+labelString = loc_key("GAMEPLAY_TARGETING");
 
 if (global.auto_aim == K_AUTOAIM_FULL)
 {
     myVariable = 2;
-    myValueString = 'FULL';
+    myValueString = loc_key("SETTINGS_FULL");
 }
 
 if (global.auto_aim == K_AUTOAIM_ASSIST) 
 {
     myVariable = 1;
-    myValueString = 'ASSIST';
+    myValueString = loc_key("GAMEPLAY_TARGETING_ASSIST");
 }
 
 if (global.auto_aim == K_AUTOAIM_OFF)
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 2;
@@ -84,19 +84,19 @@ if (executeAction)
 if (myVariable == 2)
 {
     global.auto_aim = K_AUTOAIM_FULL;
-    myValueString = 'FULL';
+    myValueString = loc_key("SETTINGS_FULL");
 }
 
 if (myVariable == 1)
 {
     global.auto_aim = K_AUTOAIM_ASSIST;
-    myValueString = 'ASSIST';
+    myValueString = loc_key("GAMEPLAY_TARGETING_ASSIST");
 }
 
 if (myVariable == 0)
 {
     global.auto_aim = K_AUTOAIM_OFF;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

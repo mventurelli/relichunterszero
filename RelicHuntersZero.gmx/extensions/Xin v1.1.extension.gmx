@@ -2,11 +2,14 @@
 <extension>
   <name>Xin v1.1</name>
   <version>1.1</version>
-  <author>JacksonYarr</author>
+  <packageID></packageID>
+  <ProductID></ProductID>
   <date>13/07/12</date>
   <license>Public Domain (No Rights Reserved)</license>
   <description>An XInput extension that enables the full use of Xbox 360 controllers within games.</description>
   <helpfile></helpfile>
+  <androidProps>0</androidProps>
+  <iosProps>0</iosProps>
   <installdir></installdir>
   <classname></classname>
   <androidclassname></androidclassname>
@@ -26,11 +29,13 @@
       <init></init>
       <final></final>
       <kind>1</kind>
+      <uncompress>0</uncompress>
       <ConfigOptions>
         <Config name="Default">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
+      <ProxyFiles/>
       <functions>
         <function>
           <name>xin_update</name>
@@ -131,82 +136,102 @@
         <constant>
           <name>xb_leftTrigger</name>
           <value>1</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_rightTrigger</name>
           <value>2</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_leftThumbX</name>
           <value>3</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_leftThumbY</name>
           <value>4</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_rightThumbX</name>
           <value>5</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_rightThumbY</name>
           <value>6</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_a</name>
           <value>7</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_b</name>
           <value>8</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_x</name>
           <value>9</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_y</name>
           <value>10</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_leftShoulder</name>
           <value>11</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_rightShoulder</name>
           <value>12</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_leftThumb</name>
           <value>13</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_rightThumb</name>
           <value>14</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_up</name>
           <value>15</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_down</name>
           <value>16</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_left</name>
           <value>17</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_right</name>
           <value>18</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_start</name>
           <value>19</value>
+          <hidden>0</hidden>
         </constant>
         <constant>
           <name>xb_back</name>
           <value>20</value>
+          <hidden>0</hidden>
         </constant>
       </constants>
     </file>

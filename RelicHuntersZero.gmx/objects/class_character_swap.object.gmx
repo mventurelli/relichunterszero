@@ -192,18 +192,18 @@ if (active) reflection_object_setup(0,-1,image_index);
 else
 {
     reflection_object_setup(0,spr_casing_blob,0);
-    draw_set_font(font_wendy12);
+    draw_set_font(global.font_numberSmall);
     draw_set_halign(fa_center);
     draw_set_valign(fa_bottom);
     draw_set_color(c_white);
     
     var stringUnlockCharacter = '';
     
-    if (myCharacter == char_pinky) stringUnlockCharacter = 'Complete the first relic to unlock Pinkyy';
-    if (myCharacter == char_raff) stringUnlockCharacter = 'Buy All Checkpoints to unlock Raff';
-    if (myCharacter == char_biu) stringUnlockCharacter = 'Beat the game without using Checkpoints to unlock Biu';
-    if (myCharacter == char_punny) stringUnlockCharacter = 'Get 50000 bounty to unlock Punny';
-    if (myCharacter == char_jimmy) stringUnlockCharacter = 'This is a bug';
+    if (myCharacter == char_pinky) stringUnlockCharacter = 'I AM ERROR';
+    if (myCharacter == char_raff) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_RAFF");
+    if (myCharacter == char_biu) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_BIU");
+    if (myCharacter == char_punny) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_PUNNY");
+    if (myCharacter == char_jimmy) stringUnlockCharacter = 'I AM ERROR';
     
     
     draw_text_ext(x, y-28, stringUnlockCharacter, 19, 150);

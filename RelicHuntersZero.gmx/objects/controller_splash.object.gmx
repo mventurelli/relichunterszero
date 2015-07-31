@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Shit
+            <string>///Main Stuff
 
+//Setup
 goToNextRoom = false;
 rogueLogo = noone;
 
@@ -38,10 +39,13 @@ alarm[1] = room_speed*6; //spawn FadetoBlack
 alarm[2] = room_speed*9; //go to next room
 
 
-
 // Sync Save
 save_sync_read();
 screen_update();
+
+//Language Init
+global.loc_map = noone;
+loc_init();
 
 
 // Debug Shit, don't mess with this

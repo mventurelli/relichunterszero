@@ -28,7 +28,7 @@
             <string>///Main Attributes
 event_inherited();
 
-name = "Assault Pistol";
+name = loc_key("WPNAME_PISTOLASSAULT");
 gui_info_weapon_create(class_player,c_white,name);
 
 sound = 'pistol';

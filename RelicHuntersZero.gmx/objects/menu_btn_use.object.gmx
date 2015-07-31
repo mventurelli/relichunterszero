@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Use';
+labelString = loc_key("MAPPING_USE");
 </string>
           </argument>
         </arguments>

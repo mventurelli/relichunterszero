@@ -30,7 +30,7 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'MAX DYNAMIC OBJECTS';
+labelString = loc_key("PERFORMANCE_DYNAMICS");
 
 if (global.max_casings == 100)
 {

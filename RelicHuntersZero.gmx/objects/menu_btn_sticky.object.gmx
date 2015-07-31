@@ -30,17 +30,17 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'CONTROLLER STICKY AIM';
+labelString = loc_key("GAMEPLAY_STICKY");
 
 if (global.sticky_aim)
 {
     myVariable = 1;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 1;
@@ -77,13 +77,13 @@ if (executeAction)
 if (myVariable)
 {
     global.sticky_aim = true;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     
     global.sticky_aim = false;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

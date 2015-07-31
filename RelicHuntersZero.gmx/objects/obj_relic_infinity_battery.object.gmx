@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Name &amp; Description
 event_inherited();
-relicName = 'The Infinity Battery';
-relicDescription = '+ Shield Regeneration';
+relicName = loc_key("RELIC_INFINITY_NAME");
+relicDescription = loc_key("RELIC_INFINITY_LONG");
 </string>
           </argument>
         </arguments>

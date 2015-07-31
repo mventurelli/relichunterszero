@@ -109,8 +109,8 @@ if instance_exists(activationClient) &amp;&amp; (buy = true) &amp;&amp; (!active
             global.unlockRaff = true;
             achievement_give("ACHIEVEMENT_UNLOCKRAFF");
             announce = instance_create(x,y,fx_bigMessage);
-            announce.textBig = "NEW HUNTER UNLOCKED!";
-            announce.textSmall = "YOU CAN NOW PLAY WITH RAFF";
+            announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
+            announce.textSmall = loc_key("HUD_UNLOCK_RAFF");
             announce.hunterUnlockSprite = spr_hud_face_raff;
         }
     }
@@ -247,7 +247,7 @@ draw_self();
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
-draw_set_font(font_wendy_balloon);
+draw_set_font(global.font_shopPrice);
 
 if (buy) &amp;&amp; (!active)
 {
@@ -286,6 +286,16 @@ if (active)
         draw_sprite(spr_unlock,0,x-18,y+56);
         draw_text_outline(x-6,y+56,string(unlock_current)+' / '+string(unlock_max),c_white);
     }
+}
+
+//Draw Stage Feedback
+if (room==room_start)
+{
+    draw_set_font(global.font_tinyText);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_center);
+    
+    draw_text_dropshadow_ext_transformed(x+2,y+37,loc_key("GENERAL_TELEPORTER_STAGE")+' '+string(max(1,myLevel+1)),c_white,c_black,0.7,2,1,1,0,1);
 }
 
 

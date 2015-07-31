@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Bouncing Shit
+            <string>///Bouncing Stuff
 sprite = spr_casing;
 sprite_subimage = 0;
 draw_height = -40;
@@ -52,7 +52,7 @@ dirMax = 30;
 direction = 180 + random_range(dirMin,dirMax);
 friction = 0.05;
  
-random_fuck = false;
+randomizeDir = false;
 
 </string>
           </argument>

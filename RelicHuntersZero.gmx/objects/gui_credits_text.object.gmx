@@ -107,7 +107,7 @@ var lineSpacing = 21;
 var currentSpacing = 0;
 
 //Developed by
-draw_set_font(font_menu14);
+draw_set_font(global.font_menuMedium);
 draw_set_colour(make_color_rgb(0,253,113));
 draw_text(x,y+currentSpacing,"DEVELOPED BY ROGUE SNAIL"); currentSpacing+=lineSpacing;
 
@@ -160,19 +160,19 @@ currentSpacing += 7*lineSpacing;
 
 
 //Thanks for playing
-draw_set_font(font_menu42);
+draw_set_font(global.font_menuLargest);
 draw_set_colour(make_color_rgb(242,50,129));
 draw_text(x,y+currentSpacing,"THANKS FOR PLAYING"); currentSpacing+=lineSpacing;
 currentSpacing += 5*lineSpacing;
 
 //Open Source
-draw_set_font(font_menu14);
+draw_set_font(global.font_menuMedium);
 draw_set_colour(c_white);
 draw_text(x,y+currentSpacing,"Open Source legal stuff goes here"); currentSpacing+=lineSpacing;
 currentSpacing += 5*lineSpacing;
 
 //Relic Hunters Website
-draw_set_font(font_menu30);
+draw_set_font(global.font_menuVeryLarge);
 draw_set_colour(make_color_rgb(0,253,178));
 draw_text(x,y+currentSpacing,"WWW.RELICHUNTERS.COM.BR");
 </string>

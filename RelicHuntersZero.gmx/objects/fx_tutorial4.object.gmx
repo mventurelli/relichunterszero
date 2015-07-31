@@ -28,8 +28,8 @@
             <string>///Config
 event_inherited();
 
-myTextKeyboard = 'HOLD RIGHT MOUSE TO AIM';
-myTextJoystick = 'HOLD LEFT TRIGGER TO AIM';
+myTextKeyboard = loc_key("TUTORIAL_4_KEY");
+myTextJoystick = loc_key("TUTORIAL_4_JOY");
 </string>
           </argument>
         </arguments>

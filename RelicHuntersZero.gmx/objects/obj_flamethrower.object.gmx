@@ -28,7 +28,7 @@
             <string>///Main Attributes
 event_inherited();
 
-name = "Flamethrower";
+name = loc_key("WPNAME_FLAMETHROWER");
 gui_info_weapon_create(class_player,c_white,name);
 
 allowPrecision = false;

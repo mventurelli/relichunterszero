@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Name &amp; Description
 event_inherited();
-relicName = 'Yottabyte Drive';
-relicDescription = 'Double Shield';
+relicName = loc_key("RELIC_YOTTABYTE_NAME");
+relicDescription = loc_key("RELIC_YOTTABYTE_LONG");
 </string>
           </argument>
         </arguments>

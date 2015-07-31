@@ -28,7 +28,7 @@
             <string>///Unlock and Draw Weapon
 event_inherited();
 price = global.price_light2;
-weaponName = "EXTRA LIGHT AMMO";
+weaponName = loc_key("GENERAL_SHOP_LIGHTAMMO");
 
 if (unlock)
 {

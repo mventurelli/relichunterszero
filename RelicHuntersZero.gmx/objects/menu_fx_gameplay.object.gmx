@@ -32,8 +32,8 @@ event_inherited();
 textXOffset = 0;//point_distance(x,y,bbox_right,y) - 32;
 textYOffset = 0;
 
-myFont = font_menu14;
-myText = 'GAMEPLAY OPTIONS';
+myFont = global.font_menuMedium;
+myText = loc_key("SETTINGS_FXGAMEPLAY");
 </string>
           </argument>
         </arguments>

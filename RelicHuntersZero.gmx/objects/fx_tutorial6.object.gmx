@@ -28,8 +28,8 @@
             <string>///Config
 event_inherited();
 
-myTextKeyboard = 'PRESS "F" FOR GRENADE';
-myTextJoystick = 'PRESS LB FOR GRENADE';
+myTextKeyboard = loc_key("TUTORIAL_6_KEY");
+myTextJoystick = loc_key("TUTORIAL_6_JOY");
 </string>
           </argument>
         </arguments>

@@ -3,8 +3,29 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="5" name="datafiles">
+    <datafile>
+      <name>locSheet.csv</name>
+      <exists>-1</exists>
+      <size>28692</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>locSheet.csv</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Xin v1.1 (NDZ Version)</extension>
+    <extension index="1">extensions\CSV Read</extension>
+    <extension index="2">extensions\Xin v1.1</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
@@ -45,7 +66,11 @@
         <sound>sound\sfx_kami_death</sound>
         <sound>sound\sfx_turtle_death</sound>
         <sound>sound\sfx_duck_death</sound>
-        <sound>sound\sfx_precision_kill</sound>
+        <sound>sound\sfx_precision_kill1</sound>
+        <sound>sound\sfx_precision_kill2</sound>
+        <sound>sound\sfx_precision_kill3</sound>
+        <sound>sound\sfx_precision_kill4</sound>
+        <sound>sound\sfx_precision_kill5</sound>
       </sounds>
       <sounds name="Pickups">
         <sound>sound\sfx_pickup_weapon</sound>
@@ -55,6 +80,8 @@
         <sound>sound\sfx_coin3</sound>
         <sound>sound\sfx_coin2</sound>
         <sound>sound\sfx_pickup_full</sound>
+        <sound>sound\sfx_relic_on</sound>
+        <sound>sound\sfx_relic_off</sound>
       </sounds>
       <sounds name="Player">
         <sound>sound\sfx_dash1</sound>
@@ -156,6 +183,8 @@
         <sprite>sprites\spr_kamikazelite_fly_fx</sprite>
         <sprite>sprites\spr_duck_dash_fx</sprite>
         <sprite>sprites\spr_activation_marker</sprite>
+        <sprite>sprites\spr_skull_turtle</sprite>
+        <sprite>sprites\spr_duck_death_precision</sprite>
       </sprites>
       <sprites name="Duck">
         <sprite>sprites\spr_duck_idle</sprite>
@@ -219,12 +248,14 @@
         <sprite>sprites\spr_turtle_death</sprite>
         <sprite>sprites\spr_turtle_death2</sprite>
         <sprite>sprites\spr_turtle_death3</sprite>
+        <sprite>sprites\spr_turtle_precision</sprite>
       </sprites>
       <sprites name="Turtle2">
         <sprite>sprites\spr_turtle2_idle</sprite>
         <sprite>sprites\spr_turtle2_death1</sprite>
         <sprite>sprites\spr_turtle2_death2</sprite>
         <sprite>sprites\spr_turtle2_death3</sprite>
+        <sprite>sprites\spr_turtle2_precision</sprite>
         <sprite>sprites\spr_turtle2_hit</sprite>
         <sprite>sprites\spr_turtle2_walk</sprite>
       </sprites>
@@ -235,6 +266,7 @@
         <sprite>sprites\spr_turtle3_death</sprite>
         <sprite>sprites\spr_turtle3_death2</sprite>
         <sprite>sprites\spr_turtle3_death3</sprite>
+        <sprite>sprites\spr_turtle3_precision</sprite>
       </sprites>
       <sprites name="Boss">
         <sprite>sprites\spr_boss_idle</sprite>
@@ -820,21 +852,35 @@
         <script>scripts\input_key_use_released.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Localization">
+      <script>scripts\loc_init.gml</script>
+      <script>scripts\loc_key.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\font_wendy12</font>
-    <font>fonts\font_wendy_balloon</font>
-    <font>fonts\font_wendy10</font>
-    <font>fonts\font_wendy15</font>
-    <font>fonts\font_wendy30</font>
-    <font>fonts\font_wendy50</font>
-    <font>fonts\font_info_pickup</font>
-    <font>fonts\font_pic_balloon</font>
-    <font>fonts\font_menu30</font>
-    <font>fonts\font_menu42</font>
-    <font>fonts\font_menu18</font>
-    <font>fonts\font_menu14</font>
-    <font>fonts\font_menu10</font>
+    <fonts name="English">
+      <font>fonts\ftEN_shopPrice</font>
+      <font>fonts\ftEN_numberSmall</font>
+      <font>fonts\ftEN_numberMedium</font>
+      <font>fonts\ftEN_numberLarge</font>
+      <font>fonts\ftEN_numberVeryLarge</font>
+      <font>fonts\ftEN_tinyText</font>
+      <font>fonts\ftEN_balloonText</font>
+      <font>fonts\ftEN_menuSmall</font>
+      <font>fonts\ftEN_menuMedium</font>
+      <font>fonts\ftEN_menuLarge</font>
+      <font>fonts\ftEN_menuVeryLarge</font>
+      <font>fonts\ftEN_menuLargest</font>
+    </fonts>
+    <fonts name="Cyrillic">
+      <font>fonts\ftRU_menuLarge</font>
+    </fonts>
+    <fonts name="Latin">
+      <font>fonts\ftBR_menuLarge</font>
+    </fonts>
+    <fonts name="Japanese">
+      <font>fonts\ftJP_menuLarge</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <objects name="Controllers">
@@ -1020,6 +1066,7 @@
       <object>objects\class_bouncer</object>
       <object>objects\fx_activation</object>
       <object>objects\fx_blood</object>
+      <object>objects\fx_skull</object>
       <object>objects\class_fx_boxbreak</object>
       <object>objects\fx_longbox_break</object>
       <object>objects\fx_crate_break</object>
@@ -1104,6 +1151,7 @@
         <object>objects\menu_btn_gameplay</object>
         <object>objects\menu_btn_performance</object>
         <object>objects\menu_btn_delete</object>
+        <object>objects\menu_btn_language</object>
         <object>objects\menu_btn_master</object>
         <object>objects\menu_btn_music</object>
         <object>objects\menu_btn_sound</object>
@@ -1224,22 +1272,22 @@
     <objects name="Tutorial">
       <object>objects\class_tutorial_animated</object>
       <object>objects\class_tutorial_static</object>
-      <object>objects\fx_tutorial1</object>
-      <object>objects\fx_tutorial0</object>
-      <object>objects\fx_tutorial7</object>
-      <object>objects\fx_tutorial7b</object>
-      <object>objects\fx_tutorial8</object>
-      <object>objects\fx_tutorial9</object>
-      <object>objects\fx_tutorial10</object>
-      <object>objects\fx_tutorial6</object>
-      <object>objects\fx_tutorial5</object>
-      <object>objects\fx_tutorial4</object>
-      <object>objects\fx_tutorial3</object>
-      <object>objects\fx_tutorial2</object>
       <object>objects\fx_stage1</object>
       <object>objects\fx_stage2</object>
       <object>objects\fx_stage3</object>
       <object>objects\fx_stage4</object>
+      <object>objects\fx_tutorial0</object>
+      <object>objects\fx_tutorial1</object>
+      <object>objects\fx_tutorial2</object>
+      <object>objects\fx_tutorial3</object>
+      <object>objects\fx_tutorial4</object>
+      <object>objects\fx_tutorial5</object>
+      <object>objects\fx_tutorial6</object>
+      <object>objects\fx_tutorial7</object>
+      <object>objects\fx_tutorial8</object>
+      <object>objects\fx_tutorial9</object>
+      <object>objects\fx_tutorial10</object>
+      <object>objects\fx_tutorial11</object>
     </objects>
     <objects name="Unlocks">
       <object>objects\obj_unlock_shotgun</object>
@@ -1384,7 +1432,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="31">
+  <constants number="38">
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
     <constant name="char_biu">4</constant>
@@ -1416,6 +1464,13 @@
     <constant name="K_PROJECTILE_FLAME">1</constant>
     <constant name="K_PROJECTILE_ROCKET">2</constant>
     <constant name="K_PROJECTILE_SONIC">3</constant>
+    <constant name="lang_english">1</constant>
+    <constant name="lang_ptbr">2</constant>
+    <constant name="lang_huebr">3</constant>
+    <constant name="lang_russian">4</constant>
+    <constant name="lang_japanese">5</constant>
+    <constant name="lang_german">6</constant>
+    <constant name="lang_french">7</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

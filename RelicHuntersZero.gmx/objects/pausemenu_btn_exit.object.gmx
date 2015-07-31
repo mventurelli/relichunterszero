@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'EXIT';
+labelString = loc_key("PAUSE_EXIT" );
 allowConsoleSelection = true;
 textXOffset -= 25;
 </string>

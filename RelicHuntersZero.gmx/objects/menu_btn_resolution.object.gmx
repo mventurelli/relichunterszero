@@ -30,7 +30,7 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'RESOLUTION';
+labelString = loc_key("PERFORMANCE_RESOLUTION");
 
 if (global.screenResolution == 1.5)
 {

@@ -315,19 +315,6 @@ if hp &lt;= 0
     }
     
     repeat(coins) instance_create(x,y,obj_pickup_coin);
-    myCorpse = instance_create(x,y,fx_corpse);
-    myCorpse.image_xscale = image_xscale;
-    if (pushed)
-    {
-        if (!critical_death) myCorpse.speed = push_speed*2;
-        else myCorpse.speed = push_speed*4;
-        
-        myCorpse.direction = push_direction;
-        random_death = irandom_range(1,3)
-        if (random_death == 1) myCorpse.sprite_index = sprite_death;
-        if (random_death == 2) myCorpse.sprite_index = sprite_death2;
-        if (random_death == 3) myCorpse.sprite_index = sprite_death3;
-    }
     
     if (drop_gun)
     {
@@ -346,22 +333,33 @@ if hp &lt;= 0
             draw_persistent(broken_gun,0,x,y,1,1,irandom(360),c_white,1);
         }
     }
-    
-   
-    if (!critical_death)
+
+    myCorpse = instance_create(x,y,fx_corpse);
+    myCorpse.image_xscale = image_xscale;
+    if (pushed)
     {
-        if (elite) audio_play(audio_emitter,false,1,sfx_duck_death);
-        else audio_play(audio_emitter,false,1,sfx_turtle_death);
+        if (!critical_death) myCorpse.speed = push_speed*2;
+        else myCorpse.speed = push_speed*4;
+            
+        myCorpse.direction = push_direction;
+        random_death = irandom_range(1,3)
+        if (random_death == 1) myCorpse.sprite_index = sprite_death;
+        if (random_death == 2) myCorpse.sprite_index = sprite_death2;
+        if (random_death == 3) myCorpse.sprite_index = sprite_death3;
     }
-    else audio_play(audio_emitter,false,1,sfx_precision_kill);
     
+    if (critical_death)
+    {
+        audio_play_exclusive(audio_emitter,false,1,sfx_precision_kill1,sfx_precision_kill2,sfx_precision_kill3,sfx_precision_kill4,sfx_precision_kill5);
+        
+        myCorpse.sprite_index = sprite_death_precision;
+        
+        var mySkull = instance_create(x+(11*image_xscale),y-49,fx_skull);
+        mySkull.image_xscale = image_xscale;
+    }
     
-    /*DEPENDING ON WHAT MULLER WANTS
     if (elite) audio_play(audio_emitter,false,1,sfx_duck_death);
     else audio_play(audio_emitter,false,1,sfx_turtle_death);
-    
-    if (critical_death) audio_play(audio_emitter,false,1,sfx_precision_kill);
-    */
     
     ds_list_add(global.audio_cleaner,audio_emitter);
     instance_destroy();
@@ -870,7 +868,7 @@ else image_speed = old_image_speed;
 
 //Debug
 /*
-draw_set_font(font_wendy12);
+draw_set_font(global.font_numberSmall);
 draw_text(x,y-30,ai_state);
 
 if (ai_state == 'PATROL')

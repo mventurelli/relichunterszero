@@ -79,7 +79,7 @@ if instance_exists(activationClient)
             
             guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
             guiInfo.colorMain = c_white;
-            guiInfo.myString = '+ Health';
+            guiInfo.myString = loc_key("INFO_HEALTHPLUS");
             guiInfo.owner = activationClient;
             instance_destroy();
         }
@@ -87,7 +87,7 @@ if instance_exists(activationClient)
         {
             guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
             guiInfo.colorMain = c_black;
-            guiInfo.myString = 'Health is Full';
+            guiInfo.myString = loc_key("INFO_HEALTHFULL");
             guiInfo.owner = activationClient;
             audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
         }

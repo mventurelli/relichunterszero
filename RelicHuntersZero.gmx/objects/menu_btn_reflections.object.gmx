@@ -30,17 +30,17 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'REFLECTIONS';
+labelString = loc_key("PERFORMANCE_REFLECTIONS");
 
 if (global.reflections_toggle)
 {
     myVariable = 1;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 1;
@@ -78,13 +78,13 @@ if (executeAction)
 if (myVariable)
 {
     global.reflections_toggle = true;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     
     global.reflections_toggle = false;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

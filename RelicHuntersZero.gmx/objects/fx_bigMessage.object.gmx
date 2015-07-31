@@ -30,10 +30,10 @@
 textBig = "NEW TEXT UNLOCKED!";
 textSmall = "CHECK OUT THIS NIFTY TEXT, ISNT IT COOL?";
 
-textBigFont = font_menu18;
+textBigFont = global.font_menuLarge;
 textBigColor = K_BETU_GREEN2;
 
-textSmallFont = font_menu14;
+textSmallFont = global.font_menuMedium;
 textSmallColor = c_white;
 
 

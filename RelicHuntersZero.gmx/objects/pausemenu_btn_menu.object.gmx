@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'MAIN MENU';
+labelString = loc_key("PAUSE_MENU");
 allowConsoleSelection = true;
 
 textXOffset -= 25;

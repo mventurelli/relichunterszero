@@ -28,7 +28,7 @@
             <string>///Button Config
 
 event_inherited();
-labelString = 'Move Down';
+labelString = loc_key("MAPPING_MOVEDOWN" );
 </string>
           </argument>
         </arguments>

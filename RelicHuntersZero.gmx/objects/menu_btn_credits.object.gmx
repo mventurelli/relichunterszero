@@ -29,7 +29,8 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'CREDITS';
+labelString = loc_key("MAINMENU_CREDITS");
+//labelString = 'CREDITS';
 </string>
           </argument>
         </arguments>

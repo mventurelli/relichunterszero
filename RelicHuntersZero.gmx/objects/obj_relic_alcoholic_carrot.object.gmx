@@ -28,8 +28,8 @@
             <string>///Name &amp; Description
 event_inherited();
 
-relicName = 'The Alcoholic Carrot';
-relicDescription = '+ Stamina Regeneration';
+relicName = loc_key("RELIC_ALCOHOLIC_NAME");
+relicDescription = loc_key("RELIC_ALCOHOLIC_LONG");
 </string>
           </argument>
         </arguments>

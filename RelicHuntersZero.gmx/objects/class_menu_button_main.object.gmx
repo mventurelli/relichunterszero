@@ -32,7 +32,7 @@ event_inherited();
 textXOffset = view_xview[0]+(point_distance(x,y,bbox_left,y) - x) + 50;
 textYOffset = 0;
 
-myFont = font_menu18;
+myFont = global.font_menuLarge;
 
 starPositionX = point_distance(x,y,bbox_right,y) - 32;
 starPositionY = 0;

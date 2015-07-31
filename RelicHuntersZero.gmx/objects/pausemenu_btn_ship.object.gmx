@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'BACK TO SHIP';
+labelString = loc_key("PAUSE_SHIP" );
 allowConsoleSelection = true;
 textXOffset -= 25;
 </string>

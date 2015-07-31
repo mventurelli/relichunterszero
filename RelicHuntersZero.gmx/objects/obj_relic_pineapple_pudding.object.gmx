@@ -28,8 +28,8 @@
             <string>///Name &amp; Description
 event_inherited();
 
-relicName = 'The Pineapple Pudding';
-relicDescription = '+ Maximum Health';
+relicName = loc_key("RELIC_PINEAPPLE_NAME");
+relicDescription = loc_key("RELIC_PINEAPPLE_LONG");
 </string>
           </argument>
         </arguments>
@@ -90,12 +90,18 @@ if (toggle)
         {
             global.relic_slot[freeSlot] = object;
             global.relic_pineapple_pudding = 2;
+            audio_play_sound(sfx_relic_on,1,false);
         }
         else show_debug_message('No free slots, cannot equip Relic');
     }
     else
     {
-        if (global.relic_pineapple_pudding == 2) global.relic_pineapple_pudding = 1;
+        if (global.relic_pineapple_pudding == 2) 
+        {
+            global.relic_pineapple_pudding = 1;
+            audio_play_sound(sfx_relic_off,1,false);
+        }
+        
         //Free all slots that contain the object
         for (i=1; i&lt;4; i++)
         {

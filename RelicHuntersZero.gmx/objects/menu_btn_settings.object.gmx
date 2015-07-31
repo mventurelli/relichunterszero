@@ -29,7 +29,9 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'SETTINGS';
+labelString = loc_key("MAINMENU_SETTINGS");
+//labelString = 'SETTINGS';
+
 </string>
           </argument>
         </arguments>

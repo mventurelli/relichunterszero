@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'KEYBOARD MAPPING';
+labelString = loc_key("SETTINGS_MAPPING");
 
 </string>
           </argument>

@@ -4,7 +4,8 @@
 ini_open(working_directory + "\saveData.ini");
 
     ini_write_string('Version','Version',global.currentVersionNumber);
-
+    ini_write_real('Language','Language',global.language);
+    
     ini_write_string('Input','Input Type',global.input);
     ini_write_real('Input','Sticky Aim',global.sticky_aim);
     ini_write_real('Input','Auto Aim',global.auto_aim);

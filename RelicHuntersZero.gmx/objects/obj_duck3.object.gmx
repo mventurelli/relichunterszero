@@ -50,6 +50,7 @@ sprite_dash = spr_duck3_dash;
 sprite_death = spr_duck3_death;
 sprite_death2 = spr_duck3_death2;
 sprite_death3 = spr_duck3_death3;
+sprite_death_precision = spr_duck_death_precision;
 
 ai_cover_hp_threshold = hp_max*0.05;
 ai_cover_shield_threshold = energy_max*0.6;

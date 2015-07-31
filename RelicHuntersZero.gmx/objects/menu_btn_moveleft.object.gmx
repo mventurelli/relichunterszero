@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Move Left';
+labelString = loc_key("MAPPING_MOVELEFT");
 </string>
           </argument>
         </arguments>

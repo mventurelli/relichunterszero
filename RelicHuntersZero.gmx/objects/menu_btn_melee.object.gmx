@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Melee';
+labelString = loc_key("MAPPING_MELEE");
 </string>
           </argument>
         </arguments>

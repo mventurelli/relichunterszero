@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Button Config
 event_inherited();
-labelString = 'Move Up';
+labelString = loc_key("MAPPING_MOVEUP");
 
 </string>
           </argument>

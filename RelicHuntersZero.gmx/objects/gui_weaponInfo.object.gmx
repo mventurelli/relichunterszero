@@ -43,8 +43,8 @@ myPiercing = 999;
 
 drawBackground = false;
 
-myFontName = font_menu14;
-myFontText = font_wendy15;
+myFontName = global.font_menuMedium;
+myFontText = global.font_numberMedium;
 </string>
           </argument>
         </arguments>
@@ -136,11 +136,11 @@ if (myWeapon != noone)
     draw_set_valign(fa_center);
     draw_set_halign(fa_left);
     
-    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY,"DAMAGE",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing,"RANGE",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*2,"CAPACITY",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*3,"AMMO TYPE",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*4,"AMMO COST",c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY,loc_key("WEAPON_DAMAGE"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing,loc_key("WEAPON_RANGE"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*2,loc_key("WEAPON_CAPACITY"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*3,loc_key("WEAPON_AMMOTYPE"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(firstGroupX,firstGroupY+lineSpacing*4,loc_key("WEAPON_AMMOCOST"),c_white,c_black,0.7,1,1,1,0,1);
     
     draw_set_valign(fa_center);
     draw_set_halign(fa_center);
@@ -156,11 +156,11 @@ if (myWeapon != noone)
     draw_set_valign(fa_center);
     draw_set_halign(fa_left);
     
-    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY,"IMPACT",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing,"RATE",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*2,"RELOAD",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*3,"BURST",c_white,c_black,0.7,1,1,1,0,1);
-    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*4,"PIERCING",c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY,loc_key("WEAPON_IMPACT"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing,loc_key("WEAPON_RATE"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*2,loc_key("WEAPON_RELOAD"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*3,loc_key("WEAPON_BURST"),c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(secondGroupX,secondGroupY+lineSpacing*4,loc_key("WEAPON_PIERCING"),c_white,c_black,0.7,1,1,1,0,1);
     
     draw_set_valign(fa_center);
     draw_set_halign(fa_center);

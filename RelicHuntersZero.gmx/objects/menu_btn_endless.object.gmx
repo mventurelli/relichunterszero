@@ -29,7 +29,8 @@
 
 event_inherited();
 isAvailable = false;
-labelString = 'PLAY ENDLESS';
+labelString = loc_key("MAINMENU_ENDLESS");
+//labelString = 'PLAY ENDLESS';
 </string>
           </argument>
         </arguments>

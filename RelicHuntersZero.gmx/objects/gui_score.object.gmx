@@ -99,31 +99,31 @@ if (!setup)
 {
     if (!coin)
     {
-        if kill_count == 1 myString = 'KILL';
+        if kill_count == 1 myString = loc_key("HUD_KILL1");
         
         if kill_count == 2
         {
-            myString = 'DOUBLE KILL';
+            myString = loc_key("HUD_KILL2");
             value += global.score_doublekill;
             global.score_total += global.score_doublekill;
         }
         
         if kill_count == 3 
         {
-            myString = 'TRIPLE KILL';
+            myString = loc_key("HUD_KILL3");
             value += global.score_triplekill;
             global.score_total += global.score_triplekill;
         }
         
         if kill_count &gt; 3 
         {
-            if (kill_count == 4) myString = 'MULTI KILL';
-            if (kill_count == 5) myString = 'ULTRA KILL';
-            if (kill_count == 6) myString = 'MONSTER KILL';
-            if (kill_count == 7) myString = 'GODLIKE';
-            if (kill_count == 8) myString = 'SUPER GOD LIKE?';
-            if (kill_count == 9) myString = 'YOU ARE CHEATING';
-            if (kill_count &gt;= 10) myString = 'ARE YOU SERIOUS?';
+            if (kill_count == 4) myString = loc_key("HUD_KILL4");
+            if (kill_count == 5) myString = loc_key("HUD_KILL5");
+            if (kill_count == 6) myString = loc_key("HUD_KILL6");
+            if (kill_count == 7) myString = loc_key("HUD_KILL7");
+            if (kill_count == 8) myString = loc_key("HUD_KILL8");
+            if (kill_count == 9) myString = loc_key("HUD_KILL9");
+            if (kill_count &gt;= 10) myString = loc_key("HUD_KILL10");
             
             value += global.score_multikill;
             global.score_total += global.score_multikill;
@@ -132,7 +132,7 @@ if (!setup)
             if (kill_count &gt;= 10) achievement_give("ACHIEVEMENT_KILLCOMBO");
         }
     }
-    else myString = 'BOUNTY';
+    else myString = loc_key("HUD_BOUNTY");
     setup = true;
 }
 </string>
@@ -159,7 +159,7 @@ if (!setup)
             <kind>1</kind>
             <string>///Animation
 
-if (headshot) myString = 'PRECISION KILL';
+if (headshot) myString = loc_key("HUD_PRECISIONKILL");
 
 if (destroy) instance_destroy();
 
@@ -218,14 +218,6 @@ size_current += size_speed_current;
             <kind>1</kind>
             <string>/* I am now drawing this in the controller_main GUI script
 
-if (headshot) myString = 'HEADSHOT'
-
-draw_set_halign(fa_center);
-draw_set_valign(fa_center);
-draw_set_font(font_wendy30);
-draw_text_outline_ext_transformed(myX,myY,myString,c_white,c_white,1,1,0);
-draw_set_font(font_wendy50);
-draw_text_outline_ext_transformed(myX,myY+43,'+'+string(value),c_white,c_white,size_current,size_current,0);
 </string>
           </argument>
         </arguments>

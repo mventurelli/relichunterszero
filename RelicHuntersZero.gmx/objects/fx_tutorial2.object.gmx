@@ -28,8 +28,8 @@
             <string>///Config
 event_inherited();
 
-myTextKeyboard = 'Hold SPACE to Sprint';
-myTextJoystick = 'Hold A to Sprint';
+myTextKeyboard = loc_key("TUTORIAL_2_KEY");
+myTextJoystick = loc_key("TUTORIAL_2_JOY");
 </string>
           </argument>
         </arguments>

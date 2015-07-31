@@ -34,7 +34,7 @@ myBoxSprite = spr_toggle_box_small;
 myVariable = (global.soundVolume)*10;
 myVariableMax = 10;
 
-labelString = 'FX VOLUME';
+labelString = loc_key("SETTINGS_SOUND");
 myValueString = string(myVariable);
 
 textOffsetX = (point_distance(x,y,bbox_right,y)) - 62;
@@ -73,7 +73,7 @@ if (executeAction)
 }
 
 global.soundVolume = myVariable/10;
-labelString = 'FX VOLUME';
+
 myValueString = string(myVariable);
 
 if (arrowClicked)

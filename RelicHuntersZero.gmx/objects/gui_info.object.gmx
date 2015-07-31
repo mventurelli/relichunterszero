@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Adjust offset + There can be only one
 event_inherited();
-myFont = font_info_pickup;
+myFont = global.font_tinyText;
 lifeMax = room_speed*0.75;
 floatSpeed = floatSpeed*0.5;
 offsetY = -79;

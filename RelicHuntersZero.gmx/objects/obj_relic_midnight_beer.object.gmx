@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Name &amp; Description
 event_inherited();
-relicName = 'The Midnight Beer';
-relicDescription = '+ Weapon Damage';
+relicName = loc_key("RELIC_MIDNIGHT_NAME");
+relicDescription = loc_key("RELIC_MIDNIGHT_LONG");
 </string>
           </argument>
         </arguments>

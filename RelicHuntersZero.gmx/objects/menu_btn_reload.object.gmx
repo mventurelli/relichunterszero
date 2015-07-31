@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Reload';
+labelString = loc_key("MAPPING_RELOAD");
 
 </string>
           </argument>

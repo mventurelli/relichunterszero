@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Init
-myName = "THIS IS A BUG";
+myName = "I AM ERROR";
 mySprite = -1;
 mySpriteImage = 0;
 
@@ -45,8 +45,8 @@ myHeavyAmmoMax = global.ammo_heavy_max;
 myGrenades = global.grenades;
 myGrenadesMax = global.grenades_max;
 
-myFontName = font_menu42;
-myFontText = font_wendy15;
+myFontName = global.font_menuLargest;
+myFontText = global.font_numberMedium;
 </string>
           </argument>
         </arguments>
@@ -124,9 +124,9 @@ draw_self();
     //First Group
     draw_set_valign(fa_center);
     draw_set_halign(fa_left);
-    draw_text(firstGroupX,firstGroupY+lineSpacing,"HP");
-    draw_text(firstGroupX,firstGroupY+lineSpacing*2,"SHIELD");
-    draw_text(firstGroupX,firstGroupY+lineSpacing*3,"STAMINA");
+    draw_text(firstGroupX,firstGroupY+lineSpacing,loc_key("GENERAL_HP"));
+    draw_text(firstGroupX,firstGroupY+lineSpacing*2,loc_key("GENERAL_SHIELD"));
+    draw_text(firstGroupX,firstGroupY+lineSpacing*3,loc_key("GENERAL_STAMINA"));
     
     draw_set_valign(fa_center);
     draw_set_halign(fa_center);
@@ -140,10 +140,10 @@ draw_self();
     draw_set_valign(fa_center);
     draw_set_halign(fa_left);
     
-    draw_text(secondGroupX,secondGroupY,"LIGHT AMMO");
-    draw_text(secondGroupX,secondGroupY+lineSpacing,"MEDIUM AMMO");
-    draw_text(secondGroupX,secondGroupY+lineSpacing*2,"HEAVY AMMO");
-    draw_text(secondGroupX,secondGroupY+lineSpacing*3,"GRENADES");
+    draw_text(secondGroupX,secondGroupY,loc_key("GENERAL_LIGHTAMMO"));
+    draw_text(secondGroupX,secondGroupY+lineSpacing,loc_key("GENERAL_MEDIUMAMMO"));
+    draw_text(secondGroupX,secondGroupY+lineSpacing*2,loc_key("GENERAL_HEAVYAMMO"));
+    draw_text(secondGroupX,secondGroupY+lineSpacing*3,loc_key("GENERAL_GRENADES"));
     
     draw_set_valign(fa_center);
     draw_set_halign(fa_center);

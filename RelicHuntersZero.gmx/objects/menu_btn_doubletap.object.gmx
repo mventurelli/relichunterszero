@@ -30,17 +30,17 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'DOUBLE TAP TO DASH';
+labelString = loc_key("GAMEPLAY_DOUBLETAP");
 
 if (global.doubleTapDodge)
 {
     myVariable = 1;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 1;
@@ -77,13 +77,13 @@ if (executeAction)
 if (myVariable)
 {
     global.doubleTapDodge = true;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     
     global.doubleTapDodge = false;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

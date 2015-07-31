@@ -34,7 +34,7 @@ myBoxSprite = spr_toggle_box_small;
 myVariable = (global.masterVolume)*10;
 myVariableMax = 10;
 
-labelString = 'MASTER VOLUME';
+labelString = loc_key("SETTINGS_MASTER");
 myValueString = string(myVariable);
 
 textOffsetX = (point_distance(x,y,bbox_right,y)) - 62;
@@ -73,7 +73,7 @@ if (executeAction)
 }
 
 global.masterVolume = myVariable/10;
-labelString = 'MASTER VOLUME';
+
 myValueString = string(myVariable);
 
 if (arrowClicked)

@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Sprint/Dash';
+labelString = loc_key("MAPPING_SPRINT");
 </string>
           </argument>
         </arguments>

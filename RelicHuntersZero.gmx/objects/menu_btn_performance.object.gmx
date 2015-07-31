@@ -29,8 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'VIDEO OPTIONS';
-
+labelString = loc_key("SETTINGS_PERFORMANCE");
 </string>
           </argument>
         </arguments>

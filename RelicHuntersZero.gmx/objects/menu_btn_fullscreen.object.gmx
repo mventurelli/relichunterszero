@@ -30,17 +30,17 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'WINDOW MODE';
+labelString = loc_key("PERFORMANCE_FULLSCREEN");
 
 if (global.fullscreen)
 {
     myVariable = 1;
-    myValueString = 'FULL';
+    myValueString = loc_key("PERFORMANCE_FULLSCREEN_FULL");
 }
 else 
 {
     myVariable = 0;
-    myValueString = 'WINDOW';
+    myValueString = loc_key("PERFORMANCE_FULLSCREEN_WINDOW");
 }
 
 myVariableMax = 1;
@@ -77,13 +77,13 @@ if (executeAction)
 if (myVariable)
 {
     global.fullscreen = true;
-    myValueString = 'FULL';
+    myValueString = loc_key("PERFORMANCE_FULLSCREEN_FULL");
 }
 else 
 {
     
     global.fullscreen = false;
-    myValueString = 'WINDOW';
+    myValueString = loc_key("PERFORMANCE_FULLSCREEN_WINDOW");
 }
 </string>
           </argument>

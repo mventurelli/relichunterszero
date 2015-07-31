@@ -52,6 +52,7 @@ sprite_dash = spr_duck3_dash;
 sprite_death = spr_duck3_death;
 sprite_death2 = spr_duck3_death2;
 sprite_death3 = spr_duck3_death3;
+sprite_death_precision = spr_duck_death_precision;
 
 if my_gun == noone
 {

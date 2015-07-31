@@ -28,7 +28,7 @@
             <string>///Main Attributes
 event_inherited();
 
-name = "Rocket Launcher";
+name = loc_key("WPNAME_ROCKETLAUNCHER");
 gui_info_weapon_create(class_player,c_white,name);
 
 specialProjectile = K_PROJECTILE_ROCKET;

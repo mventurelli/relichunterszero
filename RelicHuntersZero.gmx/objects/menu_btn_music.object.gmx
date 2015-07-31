@@ -34,7 +34,7 @@ myBoxSprite = spr_toggle_box_small;
 myVariable = (global.musicVolume)*10;
 myVariableMax = 10;
 
-labelString = 'MUSIC VOLUME';
+labelString = loc_key("SETTINGS_MUSIC");
 myValueString = string(myVariable);
 
 textOffsetX = (point_distance(x,y,bbox_right,y)) - 62;
@@ -74,7 +74,7 @@ if (executeAction)
 }
 
 global.musicVolume = myVariable/10;
-labelString = 'MUSIC VOLUME';
+
 myValueString = string(myVariable);
 
 if (arrowClicked)

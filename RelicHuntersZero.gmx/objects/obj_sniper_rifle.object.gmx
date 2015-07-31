@@ -28,7 +28,7 @@
             <string>///Main Attributes
 event_inherited();
 
-name = "Sniper Rifle";
+name = loc_key("WPNAME_SNIPERRIFLE");
 gui_info_weapon_create(class_player,c_white,name);
 
 object = obj_sniper_rifle;

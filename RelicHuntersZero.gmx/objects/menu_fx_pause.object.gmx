@@ -32,11 +32,11 @@ event_inherited();
 textXOffset = view_xview[0]+(point_distance(x,y,bbox_left,y) - x) + 10;
 textYOffset = 0;
 
-myFont = font_menu18;
-myText = 'GAME PAUSED';
+myFont = global.font_menuLarge;
+myText = loc_key("PAUSE_FXPAUSE");
 
-myFont2 = font_menu10;
-myText2 = 'THIS IS A BUG';
+myFont2 = global.font_menuSmall;
+myText2 = 'I AM ERROR';
 
 if (room == room_start) || (room==room_tutorial) myText2 = 'SPACEHEART';
 if (room == room_shop) myText2 = 'ASS SHOP';

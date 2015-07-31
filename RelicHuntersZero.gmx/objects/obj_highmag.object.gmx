@@ -28,7 +28,7 @@
             <string>///Main Attributes
 event_inherited();
 
-name = "Highmag";
+name = loc_key("WPNAME_HIGHMAG");
 gui_info_weapon_create(class_player,c_white,name);
 
 object = obj_highmag;

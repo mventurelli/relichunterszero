@@ -28,7 +28,7 @@
             <string>///Unlock and Draw Weapon
 event_inherited();
 price = global.price_heavy3;
-weaponName = "EXTRA HEAVY AMMO";
+weaponName = loc_key("GENERAL_SHOP_HEAVYAMMO");
 
 if (unlock)
 {

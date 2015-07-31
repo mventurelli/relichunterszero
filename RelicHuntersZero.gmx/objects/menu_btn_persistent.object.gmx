@@ -30,17 +30,17 @@
 event_inherited();
 isAvailable = true;
 
-labelString = 'PERSISTENT OBJECTS';
+labelString = loc_key("PERFORMANCE_PERSISTENT");
 
 if (global.persistent_toggle)
 {
     myVariable = 1;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     myVariable = 0;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 
 myVariableMax = 1;
@@ -77,13 +77,13 @@ if (executeAction)
 if (myVariable)
 {
     global.persistent_toggle = true;
-    myValueString = 'ON';
+    myValueString = loc_key("SETTINGS_ON");
 }
 else 
 {
     
     global.persistent_toggle = false;
-    myValueString = 'OFF';
+    myValueString = loc_key("SETTINGS_OFF");
 }
 </string>
           </argument>

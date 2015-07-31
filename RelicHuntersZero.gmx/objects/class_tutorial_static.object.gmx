@@ -30,7 +30,7 @@
 depth = 99999999999999999999;
 image_speed = 0;
 
-myFont = font_wendy10;
+myFont = global.font_numberSmall;
 myColor = c_white;
 fontSep = 18;
 fontWidth = 150;

@@ -29,7 +29,7 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'Switch Weapon';
+labelString = loc_key("MAPPING_SWITCH");
 </string>
           </argument>
         </arguments>

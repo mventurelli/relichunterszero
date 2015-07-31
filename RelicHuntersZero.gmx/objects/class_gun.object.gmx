@@ -566,7 +566,7 @@ if (isActive) &amp;&amp; instance_exists(class_player)
         audio_play(owner.audio_emitter,false,1,sfx_click);
         guiInfo = instance_create(class_player.x,class_player.y,gui_info);
         guiInfo.colorMain = K_BETU_RED;
-        guiInfo.myString = 'Reloading';
+        guiInfo.myString = loc_key("INFO_RELOADING");
         guiInfo.owner = id;
     }
     else if (input_pressed) &amp;&amp; (!ammo_current)
@@ -575,7 +575,7 @@ if (isActive) &amp;&amp; instance_exists(class_player)
         guiInfo = instance_create(class_player.x,class_player.y,gui_info);
         guiInfo.owner = id;
         guiInfo.colorMain = K_BETU_RED;
-        guiInfo.myString = 'No Ammo';
+        guiInfo.myString = loc_key("INFO_OUTOFAMMO");
     }
     
     //Rate of Fire

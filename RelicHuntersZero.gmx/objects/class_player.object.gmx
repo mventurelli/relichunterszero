@@ -584,7 +584,7 @@ if global.input == 'keyboard' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
             //Low Stamina Feedback
             guiInfo = instance_create(x,y,gui_info);
             guiInfo.colorMain = K_BETU_RED;
-            guiInfo.myString = "Low Stamina";
+            guiInfo.myString = loc_key("INFO_LOWSTAMINA");
             guiInfo.owner = id;
             audio_play(audio_emitter, false, 1, sfx_pickup_full);
         }
@@ -653,7 +653,7 @@ if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
                 //Low Stamina Feedback
                 guiInfo = instance_create(x,y,gui_info);
                 guiInfo.colorMain = K_BETU_RED;
-                guiInfo.myString = "Low Stamina";
+                guiInfo.myString = loc_key("INFO_LOWSTAMINA");
                 guiInfo.owner = id;
                 audio_play(audio_emitter, false, 1, sfx_pickup_full);
             }
@@ -1010,7 +1010,7 @@ if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
             //Out of greandes feedback
             guiInfo = instance_create(x,y,gui_info);
             guiInfo.colorMain = K_BETU_RED;
-            guiInfo.myString = "Out of Grenades";
+            guiInfo.myString = loc_key("INFO_OUTOFGRENADES");
             guiInfo.owner = id;
             audio_play(audio_emitter, false, 1, sfx_pickup_full);
         }
@@ -1019,7 +1019,7 @@ if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
         //Pinky pinkyy grenade throw fail feedback
         guiInfo = instance_create(x,y,gui_info);
         guiInfo.colorMain = K_BETU_RED;
-        guiInfo.myString = "Can't Use Grenades";
+        guiInfo.myString = loc_key("INFO_CANTUSEGRENADES");
         guiInfo.owner = id;
         audio_play(audio_emitter, false, 1, sfx_pickup_full);
     }

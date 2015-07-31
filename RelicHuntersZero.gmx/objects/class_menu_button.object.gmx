@@ -30,7 +30,7 @@
 isAvailable = true;
 labelString = 'MISSING LABEL';
 allowConsoleSelection = true;
-myFont = font_menu14;
+myFont = global.font_menuMedium;
 
 myVariable = -99;
 myVariableMax = -99;

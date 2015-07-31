@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Name &amp; Description
 event_inherited();
-relicName = 'The Watchful Eye';
-relicDescription = '+ Maximum Ammo';
+relicName = loc_key("RELIC_WATCHFUL_NAME");
+relicDescription = loc_key("RELIC_WATCHFUL_LONG");
 </string>
           </argument>
         </arguments>

@@ -59,7 +59,7 @@ dirMax = 30;
 direction = 180 + random_range(dirMin,dirMax);
 friction = 0.05;
  
-random_fuck = false;
+randomizeDir = false;
 image_speed = 0.2;
 
 

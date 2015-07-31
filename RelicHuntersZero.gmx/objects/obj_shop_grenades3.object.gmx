@@ -28,7 +28,7 @@
             <string>///Unlock and Draw Weapon
 event_inherited();
 price = global.price_grenades3;
-weaponName = "MORE GRENADES";
+weaponName = loc_key("GENERAL_SHOP_GRENADES");
 
 if (unlock)
 {

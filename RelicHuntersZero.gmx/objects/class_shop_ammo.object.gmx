@@ -40,7 +40,7 @@ image_speed = 0;
 
 depth = -y-25;
 
-weaponName = "THIS IS A BUG";
+weaponName = "I AM ERROR";
 </string>
           </argument>
         </arguments>
@@ -75,8 +75,8 @@ if instance_exists(activationClient) &amp;&amp; (!unlock)
         audio_play(activationClient.audio_emitter,false,1,sfx_buy);
         
         announce = instance_create(x,y,fx_bigMessage);
-        announce.textBig = "NEW ITEM UNLOCKED!";
-        announce.textSmall = "YOU CAN NOW START WITH: "+string(weaponName);
+        announce.textBig = loc_key("HUD_UNLOCK_ITEM");
+        announce.textSmall = loc_key("HUD_UNLOCK_ITEM_GENERIC") + string(weaponName);
         
         if (instance_exists(global.dynamicAmmo1)) &amp;&amp; (sprite_index != spr_pickup_grenade)
         {
@@ -116,7 +116,7 @@ draw_sprite(sprite_index,image_index,x+12,y);
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
-draw_set_font(font_wendy_balloon);
+draw_set_font(global.font_shopPrice);
 
 if (global.score_total &gt;= price) color = c_white;
 else color = c_red;

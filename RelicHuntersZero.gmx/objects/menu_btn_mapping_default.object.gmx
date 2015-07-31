@@ -29,9 +29,9 @@
 
 event_inherited();
 isAvailable = true;
-labelString = 'RESET TO DEFAULT';
+labelString = loc_key("MAPPING_DEFAULT");
 
-myFont = font_menu10;
+myFont = global.font_menuSmall;
 </string>
           </argument>
         </arguments>

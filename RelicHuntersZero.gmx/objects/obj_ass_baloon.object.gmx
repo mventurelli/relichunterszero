@@ -42,90 +42,91 @@ audio_emitter_gain(audio_emitter,global.soundVolume);
 audio_play(audio_emitter,false,5,sfx_ass);
 
 
-myTextTarget = 'Im impressed you keep trying despite failing so much';
+myTextTarget = loc_key("ASS_RANDOM99");
 
 if (room == room_start)
 {
-    if (!global.tutorial_done) myTextTarget = 'Good morning, sunshine. Maybe you should try the tutorial first?';
-    else myTextTarget = 'I have located some relics down on Nemesis surface. Hop on the teleporter!';
+    if (!global.tutorial_done) myTextTarget = loc_key("ASS_TUTORIAL");
+    else myTextTarget = loc_key("ASS_GREETING");
     
-    if (global.first_stage_done) myTextTarget = 'Each relic has 3 parts. If you find any part, I’ll let you buy it from me.';
-    if (global.checkpoint1 = 1) myTextTarget = 'I could teleport you straight to Stage 2. Trouble worth some money, no?';
+    if (global.first_stage_done) myTextTarget = loc_key("ASS_FIRSTSTAGEDONE");
+    if (global.checkpoint1 = 1) myTextTarget = loc_key("ASS_CHECKPOINTREACHED");
     
     if (global.checkpoint1 &gt;= 2) &amp;&amp; (global.relic_pineapple_pudding) 
     {
         randomText = irandom(42);
-        if (randomText == 0) myTextTarget = 'Im sure you can deal with that Ducan Commander if you fail enough times.';
-        if (randomText == 1) myTextTarget = 'If I were you, Id buy everything from the previous Stage before progressing.';
-        if (randomText == 2) myTextTarget = 'You can equip up to 3 Relics at the same time. Try different combinations.';
-        if (randomText == 3) myTextTarget = 'Is this a little too hard on you? Poor Hunter.';
-        if (randomText == 4) myTextTarget = 'You wish this game had co-op, didnt you?';
-        if (randomText == 5) myTextTarget = 'Maybe Ill help you with the fighting next time.';
-        if (randomText == 6) myTextTarget = 'Thanks for buying all that stuff from me. I can afford new horseshoes now.';
-        if (randomText == 7) myTextTarget = 'My name might be "Ass", but Im not the one getting kicked out there';
-        if (randomText == 8) myTextTarget = 'I wonder if my dialogue ever repeats itself.';
-        if (randomText == 9) myTextTarget = 'To become invincible, press "left", "right" and then... no, just messing with ya.';
-        if (randomText == 10) myTextTarget = 'I would donate all of my money to whoever made this game.';
-        if (randomText == 11) myTextTarget = 'Think Im annoying? At least Im not throwing grenades at you.';
-        if (randomText == 12) myTextTarget = 'Ever wondered how I teleport the teleporters down to the asteroid?';
-        if (randomText == 13) myTextTarget = 'If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.';
-        if (randomText == 14) myTextTarget = 'I wonder if I could charge Bounty for my advice as well.';
-        if (randomText == 15) myTextTarget = 'Did you forget to hold right mouse button to aim this time?';
-        if (randomText == 16) myTextTarget = 'Was that a grenade that killed you this time? You must be getting tired.';
-        if (randomText == 17) myTextTarget = 'I heard that the developer wanted to implement several different endings.';
-        if (randomText == 18) myTextTarget = 'Do you like cats? I like cats.';
-        if (randomText == 19) myTextTarget = 'Im not much of a dog person anymore. Was once, though.';
-        if (randomText == 20) myTextTarget = 'Of course "Ass" is not my real name. Its "Assonius".';
-        if (randomText == 21) myTextTarget = 'Hahahahahahaha. Oh sorry, just remembering a joke in my head.';
-        if (randomText == 22) myTextTarget = 'Being in space for so long makes you wonder about the point of it all.';
-        if (randomText == 23) myTextTarget = 'Been thinking about the inherent misery of the human condition. Glad Im a Donkey.';
-        if (randomText == 24) myTextTarget = 'I could explain to you exactly how to beat this game, but you wouldnt understand.';
-        if (randomText == 25) myTextTarget = 'Im getting sleepy. Need coffee.';
-        if (randomText == 26) myTextTarget = 'Do you think this is going to take much longer? I miss our home.';
-        if (randomText == 27) myTextTarget = 'They told me Relic Hunting was dangerous, but Im feeling quite safe actually.';
-        if (randomText == 28) myTextTarget = 'Why is this stupid font so hard to read?';
-        if (randomText == 29) myTextTarget = 'This game was originally designed for Epic Game Jam.';
-        if (randomText == 30) myTextTarget = 'BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE';
-        if (randomText == 31) myTextTarget = 'Betu Souza drew me and all the art for this game';
-        if (randomText == 32) myTextTarget = 'Mark venturelli designed this game. Blame him for the overpowered ducks.';
-        if (randomText == 33) myTextTarget = 'Raphael Muller designed the sound of this game. And my lovely voice.';
-        if (randomText == 34) myTextTarget = 'Goto80 made all the music in the game. Buy his new album on Bandcamp';
-        if (randomText == 35) myTextTarget = 'There is no Ducan Commander. No, just kidding, he is the final boss.';
-        if (randomText == 36) myTextTarget = 'Can you beat this game? Im sure you cant.';
-        if (randomText == 37) myTextTarget = 'Whats the chance of that many comets flying by our window every time?';
-        if (randomText == 38) myTextTarget = 'Just realised for a moment that we are in SPACE. How cool is that?';
-        if (randomText == 39) myTextTarget = 'The Ducan Dinasty is after our relics. Gotta get them before they do.';
-        if (randomText == 40) myTextTarget = 'Ive heard there are flying monsters down there. Scary stuff.';
-        if (randomText == 41) myTextTarget = 'Where are my arms? Why do I have no arms?';
-        if (randomText == 42) myTextTarget = 'I can say 42 different things. Makes you wonder, does it not? :O';
+        if (randomText == 0) myTextTarget = loc_key("ASS_RANDOM00");
+        if (randomText == 1) myTextTarget = loc_key("ASS_RANDOM01");
+        if (randomText == 2) myTextTarget = loc_key("ASS_RANDOM02");
+        if (randomText == 3) myTextTarget = loc_key("ASS_RANDOM03");
+        if (randomText == 4) myTextTarget = loc_key("ASS_RANDOM04");
+        if (randomText == 5) myTextTarget = loc_key("ASS_RANDOM05");
+        if (randomText == 6) myTextTarget = loc_key("ASS_RANDOM06");
+        if (randomText == 7) myTextTarget = loc_key("ASS_RANDOM07");
+        if (randomText == 8) myTextTarget = loc_key("ASS_RANDOM08");
+        if (randomText == 9) myTextTarget = loc_key("ASS_RANDOM09");
+        if (randomText == 10) myTextTarget = loc_key("ASS_RANDOM10");
+        if (randomText == 11) myTextTarget = loc_key("ASS_RANDOM11");
+        if (randomText == 12) myTextTarget = loc_key("ASS_RANDOM12");
+        if (randomText == 13) myTextTarget = loc_key("ASS_RANDOM13");
+        if (randomText == 14) myTextTarget = loc_key("ASS_RANDOM14");
+        if (randomText == 15) myTextTarget = loc_key("ASS_RANDOM15");
+        if (randomText == 16) myTextTarget = loc_key("ASS_RANDOM16");
+        if (randomText == 17) myTextTarget = loc_key("ASS_RANDOM17");
+        if (randomText == 18) myTextTarget = loc_key("ASS_RANDOM18");
+        if (randomText == 19) myTextTarget = loc_key("ASS_RANDOM19");
+        if (randomText == 20) myTextTarget = loc_key("ASS_RANDOM20");
+        if (randomText == 21) myTextTarget = loc_key("ASS_RANDOM21");
+        if (randomText == 22) myTextTarget = loc_key("ASS_RANDOM22");
+        if (randomText == 23) myTextTarget = loc_key("ASS_RANDOM23");
+        if (randomText == 24) myTextTarget = loc_key("ASS_RANDOM24");
+        if (randomText == 25) myTextTarget = loc_key("ASS_RANDOM25");
+        if (randomText == 26) myTextTarget = loc_key("ASS_RANDOM26");
+        if (randomText == 27) myTextTarget = loc_key("ASS_RANDOM27");
+        if (randomText == 28) myTextTarget = loc_key("ASS_RANDOM28");
+        if (randomText == 29) myTextTarget = loc_key("ASS_RANDOM29");
+        if (randomText == 30) myTextTarget = loc_key("ASS_RANDOM30");
+        if (randomText == 31) myTextTarget = loc_key("ASS_RANDOM31");
+        if (randomText == 32) myTextTarget = loc_key("ASS_RANDOM32");
+        if (randomText == 33) myTextTarget = loc_key("ASS_RANDOM33");
+        if (randomText == 34) myTextTarget = loc_key("ASS_RANDOM34");
+        if (randomText == 35) myTextTarget = loc_key("ASS_RANDOM35");
+        if (randomText == 36) myTextTarget = loc_key("ASS_RANDOM36");
+        if (randomText == 37) myTextTarget = loc_key("ASS_RANDOM37");
+        if (randomText == 38) myTextTarget = loc_key("ASS_RANDOM38");
+        if (randomText == 39) myTextTarget = loc_key("ASS_RANDOM39");
+        if (randomText == 40) myTextTarget = loc_key("ASS_RANDOM40");
+        if (randomText == 41) myTextTarget = loc_key("ASS_RANDOM41");
+        if (randomText == 42) myTextTarget = loc_key("ASS_RANDOM42");
     }
     
-    if (!global.relic_pineapple_pudding) &amp;&amp; (global.checkpoint1 = 1) myTextTarget = 'Assemble the first relic by collecting all of its 3 pieces in Stage 1';
+    if (!global.relic_pineapple_pudding) &amp;&amp; (global.checkpoint1 = 1) myTextTarget = loc_key("ASS_FIRSTRELIC");
     
 }
 
 if (room == room_shop)
 {
-    if (global.shop_visits &lt;= 1) myTextTarget = 'While you were busy fighting everything, I found this stuff. Purchase away!';
-    if (global.shop_visits == 2) myTextTarget = 'A relic is useless until you find all 3 parts. Buy everything just in case.';
-    if (global.shop_visits == 3) myTextTarget = 'You can unlock weapons permanently for our Armory by buying them. From me.';
-    if (global.shop_visits &gt;= 4) myTextTarget = 'Im sure you will eventually buy your way to victory';
-    if (global.shop_visits &gt;= 10) myTextTarget = 'Buy something, will ya?';
-    if (global.shop_visits &gt;= 25) myTextTarget = 'How do these Relics work? It is a secret to everyone';
+    if (global.shop_visits &lt;= 1) myTextTarget = loc_key("ASS_SHOP1");
+    if (global.shop_visits == 2) myTextTarget = loc_key("ASS_SHOP2");
+    if (global.shop_visits == 3) myTextTarget = loc_key("ASS_SHOP3");
+    if (global.shop_visits &gt;= 4) myTextTarget = loc_key("ASS_SHOP4");
+    if (global.shop_visits &gt;= 10) myTextTarget = loc_key("ASS_SHOP5");
+    if (global.shop_visits &gt;= 25) myTextTarget = loc_key("ASS_SHOP6");
 }
 
-if (room == level1_1) myTextTarget = 'I should probably have told you about these armed goons around the site.';
-if (room == level1_2) myTextTarget = 'Was that a duck? These are not just thugs. They are Ducans, after our relics.';
-if (room == level1_3) myTextTarget = 'It seems local wildlife is not very friendly. Glad you found that out first.';
-if (room == level2_1) myTextTarget = 'If we take out the Ducan Commander, they will probably flee from the asteroid.';
-if (room == level2_2) myTextTarget = 'I’ve heard rumors about the Ducan Commander hanging out around Stage 4...';
-if (room == level2_3) myTextTarget = 'You can’t face the Commander without serious firepower and some relics.';
-if (room == level3_1) myTextTarget = 'Maybe Ill help you with the fighting next time';
-if (room == level3_2) myTextTarget = 'Hmm I actually meant the next time after this one';
-if (room == level3_3) myTextTarget = 'Relic Hunting sure sounds dangerous. Im glad you take most of the risks';
-if (room == level4_1) myTextTarget = 'Hmm. Maybe you do stand a chance against the Ducan Commander';
-if (room == level4_2) myTextTarget = 'Now you were just lucky. No shame in admitting it';
-if (room == level4_3) myTextTarget = 'Try not to die, ok? I need you to buy my overpriced stuff';
+if (room == level1_1) myTextTarget = loc_key("ASS_LEVEL1_1");
+if (room == level1_2) myTextTarget = loc_key("ASS_LEVEL1_2");
+if (room == level1_3) myTextTarget = loc_key("ASS_LEVEL1_3");
+if (room == level2_1) myTextTarget = loc_key("ASS_LEVEL2_1");
+if (room == level2_2) myTextTarget = loc_key("ASS_LEVEL2_2");
+if (room == level2_3) myTextTarget = loc_key("ASS_LEVEL2_3");
+if (room == level3_1) myTextTarget = loc_key("ASS_LEVEL3_1");
+if (room == level3_2) myTextTarget = loc_key("ASS_LEVEL3_2");
+if (room == level3_3) myTextTarget = loc_key("ASS_LEVEL3_3");
+if (room == level4_1) myTextTarget = loc_key("ASS_LEVEL4_1");
+if (room == level4_2) myTextTarget = loc_key("ASS_LEVEL4_2");
+if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
+
 </string>
           </argument>
         </arguments>
@@ -215,7 +216,7 @@ if (drawSelf)
         }
         else parser = '';
         
-        draw_set_font(font_pic_balloon);
+        draw_set_font(global.font_balloonText);
         draw_set_colour(c_black);
         draw_set_halign(fa_center);
         draw_set_valign(fa_top);
