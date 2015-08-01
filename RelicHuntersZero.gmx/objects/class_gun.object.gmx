@@ -377,14 +377,16 @@ if (isActive)
 
     if ( ((!ammo_current) &amp;&amp; !(global.relic_dev_potion == 2)) || (input_reloading) ) &amp;&amp; (!reloading) &amp;&amp; (ammo_current &lt; ammo) &amp;&amp; instance_exists(owner)
     {
-        if (ammo_type == type_light &amp;&amp; floor(global.ammo_light/ammo_cost)) || (ammo_type == type_medium &amp;&amp; floor(global.ammo_medium/ammo_cost)) || (ammo_type == type_heavy &amp;&amp; floor(global.ammo_heavy/ammo_cost)) || (ammo_type == type_grenade &amp;&amp; floor(global.ammo_grenade/ammo_cost))
+        var p = owner.myPlayerId;
+        
+        if (ammo_type == type_light &amp;&amp; floor(global.ammo_light[p]/ammo_cost)) || (ammo_type == type_medium &amp;&amp; floor(global.ammo_medium[p]/ammo_cost)) || (ammo_type == type_heavy &amp;&amp; floor(global.ammo_heavy[p]/ammo_cost)) || (ammo_type == type_grenade &amp;&amp; floor(global.ammo_grenade[p]/ammo_cost))
         {
             ammo_diff = (ammo - ammo_current);
             
-            if (ammo_type = type_light) ammo_diff = min(ammo_diff,floor(global.ammo_light/ammo_cost));
-            if (ammo_type = type_medium) ammo_diff = min(ammo_diff,floor(global.ammo_medium/ammo_cost));
-            if (ammo_type = type_heavy) ammo_diff = min(ammo_diff,floor(global.ammo_heavy/ammo_cost));
-            if (ammo_type = type_grenade) ammo_diff = min(ammo_diff,floor(global.ammo_grenade/ammo_cost));
+            if (ammo_type = type_light) ammo_diff = min(ammo_diff,floor(global.ammo_light[p]/ammo_cost));
+            if (ammo_type = type_medium) ammo_diff = min(ammo_diff,floor(global.ammo_medium[p]/ammo_cost));
+            if (ammo_type = type_heavy) ammo_diff = min(ammo_diff,floor(global.ammo_heavy[p]/ammo_cost));
+            if (ammo_type = type_grenade) ammo_diff = min(ammo_diff,floor(global.ammo_grenade[p]/ammo_cost));
             
             reloading = true;
             if (specialProjectile != K_PROJECTILE_ROCKET) 
@@ -397,6 +399,8 @@ if (isActive)
     
     if (reloading) &amp;&amp; instance_exists(owner)
     {
+        var p = owner.myPlayerId;
+        
         if (!owner.melee) reload_time_current++;
         
         if reload_time_current &gt;= reload_time
@@ -405,10 +409,10 @@ if (isActive)
             reloading = false;
             ammo_current += ammo_diff;
             
-            if (ammo_type = type_light) global.ammo_light -= ammo_diff*ammo_cost;
-            if (ammo_type = type_medium) global.ammo_medium -= ammo_diff*ammo_cost;
-            if (ammo_type = type_heavy) global.ammo_heavy -= ammo_diff*ammo_cost;
-            if (ammo_type = type_grenade) global.ammo_grenade -= ammo_diff*ammo_cost;
+            if (ammo_type = type_light) global.ammo_light[p] -= ammo_diff*ammo_cost;
+            if (ammo_type = type_medium) global.ammo_medium[p] -= ammo_diff*ammo_cost;
+            if (ammo_type = type_heavy) global.ammo_heavy[p] -= ammo_diff*ammo_cost;
+            if (ammo_type = type_grenade) global.ammo_grenade[p] -= ammo_diff*ammo_cost;
             
             if instance_exists(owner) audio_play(owner.audio_emitter,false,1,sfx_reload_end);
             if (audio_is_playing(sfx_reload_loop1)) audio_stop_sound(sfx_reload_loop1);

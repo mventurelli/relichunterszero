@@ -72,6 +72,7 @@ kill = false;
 if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
 {
     player = activationClient;
+    p = player.myPlayerId;
     
     if (point_distance(x,y,player.x,player.y) &lt;= range) in_range = true;
     
@@ -80,10 +81,10 @@ if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
         var want_to_die = false;
         var isAmmoFull = false;
         
-        if (sprite_index == spr_pickup_light) if (global.ammo_light &lt; global.ammo_light_max) { global.ammo_light += ammo; want_to_die = true;} else isAmmoFull = true;
-        if (sprite_index == spr_pickup_medium) if (global.ammo_medium &lt; global.ammo_medium_max) { global.ammo_medium += ammo; want_to_die = true;} else isAmmoFull = true;
-        if (sprite_index == spr_pickup_heavy) if (global.ammo_heavy &lt; global.ammo_heavy_max) { global.ammo_heavy += ammo; want_to_die = true;} else isAmmoFull = true;
-        if (sprite_index == spr_pickup_grenade) if (global.grenades &lt; global.grenades_max) { global.grenades += ammo; want_to_die = true;} else isAmmoFull = true;
+        if (sprite_index == spr_pickup_light) if (global.ammo_light[p] &lt; global.ammo_light_max) { global.ammo_light[p] += ammo; want_to_die = true;} else isAmmoFull = true;
+        if (sprite_index == spr_pickup_medium) if (global.ammo_medium[p] &lt; global.ammo_medium_max) { global.ammo_medium[p] += ammo; want_to_die = true;} else isAmmoFull = true;
+        if (sprite_index == spr_pickup_heavy) if (global.ammo_heavy[p] &lt; global.ammo_heavy_max) { global.ammo_heavy[p] += ammo; want_to_die = true;} else isAmmoFull = true;
+        if (sprite_index == spr_pickup_grenade) if (global.grenades[p] &lt; global.grenades_max) { global.grenades[p] += ammo; want_to_die = true;} else isAmmoFull = true;
 
         if (want_to_die)
         {

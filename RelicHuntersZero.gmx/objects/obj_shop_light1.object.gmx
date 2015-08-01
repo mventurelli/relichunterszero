@@ -36,14 +36,16 @@ if (unlock)
     ammo_object = obj_pickup_lightammo;
     
     //Pickup
-    if instance_exists(class_player)
+    if (activationClient) &amp;&amp; instance_exists(activationClient)
     {
+        var p = activationClient.myPlayerId;
+        
         ammo_box = instance_create(x,y,ammo_object);
         ammo_box.want_to_die = false;
-        if (sprite_index == spr_pickup_light) &amp;&amp; (global.ammo_light &lt; global.ammo_light_max) { global.ammo_light += ammo_box.ammo; ammo_box.want_to_die = true;}
-        if (sprite_index == spr_pickup_medium) &amp;&amp; (global.ammo_medium &lt; global.ammo_medium_max) { global.ammo_medium += ammo_box.ammo; ammo_box.want_to_die = true;}
-        if (sprite_index == spr_pickup_heavy) &amp;&amp; (global.ammo_heavy &lt; global.ammo_heavy_max) { global.ammo_heavy += ammo_box.ammo; ammo_box.want_to_die = true;}
-        if (sprite_index == spr_pickup_grenade) &amp;&amp; (global.grenades &lt; global.grenades_max) { global.grenades += ammo_box.ammo; ammo_box.want_to_die = true;}
+        if (sprite_index == spr_pickup_light) &amp;&amp; (global.ammo_light[p] &lt; global.ammo_light_max) { global.ammo_light[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
+        if (sprite_index == spr_pickup_medium) &amp;&amp; (global.ammo_medium[p] &lt; global.ammo_medium_max) { global.ammo_medium[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
+        if (sprite_index == spr_pickup_heavy) &amp;&amp; (global.ammo_heavy[p] &lt; global.ammo_heavy_max) { global.ammo_heavy[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
+        if (sprite_index == spr_pickup_grenade) &amp;&amp; (global.grenades[p] &lt; global.grenades_max) { global.grenades[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
 
         if (ammo_box.want_to_die) ammo_box.active = false
     }

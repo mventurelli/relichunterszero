@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Stuff
+            <string>///Bootstrap
+
+//Version
+global.currentVersionNumber = "BETA v0.11";
 
 //Setup
 goToNextRoom = false;
@@ -38,7 +41,6 @@ alarm[0] = room_speed*3; //spawn Logo
 alarm[1] = room_speed*6; //spawn FadetoBlack
 alarm[2] = room_speed*9; //go to next room
 
-
 // Sync Save
 save_sync_read();
 screen_update();
@@ -47,6 +49,8 @@ screen_update();
 global.loc_map = noone;
 loc_init();
 
+//Multiplayer
+global.playerCount = 1;
 
 // Debug Shit, don't mess with this
 audio_stop_all();

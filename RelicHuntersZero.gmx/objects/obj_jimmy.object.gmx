@@ -38,7 +38,7 @@ event_inherited();
     hp_max = 100;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
-    hp = global.hp;
+    hp = global.hp[myPlayerId];
     
     base_accuracy = 1;
     
@@ -68,20 +68,20 @@ event_inherited();
         //
     }
     
-    if global.weapon2 != noone
+    if global.weapon2[myPlayerId] != noone
     {
-        weapon2 = instance_create(x,y,global.weapon2);
+        weapon2 = instance_create(x,y,global.weapon2[myPlayerId]);
         weapon2.owner = id;
         draw_gun(weapon2);
-        if (room!=room_start) weapon2.ammo_current = global.weapon2_ammo;
+        if (room!=room_start) weapon2.ammo_current = global.weapon2_ammo[myPlayerId];
     }
     
-    if global.weapon1 != noone
+    if global.weapon1[myPlayerId] != noone
     {
-        weapon1 = instance_create(x,y,global.weapon1);
+        weapon1 = instance_create(x,y,global.weapon1[myPlayerId]);
         weapon1.owner = id;
         draw_gun(weapon1);
-        if (room!=room_start) weapon1.ammo_current = global.weapon1_ammo;
+        if (room!=room_start) weapon1.ammo_current = global.weapon1_ammo[myPlayerId];
     }
     else
     {
@@ -91,9 +91,9 @@ event_inherited();
     }
        
     //Draw Correct Gun
-    if (global.currentlyEquippedWeapon == 1) draw_gun(weapon1);
-    if (global.currentlyEquippedWeapon == 2) draw_gun(weapon2);
-    global.currentlyEquippedWeapon = 0;
+    if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
+    if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
+    global.currentlyEquippedWeapon[myPlayerId] = 0;
         
     
     
@@ -123,7 +123,7 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>///Character Swap
-if global.character != char_jimmy
+if global.character[myPlayerId] != char_jimmy
 {
     audio_emitter_free(audio_emitter);
     instance_destroy();

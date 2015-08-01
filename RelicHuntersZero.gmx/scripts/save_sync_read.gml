@@ -7,20 +7,28 @@ ini_open(working_directory + "\saveData.ini");
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
-    global.character = ini_read_real('Character','Character',char_jimmy);
-    global.weapon1 = ini_read_real('Character','Weapon1',noone);
-    global.weapon2 = ini_read_real('Character','Weapon2',noone);
-    global.weapon1_ammo = ini_read_real('Character','Ammo1',999);
-    global.weapon2_ammo = ini_read_real('Character','Ammo2',999);
-    global.hp = ini_read_real('Character','Health',999999);
-        
-    global.ammo_light = ini_read_real('Character','Ammo Light',20);
-    global.ammo_medium = ini_read_real('Character','Ammo Medium',0);
-    global.ammo_heavy = ini_read_real('Character','Ammo Heavy',0);
-    global.grenades = ini_read_real('Character','Grenades',0);
     
-    if (room != room_start) global.currentlyEquippedWeapon = ini_read_real('Character','currentlyEquippedWeapon',0);
-    else global.currentlyEquippedWeapon = 0;
+    global.playerCount = ini_read_real('Character','playerCount',1);
+    
+    var p = 1; while (p <= global.playerCount)
+    {
+        global.character[p] = ini_read_real('Character','Character'+string(p),char_jimmy);
+        global.weapon1[p] = ini_read_real('Character','Weapon1Player'+string(p),noone);
+        global.weapon2[p] = ini_read_real('Character','Weapon2Player'+string(p),noone);
+        global.weapon1_ammo[p] = ini_read_real('Character','Ammo1Player'+string(p),999);
+        global.weapon2_ammo[p] = ini_read_real('Character','Ammo2Player'+string(p),999);
+        global.hp[p] = ini_read_real('Character','Health'+string(p),999999);
+            
+        global.ammo_light[p] = ini_read_real('Character','Ammo Light'+string(p),20);
+        global.ammo_medium[p] = ini_read_real('Character','Ammo Medium'+string(p),0);
+        global.ammo_heavy[p] = ini_read_real('Character','Ammo Heavy'+string(p),0);
+        global.grenades[p] = ini_read_real('Character','Grenades'+string(p),0);
+        
+        if (room != room_start) global.currentlyEquippedWeapon[p] = ini_read_real('Character','currentlyEquippedWeapon'+string(p),0);
+        else global.currentlyEquippedWeapon[p] = 0;
+        
+        p++;
+    }
     
     global.stage_current = ini_read_real('Temp','Stage',0);
     global.hasPickedWeapon = ini_read_real('Temp','WeaponPickedUp',0);

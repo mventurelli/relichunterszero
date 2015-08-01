@@ -21,42 +21,56 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Quality','Master Music',global.musicVolume);
     ini_write_real('Quality','Master Sound',global.soundVolume);
 
-    
-    if instance_exists(class_player)
+    ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
+    ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
+        
+    ini_write_real('Character','playerCount',global.playerCount);
+        
+    var p = 1;
+    var playerInstanceNumber = 0;
+    while (p <= global.playerCount)
     {
+        ini_write_real('Character', 'Character' +string(p), global.character[p]);
+        ini_write_real('Character', 'Ammo Light' +string(p), global.ammo_light[p]);
+        ini_write_real('Character', 'Ammo Medium' +string(p), global.ammo_medium[p]);
+        ini_write_real('Character', 'Ammo Heavy' +string(p), global.ammo_heavy[p]);
+        ini_write_real('Character', 'Grenades' +string(p), global.grenades[p]);
         
-        if instance_exists(class_player.weapon1)
+        var playerInstanceCount = instance_number(class_player);
+        var curPlayer = instance_find(class_player,playerInstanceNumber);
+        
+        if (curPlayer) && instance_exists(curPlayer)
         {
-            ini_write_real('Character','Weapon1',class_player.weapon1.object);
-            ini_write_real('Character','Ammo1',class_player.weapon1.ammo_current);
+            if instance_exists(curPlayer.weapon1)
+            {
+                ini_write_real('Character','Weapon1Player'+string(p),curPlayer.weapon1.object);
+                ini_write_real('Character','Ammo1Player'+string(p),curPlayer.weapon1.ammo_current);
+            }
+            else ini_write_real('Character','Weapon1Player'+string(p),noone);
+        
+            if instance_exists(curPlayer.weapon2)
+            {
+                ini_write_real('Character','Weapon2Player'+string(p),curPlayer.weapon2.object);
+                ini_write_real('Character','Ammo2Player'+string(p),curPlayer.weapon2.ammo_current);
+            }
+            else ini_write_real('Character','Weapon2Player'+string(p),noone);
+            
+            ini_write_real('Character','Health'+string(p),curPlayer.hp);
+            
+            if (curPlayer.myGun == curPlayer.weapon1 ) global.currentlyEquippedWeapon[p] = 1;
+            if (curPlayer.myGun == curPlayer.weapon2) global.currentlyEquippedWeapon[p] = 2;
+            
+            ini_write_real('Character','currentlyEquippedWeapon'+string(p),global.currentlyEquippedWeapon[p]);
         }
-        else ini_write_real('Character','Weapon1',noone);
-    
-        if instance_exists(class_player.weapon2)
-        {
-            ini_write_real('Character','Weapon2',class_player.weapon2.object);
-            ini_write_real('Character','Ammo2',class_player.weapon2.ammo_current);
-        }
-        else ini_write_real('Character','Weapon2',noone);
         
-        ini_write_real('Character','Health',class_player.hp);
-        
-        if (class_player.myGun == class_player.weapon1 ) global.currentlyEquippedWeapon = 1;
-        if (class_player.myGun == class_player.weapon2) global.currentlyEquippedWeapon = 2;
-        
-        ini_write_real('Character','currentlyEquippedWeapon',global.currentlyEquippedWeapon);
+        p++;
+        playerInstanceNumber++;
     }
+    
+    
         
-        ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
-        ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
         
-        ini_write_real('Character','Character',global.character);
-        
-        ini_write_real('Character','Ammo Light',global.ammo_light);
-        ini_write_real('Character','Ammo Medium',global.ammo_medium);
-        ini_write_real('Character','Ammo Heavy',global.ammo_heavy);
-        ini_write_real('Character','Grenades',global.grenades);
-        
+ 
         ini_write_real('Persistence','UnlockPinky',global.unlockPinky);
         ini_write_real('Persistence','UnlockRaff',global.unlockRaff);
         ini_write_real('Persistence','UnlockBiu',global.unlockBiu);
@@ -180,7 +194,6 @@ ini_open(working_directory + "\saveData.ini");
 
     // Joystick Input
     // Null buttons must be "-99" instead of just "-1" to avoid Mouse button issues
-    
     
     // Steam
     ini_write_real('Steam','ScreenshotNumber',global.screenShotNumber);

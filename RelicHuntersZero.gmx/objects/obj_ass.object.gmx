@@ -109,7 +109,7 @@ if ((global.unlockAss) &amp;&amp; (room==room_start))
 }
 else drawSelf = true;
 
-if (global.character == char_ass)
+if (global.character[1] == char_ass) || (global.character[2] == char_ass)
 {
     drawBalloon = false;
     drawSelf = false;

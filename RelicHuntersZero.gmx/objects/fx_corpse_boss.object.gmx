@@ -76,32 +76,32 @@ if (global.hasUsedCheckpoint == false) &amp;&amp; (!global.unlockBiu)
     announce.hunterUnlockSprite = spr_hud_face_biu; 
 }
 
-if (global.character == char_raff) &amp;&amp; (global.hasUsedCheckpoint == false)
+if (global.character[1] == char_raff || global.character[2] == char_raff) &amp;&amp; (global.hasUsedCheckpoint == false)
 {
     achievement_give("ACHIEVEMENT_ULTIMATERAFF");
 }
 
-if (global.character == char_punny) &amp;&amp; (global.hasUsedCheckpoint == false)
+if (global.character[1] == char_punny || global.character[2] == char_punny) &amp;&amp; (global.hasUsedCheckpoint == false)
 {
     achievement_give("ACHIEVEMENT_ULTIMATEPUNNY");
 }
 
-if (global.character == char_jimmy) &amp;&amp; (global.hasUsedCheckpoint == false) &amp;&amp; (global.hasPickedWeapon == false) 
+if (global.character[1] == char_jimmy || global.character[2] == char_jimmy) &amp;&amp; (global.hasUsedCheckpoint == false) &amp;&amp; (global.hasPickedWeapon == false) 
 {
     achievement_give("ACHIEVEMENT_JIMMYNOWEAPONS");
 }
 
-if (global.character == char_biu) &amp;&amp; (global.hasUsedCheckpoint == false) &amp;&amp; (global.hasPickedWeapon == false) 
+if (global.character[1] == char_biu || global.character[2] == char_biu) &amp;&amp; (global.hasUsedCheckpoint == false) &amp;&amp; (global.hasPickedWeapon == false) 
 {
     achievement_give("ACHIEVEMENT_BIUNOWEAPONS");
 }
 
-if (global.character == char_ass)
+if (global.character[1] == char_ass) || (global.character[2] == char_ass)
 {
     achievement_give("ACHIEVEMENT_BEATGAMEWITHASS");
 }
 
-if (global.character == char_pinky) &amp;&amp; (global.hasUsedCheckpoint == false)
+if (global.character[1] == char_pinky || global.character[2] == char_pinky ) &amp;&amp; (global.hasUsedCheckpoint == false)
 {
     achievement_give("ACHIEVEMENT_ULTIMATEPINKY");
 }

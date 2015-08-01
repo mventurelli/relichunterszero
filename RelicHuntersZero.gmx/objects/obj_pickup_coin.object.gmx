@@ -238,7 +238,7 @@ if (myTime &gt;= life_time)
 if (vertical_speed_start &lt; interactive_speed) &amp;&amp; (instance_exists(other))
 {
     var myScore = 10;
-    if (global.character == char_ass) myScore = 20;
+    if (global.character[1] == char_ass || global.character[2] == char_ass) myScore = 20;
     
     global.score_total += myScore;
     global.statTotalBounty += myScore;

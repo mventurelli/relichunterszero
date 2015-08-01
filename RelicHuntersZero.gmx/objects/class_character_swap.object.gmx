@@ -72,12 +72,14 @@ oldWeapon2 = noone;
 
 if instance_exists(activationClient) &amp;&amp; (active)
 {
+    var p = activationClient.myPlayerId;
+    
     if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;
 
     if (wantToActivate) &amp;&amp; (in_range)
     {
-        global.weapon1 = oldWeapon1;
-        global.weapon2 = oldWeapon2;
+        global.weapon1[p] = oldWeapon1;
+        global.weapon2[p] = oldWeapon2;
         
         if instance_exists(activationClient.weapon1) oldWeapon1 = activationClient.weapon1.object;
         else oldWeapon1 = noone;
@@ -87,40 +89,42 @@ if instance_exists(activationClient) &amp;&amp; (active)
     
         if (myCharacter == char_pinky) 
         {
-            myCharacter = global.character;
-            global.character = char_pinky;
-            instance_create(activationClient.x,activationClient.y,obj_pinky);
+            myCharacter = global.character[p];
+            global.character[p] = char_pinky;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_pinky);
         }
         else if (myCharacter == char_jimmy) 
         {
-            myCharacter = global.character;
-            global.character = char_jimmy;
-            instance_create(activationClient.x,activationClient.y,obj_jimmy);
+            myCharacter = global.character[p];
+            global.character[p] = char_jimmy;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_jimmy);
         }
         else if (myCharacter == char_raff) 
         {
-            myCharacter = global.character;
-            global.character = char_raff;
-            instance_create(activationClient.x,activationClient.y,obj_raff);
+            myCharacter = global.character[p];
+            global.character[p] = char_raff;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_raff);
         }
         else if (myCharacter == char_biu) 
         {
-            myCharacter = global.character;
-            global.character = char_biu;
-            instance_create(activationClient.x,activationClient.y,obj_biu);
+            myCharacter = global.character[p];
+            global.character[p] = char_biu;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_biu);
         }
         else if (myCharacter == char_punny) 
         {
-            myCharacter = global.character;
-            global.character = char_punny;
-            instance_create(activationClient.x,activationClient.y,obj_punny);
+            myCharacter = global.character[p];
+            global.character[p] = char_punny;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_punny);
         }
         else if (myCharacter == char_ass) 
         {
-            myCharacter = global.character;
-            global.character = char_ass;
-            instance_create(activationClient.x,activationClient.y,obj_assPlayer);
+            myCharacter = global.character[p];
+            global.character[p] = char_ass;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_assPlayer);
         }
+        
+        newChar.myPlayerId = p;
     }
 }
 </string>

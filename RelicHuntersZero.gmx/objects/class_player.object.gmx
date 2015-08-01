@@ -999,9 +999,9 @@ if (global.input == 'joystick')
 
 if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
 {
-    if (global.character != char_pinky)
+    if (global.character[myPlayerId] != char_pinky)
     {
-        if (global.grenades)
+        if (global.grenades[myPlayerId])
         {
             throw = true;
             audio_play(audio_emitter,false,1,sfx_melee);
@@ -1030,7 +1030,7 @@ if (throw) &amp;&amp; (animation_current == 'melee')
 {
     if (animation_index = melee_hit_frame)
     {
-        global.grenades--;
+        global.grenades[myPlayerId]--;
     
         myGrenade = instance_create(x,y,obj_grenadeNew);
         myGrenade.speed = grenade_speed;
@@ -1143,6 +1143,12 @@ if (hp &gt;= hp_max) hp = hp_max;
 if (hp &lt;= 0) 
 {
     corpse = instance_create(x,y,fx_corpse_player);
+    if (global.character[myPlayerId] == char_jimmy) corpse.sprite_index = spr_jimmy_death;
+    if (global.character[myPlayerId] == char_pinky) corpse.sprite_index = spr_pinky_death;
+    if (global.character[myPlayerId] == char_raff) corpse.sprite_index = spr_raff_death;
+    if (global.character[myPlayerId] == char_biu) corpse.sprite_index = spr_biu_death;
+    if (global.character[myPlayerId] == char_punny) corpse.sprite_index = spr_punny_death;
+    if (global.character[myPlayerId] == char_ass) corpse.sprite_index = spr_ass_death;
     instance_destroy();
 }
 else hp = round(hp);

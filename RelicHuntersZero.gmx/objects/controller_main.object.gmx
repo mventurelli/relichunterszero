@@ -342,17 +342,27 @@ save_sync_read();
 
 if (room == room_start) || (room == room_tutorial)
 {
-    global.character = char_jimmy;
-    global.weapon1 = noone;
-    global.weapon2 = noone;
-    global.hp = 999999;
-    
     global.stage_current = 1;
     
-    global.ammo_light = 80;
-    global.ammo_medium = 0;
-    global.ammo_heavy = 0;
-    global.grenades = 2;
+    global.character[1] = char_jimmy;
+    global.weapon1[1] = noone;
+    global.weapon2[1] = noone;
+    global.hp[1] = 999999;
+    
+    global.ammo_light[1] = 80;
+    global.ammo_medium[1] = 0;
+    global.ammo_heavy[1] = 0;
+    global.grenades[1] = 2;
+    
+    global.character[2] = char_pinky;
+    global.weapon1[2] = noone;
+    global.weapon2[2] = noone;
+    global.hp[2] = 999999;
+    
+    global.ammo_light[2] = 80;
+    global.ammo_medium[2] = 0;
+    global.ammo_heavy[2] = 0;
+    global.grenades[2] = 2;
 }
 
 if (room == room_start) global.stage_current = 0;
@@ -740,7 +750,7 @@ if (global.relic_watchful_eye == 2)
     global.ammo_medium_max = ammo_medium_max_regular + ammo_medium_max_relic;
     global.ammo_heavy_max = ammo_heavy_max_regular + ammo_heavy_max_relic;
     
-    if (global.character == char_biu) global.grenades_max = grenades_max_biu+grenades_max_relic;
+    if (global.character[1] == char_biu) || (global.character[2] == char_biu) global.grenades_max = grenades_max_biu+grenades_max_relic;
     else global.grenades_max = grenades_max_regular+grenades_max_relic;
 }
 else 
@@ -749,7 +759,7 @@ else
     global.ammo_medium_max = ammo_medium_max_regular;
     global.ammo_heavy_max = ammo_heavy_max_regular;
     
-    if (global.character == char_biu) global.grenades_max = grenades_max_biu;
+    if (global.character[1] == char_biu) || (global.character[2] == char_biu) global.grenades_max = grenades_max_biu;
     else global.grenades_max = grenades_max_regular;
 }
 </string>
@@ -866,15 +876,19 @@ if (global.pause)
             <kind>1</kind>
             <string>///Ammo Control
 
-if (global.ammo_light &gt; global.ammo_light_max) global.ammo_light = global.ammo_light_max;
-if (global.ammo_light &lt; 0) global.ammo_light = 0;
-if (global.ammo_medium &gt; global.ammo_medium_max) global.ammo_medium = global.ammo_medium_max;
-if (global.ammo_medium &lt; 0) global.ammo_medium = 0;
-if (global.ammo_heavy &gt; global.ammo_heavy_max) global.ammo_heavy = global.ammo_heavy_max;
-if (global.ammo_heavy &lt; 0) global.ammo_heavy = 0;
-if (global.grenades &gt; global.grenades_max) global.grenades = global.grenades_max;
-if (global.grenades &lt; 0) global.grenades = 0;
-
+var p = 1; while (p &lt;= global.playerCount)
+{
+    if (global.ammo_light[p] &gt; global.ammo_light_max) global.ammo_light[p] = global.ammo_light_max;
+    if (global.ammo_light[p] &lt; 0) global.ammo_light[p] = 0;
+    if (global.ammo_medium[p] &gt; global.ammo_medium_max) global.ammo_medium[p] = global.ammo_medium_max;
+    if (global.ammo_medium[p] &lt; 0) global.ammo_medium[p] = 0;
+    if (global.ammo_heavy[p] &gt; global.ammo_heavy_max) global.ammo_heavy[p] = global.ammo_heavy_max;
+    if (global.ammo_heavy[p] &lt; 0) global.ammo_heavy[p] = 0;
+    if (global.grenades[p] &gt; global.grenades_max) global.grenades[p] = global.grenades_max;
+    if (global.grenades[p] &lt; 0) global.grenades[p] = 0;
+    
+    p++;
+}
 
 </string>
           </argument>
@@ -1181,12 +1195,19 @@ if (!level_built)
     player_spawn_number = instance_number(obj_spawn_player);
     random_spawn = irandom(player_spawn_number-1);
     target_spawn = instance_find(obj_spawn_player,random_spawn);
-    if (global.character == char_jimmy) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_jimmy);
-    if (global.character == char_pinky) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_pinky);
-    if (global.character == char_raff) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_raff);
-    if (global.character == char_biu) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_biu);
-    if (global.character == char_punny) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_punny);
-    if (global.character == char_ass) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_assPlayer);
+        
+    var p = 1; while (p &lt;= global.playerCount)
+    {
+        
+        if (global.character[p] == char_jimmy) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_jimmy);
+        if (global.character[p] == char_pinky) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_pinky);
+        if (global.character[p] == char_raff) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_raff);
+        if (global.character[p] == char_biu) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_biu);
+        if (global.character[p] == char_punny) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_punny);
+        if (global.character[p] == char_ass) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_assPlayer);
+        
+        p++;
+    }
     
     teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
     teleporter.active = false;
@@ -1849,422 +1870,430 @@ draw_set_alpha(main_hud_alpha);
 var width = 1920;
 var height = 1080;
 
-if instance_exists(class_player)
+var p = 1;
+var playerInstanceNumber = 0;
+while (p &lt;= global.playerCount)
 {
-    //Get Basic Player Values
-    energy = class_player.energy;
-    energy_max = class_player.energy_max;
-    hp = class_player.hp;
-    hp_max = class_player.hp_max;
-    stamina = class_player.stamina;
-    stamina_max = class_player.stamina_max;
-    
-    //Character Portrait 1
-    var charPortraitX = width*0.02;
-    var charPortraitY = height*0.09;
-    
-    if (class_player.hp &gt;= class_player.hp_max*0.66) { sprite_face = 0; healthColor = c_white; }
-    if (class_player.hp &lt; class_player.hp_max*0.66) { sprite_face = 1; healthColor = c_yellow; }
-    if (class_player.hp &lt; class_player.hp_max*0.33) { sprite_face = 2; healthColor = c_red; }
-    
-    if (global.character == char_jimmy) draw_sprite_ext(spr_hud_face_jimmy,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    if (global.character == char_pinky) draw_sprite_ext(spr_hud_face_pinky,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    if (global.character == char_raff) draw_sprite_ext(spr_hud_face_raff,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    if (global.character == char_biu) draw_sprite_ext(spr_hud_face_biu,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    if (global.character == char_punny) draw_sprite_ext(spr_hud_face_punny,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    if (global.character == char_ass) draw_sprite_ext(spr_hud_face_ass,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-    
-    //Character Bars
-    var charLifeBarTopX = width*0.08;
-    var charLifeBarTopY = height*0.062;
-    var charLifeBarWidth = 250;
-    var charLifeBarHeight = 70;
-    
-    var charShieldBarTopX = width*0.076;
-    var charShieldBarTopY = height*0.1;
-    var charShieldBarWidth = 230;
-    var charShieldBarHeight = 37;
-    
-    var charStaminaBarTopX = charShieldBarTopX;
-    var charStaminaBarTopY = charShieldBarTopY+charShieldBarHeight+6;
-    var charStaminaBarWidth = 230;
-    var charStaminaBarHeight = 10;
-    
-    draw_set_valign(fa_center);
-    draw_set_halign(fa_right);
-    
-    var charLifeColor = make_color_rgb(184,49,35);
-    var charShieldColor = make_color_rgb(50,133,158);
-    var charBarDelaySpeed = 0.008;
-    var charBarDelayTime = room_speed*0.6;
-    
-    //Health
-    draw_set_color(c_black);
-    draw_set_alpha(0.8*main_hud_alpha);
-    draw_rectangle(charLifeBarTopX,charLifeBarTopY,charLifeBarTopX+charLifeBarWidth,charLifeBarTopY+charLifeBarHeight,false);
-    draw_set_alpha(0.9*main_hud_alpha);
-    draw_healthbar_delayed(delayedCharHealthBar1, charLifeBarTopX-5,charLifeBarTopY-5,charLifeBarTopX+charLifeBarWidth-5,charLifeBarTopY+charLifeBarHeight-5, hp, hp_max, charLifeColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
-    draw_sprite_ext(spr_icon_health,0,charLifeBarTopX+20,charLifeBarTopY+20,1.5,1.5,0,c_white,main_hud_alpha);
-    
-    draw_set_color(c_white);
-    draw_set_font(global.font_numberLarge);
-    draw_text(charLifeBarTopX+charLifeBarWidth-14, charLifeBarTopY+14,string(hp));
-    
-    //Shields &amp; Stamina
-    draw_set_color(c_black);
-    draw_set_alpha(0.8*main_hud_alpha);
-    draw_rectangle(charShieldBarTopX,charShieldBarTopY,charShieldBarTopX+charShieldBarWidth,charShieldBarTopY+charShieldBarHeight,false);
-    draw_rectangle(charStaminaBarTopX,charStaminaBarTopY,charStaminaBarTopX+charStaminaBarWidth,charStaminaBarTopY+charStaminaBarHeight,false);
-    
-    draw_set_alpha(0.9*main_hud_alpha);
-    if (energy_max) draw_healthbar_delayed(delayedCharShieldBar1, charShieldBarTopX-5,charShieldBarTopY-5,charShieldBarTopX+charShieldBarWidth-5,charShieldBarTopY+charShieldBarHeight-5, energy, energy_max, charShieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
-    draw_sprite_ext(spr_icon_shield,0,charShieldBarTopX+20,charShieldBarTopY+(charShieldBarHeight/2),1.5,1.5,0,c_white,main_hud_alpha);
-    draw_set_color(c_white);
-    draw_set_font(global.font_numberMedium);
-    draw_text(charLifeBarTopX+charShieldBarWidth-16, charShieldBarTopY+12,string(energy));
-    
-    var staminaColor1,staminaColor2;
-    if (stamina &gt; (stamina_max/2)) staminaColor1 = c_white;
-    else staminaColor1 = c_gray;
-    if (stamina &gt;= (stamina_max)) staminaColor2 = c_white;
-    else staminaColor2 = c_gray;
-    draw_healthbar(charStaminaBarTopX-2, charStaminaBarTopY-2, charStaminaBarTopX+(charStaminaBarWidth/2)-4, charStaminaBarTopY+charStaminaBarHeight-2, min( 1,(stamina/(stamina_max/2)) )*100, c_black, staminaColor1, staminaColor1, 0, false, false);
-    var secondValue = stamina-(stamina_max/2);
-    if (secondValue) draw_healthbar(charStaminaBarTopX+(charStaminaBarWidth/2), charStaminaBarTopY-2, charStaminaBarTopX+charStaminaBarWidth-2, charStaminaBarTopY+charStaminaBarHeight-2, ( secondValue/(stamina_max/2 ))*100, c_black, staminaColor2, staminaColor2, 0, false, false);  
-    
-    
-    //Main Weapon HUD
-    var p1WeaponSelectedX = width*0.05;
-    var p1WeaponSelectedY = height*0.9;
-    var p1WeaponBackX = width*0.03;
-    var p1WeaponBackY = height*0.95;
-    
-    var p1WeaponSelected = noone;
-    var p1WeaponBack = noone;
-    
-    var p1StupidOffsetSelectedY = 0; //because of gloves and buckler. Not called "stupid" lightly
-    var p1StupidOffsetBackY = 0;
-    var p1StupidOverrideSpriteSelected = -1;
-    var p1StupidOverrideSpriteBack = -1;
-    
-    if (class_player.weapon1) &amp;&amp; (instance_exists(class_player.weapon1))
+    var curPlayer = instance_find(class_player,playerInstanceNumber);
+    if (curPlayer) &amp;&amp; instance_exists(curPlayer)
     {
-        if (class_player.weapon1.isActive) 
-        {
-            p1WeaponSelected = class_player.weapon1;  
-            if (class_player.weapon1 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
-            if (class_player.weapon1 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
-        }
-        else{
-            p1WeaponBack = class_player.weapon1;
-            if (class_player.weapon1 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
-            if (class_player.weapon1 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
-        }
-    }
-    if (class_player.weapon2) &amp;&amp; (instance_exists(class_player.weapon2))
-    {
-        if (p1WeaponSelected == noone) &amp;&amp; (class_player.weapon2.isActive)
-        {
-            p1WeaponSelected = class_player.weapon2;
-            if (class_player.weapon2 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
-            if (class_player.weapon2 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
-        }
-        else{
-            p1WeaponBack = class_player.weapon2;
-            if (class_player.weapon2 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
-            if (class_player.weapon2 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
-        }
-    }
-    
-    var p1WeaponSelectedSprite = -1;
-    var p1WeaponSelectedColor = c_black;
-    
-    if (instance_exists(p1WeaponSelected))
-    {
-        p1WeaponSelectedSprite = p1WeaponSelected.sprite_index;
-        if (p1WeaponSelected.ammo_type == type_light) p1WeaponSelectedColor = K_BETU_GREEN2;
-        if (p1WeaponSelected.ammo_type == type_medium) p1WeaponSelectedColor = K_BETU_RED;
-        if (p1WeaponSelected.ammo_type == type_heavy) p1WeaponSelectedColor = K_BETU_BLUE;
+        //Get Basic Player Values
+        energy = curPlayer.energy;
+        energy_max = curPlayer.energy_max;
+        hp = curPlayer.hp;
+        hp_max = curPlayer.hp_max;
+        stamina = curPlayer.stamina;
+        stamina_max = curPlayer.stamina_max;
         
-        if (p1StupidOverrideSpriteSelected) p1WeaponSelectedSprite = p1StupidOverrideSpriteSelected;
-    }
-    
-    var p1WeaponBackSprite = -1;
-    var p1WeaponBackColor = c_black;
-    
-    if (instance_exists(p1WeaponBack))
-    {
-        p1WeaponBackSprite = p1WeaponBack.sprite_index;
-        if (p1WeaponBack.ammo_type == type_light) p1WeaponBackColor = K_BETU_GREEN2;
-        if (p1WeaponBack.ammo_type == type_medium) p1WeaponBackColor = K_BETU_RED;
-        if (p1WeaponBack.ammo_type == type_heavy) p1WeaponBackColor = K_BETU_BLUE;
+        //Character Portrait 1
+        var charPortraitX = width*0.02;
+        var charPortraitY = height*0.09;
         
-        if (p1StupidOverrideSpriteBack) p1WeaponBackSprite = p1StupidOverrideSpriteBack;
-    }
-    
-    if (sprite_exists(p1WeaponSelectedSprite)) 
-    {
-        draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX+4, p1WeaponSelectedY+p1StupidOffsetSelectedY+4, 2, 2, 0, c_black, 0.8*main_hud_alpha);
-        draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX, p1WeaponSelectedY+p1StupidOffsetSelectedY, 2, 2, 0, p1WeaponSelectedColor, main_hud_alpha);
-    }
-    if (sprite_exists(p1WeaponBackSprite)) draw_sprite_ext(p1WeaponBackSprite, 2, p1WeaponBackX, p1WeaponBackY+p1StupidOffsetBackY, 2, 2, 0, p1WeaponBackColor, 0.8*main_hud_alpha);
-    
-    
-    //Ammo Numbers
-    
-    var p1AmmoNumberGunX = width*0.17;
-    var p1AmmoNumberGunY = height*0.9;
-    var p1AmmoNumberTotalX = p1AmmoNumberGunX+8;
-    var p1AmmoNumberTotalY = p1AmmoNumberGunY+18;
-    
-    var ammoBarTotalWidth = 40;
-    var ammoBarTotalHeight = 16;
-    var ammoBarDelaySpeed = 0.004;
-    var ammoBarDelayTime = room_speed*0.6;
-    var p1AmmoBarTotalX = p1AmmoNumberTotalX+(ammoBarTotalWidth/2);
-    var p1AmmoBarTotalY = p1AmmoNumberGunY-8;
-    
-    if (instance_exists(p1WeaponSelected))
-    {
-        //Gun Ammo
+        if (curPlayer.hp &gt;= curPlayer.hp_max*0.66) { sprite_face = 0; healthColor = c_white; }
+        if (curPlayer.hp &lt; curPlayer.hp_max*0.66) { sprite_face = 1; healthColor = c_yellow; }
+        if (curPlayer.hp &lt; curPlayer.hp_max*0.33) { sprite_face = 2; healthColor = c_red; }
+        
+        if (global.character[p] == char_jimmy) draw_sprite_ext(spr_hud_face_jimmy,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[p] == char_pinky) draw_sprite_ext(spr_hud_face_pinky,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[p] == char_raff) draw_sprite_ext(spr_hud_face_raff,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[p] == char_biu) draw_sprite_ext(spr_hud_face_biu,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[p] == char_punny) draw_sprite_ext(spr_hud_face_punny,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[p] == char_ass) draw_sprite_ext(spr_hud_face_ass,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        
+        //Character Bars
+        var charLifeBarTopX = width*0.08;
+        var charLifeBarTopY = height*0.062;
+        var charLifeBarWidth = 250;
+        var charLifeBarHeight = 70;
+        
+        var charShieldBarTopX = width*0.076;
+        var charShieldBarTopY = height*0.1;
+        var charShieldBarWidth = 230;
+        var charShieldBarHeight = 37;
+        
+        var charStaminaBarTopX = charShieldBarTopX;
+        var charStaminaBarTopY = charShieldBarTopY+charShieldBarHeight+6;
+        var charStaminaBarWidth = 230;
+        var charStaminaBarHeight = 10;
+        
+        draw_set_valign(fa_center);
         draw_set_halign(fa_right);
-        draw_set_valign(fa_center);
-        draw_set_font(global.font_numberVeryLarge);
-        draw_text_dropoutline_ext_transformed(p1AmmoNumberGunX, p1AmmoNumberGunY, string(p1WeaponSelected.ammo_current), c_white, c_white, c_black, 1, 5, 1, 1, 0, main_hud_alpha);
         
-        //Total Ammo
-        var p1AmmoTotal = 0;
-        var p1AmmoTotalMax = 0;
-        var p1AmmoBarId = -1;
-        if (p1WeaponSelected.ammo_type == type_light)   { p1AmmoTotal = global.ammo_light;    p1AmmoTotalMax = global.ammo_light_max;   p1AmmoBarId =  delayedAmmoLightBar; }
-        if (p1WeaponSelected.ammo_type == type_medium)  { p1AmmoTotal = global.ammo_medium;   p1AmmoTotalMax = global.ammo_medium_max;  p1AmmoBarId =  delayedAmmoMediumBar; }
-        if (p1WeaponSelected.ammo_type == type_heavy)   { p1AmmoTotal = global.ammo_heavy;    p1AmmoTotalMax = global.ammo_heavy_max;   p1AmmoBarId =  delayedAmmoHeavyBar; }
-        draw_set_halign(fa_left);
-        draw_set_valign(fa_center);
-        draw_set_font(global.font_numberMedium);
-        draw_text_dropshadow_ext_transformed(p1AmmoNumberTotalX, p1AmmoNumberTotalY, string(round(p1AmmoTotal/p1WeaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
-    
-        //Total Ammo Bar
+        var charLifeColor = make_color_rgb(184,49,35);
+        var charShieldColor = make_color_rgb(50,133,158);
+        var charBarDelaySpeed = 0.008;
+        var charBarDelayTime = room_speed*0.6;
         
+        //Health
+        draw_set_color(c_black);
+        draw_set_alpha(0.8*main_hud_alpha);
+        draw_rectangle(charLifeBarTopX,charLifeBarTopY,charLifeBarTopX+charLifeBarWidth,charLifeBarTopY+charLifeBarHeight,false);
+        draw_set_alpha(0.9*main_hud_alpha);
+        draw_healthbar_delayed(delayedCharHealthBar1, charLifeBarTopX-5,charLifeBarTopY-5,charLifeBarTopX+charLifeBarWidth-5,charLifeBarTopY+charLifeBarHeight-5, hp, hp_max, charLifeColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+        draw_sprite_ext(spr_icon_health,0,charLifeBarTopX+20,charLifeBarTopY+20,1.5,1.5,0,c_white,main_hud_alpha);
         
-        draw_healthbar_delayed(p1AmmoBarId, p1AmmoBarTotalX-(ammoBarTotalWidth/2), p1AmmoBarTotalY-(ammoBarTotalHeight/2), p1AmmoBarTotalX+(ammoBarTotalWidth/2), p1AmmoBarTotalY+(ammoBarTotalHeight/2), 
-        p1AmmoTotal, p1AmmoTotalMax, p1WeaponSelectedColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-    }
-    
-    //Grenades
-    var grenadesVerSpacing = 30;
-    var grenadesHorSpacing = 25;
-    
-    var p1GrenadesX = width*0.025;
-    var p1GrenadesY = height*0.85;
-    
-    var grenadeCount = global.grenades;
-    var grMaxHorizontal = 5;
-    var grDrawCount = 0;
-    var grOffsetX = 0;
-    var grOffsetY = 0;
-    
-    repeat (grenadeCount)
-    {
-        draw_sprite_ext(spr_grenadeNew,0,p1GrenadesX+grOffsetX, p1GrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
-        grOffsetX += grenadesHorSpacing;
-        grDrawCount++;
-        if (grDrawCount &gt;= grMaxHorizontal)
-        {
-            grOffsetX = 0;
-            grOffsetY -= grenadesVerSpacing;
-            grDrawCount = 0;
-        }
-    }
-    
-    
-    //gui_score Objects
-    if instance_exists(gui_score)
-    {
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_center);
-        
-        var drawScoreX = width*0.5;
-        var drawScoreY = height*0.15;
-        
+        draw_set_color(c_white);
         draw_set_font(global.font_numberLarge);
-        draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY,gui_score.myString,c_white,c_white,c_black,0.7,4,1,1,0,main_hud_alpha);
+        draw_text(charLifeBarTopX+charLifeBarWidth-14, charLifeBarTopY+14,string(hp));
         
-        draw_set_font(global.font_numberVeryLarge);
-        draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY+43,'+'+string(gui_score.value),c_white,c_white,c_black,0.7,4,gui_score.size_current,gui_score.size_current,0,main_hud_alpha);
-    }
-    
-    //fx_bigMessage Objects  
-    if instance_exists(fx_bigMessage)
-    {
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_center);
-        var drawBigX = width*0.5;
-        var drawBigY = height*0.62;
-    
-        for (var big=0; big&lt;instance_number(fx_bigMessage); big++)
+        //Shields &amp; Stamina
+        draw_set_color(c_black);
+        draw_set_alpha(0.8*main_hud_alpha);
+        draw_rectangle(charShieldBarTopX,charShieldBarTopY,charShieldBarTopX+charShieldBarWidth,charShieldBarTopY+charShieldBarHeight,false);
+        draw_rectangle(charStaminaBarTopX,charStaminaBarTopY,charStaminaBarTopX+charStaminaBarWidth,charStaminaBarTopY+charStaminaBarHeight,false);
+        
+        draw_set_alpha(0.9*main_hud_alpha);
+        if (energy_max) draw_healthbar_delayed(delayedCharShieldBar1, charShieldBarTopX-5,charShieldBarTopY-5,charShieldBarTopX+charShieldBarWidth-5,charShieldBarTopY+charShieldBarHeight-5, energy, energy_max, charShieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+        draw_sprite_ext(spr_icon_shield,0,charShieldBarTopX+20,charShieldBarTopY+(charShieldBarHeight/2),1.5,1.5,0,c_white,main_hud_alpha);
+        draw_set_color(c_white);
+        draw_set_font(global.font_numberMedium);
+        draw_text(charLifeBarTopX+charShieldBarWidth-16, charShieldBarTopY+12,string(energy));
+        
+        var staminaColor1,staminaColor2;
+        if (stamina &gt; (stamina_max/2)) staminaColor1 = c_white;
+        else staminaColor1 = c_gray;
+        if (stamina &gt;= (stamina_max)) staminaColor2 = c_white;
+        else staminaColor2 = c_gray;
+        draw_healthbar(charStaminaBarTopX-2, charStaminaBarTopY-2, charStaminaBarTopX+(charStaminaBarWidth/2)-4, charStaminaBarTopY+charStaminaBarHeight-2, min( 1,(stamina/(stamina_max/2)) )*100, c_black, staminaColor1, staminaColor1, 0, false, false);
+        var secondValue = stamina-(stamina_max/2);
+        if (secondValue) draw_healthbar(charStaminaBarTopX+(charStaminaBarWidth/2), charStaminaBarTopY-2, charStaminaBarTopX+charStaminaBarWidth-2, charStaminaBarTopY+charStaminaBarHeight-2, ( secondValue/(stamina_max/2 ))*100, c_black, staminaColor2, staminaColor2, 0, false, false);  
+        
+        
+        //Main Weapon HUD
+        var p1WeaponSelectedX = width*0.05;
+        var p1WeaponSelectedY = height*0.9;
+        var p1WeaponBackX = width*0.03;
+        var p1WeaponBackY = height*0.95;
+        
+        var p1WeaponSelected = noone;
+        var p1WeaponBack = noone;
+        
+        var p1StupidOffsetSelectedY = 0; //because of gloves and buckler. Not called "stupid" lightly
+        var p1StupidOffsetBackY = 0;
+        var p1StupidOverrideSpriteSelected = -1;
+        var p1StupidOverrideSpriteBack = -1;
+        
+        if (curPlayer.weapon1) &amp;&amp; (instance_exists(curPlayer.weapon1))
         {
-            var bigMessage = instance_find(fx_bigMessage,big);
-            if (bigMessage.active)
+            if (curPlayer.weapon1.isActive) 
             {
-                draw_set_font(bigMessage.textBigFont);
-                draw_text_dropoutline_ext_transformed(drawBigX,drawBigY,bigMessage.textBig,bigMessage.textBigColor,bigMessage.textBigColor,c_black,0.7,4,1,1,0, bigMessage.myAlpha);
-                
-                draw_set_font(bigMessage.textSmallFont);
-                draw_text_dropoutline_ext_transformed(drawBigX,drawBigY+43,bigMessage.textSmall,bigMessage.textSmallColor,bigMessage.textSmallColor,c_black,0.7,4,1,1,0, bigMessage.myAlpha);
+                p1WeaponSelected = curPlayer.weapon1;  
+                if (curPlayer.weapon1 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
+                if (curPlayer.weapon1 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
+            }
+            else{
+                p1WeaponBack = curPlayer.weapon1;
+                if (curPlayer.weapon1 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
+                if (curPlayer.weapon1 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
+            }
+        }
+        if (curPlayer.weapon2) &amp;&amp; (instance_exists(curPlayer.weapon2))
+        {
+            if (p1WeaponSelected == noone) &amp;&amp; (curPlayer.weapon2.isActive)
+            {
+                p1WeaponSelected = curPlayer.weapon2;
+                if (curPlayer.weapon2 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
+                if (curPlayer.weapon2 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
+            }
+            else{
+                p1WeaponBack = curPlayer.weapon2;
+                if (curPlayer.weapon2 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
+                if (curPlayer.weapon2 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
+            }
+        }
+        
+        var p1WeaponSelectedSprite = -1;
+        var p1WeaponSelectedColor = c_black;
+        
+        if (instance_exists(p1WeaponSelected))
+        {
+            p1WeaponSelectedSprite = p1WeaponSelected.sprite_index;
+            if (p1WeaponSelected.ammo_type == type_light) p1WeaponSelectedColor = K_BETU_GREEN2;
+            if (p1WeaponSelected.ammo_type == type_medium) p1WeaponSelectedColor = K_BETU_RED;
+            if (p1WeaponSelected.ammo_type == type_heavy) p1WeaponSelectedColor = K_BETU_BLUE;
             
-                if (bigMessage.relicCompleteSprite != -1) draw_sprite_ext(bigMessage.relicCompleteSprite,0,drawBigX,drawBigY-43,2,2,0,c_white,bigMessage.myAlpha);
-                else if (bigMessage.hunterUnlockSprite != -1) draw_sprite_ext(bigMessage.hunterUnlockSprite,0,drawBigX,drawBigY-50,1,1,0,c_white,bigMessage.myAlpha);
-                else if (bigMessage.relicSprite1 != -1)
+            if (p1StupidOverrideSpriteSelected) p1WeaponSelectedSprite = p1StupidOverrideSpriteSelected;
+        }
+        
+        var p1WeaponBackSprite = -1;
+        var p1WeaponBackColor = c_black;
+        
+        if (instance_exists(p1WeaponBack))
+        {
+            p1WeaponBackSprite = p1WeaponBack.sprite_index;
+            if (p1WeaponBack.ammo_type == type_light) p1WeaponBackColor = K_BETU_GREEN2;
+            if (p1WeaponBack.ammo_type == type_medium) p1WeaponBackColor = K_BETU_RED;
+            if (p1WeaponBack.ammo_type == type_heavy) p1WeaponBackColor = K_BETU_BLUE;
+            
+            if (p1StupidOverrideSpriteBack) p1WeaponBackSprite = p1StupidOverrideSpriteBack;
+        }
+        
+        if (sprite_exists(p1WeaponSelectedSprite)) 
+        {
+            draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX+4, p1WeaponSelectedY+p1StupidOffsetSelectedY+4, 2, 2, 0, c_black, 0.8*main_hud_alpha);
+            draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX, p1WeaponSelectedY+p1StupidOffsetSelectedY, 2, 2, 0, p1WeaponSelectedColor, main_hud_alpha);
+        }
+        if (sprite_exists(p1WeaponBackSprite)) draw_sprite_ext(p1WeaponBackSprite, 2, p1WeaponBackX, p1WeaponBackY+p1StupidOffsetBackY, 2, 2, 0, p1WeaponBackColor, 0.8*main_hud_alpha);
+        
+        
+        //Ammo Numbers
+        
+        var p1AmmoNumberGunX = width*0.17;
+        var p1AmmoNumberGunY = height*0.9;
+        var p1AmmoNumberTotalX = p1AmmoNumberGunX+8;
+        var p1AmmoNumberTotalY = p1AmmoNumberGunY+18;
+        
+        var ammoBarTotalWidth = 40;
+        var ammoBarTotalHeight = 16;
+        var ammoBarDelaySpeed = 0.004;
+        var ammoBarDelayTime = room_speed*0.6;
+        var p1AmmoBarTotalX = p1AmmoNumberTotalX+(ammoBarTotalWidth/2);
+        var p1AmmoBarTotalY = p1AmmoNumberGunY-8;
+        
+        if (instance_exists(p1WeaponSelected))
+        {
+            //Gun Ammo
+            draw_set_halign(fa_right);
+            draw_set_valign(fa_center);
+            draw_set_font(global.font_numberVeryLarge);
+            draw_text_dropoutline_ext_transformed(p1AmmoNumberGunX, p1AmmoNumberGunY, string(p1WeaponSelected.ammo_current), c_white, c_white, c_black, 1, 5, 1, 1, 0, main_hud_alpha);
+            
+            //Total Ammo
+            var p1AmmoTotal = 0;
+            var p1AmmoTotalMax = 0;
+            var p1AmmoBarId = -1;
+            if (p1WeaponSelected.ammo_type == type_light)   { p1AmmoTotal = global.ammo_light[p];    p1AmmoTotalMax = global.ammo_light_max;   p1AmmoBarId =  delayedAmmoLightBar; }
+            if (p1WeaponSelected.ammo_type == type_medium)  { p1AmmoTotal = global.ammo_medium[p];   p1AmmoTotalMax = global.ammo_medium_max;  p1AmmoBarId =  delayedAmmoMediumBar; }
+            if (p1WeaponSelected.ammo_type == type_heavy)   { p1AmmoTotal = global.ammo_heavy[p];    p1AmmoTotalMax = global.ammo_heavy_max;   p1AmmoBarId =  delayedAmmoHeavyBar; }
+            draw_set_halign(fa_left);
+            draw_set_valign(fa_center);
+            draw_set_font(global.font_numberMedium);
+            draw_text_dropshadow_ext_transformed(p1AmmoNumberTotalX, p1AmmoNumberTotalY, string(round(p1AmmoTotal/p1WeaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
+        
+            //Total Ammo Bar
+            
+            
+            draw_healthbar_delayed(p1AmmoBarId, p1AmmoBarTotalX-(ammoBarTotalWidth/2), p1AmmoBarTotalY-(ammoBarTotalHeight/2), p1AmmoBarTotalX+(ammoBarTotalWidth/2), p1AmmoBarTotalY+(ammoBarTotalHeight/2), 
+            p1AmmoTotal, p1AmmoTotalMax, p1WeaponSelectedColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+        }
+        
+        //Grenades
+        var grenadesVerSpacing = 30;
+        var grenadesHorSpacing = 25;
+        
+        var p1GrenadesX = width*0.025;
+        var p1GrenadesY = height*0.85;
+        
+        var grenadeCount = global.grenades[p];
+        var grMaxHorizontal = 5;
+        var grDrawCount = 0;
+        var grOffsetX = 0;
+        var grOffsetY = 0;
+        
+        repeat (grenadeCount)
+        {
+            draw_sprite_ext(spr_grenadeNew,0,p1GrenadesX+grOffsetX, p1GrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
+            grOffsetX += grenadesHorSpacing;
+            grDrawCount++;
+            if (grDrawCount &gt;= grMaxHorizontal)
+            {
+                grOffsetX = 0;
+                grOffsetY -= grenadesVerSpacing;
+                grDrawCount = 0;
+            }
+        }
+        
+        
+        //gui_score Objects
+        if instance_exists(gui_score)
+        {
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_center);
+            
+            var drawScoreX = width*0.5;
+            var drawScoreY = height*0.15;
+            
+            draw_set_font(global.font_numberLarge);
+            draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY,gui_score.myString,c_white,c_white,c_black,0.7,4,1,1,0,main_hud_alpha);
+            
+            draw_set_font(global.font_numberVeryLarge);
+            draw_text_dropoutline_ext_transformed(drawScoreX,drawScoreY+43,'+'+string(gui_score.value),c_white,c_white,c_black,0.7,4,gui_score.size_current,gui_score.size_current,0,main_hud_alpha);
+        }
+        
+        //fx_bigMessage Objects  
+        if instance_exists(fx_bigMessage)
+        {
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_center);
+            var drawBigX = width*0.5;
+            var drawBigY = height*0.62;
+        
+            for (var big=0; big&lt;instance_number(fx_bigMessage); big++)
+            {
+                var bigMessage = instance_find(fx_bigMessage,big);
+                if (bigMessage.active)
                 {
-                    var relicBlend;
-                    if (bigMessage.relicSprite1Draw) relicBlend = c_white;  else relicBlend = c_black;
-                    draw_sprite_ext(bigMessage.relicSprite1,0,drawBigX-70,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
-                    if (bigMessage.relicSprite2Draw) relicBlend = c_white;  else relicBlend = c_black;
-                    draw_sprite_ext(bigMessage.relicSprite2,0,drawBigX,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
-                    if (bigMessage.relicSprite3Draw) relicBlend = c_white;  else relicBlend = c_black;
-                    draw_sprite_ext(bigMessage.relicSprite3,0,drawBigX+70,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
+                    draw_set_font(bigMessage.textBigFont);
+                    draw_text_dropoutline_ext_transformed(drawBigX,drawBigY,bigMessage.textBig,bigMessage.textBigColor,bigMessage.textBigColor,c_black,0.7,4,1,1,0, bigMessage.myAlpha);
+                    
+                    draw_set_font(bigMessage.textSmallFont);
+                    draw_text_dropoutline_ext_transformed(drawBigX,drawBigY+43,bigMessage.textSmall,bigMessage.textSmallColor,bigMessage.textSmallColor,c_black,0.7,4,1,1,0, bigMessage.myAlpha);
+                
+                    if (bigMessage.relicCompleteSprite != -1) draw_sprite_ext(bigMessage.relicCompleteSprite,0,drawBigX,drawBigY-43,2,2,0,c_white,bigMessage.myAlpha);
+                    else if (bigMessage.hunterUnlockSprite != -1) draw_sprite_ext(bigMessage.hunterUnlockSprite,0,drawBigX,drawBigY-50,1,1,0,c_white,bigMessage.myAlpha);
+                    else if (bigMessage.relicSprite1 != -1)
+                    {
+                        var relicBlend;
+                        if (bigMessage.relicSprite1Draw) relicBlend = c_white;  else relicBlend = c_black;
+                        draw_sprite_ext(bigMessage.relicSprite1,0,drawBigX-70,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
+                        if (bigMessage.relicSprite2Draw) relicBlend = c_white;  else relicBlend = c_black;
+                        draw_sprite_ext(bigMessage.relicSprite2,0,drawBigX,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
+                        if (bigMessage.relicSprite3Draw) relicBlend = c_white;  else relicBlend = c_black;
+                        draw_sprite_ext(bigMessage.relicSprite3,0,drawBigX+70,drawBigY-43,2,2,0,relicBlend,bigMessage.myAlpha);
+                    }
                 }
             }
         }
-    }
-    
-    //Draw Dynamic Ammo Bars
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_center);
-    draw_set_alpha(main_hud_alpha);
-    
-    var dynamicAmmoX = -1*width*0.1;
-    var dynamicAmmoY1 = height*0.46;
-    var dynamicAmmoY2 = height*0.5;
-    var dynamicAmmoY3 = height*0.54;
-    var dynamicAmmoBarHeight = 32;
-    var dynamicAmmoBarWidth = 160;
         
-    var dynamicAmmoString1 = loc_key("GENERAL_LIGHTAMMO");
-    var dynamicAmmoString2 = loc_key("GENERAL_MEDIUMAMMO");
-    var dynamicAmmoString3 = loc_key("GENERAL_HEAVYAMMO");
-        
-    if (instance_exists(gui_dynamic_ammo1))
-    {
-        var bgX1 = dynamicAmmoX-(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
-        var bgX2 = dynamicAmmoX+(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
-        
-        var bg1Y1 = dynamicAmmoY1-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        var bg1Y2 = dynamicAmmoY1+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        var bg2Y1 = dynamicAmmoY2-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        var bg2Y2 = dynamicAmmoY2+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        var bg3Y1 = dynamicAmmoY3-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        var bg3Y2 = dynamicAmmoY3+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-        
-        draw_set_color(c_black);
-        draw_set_alpha(0.8*main_hud_alpha);
-        draw_rectangle(bgX1,bg1Y1,bgX2,bg1Y2,false);
-        draw_rectangle(bgX1,bg2Y1,bgX2,bg2Y2,false);
-        draw_rectangle(bgX1,bg3Y1,bgX2,bg3Y2,false);
-        
+        //Draw Dynamic Ammo Bars
         draw_set_halign(fa_center);
         draw_set_valign(fa_center);
         draw_set_alpha(main_hud_alpha);
-        var ammoBarLightColor = make_color_rgb(0,178,77);
-        var ammoBarMediumColor = make_color_rgb(178,0,65);
-        var ammoBarHeavyColor = make_color_rgb(0,88,178);
         
-        var ammoBarDelaySpeed = 0.004;
-        var ammoBarDelayTime = room_speed*0.6;
+        var dynamicAmmoX = -1*width*0.1;
+        var dynamicAmmoY1 = height*0.46;
+        var dynamicAmmoY2 = height*0.5;
+        var dynamicAmmoY3 = height*0.54;
+        var dynamicAmmoBarHeight = 32;
+        var dynamicAmmoBarWidth = 160;
+            
+        var dynamicAmmoString1 = loc_key("GENERAL_LIGHTAMMO");
+        var dynamicAmmoString2 = loc_key("GENERAL_MEDIUMAMMO");
+        var dynamicAmmoString3 = loc_key("GENERAL_HEAVYAMMO");
+            
+        if (instance_exists(gui_dynamic_ammo1))
+        {
+            var bgX1 = dynamicAmmoX-(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
+            var bgX2 = dynamicAmmoX+(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
+            
+            var bg1Y1 = dynamicAmmoY1-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg1Y2 = dynamicAmmoY1+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg2Y1 = dynamicAmmoY2-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg2Y2 = dynamicAmmoY2+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg3Y1 = dynamicAmmoY3-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg3Y2 = dynamicAmmoY3+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            
+            draw_set_color(c_black);
+            draw_set_alpha(0.8*main_hud_alpha);
+            draw_rectangle(bgX1,bg1Y1,bgX2,bg1Y2,false);
+            draw_rectangle(bgX1,bg2Y1,bgX2,bg2Y2,false);
+            draw_rectangle(bgX1,bg3Y1,bgX2,bg3Y2,false);
+            
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_center);
+            draw_set_alpha(main_hud_alpha);
+            var ammoBarLightColor = make_color_rgb(0,178,77);
+            var ammoBarMediumColor = make_color_rgb(178,0,65);
+            var ammoBarHeavyColor = make_color_rgb(0,88,178);
+            
+            var ammoBarDelaySpeed = 0.004;
+            var ammoBarDelayTime = room_speed*0.6;
+            
+            draw_healthbar_delayed(delayedAmmoLightBar, bgX1-2,bg1Y1-2,bgX2-2,bg1Y2-2, global.ammo_light[p], global.ammo_light_max, ammoBarLightColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(delayedAmmoMediumBar, bgX1-2,bg2Y1-2,bgX2-2,bg2Y2-2, global.ammo_medium[p], global.ammo_medium_max, ammoBarMediumColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(delayedAmmoHeavyBar, bgX1-2,bg3Y1-2,bgX2-2,bg3Y2-2, global.ammo_heavy[p], global.ammo_heavy_max, ammoBarHeavyColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
         
-        draw_healthbar_delayed(delayedAmmoLightBar, bgX1-2,bg1Y1-2,bgX2-2,bg1Y2-2, global.ammo_light, global.ammo_light_max, ammoBarLightColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-        draw_healthbar_delayed(delayedAmmoMediumBar, bgX1-2,bg2Y1-2,bgX2-2,bg2Y2-2, global.ammo_medium, global.ammo_medium_max, ammoBarMediumColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-        draw_healthbar_delayed(delayedAmmoHeavyBar, bgX1-2,bg3Y1-2,bgX2-2,bg3Y2-2, global.ammo_heavy, global.ammo_heavy_max, ammoBarHeavyColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-    
-        draw_set_font(global.font_numberSmall);
-        draw_set_halign(fa_left);
+            draw_set_font(global.font_numberSmall);
+            draw_set_halign(fa_left);
+            
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY1+gui_dynamic_ammo1.offsetY,dynamicAmmoString1,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY2+gui_dynamic_ammo1.offsetY,dynamicAmmoString2,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY3+gui_dynamic_ammo1.offsetY,dynamicAmmoString3,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+        }
         
-        draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY1+gui_dynamic_ammo1.offsetY,dynamicAmmoString1,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
-        draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY2+gui_dynamic_ammo1.offsetY,dynamicAmmoString2,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
-        draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY3+gui_dynamic_ammo1.offsetY,dynamicAmmoString3,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+        //Boss Fight Lifebar
+        if instance_exists(obj_boss)
+        {
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_center);
+            
+            var drawBossX1 = width*0.3;
+            var drawBossY1 = height*0.9;
+            var drawBossX2 = width*0.7;
+            var drawBossY2 = height*0.95;
+            
+            var drawBossColorMain = c_red;
+            var drawBossColorDelay = c_white;
+            var drawBossColorBack = c_black;
+            var drawBossColorGenerator = c_blue;
+            
+            var drawBossDelayTime = room_speed*0.6;
+            var drawBossDelaySpeed = 0.0025;
+            
+            var allowBossDraw = true;
+            var drawBossText = loc_key("BOSS_DUCANCOMMANDER");
+            
+            //Draw Generator1 Healthbar
+            if (obj_boss.hpMilestoneCurrent == 1) &amp;&amp; (instance_exists(obj_generator1))
+            {
+                allowBossDraw = false;
+                
+                if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator1.hp, obj_generator1.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
+                else{
+                    draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
+                    if (fakeBarFill &lt; 100) fakeBarFill++;
+                    else { isGen1Setup = true; fakeBarFill=0; }
+                }
+            }
+            
+            //Draw Generator2 Healthbar
+            if (obj_boss.hpMilestoneCurrent == 2) &amp;&amp; (instance_exists(obj_generator2))
+            {
+                allowBossDraw = false;
+                
+                if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator2.hp, obj_generator2.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
+                else{
+                    draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
+                    if (fakeBarFill &lt; 100) fakeBarFill++;
+                    else { isGen1Setup = true; fakeBarFill=0; }
+                }
+            }
+            
+            //Draw Generator3 Healthbar
+            if (obj_boss.hpMilestoneCurrent == 4) &amp;&amp; (instance_exists(obj_generator3))
+            {
+                allowBossDraw = false;
+                
+                if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator3.hp, obj_generator3.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
+                else{
+                    draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
+                    if (fakeBarFill &lt; 100) fakeBarFill++;
+                    else { isGen1Setup = true; fakeBarFill=0; }
+                }
+            }
+            
+            //Draw Boss Healthbar
+            if (allowBossDraw)
+            {
+                if (isBossSetup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_boss.hp, obj_boss.hp_max, drawBossColorMain, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
+                else{
+                    draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorMain,drawBossColorMain,0,true,false);
+                    if (fakeBarFill &lt; 100) fakeBarFill++;
+                    else { isBossSetup = true; fakeBarFill=0; }
+                }
+            }
+            else drawBossText = loc_key("BOSS_SHIELDGENERATOR");
+            
+            draw_set_font(global.font_menuLarge);
+            draw_set_color(c_white);
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_center);
+            
+            draw_text( drawBossX1+((drawBossX2-drawBossX1)/2), drawBossY1+((drawBossY2-drawBossY1)/2), drawBossText);
+        }
     }
-    
-    //Boss Fight Lifebar
-    if instance_exists(obj_boss)
-    {
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_center);
-        
-        var drawBossX1 = width*0.3;
-        var drawBossY1 = height*0.9;
-        var drawBossX2 = width*0.7;
-        var drawBossY2 = height*0.95;
-        
-        var drawBossColorMain = c_red;
-        var drawBossColorDelay = c_white;
-        var drawBossColorBack = c_black;
-        var drawBossColorGenerator = c_blue;
-        
-        var drawBossDelayTime = room_speed*0.6;
-        var drawBossDelaySpeed = 0.0025;
-        
-        var allowBossDraw = true;
-        var drawBossText = loc_key("BOSS_DUCANCOMMANDER");
-        
-        //Draw Generator1 Healthbar
-        if (obj_boss.hpMilestoneCurrent == 1) &amp;&amp; (instance_exists(obj_generator1))
-        {
-            allowBossDraw = false;
-            
-            if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator1.hp, obj_generator1.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
-            else{
-                draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
-                if (fakeBarFill &lt; 100) fakeBarFill++;
-                else { isGen1Setup = true; fakeBarFill=0; }
-            }
-        }
-        
-        //Draw Generator2 Healthbar
-        if (obj_boss.hpMilestoneCurrent == 2) &amp;&amp; (instance_exists(obj_generator2))
-        {
-            allowBossDraw = false;
-            
-            if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator2.hp, obj_generator2.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
-            else{
-                draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
-                if (fakeBarFill &lt; 100) fakeBarFill++;
-                else { isGen1Setup = true; fakeBarFill=0; }
-            }
-        }
-        
-        //Draw Generator3 Healthbar
-        if (obj_boss.hpMilestoneCurrent == 4) &amp;&amp; (instance_exists(obj_generator3))
-        {
-            allowBossDraw = false;
-            
-            if (isGen1Setup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_generator3.hp, obj_generator3.maxhp, drawBossColorGenerator, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
-            else{
-                draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorGenerator,drawBossColorGenerator,0,true,false);
-                if (fakeBarFill &lt; 100) fakeBarFill++;
-                else { isGen1Setup = true; fakeBarFill=0; }
-            }
-        }
-        
-        //Draw Boss Healthbar
-        if (allowBossDraw)
-        {
-            if (isBossSetup) draw_healthbar_delayed(bossBar,drawBossX1, drawBossY1, drawBossX2, drawBossY2, obj_boss.hp, obj_boss.hp_max, drawBossColorMain, drawBossColorBack, drawBossColorDelay, drawBossDelaySpeed, drawBossDelayTime,0,true,false);
-            else{
-                draw_healthbar(drawBossX1, drawBossY1, drawBossX2, drawBossY2,fakeBarFill,drawBossColorBack,drawBossColorMain,drawBossColorMain,0,true,false);
-                if (fakeBarFill &lt; 100) fakeBarFill++;
-                else { isBossSetup = true; fakeBarFill=0; }
-            }
-        }
-        else drawBossText = loc_key("BOSS_SHIELDGENERATOR");
-        
-        draw_set_font(global.font_menuLarge);
-        draw_set_color(c_white);
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_center);
-        
-        draw_text( drawBossX1+((drawBossX2-drawBossX1)/2), drawBossY1+((drawBossY2-drawBossY1)/2), drawBossText);
-    }
+    p++;
+    playerInstanceNumber++;
 }
 
 //Dynamic Bounty

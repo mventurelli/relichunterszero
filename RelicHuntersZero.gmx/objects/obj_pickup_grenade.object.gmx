@@ -29,8 +29,8 @@
 
 sprite_index = spr_pickup_grenade;
 
-//Hack HACKZ0r
-if (global.character = char_biu) ammo = 2;
+//Hack HACKZ0r PLEASE FORGIVE ME, FUTURE ME
+if (global.character[1] == char_biu) || (global.character[2] == char_biu) ammo = 2;
 else ammo = 1;
 </string>
           </argument>
