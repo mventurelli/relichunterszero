@@ -19,8 +19,11 @@ parent_solid = argument2;
 instance_deactivate_all(true);
 instance_activate_region(bbox_left,
                          bbox_top,
-                         bbox_right-boox_left,
+                         bbox_right-bbox_left,
                          bbox_bottom-bbox_top,true);
+/*
+// This part seems to cause problems with android.
+// Disabeling doesn't seem to effect the windows verson.
 with (parent_solid) {
   if (place_meeting(x, y, other)) {
     if (script_execute(collision_script, other)) {
@@ -30,6 +33,7 @@ with (parent_solid) {
     }
   }
 }
+*/
 instance_activate_all();
 other.x = x_old;
 other.y = y_old;
