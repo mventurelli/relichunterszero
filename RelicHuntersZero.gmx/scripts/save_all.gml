@@ -6,7 +6,8 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_string('Version','Version',global.currentVersionNumber);
     ini_write_real('Language','Language',global.language);
     
-    ini_write_string('Input','Input Type',global.input);
+    ini_write_real('Input','Input1',global.input[1]);
+    ini_write_real('Input','Input2',global.input[2]);
     ini_write_real('Input','Sticky Aim',global.sticky_aim);
     ini_write_real('Input','Auto Aim',global.auto_aim);
     ini_write_real('Input','Sprint Toggle',global.sprint_toggle);
@@ -30,6 +31,7 @@ ini_open(working_directory + "\saveData.ini");
     var playerInstanceNumber = 0;
     while (p <= global.playerCount)
     {
+        ini_write_real('Character', 'Alive' +string(p), global.playerAlive[p]);
         ini_write_real('Character', 'Character' +string(p), global.character[p]);
         ini_write_real('Character', 'Ammo Light' +string(p), global.ammo_light[p]);
         ini_write_real('Character', 'Ammo Medium' +string(p), global.ammo_medium[p]);
@@ -41,35 +43,34 @@ ini_open(working_directory + "\saveData.ini");
         
         if (curPlayer) && instance_exists(curPlayer)
         {
+            var playerId = curPlayer.myPlayerId;
+            
             if instance_exists(curPlayer.weapon1)
             {
-                ini_write_real('Character','Weapon1Player'+string(p),curPlayer.weapon1.object);
-                ini_write_real('Character','Ammo1Player'+string(p),curPlayer.weapon1.ammo_current);
+                ini_write_real('Character','Weapon1Player'+string(playerId),curPlayer.weapon1.object);
+                ini_write_real('Character','Ammo1Player'+string(playerId),curPlayer.weapon1.ammo_current);
             }
-            else ini_write_real('Character','Weapon1Player'+string(p),noone);
+            else ini_write_real('Character','Weapon1Player'+string(playerId),noone);
         
             if instance_exists(curPlayer.weapon2)
             {
-                ini_write_real('Character','Weapon2Player'+string(p),curPlayer.weapon2.object);
-                ini_write_real('Character','Ammo2Player'+string(p),curPlayer.weapon2.ammo_current);
+                ini_write_real('Character','Weapon2Player'+string(playerId),curPlayer.weapon2.object);
+                ini_write_real('Character','Ammo2Player'+string(playerId),curPlayer.weapon2.ammo_current);
             }
-            else ini_write_real('Character','Weapon2Player'+string(p),noone);
+            else ini_write_real('Character','Weapon2Player'+string(playerId),noone);
             
-            ini_write_real('Character','Health'+string(p),curPlayer.hp);
+            ini_write_real('Character','Health'+string(playerId),curPlayer.hp);
             
-            if (curPlayer.myGun == curPlayer.weapon1 ) global.currentlyEquippedWeapon[p] = 1;
-            if (curPlayer.myGun == curPlayer.weapon2) global.currentlyEquippedWeapon[p] = 2;
+            if (curPlayer.myGun == curPlayer.weapon1 ) global.currentlyEquippedWeapon[playerId] = 1;
+            if (curPlayer.myGun == curPlayer.weapon2) global.currentlyEquippedWeapon[playerId] = 2;
             
-            ini_write_real('Character','currentlyEquippedWeapon'+string(p),global.currentlyEquippedWeapon[p]);
+            ini_write_real('Character','currentlyEquippedWeapon'+string(playerId),global.currentlyEquippedWeapon[playerId]);
         }
         
         p++;
         playerInstanceNumber++;
     }
-    
-    
-        
-        
+
  
         ini_write_real('Persistence','UnlockPinky',global.unlockPinky);
         ini_write_real('Persistence','UnlockRaff',global.unlockRaff);

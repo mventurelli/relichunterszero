@@ -40,6 +40,7 @@ image_speed = 0.2;
 depth=-y-2;
 
 active = false;
+unlock = false;
 
 if (active) reflection_object_setup(0,-1,image_index);
 else  reflection_object_setup(0,spr_casing_blob,0);
@@ -70,12 +71,18 @@ oldWeapon2 = noone;
             <kind>1</kind>
             <string>///Interact
 
+if (unlock)
+{
+    if (global.character[1] == myCharacter) || (global.playerCount &gt; 1 &amp;&amp; global.character[2] == myCharacter) instance_destroy();
+    else active = true;
+}
+
 if instance_exists(activationClient) &amp;&amp; (active)
 {
     var p = activationClient.myPlayerId;
     
     if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;
-
+    
     if (wantToActivate) &amp;&amp; (in_range)
     {
         global.weapon1[p] = oldWeapon1;
@@ -125,6 +132,8 @@ if instance_exists(activationClient) &amp;&amp; (active)
         }
         
         newChar.myPlayerId = p;
+        isClientLocked = false;
+        with (newChar) event_perform(ev_other,ev_user0);
     }
 }
 </string>
@@ -149,17 +158,17 @@ if instance_exists(activationClient) &amp;&amp; (active)
             <kind>1</kind>
             <string>///Unlock
 
-if (myCharacter != char_jimmy) active = false;
+if (myCharacter != char_jimmy) unlock = false;
 
-if (myCharacter == char_pinky) &amp;&amp; (global.unlockPinky) active = true; //Starts unlocked
+if (myCharacter == char_pinky) &amp;&amp; (global.unlockPinky) unlock = true; //Starts unlocked
 
-if (myCharacter == char_raff) &amp;&amp; (global.unlockRaff) active = true; //Unlocks on teleporter purchase
+if (myCharacter == char_raff) &amp;&amp; (global.unlockRaff) unlock = true; //Unlocks on teleporter purchase
 
-if (myCharacter == char_biu) &amp;&amp; (global.unlockBiu) active = true; //Unlocks on boss corpse, no checkpoints
+if (myCharacter == char_biu) &amp;&amp; (global.unlockBiu) unlock = true; //Unlocks on boss corpse, no checkpoints
 
-if (myCharacter == char_punny) &amp;&amp; (global.unlockPunny) active = true; //collect a lot of bounty
+if (myCharacter == char_punny) &amp;&amp; (global.unlockPunny) unlock = true; //collect a lot of bounty
 
-if (myCharacter == char_ass) &amp;&amp; (global.unlockAss) active = true; //get killed at the boss 5 times (corpse)
+if (myCharacter == char_ass) &amp;&amp; (global.unlockAss) unlock = true; //get killed at the boss 5 times (corpse)
 </string>
           </argument>
         </arguments>
@@ -201,17 +210,21 @@ else
     draw_set_valign(fa_bottom);
     draw_set_color(c_white);
     
-    var stringUnlockCharacter = '';
-    
-    if (myCharacter == char_pinky) stringUnlockCharacter = 'I AM ERROR';
-    if (myCharacter == char_raff) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_RAFF");
-    if (myCharacter == char_biu) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_BIU");
-    if (myCharacter == char_punny) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_PUNNY");
-    if (myCharacter == char_jimmy) stringUnlockCharacter = 'I AM ERROR';
-    
-    
-    draw_text_ext(x, y-28, stringUnlockCharacter, 19, 150);
+    if (!unlock)
+    {
+        var stringUnlockCharacter = '';
+        
+        if (myCharacter == char_pinky) stringUnlockCharacter = 'I AM ERROR';
+        if (myCharacter == char_raff) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_RAFF");
+        if (myCharacter == char_biu) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_BIU");
+        if (myCharacter == char_punny) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_PUNNY");
+        if (myCharacter == char_jimmy) stringUnlockCharacter = 'I AM ERROR';
+        
+        
+        draw_text_ext(x, y-28, stringUnlockCharacter, 19, 150);
+    }
 }
+
 </string>
           </argument>
         </arguments>

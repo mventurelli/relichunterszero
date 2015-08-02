@@ -190,7 +190,7 @@ image_speed = 0;
             <kind>1</kind>
             <string>if sprite_exists(sprite_index)
 {
-      draw_self();
+    draw_self();
     
     if (speed == 0) &amp;&amp; (image_speed == 0) &amp;&amp; (!global.pause)
     {

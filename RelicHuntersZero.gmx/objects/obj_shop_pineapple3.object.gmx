@@ -46,6 +46,7 @@ if (unlock)
         announce.relicCompleteSprite = spr_pineapple_pudding;
         announce.textBig = fullRelicTextBig;
         announce.textSmall = fullRelicTextSmall;
+        achievement_give("ACHIEVEMENT_FIRSTRELIC");
     }
     
     announce.relicSprite1 = relicSprite1;

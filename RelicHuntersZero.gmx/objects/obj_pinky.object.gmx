@@ -38,7 +38,7 @@ event_inherited();
     hp_max = 160;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
-    hp = global.hp[myPlayerId];
+    
     
     stamina_max = 100;
     stamina = stamina_max;
@@ -83,8 +83,65 @@ event_inherited();
     sprite_dash_fx = spr_pinky_dash_fx;
     
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Character Swap
+if global.character[myPlayerId] != char_pinky
+{
+    audio_emitter_free(audio_emitter);
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Correct myPlayerId initial setup
+show_debug_message('Hey Im pinkyy and my player id is '+string(myPlayerId));
+hp = global.hp[myPlayerId];
+
+    //Weapon Setup
     if global.weapon2[myPlayerId] != noone
     {
+        show_debug_message('weapon2[myPlayerId] returns '+string(global.weapon2[myPlayerId]));
+        
         if global.weapon2[myPlayerId] == obj_gloves
         {
             instance_create(x,y,obj_gloves);
@@ -104,6 +161,8 @@ event_inherited();
     
     if global.weapon1[myPlayerId] != noone
     {
+        show_debug_message('weapon2[myPlayerId] returns '+string(global.weapon2[myPlayerId]));
+        
         if global.weapon1[myPlayerId] == obj_gloves
         {
             instance_create(x,y,obj_gloves);
@@ -133,35 +192,7 @@ event_inherited();
     global.currentlyEquippedWeapon[myPlayerId] = 0;
     
     //Done
-    setup_initial = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Character Swap
-if global.character[myPlayerId] != char_pinky
-{
-    audio_emitter_free(audio_emitter);
-    instance_destroy();
-}
+    setup_initial = false;
 </string>
           </argument>
         </arguments>

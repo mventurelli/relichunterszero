@@ -27,8 +27,21 @@
             <kind>1</kind>
             <string>///Bootstrap
 
+// Sync Save
+save_sync_read();
+screen_update();
+
 //Version
-global.currentVersionNumber = "BETA v0.11";
+global.currentVersionNumber = "BETA v0.12";
+
+//Multiplayer
+global.playerCount = 1;
+
+//Sync Version &amp; Multiplayer
+ini_open(working_directory + "\saveData.ini");
+ini_write_string('Version','Version',global.currentVersionNumber);
+ini_write_real('Character','playerCount',global.playerCount);
+ini_close();
 
 //Setup
 goToNextRoom = false;
@@ -41,16 +54,10 @@ alarm[0] = room_speed*3; //spawn Logo
 alarm[1] = room_speed*6; //spawn FadetoBlack
 alarm[2] = room_speed*9; //go to next room
 
-// Sync Save
-save_sync_read();
-screen_update();
 
 //Language Init
 global.loc_map = noone;
 loc_init();
-
-//Multiplayer
-global.playerCount = 1;
 
 // Debug Shit, don't mess with this
 audio_stop_all();
@@ -188,15 +195,21 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
             <kind>1</kind>
             <string>///Xbox 360 Controller Support
 
-//if (global.input == 'joystick') &amp;&amp; (global.version = os_windows)
-{
+//Unrestricted
     var update0 = xin_update(0); 
     if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
     else
     {
         joy_rumble_update(0);
     }
-}
+    
+    var update1 = xin_update(1); 
+    if (!update1) show_debug_message('Trying to update unconnected Xbox 360 Controller (1)');   
+    else
+    {
+        joy_rumble_update(1);
+    }
+
 </string>
           </argument>
         </arguments>
@@ -247,20 +260,14 @@ if (keyboard_check_pressed(vk_anykey)) || (mouse_check_button_pressed(mb_left))
     goToNextRoom = true;
 }
 
-if (gamepad_is_connected(0))
+if (gamepad_is_connected(K_INPUT_JOYSTICK1))
 {
-    if (joy_check(0,1)) goToNextRoom = true;
+    if (joy_check(K_INPUT_JOYSTICK1,1)) goToNextRoom = true;
 }
 
-if (goToNextRoom) room_goto_next();
-
-
-/*
-if (keyboard_check_pressed(vk_anykey)) || (mouse_check_button_pressed(mb_left)) goToNextRoom = true;
-
-if (global.input == 'joystick')
+if (gamepad_is_connected(K_INPUT_JOYSTICK2))
 {
-    if (joy_check(0,1)) goToNextRoom = true;
+    if (joy_check(K_INPUT_JOYSTICK2,1)) goToNextRoom = true;
 }
 
 if (goToNextRoom) room_goto_next();

@@ -410,6 +410,7 @@
     <sprites name="HUD">
       <sprite>sprites\spr_crosshair_reload</sprite>
       <sprite>sprites\spr_crosshair</sprite>
+      <sprite>sprites\spr_crosshair2</sprite>
       <sprite>sprites\spr_prompt_e</sprite>
       <sprite>sprites\spr_prompt_x</sprite>
       <sprite>sprites\spr_hud_face_jimmy</sprite>
@@ -428,7 +429,6 @@
         <sprite>sprites\spr_splash_roguelogo</sprite>
         <sprite>sprites\spr_logo</sprite>
         <sprite>sprites\spr_intro_text</sprite>
-        <sprite>sprites\spr_aim_assist</sprite>
       </sprites>
       <sprites name="Stages">
         <sprite>sprites\spr_stage1_1</sprite>
@@ -769,6 +769,7 @@
         <script>scripts\game_pause_init.gml</script>
         <script>scripts\game_pause.gml</script>
         <script>scripts\game_unpause.gml</script>
+        <script>scripts\char_state_initial.gml</script>
       </scripts>
       <scripts name="Angles and Such">
         <script>scripts\angle_rotate.gml</script>
@@ -894,7 +895,6 @@
       <object>objects\controller_menu_background</object>
       <object>objects\controller_intro</object>
       <object>objects\controller_end</object>
-      <object>objects\controller_aim_assist_config</object>
       <object>objects\class_lightsource</object>
       <object>objects\controller_menuButtons</object>
     </objects>
@@ -1108,6 +1108,7 @@
       <object>objects\gui_dynamic_relic3</object>
       <object>objects\gui_dynamic_bounty</object>
       <object>objects\gui_dynamic_ammo1</object>
+      <object>objects\gui_dynamic_ammo2</object>
       <object>objects\gui_reload_bar</object>
       <object>objects\gui_stage</object>
       <object>objects\gui_score</object>
@@ -1432,7 +1433,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="38">
+  <constants number="41">
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
     <constant name="char_biu">4</constant>
@@ -1464,6 +1465,9 @@
     <constant name="K_PROJECTILE_FLAME">1</constant>
     <constant name="K_PROJECTILE_ROCKET">2</constant>
     <constant name="K_PROJECTILE_SONIC">3</constant>
+    <constant name="K_INPUT_KEYBOARD">4</constant>
+    <constant name="K_INPUT_JOYSTICK1">0</constant>
+    <constant name="K_INPUT_JOYSTICK2">1</constant>
     <constant name="lang_english">1</constant>
     <constant name="lang_ptbr">2</constant>
     <constant name="lang_huebr">3</constant>

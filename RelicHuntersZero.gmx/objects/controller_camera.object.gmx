@@ -90,80 +90,94 @@ yview_previous = view_yview[0];
 audio_listener_position(x, y, 0);
 audio_listener_orientation(x,y,0,x,y,1); 
 
+var countPlayers = instance_number(class_player);
+
+//Camera Position
 if instance_exists(class_player)
 {
-    //Camera Position
-    if (class_player.aiming) 
+    if (countPlayers == 1)
     {
-        if (!aim_locked)
+        if (class_player.aiming) 
         {
-            aim_locked = true;
-            
-            angle = point_direction(class_player.x, class_player.y, global.crosshairX, global.crosshairY);
-            
-            distance = weaponRange  / distance_ratio_aiming;
-            if distance &gt; hard_limit distance = hard_limit;
+            if (!aim_locked)
+            {
+                aim_locked = true;
+                
+                angle = point_direction(class_player.x, class_player.y, global.crosshairX[1], global.crosshairY[1]);
+                
+                distance = weaponRange  / distance_ratio_aiming;
+                if distance &gt; hard_limit distance = hard_limit;
+            }
         }
-    }
-    else 
-    {
-        aim_locked = false;
+        else 
+        {
+            aim_locked = false;
+            
+            if (global.input[1] == K_INPUT_KEYBOARD) || (class_player.joyIsRightStickAiming)
+            {
+                distance = point_distance(class_player.x,class_player.y,global.crosshairX[1],global.crosshairY[1]) / distance_ratio;
+                if (distance &gt; max_distance) distance = max_distance;
+                angle = point_direction(class_player.x,class_player.y,global.crosshairX[1],global.crosshairY[1]);
+                
+                if (global.input[1] != K_INPUT_KEYBOARD) distance = distance*1.5;
+            }
+            else
+            {
+               distance=0;
+               angle=0;
+            }
+        }
         
-        if (global.input == 'keyboard') || (class_player.joyIsRightStickAiming)
+        
+        //Follow Movement (NEW)
+        
+        var targetX = class_player.x + lengthdir_x(distance,angle);
+        var targetY = class_player.y + lengthdir_y(distance,angle);
+        
+        var totalDistance = point_distance(x,y,targetX,targetY);
+        
+        if (totalDistance &gt; 0.05)
         {
-            distance = point_distance(class_player.x,class_player.y,global.crosshairX,global.crosshairY) / distance_ratio;
-            if (distance &gt; max_distance) distance = max_distance;
-            angle = point_direction(class_player.x,class_player.y,global.crosshairX,global.crosshairY);
-            
-            if (global.input == 'joystick') distance = distance*1.5;
+            if (global.input[1] == K_INPUT_KEYBOARD) followSpeedCurrent = followSpeed;
+            else if (followSpeedCurrent != followSpeed)  followSpeedCurrent += min(followSpeedAccel, abs(followSpeed-followSpeedCurrent));
+        
+            var totalAngle = point_direction(x,y,targetX,targetY);
+            x += lengthdir_x(min(followSpeedCurrent, totalDistance), totalAngle);
+            y += lengthdir_y(min(followSpeedCurrent, totalDistance), totalAngle);
         }
-        else
-        {
-           distance=0;
-           angle=0;
-        }
+        else followSpeedCurrent = 0;
+        
+        //Screen Zoom
+        if (class_player.sprinting) || (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = 0.9;
+        else zoom = 1;
     }
     
-    
-    //Follow Movement (NEW) /////////////
-    
-    var targetX = class_player.x + lengthdir_x(distance,angle);
-    var targetY = class_player.y + lengthdir_y(distance,angle);
-    
-    var totalDistance = point_distance(x,y,targetX,targetY);
-    
-    if (totalDistance &gt; 0.05)
+    if (countPlayers == 2)
     {
-        if (global.input == 'keyboard') followSpeedCurrent = followSpeed;
-        else if (followSpeedCurrent != followSpeed)  followSpeedCurrent += min(followSpeedAccel, abs(followSpeed-followSpeedCurrent));
-    
-        var totalAngle = point_direction(x,y,targetX,targetY);
-        x += lengthdir_x(min(followSpeedCurrent, totalDistance), totalAngle);
-        y += lengthdir_y(min(followSpeedCurrent, totalDistance), totalAngle);
+        //2-player camera quick and unpolished
+        var player1 = instance_find(class_player,0);
+        var player2 = instance_find(class_player,1);
+        
+        if (player1) &amp;&amp; (player2) &amp;&amp; (instance_exists(player1)) &amp;&amp; (instance_exists(player1)) 
+        {
+            x = (player1.x + player2.x)/2;
+            y = (player1.y + player2.y)/2;
+            //x = (global.crosshairX[1] + global.crosshairX[2]) /2;
+            //x = (global.crosshairY[1] + global.crosshairY[2]) / 2;
+        }
     }
-    else followSpeedCurrent = 0;
-    
-    ///////
-    //OLD
-    //x = class_player.x + lengthdir_x(distance,angle);
-    //y = class_player.y + lengthdir_y(distance,angle);
-    
-    //Screen Zoom
-    if (class_player.sprinting) || (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = 0.9;
-    else zoom = 1;
-    
     
     //Screen Shake
     if (screen_shake) &amp;&amp; (global.screenShakeRatio)
     {
         if screen_shake &gt; shake_max screen_shake = shake_max;
-         
+             
         x = x+lengthdir_x(screen_shake*global.screenShakeRatio,shake_direction);
         y = y+lengthdir_y(screen_shake*global.screenShakeRatio,shake_direction);
-        
+            
         screen_shake -= shake_recovery;
         shake_direction = irandom(359);
-        
+            
         if screen_shake &lt; 0 screen_shake = 0;
     }
 }

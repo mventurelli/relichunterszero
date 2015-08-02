@@ -48,8 +48,12 @@ else show_debug_message('ERROR: Steam not initialized');
 
 
 //Camera and Crosshair
-global.crosshairX = 0;
-global.crosshairY = 0;
+global.crosshairX[1] = 0;
+global.crosshairY[1] = 0;
+global.crosshair_scale[1] = 1;
+global.crosshairX[2] = 0;
+global.crosshairY[2] = 0;
+global.crosshair_scale[2] = 1;
 
 main_camera = instance_create(x,y,controller_camera);
 main_effects = instance_create(x,y,controller_effects);
@@ -61,13 +65,13 @@ level_end = false;
 global.level_complete = false;
 global.pause = 0;
 
-global.crosshair_scale = 1;
 view_xview[0] = x;
 view_yview[0] = y;
 
 //Combat Options
-global.precisionAngle = 35;
+global.precisionAngle = 30;
 global.precisionDistance = 35;
+global.friendlyFireDamageRatio = 0.7;
 
 //Level Build
 level_built = false;
@@ -103,19 +107,32 @@ global.dynamicRelic1 = instance_create(0,0,gui_dynamic_relic1);
 global.dynamicRelic2 = instance_create(0,0,gui_dynamic_relic2);
 global.dynamicRelic3 = instance_create(0,0,gui_dynamic_relic3);
 global.dynamicAmmo1 = instance_create(0,0,gui_dynamic_ammo1);
+global.dynamicAmmo2 = instance_create(0,0,gui_dynamic_ammo2);
 
-delayedAmmoLightBar = 1;
-delayedAmmoMediumBar = 2;
-delayedAmmoHeavyBar = 3;
-delayedCharHealthBar1 = 4;
-delayedCharShieldBar1 = 5;
-delayedP1AmmoBar = 6;
-draw_healthbar_delayed_init(delayedAmmoLightBar);
-draw_healthbar_delayed_init(delayedAmmoMediumBar);
-draw_healthbar_delayed_init(delayedAmmoHeavyBar);
-draw_healthbar_delayed_init(delayedCharHealthBar1);
-draw_healthbar_delayed_init(delayedCharShieldBar1);
+delayedAmmoLightBar[1] = 1;
+delayedAmmoMediumBar[1] = 2;
+delayedAmmoHeavyBar[1] = 3;
+delayedCharHealthBar1[1] = 4;
+delayedCharShieldBar1[1] = 5;
+delayedAmmoLightBar[2] = 6;
+delayedAmmoMediumBar[2] = 7;
+delayedAmmoHeavyBar[2] = 8;
+delayedCharHealthBar1[2] = 9;
+delayedCharShieldBar1[2] = 10;
+delayedP1AmmoBar = 11;
+delayedP2AmmoBar = 12;
+draw_healthbar_delayed_init(delayedAmmoLightBar[1]);
+draw_healthbar_delayed_init(delayedAmmoMediumBar[1]);
+draw_healthbar_delayed_init(delayedAmmoHeavyBar[1]);
+draw_healthbar_delayed_init(delayedCharHealthBar1[1]);
+draw_healthbar_delayed_init(delayedCharShieldBar1[1]);
+draw_healthbar_delayed_init(delayedAmmoLightBar[2]);
+draw_healthbar_delayed_init(delayedAmmoMediumBar[2]);
+draw_healthbar_delayed_init(delayedAmmoHeavyBar[2]);
+draw_healthbar_delayed_init(delayedCharHealthBar1[2]);
+draw_healthbar_delayed_init(delayedCharShieldBar1[2]);
 draw_healthbar_delayed_init(delayedP1AmmoBar);
+draw_healthbar_delayed_init(delayedP2AmmoBar);
 
 //BossFight GUI
 bossBar = 666;
@@ -345,24 +362,9 @@ if (room == room_start) || (room == room_tutorial)
     global.stage_current = 1;
     
     global.character[1] = char_jimmy;
-    global.weapon1[1] = noone;
-    global.weapon2[1] = noone;
-    global.hp[1] = 999999;
-    
-    global.ammo_light[1] = 80;
-    global.ammo_medium[1] = 0;
-    global.ammo_heavy[1] = 0;
-    global.grenades[1] = 2;
-    
     global.character[2] = char_pinky;
-    global.weapon1[2] = noone;
-    global.weapon2[2] = noone;
-    global.hp[2] = 999999;
     
-    global.ammo_light[2] = 80;
-    global.ammo_medium[2] = 0;
-    global.ammo_heavy[2] = 0;
-    global.grenades[2] = 2;
+    char_state_initial(); 
 }
 
 if (room == room_start) global.stage_current = 0;
@@ -783,14 +785,46 @@ else
           <argument>
             <kind>1</kind>
             <string>///Xbox 360 Controller Support
-
-if ((global.input == 'joystick') || (global.pauseMenu)  ) &amp;&amp; (global.version = os_windows)
+if (global.version = os_windows)
 {
-    var update0 = xin_update(0); 
-    if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
-    else
+    if (global.input[1] != K_INPUT_KEYBOARD)
     {
-        joy_rumble_update(0);
+        var joy = global.input[1];
+        var update = xin_update(joy); 
+        if (!update) show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
+        else
+        {
+            joy_rumble_update(joy);
+        }
+    } 
+    
+    if (global.playerCount &gt; 1) &amp;&amp; (global.input[2] != K_INPUT_KEYBOARD)
+    {
+        var joy = global.input[2];
+        var update = xin_update(joy); 
+        if (!update) show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
+        else
+        {
+            joy_rumble_update(joy);
+        }
+    }
+    
+    
+    if (global.pauseMenu)
+    {
+        var update0 = xin_update(0); 
+        if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
+        else
+        {
+            joy_rumble_update(0);
+        }
+        
+        var update1 = xin_update(1); 
+        if (!update1) show_debug_message('Trying to update unconnected Xbox 360 Controller (1)');   
+        else
+        {
+            joy_rumble_update(1);
+        }
     }
 }
 </string>
@@ -1184,8 +1218,29 @@ if (!level_built)
 
 /////////////////////////////////////////////////////////////////////
 
-if (room == room_start)
+if (room == room_start) &amp;&amp; (!level_built)
 {
+    //Force players at the beggining
+    var spawningPlayers = global.playerCount;
+    global.playerAlive[1] = true;
+    global.playerAlive[2] = true;
+    
+    if (spawningPlayers)
+    {
+        var p1 = instance_create(832,1152,obj_jimmy);
+        p1.myPlayerId = 1;
+        with (p1) event_perform(ev_other,ev_user0);
+        spawningPlayers--; 
+    }
+    
+    if (spawningPlayers) 
+    {  
+        var p2 = instance_create(832,1220,obj_pinky); 
+        p2.myPlayerId = 2;
+        with (p2) event_perform(ev_other,ev_user0);
+        spawningPlayers--; 
+    }
+    
     level_built = true;
 }
 
@@ -1198,14 +1253,19 @@ if (!level_built)
         
     var p = 1; while (p &lt;= global.playerCount)
     {
-        
-        if (global.character[p] == char_jimmy) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_jimmy);
-        if (global.character[p] == char_pinky) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_pinky);
-        if (global.character[p] == char_raff) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_raff);
-        if (global.character[p] == char_biu) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_biu);
-        if (global.character[p] == char_punny) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_punny);
-        if (global.character[p] == char_ass) instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_assPlayer);
-        
+        if (global.playerAlive[p])
+        {
+            var playerSpawned;
+            if (global.character[p] == char_jimmy) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_jimmy);
+            if (global.character[p] == char_pinky) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_pinky);
+            if (global.character[p] == char_raff) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_raff);
+            if (global.character[p] == char_biu) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_biu);
+            if (global.character[p] == char_punny) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_punny);
+            if (global.character[p] == char_ass) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_assPlayer);
+            
+            playerSpawned.myPlayerId = p;
+            with (playerSpawned) event_perform(ev_other,ev_user0);
+        }
         p++;
     }
     
@@ -1406,6 +1466,7 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
 {
     if (!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (!level_end)
     {
+        //Instantiates Ass
         var tries;
         tries=0;
         while (!level_end)
@@ -1426,6 +1487,31 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             }
         }
         ass = instance_create(randomX,randomY,obj_ass);   
+        
+        //Revives any dead player
+        var revivePlayerX = class_player.x;
+        var revivePlayerY = class_player.y;
+        
+        var p = 1; while (p &lt;= global.playerCount)
+        {
+            if (!global.playerAlive[p])
+            {
+                var playerSpawned;
+                if (global.character[p] == char_jimmy) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_jimmy);
+                if (global.character[p] == char_pinky) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_pinky);
+                if (global.character[p] == char_raff) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_raff);
+                if (global.character[p] == char_biu) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_biu);
+                if (global.character[p] == char_punny) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_punny);
+                if (global.character[p] == char_ass) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_assPlayer);
+                
+                playerSpawned.myPlayerId = p;
+                
+                //Reset weapons and HP
+                char_state_initial(); //this also sets playerAlive to true!
+                with (playerSpawned) event_perform(ev_other,ev_user0);
+            }
+            p++;
+        }
     }
 }
 </string>
@@ -1582,7 +1668,7 @@ var pauseKeyPressed = false;
 if (!global.gameOver) &amp;&amp; instance_exists(class_player)
 {
     if keyboard_check_pressed(vk_escape) pauseKeyPressed = true;
-    if (global.input == 'joystick') if joy_check_pressed(0,8)  pauseKeyPressed = true;
+    if (global.input[1] == K_INPUT_JOYSTICK1) if joy_check_pressed(global.input[1],8)  pauseKeyPressed = true;
 }
 
 if (pauseKeyPressed)
@@ -1675,10 +1761,6 @@ if (debug_mode)
     ///Toggle Shadows
     if keyboard_check_pressed(vk_f7) global.shadows_toggle = !global.shadows_toggle;
     
-    //Toggle Keyboard/Joystick
-    if keyboard_check_pressed(vk_f2) if (global.input == 'keyboard') global.input = 'joystick';
-    else global.input = 'keyboard';
-    
     //Toggle Joystick Aiming Options
     if keyboard_check_pressed(ord('P'))
     {
@@ -1724,23 +1806,26 @@ if (debug_mode)
     //Debug: Erase Steam Achievements
     if keyboard_check_pressed(ord("U"))
     {
-        steam_clear_achievement("ACHIEVEMENT_KILLCOMBO"); //done, set by gui_score
-        steam_clear_achievement("ACHIEVEMENT_FIRSTRELIC"); 
-        steam_clear_achievement("ACHIEVEMENT_ALLRELICS"); //done,set by Main
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKALL"); //ok, falta characters, set by Main
-        steam_clear_achievement("ACHIEVEMENT_BEATGAME"); //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKALLHUNTERS"); 
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKRAFF"); 
-        steam_clear_achievement("ACHIEVEMENT_ULTIMATERAFF"); //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKBIU"); 
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKPUNNY"); 
-        steam_clear_achievement("ACHIEVEMENT_ULTIMATEPUNNY"); //done, set by Boss corpse 
-        steam_clear_achievement("ACHIEVEMENT_JIMMYNOWEAPONS");  //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_BIUNOWEAPONS");  //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_UNLOCKASS"); 
-        steam_clear_achievement("ACHIEVEMENT_BEATGAMEWITHASS");  //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_ULTIMATEPINKY");  //done, set by Boss corpse
-        steam_clear_achievement("ACHIEVEMENT_TUTORIAL"); //done, set on dummy immortal
+        steam_clear_achievement("ACHIEVEMENT_KILLCOMBO"); //set by gui_score
+        steam_clear_achievement("ACHIEVEMENT_FIRSTRELIC"); //set by the 3 obj_shop_pineapple1
+        steam_clear_achievement("ACHIEVEMENT_ALLRELICS"); //set by Main
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKALL"); //set by Create on controller_main
+        steam_clear_achievement("ACHIEVEMENT_BEATGAME"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKALLHUNTERS"); //set by Create on controller_main
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKRAFF"); //set by obj_teleporter
+        steam_clear_achievement("ACHIEVEMENT_ULTIMATERAFF"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKBIU"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKPUNNY"); //set on Step event of controller_main
+        steam_clear_achievement("ACHIEVEMENT_ULTIMATEPUNNY"); //dset by Boss corpse 
+        steam_clear_achievement("ACHIEVEMENT_JIMMYNOWEAPONS");  //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_BIUNOWEAPONS");  //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_UNLOCKASS"); //set on Step event of controller_main
+        steam_clear_achievement("ACHIEVEMENT_BEATGAMEWITHASS");  //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_ULTIMATEPINKY");  //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_TUTORIAL"); //set on dummy immortal
+        steam_clear_achievement("ACHIEVEMENT_TEAMKILL"); //set on the Friendly Fire events (player projectile, sonic boom, melee arc)
+        steam_clear_achievement("ACHIEVEMENT_BEATGAMECOOP"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_ULTIMATECOOP");   //set by Boss corpse
     }
 }
 </string>
@@ -1765,6 +1850,50 @@ if (debug_mode)
             <kind>1</kind>
             <string>///Take Screenshot
 steam_screenshot_check();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Game Over
+
+///Restart &amp; Back to Menu
+if (global.gameOver)
+{
+    var p = 1; while (p &lt;= global.playerCount)
+    {
+        var input = global.input[p];
+        
+        if (input != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(input,1)) || ( input == K_INPUT_KEYBOARD &amp;&amp; (keyboard_check(vk_space)))
+        {
+            save_and_clean();
+            room_goto(room_start);
+        }
+        
+        if (input != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(input,2)) || ( input == K_INPUT_KEYBOARD &amp;&amp; (keyboard_check(vk_escape)))
+        {
+            save_and_clean();
+            game_restart();
+        }
+        
+        p++;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -1878,27 +2007,39 @@ while (p &lt;= global.playerCount)
     if (curPlayer) &amp;&amp; instance_exists(curPlayer)
     {
         //Get Basic Player Values
-        energy = curPlayer.energy;
-        energy_max = curPlayer.energy_max;
-        hp = curPlayer.hp;
-        hp_max = curPlayer.hp_max;
-        stamina = curPlayer.stamina;
-        stamina_max = curPlayer.stamina_max;
+        var energy = curPlayer.energy;
+        var energy_max = curPlayer.energy_max;
+        var hp = curPlayer.hp;
+        var hp_max = curPlayer.hp_max;
+        var stamina = curPlayer.stamina;
+        var stamina_max = curPlayer.stamina_max;
+        var playerId = curPlayer.myPlayerId;
         
-        //Character Portrait 1
-        var charPortraitX = width*0.02;
-        var charPortraitY = height*0.09;
+        //Character Portrait
+        if playerId == 1
+        {
+            var charPortraitX = width*0.02;
+            var charPortraitY = height*0.09;
+            var charPortraitOrientation = 1;
+        }
+        else
+        {
+            var charPortraitX = width*0.98;
+            var charPortraitY = height*0.09;
+            var charPortraitOrientation = -1;
+        }
+        
         
         if (curPlayer.hp &gt;= curPlayer.hp_max*0.66) { sprite_face = 0; healthColor = c_white; }
         if (curPlayer.hp &lt; curPlayer.hp_max*0.66) { sprite_face = 1; healthColor = c_yellow; }
         if (curPlayer.hp &lt; curPlayer.hp_max*0.33) { sprite_face = 2; healthColor = c_red; }
         
-        if (global.character[p] == char_jimmy) draw_sprite_ext(spr_hud_face_jimmy,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-        if (global.character[p] == char_pinky) draw_sprite_ext(spr_hud_face_pinky,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-        if (global.character[p] == char_raff) draw_sprite_ext(spr_hud_face_raff,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-        if (global.character[p] == char_biu) draw_sprite_ext(spr_hud_face_biu,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-        if (global.character[p] == char_punny) draw_sprite_ext(spr_hud_face_punny,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
-        if (global.character[p] == char_ass) draw_sprite_ext(spr_hud_face_ass,sprite_face,charPortraitX,charPortraitY,1.5,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_jimmy) draw_sprite_ext(spr_hud_face_jimmy,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_pinky) draw_sprite_ext(spr_hud_face_pinky,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_raff) draw_sprite_ext(spr_hud_face_raff,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_biu) draw_sprite_ext(spr_hud_face_biu,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_punny) draw_sprite_ext(spr_hud_face_punny,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_ass) draw_sprite_ext(spr_hud_face_ass,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
         
         //Character Bars
         var charLifeBarTopX = width*0.08;
@@ -1916,6 +2057,13 @@ while (p &lt;= global.playerCount)
         var charStaminaBarWidth = 230;
         var charStaminaBarHeight = 10;
         
+        if (playerId != 1)
+        {
+            charLifeBarTopX = width*0.92 - charLifeBarWidth;
+            charShieldBarTopX = width*0.924 - charShieldBarWidth;
+            charStaminaBarTopX = charShieldBarTopX;
+        }
+        
         draw_set_valign(fa_center);
         draw_set_halign(fa_right);
         
@@ -1929,7 +2077,7 @@ while (p &lt;= global.playerCount)
         draw_set_alpha(0.8*main_hud_alpha);
         draw_rectangle(charLifeBarTopX,charLifeBarTopY,charLifeBarTopX+charLifeBarWidth,charLifeBarTopY+charLifeBarHeight,false);
         draw_set_alpha(0.9*main_hud_alpha);
-        draw_healthbar_delayed(delayedCharHealthBar1, charLifeBarTopX-5,charLifeBarTopY-5,charLifeBarTopX+charLifeBarWidth-5,charLifeBarTopY+charLifeBarHeight-5, hp, hp_max, charLifeColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+        draw_healthbar_delayed(delayedCharHealthBar1[playerId], charLifeBarTopX-5,charLifeBarTopY-5,charLifeBarTopX+charLifeBarWidth-5,charLifeBarTopY+charLifeBarHeight-5, hp, hp_max, charLifeColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
         draw_sprite_ext(spr_icon_health,0,charLifeBarTopX+20,charLifeBarTopY+20,1.5,1.5,0,c_white,main_hud_alpha);
         
         draw_set_color(c_white);
@@ -1943,7 +2091,7 @@ while (p &lt;= global.playerCount)
         draw_rectangle(charStaminaBarTopX,charStaminaBarTopY,charStaminaBarTopX+charStaminaBarWidth,charStaminaBarTopY+charStaminaBarHeight,false);
         
         draw_set_alpha(0.9*main_hud_alpha);
-        if (energy_max) draw_healthbar_delayed(delayedCharShieldBar1, charShieldBarTopX-5,charShieldBarTopY-5,charShieldBarTopX+charShieldBarWidth-5,charShieldBarTopY+charShieldBarHeight-5, energy, energy_max, charShieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+        if (energy_max) draw_healthbar_delayed(delayedCharShieldBar1[playerId], charShieldBarTopX-5,charShieldBarTopY-5,charShieldBarTopX+charShieldBarWidth-5,charShieldBarTopY+charShieldBarHeight-5, energy, energy_max, charShieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
         draw_sprite_ext(spr_icon_shield,0,charShieldBarTopX+20,charShieldBarTopY+(charShieldBarHeight/2),1.5,1.5,0,c_white,main_hud_alpha);
         draw_set_color(c_white);
         draw_set_font(global.font_numberMedium);
@@ -1960,131 +2108,149 @@ while (p &lt;= global.playerCount)
         
         
         //Main Weapon HUD
-        var p1WeaponSelectedX = width*0.05;
-        var p1WeaponSelectedY = height*0.9;
-        var p1WeaponBackX = width*0.03;
-        var p1WeaponBackY = height*0.95;
+        var weaponSelectedX = width*0.05;
+        var weaponSelectedY = height*0.9;
+        var weaponBackX = width*0.03;
+        var weaponBackY = height*0.95;
         
-        var p1WeaponSelected = noone;
-        var p1WeaponBack = noone;
+        if (playerId != 1)
+        {
+            weaponSelectedX = width*0.92;
+            weaponBackX = width*0.90;
+        }
         
-        var p1StupidOffsetSelectedY = 0; //because of gloves and buckler. Not called "stupid" lightly
-        var p1StupidOffsetBackY = 0;
-        var p1StupidOverrideSpriteSelected = -1;
-        var p1StupidOverrideSpriteBack = -1;
+        var weaponSelected = noone;
+        var weaponBack = noone;
+        
+        var stupidOffsetSelectedY = 0; //because of gloves and buckler. Not called "stupid" lightly
+        var stupidOffsetBackY = 0;
+        var stupidOverrideSpriteSelected = -1;
+        var stupidOverrideSpriteBack = -1;
         
         if (curPlayer.weapon1) &amp;&amp; (instance_exists(curPlayer.weapon1))
         {
             if (curPlayer.weapon1.isActive) 
             {
-                p1WeaponSelected = curPlayer.weapon1;  
-                if (curPlayer.weapon1 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
-                if (curPlayer.weapon1 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
+                weaponSelected = curPlayer.weapon1;  
+                if (curPlayer.weapon1 == obj_gloves)    { stupidOverrideSpriteSelected = spr_gloves_idle;  stupidOffsetSelectedY=22; }
+                if (curPlayer.weapon1 == obj_buckler)   { stupidOverrideSpriteSelected = spr_buckler_idle; stupidOffsetSelectedY=42; }
             }
             else{
-                p1WeaponBack = curPlayer.weapon1;
-                if (curPlayer.weapon1 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
-                if (curPlayer.weapon1 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
+                weaponBack = curPlayer.weapon1;
+                if (curPlayer.weapon1 == obj_gloves)    { stupidOverrideSpriteBack = spr_gloves_idle;  stupidOffsetBackY=22; }
+                if (curPlayer.weapon1 == obj_buckler)   { stupidOverrideSpriteBack = spr_buckler_idle; stupidOffsetBackY=42; }
             }
         }
         if (curPlayer.weapon2) &amp;&amp; (instance_exists(curPlayer.weapon2))
         {
-            if (p1WeaponSelected == noone) &amp;&amp; (curPlayer.weapon2.isActive)
+            if (weaponSelected == noone) &amp;&amp; (curPlayer.weapon2.isActive)
             {
-                p1WeaponSelected = curPlayer.weapon2;
-                if (curPlayer.weapon2 == obj_gloves)    { p1StupidOverrideSpriteSelected = spr_gloves_idle;  p1StupidOffsetSelectedY=22; }
-                if (curPlayer.weapon2 == obj_buckler)   { p1StupidOverrideSpriteSelected = spr_buckler_idle; p1StupidOffsetSelectedY=42; }
+                weaponSelected = curPlayer.weapon2;
+                if (curPlayer.weapon2 == obj_gloves)    { stupidOverrideSpriteSelected = spr_gloves_idle;  stupidOffsetSelectedY=22; }
+                if (curPlayer.weapon2 == obj_buckler)   { stupidOverrideSpriteSelected = spr_buckler_idle; stupidOffsetSelectedY=42; }
             }
             else{
-                p1WeaponBack = curPlayer.weapon2;
-                if (curPlayer.weapon2 == obj_gloves)    { p1StupidOverrideSpriteBack = spr_gloves_idle;  p1StupidOffsetBackY=22; }
-                if (curPlayer.weapon2 == obj_buckler)   { p1StupidOverrideSpriteBack = spr_buckler_idle; p1StupidOffsetBackY=42; }
+                weaponBack = curPlayer.weapon2;
+                if (curPlayer.weapon2 == obj_gloves)    { stupidOverrideSpriteBack = spr_gloves_idle;  stupidOffsetBackY=22; }
+                if (curPlayer.weapon2 == obj_buckler)   { stupidOverrideSpriteBack = spr_buckler_idle; stupidOffsetBackY=42; }
             }
         }
         
-        var p1WeaponSelectedSprite = -1;
-        var p1WeaponSelectedColor = c_black;
+        var weaponSelectedSprite = -1;
+        var weaponSelectedColor = c_black;
         
-        if (instance_exists(p1WeaponSelected))
+        if (instance_exists(weaponSelected))
         {
-            p1WeaponSelectedSprite = p1WeaponSelected.sprite_index;
-            if (p1WeaponSelected.ammo_type == type_light) p1WeaponSelectedColor = K_BETU_GREEN2;
-            if (p1WeaponSelected.ammo_type == type_medium) p1WeaponSelectedColor = K_BETU_RED;
-            if (p1WeaponSelected.ammo_type == type_heavy) p1WeaponSelectedColor = K_BETU_BLUE;
+            weaponSelectedSprite = weaponSelected.sprite_index;
+            if (weaponSelected.ammo_type == type_light) weaponSelectedColor = K_BETU_GREEN2;
+            if (weaponSelected.ammo_type == type_medium) weaponSelectedColor = K_BETU_RED;
+            if (weaponSelected.ammo_type == type_heavy) weaponSelectedColor = K_BETU_BLUE;
             
-            if (p1StupidOverrideSpriteSelected) p1WeaponSelectedSprite = p1StupidOverrideSpriteSelected;
+            if (stupidOverrideSpriteSelected) weaponSelectedSprite = stupidOverrideSpriteSelected;
         }
         
-        var p1WeaponBackSprite = -1;
-        var p1WeaponBackColor = c_black;
+        var weaponBackSprite = -1;
+        var weaponBackColor = c_black;
         
-        if (instance_exists(p1WeaponBack))
+        if (instance_exists(weaponBack))
         {
-            p1WeaponBackSprite = p1WeaponBack.sprite_index;
-            if (p1WeaponBack.ammo_type == type_light) p1WeaponBackColor = K_BETU_GREEN2;
-            if (p1WeaponBack.ammo_type == type_medium) p1WeaponBackColor = K_BETU_RED;
-            if (p1WeaponBack.ammo_type == type_heavy) p1WeaponBackColor = K_BETU_BLUE;
+            weaponBackSprite = weaponBack.sprite_index;
+            if (weaponBack.ammo_type == type_light) weaponBackColor = K_BETU_GREEN2;
+            if (weaponBack.ammo_type == type_medium) weaponBackColor = K_BETU_RED;
+            if (weaponBack.ammo_type == type_heavy) weaponBackColor = K_BETU_BLUE;
             
-            if (p1StupidOverrideSpriteBack) p1WeaponBackSprite = p1StupidOverrideSpriteBack;
+            if (stupidOverrideSpriteBack) weaponBackSprite = stupidOverrideSpriteBack;
         }
         
-        if (sprite_exists(p1WeaponSelectedSprite)) 
+        if (sprite_exists(weaponSelectedSprite)) 
         {
-            draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX+4, p1WeaponSelectedY+p1StupidOffsetSelectedY+4, 2, 2, 0, c_black, 0.8*main_hud_alpha);
-            draw_sprite_ext(p1WeaponSelectedSprite, 2, p1WeaponSelectedX, p1WeaponSelectedY+p1StupidOffsetSelectedY, 2, 2, 0, p1WeaponSelectedColor, main_hud_alpha);
+            draw_sprite_ext(weaponSelectedSprite, 2, weaponSelectedX+4, weaponSelectedY+stupidOffsetSelectedY+4, 2, 2, 0, c_black, 0.8*main_hud_alpha);
+            draw_sprite_ext(weaponSelectedSprite, 2, weaponSelectedX, weaponSelectedY+stupidOffsetSelectedY, 2, 2, 0, weaponSelectedColor, main_hud_alpha);
         }
-        if (sprite_exists(p1WeaponBackSprite)) draw_sprite_ext(p1WeaponBackSprite, 2, p1WeaponBackX, p1WeaponBackY+p1StupidOffsetBackY, 2, 2, 0, p1WeaponBackColor, 0.8*main_hud_alpha);
+        if (sprite_exists(weaponBackSprite)) draw_sprite_ext(weaponBackSprite, 2, weaponBackX, weaponBackY+stupidOffsetBackY, 2, 2, 0, weaponBackColor, 0.8*main_hud_alpha);
         
         
         //Ammo Numbers
         
-        var p1AmmoNumberGunX = width*0.17;
-        var p1AmmoNumberGunY = height*0.9;
-        var p1AmmoNumberTotalX = p1AmmoNumberGunX+8;
-        var p1AmmoNumberTotalY = p1AmmoNumberGunY+18;
+        var ammoNumberGunX = width*0.17;
+        var ammoNumberGunY = height*0.9;
+        var ammoNumberTotalX = ammoNumberGunX+8;
+        var ammoNumberTotalY = ammoNumberGunY+18;
         
         var ammoBarTotalWidth = 40;
         var ammoBarTotalHeight = 16;
         var ammoBarDelaySpeed = 0.004;
         var ammoBarDelayTime = room_speed*0.6;
-        var p1AmmoBarTotalX = p1AmmoNumberTotalX+(ammoBarTotalWidth/2);
-        var p1AmmoBarTotalY = p1AmmoNumberGunY-8;
+        var ammoBarTotalX = ammoNumberTotalX+(ammoBarTotalWidth/2);
+        var ammoBarTotalY = ammoNumberGunY-8;
         
-        if (instance_exists(p1WeaponSelected))
+        if (playerId != 1)
+        {
+            ammoNumberGunX = width*0.83;
+            ammoNumberTotalX = ammoNumberGunX+8;
+            ammoBarTotalX = ammoNumberTotalX+(ammoBarTotalWidth/2);
+        }
+        
+        if (instance_exists(weaponSelected))
         {
             //Gun Ammo
             draw_set_halign(fa_right);
             draw_set_valign(fa_center);
             draw_set_font(global.font_numberVeryLarge);
-            draw_text_dropoutline_ext_transformed(p1AmmoNumberGunX, p1AmmoNumberGunY, string(p1WeaponSelected.ammo_current), c_white, c_white, c_black, 1, 5, 1, 1, 0, main_hud_alpha);
+            draw_text_dropoutline_ext_transformed(ammoNumberGunX, ammoNumberGunY, string(weaponSelected.ammo_current), c_white, c_white, c_black, 1, 5, 1, 1, 0, main_hud_alpha);
             
             //Total Ammo
-            var p1AmmoTotal = 0;
-            var p1AmmoTotalMax = 0;
-            var p1AmmoBarId = -1;
-            if (p1WeaponSelected.ammo_type == type_light)   { p1AmmoTotal = global.ammo_light[p];    p1AmmoTotalMax = global.ammo_light_max;   p1AmmoBarId =  delayedAmmoLightBar; }
-            if (p1WeaponSelected.ammo_type == type_medium)  { p1AmmoTotal = global.ammo_medium[p];   p1AmmoTotalMax = global.ammo_medium_max;  p1AmmoBarId =  delayedAmmoMediumBar; }
-            if (p1WeaponSelected.ammo_type == type_heavy)   { p1AmmoTotal = global.ammo_heavy[p];    p1AmmoTotalMax = global.ammo_heavy_max;   p1AmmoBarId =  delayedAmmoHeavyBar; }
+            var pAmmoTotal = 0;
+            var pAmmoTotalMax = 0;
+            var pAmmoBarId = -1;
+            if (weaponSelected.ammo_type == type_light)   { pAmmoTotal = global.ammo_light[playerId];    pAmmoTotalMax = global.ammo_light_max;   pAmmoBarId =  delayedAmmoLightBar[playerId]; }
+            if (weaponSelected.ammo_type == type_medium)  { pAmmoTotal = global.ammo_medium[playerId];   pAmmoTotalMax = global.ammo_medium_max;  pAmmoBarId =  delayedAmmoMediumBar[playerId]; }
+            if (weaponSelected.ammo_type == type_heavy)   { pAmmoTotal = global.ammo_heavy[playerId];    pAmmoTotalMax = global.ammo_heavy_max;   pAmmoBarId =  delayedAmmoHeavyBar[playerId]; }
             draw_set_halign(fa_left);
             draw_set_valign(fa_center);
             draw_set_font(global.font_numberMedium);
-            draw_text_dropshadow_ext_transformed(p1AmmoNumberTotalX, p1AmmoNumberTotalY, string(round(p1AmmoTotal/p1WeaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(ammoNumberTotalX, ammoNumberTotalY, string(round(pAmmoTotal/weaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
         
             //Total Ammo Bar
-            
-            
-            draw_healthbar_delayed(p1AmmoBarId, p1AmmoBarTotalX-(ammoBarTotalWidth/2), p1AmmoBarTotalY-(ammoBarTotalHeight/2), p1AmmoBarTotalX+(ammoBarTotalWidth/2), p1AmmoBarTotalY+(ammoBarTotalHeight/2), 
-            p1AmmoTotal, p1AmmoTotalMax, p1WeaponSelectedColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(pAmmoBarId, ammoBarTotalX-(ammoBarTotalWidth/2), ammoBarTotalY-(ammoBarTotalHeight/2), ammoBarTotalX+(ammoBarTotalWidth/2), ammoBarTotalY+(ammoBarTotalHeight/2), 
+            pAmmoTotal, pAmmoTotalMax, weaponSelectedColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);  
         }
         
         //Grenades
         var grenadesVerSpacing = 30;
         var grenadesHorSpacing = 25;
+        var grenadesHorOrientation = 1;
         
-        var p1GrenadesX = width*0.025;
-        var p1GrenadesY = height*0.85;
+        var pGrenadesX = width*0.025;
+        var pGrenadesY = height*0.85;
         
-        var grenadeCount = global.grenades[p];
+        if (playerId != 1) 
+        {
+            pGrenadesX = width*0.975;
+            grenadesHorOrientation = -1;
+        }
+        
+        var grenadeCount = global.grenades[playerId];
         var grMaxHorizontal = 5;
         var grDrawCount = 0;
         var grOffsetX = 0;
@@ -2092,8 +2258,8 @@ while (p &lt;= global.playerCount)
         
         repeat (grenadeCount)
         {
-            draw_sprite_ext(spr_grenadeNew,0,p1GrenadesX+grOffsetX, p1GrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
-            grOffsetX += grenadesHorSpacing;
+            draw_sprite_ext(spr_grenadeNew,0,pGrenadesX+grOffsetX, pGrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
+            grOffsetX += grenadesHorSpacing*grenadesHorOrientation;
             grDrawCount++;
             if (grDrawCount &gt;= grMaxHorizontal)
             {
@@ -2102,7 +2268,6 @@ while (p &lt;= global.playerCount)
                 grDrawCount = 0;
             }
         }
-        
         
         //gui_score Objects
         if instance_exists(gui_score)
@@ -2160,28 +2325,36 @@ while (p &lt;= global.playerCount)
         draw_set_valign(fa_center);
         draw_set_alpha(main_hud_alpha);
         
+        var dynamicAmmoObj = gui_dynamic_ammo1;
+        
         var dynamicAmmoX = -1*width*0.1;
         var dynamicAmmoY1 = height*0.46;
         var dynamicAmmoY2 = height*0.5;
         var dynamicAmmoY3 = height*0.54;
         var dynamicAmmoBarHeight = 32;
         var dynamicAmmoBarWidth = 160;
+        
+        if (playerId != 1)
+        {
+            dynamicAmmoObj = gui_dynamic_ammo2;
+            dynamicAmmoX = width*1.1;
+        }
             
         var dynamicAmmoString1 = loc_key("GENERAL_LIGHTAMMO");
         var dynamicAmmoString2 = loc_key("GENERAL_MEDIUMAMMO");
         var dynamicAmmoString3 = loc_key("GENERAL_HEAVYAMMO");
             
-        if (instance_exists(gui_dynamic_ammo1))
+        if (instance_exists(dynamicAmmoObj))
         {
-            var bgX1 = dynamicAmmoX-(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
-            var bgX2 = dynamicAmmoX+(dynamicAmmoBarWidth/2) +gui_dynamic_ammo1.offsetX;
+            var bgX1 = dynamicAmmoX-(dynamicAmmoBarWidth/2) + dynamicAmmoObj.offsetX;
+            var bgX2 = dynamicAmmoX+(dynamicAmmoBarWidth/2) + dynamicAmmoObj.offsetX;
             
-            var bg1Y1 = dynamicAmmoY1-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-            var bg1Y2 = dynamicAmmoY1+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-            var bg2Y1 = dynamicAmmoY2-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-            var bg2Y2 = dynamicAmmoY2+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-            var bg3Y1 = dynamicAmmoY3-(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
-            var bg3Y2 = dynamicAmmoY3+(dynamicAmmoBarHeight/2) +gui_dynamic_ammo1.offsetY;
+            var bg1Y1 = dynamicAmmoY1-(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
+            var bg1Y2 = dynamicAmmoY1+(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
+            var bg2Y1 = dynamicAmmoY2-(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
+            var bg2Y2 = dynamicAmmoY2+(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
+            var bg3Y1 = dynamicAmmoY3-(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
+            var bg3Y2 = dynamicAmmoY3+(dynamicAmmoBarHeight/2) +dynamicAmmoObj.offsetY;
             
             draw_set_color(c_black);
             draw_set_alpha(0.8*main_hud_alpha);
@@ -2199,16 +2372,16 @@ while (p &lt;= global.playerCount)
             var ammoBarDelaySpeed = 0.004;
             var ammoBarDelayTime = room_speed*0.6;
             
-            draw_healthbar_delayed(delayedAmmoLightBar, bgX1-2,bg1Y1-2,bgX2-2,bg1Y2-2, global.ammo_light[p], global.ammo_light_max, ammoBarLightColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-            draw_healthbar_delayed(delayedAmmoMediumBar, bgX1-2,bg2Y1-2,bgX2-2,bg2Y2-2, global.ammo_medium[p], global.ammo_medium_max, ammoBarMediumColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
-            draw_healthbar_delayed(delayedAmmoHeavyBar, bgX1-2,bg3Y1-2,bgX2-2,bg3Y2-2, global.ammo_heavy[p], global.ammo_heavy_max, ammoBarHeavyColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(delayedAmmoLightBar[playerId], bgX1-2,bg1Y1-2,bgX2-2,bg1Y2-2, global.ammo_light[playerId], global.ammo_light_max, ammoBarLightColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(delayedAmmoMediumBar[playerId], bgX1-2,bg2Y1-2,bgX2-2,bg2Y2-2, global.ammo_medium[playerId], global.ammo_medium_max, ammoBarMediumColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
+            draw_healthbar_delayed(delayedAmmoHeavyBar[playerId], bgX1-2,bg3Y1-2,bgX2-2,bg3Y2-2, global.ammo_heavy[playerId], global.ammo_heavy_max, ammoBarHeavyColor, c_black, c_white, ammoBarDelaySpeed, ammoBarDelayTime, 0, false, false);
         
             draw_set_font(global.font_numberSmall);
             draw_set_halign(fa_left);
             
-            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY1+gui_dynamic_ammo1.offsetY,dynamicAmmoString1,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
-            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY2+gui_dynamic_ammo1.offsetY,dynamicAmmoString2,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
-            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY3+gui_dynamic_ammo1.offsetY,dynamicAmmoString3,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY1+dynamicAmmoObj.offsetY,dynamicAmmoString1,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY2+dynamicAmmoObj.offsetY,dynamicAmmoString2,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(bgX1+3,dynamicAmmoY3+dynamicAmmoObj.offsetY,dynamicAmmoString3,c_white,c_black,0.7,1,1,1,0,main_hud_alpha);
         }
         
         //Boss Fight Lifebar
@@ -2372,13 +2545,12 @@ if (global.gameOver)
             
     var gameOverString1, gameOverString2
             
-    if (global.input == 'keyboard') 
+    if (global.input[1] == K_INPUT_KEYBOARD) 
     {
         gameOverString1 = loc_key("HUD_GAMEOVER_RETRY");
         gameOverString2 = loc_key("HUD_GAMEOVER_MENU");
     }
-            
-    if (global.input == 'joystick') 
+    else
     {
         gameOverString1 = loc_key("HUD_GAMEOVER_RETRY_JOY");
         gameOverString2 = loc_key("HUD_GAMEOVER_MENU_JOY");
@@ -2464,17 +2636,6 @@ if ((fps/room_speed) &lt; 0.9) draw_text(window_get_width()*0.99, window_get_hei
 
 //Version Number
 draw_text(window_get_width()*0.99, window_get_height()*0.97, global.currentVersionNumber );
-
-
-if (global.input = 'joystick')
-{
-    var stringAim;
-    if (global.auto_aim == K_AUTOAIM_OFF) stringAim = 'OFF';
-    if (global.auto_aim == K_AUTOAIM_ASSIST) stringAim = 'ASSIST';
-    if (global.auto_aim == K_AUTOAIM_FULL) stringAim ='FULL';
-    
-    draw_text(window_get_width()*0.93, window_get_height()*0.94,'AIM: '+stringAim );
-}
 </string>
           </argument>
         </arguments>
@@ -2575,42 +2736,55 @@ if (global.drawGridDebug)
             <kind>1</kind>
             <string>///Crosshair
 
-if (!global.pauseMenu) &amp;&amp; (!global.gameOver)
-{
-    var drawCrosshair = true;
-    
-    if collision_circle(global.crosshairX,global.crosshairY,5,class_enemy,false,true) crosshair_image = 1;
-    else crosshair_image = 0;
-    
-    if instance_exists(class_player)
+if (!global.pauseMenu) &amp;&amp; (!global.gameOver) &amp;&amp; (instance_exists(class_player))
+{   
+    var pCount = instance_number(class_player);
+    for (var i=0; i&lt;pCount; i++)
     {
-        if instance_exists(class_player.myGun)
+        pCur = instance_find(class_player,i);
+        if (pCur) &amp;&amp; (instance_exists(pCur))
         {
-            if (class_player.myGun.reloading)
-            {
-                drawCrosshair = false;
-                var subImage = (class_player.myGun.reload_time_current/class_player.myGun.reload_time)*12; //12=animation frames
+            var drawCrosshair = true;
+            
+            var crossSprite = noone;
+            var p = pCur.myPlayerId;
+            
+            if (p==1) crossSprite = spr_crosshair;
+            if (p==2) crossSprite = spr_crosshair2;
+            
+            if collision_circle(global.crosshairX[p],global.crosshairY[p],5,class_enemy,false,true) crosshair_image = 1;
+            else crosshair_image = 0;
                 
-                if (global.input == 'keyboard')
-                { 
-                    draw_sprite_ext(spr_crosshair,3,global.crosshairX,global.crosshairY,global.crosshair_scale,global.crosshair_scale,0,c_white,1);
-                    draw_sprite_ext(spr_crosshair_reload,subImage,global.crosshairX,global.crosshairY,1.6,1.6,0,c_white,1);
-                } 
+            if (global.input[p] != K_INPUT_KEYBOARD)
+            {
+                if (pCur.aiming) drawCrosshair = false;
+                if (!pCur.joyIsRightStickAiming) drawCrosshair = false;
+            }
+            
+            if instance_exists(pCur.myGun)
+            {
+                if (pCur.myGun.reloading)
+                {
+                    var subImage = (pCur.myGun.reload_time_current/pCur.myGun.reload_time)*12; //12=animation frames;
+                        
+                    if (drawCrosshair) //if (global.input[p] == K_INPUT_KEYBOARD)
+                    {
+                        draw_sprite_ext(crossSprite,3,global.crosshairX[p],global.crosshairY[p],global.crosshair_scale[p],global.crosshair_scale[p],0,c_white,1);
+                        draw_sprite_ext(spr_crosshair_reload,subImage,global.crosshairX[p],global.crosshairY[p],1.6,1.6,0,c_white,1);
+                    }
+                    drawCrosshair = false;
+                }
+            }
+            
+            
+            
+            if (drawCrosshair) draw_sprite_ext(crossSprite,crosshair_image,global.crosshairX[p],global.crosshairY[p],global.crosshair_scale[p],global.crosshair_scale[p],0,c_white,1);
+            
+            if global.crosshair_scale[p] &gt; 1
+            {
+                global.crosshair_scale[p] -= 0.05;
             }
         }
-        
-        if (global.input == 'joystick')
-        {
-            if (class_player.aiming) drawCrosshair = false;
-            if (!class_player.joyIsRightStickAiming) drawCrosshair = false;
-        }
-    }
-    
-    if (drawCrosshair) draw_sprite_ext(spr_crosshair,crosshair_image,global.crosshairX,global.crosshairY,global.crosshair_scale,global.crosshair_scale,0,c_white,1);
-    
-    if global.crosshair_scale &gt; 1
-    {
-        global.crosshair_scale -= 0.05;
     }
 }
 </string>

@@ -53,6 +53,9 @@ reflection_object_setup(30,-1,image_index);
 audio_emitter = audio_emitter_create();
 audio_emitter_falloff(audio_emitter, global.falloffMediumDist, global.falloffMediumMax, global.falloffMediumFactor);
 audio_emitter_gain(audio_emitter,global.soundVolume);
+
+ffTime = room_speed*0.012;
+ffTimeCurrent = 0;
 </string>
           </argument>
         </arguments>
@@ -106,6 +109,9 @@ if (!global.pause)
             myAlpha -= fade;
         }
     }
+    
+    //Allow Friendly Fire
+    if (ffTimeCurrent &lt; ffTime) ffTimeCurrent++;
 }
 else if (speed_reset == false)
 {
@@ -261,6 +267,69 @@ if faction == f_player &amp;&amp; instance_exists(other)
             instance_destroy();
         }
         else piercing--;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="class_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Friendly Fire
+if (ffTimeCurrent &gt;= ffTime) &amp;&amp; instance_exists(other)
+{
+    ffDamage = round(damage * global.friendlyFireDamageRatio);
+    
+    if (!other.dodging)
+    {
+        if (other.shield)
+        {
+            if (distance_travelled &gt; range) ffDamage = ffDamage/3;
+            other.energy -= ffDamage;
+            audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
+            if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+        }
+        else
+        {
+            if (distance_travelled &gt; range) ffDamage = round(damage/3);
+            other.hp -= ffDamage;
+            audio_play(other.audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
+            
+            bloodAmount = min(round(ffDamage/5), (global.max_casings-global.count_casings), 5);
+            if (bloodAmount) repeat(bloodAmount) blood = instance_create(x,y,fx_blood);
+            
+            if (other.hp &lt;= 0) achievement_give("ACHIEVEMENT_TEAMKILL");
+        }
+        other.hit_taken = true;
+        
+        spreadX = irandom_range(-15,15);
+        spreadY = irandom_range(-15,15);
+        damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+        damage_fx.damage = ffDamage;
+
+        ds_list_add(global.audio_cleaner,audio_emitter);
+        if (!instance_exists(hit)) &amp;&amp; (global.count_particles &lt; global.max_particles)
+        {
+            hit = instance_create(x,y,fx_hit);
+            hit.type = ammo_type;
+        }
+        instance_destroy();
     }
 }
 </string>

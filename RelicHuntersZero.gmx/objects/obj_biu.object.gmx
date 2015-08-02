@@ -40,7 +40,7 @@ event_inherited();
     hp_max = 200;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
-    hp = global.hp[myPlayerId];
+    
     
     base_accuracy = 1;
     //Weapon Skills, "1" is perfect, higher is worse
@@ -73,7 +73,62 @@ event_inherited();
     sprite_dash_fx = spr_biu_dash_fx;
     
 
-    if global.weapon2[myPlayerId] != noone
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Character Swap
+if global.character[myPlayerId] != char_biu
+{
+    audio_emitter_free(audio_emitter);
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Correct myPlayerId initial setup
+
+hp = global.hp[myPlayerId];
+
+if global.weapon2[myPlayerId] != noone
     {
         if global.weapon2[myPlayerId] == obj_buckler
         {
@@ -128,34 +183,6 @@ event_inherited();
 
 //Done
 setup_initial = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Character Swap
-if global.character[myPlayerId] != char_biu
-{
-    audio_emitter_free(audio_emitter);
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

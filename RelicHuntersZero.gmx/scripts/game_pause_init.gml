@@ -5,7 +5,7 @@
 global.pauseBackground = -1;
 global.pauseMenu = false;
 global.selectedButton = -1;
-global.pauseInput = global.input;
+global.pauseInput = global.input[1];
 
 //Create all Pause Menu objects
 global.pauseFX = instance_create(0,0,menu_fx_pause);

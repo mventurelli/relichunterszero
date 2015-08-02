@@ -269,8 +269,10 @@ if (!buttonSetupDone) &amp;&amp; (instance_exists(class_menu_button))
 
 if (allowInput)
 {
-    if (global.input == 'joystick') &amp;&amp; (buttonSetupDone) &amp;&amp; ds_exists(global.buttonGrid,ds_type_grid)
+    if (global.input[1] != K_INPUT_KEYBOARD) &amp;&amp; (buttonSetupDone) &amp;&amp; ds_exists(global.buttonGrid,ds_type_grid)
     {
+        var joy = global.input[1];
+        
         //If there's no button selected, get the topmost one
         if (global.selectedButton == -1) || (global.selectedButton == 0) || (!instance_exists(global.selectedButton))
         {
@@ -278,30 +280,30 @@ if (allowInput)
         }    
         else {
             //Get direction input
-            if (joy_simple_deadzone( joy_xpos(0), joy_ypos(0), 0.3)) || joy_check_pressed(0,15) || joy_check_pressed(0,16) || joy_check_pressed(0,17) || joy_check_pressed(0,18) 
+            if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) || joy_check_pressed(joy,15) || joy_check_pressed(joy,16) || joy_check_pressed(joy,17) || joy_check_pressed(joy,18) 
             {
                 if (joyCanSwitch)
                 {
                     joyCanSwitch = false;
                     var joyDirection = -1;
-                    if (joy_simple_deadzone( joy_xpos(0), joy_ypos(0), 0.3)) joyDirection = point_direction(x,y,(x+joy_xpos(0)),(y+joy_ypos(0)));
+                    if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) joyDirection = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
 
                     //Up
-                    if (joyDirection &gt; 45 &amp;&amp; joyDirection &lt; 135) || (joy_check_pressed(0,15))
+                    if (joyDirection &gt; 45 &amp;&amp; joyDirection &lt; 135) || (joy_check_pressed(joy,15))
                     {
                         getId = ds_grid_get_above(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
                         if (getId) global.selectedButton = getId;
                     }
                     
                     //Down
-                    if (joyDirection &gt; 215 &amp;&amp; joyDirection &lt; 315) || (joy_check_pressed(0,16))
+                    if (joyDirection &gt; 215 &amp;&amp; joyDirection &lt; 315) || (joy_check_pressed(joy,16))
                     {
                         getId = ds_grid_get_below(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
                         if (getId) global.selectedButton = getId;
                     }
                     
                     //Left
-                    if (joyDirection &gt; 135 &amp;&amp; joyDirection &lt; 215) || (joy_check_pressed(0,17))
+                    if (joyDirection &gt; 135 &amp;&amp; joyDirection &lt; 215) || (joy_check_pressed(joy,17))
                     {
                         if (!global.selectedButton.isToggle)
                         {
@@ -316,7 +318,7 @@ if (allowInput)
                     }
                     
                     //Right
-                    if ((joyDirection != -1) &amp;&amp; (joyDirection &lt; 45 || joyDirection &gt; 315)) || (joy_check_pressed(0,18))
+                    if ((joyDirection != -1) &amp;&amp; (joyDirection &lt; 45 || joyDirection &gt; 315)) || (joy_check_pressed(joy,18))
                     {
                         if (!global.selectedButton.isToggle)
                         {
@@ -350,16 +352,21 @@ if (allowInput)
     //Switch to K&amp;M
     if ( mouse_check_button(mb_any) || keyboard_check(vk_anykey) || (mouse_x != oldMouseX) || (mouse_y != oldMouseY) )
     {
-        global.input = 'keyboard';
+        global.input[1] = K_INPUT_KEYBOARD;
     }
         
     oldMouseX = mouse_x;
     oldMouseY = mouse_y;
         
     //Switch to Joystick
-    if (gamepad_is_connected(0))
+    if (gamepad_is_connected(K_INPUT_JOYSTICK1))
     {   
-        if (joy_check_any(0)) || (joy_simple_deadzone( joy_xpos(0), joy_ypos(0), 0.3)) global.input = 'joystick';
+        if (joy_check_any(K_INPUT_JOYSTICK1)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK1), joy_ypos(K_INPUT_JOYSTICK1), 0.3)) global.input[1] = K_INPUT_JOYSTICK1;
+    }
+    
+    if (gamepad_is_connected(K_INPUT_JOYSTICK2))
+    {   
+        if (joy_check_any(K_INPUT_JOYSTICK2)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK2), joy_ypos(K_INPUT_JOYSTICK2), 0.3)) global.input[1] = K_INPUT_JOYSTICK2;
     }
 }
 else global.selectedButton = -1;
@@ -387,7 +394,7 @@ else global.selectedButton = -1;
             <kind>1</kind>
             <string>///Draw Cursor
 
-if (global.input == 'keyboard')
+if (global.input[1] == K_INPUT_KEYBOARD)
 {
     draw_sprite(spr_crosshair,0,mouse_x,mouse_y);
 }

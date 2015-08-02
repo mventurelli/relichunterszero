@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.1');
+    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.11');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -12,6 +12,7 @@ ini_open(working_directory + "\saveData.ini");
     
     var p = 1; while (p <= global.playerCount)
     {
+        global.playerAlive[p] = ini_read_real('Character','Alive'+string(p),true);
         global.character[p] = ini_read_real('Character','Character'+string(p),char_jimmy);
         global.weapon1[p] = ini_read_real('Character','Weapon1Player'+string(p),noone);
         global.weapon2[p] = ini_read_real('Character','Weapon2Player'+string(p),noone);
@@ -131,7 +132,8 @@ ini_open(working_directory + "\saveData.ini");
     global.soundVolume = ini_read_real('Quality','Master Sound',0.9); 
     volume_update();
     
-    global.input =  ini_read_string('Input','Input Type','keyboard');
+    global.input[1] =  ini_read_real('Input','Input1',K_INPUT_KEYBOARD);
+    global.input[2] =  ini_read_real('Input','Input2',K_INPUT_JOYSTICK1);
     global.sticky_aim = ini_read_real('Input','Sticky Aim',true);
     global.auto_aim = ini_read_real('Input','Auto Aim',K_AUTOAIM_ASSIST);
     global.sprint_toggle = ini_read_real('Input','Sprint Toggle',false);

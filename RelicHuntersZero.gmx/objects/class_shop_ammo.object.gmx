@@ -80,8 +80,9 @@ if instance_exists(activationClient) &amp;&amp; (!unlock)
         
         if (instance_exists(global.dynamicAmmo1)) &amp;&amp; (sprite_index != spr_pickup_grenade)
         {
-            global.dynamicAmmo1.timedActive = true;
-            global.dynamicAmmo1.activeTimeCurrent = 0;
+            var p = activationClient.myPlayerId;
+            if (p == 1) { global.dynamicAmmo1.timedActive = true; global.dynamicAmmo1.activeTimeCurrent = 0; }
+            if (p == 2) { global.dynamicAmmo2.timedActive = true; global.dynamicAmmo2.activeTimeCurrent = 0; }
         }
     }
 }

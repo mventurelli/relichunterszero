@@ -88,12 +88,17 @@ if (toggle)
         {
             global.relic_slot[freeSlot] = object;
             global.relic_alcoholic_carrot = 2;
+            audio_play_sound(sfx_relic_on,1,false);
         }
         else show_debug_message('No free slots, cannot equip Relic');
     }
     else
     {
-        if (global.relic_alcoholic_carrot == 2) global.relic_alcoholic_carrot = 1;
+        if (global.relic_alcoholic_carrot == 2) 
+        {
+            global.relic_alcoholic_carrot = 1;
+            audio_play_sound(sfx_relic_off,1,false);
+        }
         //Free all slots that contain the object
         for (i=1; i&lt;4; i++)
         {

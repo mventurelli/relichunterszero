@@ -60,7 +60,7 @@ myTextJoystick = 'NO TEXT FOR JOYSTICK';
           <argument>
             <kind>1</kind>
             <string>///Legacy
-if (global.input == 'keyboard') image_index = 0;
+if (global.input[1] == K_INPUT_KEYBOARD) image_index = 0;
 else image_index = 1;
 </string>
           </argument>
@@ -91,7 +91,7 @@ draw_set_color(myColor);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
-if (global.input == 'keyboard') draw_text_ext(x,y,myTextKeyboard,fontSep,fontWidth);
+if (global.input[1] == K_INPUT_KEYBOARD) draw_text_ext(x,y,myTextKeyboard,fontSep,fontWidth);
 else draw_text_ext(x,y,myTextJoystick,fontSep,fontWidth);
 
 

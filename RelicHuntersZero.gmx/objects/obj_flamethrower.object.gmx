@@ -29,7 +29,7 @@
 event_inherited();
 
 name = loc_key("WPNAME_FLAMETHROWER");
-gui_info_weapon_create(class_player,c_white,name);
+gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
 
 allowPrecision = false;
 specialProjectile = K_PROJECTILE_FLAME;
@@ -82,14 +82,14 @@ sound = 'flamethrower';
 
 event_inherited();
 
-if (!reloading) &amp;&amp; (ammo_current)
+if (!reloading) &amp;&amp; (ammo_current) &amp;&amp; (owner) &amp;&amp; (instance_exists(owner))
 {
     if (input_pressed)
     {
         audio_play(owner.audio_emitter,false,1,sfx_flamethrower_start);
         audio_play(owner.audio_emitter,true,1,sfx_flamethrower_loop);
     }   
-    if (input_held) joy_rumble(0,0.1,0.1);
+    if (input_held) joy_rumble(global.input[owner.myPlayerId],0.1,0.1);
 }
 
 if (!input_held)

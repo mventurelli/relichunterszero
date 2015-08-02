@@ -38,7 +38,7 @@ event_inherited();
     hp_max = 100;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
-    hp = global.hp[myPlayerId];
+    
     
     base_accuracy = 1;
     
@@ -62,43 +62,7 @@ event_inherited();
     sprite_melee = spr_jimmy_melee;
     sprite_dash_fx = spr_jimmy_dash_fx;
     
-    //Starting Gun
-    if (room == room_start) || (room == room_tutorial)
-    {
-        //
-    }
     
-    if global.weapon2[myPlayerId] != noone
-    {
-        weapon2 = instance_create(x,y,global.weapon2[myPlayerId]);
-        weapon2.owner = id;
-        draw_gun(weapon2);
-        if (room!=room_start) weapon2.ammo_current = global.weapon2_ammo[myPlayerId];
-    }
-    
-    if global.weapon1[myPlayerId] != noone
-    {
-        weapon1 = instance_create(x,y,global.weapon1[myPlayerId]);
-        weapon1.owner = id;
-        draw_gun(weapon1);
-        if (room!=room_start) weapon1.ammo_current = global.weapon1_ammo[myPlayerId];
-    }
-    else
-    {
-        weapon1 = instance_create(x,y,obj_pistol_jimmy);
-        weapon1.owner = id;
-        draw_gun(weapon1);
-    }
-       
-    //Draw Correct Gun
-    if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
-    if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
-    global.currentlyEquippedWeapon[myPlayerId] = 0;
-        
-    
-    
-    //Done
-    setup_initial = true;
 
 </string>
           </argument>
@@ -128,6 +92,78 @@ if global.character[myPlayerId] != char_jimmy
     audio_emitter_free(audio_emitter);
     instance_destroy();
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Correct myPlayerId initial setup
+
+hp = global.hp[myPlayerId];
+
+    //Starting Gun
+    if (room == room_start) || (room == room_tutorial)
+    {
+        //
+    }
+    
+    show_debug_message('This is jimmy spawning his guns, and my playerId is '+string(myPlayerId));
+    
+    if global.weapon2[myPlayerId] != noone
+    {
+        show_debug_message('weapon2[myPlayerId] returns '+string(global.weapon2[myPlayerId]));
+        
+        weapon2 = instance_create(x,y,global.weapon2[myPlayerId]);
+        weapon2.owner = id;
+        draw_gun(weapon2);
+        if (room!=room_start) weapon2.ammo_current = global.weapon2_ammo[myPlayerId];
+    }
+    
+    if global.weapon1[myPlayerId] != noone
+    {
+        show_debug_message('weapon1[myPlayerId] returns '+string(global.weapon1[myPlayerId]));
+        
+        weapon1 = instance_create(x,y,global.weapon1[myPlayerId]);
+        weapon1.owner = id;
+        draw_gun(weapon1);
+        if (room!=room_start) weapon1.ammo_current = global.weapon1_ammo[myPlayerId];
+    }
+    else
+    {
+        weapon1 = instance_create(x,y,obj_pistol_jimmy);
+        weapon1.owner = id;
+        draw_gun(weapon1);
+    }
+       
+    //Draw Correct Gun
+    if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
+    if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
+    global.currentlyEquippedWeapon[myPlayerId] = 0;
+        
+    
+    
+    //Done
+    setup_initial = false;
+    
+    
 </string>
           </argument>
         </arguments>

@@ -158,7 +158,7 @@ if (myVariable != -99)
             <kind>1</kind>
             <string>///Use and Selection
 
-if ( global.input == 'keyboard' )
+if (global.input[1] == K_INPUT_KEYBOARD)
 {
     if (is_mouse_over(id))
     {
@@ -178,7 +178,7 @@ else
 
 if (isSelected) &amp;&amp; (isAvailable)
 {
-    if ((global.input == 'keyboard') &amp;&amp; mouse_check_button_pressed(mb_left) ) || ((global.input == 'joystick') &amp;&amp; joy_check(0,1))
+    if ((global.input[1] == K_INPUT_KEYBOARD) &amp;&amp; mouse_check_button_pressed(mb_left) ) || ((global.input[1] != K_INPUT_KEYBOARD) &amp;&amp; joy_check(0,1))
     {
         executeAction = true;
         audio_play_sound(sfx_menu_click,1,false);

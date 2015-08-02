@@ -3,8 +3,8 @@
   <caption></caption>
   <width>5000</width>
   <height>3500</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -148,8 +148,8 @@
     <instance objName="obj_limit" x="1536" y="704" name="inst_56A8B551" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2688" y="704" name="inst_B50490A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2752" y="704" name="inst_36866897" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_limit" x="2816" y="704" name="inst_E0F2241D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_limit" x="2880" y="704" name="inst_E4082832" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="2880" y="704" name="inst_E0F2241D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="2816" y="704" name="inst_E4082832" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2944" y="704" name="inst_90890F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3008" y="704" name="inst_0D002D57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3072" y="704" name="inst_8993FE9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -769,7 +769,7 @@
     <instance objName="obj_spawn_enemy" x="3840" y="2368" name="inst_93968599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="1632" y="1440" name="inst_F0DC1272" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_item" x="3328" y="736" name="inst_7F81EC36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_kami_kage" x="2816" y="800" name="inst_9FF7D92F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kami_kage" x="2688" y="800" name="inst_9FF7D92F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="2560" y="2016" name="inst_63AA82C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kami_kage" x="3200" y="1568" name="inst_8A2135A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_stage2" x="672" y="704" name="inst_8503C1EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

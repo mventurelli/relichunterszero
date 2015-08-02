@@ -70,7 +70,7 @@ if (executeAction)
 
 if (instance_exists(parentButton))
 {
-    if (parentButton.myVariable &gt;= parentButton.myVariableMax) || ((global.input == 'joystick') &amp;&amp; (global.selectedButton != parentButton))
+    if (parentButton.myVariable &gt;= parentButton.myVariableMax) || ((global.input[1] == K_INPUT_KEYBOARD) &amp;&amp; (global.selectedButton != parentButton))
     {
         isAvailable = false;
     }

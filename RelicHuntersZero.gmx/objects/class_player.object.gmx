@@ -273,14 +273,15 @@ audio_emitter_free(audio_emitter);
           <argument>
             <kind>1</kind>
             <string>///Crosshair Position &amp; AutoAim
-if (global.input == 'keyboard')
+if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 {
-    global.crosshairX = mouse_x;
-    global.crosshairY = mouse_y;
+    global.crosshairX[myPlayerId] = mouse_x;
+    global.crosshairY[myPlayerId] = mouse_y;
 }
 
-if (global.input == 'joystick') &amp;&amp; instance_exists(class_player) &amp;&amp; instance_exists(myGun)
+if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(class_player) &amp;&amp; instance_exists(myGun)
 {
+    var joy = global.input[myPlayerId];
     var autoAimAngle = 10;
     if (global.auto_aim == K_AUTOAIM_FULL) autoAimAngle = 360;
 
@@ -331,7 +332,7 @@ if (global.input == 'joystick') &amp;&amp; instance_exists(class_player) &amp;&a
             var candidate = find_enemy_autoaim(myGun.x,myGun.y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
             if (targetEnemy != candidate)
             {
-                global.crosshair_scale = 1.85;
+                global.crosshair_scale[myPlayerId] = 1.85;
                 targetEnemy = candidate;
             }
                 
@@ -348,17 +349,17 @@ if (global.input == 'joystick') &amp;&amp; instance_exists(class_player) &amp;&a
     
     //Crosshair Distance Resolve
     
-    joyIsRightStickAiming = joy_simple_deadzone( joy_x2pos(0), joy_y2pos(0), joyLookDeadzone);
+    joyIsRightStickAiming = joy_simple_deadzone( joy_x2pos(joy), joy_y2pos(joy), joyLookDeadzone);
     
-    if (joyIsRightStickAiming) joyLookTargetAngle = point_direction(x,y,(x+joy_x2pos(0)),(y+joy_y2pos(0)));
-    else if (!aiming) &amp;&amp; (joy_simple_deadzone( joy_xpos(0), joy_ypos(0), joyLookDeadzone)) joyLookTargetAngle = point_direction(x,y,(x+joy_xpos(0)),(y+joy_ypos(0))); //Direction set by movement stick
+    if (joyIsRightStickAiming) joyLookTargetAngle = point_direction(x,y,(x+joy_x2pos(joy)),(y+joy_y2pos(joy)));
+    else if (!aiming) &amp;&amp; (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), joyLookDeadzone)) joyLookTargetAngle = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy))); //Direction set by movement stick
         
     if (!joyAimLocked)
     {   
         joyLookDirection = angle_rotate(joyLookDirection, joyLookTargetAngle, joyLookAngularVelocity); 
     }
     
-    var joyAimVector = point_distance(0, 0, joy_x2pos(0), joy_y2pos(0) );
+    var joyAimVector = point_distance(0, 0, joy_x2pos(joy), joy_y2pos(joy) );
     if (joyIsRightStickAiming) joyCrosshairDistanceTarget = 320 * joyAimVector;
     else joyCrosshairDistanceTarget = joyCrosshairDistanceMin;
     
@@ -369,8 +370,8 @@ if (global.input == 'joystick') &amp;&amp; instance_exists(class_player) &amp;&a
     }
         
     //Final Crosshair Position
-    global.crosshairX = x + lengthdir_x(joyCrosshairDistance, joyLookDirection);
-    global.crosshairY = y + lengthdir_y(joyCrosshairDistance, joyLookDirection);
+    global.crosshairX[myPlayerId] = x + lengthdir_x(joyCrosshairDistance, joyLookDirection);
+    global.crosshairY[myPlayerId] = y + lengthdir_y(joyCrosshairDistance, joyLookDirection);
 }
 </string>
           </argument>
@@ -500,7 +501,7 @@ direction = move_direction;
 dodge_direction = -1;
 
 //Keyboard
-if global.input == 'keyboard' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+if (global.input[myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
 {   
     //Movement
     if input_key_left() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(180,move_accel); dodge_direction = 180; }
@@ -573,7 +574,7 @@ if global.input == 'keyboard' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
             speed = dodge_speed;
             if (dodge_direction == -1)
             {
-                dodge_direction = 180 + point_direction(x,y,global.crosshairX,global.crosshairY);
+                dodge_direction = 180 + point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
             }
             if (!double_tap_dodge) direction = dodge_direction;
             else direction = dodge_doubletap_direction;
@@ -599,18 +600,20 @@ if global.input == 'keyboard' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
 
 //////////////////////////////////////////////////////////////
 //Joystick
-if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
 {
+    var joy = global.input[myPlayerId];
+    
     //Movement
-    if (joy_simple_deadzone( joy_xpos(0), joy_ypos(0), joyMoveDeadzoneMin))
+    if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), joyMoveDeadzoneMin))
     {
-        var joy_direction = point_direction(x,y,(x+joy_xpos(0)),(y+joy_ypos(0)));
+        var joy_direction = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
         motion_add(joy_direction, move_accel);
         dodge_direction = joy_direction;
     }
     
     //Sprinting
-    if (joy_check(0,9) || joy_check(0,1)) &amp;&amp; (!melee)
+    if (joy_check(joy,9) || joy_check(joy,1)) &amp;&amp; (!melee)
     {
         if (sprinting) &amp;&amp; (stamina &lt; sprint_stamina) sprinting = false; 
         else if (stamina &gt;= sprint_stamina_min) sprinting = true;
@@ -625,12 +628,12 @@ if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
     }
     
     //Dodging
-    if joy_check(0,1)
+    if joy_check(joy,1)
     {
         dashTimeCurrent++;
     }
     
-    if joy_check_released(0,1)
+    if joy_check_released(joy,1)
     {
         if (dashTimeCurrent &lt;= dashTimeWindow) &amp;&amp; (!melee)
         {
@@ -643,7 +646,7 @@ if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
                 
                 if (dodge_direction == -1)
                 {
-                    dodge_direction = 180 + point_direction(x,y,global.crosshairX,global.crosshairY);
+                    dodge_direction = 180 + point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
                 }
                 
                 direction = dodge_direction;
@@ -662,7 +665,7 @@ if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
     }
     
     //Aiming
-    if (joy_zpos(0) &gt; 0.7) &amp;&amp; (!melee)
+    if (joy_zpos(joy) &gt; 0.7) &amp;&amp; (!melee)
     {  
         sprinting = false;
         aiming = true;
@@ -676,7 +679,7 @@ if global.input == 'joystick' &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
 //Look Direction
 if (!melee_dash)
 {
-    var direction_check = (global.crosshairX - x);
+    var direction_check = (global.crosshairX[myPlayerId] - x);
     if (direction_check &gt; 0) look_direction = 1;
     else look_direction = 0;
 }
@@ -687,7 +690,7 @@ if (melee) &amp;&amp; (animation_current = 'melee') &amp;&amp;(animation_index =
 {
     speed = melee_step_speed;
     if (myGun == obj_gloves) speed = melee_step_speed_gloves;
-    direction = point_direction(x,y,global.crosshairX,global.crosshairY);
+    direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
     melee_dash = true;
     
     if (direction &lt;= 90) || (direction &gt; 270) look_direction = 1;
@@ -700,9 +703,10 @@ else motion_add(direction-180,min(speed,dodgeFriction));
 
 //Resolve Movement
 var totalSpeedVector = 1;
-if (global.input == 'joystick')
+if (global.input[myPlayerId] != K_INPUT_KEYBOARD)
 {
-    var currentThumbstick = joy_radial_vector( joy_xpos(0), joy_ypos(0));
+    var myJoy = global.input[myPlayerId];
+    var currentThumbstick = joy_radial_vector( joy_xpos(myJoy), joy_ypos(myJoy));
     {
         if (currentThumbstick &gt; joyMoveDeadzoneMin) &amp;&amp; (currentThumbstick &lt; joyMoveDeadZoneMax) totalSpeedVector = joyMoveSlowSpeed;
     }
@@ -750,7 +754,8 @@ if stamina &gt; stamina_max stamina = stamina_max;
 
 // Stop Aiming When Reloading
 global.check_weapon_reloading = false;
-with(class_gun) 
+
+if (myGun) &amp;&amp; (instance_exists(myGun)) with(myGun)
 {
     if (reloading) global.check_weapon_reloading = true;
 }
@@ -878,7 +883,7 @@ animation_update_player();
 var input_melee = false;
 var input_gloves = false;
 
-if (global.input == 'keyboard')
+if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 {
     if input_key_melee_pressed()
     {
@@ -896,15 +901,16 @@ if (global.input == 'keyboard')
     }
     else inputShield = false;
 }
-
-if (global.input == 'joystick')
+else
 {
-    if joy_check_pressed(0,2)
+    var joy = global.input[myPlayerId];
+    
+    if joy_check_pressed(joy,2)
     {
         input_melee = true;
     }
     
-    if (joy_rpos(0) &gt; 0.7)
+    if (joy_rpos(joy) &gt; 0.7)
     {
         input_gloves = true;
         inputShield = true;
@@ -980,17 +986,18 @@ if (melee) &amp;&amp; (animation_current == 'melee')
 
 var grenade_input = false;
 
-if (global.input == 'keyboard')
+if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 {
     if input_key_grenade_pressed()
     {
         grenade_input = true;
     }
 }
-    
-if (global.input == 'joystick')
+else
 {
-    if (joy_check_pressed(0,5))
+    var joy = global.input[myPlayerId];
+    
+    if (joy_check_pressed(joy,5))
     {
         grenade_input = true;
     }
@@ -1034,7 +1041,7 @@ if (throw) &amp;&amp; (animation_current == 'melee')
     
         myGrenade = instance_create(x,y,obj_grenadeNew);
         myGrenade.speed = grenade_speed;
-        myGrenade.direction = point_direction(x,y,global.crosshairX,global.crosshairY);
+        myGrenade.direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
     }
 
     if (animation_index &gt;= (animation_frames-1))
@@ -1069,17 +1076,18 @@ var switch_input = false;
 
 if (weapon2 != noone)
 {
-    if (global.input == 'keyboard')
+    if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
     {
         if ( input_key_switch_pressed() ) || ( global.allowMouseWheel &amp;&amp; (mouse_wheel_up() || mouse_wheel_down()) )
         {
             switch_input = true;
         }
     }
-    
-    if (global.input == 'joystick')
+    else
     {
-        if (joy_check_pressed(0,4))
+        var joy = global.input[myPlayerId];
+        
+        if (joy_check_pressed(joy,4))
         {
             switch_input = true;
         }
@@ -1142,6 +1150,7 @@ if (hp &gt;= hp_max) hp = hp_max;
 
 if (hp &lt;= 0) 
 {
+    global.playerAlive[myPlayerId] = false;
     corpse = instance_create(x,y,fx_corpse_player);
     if (global.character[myPlayerId] == char_jimmy) corpse.sprite_index = spr_jimmy_death;
     if (global.character[myPlayerId] == char_pinky) corpse.sprite_index = spr_pinky_death;
@@ -1214,21 +1223,26 @@ if (!instance_exists(active_interaction))
 interactionKey = false;
 reloadKey = false;
 
-if (global.input == 'keyboard')
+if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 {
     if ( input_key_use_pressed() ) interactionKey = true;
     if ( input_key_reload_pressed() ) reloadKey = true;
 }
-
-if (global.input == 'joystick')
+else
 {   
-    if joy_check_released(0,3) if (pickupTimeCurrent &lt; pickupTimeWindow) reloadKey = true; 
+    var joy = global.input[myPlayerId];
     
-    if joy_check(0,3) 
+    if joy_check_released(joy,3) if (pickupTimeCurrent &lt; pickupTimeWindow) reloadKey = true; 
+    
+    if joy_check(joy,3) 
     {
         if (allowPickup) pickupTimeCurrent++;
     }
-    else {pickupTimeCurrent = 0; allowPickup = true;}
+    else 
+    {
+        if (pickupTimeCurrent) pickupTimeCurrent--; 
+        allowPickup = true;
+    }
     
     if (pickupTimeCurrent &gt;= pickupTimeWindow) &amp;&amp; (allowPickup)
     {
@@ -1257,8 +1271,13 @@ if (instance_exists(class_interactive_master))
     
     if (instance_exists(myPickupInRange))
     {
-        myPickupInRange.activationClient = id;
-        if (interactionKey) myPickupInRange.wantToActivate = true;
+        if (myPickupInRange.isClientLocked == false) myPickupInRange.activationClient = id;
+        
+        if (interactionKey) 
+        {
+            myPickupInRange.wantToActivate = true;
+            myPickupInRange.isClientLocked = true;
+        }
     }
 }
 </string>

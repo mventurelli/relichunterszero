@@ -83,29 +83,32 @@ haveIPlayedMySound = false;
           <argument>
             <kind>1</kind>
             <string>///Main Draw
-if (global.input == 'keyboard') sprite_index = spr_prompt_e;
-else  sprite_index = spr_prompt_x;
-
 if instance_exists(owner)
 {
-    if (owner.in_range) &amp;&amp; instance_exists(class_player)
+    if (owner.in_range)
     {
         draw_self();
-        var player = instance_nearest(owner.x,owner.y,class_player);
-        
-        if (!haveIPlayedMySound)
+        if instance_exists(owner.activationClient)
         {
-            audio_play(player.audio_emitter, false, 1, sfx_pickup_available);
-            haveIPlayedMySound = true;
-        }
+            var player = owner.activationClient;
             
-        if (allowPickup)
-        {
-            if (player.pickupTimeCurrent) &amp;&amp; (player.pickupTimeCurrent &lt; player.pickupTimeWindow)
+            if (global.input[player.myPlayerId] == K_INPUT_KEYBOARD) sprite_index = spr_prompt_e;
+            else  sprite_index = spr_prompt_x;
+    
+            if (!haveIPlayedMySound)
             {
-                var barAngle = range_convert(0,player.pickupTimeWindow,0,360,player.pickupTimeCurrent);
-                draw_circlebar(x,y-12,18,4,barAngle,20,circleSurface,c_white,0.8);
-            } 
+                audio_play(player.audio_emitter, false, 1, sfx_pickup_available);
+                haveIPlayedMySound = true;
+            }
+                
+            if (allowPickup)
+            {
+                if (player.pickupTimeCurrent) &amp;&amp; (player.pickupTimeCurrent &lt; player.pickupTimeWindow)
+                {
+                    var barAngle = range_convert(0,player.pickupTimeWindow,0,360,player.pickupTimeCurrent);
+                    draw_circlebar(x,y-12,18,4,barAngle,20,circleSurface,c_white,0.8);
+                } 
+            }
         }
     }  
     else haveIPlayedMySound = false;

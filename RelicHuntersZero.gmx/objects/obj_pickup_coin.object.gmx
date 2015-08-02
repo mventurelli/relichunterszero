@@ -140,14 +140,16 @@ else
             <string>///Attraction and Pickup
 if (vertical_speed_start &lt; interactive_speed) &amp;&amp; instance_exists(class_player)
 {
+    var player = instance_nearest(x,y,class_player);
+    
     speed -= magnet_friction
     if speed &lt; 0 speed = 0;
     
-    if point_distance(x,y,class_player.x,class_player.y) &lt;= magnet_range
+    if point_distance(x,y,player.x,player.y) &lt;= magnet_range
     {
         speed += magnet_accel;
         if (speed &gt; magnet_speed_max) speed = magnet_speed_max;
-        direction = point_direction(x,y,class_player.x,class_player.y);
+        direction = point_direction(x,y,player.x,player.y);
     }   
 }
 </string>

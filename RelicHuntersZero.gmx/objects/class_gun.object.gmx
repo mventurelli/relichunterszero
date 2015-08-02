@@ -266,11 +266,13 @@ if (global.relic_dev_potion == 2)
 
 if instance_exists(owner)
 {
+    var p = owner.myPlayerId;
+    
     if (isActive)
     {
         if (!owner.sprinting)
         {
-            image_angle = point_direction(x,y,global.crosshairX,global.crosshairY);
+            image_angle = point_direction(x,y,global.crosshairX[p],global.crosshairY[p]);
         
             if owner.look_direction == 0 { image_xscale = -1; image_angle = image_angle+180; }
             if owner.look_direction == 1 image_xscale = 1; 
@@ -452,26 +454,36 @@ else
 
 if instance_exists(owner) &amp;&amp; (isActive)
 {
+    var p = owner.myPlayerId;
     if (owner.aiming)
     {
-        aiming_direction = point_direction(x,y,global.crosshairX,global.crosshairY);
-            
+        aiming_direction = point_direction(x,y,global.crosshairX[p],global.crosshairY[p]);
+          
         range_to_solid = range_finder(x,y,aiming_direction,projectile_range,class_solid,false,true);
         range_to_enemy = range_finder(x,y,aiming_direction,projectile_range,class_enemy,false,true);
         
-        if (!range_to_solid) range_to_solid = 9999999;
-        if (!range_to_enemy) range_to_enemy = 9999999;
-        else
+        range_to_friendly = -1;
+        if (global.playerCount &gt; 1)
         {
-            if (range_to_enemy &lt; range_to_solid) enemyOnSight = true;
+            for (var i=0; i&lt;instance_number(class_player); i++)
+            {
+                var testFriendly = instance_find(class_player,i);
+                if (testFriendly) &amp;&amp; instance_exists(testFriendly)
+                {
+                    if (testFriendly.myPlayerId != owner.myPlayerId) range_to_friendly = range_finder(x,y,aiming_direction,projectile_range,testFriendly,false,true);
+                }
+            }
         }
         
-        if (!goesThroughWalls) draw_range = min(range_to_solid,range_to_enemy,projectile_range);
+        if (!range_to_solid) range_to_solid = 9999999;
+        if (!range_to_enemy) range_to_enemy = 9999999;
+        if (!range_to_friendly) range_to_friendly = 9999999;
+
+        if (!goesThroughWalls) draw_range = min(range_to_solid,range_to_enemy,range_to_friendly,projectile_range);
         else draw_range = projectile_range;
         
         lineX = x+lengthdir_x(draw_range,aiming_direction);
         lineY = y+lengthdir_y(draw_range,aiming_direction);
-        
         
         isPrecisionAiming = false;
         
@@ -509,20 +521,20 @@ if instance_exists(owner) &amp;&amp; (isActive)
           <argument>
             <kind>1</kind>
             <string>///Firing Control
-if (isActive) &amp;&amp; instance_exists(class_player)
+if (isActive) &amp;&amp; (owner) &amp;&amp; instance_exists(owner)
 {
     input_held = false;
     input_pressed = false;
     
-    if global.input == 'keyboard'
+    if (global.input[owner.myPlayerId] == K_INPUT_KEYBOARD)
     {
         if input_key_fire() input_held = true;
         if input_key_fire_pressed() input_pressed = true;
     }
-    
-    if global.input == 'joystick'
+    else
     {
-        if (joy_rpos(0) &gt; 0.7) 
+        var joy = global.input[owner.myPlayerId];
+        if (joy_rpos(joy) &gt; 0.7) 
         {
             input_held = true;
             if (!trigger_pressed)
@@ -532,43 +544,30 @@ if (isActive) &amp;&amp; instance_exists(class_player)
             }
         }
         
-        if (joy_rpos(0) &lt; 0.4) &amp;&amp; (trigger_pressed) trigger_pressed = false;
+        if (joy_rpos(joy) &lt; 0.4) &amp;&amp; (trigger_pressed) trigger_pressed = false;
     }
     
-    if ((input_held) || (input_pressed)) &amp;&amp; (class_player.sprinting) //hackz0r!
+    if ((input_held) || (input_pressed)) &amp;&amp; (owner.sprinting) //hackz0r!
     {
-        if (!reloading) &amp;&amp; (can_fire) class_player.sprinting = false;
+        if (!reloading) &amp;&amp; (can_fire) owner.sprinting = false;
     }
     
     shot_type = 0;
     
     if (input_held) &amp;&amp; (fire_automatic)
     {
-        if instance_exists(owner) &amp;&amp; (!reloading) &amp;&amp; (can_fire)
-        {
-            if (!owner.sprinting) &amp;&amp; (!owner.melee)    
-            {
-                cmd_fire();
-            }
-        }
+        if (!reloading) &amp;&amp; (can_fire) &amp;&amp; (!owner.sprinting) &amp;&amp; (!owner.melee) cmd_fire();
     }
     
     if (input_pressed) &amp;&amp; (!fire_automatic)
     {
-    
-        if instance_exists(owner) &amp;&amp; (!reloading) &amp;&amp; (can_fire)
-        {
-            if (!owner.sprinting) &amp;&amp; (!owner.melee)    
-            {
-                cmd_fire();
-            }
-        }
+        if (!reloading) &amp;&amp; (can_fire) &amp;&amp; (!owner.sprinting) &amp;&amp; (!owner.melee) cmd_fire();
     }
     
     if (input_pressed) &amp;&amp; (reloading)
     {
         audio_play(owner.audio_emitter,false,1,sfx_click);
-        guiInfo = instance_create(class_player.x,class_player.y,gui_info);
+        guiInfo = instance_create(owner.x,owner.y,gui_info);
         guiInfo.colorMain = K_BETU_RED;
         guiInfo.myString = loc_key("INFO_RELOADING");
         guiInfo.owner = id;
@@ -576,7 +575,7 @@ if (isActive) &amp;&amp; instance_exists(class_player)
     else if (input_pressed) &amp;&amp; (!ammo_current)
     {
         audio_play(owner.audio_emitter,false,1,sfx_click);
-        guiInfo = instance_create(class_player.x,class_player.y,gui_info);
+        guiInfo = instance_create(owner.x,owner.y,gui_info);
         guiInfo.owner = id;
         guiInfo.colorMain = K_BETU_RED;
         guiInfo.myString = loc_key("INFO_OUTOFAMMO");

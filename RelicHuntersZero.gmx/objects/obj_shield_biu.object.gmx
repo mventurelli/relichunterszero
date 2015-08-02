@@ -246,6 +246,58 @@ if (isActive)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_projectile_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reflect
+
+if (isActive)
+{
+    var newpeed = other.speed;
+    var newDirection = other.direction + 180 + random_range(reflectAngleMin,reflectAngleMax);
+    var newDecay = other.decay;
+    var newRange = other.range;
+    var newPush = other.push_power;
+    var newAmmoType = other.ammo_type;
+    var newFaction = f_player;
+    var newType = other.type;
+    var newDamage = round(other.damage * reflectDamageMultiplier);
+    
+    newProjectile = instance_create(other.x,other.y,obj_projectile_player);
+    
+    newProjectile.speed = newpeed;
+    newProjectile.direction = newDirection;
+    newProjectile.decay = newDecay;
+    newProjectile.range = newRange;
+    newProjectile.push_power = newPush;
+    newProjectile.ammo_type = newAmmoType;
+    newProjectile.faction = newFaction;
+    newProjectile.type = newType;
+    newProjectile.damage = newDamage;
+    
+    with (other) instance_destroy();
+    
+    animationTrigger = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_rocket">
       <action>
         <libid>1</libid>

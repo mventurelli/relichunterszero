@@ -271,7 +271,6 @@
     <instance objName="obj_unlock_pistol_heavy" x="1367" y="1438" name="inst_B8C21F72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="1920" y="1568" name="inst_2637392A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unlock_shotgun_heavy" x="1841" y="1503" name="inst_745A8F73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_jimmy" x="902" y="1246" name="inst_DD79685F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="1856" y="1376" name="inst_E0DB1FE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unlock_submachinegun" x="1498" y="1497" name="inst_A2E4C945" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unlock_light2" x="1537" y="1324" name="inst_8D7CCB97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -8,7 +8,7 @@ global.pauseBackground = background_add("pauseScreen.png",0,0);
 global.pauseMenu = true;
 
 // Remembers the original input method being used
-global.pauseInput = global.input;
+global.pauseInput = global.input[1];
 
 // Reset button selection
 global.selectedButton = -1;

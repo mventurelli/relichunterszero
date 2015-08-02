@@ -200,13 +200,20 @@ if (window_mouse_get_y() &gt; window_get_height()-vsafety) window_mouse_set(wind
             <kind>1</kind>
             <string>///Xbox 360 Controller Support
 
-//if (global.input == 'joystick') &amp;&amp; (global.version = os_windows)
+//Unrestricted
 {
     var update0 = xin_update(0); 
     if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
     else
     {
         joy_rumble_update(0);
+    }
+    
+    var update1 = xin_update(1); 
+    if (!update1) show_debug_message('Trying to update unconnected Xbox 360 Controller (1)');   
+    else
+    {
+        joy_rumble_update(1);
     }
 }
 </string>
@@ -262,9 +269,14 @@ if (allowInput)
         goToNextRoom = true;
     }
     
-    if (gamepad_is_connected(0))
+    if (gamepad_is_connected(K_INPUT_JOYSTICK1))
     {
-        if (joy_check(0,1)) goToNextRoom = true;
+        if (joy_check(K_INPUT_JOYSTICK1,1)) goToNextRoom = true;
+    }
+    
+    if (gamepad_is_connected(K_INPUT_JOYSTICK2))
+    {
+        if (joy_check(K_INPUT_JOYSTICK2,1)) goToNextRoom = true;
     }
     
     if (goToNextRoom) room_goto(room_splash);

@@ -29,9 +29,11 @@
 
 image_speed = 0.2;
 
-global.cutscene = true;
-
-audio_stop_all();
+if (global.playerCount &lt; 2) 
+{
+    global.cutscene = true;
+    audio_stop_all();
+}
 
 audio_emitter = audio_emitter_create();
 audio_falloff_set_model(audio_falloff_linear_distance);
@@ -67,7 +69,11 @@ if (room == room_boss) global.statKilledByBoss++;
             <kind>1</kind>
             <string>///GameOver
 
-global.gameOver = true;
+if (!instance_exists(class_player))
+{
+    global.gameOver = true;
+    audio_stop_all();
+}
 </string>
           </argument>
         </arguments>
@@ -90,22 +96,7 @@ global.gameOver = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Restart &amp; Back to Menu
-
-if (global.gameOver)
-{
-    if (global.input == 'joystick' &amp;&amp; joy_check_pressed(0,1)) || ( global.input == 'keyboard' &amp;&amp; (keyboard_check(vk_space)))
-    {
-        save_and_clean();
-        room_goto(room_start);
-    }
-    
-    if (global.input == 'joystick' &amp;&amp; joy_check_pressed(0,2)) || ( global.input == 'keyboard' &amp;&amp; (keyboard_check(vk_escape)))
-    {
-        save_and_clean();
-        game_restart();
-    }
-}
+            <string>if (!instance_exists(class_player)) global.cutscene = true;
 </string>
           </argument>
         </arguments>

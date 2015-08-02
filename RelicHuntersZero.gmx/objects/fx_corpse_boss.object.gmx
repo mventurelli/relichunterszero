@@ -106,6 +106,14 @@ if (global.character[1] == char_pinky || global.character[2] == char_pinky ) &am
     achievement_give("ACHIEVEMENT_ULTIMATEPINKY");
 }
 
+if (global.playerCount &gt; 1)
+{
+    achievement_give("ACHIEVEMENT_BEATGAMECOOP");
+    
+    if (global.hasUsedCheckpoint == false) &amp;&amp; (global.relic_slot[1] = '') &amp;&amp; (global.relic_slot[2] = '') &amp;&amp; (global.relic_slot[3] = '') achievement_give("ACHIEVEMENT_ULTIMATECOOP");
+}
+
+
 //hehehehe
 dropHugeGun = false;
 </string>
