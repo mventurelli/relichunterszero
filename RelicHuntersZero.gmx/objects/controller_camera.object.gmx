@@ -97,13 +97,15 @@ if instance_exists(class_player)
 {
     if (countPlayers == 1)
     {
+        var pId = class_player.myPlayerId;
+    
         if (class_player.aiming) 
         {
             if (!aim_locked)
             {
                 aim_locked = true;
                 
-                angle = point_direction(class_player.x, class_player.y, global.crosshairX[1], global.crosshairY[1]);
+                angle = point_direction(class_player.x, class_player.y, global.crosshairX[pId], global.crosshairY[pId]);
                 
                 distance = weaponRange  / distance_ratio_aiming;
                 if distance &gt; hard_limit distance = hard_limit;
@@ -113,13 +115,13 @@ if instance_exists(class_player)
         {
             aim_locked = false;
             
-            if (global.input[1] == K_INPUT_KEYBOARD) || (class_player.joyIsRightStickAiming)
+            if (global.input[pId] == K_INPUT_KEYBOARD) || (class_player.joyIsRightStickAiming)
             {
-                distance = point_distance(class_player.x,class_player.y,global.crosshairX[1],global.crosshairY[1]) / distance_ratio;
+                distance = point_distance(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]) / distance_ratio;
                 if (distance &gt; max_distance) distance = max_distance;
-                angle = point_direction(class_player.x,class_player.y,global.crosshairX[1],global.crosshairY[1]);
+                angle = point_direction(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]);
                 
-                if (global.input[1] != K_INPUT_KEYBOARD) distance = distance*1.5;
+                if (global.input[pId] != K_INPUT_KEYBOARD) distance = distance*1.5;
             }
             else
             {
@@ -138,7 +140,7 @@ if instance_exists(class_player)
         
         if (totalDistance &gt; 0.05)
         {
-            if (global.input[1] == K_INPUT_KEYBOARD) followSpeedCurrent = followSpeed;
+            if (global.input[pId] == K_INPUT_KEYBOARD) followSpeedCurrent = followSpeed;
             else if (followSpeedCurrent != followSpeed)  followSpeedCurrent += min(followSpeedAccel, abs(followSpeed-followSpeedCurrent));
         
             var totalAngle = point_direction(x,y,targetX,targetY);
@@ -162,8 +164,8 @@ if instance_exists(class_player)
         {
             x = (player1.x + player2.x)/2;
             y = (player1.y + player2.y)/2;
-            //x = (global.crosshairX[1] + global.crosshairX[2]) /2;
-            //x = (global.crosshairY[1] + global.crosshairY[2]) / 2;
+            //x = (global.crosshairX[pId] + global.crosshairX[2]) /2;
+            //x = (global.crosshairY[pId] + global.crosshairY[2]) / 2;
         }
     }
     

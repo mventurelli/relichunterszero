@@ -54,6 +54,10 @@ friction = 0.05;
  
 randomizeDir = false;
 
+finalAngle[0] = 90;
+finalAngle[1] = 90;
+finalAngle[2] = 90;
+finalAngle[3] = 90;
 </string>
           </argument>
         </arguments>
@@ -103,7 +107,7 @@ if (timeToBounce)
     if (vertical_speed_start &lt;= vertical_speed_start_min)
     {
         vertical_speed_start = 0;
-        angular_speed = 0;
+        //angular_speed = 0;
         depth= 999999999999999;
     }
     else 
@@ -167,6 +171,7 @@ reflection_add_sprite_update(sprite,sprite_subimage,x,y-draw_height,1,1,sprite_a
 
 if (!vertical_speed_start)
 {
+    show_debug_message('bye bye');
     draw_persistent(sprite,sprite_subimage,x,y+draw_height,1,1,sprite_angle,image_blend,1);
     instance_destroy();
 }

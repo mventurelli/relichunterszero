@@ -14,8 +14,11 @@ for (var i=myY-1; abs(i)<ds_grid_height(myGrid); i--)
     candidate = ds_grid_get(myGrid,myX,i);
     if (candidate) && (instance_exists(candidate))
     {
-        toReturn = candidate.id;
-        break;
+        if (candidate.isSelected == false || candidate.allowMultipleSelection) 
+        {
+            toReturn = candidate.id; 
+            break;
+        }
     }
 }
 
@@ -27,15 +30,21 @@ if (toReturn == -1)
         candidate = ds_grid_get(myGrid, myX - j, myY-1);  
         if (candidate) && (instance_exists(candidate))
         {
-            toReturn = candidate.id;
-            break;
+            if (candidate.isSelected == false || candidate.allowMultipleSelection) 
+            {
+                toReturn = candidate.id; 
+                break;
+            }
         }
         
         candidate = ds_grid_get(myGrid, myX + j, myY-1);  
         if (candidate) && (instance_exists(candidate))
         {
-            toReturn = candidate.id;
-            break;
+            if (candidate.isSelected == false || candidate.allowMultipleSelection) 
+            {
+                toReturn = candidate.id; 
+                break;
+            }
         }  
     }  
 }

@@ -57,8 +57,21 @@ labelString = 'PLAY ADVENTURE';
             <string>///Button Action
 event_inherited();
 
+//Testing Character Selection
 if (executeAction)
 {
+    room_goto(room_charSelection);
+}
+
+
+
+
+
+
+/* TRUE CODE:
+if (executeAction)
+{
+    
     ini_open(working_directory + "\saveData.ini");
     ini_write_real('Input','Input1',global.input[1]);
     ini_close();
@@ -66,7 +79,7 @@ if (executeAction)
     room_goto(room_start);
 }
 
-/*
+
 //Run this code instead to test co-op:
 
 if (executeAction)
@@ -74,7 +87,7 @@ if (executeAction)
     global.playerCount = 2;
     global.input[1] = K_INPUT_KEYBOARD;
     global.input[2] = K_INPUT_JOYSTICK1;
-    //global.input[2] = K_INPUT_JOYSTICK2;
+    //global.input[2] = K_INPUT_KEYBOARD;
     
     ini_open(working_directory + "\saveData.ini");
     ini_write_real('Character','playerCount',global.playerCount);
@@ -84,6 +97,7 @@ if (executeAction)
     
     room_goto(room_start);
 }
+
 
 </string>
           </argument>

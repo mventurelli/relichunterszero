@@ -265,33 +265,40 @@ if (isActive)
             <kind>1</kind>
             <string>///Reflect
 
-if (isActive)
+if (isActive) &amp;&amp; (instance_exists(other))
 {
-    var newpeed = other.speed;
-    var newDirection = other.direction + 180 + random_range(reflectAngleMin,reflectAngleMax);
-    var newDecay = other.decay;
-    var newRange = other.range;
-    var newPush = other.push_power;
-    var newAmmoType = other.ammo_type;
-    var newFaction = f_player;
-    var newType = other.type;
-    var newDamage = round(other.damage * reflectDamageMultiplier);
-    
-    newProjectile = instance_create(other.x,other.y,obj_projectile_player);
-    
-    newProjectile.speed = newpeed;
-    newProjectile.direction = newDirection;
-    newProjectile.decay = newDecay;
-    newProjectile.range = newRange;
-    newProjectile.push_power = newPush;
-    newProjectile.ammo_type = newAmmoType;
-    newProjectile.faction = newFaction;
-    newProjectile.type = newType;
-    newProjectile.damage = newDamage;
-    
-    with (other) instance_destroy();
-    
-    animationTrigger = true;
+    if (instance_exists(other.owner)) &amp;&amp; (instance_exists(owner))
+    {
+        if (other.owner.myPlayerId != owner.myPlayerId)
+        {
+            var newpeed = other.speed;
+            var newDirection = other.direction + 180 + random_range(reflectAngleMin,reflectAngleMax);
+            var newDecay = other.decay;
+            var newRange = other.range;
+            var newPush = other.push_power;
+            var newAmmoType = other.ammo_type;
+            var newFaction = f_player;
+            var newType = other.type;
+            var newDamage = round(other.damage * reflectDamageMultiplier);
+            
+            newProjectile = instance_create(other.x,other.y,obj_projectile_player);
+            
+            newProjectile.speed = newpeed;
+            newProjectile.direction = newDirection;
+            newProjectile.decay = newDecay;
+            newProjectile.range = newRange;
+            newProjectile.push_power = newPush;
+            newProjectile.ammo_type = newAmmoType;
+            newProjectile.faction = newFaction;
+            newProjectile.type = newType;
+            newProjectile.damage = newDamage;
+            newProjectile.distance_travelled = 0;
+            
+            with (other) instance_destroy();
+            
+            animationTrigger = true;
+        }
+    }
 }
 </string>
           </argument>

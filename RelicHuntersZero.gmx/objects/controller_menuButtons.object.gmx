@@ -28,10 +28,30 @@
             <string>///Init
 
 // Buttons
-global.selectedButton = -1;
-joyCanSwitch = true;
+if (room != room_charSelection) global.allowMultipleInput = false;
+else global.allowMultipleInput = true;
+
+global.selectedButton[K_INPUT_ALL] = -1;
+global.selectedButton[K_INPUT_KEYBOARD] = -1;
+global.selectedButton[K_INPUT_JOYSTICK1] = -1;
+global.selectedButton[K_INPUT_JOYSTICK2] = -1;
+
+global.selectionLocked[K_INPUT_ALL] = false;
+global.selectionLocked[K_INPUT_KEYBOARD] = false;
+global.selectionLocked[K_INPUT_JOYSTICK1] = false;
+global.selectionLocked[K_INPUT_JOYSTICK2] = false;
+
+global.inputSelectionList = ds_list_create();
+
+global.mouseActive = true;
+
+joyCanSwitch[K_INPUT_JOYSTICK1] = true;
+joyCanSwitch[K_INPUT_JOYSTICK2] = true;
+
+joyCanSwitchTimeCurrent[K_INPUT_JOYSTICK1] = 0;
+joyCanSwitchTimeCurrent[K_INPUT_JOYSTICK2] = 0;
+
 joyCanSwitchTime = room_speed*0.25;
-joyCanSwitchTimeCurrent = 0;
 
 oldMouseX = mouse_x;
 oldMouseY = mouse_y;
@@ -69,6 +89,9 @@ alarm[0] = room_speed*0.5;//Allow interaction
             <string>///CleanUp
 
 if ds_exists(global.buttonGrid,ds_type_grid) ds_grid_destroy(global.buttonGrid);
+
+if ds_exists(global.inputSelectionList,ds_type_list) ds_list_destroy(global.inputSelectionList);
+
 </string>
           </argument>
         </arguments>
@@ -91,7 +114,7 @@ if ds_exists(global.buttonGrid,ds_type_grid) ds_grid_destroy(global.buttonGrid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Allow Input &amp; Gives Vertical Order to Buttons
+            <string>///Allow Input &amp; Gives Grid Order to Buttons
 
 allowInput = true;
 
@@ -266,110 +289,125 @@ if (!buttonSetupDone) &amp;&amp; (instance_exists(class_menu_button))
           <argument>
             <kind>1</kind>
             <string>///Buttons vs Input Methods
-
 if (allowInput)
 {
-    if (global.input[1] != K_INPUT_KEYBOARD) &amp;&amp; (buttonSetupDone) &amp;&amp; ds_exists(global.buttonGrid,ds_type_grid)
+    if (buttonSetupDone) &amp;&amp; ds_exists(global.buttonGrid,ds_type_grid)
     {
-        var joy = global.input[1];
-        
-        //If there's no button selected, get the topmost one
-        if (global.selectedButton == -1) || (global.selectedButton == 0) || (!instance_exists(global.selectedButton))
+        for (var i=0; i&lt;2; i++) if gamepad_is_connected(i)
         {
-            global.selectedButton = ds_grid_get_topmost(global.buttonGrid);
-        }    
-        else {
-            //Get direction input
-            if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) || joy_check_pressed(joy,15) || joy_check_pressed(joy,16) || joy_check_pressed(joy,17) || joy_check_pressed(joy,18) 
+            var joy = i;
+            var input = K_INPUT_ALL;
+            if (global.allowMultipleInput) input = joy;
+            
+            if (!global.selectionLocked[input])
             {
-                if (joyCanSwitch)
+            //If there's no button selected, get the topmost one
+            if (global.selectedButton[input] == -1) || (global.selectedButton[input] == 0) || (!instance_exists(global.selectedButton[input]))
+            {
+                global.selectedButton[input] = ds_grid_get_topmost(global.buttonGrid);
+            }    
+            else {
+                //Get direction input
+                if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) || joy_check_pressed(joy,15) || joy_check_pressed(joy,16) || joy_check_pressed(joy,17) || joy_check_pressed(joy,18) 
                 {
-                    joyCanSwitch = false;
-                    var joyDirection = -1;
-                    if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) joyDirection = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
-
-                    //Up
-                    if (joyDirection &gt; 45 &amp;&amp; joyDirection &lt; 135) || (joy_check_pressed(joy,15))
+                    if (joyCanSwitch[joy])
                     {
-                        getId = ds_grid_get_above(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
-                        if (getId) global.selectedButton = getId;
+                        joyCanSwitch[joy] = false;
+                        var joyDirection = -1;
+                        if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), 0.3)) joyDirection = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
+    
+                        //Up
+                        if (joyDirection &gt; 45 &amp;&amp; joyDirection &lt; 135) || (joy_check_pressed(joy,15))
+                        {
+                            getId = ds_grid_get_above(global.buttonGrid, global.selectedButton[input].buttonGridX, global.selectedButton[input].buttonGridY);
+                            if (getId) global.selectedButton[input] = getId;
+                        }
+                        
+                        //Down
+                        if (joyDirection &gt; 215 &amp;&amp; joyDirection &lt; 315) || (joy_check_pressed(joy,16))
+                        {
+                            getId = ds_grid_get_below(global.buttonGrid, global.selectedButton[input].buttonGridX, global.selectedButton[input].buttonGridY);
+                            if (getId) global.selectedButton[input] = getId;
+                        }
+                        
+                        //Left
+                        if (joyDirection &gt; 135 &amp;&amp; joyDirection &lt; 215) || (joy_check_pressed(joy,17))
+                        {
+                            if (!global.selectedButton[input].isToggle)
+                            {
+                                getId = ds_grid_get_left(global.buttonGrid, global.selectedButton[input].buttonGridX, global.selectedButton[input].buttonGridY);
+                                if (getId) global.selectedButton[input] = getId;
+                            }
+                            else if (global.selectedButton[input].myVariable)
+                            {
+                                global.selectedButton[input].myVariable-=1;
+                                global.selectedButton[input].arrowClicked = true;
+                            }
+                        }
+                        
+                        //Right
+                        if ((joyDirection != -1) &amp;&amp; (joyDirection &lt; 45 || joyDirection &gt; 315)) || (joy_check_pressed(joy,18))
+                        {
+                            if (!global.selectedButton[input].isToggle)
+                            {
+                                getId = ds_grid_get_right(global.buttonGrid, global.selectedButton[input].buttonGridX, global.selectedButton[input].buttonGridY);
+                                if (getId) global.selectedButton[input] = getId;
+                            }
+                            else if (global.selectedButton[input].myVariable &lt; global.selectedButton[input].myVariableMax)
+                            {
+                                global.selectedButton[input].myVariable+=1;
+                                global.selectedButton[input].arrowClicked = true;
+                            }
+                        }    
                     }
-                    
-                    //Down
-                    if (joyDirection &gt; 215 &amp;&amp; joyDirection &lt; 315) || (joy_check_pressed(joy,16))
+                    else
                     {
-                        getId = ds_grid_get_below(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
-                        if (getId) global.selectedButton = getId;
-                    }
-                    
-                    //Left
-                    if (joyDirection &gt; 135 &amp;&amp; joyDirection &lt; 215) || (joy_check_pressed(joy,17))
-                    {
-                        if (!global.selectedButton.isToggle)
-                        {
-                            getId = ds_grid_get_left(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
-                            if (getId) global.selectedButton = getId;
+                        joyCanSwitchTimeCurrent[joy]++;
+                        if (joyCanSwitchTimeCurrent[joy] &gt;= joyCanSwitchTime)
+                        { 
+                            joyCanSwitch[joy] = true;
+                            joyCanSwitchTimeCurrent[joy]=0;
                         }
-                        else if (global.selectedButton.myVariable)
-                        {
-                            global.selectedButton.myVariable-=1;
-                            global.selectedButton.arrowClicked = true;
-                        }
-                    }
-                    
-                    //Right
-                    if ((joyDirection != -1) &amp;&amp; (joyDirection &lt; 45 || joyDirection &gt; 315)) || (joy_check_pressed(joy,18))
-                    {
-                        if (!global.selectedButton.isToggle)
-                        {
-                            getId = ds_grid_get_right(global.buttonGrid, global.selectedButton.buttonGridX, global.selectedButton.buttonGridY);
-                            if (getId) global.selectedButton = getId;
-                        }
-                        else if (global.selectedButton.myVariable &lt; global.selectedButton.myVariableMax)
-                        {
-                            global.selectedButton.myVariable+=1;
-                            global.selectedButton.arrowClicked = true;
-                        }
-                    }    
+                    }   
                 }
-                else
-                {
-                    joyCanSwitchTimeCurrent++;
-                    if (joyCanSwitchTimeCurrent &gt;= joyCanSwitchTime)
-                    { 
-                        joyCanSwitch = true;
-                        joyCanSwitchTimeCurrent=0;
-                    }
-                }   
+                else { joyCanSwitch[joy] = true; joyCanSwitchTimeCurrent[joy]=0; }
             }
-            else { joyCanSwitch = true; joyCanSwitchTimeCurrent=0; }
+            }
         }
-        
-       
     }
-    
-    
+}
+else // &lt;- (!allowInput)
+{
+    global.selectedButton[K_INPUT_ALL] = -1;
+    global.selectedButton[K_INPUT_KEYBOARD] = -1;
+    global.selectedButton[K_INPUT_JOYSTICK1] = -1;
+    global.selectedButton[K_INPUT_JOYSTICK2] = -1;
+}
+
+
+if (!global.allowMultipleInput)
+{
     //Switch to K&amp;M
     if ( mouse_check_button(mb_any) || keyboard_check(vk_anykey) || (mouse_x != oldMouseX) || (mouse_y != oldMouseY) )
     {
-        global.input[1] = K_INPUT_KEYBOARD;
+        global.mouseActive = true;
     }
-        
+            
     oldMouseX = mouse_x;
     oldMouseY = mouse_y;
-        
+            
     //Switch to Joystick
     if (gamepad_is_connected(K_INPUT_JOYSTICK1))
     {   
-        if (joy_check_any(K_INPUT_JOYSTICK1)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK1), joy_ypos(K_INPUT_JOYSTICK1), 0.3)) global.input[1] = K_INPUT_JOYSTICK1;
+        if (joy_check_any(K_INPUT_JOYSTICK1)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK1), joy_ypos(K_INPUT_JOYSTICK1), 0.3)) global.mouseActive = false;
     }
-    
+        
     if (gamepad_is_connected(K_INPUT_JOYSTICK2))
     {   
-        if (joy_check_any(K_INPUT_JOYSTICK2)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK2), joy_ypos(K_INPUT_JOYSTICK2), 0.3)) global.input[1] = K_INPUT_JOYSTICK2;
+        if (joy_check_any(K_INPUT_JOYSTICK2)) || (joy_simple_deadzone( joy_xpos(K_INPUT_JOYSTICK2), joy_ypos(K_INPUT_JOYSTICK2), 0.3)) global.mouseActive = false;
     }
 }
-else global.selectedButton = -1;
+else global.mouseActive = true;
 </string>
           </argument>
         </arguments>
@@ -394,11 +432,16 @@ else global.selectedButton = -1;
             <kind>1</kind>
             <string>///Draw Cursor
 
-if (global.input[1] == K_INPUT_KEYBOARD)
+if (global.mouseActive)
 {
     draw_sprite(spr_crosshair,0,mouse_x,mouse_y);
 }
 
+/*OLD
+if (global.input[1] == K_INPUT_KEYBOARD)
+{
+    draw_sprite(spr_crosshair,0,mouse_x,mouse_y);
+}
 
 </string>
           </argument>

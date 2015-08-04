@@ -165,11 +165,7 @@ if global.weapon2[myPlayerId] != noone
         }
     }
     else /// Starting Loadout
-    {
-        weapon2 = instance_create(x,y,obj_shotgun);
-        weapon2.owner = id;
-        draw_gun(weapon2);
-        
+    {        
         instance_create(x,y,obj_buckler);
         weapon1 = obj_buckler;
         weapon1.owner = id;

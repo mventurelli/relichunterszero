@@ -80,7 +80,11 @@ if instance_exists(activationClient)
     if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;
     
     var forbiddenWeapon = false;
-    if (gun == obj_gloves &amp;&amp; global.character[p] != char_pinky) || (gun == obj_pistol_jimmy &amp;&amp; global.character[p] != char_jimmy) || (gun == obj_flamethrower &amp;&amp; global.character[p] != char_punny) || (gun == obj_buckler &amp;&amp; global.character[p] != char_biu)
+    if (gun == obj_gloves &amp;&amp; global.character[p] != char_pinky) || 
+    (gun == obj_pistol_jimmy &amp;&amp; global.character[p] != char_jimmy) || 
+    (gun == obj_flamethrower &amp;&amp; global.character[p] != char_punny) || 
+    (gun == obj_buckler &amp;&amp; global.character[p] != char_biu) ||
+    (gun == obj_keytar &amp;&amp; global.character[p] != char_raff)
     {
         forbiddenWeapon = true;
     }

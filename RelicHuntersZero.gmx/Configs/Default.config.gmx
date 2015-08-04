@@ -360,6 +360,11 @@
     <option_textureGroup23_parent>&lt;none&gt;</option_textureGroup23_parent>
     <option_textureGroup23_scaled>0</option_textureGroup23_scaled>
     <option_textureGroup23_targets>9223372036854775807</option_textureGroup23_targets>
+    <option_textureGroup24_border>2</option_textureGroup24_border>
+    <option_textureGroup24_nocropping>0</option_textureGroup24_nocropping>
+    <option_textureGroup24_parent>&lt;none&gt;</option_textureGroup24_parent>
+    <option_textureGroup24_scaled>0</option_textureGroup24_scaled>
+    <option_textureGroup24_targets>9223372036854775807</option_textureGroup24_targets>
     <option_textureGroup2_border>2</option_textureGroup2_border>
     <option_textureGroup2_nocropping>0</option_textureGroup2_nocropping>
     <option_textureGroup2_parent>&lt;none&gt;</option_textureGroup2_parent>
@@ -400,7 +405,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>24</option_textureGroup_count>
+    <option_textureGroup_count>25</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -418,6 +423,7 @@
     <option_textureGroups21>Pause</option_textureGroups21>
     <option_textureGroups22>Splash</option_textureGroups22>
     <option_textureGroups23>Intro</option_textureGroups23>
+    <option_textureGroups24>Menus</option_textureGroups24>
     <option_textureGroups3>Spritesheet - Jimmy</option_textureGroups3>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups5>VFX - Player</option_textureGroups5>

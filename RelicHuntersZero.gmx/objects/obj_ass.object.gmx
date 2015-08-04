@@ -109,10 +109,11 @@ if ((global.unlockAss) &amp;&amp; (room==room_start))
 }
 else drawSelf = true;
 
-if (global.character[1] == char_ass) || (global.character[2] == char_ass)
+if (global.character[1] == char_ass) || (global.playerCount &gt; 1 &amp;&amp; global.character[2] == char_ass)
 {
     drawBalloon = false;
     drawSelf = false;
+    if (room == room_start) instance_destroy();
 }
 else drawBalloon = true;
 </string>

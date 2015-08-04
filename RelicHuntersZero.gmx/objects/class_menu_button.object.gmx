@@ -41,11 +41,13 @@ myPlusButton = noone;
 image_speed = 0;
 
 isSelected = false;
+allowMultipleSelection = false;
 selectionOrderVertical = 0;
 selectionOrderHorizontal = 0;
 
 executeAction = false;
-joyCanSwitch = true;
+joyCanSwitch[K_INPUT_JOYSTICK1] = true;
+joyCanSwitch[K_INPUT_JOYSTICK2] = true;
 
 starPositionX = point_distance(x,y,bbox_right,y) - 32;
 starPositionY = 0;
@@ -156,29 +158,42 @@ if (myVariable != -99)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Use and Selection
+            <string>///Use and Mouse Selection
+//Joystick selection is done via controller_menuButtons
 
-if (global.input[1] == K_INPUT_KEYBOARD)
+if (global.mouseActive) &amp;&amp; (!global.selectionLocked[K_INPUT_KEYBOARD])
 {
+    var mouseInput = K_INPUT_ALL;
+    if (global.allowMultipleInput) mouseInput = K_INPUT_KEYBOARD;
+    
     if (is_mouse_over(id))
     {
-        global.selectedButton = id;
+        if (isSelected = false || allowMultipleSelection) global.selectedButton[mouseInput] = id;
     }
-    else if (global.selectedButton == id) global.selectedButton = -1;
+    else if (global.selectedButton[mouseInput] == id) global.selectedButton[mouseInput] = -1;
 }
 
-if ( global.selectedButton == id )
-{
-    isSelected = true;
-}
-else
-{
-    isSelected = false;
-}
+
+if (global.selectedButton[K_INPUT_ALL] == id) || (global.selectedButton[K_INPUT_KEYBOARD] == id) || (global.selectedButton[K_INPUT_JOYSTICK1] == id) || (global.selectedButton[K_INPUT_JOYSTICK2] == id) isSelected = true;
+else isSelected = false;
 
 if (isSelected) &amp;&amp; (isAvailable)
 {
-    if ((global.input[1] == K_INPUT_KEYBOARD) &amp;&amp; mouse_check_button_pressed(mb_left) ) || ((global.input[1] != K_INPUT_KEYBOARD) &amp;&amp; joy_check(0,1))
+    var triggerMyAction = false;
+
+    if (global.selectedButton[K_INPUT_ALL] == id)
+    {
+        if (mouse_check_button_pressed(mb_left)) || (joy_check(K_INPUT_JOYSTICK1,1)) || (joy_check(K_INPUT_JOYSTICK2,1))
+        {
+            triggerMyAction = true;
+        }
+    }
+    
+    if (global.selectedButton[K_INPUT_KEYBOARD] == id) &amp;&amp; (mouse_check_button_pressed(mb_left)) triggerMyAction = true;
+    if (global.selectedButton[K_INPUT_JOYSTICK1] == id) &amp;&amp; (joy_check(K_INPUT_JOYSTICK1,1)) triggerMyAction = true;
+    if (global.selectedButton[K_INPUT_JOYSTICK2] == id) &amp;&amp; (joy_check(K_INPUT_JOYSTICK2,1)) triggerMyAction = true;
+    
+    if (triggerMyAction) //Resolve
     {
         executeAction = true;
         audio_play_sound(sfx_menu_click,1,false);
@@ -194,7 +209,7 @@ if (joystickShortcut != -1) if (joy_check_pressed(0,joystickShortcut)) checkShor
 if (checkShortcut) &amp;&amp; (isAvailable)
 {
     checkShortcut = false;
-    global.selectedButton = id;
+    global.selectedButton[K_INPUT_ALL] = id;
     isSelected = true;
     executeAction = true;
     audio_play_sound(sfx_menu_click,1,false);

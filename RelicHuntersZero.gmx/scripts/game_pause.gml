@@ -11,14 +11,24 @@ global.pauseMenu = true;
 global.pauseInput = global.input[1];
 
 // Reset button selection
-global.selectedButton = -1;
+global.selectedButton[K_INPUT_ALL] = -1;
 if ds_exists(global.buttonGrid,ds_type_grid) ds_grid_destroy(global.buttonGrid);
 
 //Prepare player info
-if (instance_exists(class_player))
+//Find the player with the correct playerID
+
+var char = noone;
+for (var i=0; i<instance_number(class_player); i++)
+{
+    var tryPlayer = instance_find(class_player,i);
+    if (tryPlayer) && instance_exists(tryPlayer)    if (tryPlayer.myPlayerId == global.pauseClient) char = tryPlayer;
+}
+
+
+
+if (instance_exists(char))
 {
     //Character Info
-    var char = class_player;
     instance_activate_object(global.pausePlayerInfo);
     with (global.pausePlayerInfo) event_perform(ev_create,0);
     global.pausePlayerInfo.myName = char.playerName;
@@ -34,8 +44,8 @@ if (instance_exists(class_player))
     instance_activate_object(global.pauseWeapon1);
     instance_activate_object(global.pauseWeapon2);
     
-    if instance_exists(class_player.weapon1) global.pauseWeapon1.myWeapon = class_player.weapon1; else global.pauseWeapon1.myWeapon = noone;
-    if instance_exists(class_player.weapon2) global.pauseWeapon2.myWeapon = class_player.weapon2; else global.pauseWeapon2.myWeapon = noone;
+    if instance_exists(char.weapon1) global.pauseWeapon1.myWeapon = char.weapon1; else global.pauseWeapon1.myWeapon = noone;
+    if instance_exists(char.weapon2) global.pauseWeapon2.myWeapon = char.weapon2; else global.pauseWeapon2.myWeapon = noone;
 
     with (global.pauseWeapon1) event_perform(ev_step,ev_step_normal);
     with (global.pauseWeapon2) event_perform(ev_step,ev_step_normal);

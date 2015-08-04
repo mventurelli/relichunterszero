@@ -360,10 +360,6 @@ save_sync_read();
 if (room == room_start) || (room == room_tutorial)
 {
     global.stage_current = 1;
-    
-    global.character[1] = char_jimmy;
-    global.character[2] = char_pinky;
-    
     char_state_initial(); 
 }
 
@@ -408,14 +404,14 @@ if (room == room_start)
     global.relic_slot[2] = '';
     global.relic_slot[3] = '';
     
-    global.relic_alcoholic_carrot = 0;
-    global.relic_yottabyte_drive = 0;
-    global.relic_pineapple_pudding = 0;
-    global.relic_infinity_battery = 0;
-    global.relic_crystal_bacon = 0;
-    global.relic_midnight_beer = 0;
-    global.relic_watchful_eye = 0;
-    global.relic_dev_potion = 0;
+    if (global.relic_alcoholic_carrot) global.relic_alcoholic_carrot = 1;
+    if (global.relic_yottabyte_drive) global.relic_yottabyte_drive = 1;
+    if (global.relic_pineapple_pudding) global.relic_pineapple_pudding = 1;
+    if (global.relic_infinity_battery) global.relic_infinity_battery = 1;
+    if (global.relic_crystal_bacon) global.relic_crystal_bacon = 1;
+    if (global.relic_midnight_beer) global.relic_midnight_beer = 1;
+    if (global.relic_watchful_eye) global.relic_watchful_eye = 1;
+    if (global.relic_dev_potion) global.relic_dev_potion = 1;
 }
 </string>
           </argument>
@@ -527,10 +523,10 @@ reloadBarSurface2 = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
             <kind>1</kind>
             <string>///"Unlock-All" Achievements
 
-//Everything //TODO: CHARACTER UNLOCKS HERE
-
-if (room==room_start)
+if (room == room_start)
 {
+    if (global.relic_pineapple_pudding) achievement_give("ACHIEVEMENT_FIRSTRELIC");
+
     var allUnlocks = true;
     
     if (global.unlockPinky) &amp;&amp; 
@@ -1217,33 +1213,6 @@ if (!level_built)
 }
 
 /////////////////////////////////////////////////////////////////////
-
-if (room == room_start) &amp;&amp; (!level_built)
-{
-    //Force players at the beggining
-    var spawningPlayers = global.playerCount;
-    global.playerAlive[1] = true;
-    global.playerAlive[2] = true;
-    
-    if (spawningPlayers)
-    {
-        var p1 = instance_create(832,1152,obj_jimmy);
-        p1.myPlayerId = 1;
-        with (p1) event_perform(ev_other,ev_user0);
-        spawningPlayers--; 
-    }
-    
-    if (spawningPlayers) 
-    {  
-        var p2 = instance_create(832,1220,obj_pinky); 
-        p2.myPlayerId = 2;
-        with (p2) event_perform(ev_other,ev_user0);
-        spawningPlayers--; 
-    }
-    
-    level_built = true;
-}
-
 if (!level_built)
 {
     //Instantiate Player
@@ -1269,176 +1238,182 @@ if (!level_built)
         p++;
     }
     
-    teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
-    teleporter.active = false;
+    //Stop here if it's the first room
+    if (room == room_start) level_built = true;
     
-    //Instantiate Enemies
-    if (room == room_shop) || (room == room_tutorial) || (room == room_boss) enemy_pool = shop_empty_pool;
-    if (room == level1_1) enemy_pool = enemy_pool_1_1;
-    if (room == level1_2) enemy_pool = enemy_pool_1_2;
-    if (room == level1_3) enemy_pool = enemy_pool_1_3;
-    if (room == level2_1) enemy_pool = enemy_pool_2_1;
-    if (room == level2_2) enemy_pool = enemy_pool_2_2;
-    if (room == level2_3) enemy_pool = enemy_pool_2_3;
-    if (room == level3_1) enemy_pool = enemy_pool_3_1;
-    if (room == level3_2) enemy_pool = enemy_pool_3_2;
-    if (room == level3_3) enemy_pool = enemy_pool_3_3;
-    if (room == level4_1) enemy_pool = enemy_pool_4_1;
-    if (room == level4_2) enemy_pool = enemy_pool_4_2;
-    if (room == level4_3) enemy_pool = enemy_pool_4_3;
-    
-    while (!ds_list_empty(enemy_pool))
+    if (!level_built)
     {
-        pick_random_group = irandom(ds_list_size(enemy_pool)-1);
-        random_group = ds_list_find_value(enemy_pool,pick_random_group);
-        ds_list_delete(enemy_pool,pick_random_group);
+        teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
+        teleporter.active = false;
         
-        current_group = ds_list_create();
-        ds_list_copy(current_group, random_group);
+        //Instantiate Enemies
+        if (room == room_shop) || (room == room_tutorial) || (room == room_boss) enemy_pool = shop_empty_pool;
+        if (room == level1_1) enemy_pool = enemy_pool_1_1;
+        if (room == level1_2) enemy_pool = enemy_pool_1_2;
+        if (room == level1_3) enemy_pool = enemy_pool_1_3;
+        if (room == level2_1) enemy_pool = enemy_pool_2_1;
+        if (room == level2_2) enemy_pool = enemy_pool_2_2;
+        if (room == level2_3) enemy_pool = enemy_pool_2_3;
+        if (room == level3_1) enemy_pool = enemy_pool_3_1;
+        if (room == level3_2) enemy_pool = enemy_pool_3_2;
+        if (room == level3_3) enemy_pool = enemy_pool_3_3;
+        if (room == level4_1) enemy_pool = enemy_pool_4_1;
+        if (room == level4_2) enemy_pool = enemy_pool_4_2;
+        if (room == level4_3) enemy_pool = enemy_pool_4_3;
         
-        enemy_spawn_number = instance_number(obj_spawn_enemy);
-        random_spawn = irandom(enemy_spawn_number-1);
-        target_spawn = instance_find(obj_spawn_enemy,random_spawn);
-        
-        while (!ds_list_empty(current_group)) &amp;&amp; (instance_exists(target_spawn))
+        while (!ds_list_empty(enemy_pool))
         {
-            spawnX = target_spawn.spawnX + random_range(-128,128);
-            spawnY = target_spawn.spawnY + random_range(-128,128);
+            pick_random_group = irandom(ds_list_size(enemy_pool)-1);
+            random_group = ds_list_find_value(enemy_pool,pick_random_group);
+            ds_list_delete(enemy_pool,pick_random_group);
             
-            if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 
+            current_group = ds_list_create();
+            ds_list_copy(current_group, random_group);
+            
+            enemy_spawn_number = instance_number(obj_spawn_enemy);
+            random_spawn = irandom(enemy_spawn_number-1);
+            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+            
+            while (!ds_list_empty(current_group)) &amp;&amp; (instance_exists(target_spawn))
             {
-                list_position = ds_list_size(current_group)-1;
-                spawnee = ds_list_find_value(current_group, list_position);
-                instance_create(spawnX,spawnY,spawnee);
-                ds_list_delete(current_group,list_position);
+                spawnX = target_spawn.spawnX + random_range(-128,128);
+                spawnY = target_spawn.spawnY + random_range(-128,128);
+                
+                if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 
+                {
+                    list_position = ds_list_size(current_group)-1;
+                    spawnee = ds_list_find_value(current_group, list_position);
+                    instance_create(spawnX,spawnY,spawnee);
+                    ds_list_delete(current_group,list_position);
+                }
             }
-        }
-        ds_list_destroy(current_group);
-        with (target_spawn) { instance_destroy(); }
-    }
-    
-    with (obj_spawn_enemy)
-    {
-        instance_destroy();
-    }
-    
-
-    //Instantiate Items
-    if (room == room_shop) || (room == room_tutorial) item_pool = shop_empty_pool;
-    if (room == level1_1) item_pool = item_pool_1_1;
-    if (room == level1_2) item_pool = item_pool_1_2;
-    if (room == level1_3) item_pool = item_pool_1_3;
-    if (room == level2_1) item_pool = item_pool_2_1;
-    if (room == level2_2) item_pool = item_pool_2_2;
-    if (room == level2_3) item_pool = item_pool_2_3;
-    if (room == level3_1) item_pool = item_pool_3_1;
-    if (room == level3_2) item_pool = item_pool_3_2;
-    if (room == level3_3) item_pool = item_pool_3_3;
-    if (room == level4_1) item_pool = item_pool_4_1;
-    if (room == level4_2) item_pool = item_pool_4_2;
-    if (room == level4_3) item_pool = item_pool_4_3;
-    if (room == room_boss) item_pool = item_pool_boss;
-
-    while (!ds_list_empty(item_pool))
-    {
-        pick_random_group = irandom(ds_list_size(item_pool)-1);
-        random_group = ds_list_find_value(item_pool,pick_random_group);
-        ds_list_delete(item_pool,pick_random_group);
-        
-        current_group = ds_list_create();
-        ds_list_copy(current_group, random_group);
-        
-        item_spawn_number = instance_number(obj_spawn_item);
-        random_spawn = irandom(item_spawn_number-1);
-        target_spawn = instance_find(obj_spawn_item,random_spawn);
-        
-        if instance_exists(target_spawn)
-        {
-            spawnX = target_spawn.spawnX;
-            spawnY = target_spawn.spawnY;
-            
-            list_position = irandom(ds_list_size(current_group)-1);
-            spawnee = ds_list_find_value(current_group, list_position);
-            instance_create(spawnX,spawnY,spawnee);
+            ds_list_destroy(current_group);
             with (target_spawn) { instance_destroy(); }
         }
-        ds_list_destroy(current_group);
+        
+        with (obj_spawn_enemy)
+        {
+            instance_destroy();
+        }
+        
+    
+        //Instantiate Items
+        if (room == room_shop) || (room == room_tutorial) item_pool = shop_empty_pool;
+        if (room == level1_1) item_pool = item_pool_1_1;
+        if (room == level1_2) item_pool = item_pool_1_2;
+        if (room == level1_3) item_pool = item_pool_1_3;
+        if (room == level2_1) item_pool = item_pool_2_1;
+        if (room == level2_2) item_pool = item_pool_2_2;
+        if (room == level2_3) item_pool = item_pool_2_3;
+        if (room == level3_1) item_pool = item_pool_3_1;
+        if (room == level3_2) item_pool = item_pool_3_2;
+        if (room == level3_3) item_pool = item_pool_3_3;
+        if (room == level4_1) item_pool = item_pool_4_1;
+        if (room == level4_2) item_pool = item_pool_4_2;
+        if (room == level4_3) item_pool = item_pool_4_3;
+        if (room == room_boss) item_pool = item_pool_boss;
+    
+        while (!ds_list_empty(item_pool))
+        {
+            pick_random_group = irandom(ds_list_size(item_pool)-1);
+            random_group = ds_list_find_value(item_pool,pick_random_group);
+            ds_list_delete(item_pool,pick_random_group);
+            
+            current_group = ds_list_create();
+            ds_list_copy(current_group, random_group);
+            
+            item_spawn_number = instance_number(obj_spawn_item);
+            random_spawn = irandom(item_spawn_number-1);
+            target_spawn = instance_find(obj_spawn_item,random_spawn);
+            
+            if instance_exists(target_spawn)
+            {
+                spawnX = target_spawn.spawnX;
+                spawnY = target_spawn.spawnY;
+                
+                list_position = irandom(ds_list_size(current_group)-1);
+                spawnee = ds_list_find_value(current_group, list_position);
+                instance_create(spawnX,spawnY,spawnee);
+                with (target_spawn) { instance_destroy(); }
+            }
+            ds_list_destroy(current_group);
+        }
+        
+        with (obj_spawn_item)
+        {
+            instance_destroy();
+        }
+        
+        //Done
+        level_built = true;  
+        
+        //Clear Lists From Memory
+        ds_list_destroy(ducan_turtlesquad1_1);
+        ds_list_destroy(ducan_turtlesquad1_2);
+        ds_list_destroy(ducan_turtlesquad1_3);
+        ds_list_destroy(ducan_turtlesquad2_1);
+        ds_list_destroy(ducan_turtlesquad2_2);
+        ds_list_destroy(ducan_turtlesquad3_1);
+        ds_list_destroy(ducan_turtlesniper);
+        
+        ds_list_destroy(ducan_ducksquad1_1);
+        ds_list_destroy(ducan_ducksquad1_2);
+        ds_list_destroy(ducan_ducksquad1_3);
+        ds_list_destroy(ducan_ducksquad2_1);
+        ds_list_destroy(ducan_ducksquad2_2);
+        ds_list_destroy(ducan_ducksquad2_3);
+        ds_list_destroy(ducan_ducksquad3_1);
+        ds_list_destroy(ducan_ducksquad3_2);
+        
+        ds_list_destroy(monster_kamikaze_1);
+        ds_list_destroy(monster_kamikaze_2);
+        
+        ds_list_destroy(shop_empty_pool);
+        ds_list_destroy(enemy_pool_1_1);
+        ds_list_destroy(enemy_pool_1_2);
+        ds_list_destroy(enemy_pool_1_3);
+        ds_list_destroy(enemy_pool_2_1);
+        ds_list_destroy(enemy_pool_2_2);
+        ds_list_destroy(enemy_pool_2_3);
+        ds_list_destroy(enemy_pool_3_1);
+        ds_list_destroy(enemy_pool_3_2);
+        ds_list_destroy(enemy_pool_3_3);
+        ds_list_destroy(enemy_pool_4_1);
+        ds_list_destroy(enemy_pool_4_2);
+        ds_list_destroy(enemy_pool_4_3);
+        ds_list_destroy(item_pool_1_1);
+        ds_list_destroy(item_pool_1_2);
+        ds_list_destroy(item_pool_1_3);
+        ds_list_destroy(item_pool_2_1);
+        ds_list_destroy(item_pool_2_2);
+        ds_list_destroy(item_pool_2_3);
+        ds_list_destroy(item_pool_3_1);
+        ds_list_destroy(item_pool_3_2);
+        ds_list_destroy(item_pool_3_3);
+        ds_list_destroy(item_pool_4_1);
+        ds_list_destroy(item_pool_4_2);
+        ds_list_destroy(item_pool_4_3);
+        ds_list_destroy(item_pool_boss);
+        
+        ds_list_destroy(item_starterweapon_1);
+        ds_list_destroy(item_mediumweapon_1);
+        ds_list_destroy(item_mediumweapon_2);
+        ds_list_destroy(item_heavyweapon_1);
+        ds_list_destroy(item_heavyweapon_2);
+        ds_list_destroy(item_superweapon_1);
+        ds_list_destroy(item_rocketlauncher_1);
+        ds_list_destroy(item_starterammo_1);
+        ds_list_destroy(item_starterhealth_1);
+        ds_list_destroy(item_engamehealth_1);
+        ds_list_destroy(item_starteraid_1);
+        ds_list_destroy(item_grenade_1);
+        ds_list_destroy(item_mediumammo_1);
+        ds_list_destroy(item_heavyammo_1);
+        ds_list_destroy(item_endgameaid_1);
+        
+        ds_list_destroy(enemy_pool);
+        ds_list_destroy(item_pool);
     }
-    
-    with (obj_spawn_item)
-    {
-        instance_destroy();
-    }
-    
-    //Done
-    level_built = true;  
-    
-    //Clear Lists From Memory
-    ds_list_destroy(ducan_turtlesquad1_1);
-    ds_list_destroy(ducan_turtlesquad1_2);
-    ds_list_destroy(ducan_turtlesquad1_3);
-    ds_list_destroy(ducan_turtlesquad2_1);
-    ds_list_destroy(ducan_turtlesquad2_2);
-    ds_list_destroy(ducan_turtlesquad3_1);
-    ds_list_destroy(ducan_turtlesniper);
-    
-    ds_list_destroy(ducan_ducksquad1_1);
-    ds_list_destroy(ducan_ducksquad1_2);
-    ds_list_destroy(ducan_ducksquad1_3);
-    ds_list_destroy(ducan_ducksquad2_1);
-    ds_list_destroy(ducan_ducksquad2_2);
-    ds_list_destroy(ducan_ducksquad2_3);
-    ds_list_destroy(ducan_ducksquad3_1);
-    ds_list_destroy(ducan_ducksquad3_2);
-    
-    ds_list_destroy(monster_kamikaze_1);
-    ds_list_destroy(monster_kamikaze_2);
-    
-    ds_list_destroy(shop_empty_pool);
-    ds_list_destroy(enemy_pool_1_1);
-    ds_list_destroy(enemy_pool_1_2);
-    ds_list_destroy(enemy_pool_1_3);
-    ds_list_destroy(enemy_pool_2_1);
-    ds_list_destroy(enemy_pool_2_2);
-    ds_list_destroy(enemy_pool_2_3);
-    ds_list_destroy(enemy_pool_3_1);
-    ds_list_destroy(enemy_pool_3_2);
-    ds_list_destroy(enemy_pool_3_3);
-    ds_list_destroy(enemy_pool_4_1);
-    ds_list_destroy(enemy_pool_4_2);
-    ds_list_destroy(enemy_pool_4_3);
-    ds_list_destroy(item_pool_1_1);
-    ds_list_destroy(item_pool_1_2);
-    ds_list_destroy(item_pool_1_3);
-    ds_list_destroy(item_pool_2_1);
-    ds_list_destroy(item_pool_2_2);
-    ds_list_destroy(item_pool_2_3);
-    ds_list_destroy(item_pool_3_1);
-    ds_list_destroy(item_pool_3_2);
-    ds_list_destroy(item_pool_3_3);
-    ds_list_destroy(item_pool_4_1);
-    ds_list_destroy(item_pool_4_2);
-    ds_list_destroy(item_pool_4_3);
-    ds_list_destroy(item_pool_boss);
-    
-    ds_list_destroy(item_starterweapon_1);
-    ds_list_destroy(item_mediumweapon_1);
-    ds_list_destroy(item_mediumweapon_2);
-    ds_list_destroy(item_heavyweapon_1);
-    ds_list_destroy(item_heavyweapon_2);
-    ds_list_destroy(item_superweapon_1);
-    ds_list_destroy(item_rocketlauncher_1);
-    ds_list_destroy(item_starterammo_1);
-    ds_list_destroy(item_starterhealth_1);
-    ds_list_destroy(item_engamehealth_1);
-    ds_list_destroy(item_starteraid_1);
-    ds_list_destroy(item_grenade_1);
-    ds_list_destroy(item_mediumammo_1);
-    ds_list_destroy(item_heavyammo_1);
-    ds_list_destroy(item_endgameaid_1);
-    
-    ds_list_destroy(enemy_pool);
-    ds_list_destroy(item_pool);
 }
 </string>
           </argument>
@@ -1667,8 +1642,28 @@ var pauseKeyPressed = false;
 
 if (!global.gameOver) &amp;&amp; instance_exists(class_player)
 {
-    if keyboard_check_pressed(vk_escape) pauseKeyPressed = true;
-    if (global.input[1] == K_INPUT_JOYSTICK1) if joy_check_pressed(global.input[1],8)  pauseKeyPressed = true;
+    var p = 1; while (p &lt;= global.playerCount)
+    {
+        if (global.playerAlive[p])
+        {
+            if (global.input[p] == K_INPUT_KEYBOARD &amp;&amp; keyboard_check_pressed(vk_escape)) || (global.input[p] != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(global.input[p],8))
+            {
+                pauseKeyPressed = true;
+                global.pauseClient = p;
+            }
+        }
+        p++;
+    }
+    
+    if (!pauseKeyPressed) //Force ESC pausing
+    {
+        if (keyboard_check_pressed(vk_escape))
+        {
+            pauseKeyPressed = true;
+            if global.playerAlive[1] global.pauseClient = 1;
+            else if global.playerAlive[2] global.pauseClient = 2;
+        }
+    }
 }
 
 if (pauseKeyPressed)
@@ -1807,7 +1802,7 @@ if (debug_mode)
     if keyboard_check_pressed(ord("U"))
     {
         steam_clear_achievement("ACHIEVEMENT_KILLCOMBO"); //set by gui_score
-        steam_clear_achievement("ACHIEVEMENT_FIRSTRELIC"); //set by the 3 obj_shop_pineapple1
+        steam_clear_achievement("ACHIEVEMENT_FIRSTRELIC"); //set by the 3 obj_shop_pineapple ... also on Main to award retroactively 
         steam_clear_achievement("ACHIEVEMENT_ALLRELICS"); //set by Main
         steam_clear_achievement("ACHIEVEMENT_UNLOCKALL"); //set by Create on controller_main
         steam_clear_achievement("ACHIEVEMENT_BEATGAME"); //set by Boss corpse

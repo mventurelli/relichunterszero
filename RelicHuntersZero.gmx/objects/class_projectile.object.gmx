@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Main Shit
+owner = noone;
 damage = 0;
 precisionDamage = 0;
 range = 0;

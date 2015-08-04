@@ -32,6 +32,7 @@ if instance_exists(owner)
                 projectile.piercing = projectile_piercing;
                 projectile.ammo_type = ammo_type;
                 projectile.allowPrecision = allowPrecision;
+                projectile.owner = owner;
                             
                 var precision;
                             

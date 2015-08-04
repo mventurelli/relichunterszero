@@ -159,6 +159,7 @@ if instance_exists(activationClient) &amp;&amp; (active)
             <string>///Unlock
 
 if (myCharacter != char_jimmy) unlock = false;
+else unlock = true; 
 
 if (myCharacter == char_pinky) &amp;&amp; (global.unlockPinky) unlock = true; //Starts unlocked
 
@@ -192,6 +193,7 @@ if (myCharacter == char_ass) &amp;&amp; (global.unlockAss) unlock = true; //get 
           <argument>
             <kind>1</kind>
             <string>///Main Draw
+
 if (myCharacter == char_pinky) sprite_index = spr_pinky_holo;
 if (myCharacter == char_jimmy) sprite_index = spr_jimmy_holo;
 if (myCharacter == char_raff) sprite_index = spr_raff_holo;

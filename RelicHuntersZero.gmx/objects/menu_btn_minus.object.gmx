@@ -70,7 +70,7 @@ if (executeAction)
 
 if (instance_exists(parentButton))
 {
-    if (parentButton.myVariable &lt;= 0) || ((global.input[1] != K_INPUT_KEYBOARD) &amp;&amp; (global.selectedButton != parentButton))
+    if (parentButton.myVariable &lt;= 0) || ((!global.mouseActive) &amp;&amp; (global.selectedButton[K_INPUT_ALL] != parentButton))
     {
         isAvailable = false;
     }

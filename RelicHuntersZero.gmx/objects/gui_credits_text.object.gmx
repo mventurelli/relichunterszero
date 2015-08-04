@@ -135,6 +135,15 @@ draw_text(x,y+currentSpacing,"Ingrid Skare . Project Manager"); currentSpacing+=
 draw_text(x,y+currentSpacing,"Mauricio Perin . Design and Business"); currentSpacing+=lineSpacing;
 currentSpacing += 4*lineSpacing;
 
+//Collaborators
+draw_set_colour(make_color_rgb(242,50,129));
+draw_text(x,y+currentSpacing,"OPEN SOURCE CONTRIBUTORS"); currentSpacing+=lineSpacing;
+
+currentSpacing+=lineSpacing;
+
+draw_set_colour(c_white);
+draw_text(x,y+currentSpacing,"Luca-Leon Happel"); currentSpacing+=lineSpacing;
+currentSpacing += 4*lineSpacing;
 
 //Thanks to
 draw_set_colour(make_color_rgb(250,253,0));

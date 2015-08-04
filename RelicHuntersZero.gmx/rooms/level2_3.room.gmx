@@ -1019,8 +1019,8 @@
     <instance objName="obj_limit" x="3520" y="2176" name="inst_737F963B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3520" y="2112" name="inst_A79F4411" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3520" y="2048" name="inst_50B8B87A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_stage2" x="3424" y="2144" name="inst_4C4245A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_stage2" x="3616" y="2144" name="inst_2C634AE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_stage2" x="3424" y="2112" name="inst_4C4245A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_stage2" x="3616" y="2112" name="inst_2C634AE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_stage2" x="3488" y="2176" name="inst_FCC57EF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_stage2" x="3552" y="2176" name="inst_4CB97C74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="2048" y="2208" name="inst_D2CD092E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1040,6 +1040,7 @@
     <instance objName="obj_barrel" x="2048" y="2272" name="inst_C083B87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="2464" y="1920" name="inst_BE1D8572" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="2848" y="2528" name="inst_2D834E06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="3392" y="2112" name="inst_46B0B10A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_green" x="576" y="640" w="64" h="64" xo="148" yo="76" id="10005690" name="inst_4E4ED324" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -36,13 +36,13 @@ myShield = 999;
 myShieldMax = 999;
 myStamina = 999;
 myStaminaMax = 999;
-myLightAmmo = global.ammo_light[1];
+myLightAmmo = global.ammo_light[global.pauseClient];
 myLightAmmoMax = global.ammo_light_max;
-myMediumAmmo = global.ammo_medium[1];
+myMediumAmmo = global.ammo_medium[global.pauseClient];
 myMediumAmmoMax = global.ammo_medium_max;
-myHeavyAmmo = global.ammo_heavy[1];
+myHeavyAmmo = global.ammo_heavy[global.pauseClient];
 myHeavyAmmoMax = global.ammo_heavy_max;
-myGrenades = global.grenades[1];
+myGrenades = global.grenades[global.pauseClient];
 myGrenadesMax = global.grenades_max;
 
 myFontName = global.font_menuLargest;

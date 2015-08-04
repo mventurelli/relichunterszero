@@ -10,7 +10,7 @@ ini_open(working_directory + "\saveData.ini");
     
     global.playerCount = ini_read_real('Character','playerCount',1);
     
-    var p = 1; while (p <= global.playerCount)
+    var p = 1; while (p <= 2)//global.playerCount)
     {
         global.playerAlive[p] = ini_read_real('Character','Alive'+string(p),true);
         global.character[p] = ini_read_real('Character','Character'+string(p),char_jimmy);

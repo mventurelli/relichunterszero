@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
+  <datafiles number="9" name="datafiles">
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
@@ -20,6 +20,74 @@
         </Config>
       </ConfigOptions>
       <filename>locSheet.csv</filename>
+    </datafile>
+    <datafile>
+      <name>8-BIT WONDER.TTF</name>
+      <exists>-1</exists>
+      <size>14328</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>8-BIT WONDER.TTF</filename>
+    </datafile>
+    <datafile>
+      <name>Grand9K Pixel_0.ttf</name>
+      <exists>-1</exists>
+      <size>22108</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Grand9K Pixel_0.ttf</filename>
+    </datafile>
+    <datafile>
+      <name>pf_arma_five.ttf</name>
+      <exists>-1</exists>
+      <size>66872</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>pf_arma_five.ttf</filename>
+    </datafile>
+    <datafile>
+      <name>wendy.ttf</name>
+      <exists>-1</exists>
+      <size>10480</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>wendy.ttf</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
@@ -647,6 +715,13 @@
       <sprite>sprites\spr_facebook_menu</sprite>
       <sprite>sprites\spr_twitter_menu</sprite>
       <sprite>sprites\spr_intro_animated</sprite>
+      <sprite>sprites\spr_char_selected</sprite>
+      <sprite>sprites\spr_char_inputIcon</sprite>
+      <sprite>sprites\spr_char_statBar</sprite>
+      <sprite>sprites\spr_char_selectJimmy</sprite>
+      <sprite>sprites\spr_char_playerCard</sprite>
+      <sprite>sprites\spr_char_button</sprite>
+      <sprite>sprites\spr_char_inputBox</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1036,6 +1111,7 @@
       <objects name="NPCs">
         <object>objects\class_character_swap</object>
         <object>objects\obj_swap_pinky</object>
+        <object>objects\obj_swap_jimmy</object>
         <object>objects\obj_swap_raff</object>
         <object>objects\obj_swap_biu</object>
         <object>objects\obj_swap_punny</object>
@@ -1118,8 +1194,25 @@
       <object>objects\gui_intro_text</object>
       <object>objects\gui_credits_text</object>
       <object>objects\gui_weaponInfo</object>
-      <object>objects\gui_playerInfo</object>
       <object>objects\gui_dynamicBar</object>
+      <object>objects\gui_playerInfo</object>
+      <objects name="Character Selection">
+        <object>objects\class_menu_btnChar</object>
+        <object>objects\menu_char_jimmy</object>
+        <object>objects\menu_char_pinky</object>
+        <object>objects\menu_char_biu</object>
+        <object>objects\menu_char_punny</object>
+        <object>objects\menu_char_raff</object>
+        <object>objects\menu_char_ass</object>
+        <object>objects\menu_char_random</object>
+        <object>objects\menu_char_inputBar</object>
+        <object>objects\menu_char_playerCard</object>
+        <object>objects\menu_char_card1</object>
+        <object>objects\menu_char_card2</object>
+        <object>objects\menu_char_button</object>
+        <object>objects\menu_char_buttonOk</object>
+        <object>objects\menu_char_buttonCancel</object>
+      </objects>
       <objects name="Main Menu">
         <object>objects\class_menu_button</object>
         <object>objects\class_menu_button_toggle</object>
@@ -1409,6 +1502,7 @@
     <room>rooms\room_splash</room>
     <room>rooms\room_intro</room>
     <room>rooms\room_menu</room>
+    <room>rooms\room_charSelection</room>
     <room>rooms\room_settings</room>
     <room>rooms\room_delete</room>
     <room>rooms\room_credits</room>
@@ -1433,7 +1527,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="41">
+  <constants number="42">
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
     <constant name="char_biu">4</constant>
@@ -1468,6 +1562,7 @@
     <constant name="K_INPUT_KEYBOARD">4</constant>
     <constant name="K_INPUT_JOYSTICK1">0</constant>
     <constant name="K_INPUT_JOYSTICK2">1</constant>
+    <constant name="K_INPUT_ALL">9</constant>
     <constant name="lang_english">1</constant>
     <constant name="lang_ptbr">2</constant>
     <constant name="lang_huebr">3</constant>
