@@ -41,9 +41,11 @@ energy_max_regular = energy_max;
 energy_max_relic = energy_max*2;
 energy = energy_max;
 
+overshield = 0;
+
 hp_max = 100;
 hp_max_regular = hp_max;
-hp_max_relic = hp_max*2;
+hp_max_relic = hp_max*1.5;
 hp = hp_max;
 
 hp_regen_time = room_speed*1;
@@ -225,6 +227,8 @@ joyCrosshairDistance = 0;
 joyCrosshairDistanceTarget = 0;
 joyCrosshairDistanceSpeed = 30;
 joyCrosshairDistanceMin = 40;
+
+joyCrosshairSpeed = 24;
 </string>
           </argument>
         </arguments>
@@ -283,12 +287,10 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
 {
     var joy = global.input[myPlayerId];
     var autoAimAngle = 10;
-    if (global.auto_aim == K_AUTOAIM_FULL) autoAimAngle = 360;
 
-    var joyLookAngularVelocity, joyLookDeadzone, targetSwitchDeadzone, enemyDistance;
+    var joyLookAngularVelocity, joyLookDeadzone, enemyDistance;
     
     joyLookDeadzone = 0.55;
-    targetSwitchDeadzone = 0.75;
     
     if (aiming)
     {
@@ -326,26 +328,33 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
     {
         joyLookAngularVelocity = 30;
         joyAimLocked = false;
-        
-        if (global.auto_aim == K_AUTOAIM_FULL) //if (global.auto_aim != K_AUTOAIM_OFF)
+    }
+    
+    //Full Autoaim
+    if (global.auto_aim == K_AUTOAIM_FULL)
         {
+            autoAimAngle = 360;
+            
             var candidate = find_enemy_autoaim(myGun.x,myGun.y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
             if (targetEnemy != candidate)
             {
                 global.crosshair_scale[myPlayerId] = 1.85;
                 targetEnemy = candidate;
             }
-                
+               
             if (targetEnemy) &amp;&amp; instance_exists(targetEnemy)
             {
                 var aimingX = get_bbox_centerX(targetEnemy);
                 var aimingY = get_bbox_centerY(targetEnemy);
                     
                 joyLookDirection = autoaim_angle(myGun.x,myGun.y,targetEnemy);  
+                joyLookTargetAngle = joyLookDirection;
+                joyCrosshairDistance = point_distance(myGun.x,myGun.y,aimingX,aimingY);
                 joyAimLocked = true;
             }
+            
+            if (aiming) joyLookTargetAngle = joyLookDirection;
         }
-    }
     
     //Crosshair Distance Resolve
     
@@ -359,20 +368,34 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         joyLookDirection = angle_rotate(joyLookDirection, joyLookTargetAngle, joyLookAngularVelocity); 
     }
     
-    var joyAimVector = point_distance(0, 0, joy_x2pos(joy), joy_y2pos(joy) );
-    if (joyIsRightStickAiming) joyCrosshairDistanceTarget = 320 * joyAimVector;
-    else joyCrosshairDistanceTarget = joyCrosshairDistanceMin;
-    
-    if (joyCrosshairDistance != joyCrosshairDistanceTarget)
+    if !(global.auto_aim == K_AUTOAIM_FULL &amp;&amp; aiming)//joyAimLocked)
     {
-        if (joyCrosshairDistance &lt; joyCrosshairDistanceTarget) joyCrosshairDistance += min( joyCrosshairDistanceSpeed, abs(joyCrosshairDistanceTarget-joyCrosshairDistance) );
-        else joyCrosshairDistance -= min( joyCrosshairDistanceSpeed, abs(joyCrosshairDistanceTarget-joyCrosshairDistance) );
+        var joyAimVector = point_distance(0, 0, joy_x2pos(joy), joy_y2pos(joy) );
+        if (joyIsRightStickAiming) joyCrosshairDistanceTarget = 320 * joyAimVector;
+        else joyCrosshairDistanceTarget = joyCrosshairDistanceMin;
+        
+        if (joyCrosshairDistance != joyCrosshairDistanceTarget)
+        {
+            if (joyCrosshairDistance &lt; joyCrosshairDistanceTarget) joyCrosshairDistance += min( joyCrosshairDistanceSpeed, abs(joyCrosshairDistanceTarget-joyCrosshairDistance) );
+            else joyCrosshairDistance -= min( joyCrosshairDistanceSpeed, abs(joyCrosshairDistanceTarget-joyCrosshairDistance) );
+        }
     }
         
     //Final Crosshair Position
-    global.crosshairX[myPlayerId] = x + lengthdir_x(joyCrosshairDistance, joyLookDirection);
-    global.crosshairY[myPlayerId] = y + lengthdir_y(joyCrosshairDistance, joyLookDirection);
+    var targetCrossX = x + lengthdir_x(joyCrosshairDistance, joyLookDirection);
+    var targetCrossY = y + lengthdir_y(joyCrosshairDistance, joyLookDirection);
+    var targetCrossDir = point_direction(global.crosshairX[myPlayerId], global.crosshairY[myPlayerId], targetCrossX, targetCrossY);
+    var targetCrossDist = point_distance(global.crosshairX[myPlayerId], global.crosshairY[myPlayerId], targetCrossX, targetCrossY);
+    var targetSpeed = min(joyCrosshairSpeed, targetCrossDist);
+    
+    if (global.auto_aim == K_AUTOAIM_FULL) targetSpeed = targetCrossDist;
+    
+    global.crosshairX[myPlayerId] = global.crosshairX[myPlayerId] + lengthdir_x( targetSpeed , targetCrossDir);
+    global.crosshairY[myPlayerId] = global.crosshairY[myPlayerId] + lengthdir_y( targetSpeed , targetCrossDir);
 }
+
+
+
 </string>
           </argument>
         </arguments>
@@ -395,17 +418,19 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Relic Buffs
+            <string>///Relic Buffs &amp; First Room Invulnerability
+
+if (room == room_start) hp = hp_max;
 
 //Pineapple Pudding
 if (global.relic_pineapple_pudding == 2) hp_max = hp_max_relic;
 else hp_max = hp_max_regular;
-if (room == room_start) hp = hp_max;
+
 
 //Yottabyte Drive
 if (global.relic_yottabyte_drive == 2) energy_max = energy_max_relic;
 else energy_max = energy_max_regular;
-if (room == room_start) energy = energy_max;
+
 
 //Alcoholic Carrot
 if (global.relic_alcoholic_carrot == 2) stamina_regen = stamina_regen_relic;
@@ -1163,7 +1188,7 @@ if (hp &lt;= 0)
 else hp = round(hp);
 
 //Shield
-if energy &lt; energy_max
+if energy &lt; (energy_max+overshield)
 {
     energy_regen_time_current++;
     if energy_regen_time_current &gt;= energy_regen_time
@@ -1171,7 +1196,7 @@ if energy &lt; energy_max
         if (!energy) energy = 1;
         shield = true;
         energy += energy_regen_speed;
-        if (energy &gt; energy_max) energy = energy_max;
+        if (energy &gt; (energy_max+overshield)) energy = energy_max+overshield;
     }
     if energy_regen_time_current = energy_regen_time
     {
@@ -1185,6 +1210,15 @@ if energy &lt; energy_max
 
 if (!energy) &amp;&amp; (shield == true) &amp;&amp; (energy_max)
 {
+    if (overshield)
+    {
+        overshield = 0;
+        guiInfo = instance_create(x,y,gui_info);
+        guiInfo.colorMain = K_BETU_RED;
+        guiInfo.myString = loc_key("INFO_SHIELDLOST");
+        guiInfo.owner = id;
+    }
+    
     myShieldEffect = instance_create(x,y,fx_shield_explosion);
     myShieldEffect.owner = id;
     mySparks = instance_create(x,y,fx_shield_down);
@@ -1248,6 +1282,16 @@ else
     {
         interactionKey = true;
         allowPickup = false;
+    }
+}
+
+///Draw dynamic ammo bars when you press the reload key
+if (reloadKey)
+{
+    if (instance_exists(global.dynamicAmmo1))
+    {
+        if (myPlayerId == 1) { global.dynamicAmmo1.timedActive = true; global.dynamicAmmo1.activeTimeCurrent = 0; }
+        if (myPlayerId == 2) { global.dynamicAmmo2.timedActive = true; global.dynamicAmmo2.activeTimeCurrent = 0; }
     }
 }
 

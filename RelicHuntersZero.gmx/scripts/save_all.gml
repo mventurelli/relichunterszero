@@ -13,6 +13,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Input','Sprint Toggle',global.sprint_toggle);
     ini_write_real('Input','Double Tap Dodge',global.doubleTapDodge);
     ini_write_real('Input','Allow Mouse Wheel',global.allowMouseWheel);
+    ini_write_real('Quality','Always Show Ammo',global.alwaysShowAmmo);
     ini_write_real('Quality','screenshake',global.screenShakeRatio);
     ini_write_real('Quality','controller vibration',global.vibrationRatio);
     ini_write_real('Quality','fullscreen',global.fullscreen);
@@ -60,6 +61,7 @@ ini_open(working_directory + "\saveData.ini");
             else ini_write_real('Character','Weapon2Player'+string(playerId),noone);
             
             ini_write_real('Character','Health'+string(playerId),curPlayer.hp);
+            ini_write_real('Character','Overshield'+string(playerId),curPlayer.overshield);
             
             if (curPlayer.myGun == curPlayer.weapon1 ) global.currentlyEquippedWeapon[playerId] = 1;
             if (curPlayer.myGun == curPlayer.weapon2) global.currentlyEquippedWeapon[playerId] = 2;
@@ -79,6 +81,7 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Persistence','UnlockAss',global.unlockAss);
         
         ini_write_real('Persistence','Score',global.score_total);
+        
         
         ini_write_real('Persistence','Checkpoint1',global.checkpoint1);
         ini_write_real('Persistence','Checkpoint2',global.checkpoint2);
@@ -203,6 +206,8 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Stats','statTotalBounty',global.statTotalBounty);
     ini_write_real('Stats','statTotalDeaths',global.statTotalDeaths);
     ini_write_real('Stats','statKilledByBoss',global.statKilledByBoss);
+    ini_write_real('Stats','statBossKills',global.statBossKills);
+    ini_write_real('Stats','Kills',global.statKills);
     ini_write_real('Stats','statTotalTime',global.statTotalTime);
     ini_write_real('Stats','statRunTime',global.statRunTime);
     

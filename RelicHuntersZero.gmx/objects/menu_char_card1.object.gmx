@@ -28,6 +28,8 @@
             <string>///Set player ID
 event_inherited();
 myPlayerId = 1;
+
+cardName = 'P1';
 </string>
           </argument>
         </arguments>

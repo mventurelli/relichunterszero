@@ -31,10 +31,8 @@ event_inherited();
 isAvailable = true;
 
 labelString = loc_key("MAINMENU_QUIT");
-//labelString = 'EXIT';
 
 keyboardShortcut = vk_escape;
-//joystickShortcut = 2;//8=start 2=back
 </string>
           </argument>
         </arguments>

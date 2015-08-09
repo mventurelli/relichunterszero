@@ -421,6 +421,7 @@
     <instance objName="obj_spawn_player" x="848" y="1152" name="inst_3C5D3D53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_swap_jimmy" x="1104" y="1104" name="inst_ED8742D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_altar_players" x="1104" y="1104" name="inst_0A6B037D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pickup_shield" x="1320" y="1248" name="inst_B9D849E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ship_stairs4" x="1344" y="1024" w="64" h="64" xo="0" yo="0" id="10013313" name="inst_D5A5AAB9" depth="9999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

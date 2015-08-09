@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>if faction == f_enemy &amp;&amp; instance_exists(other)
 {
+    spreadX = irandom_range(-15,15);
+    spreadY = irandom_range(-15,15);
+        
     if (!other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
     {
         ds_list_add(damage_list,other.id);
@@ -47,8 +50,6 @@
         other.push_direction = direction;
         other.push_speed += push_power;
         
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
         damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         damage_fx.damage = damage;
         
@@ -61,6 +62,12 @@
             hit.type = ammo_type;
         }
         instance_destroy();
+    }
+    
+    if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+    {
+        ds_list_add(damage_list,other.id);
+        damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
     }
 }
 </string>
@@ -87,11 +94,14 @@
             <kind>1</kind>
             <string>if faction == f_enemy &amp;&amp; instance_exists(other)
 {
+    spreadX = irandom_range(-15,15);
+    spreadY = irandom_range(-15,15);
+    
     if (!other.dodging)
     {
         if (other.shield)
         {
-            if (distance_travelled &gt; range) damage = damage/3;
+            if (distance_travelled &gt; range) damage = round(damage/3);
             other.energy -= damage;
             audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
             if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
@@ -107,8 +117,7 @@
         }
         other.hit_taken = true;
         
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
+        
         damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         damage_fx.damage = damage;
 
@@ -119,6 +128,12 @@
             hit.type = ammo_type;
         }
         instance_destroy();
+    }
+    
+    if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+    {
+        ds_list_add(damage_list,other.id);
+        damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
     }
 }
 </string>

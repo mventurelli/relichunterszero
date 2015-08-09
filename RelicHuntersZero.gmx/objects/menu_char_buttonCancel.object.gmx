@@ -53,6 +53,15 @@ labelString = 'CHANGE';
             <string>///Trigger
 event_inherited();
 
+if (isActive) 
+{
+    if (owner.slotInput != K_INPUT_KEYBOARD) 
+    {
+        if joy_check_pressed(owner.slotInput,2) trigger = true;
+    }
+    else if keyboard_check_pressed(vk_escape) trigger = true;
+}
+    
 if (trigger)
 {
     if (instance_exists(owner))

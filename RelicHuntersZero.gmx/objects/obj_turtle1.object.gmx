@@ -29,6 +29,8 @@
 event_inherited();
 drop_gun_chance = 0;
 
+fire_range = 500;
+
 elite = false;
 energy_max = 0;
 hp_max = 50;
@@ -52,6 +54,8 @@ drop_gun = obj_pickup_pistol;
 grenade_count_max = 0;
 
 coins = global.coins_turtle1;
+
+
 </string>
           </argument>
         </arguments>

@@ -65,7 +65,8 @@ buttonGridY = 0;
 isToggle = false;
 
 keyboardShortcut = -1;
-joystickShortcut = -1;
+joystickShortcut[K_INPUT_JOYSTICK1] = -1;
+joystickShortcut[K_INPUT_JOYSTICK2] = -1;
 </string>
           </argument>
         </arguments>
@@ -196,24 +197,53 @@ if (isSelected) &amp;&amp; (isAvailable)
     if (triggerMyAction) //Resolve
     {
         executeAction = true;
-        audio_play_sound(sfx_menu_click,1,false);
+        if (!audio_is_playing(sfx_menu_click)) audio_play_sound(sfx_menu_click,1,false);
     }
 }
 
-// Auto-use with shortcut key pressed
-var checkShortcut = false;
+// Shortcut Keys
+checkShortcut[K_INPUT_KEYBOARD] = false;
+checkShortcut[K_INPUT_JOYSTICK1] = false;
+checkShortcut[K_INPUT_JOYSTICK2] = false;
 
-if (keyboardShortcut != -1) if (keyboard_check_pressed(keyboardShortcut)) checkShortcut = true;
-if (joystickShortcut != -1) if (joy_check_pressed(0,joystickShortcut)) checkShortcut = true;
+if (keyboardShortcut != -1) if (keyboard_check_pressed(keyboardShortcut)) checkShortcut[K_INPUT_KEYBOARD] = true;
+if (joystickShortcut[K_INPUT_JOYSTICK1] != -1) if (joy_check_pressed(K_INPUT_JOYSTICK1,joystickShortcut[K_INPUT_JOYSTICK1])) checkShortcut[K_INPUT_JOYSTICK1] = true; 
+if (joystickShortcut[K_INPUT_JOYSTICK2] != -1) if (joy_check_pressed(K_INPUT_JOYSTICK2,joystickShortcut[K_INPUT_JOYSTICK2])) checkShortcut[K_INPUT_JOYSTICK2] = true; 
 
-if (checkShortcut) &amp;&amp; (isAvailable)
+
+if (isAvailable)
 {
-    checkShortcut = false;
-    global.selectedButton[K_INPUT_ALL] = id;
-    isSelected = true;
-    executeAction = true;
-    audio_play_sound(sfx_menu_click,1,false);
+    var shortcutActivated = false;
+    
+    if (checkShortcut[K_INPUT_KEYBOARD])
+    {
+        checkShortcut[K_INPUT_KEYBOARD] = false;
+        global.selectedButton[K_INPUT_KEYBOARD] = id;
+        shortcutActivated = true;
+    }
+    
+    if (checkShortcut[K_INPUT_JOYSTICK1])
+    {
+        checkShortcut[K_INPUT_JOYSTICK1] = false;
+        global.selectedButton[K_INPUT_JOYSTICK1] = id;
+        shortcutActivated = true;
+    }
+    
+    if (checkShortcut[K_INPUT_JOYSTICK2])
+    {
+        checkShortcut[K_INPUT_JOYSTICK2] = false;
+        global.selectedButton[K_INPUT_JOYSTICK2] = id;
+        shortcutActivated = true;
+    }
+    
+    if (shortcutActivated)
+    {
+        isSelected = true;
+        executeAction = true;
+        if (!audio_is_playing(sfx_menu_click)) audio_play_sound(sfx_menu_click,1,false);
+    }
 }
+
 
 // Star Movement &amp; Audio
 if (isSelected)

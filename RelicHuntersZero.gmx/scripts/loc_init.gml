@@ -4,6 +4,7 @@
 //          global.loc_map = noone;
 //          loc_init();
 
+testTiu = 'Não tentá você começô';
 
 if (!ds_exists(global.loc_map,ds_type_map)) global.loc_map = ds_map_create();
 else ds_map_clear(global.loc_map);
@@ -31,7 +32,15 @@ if (global.language == lang_english)
 if (global.language == lang_ptbr)
 {
     targetColumn = lang_ptbr;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
     global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
 }
 
 if (global.language == lang_huebr)
@@ -77,18 +86,22 @@ while (!file_text_eof(localization))
     for (var i=1; i<stringLength; i++)
     {
         var char = string_char_at(rowString,i);
-        //if (char != ",")
+
         if !( (char == ',') && (string_char_at(rowString,i+1) != ' ') )
         {
             if (column == 0) key+=char;
-            if (column == targetColumn) text+=char;   
+            if (column == targetColumn) text+=char;
         }
         else column++;
         
         if (column > targetColumn) break;
     }
     
-    //show_debug_message('Done! Adding '+(key)+','+(text)+' to the map');
+    //Remove quotation marks from the CSV and resolve
+    var textLength = string_length(text)
+    if (string_char_at(text,0) == '"') text = string_delete(text,1,1);
+    if (string_char_at(text,textLength-1) == '"') text = string_delete(text,textLength-1,1);
+    
     ds_map_add(global.loc_map,key,text);
 }
 

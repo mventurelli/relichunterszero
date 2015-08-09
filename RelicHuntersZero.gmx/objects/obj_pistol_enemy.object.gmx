@@ -8,7 +8,7 @@
   <parentName>class_gun_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="1">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,16 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound = 'pistol';
+            <string>event_inherited();
+
+sound = 'pistol';
 ammo_type = type_light;
 
-projectile_speed = 25;
-projectile_speed_decay = 0.4;
-projectile_damage = 7;
-projectile_range = 500;
+projectile_speed = 20;
+projectile_speed_decay = 0.2;
+projectile_damage = 10;
+projectile_range = 450;
 
 accuracy = 5;
-fire_rate = room_speed*0.7;
+
+fire_burst = irandom_range(2,3);
+fire_burst_rate = room_speed*0.5;
+fire_rate = irandom_range(room_speed*2,room_speed*3);
 </string>
           </argument>
         </arguments>

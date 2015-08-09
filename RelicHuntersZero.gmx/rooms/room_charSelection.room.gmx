@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>3011839</colour>
+  <colour>14203906</colour>
   <showcolour>-1</showcolour>
   <code></code>
   <enableViews>-1</enableViews>
@@ -51,18 +51,21 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="controller_menu_main" x="32" y="32" name="inst_39309C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="controller_menu_main" x="120" y="104" name="inst_39309C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_cancel" x="160" y="704" name="inst_B9B4431F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_inputBar" x="0" y="56" name="inst_7ACE4C5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_jimmy" x="104" y="72" name="inst_C49BEAA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_pinky" x="376" y="72" name="inst_C6C8C14B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_raff" x="648" y="72" name="inst_F33254C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_biu" x="920" y="72" name="inst_FD34205A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_punny" x="104" y="160" name="inst_1323340C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_ass" x="376" y="160" name="inst_7A8C5DC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_random" x="648" y="160" name="inst_FF2EC2F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_card1" x="376" y="336" name="inst_0D98D9EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_card2" x="840" y="336" name="inst_36D13F5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_inputBar" x="184" y="48" name="inst_7ACE4C5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_jimmy" x="216" y="96" name="inst_C49BEAA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_pinky" x="496" y="96" name="inst_C6C8C14B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_raff" x="776" y="96" name="inst_F33254C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_biu" x="216" y="176" name="inst_FD34205A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_punny" x="496" y="176" name="inst_1323340C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_ass" x="776" y="176" name="inst_7A8C5DC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_random" x="472" y="256" name="inst_FF2EC2F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_card1" x="488" y="368" name="inst_0D98D9EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_card2" x="888" y="368" name="inst_36D13F5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_fx_charSelection" x="210" y="48" name="inst_2EDA33DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_statsBox" x="8" y="368" name="inst_6E1B2E99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_fx_charBar" x="0" y="128" name="inst_D4A6E9FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

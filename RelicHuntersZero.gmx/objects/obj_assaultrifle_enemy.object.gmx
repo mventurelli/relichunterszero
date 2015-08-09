@@ -8,7 +8,7 @@
   <parentName>class_gun_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="1">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,19 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound = 'rifle';
+            <string>event_inherited();
+sound = 'rifle';
 ammo_type = type_heavy;
 is_sniper = true;
 
 projectile_speed = 30;
 projectile_speed_decay = 0.12;
-projectile_damage = 14;
+projectile_damage = 20;
 projectile_range = 600;
 
 accuracy = 3;
 fire_burst = 3;
 fire_burst_rate = room_speed*0.05;
-fire_rate = room_speed*0.7;
+fire_rate = room_speed*1;
 </string>
           </argument>
         </arguments>

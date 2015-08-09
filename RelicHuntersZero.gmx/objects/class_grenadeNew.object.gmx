@@ -46,6 +46,10 @@ bounce_max = 2.5;
 dynamicHeight = -60;
 
 canRicochet = true;
+
+allowBounce = false;
+allowBounceTime = room_speed*0.4;
+allowBounceTimeCurrent = 0;
 </string>
           </argument>
         </arguments>
@@ -130,6 +134,10 @@ audio_emitter_falloff(audio_emitter, global.falloffMinorDist, global.falloffMino
 audio_emitter_gain(audio_emitter,global.soundVolume);
 audio_play(audio_emitter,false,1,sfx_grenade_loop);
 
+speedReset = false;
+oldSpeed = 0;
+
+reflection_object_setup(draw_height,spr_grenadeNew,image_index);
 
 </string>
           </argument>
@@ -225,6 +233,40 @@ if (firstBounce) &amp;&amp; instance_exists(myTarget)
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>-1</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.pause</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -243,7 +285,13 @@ if (firstBounce) &amp;&amp; instance_exists(myTarget)
 
 event_inherited();
 
-if (draw_height &gt;= dynamicHeight)
+if (!allowBounce)
+{
+    if (allowBounceTimeCurrent &lt; allowBounceTime) allowBounceTimeCurrent++;
+    else allowBounce = true;
+}
+
+if (draw_height &gt;= dynamicHeight) &amp;&amp; (allowBounce)
 {
     if (place_meeting(x,y,obj_wall)) &amp;&amp; (speed)
     {
@@ -269,6 +317,8 @@ if (draw_height &gt;= dynamicHeight)
         playerTrigger = true;
     } 
 }
+
+reflection_object_setup(draw_height,spr_grenadeNew,image_index);
 </string>
           </argument>
         </arguments>
@@ -354,6 +404,59 @@ if (vertical_speed_start)
 {
     part_emitter_region(global.smokeSystem[id], smoke_emitter, x, x, y+draw_height, y+draw_height, ps_shape_ellipse, ps_distr_linear);
     part_emitter_burst(global.smokeSystem[id], smoke_emitter, smoke_particle, 1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause-Controlled Movement
+
+if (!global.pause)
+{
+    if (speedReset)
+    {
+        speed = oldSpeed;
+        speedReset = false;
+    }
+}
+else
+{
+    if (!speedReset)
+    {
+        oldSpeed = speed;
+        speed = 0;
+        speedReset = true;
+    }
 }
 </string>
           </argument>

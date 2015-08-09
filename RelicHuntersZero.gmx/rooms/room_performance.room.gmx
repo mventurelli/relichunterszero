@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -54,26 +54,29 @@
     <instance objName="controller_menu_main" x="16" y="0" name="inst_39309C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_confirm_nested" x="416" y="704" name="inst_DD6FE750" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_cancel_nested" x="160" y="704" name="inst_F4377FAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_minus" x="1040" y="256" name="inst_3216DDD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_minus" x="1040" y="320" name="inst_49F17F36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_minus" x="1040" y="448" name="inst_02C83A64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_minus" x="1040" y="512" name="inst_3F760DAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_minus" x="1040" y="384" name="inst_40DA0561" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="320" name="inst_3216DDD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="384" name="inst_49F17F36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="512" name="inst_02C83A64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="576" name="inst_3F760DAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="448" name="inst_40DA0561" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_minus" x="1040" y="192" name="inst_82AE7E5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_plus" x="1200" y="192" name="inst_18013D47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_plus" x="1200" y="256" name="inst_17E20BE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_plus" x="1200" y="448" name="inst_88C09CE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_plus" x="1200" y="512" name="inst_3F9BB288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_plus" x="1200" y="320" name="inst_A1D89189" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_plus" x="1200" y="384" name="inst_3644C104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="320" name="inst_17E20BE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="512" name="inst_88C09CE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="576" name="inst_3F9BB288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="384" name="inst_A1D89189" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="448" name="inst_3644C104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_settings" x="184" y="64" name="inst_7A8A240B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_performance" x="632" y="76" name="inst_E44AD7C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_fullscreen" x="720" y="192" name="inst_843A13D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_dynamics" x="720" y="256" name="inst_7B7AA1EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_particles" x="720" y="320" name="inst_CA3008DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_shadows" x="720" y="384" name="inst_2A9E3D9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_persistent" x="720" y="448" name="inst_704ACA48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_reflections" x="720" y="512" name="inst_15FFDEEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_dynamics" x="720" y="320" name="inst_7B7AA1EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_particles" x="720" y="384" name="inst_CA3008DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_shadows" x="720" y="448" name="inst_2A9E3D9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_persistent" x="720" y="512" name="inst_704ACA48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_reflections" x="720" y="576" name="inst_15FFDEEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_resolution" x="720" y="256" name="inst_4C2FA323" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_minus" x="1040" y="256" name="inst_336E3BAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_plus" x="1200" y="256" name="inst_E0178308" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

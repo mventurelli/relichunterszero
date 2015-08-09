@@ -216,6 +216,9 @@ else instance_destroy();
             <string>///Damage
 if instance_exists(other)
 {
+    spreadX = irandom_range(-15,15);
+    spreadY = irandom_range(-15,15);
+        
     if (ds_list_find_index(damage_list,other.id) &lt; 0) &amp;&amp; (ds_list_size(damage_list) &lt; max_hits)
     {
         ds_list_add(damage_list,other.id);
@@ -235,8 +238,6 @@ if instance_exists(other)
         other.push_direction = direction;
         other.push_speed += push_power;
         
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
         damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         damageEffect.damage = damage;
         damageEffect.critical = true;
@@ -246,6 +247,12 @@ if instance_exists(other)
             audio_play(other.audio_emitter,false,1,sfx_gloves_hit1,sfx_gloves_hit2,sfx_gloves_hit3);
         }
         else audio_play(other.audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
+    }
+    
+    if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+    {
+        damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+        ds_list_add(damage_list,other.id);
     }
 }
 
@@ -278,6 +285,9 @@ if instance_exists(other)
 {
     if (other.id != owner.id)
     {
+        spreadX = irandom_range(-15,15);
+        spreadY = irandom_range(-15,15);
+                
         if (!other.dodging)
         {
             ffDamage = round(damage * global.friendlyFireDamageRatio);
@@ -303,8 +313,7 @@ if instance_exists(other)
                 }
                 other.hit_taken = true;
                 
-                spreadX = irandom_range(-15,15);
-                spreadY = irandom_range(-15,15);
+                
                 damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
                 damageEffect.damage = ffDamage;
                 damageEffect.critical = true;
@@ -315,6 +324,12 @@ if instance_exists(other)
                 }
                 else audio_play(other.audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
             }
+        }
+        
+        if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+        {
+            damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+            ds_list_add(damage_list,other.id);
         }
     }
 }

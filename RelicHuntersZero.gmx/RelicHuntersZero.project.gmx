@@ -3,24 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="9" name="datafiles">
-    <datafile>
-      <name>locSheet.csv</name>
-      <exists>-1</exists>
-      <size>28692</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>locSheet.csv</filename>
-    </datafile>
+  <datafiles number="11" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -88,6 +71,23 @@
         </Config>
       </ConfigOptions>
       <filename>wendy.ttf</filename>
+    </datafile>
+    <datafile>
+      <name>locSheet.csv</name>
+      <exists>-1</exists>
+      <size>32635</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>locSheet.csv</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
@@ -418,8 +418,6 @@
       </sprites>
     </sprites>
     <sprites name="Grenades">
-      <sprite>sprites\spr_sbsgrenade</sprite>
-      <sprite>sprites\spr_grenade</sprite>
       <sprite>sprites\spr_grenade_exp1</sprite>
       <sprite>sprites\spr_grenade_glow</sprite>
       <sprite>sprites\spr_explosion_ground</sprite>
@@ -523,6 +521,7 @@
     </sprites>
     <sprites name="Items">
       <sprite>sprites\spr_pickup_health</sprite>
+      <sprite>sprites\spr_pickup_shield</sprite>
       <sprite>sprites\spr_pickup_healthBig</sprite>
       <sprite>sprites\spr_pickup_light</sprite>
       <sprite>sprites\spr_pickup_medium</sprite>
@@ -718,10 +717,42 @@
       <sprite>sprites\spr_char_selected</sprite>
       <sprite>sprites\spr_char_inputIcon</sprite>
       <sprite>sprites\spr_char_statBar</sprite>
-      <sprite>sprites\spr_char_selectJimmy</sprite>
       <sprite>sprites\spr_char_playerCard</sprite>
+      <sprite>sprites\spr_char_playerStat</sprite>
       <sprite>sprites\spr_char_button</sprite>
       <sprite>sprites\spr_char_inputBox</sprite>
+      <sprite>sprites\spr_char_statsBox</sprite>
+      <sprites name="CharSelection">
+        <sprite>sprites\spr_fx_charBar</sprite>
+        <sprite>sprites\spr_char_randomOn</sprite>
+        <sprite>sprites\spr_char_randomSel</sprite>
+        <sprite>sprites\spr_char_randomFinal</sprite>
+        <sprite>sprites\spr_char_randomOff</sprite>
+        <sprite>sprites\spr_char_jimmyOn</sprite>
+        <sprite>sprites\spr_char_jimmySel</sprite>
+        <sprite>sprites\spr_char_jimmyFinal</sprite>
+        <sprite>sprites\spr_char_jimmyOff</sprite>
+        <sprite>sprites\spr_char_assOn</sprite>
+        <sprite>sprites\spr_char_assSel</sprite>
+        <sprite>sprites\spr_char_assFinal</sprite>
+        <sprite>sprites\spr_char_assOff</sprite>
+        <sprite>sprites\spr_char_biuOn</sprite>
+        <sprite>sprites\spr_char_biuSel</sprite>
+        <sprite>sprites\spr_char_biuFinal</sprite>
+        <sprite>sprites\spr_char_biuOff</sprite>
+        <sprite>sprites\spr_char_pinkyOn</sprite>
+        <sprite>sprites\spr_char_pinkySel</sprite>
+        <sprite>sprites\spr_char_pinkyFinal</sprite>
+        <sprite>sprites\spr_char_pinkyOff</sprite>
+        <sprite>sprites\spr_char_punnyOn</sprite>
+        <sprite>sprites\spr_char_punnySel</sprite>
+        <sprite>sprites\spr_char_punnyFinal</sprite>
+        <sprite>sprites\spr_char_punnyOff</sprite>
+        <sprite>sprites\spr_char_raffOn</sprite>
+        <sprite>sprites\spr_char_raffSel</sprite>
+        <sprite>sprites\spr_char_raffFinal</sprite>
+        <sprite>sprites\spr_char_raffOff</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -952,7 +983,15 @@
       <font>fonts\ftRU_menuLarge</font>
     </fonts>
     <fonts name="Latin">
+      <font>fonts\ftBR_numberSmall</font>
+      <font>fonts\ftBR_numberMedium</font>
+      <font>fonts\ftBR_numberLarge</font>
+      <font>fonts\ftBR_numberVeryLarge</font>
+      <font>fonts\ftBR_tinyText</font>
+      <font>fonts\ftBR_menuSmall</font>
+      <font>fonts\ftBR_menuMedium</font>
       <font>fonts\ftBR_menuLarge</font>
+      <font>fonts\ftBR_menuLargest</font>
     </fonts>
     <fonts name="Japanese">
       <font>fonts\ftJP_menuLarge</font>
@@ -964,8 +1003,8 @@
       <object>objects\controller_pause</object>
       <object>objects\controller_camera</object>
       <object>objects\controller_effects</object>
-      <object>objects\controller_shadow_tall</object>
       <object>objects\controller_splash</object>
+      <object>objects\controller_shadow_tall</object>
       <object>objects\controller_menu_main</object>
       <object>objects\controller_menu_background</object>
       <object>objects\controller_intro</object>
@@ -1162,16 +1201,10 @@
       <object>objects\fx_bigMessage</object>
     </objects>
     <objects name="Grenades">
-      <object>objects\class_grenade_arc</object>
-      <object>objects\class_grenade</object>
       <object>objects\fx_explosion_regular</object>
-      <object>objects\obj_grenade_enemy_arc</object>
-      <object>objects\obj_grenade_arc</object>
-      <object>objects\obj_grenade_enemy</object>
-      <object>objects\obj_grenade</object>
+      <object>objects\class_grenadeNew</object>
       <object>objects\obj_grenadeNew</object>
       <object>objects\obj_grenade_enemyNew</object>
-      <object>objects\class_grenadeNew</object>
       <object>objects\fx_grenadeTarget</object>
     </objects>
     <objects name="GUI">
@@ -1212,6 +1245,9 @@
         <object>objects\menu_char_button</object>
         <object>objects\menu_char_buttonOk</object>
         <object>objects\menu_char_buttonCancel</object>
+        <object>objects\menu_statsBox</object>
+        <object>objects\menu_char_playerStat</object>
+        <object>objects\menu_fx_charBar</object>
       </objects>
       <objects name="Main Menu">
         <object>objects\class_menu_button</object>
@@ -1226,6 +1262,7 @@
         <object>objects\menu_fx_settings</object>
         <object>objects\menu_fx_gameplay</object>
         <object>objects\menu_fx_performance</object>
+        <object>objects\menu_fx_charSelection</object>
         <object>objects\menu_fx_pause</object>
         <object>objects\menu_fx_mapping</object>
         <object>objects\menu_fx_rogue</object>
@@ -1259,6 +1296,7 @@
           <object>objects\menu_btn_vibration</object>
           <object>objects\menu_btn_targeting</object>
           <object>objects\menu_btn_sticky</object>
+          <object>objects\menu_btn_showammo</object>
         </objects>
         <objects name="Performance Options">
           <object>objects\menu_btn_resolution</object>
@@ -1326,8 +1364,10 @@
       <object>objects\class_pickup_weapon</object>
       <object>objects\class_pickup_ammo</object>
       <object>objects\class_pickup_health</object>
+      <object>objects\class_pickup_shield</object>
       <object>objects\obj_pickup_coin</object>
       <object>objects\obj_pickup_health</object>
+      <object>objects\obj_pickup_shield</object>
       <object>objects\obj_pickup_healthBig</object>
       <object>objects\obj_pickup_lightammo</object>
       <object>objects\obj_pickup_mediumammo</object>
@@ -1527,7 +1567,8 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="42">
+  <constants number="43">
+    <constant name="char_random">99</constant>
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
     <constant name="char_biu">4</constant>

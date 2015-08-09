@@ -34,23 +34,29 @@ labelString = loc_key("PERFORMANCE_RESOLUTION");
 
 if (global.screenResolution == 1.5)
 {
+    myVariable = 3;
+    myValueString = '1920';
+}
+
+if (global.screenResolution == 1.25)
+{
     myVariable = 2;
-    myValueString = '1920x1080';
+    myValueString = '1600';
 }
 
 if (global.screenResolution == 1.0)
 {
     myVariable = 1;
-    myValueString = '1280x720';
+    myValueString = '1280';
 }
 
-if (global.screenResolution == 0.5)
+if (global.screenResolution == 0.625)
 {
     myVariable = 0;
-    myValueString = '640x360';
+    myValueString = '800';
 }
 
-myVariableMax = 2;
+myVariableMax = 3;
 </string>
           </argument>
         </arguments>
@@ -81,22 +87,28 @@ if (executeAction)
     //
 }
 
-if (myVariable == 2)
+if (myVariable == 3)
 {
     global.screenResolution = 1.5;
-    myValueString = '1920x1080';
+    myValueString = '1920';
+}
+
+if (myVariable == 2)
+{
+    global.screenResolution = 1.25;
+    myValueString = '1600';
 }
 
 if (myVariable == 1)
 {
     global.screenResolution = 1;
-    myValueString = '1280x720';
+    myValueString = '1280';
 }
 
 if (myVariable == 0)
 {
-    global.screenResolution = 0.5;
-    myValueString = '640x360';
+    global.screenResolution = 0.625;
+    myValueString = '800';
 }
 </string>
           </argument>

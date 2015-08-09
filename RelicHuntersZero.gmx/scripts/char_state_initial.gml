@@ -7,6 +7,7 @@
     global.weapon1[1] = noone;
     global.weapon2[1] = noone;
     global.hp[1] = 999999;
+    global.overshield[1] = 0;
     global.currentlyEquippedWeapon[1] = 0;
     
     global.ammo_light[1] = 80;
@@ -17,6 +18,7 @@
     global.weapon1[2] = noone;
     global.weapon2[2] = noone;
     global.hp[2] = 999999;
+    global.overshield[2] = 0;
     global.currentlyEquippedWeapon[2] = 0;
     
     global.ammo_light[2] = 80;

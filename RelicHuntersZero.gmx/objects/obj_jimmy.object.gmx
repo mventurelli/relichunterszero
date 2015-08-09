@@ -30,12 +30,12 @@ event_inherited();
 
     playerName = "JIMMY";
     
-    energy_max = 100;
+    energy_max = 60;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 100;
+    hp_max = 140;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     
@@ -118,6 +118,7 @@ if global.character[myPlayerId] != char_jimmy
             <string>///Correct myPlayerId initial setup
 
 hp = global.hp[myPlayerId];
+overshield = global.overshield[myPlayerId];
 
     //Starting Gun
     if (room == room_start) || (room == room_tutorial)
@@ -158,7 +159,13 @@ hp = global.hp[myPlayerId];
     if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
     global.currentlyEquippedWeapon[myPlayerId] = 0;
         
+    //Crosshair Position
+    global.crosshairX[myPlayerId] = x;
+    global.crosshairY[myPlayerId] = y;
     
+    //Crosshair Position
+    global.crosshairX[myPlayerId] = x;
+    global.crosshairY[myPlayerId] = y;
     
     //Done
     setup_initial = false;

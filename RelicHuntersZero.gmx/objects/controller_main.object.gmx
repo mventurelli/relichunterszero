@@ -213,7 +213,12 @@ global.price_yottabyte1 = 750;
 global.price_yottabyte2 = 750;
 global.price_yottabyte3 = 750;
 
-//Ammo
+//Players &amp; Ammo
+
+global.reviveHealth = 0.5;
+global.reviveAmmoLight = 160;
+global.reviveAmmoMedium = 100;
+global.reviveAmmoHeavy = 160;
 
 global.ammo_light_max = 250;
 global.ammo_medium_max = 150;
@@ -251,6 +256,9 @@ global.falloffMediumFactor = 1;
 global.falloffMinorDist = 280;
 global.falloffMinorMax = 1000;
 global.falloffMinorFactor = 1;
+
+//Stats
+timeCounter = 0;
 
 //Pause Menu
 game_pause_init();
@@ -1027,13 +1035,13 @@ if (!level_built)
     ds_list_add(item_starterammo_1, obj_pickup_lightammo,obj_pickup_lightammo,obj_pickup_mediumammo);
     
     item_starterhealth_1 = ds_list_create();
-    ds_list_add(item_starterhealth_1, obj_pickup_health);
+    ds_list_add(item_starterhealth_1, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_shield);
     
     item_engamehealth_1 = ds_list_create();
-    ds_list_add(item_engamehealth_1, obj_pickup_healthBig);
+    ds_list_add(item_engamehealth_1, obj_pickup_healthBig, obj_pickup_shield);
     
     item_starteraid_1 = ds_list_create();
-    ds_list_add(item_starteraid_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_healthBig, obj_pickup_grenade);
+    ds_list_add(item_starteraid_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_health, obj_pickup_shield, obj_pickup_healthBig, obj_pickup_grenade);
     
     item_grenade_1 = ds_list_create();
     ds_list_add(item_grenade_1, obj_pickup_grenade);
@@ -1045,7 +1053,7 @@ if (!level_built)
     ds_list_add(item_heavyammo_1, obj_pickup_heavyammo);
     
     item_endgameaid_1 = ds_list_create();
-    ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_heavyammo, obj_pickup_mediumammo);
+    ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_shield, obj_pickup_heavyammo, obj_pickup_mediumammo);
     
     
     //Shop Lists
@@ -1484,6 +1492,11 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 //Reset weapons and HP
                 char_state_initial(); //this also sets playerAlive to true!
                 with (playerSpawned) event_perform(ev_other,ev_user0);
+                
+                playerSpawned.hp = playerSpawned.hp_max * global.reviveHealth;
+                global.ammo_light[p] = global.reviveAmmoLight;
+                global.ammo_medium[p] = global.reviveAmmoMedium;
+                global.ammo_heavy[p] = global.reviveAmmoHeavy;
             }
             p++;
         }
@@ -1938,6 +1951,35 @@ if (global.statKilledByBoss &gt;= 5) &amp;&amp; (!global.unlockAss)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Count Game Time Every Second
+
+timeCounter++
+
+if (timeCounter &gt;= room_speed)
+{
+    timeCounter = 0;
+    global.statTotalTime++; 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -2003,7 +2045,7 @@ while (p &lt;= global.playerCount)
     {
         //Get Basic Player Values
         var energy = curPlayer.energy;
-        var energy_max = curPlayer.energy_max;
+        var energy_max = curPlayer.energy_max + curPlayer.overshield;
         var hp = curPlayer.hp;
         var hp_max = curPlayer.hp_max;
         var stamina = curPlayer.stamina;
@@ -2064,6 +2106,7 @@ while (p &lt;= global.playerCount)
         
         var charLifeColor = make_color_rgb(184,49,35);
         var charShieldColor = make_color_rgb(50,133,158);
+        if (curPlayer.overshield) &amp;&amp; (energy &gt; curPlayer.energy_max) charShieldColor = make_color_rgb(86,216,255);
         var charBarDelaySpeed = 0.008;
         var charBarDelayTime = room_speed*0.6;
         
@@ -2224,7 +2267,7 @@ while (p &lt;= global.playerCount)
             draw_set_halign(fa_left);
             draw_set_valign(fa_center);
             draw_set_font(global.font_numberMedium);
-            draw_text_dropshadow_ext_transformed(ammoNumberTotalX, ammoNumberTotalY, string(round(pAmmoTotal/weaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
+            draw_text_dropshadow_ext_transformed(ammoNumberTotalX, ammoNumberTotalY, string(floor(pAmmoTotal/weaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
         
             //Total Ammo Bar
             draw_healthbar_delayed(pAmmoBarId, ammoBarTotalX-(ammoBarTotalWidth/2), ammoBarTotalY-(ammoBarTotalHeight/2), ammoBarTotalX+(ammoBarTotalWidth/2), ammoBarTotalY+(ammoBarTotalHeight/2), 
@@ -2762,7 +2805,7 @@ if (!global.pauseMenu) &amp;&amp; (!global.gameOver) &amp;&amp; (instance_exists
                 {
                     var subImage = (pCur.myGun.reload_time_current/pCur.myGun.reload_time)*12; //12=animation frames;
                         
-                    if (drawCrosshair) //if (global.input[p] == K_INPUT_KEYBOARD)
+                    if (drawCrosshair)
                     {
                         draw_sprite_ext(crossSprite,3,global.crosshairX[p],global.crosshairY[p],global.crosshair_scale[p],global.crosshair_scale[p],0,c_white,1);
                         draw_sprite_ext(spr_crosshair_reload,subImage,global.crosshairX[p],global.crosshairY[p],1.6,1.6,0,c_white,1);
@@ -2771,7 +2814,7 @@ if (!global.pauseMenu) &amp;&amp; (!global.gameOver) &amp;&amp; (instance_exists
                 }
             }
             
-            
+            if (global.auto_aim == K_AUTOAIM_FULL) &amp;&amp; (pCur.joyAimLocked) drawCrosshair = true; //Force draw on auto-aim
             
             if (drawCrosshair) draw_sprite_ext(crossSprite,crosshair_image,global.crosshairX[p],global.crosshairY[p],global.crosshair_scale[p],global.crosshair_scale[p],0,c_white,1);
             

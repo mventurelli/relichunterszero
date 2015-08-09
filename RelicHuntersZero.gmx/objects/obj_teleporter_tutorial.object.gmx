@@ -25,51 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-///Interaction
-if instance_exists(class_player) &amp;&amp; (active)
+            <string>///Interaction Override
+
+if instance_exists(activationClient) &amp;&amp; (active)
 {
-    if point_distance(x,y,class_player.x,class_player.y) &lt;= range
-    {
-        class_player.active_interaction = id;
-        in_range = true;    
-    }
+    if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;  
+
     else in_range = false;
     
-    if (class_player.interactionKey) &amp;&amp; (in_range)
+    if (wantToActivate) &amp;&amp; (in_range)
     { 
         save_and_clean();
-    
-        if (room == room_tutorial)
-        {
-            global.tutorial_done = 1;
-            ini_open(working_directory + "\saveData.ini");
-            ini_write_real('Ass','tutorial',1);
-            ini_close();
-            room_goto(room_start);
-        }
-        else room_goto(room_tutorial);
-    }
-}
-else in_range = false;
-
-/*
-OLD CODE
-if instance_exists(class_player) &amp;&amp; (active)
-{
-    if point_distance(x,y,class_player.x,class_player.y) &lt;= range
-    {
-        class_player.active_interaction = id;
-        in_range = true;    
-    }
-    else in_range = false;
-    
-    if (class_player.interactionKey) &amp;&amp; (in_range)
-    { 
-        //Save The Input (HACKZ0R!!!!)
-        ini_open(working_directory + "\saveData.ini");
-        ini_write_string('Input','Input Type',global.input);
-        ini_close();
     
         if (room == room_tutorial)
         {

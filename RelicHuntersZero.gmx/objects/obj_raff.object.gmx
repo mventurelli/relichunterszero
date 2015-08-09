@@ -30,12 +30,12 @@ event_inherited();
 
     playerName = "RAFF";
     
-    energy_max = 100;
+    energy_max = 60;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 60;
+    hp_max = 100;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     
@@ -119,6 +119,7 @@ if global.character[myPlayerId] != char_raff
             <string>///Correct myPlayerId initial setup
 show_debug_message('Hey Im raff and my player id is '+string(myPlayerId));
 hp = global.hp[myPlayerId];
+overshield = global.overshield[myPlayerId];
 
 if global.weapon2[myPlayerId] != noone
     {
@@ -146,6 +147,10 @@ if global.weapon2[myPlayerId] != noone
     if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
     if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
     global.currentlyEquippedWeapon[myPlayerId] = 0;
+    
+    //Crosshair Position
+    global.crosshairX[myPlayerId] = x;
+    global.crosshairY[myPlayerId] = y;
 
 //Done
 setup_initial = true;

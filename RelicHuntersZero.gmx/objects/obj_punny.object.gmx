@@ -32,12 +32,12 @@ event_inherited();
     
     melee_damage=50;
     
-    energy_max = 150;
+    energy_max = 80;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 25;
+    hp_max = 40;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     
@@ -121,6 +121,7 @@ if global.character[myPlayerId] != char_punny
             <string>///Correct myPlayerId initial setup
 
 hp = global.hp[myPlayerId];
+overshield = global.overshield[myPlayerId];
 
 if global.weapon2[myPlayerId] != noone
     {
@@ -148,6 +149,10 @@ if global.weapon2[myPlayerId] != noone
     if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
     if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
     global.currentlyEquippedWeapon[myPlayerId] = 0;
+    
+    //Crosshair Position
+    global.crosshairX[myPlayerId] = x;
+    global.crosshairY[myPlayerId] = y;
 
 //Done
 setup_initial = true;

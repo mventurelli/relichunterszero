@@ -8,7 +8,7 @@
   <parentName>class_gun_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="1">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound = 'shotgun';
+            <string>event_inherited();
+sound = 'shotgun';
 ammo_type = type_medium;
 
 projectile_speed = 25;
 projectile_speed_decay = 1;
 projectile_damage = 9;
-projectile_range = 315;
+projectile_range = 350;
 
 accuracy = 20;
 fire_rate = room_speed*2;

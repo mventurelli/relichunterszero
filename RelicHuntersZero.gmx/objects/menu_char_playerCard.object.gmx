@@ -33,9 +33,65 @@ myPlayerId = -1;
 
 mySpecialCancelButton = instance_create(x+102,y+336,menu_char_buttonCancel);
 mySpecialOkButton = instance_create(x+282,y+336,menu_char_buttonOk);
+myStatCard = instance_create(x+90,y+40,menu_char_playerStat);
 
 mySpecialCancelButton.owner  = id;
 mySpecialOkButton.owner  = id;
+myStatCard.owner = id;
+
+cardName = 'P1';
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Event
+
+if (slotInput != -1 &amp;&amp; slotCharacter != -1)
+{
+    draw_self();
+    
+    draw_set_font(global.font_menuMedium);
+    draw_set_valign(fa_center);
+    draw_set_halign(fa_left);
+    draw_set_colour(c_white);
+    
+    draw_text(x+6,y+15,cardName);
+    
+    var stringCharacter;
+    if slotCharacter == char_jimmy stringCharacter = loc_key("GENERAL_JIMMY");
+    if slotCharacter == char_pinky stringCharacter = loc_key("GENERAL_PINKYY");
+    if slotCharacter == char_raff stringCharacter = loc_key("GENERAL_RAFF");
+    if slotCharacter == char_biu stringCharacter = loc_key("GENERAL_BIU");
+    if slotCharacter == char_punny stringCharacter = loc_key("GENERAL_PUNNY");
+    if slotCharacter == char_ass stringCharacter = loc_key("GENERAL_ASS");
+    if slotCharacter == char_random stringCharacter = loc_key("GENERAL_RANDOM");
+    
+    draw_set_halign(fa_right);
+    draw_text(x+sprite_width-6,y+15,stringCharacter);
+    
+    //draw portrait
+    
+    
+    //there should be another child object called fx_charCard or something
+}
 </string>
           </argument>
         </arguments>

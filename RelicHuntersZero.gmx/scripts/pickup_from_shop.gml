@@ -197,3 +197,4 @@
             exit;
         }
     }
+    else show_debug_message("Oops. No activation client!");

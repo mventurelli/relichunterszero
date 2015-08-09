@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.11');
+    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.3');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -19,6 +19,7 @@ ini_open(working_directory + "\saveData.ini");
         global.weapon1_ammo[p] = ini_read_real('Character','Ammo1Player'+string(p),999);
         global.weapon2_ammo[p] = ini_read_real('Character','Ammo2Player'+string(p),999);
         global.hp[p] = ini_read_real('Character','Health'+string(p),999999);
+        global.overshield[p] = ini_read_real('Character','Overshield'+string(p),0);
             
         global.ammo_light[p] = ini_read_real('Character','Ammo Light'+string(p),20);
         global.ammo_medium[p] = ini_read_real('Character','Ammo Medium'+string(p),0);
@@ -150,8 +151,9 @@ ini_open(working_directory + "\saveData.ini");
     global.persistent_toggle = ini_read_real('Quality','persistent effects',1);
     global.max_particles = ini_read_real('Quality','max particles',5);
     global.max_casings = ini_read_real('Quality','max casings',100);
+    global.alwaysShowAmmo = ini_read_real('Quality','Always Show Ammo',false);
     
-
+    
     // Keyboard&Mouse Input
     // Null keys must be "-99" instead of just "-1" to avoid Mouse button issues
     
@@ -209,10 +211,10 @@ ini_open(working_directory + "\saveData.ini");
     global.statTotalBounty = ini_read_real('Stats','statTotalBounty',0);
     global.statTotalDeaths = ini_read_real('Stats','statTotalDeaths',0);
     global.statKilledByBoss = ini_read_real('Stats','statKilledByBoss',0);
+    global.statBossKills = ini_read_real('Stats','statBossKills',0);
+    global.statKills = ini_read_real('Stats','Kills',0);
     global.statTotalTime = ini_read_real('Stats','statTotalTime',0);
     global.statRunTime = ini_read_real('Stats','statRunTime',0);
-    
-    
     
     // End
     

@@ -3,14 +3,14 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
-  <bbox_right>317</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>70</bbox_bottom>
+  <bbox_left>3</bbox_left>
+  <bbox_right>315</bbox_right>
+  <bbox_top>4</bbox_top>
+  <bbox_bottom>67</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,8 +20,6 @@
   <width>320</width>
   <height>72</height>
   <frames>
-    <frame index="0">images\spr_char_selectJimmy_0.png</frame>
-    <frame index="1">images\spr_char_selectJimmy_1.png</frame>
-    <frame index="2">images\spr_char_selectJimmy_2.png</frame>
+    <frame index="0">images\spr_char_punnyOn_0.png</frame>
   </frames>
 </sprite>

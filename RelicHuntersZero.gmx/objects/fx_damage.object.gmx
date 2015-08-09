@@ -72,7 +72,9 @@ offsetX = random_range(-20,20);
             <kind>1</kind>
             <string>///Set Damage, Check for Critical
 event_inherited();
-myString = round(damage);
+
+if (damage) myString = round(damage);
+else myString = loc_key("GENERAL_DODGE");
 
 if (critical)
 {

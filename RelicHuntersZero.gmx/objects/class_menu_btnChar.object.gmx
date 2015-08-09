@@ -33,6 +33,12 @@ labelString = 'MISSING_LABEL';
 myFont = global.font_menuMedium;
 myInput = -1;
 
+spriteOn = spr_char_jimmyOn;
+spriteOff = spr_char_jimmyOff;
+spriteSel = spr_char_jimmySel;
+spriteFinal = spr_char_jimmyFinal;
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -59,13 +65,7 @@ myInput = -1;
 
 event_inherited();
 
-if (isSelected) image_index = 1;
-else image_index = 0;
-
-
-if (!isAvailable) image_index = 2;
-if (myInput != -1) if (global.selectionLocked[myInput]) image_index = 2;
-
+//Run Action
 if (executeAction)
 {
     if (global.selectedButton[K_INPUT_KEYBOARD] == id) myInput=K_INPUT_KEYBOARD;
@@ -95,6 +95,63 @@ if (executeAction)
     
     executeAction = false;
 }
+
+
+//Animation (should have been a state machine but I'm too lazy)
+var isLocked = false;
+if (myInput != -1) if (global.selectionLocked[myInput]) isLocked = true;
+
+if (isLocked)
+{
+    if (sprite_index != spriteFinal)
+    {
+        sprite_index = spriteFinal;
+        image_index = 0; 
+        image_speed = 0.2;
+    }
+}
+else if (isSelected)
+{
+    if (sprite_index != spriteSel) 
+    { 
+        sprite_index = spriteSel;
+        image_index = 0;
+        image_speed = 0.2;
+    }
+}
+else sprite_index = spriteOn;
+
+if (!isAvailable) sprite_index = spriteOff;
+
+//Reset myInput
+if (!isSelected) myInput = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clamp animation
+image_index = image_number-1;
+image_speed = 0;
+
+if (sprite_index == spriteSel) image_index = 0;
 </string>
           </argument>
         </arguments>

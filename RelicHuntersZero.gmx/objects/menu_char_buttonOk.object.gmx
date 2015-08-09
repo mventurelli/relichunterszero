@@ -53,6 +53,8 @@ labelString = 'START';
             <string>///Trigger
 event_inherited();
 
+if (isActive) &amp;&amp; (owner.slotInput != K_INPUT_KEYBOARD) if joy_check_pressed(owner.slotInput,1) trigger = true;
+
 if (trigger)
 {
     if (instance_exists(menu_char_card1))
@@ -61,6 +63,7 @@ if (trigger)
         {
             global.input[1] = menu_char_card1.slotInput;
             global.character[1] = menu_char_card1.slotCharacter;
+            if (menu_char_card1.slotCharacter == char_random) global.character[1] = irandom_range(char_jimmy,char_ass);
             global.playerCount = 1;
         }
     } 
@@ -71,6 +74,7 @@ if (trigger)
         {
             global.input[2] = menu_char_card2.slotInput;
             global.character[2] = menu_char_card2.slotCharacter;
+            if (menu_char_card2.slotCharacter == char_random) global.character[2] = irandom_range(char_jimmy,char_ass);
             global.playerCount = 2;
         }
     } 

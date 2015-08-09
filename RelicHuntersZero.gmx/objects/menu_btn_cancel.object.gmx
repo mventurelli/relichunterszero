@@ -31,14 +31,43 @@ event_inherited();
 isAvailable = true;
 labelString = loc_key("MAINMENU_CANCEL");
 
-keyboardShortcut = vk_escape;
-joystickShortcut = 2;//8=start 2=back
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shortcuts
+
+if !global.selectionLocked[K_INPUT_KEYBOARD] keyboardShortcut = vk_escape;
+else keyboardShortcut  = -1;
+
+if !global.selectionLocked[K_INPUT_JOYSTICK1] joystickShortcut[K_INPUT_JOYSTICK1] = 2;
+else joystickShortcut[K_INPUT_JOYSTICK1]  = -1;
+
+if !global.selectionLocked[K_INPUT_JOYSTICK2] joystickShortcut[K_INPUT_JOYSTICK2] = 2;
+else joystickShortcut[K_INPUT_JOYSTICK2]  = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

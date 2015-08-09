@@ -36,7 +36,7 @@ aggro_add_hit = aggro_max;
 aggro_cost_attack = 30;
 aggro_cost_chase = 1;
 
-fire_range = 250;
+fire_range = 350;
 speed_walk = 3.2;
 speed_sprint = 3.2;
 

@@ -110,7 +110,25 @@ if !(instance_exists(myBarrel))
             <string>///Spawn barrel
 if (startAnimating)
 {
-    //instance_create(get_bbox_centerX(id),y,fx_death_generic);
+    //Push Players Away
+    if (instance_exists(class_player))
+    {
+        for (i=0; i&lt;instance_number(class_player); i++)
+        {
+            pCur = instance_find(class_player,i);
+            if point_distance(x,y,pCur.x,pCur.y) &lt; 64
+            {
+                pCur.x = pCur.x + lengthdir_x(64,180 + point_direction(x,y,pCur.x,pCur.y));
+                pCur.y = pCur.y + lengthdir_y(64,180 + point_direction(x,y,pCur.x,pCur.y));
+                //pCur.dodging = true;
+                //pCur.dodge_time = 0;
+                //pCur.move_speed = 20;
+                //pCur.move_direction = 180 + point_direction(x,y,pCur.x,pCur.y);
+            }
+        }
+    }
+    
+    
     myBarrel = instance_create(x,y,obj_redbarrel);
     spawnTimeCurrent=0;
     image_speed = 0;

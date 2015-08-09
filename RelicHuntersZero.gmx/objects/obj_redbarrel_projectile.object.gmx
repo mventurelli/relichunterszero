@@ -456,6 +456,8 @@ explode = true;
 if (!isInvulnerable) explode = true;
 else
 {
+    spreadX = irandom_range(-15,15); spreadY = irandom_range(-15,15);
+
     if (!other.dodging) &amp;&amp; (ds_list_find_index(hitList,other.id) &lt; 0)
     {
         ds_list_add(hitList,other.id);
@@ -482,8 +484,7 @@ else
         other.push_direction = direction;
         other.push_speed += push_power;
         
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
+        
         
         trampleDamageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         if (type == 2) &amp;&amp; (!other.shield) trampleDamageEffect.critical = true;
@@ -494,6 +495,12 @@ else
             hit = instance_create(x,y,fx_hit);
             hit.type = ammo_type;
         }
+    }
+    
+    if (other.dodging) &amp;&amp; (ds_list_find_index(hitList,other.id) &lt; 0)
+    {
+        ds_list_add(hitList,other.id);
+        damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
     }
 }
 </string>

@@ -740,10 +740,10 @@ if (ai_active) &amp;&amp; ( (distance_to_player &lt; ai_shutdown_range) || (on_s
             ai_state = 'COVER';
         }
         
-        if instance_exists(class_grenade)
+        if instance_exists(class_grenadeNew)
         {
-            wow_look_out_dude = instance_nearest(x,y,class_grenade);
-            if (point_distance(x,y,wow_look_out_dude.x,wow_look_out_dude.y) &lt;= wow_look_out_dude.detonation_radius+50) &amp;&amp; ai_test_dash_chance(10)
+            wow_look_out_dude = instance_nearest(x,y,class_grenadeNew);
+            if (point_distance(x,y,wow_look_out_dude.x,wow_look_out_dude.y) &lt;= wow_look_out_dude.detonationRadius+50) &amp;&amp; ai_test_dash_chance(10)
             {
                 ai_state = 'DASH';
                 dash_direction = 180+point_direction(x,y,wow_look_out_dude.x,wow_look_out_dude.y);
@@ -803,7 +803,7 @@ if (ai_active) &amp;&amp; ( (distance_to_player &lt; ai_shutdown_range) || (on_s
             
             if (throwGrenade)
             {
-                ai_myGrenade = instance_create(x,y,obj_grenade_enemy_arc);
+                ai_myGrenade = instance_create(x,y,obj_grenade_enemyNew);
                 ai_myGrenade.speed = 8;
                 ai_myGrenade.direction = point_direction(x,y,ai_target.x,ai_target.y);
                 ai_myGrenade.speed_initial = 8;

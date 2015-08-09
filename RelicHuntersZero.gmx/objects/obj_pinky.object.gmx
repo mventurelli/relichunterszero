@@ -30,12 +30,12 @@ event_inherited();
 
     playerName = "PINKYY";
     
-    energy_max = 75;
+    energy_max = 40;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 160;
+    hp_max = 200;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     
@@ -136,6 +136,7 @@ if global.character[myPlayerId] != char_pinky
             <string>///Correct myPlayerId initial setup
 show_debug_message('Hey Im pinkyy and my player id is '+string(myPlayerId));
 hp = global.hp[myPlayerId];
+overshield = global.overshield[myPlayerId];
 
     //Weapon Setup
     if global.weapon2[myPlayerId] != noone
@@ -190,6 +191,10 @@ hp = global.hp[myPlayerId];
     if (global.currentlyEquippedWeapon[myPlayerId] == 1) draw_gun(weapon1);
     if (global.currentlyEquippedWeapon[myPlayerId] == 2) draw_gun(weapon2);
     global.currentlyEquippedWeapon[myPlayerId] = 0;
+    
+    //Crosshair Position
+    global.crosshairX[myPlayerId] = x;
+    global.crosshairY[myPlayerId] = y;
     
     //Done
     setup_initial = false;

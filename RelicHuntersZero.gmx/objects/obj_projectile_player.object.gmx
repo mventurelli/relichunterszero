@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>if faction == f_player &amp;&amp; instance_exists(other)
 {
+    spreadX = irandom_range(-15,15);
+    spreadY = irandom_range(-15,15);
+        
     if (!other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
     {
         ds_list_add(damage_list,other.id);
@@ -91,9 +94,6 @@
         bloodAmount = min(bloodAmount, (global.max_casings-global.count_casings) );
         if (bloodAmount) &amp;&amp; (global.max_casings) repeat(bloodAmount) blood = instance_create(x,y,fx_blood);
         
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
-        
         damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         if (isPrecise) &amp;&amp; (!other.shield) damageEffect.critical = true;
         damageEffect.damage = damage;
@@ -111,6 +111,12 @@
         }
         else piercing--;
         damage = originalDamage;
+    }
+    
+    if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+    {
+        ds_list_add(damage_list,other.id);
+        damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
     }
 }
 </string>
@@ -143,6 +149,9 @@ if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
     {
         ffDamage = round(damage * global.friendlyFireDamageRatio);
         
+        spreadX = irandom_range(-15,15);
+        spreadY = irandom_range(-15,15);
+            
         if (!other.dodging)
         {
             ds_list_add(damage_list,other.id);
@@ -169,8 +178,7 @@ if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
             }
             other.hit_taken = true;
             
-            spreadX = irandom_range(-15,15);
-            spreadY = irandom_range(-15,15);
+            
             damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
             damage_fx.damage = ffDamage;
     
@@ -181,6 +189,12 @@ if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
                 hit.type = ammo_type;
             }
             instance_destroy();
+        }
+        
+        if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+        {
+            ds_list_add(damage_list,other.id);
+            damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
         }
     }
 }

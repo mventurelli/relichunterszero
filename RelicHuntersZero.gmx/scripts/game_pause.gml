@@ -8,7 +8,7 @@ global.pauseBackground = background_add("pauseScreen.png",0,0);
 global.pauseMenu = true;
 
 // Remembers the original input method being used
-global.pauseInput = global.input[1];
+global.pauseInput = global.input[global.pauseClient];
 
 // Reset button selection
 global.selectedButton[K_INPUT_ALL] = -1;
@@ -16,7 +16,6 @@ if ds_exists(global.buttonGrid,ds_type_grid) ds_grid_destroy(global.buttonGrid);
 
 //Prepare player info
 //Find the player with the correct playerID
-
 var char = noone;
 for (var i=0; i<instance_number(class_player); i++)
 {
@@ -79,7 +78,9 @@ with (global.pauseButtonContinue) event_perform(ev_create,0);
 with (global.pauseButtonBackToShip) event_perform(ev_create,0);
 with (global.pauseButtonBackToMenu) event_perform(ev_create,0);
 with (global.pauseButtonExit) event_perform(ev_create,0);
+
 with (global.pauseMenuButtonController) event_perform(ev_create,0);
+if (global.pauseInput != K_INPUT_KEYBOARD) global.mouseActive = false;
 
 //Hide tiles and stop the music
 tile_layer_hide(-9999);

@@ -114,25 +114,30 @@ if instance_exists(class_player)
         else 
         {
             aim_locked = false;
-            
-            if (global.input[pId] == K_INPUT_KEYBOARD) || (class_player.joyIsRightStickAiming)
-            {
-                distance = point_distance(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]) / distance_ratio;
-                if (distance &gt; max_distance) distance = max_distance;
-                angle = point_direction(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]);
+
+            distance = point_distance(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]) / distance_ratio;
+            if (distance &gt; max_distance) distance = max_distance;
+            angle = point_direction(class_player.x,class_player.y,global.crosshairX[pId],global.crosshairY[pId]);
                 
-                if (global.input[pId] != K_INPUT_KEYBOARD) distance = distance*1.5;
-            }
-            else
+            if (global.input[pId] != K_INPUT_KEYBOARD) distance = distance*1.5;
+            
+            //Minimum Distance for Joystick
+            var joyDistanceMin = 16;
+            if (global.input[pId] != K_INPUT_KEYBOARD) &amp;&amp; (distance &lt;= joyDistanceMin) &amp;&amp; (!class_player.joyIsRightStickAiming)
             {
                distance=0;
                angle=0;
+            }
+
+            if (global.input[pId] != K_INPUT_KEYBOARD) &amp;&amp; (global.auto_aim == K_AUTOAIM_FULL) &amp;&amp; (!class_player.joyIsRightStickAiming)
+            {
+                distance=0;
+                angle=0;
             }
         }
         
         
         //Follow Movement (NEW)
-        
         var targetX = class_player.x + lengthdir_x(distance,angle);
         var targetY = class_player.y + lengthdir_y(distance,angle);
         
@@ -164,8 +169,6 @@ if instance_exists(class_player)
         {
             x = (player1.x + player2.x)/2;
             y = (player1.y + player2.y)/2;
-            //x = (global.crosshairX[pId] + global.crosshairX[2]) /2;
-            //x = (global.crosshairY[pId] + global.crosshairY[2]) / 2;
         }
     }
     

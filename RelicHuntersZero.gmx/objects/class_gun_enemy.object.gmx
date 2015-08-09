@@ -200,43 +200,47 @@ drawY = y +lengthdir_y( (-1*image_xscale*recoil_current), image_angle );
             <kind>1</kind>
             <string>///Firing Control
 
-if instance_exists(owner) &amp;&amp; instance_exists(owner.ai_target)
+if instance_exists(owner)
 {
-    if (owner.firing) &amp;&amp; (can_fire)
+    if instance_exists(owner.ai_target)
     {
-        shot_type = 0;
         shoot_direction = point_direction(x,y,owner.ai_target.x,owner.ai_target.y);
-        cmd_fire_enemy();
-    }
-}
-
-//Rate of Fire
-if (!can_fire)
-{
-    if (!is_sniper) fire_rate_current++;
-    else if instance_exists(owner)
-    {
-        if (owner.firing) fire_rate_current++;
+        if (owner.firing) &amp;&amp; (can_fire)
+        {
+            shot_type = 0;
+            cmd_fire_enemy();
+        }
     }
     
-    if fire_rate_current &gt;= fire_rate
+    //Rate of Fire
+    if (!can_fire) &amp;&amp; (fire_burst_current &gt;= fire_burst)
     {
-        fire_rate_current = 0;
-        fire_burst_current = 0;
-        can_fire = true;
+        if (!is_sniper) fire_rate_current++;
+        else if instance_exists(owner)
+        {
+            if (owner.firing) fire_rate_current++;
+        }
+        
+        if fire_rate_current &gt;= fire_rate
+        {
+            fire_rate_current = 0;
+            fire_burst_current = 0;
+            can_fire = true;
+        }
+    }
+    
+    //Burst Fire
+    if (fire_burst_current &lt; fire_burst) &amp;&amp; (!can_fire) &amp;&amp; (owner.firing)
+    {
+        fire_burst_rate_current++;
+        if fire_burst_rate_current &gt;= fire_burst_rate
+        {
+            fire_burst_rate_current = 0;
+            cmd_fire_enemy();
+        }   
     }
 }
 
-//Burst Fire
-if fire_burst_current &lt; fire_burst &amp;&amp; (!can_fire)
-{
-    fire_burst_rate_current++;
-    if fire_burst_rate_current &gt;= fire_burst_rate
-    {
-        fire_burst_rate_current = 0;
-        cmd_fire_enemy();
-    }   
-}
 
 </string>
           </argument>

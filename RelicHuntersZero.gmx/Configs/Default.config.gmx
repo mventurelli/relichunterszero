@@ -81,7 +81,7 @@
     <option_audioGroupCount>2</option_audioGroupCount>
     <option_author></option_author>
     <option_backimage>nil</option_backimage>
-    <option_borderless>True</option_borderless>
+    <option_borderless>False</option_borderless>
     <option_changed>false</option_changed>
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
@@ -470,7 +470,7 @@
     <option_win8_analytics_id></option_win8_analytics_id>
     <option_win8_build_version>0</option_win8_build_version>
     <option_win8_certificate_location>Windows8_TemporaryKey.pfx</option_win8_certificate_location>
-    <option_win8_display_name>MightyDungeoneers</option_win8_display_name>
+    <option_win8_display_name>Relic Hunters Zero</option_win8_display_name>
     <option_win8_internet_capable>0</option_win8_internet_capable>
     <option_win8_interpolate>-1</option_win8_interpolate>
     <option_win8_landscape_allowed>-1</option_win8_landscape_allowed>
@@ -482,11 +482,11 @@
     <option_win8_minor_version>0</option_win8_minor_version>
     <option_win8_native_certificate_location>Win8NativeRunner_TemporaryKey.pfx</option_win8_native_certificate_location>
     <option_win8_native_cpu>x86</option_win8_native_cpu>
-    <option_win8_package_display_name>YourPackageDisplayName</option_win8_package_display_name>
-    <option_win8_package_name>YourPackageName</option_win8_package_name>
+    <option_win8_package_display_name>Relic Hunters Zero</option_win8_package_display_name>
+    <option_win8_package_name>Relic Hunters Zero</option_win8_package_name>
     <option_win8_portrait_allowed>-1</option_win8_portrait_allowed>
     <option_win8_portrait_flipped_allowed>-1</option_win8_portrait_flipped_allowed>
-    <option_win8_publisher_display_name>YourPublisherName</option_win8_publisher_display_name>
+    <option_win8_publisher_display_name>Rogue Snail</option_win8_publisher_display_name>
     <option_win8_revision_version>0</option_win8_revision_version>
     <option_win8_scaling_stretch>false</option_win8_scaling_stretch>
     <option_win8_search_capable>0</option_win8_search_capable>

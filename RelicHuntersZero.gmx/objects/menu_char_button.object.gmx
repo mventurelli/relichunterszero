@@ -56,7 +56,7 @@ myFont = global.font_menuMedium;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Activation &amp; Trigger
+            <string>///Mouse Activation &amp; Trigger
 
 isActive = false;
 isMouseSelected = false;
@@ -75,8 +75,6 @@ else instance_destroy();
 if (isActive)
 {
     if (isMouseSelected) &amp;&amp; mouse_check_button_pressed(mb_left) trigger = true;
-    
-    if (owner.slotInput != K_INPUT_KEYBOARD) if joy_check_pressed(owner.slotInput,1) trigger = true;
 }
 </string>
           </argument>
