@@ -344,8 +344,9 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
                
             if (targetEnemy) &amp;&amp; instance_exists(targetEnemy)
             {
-                var aimingX = get_bbox_centerX(targetEnemy);
-                var aimingY = get_bbox_centerY(targetEnemy);
+				var targetEnemyBBoxCenter = get_bbox_center(targetEnemy);
+                var aimingX = targetEnemyBBoxCenter[0];
+                var aimingY = targetEnemyBBoxCenter[1];
                     
                 joyLookDirection = autoaim_angle(x,y,targetEnemy);  
                 joyLookTargetAngle = joyLookDirection;

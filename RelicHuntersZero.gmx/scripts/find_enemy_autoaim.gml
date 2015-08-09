@@ -20,15 +20,15 @@ if instance_exists(class_enemy)
     for (i=0; i<enemyCount; i++)
     {
         testEnemy = instance_find(class_enemy,i);
-        
-        testDistance = point_distance(xx, yy, get_bbox_centerX(testEnemy), get_bbox_centerY(testEnemy));
-        if (testDistance > maxRange) continue;
-        
-        testAngle = point_direction(xx+lengthdir_x(testDistance-global.precisionDistance,aimAngle),yy+lengthdir_y(testDistance-global.precisionDistance,aimAngle),get_bbox_centerX(testEnemy), get_bbox_centerY(testEnemy));
 
+        testEnemyBBoxCenter = get_bbox_center(testEnemy);
+        testDistance = point_distance(xx, yy, testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]);
+        if (testDistance > maxRange) continue;
+
+        testAngle = point_direction(xx+lengthdir_x(testDistance-global.precisionDistance,aimAngle),yy+lengthdir_y(testDistance-global.precisionDistance,aimAngle),testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]);
         if testAngle <= maxAngle
         {
-            show_debug_message('Auto-Aim Target found! Aim is '+string(aimAngle)+',Enemy is '+ string(point_direction(xx, yy, get_bbox_centerX(testEnemy), get_bbox_centerY(testEnemy)))+'And difference is '+string(testAngle));
+            show_debug_message('Auto-Aim Target found! Aim is '+string(aimAngle)+',Enemy is '+ string(point_direction(xx, yy, testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]))+'And difference is '+string(testAngle));
             ds_priority_add(priorityList, testEnemy, testAngle);
         }
     }
@@ -39,10 +39,11 @@ if instance_exists(class_enemy)
     {
         testEnemy = instance_find(class_tactical_target,i);
         
-        testDistance = point_distance(xx, yy, get_bbox_centerX(testEnemy), get_bbox_centerY(testEnemy))
+        testEnemyBBoxCenter = get_bbox_center(testEnemy);
+        testDistance = point_distance(xx, yy, testEnemyBBoxCenter[0], testEnemyBBoxCenter[1])
         if (testDistance > maxRange) continue;
         
-        testAngle = point_direction(xx+lengthdir_x(testDistance-global.precisionDistance,aimAngle),yy+lengthdir_y(testDistance-global.precisionDistance,aimAngle),get_bbox_centerX(testEnemy), get_bbox_centerY(testEnemy));
+        testAngle = point_direction(xx+lengthdir_x(testDistance-global.precisionDistance,aimAngle),yy+lengthdir_y(testDistance-global.precisionDistance,aimAngle),testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]);
         if testAngle <= maxAngle
         {
             ds_priority_add(priorityList, testEnemy, testAngle);

@@ -492,8 +492,9 @@ if instance_exists(owner) &amp;&amp; (isActive)
         var enemyTargetTest = collision_line(x, y, x+lengthdir_x(projectile_range,aiming_direction), y+lengthdir_y(projectile_range,aiming_direction), class_enemy , false , true )
         if instance_exists(enemyTargetTest)
         {
-            var distanceToTarget = point_distance(x,y, get_bbox_centerX(enemyTargetTest), get_bbox_centerY(enemyTargetTest)) - global.precisionDistance;
-            var angleToTarget = point_direction(x+lengthdir_x(distanceToTarget,aiming_direction), y+lengthdir_y(distanceToTarget,aiming_direction), get_bbox_centerX(enemyTargetTest), get_bbox_centerY(enemyTargetTest));
+			var bbox_center = get_bbox_center(enemyTargetTest);
+            var distanceToTarget = point_distance(x,y, bbox_center[0], bbox_center[1]) - global.precisionDistance;
+            var angleToTarget = point_direction(x+lengthdir_x(distanceToTarget,aiming_direction), y+lengthdir_y(distanceToTarget,aiming_direction), bbox_center[0], bbox_center[1]);
             
             //if ( abs( angle_difference(aiming_direction, angleToTarget) ) + (accuracy_aiming*owner.base_accuracy) &lt;= global.precisionAngle/2 )
             if ( abs( angle_difference(aiming_direction, angleToTarget) ) &lt;= (global.precisionAngle) )
