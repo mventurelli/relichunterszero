@@ -50,6 +50,7 @@ fire_rate = room_speed*0.1;
 fire_automatic = false;
 crosshair_recoil = 0.45;
 
+joypadRumbleFactor = 0.6;
 </string>
           </argument>
         </arguments>

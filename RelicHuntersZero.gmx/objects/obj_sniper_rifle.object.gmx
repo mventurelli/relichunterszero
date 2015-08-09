@@ -54,6 +54,8 @@ crosshair_recoil = 1.2;
 
 sound = 'sniper';
 weaponClass = 'sniper';
+
+joypadRumbleFactor = 1;
 </string>
           </argument>
         </arguments>

@@ -886,12 +886,6 @@
       <scripts name="General">
         <script>scripts\range_finder.gml</script>
         <script>scripts\on_screen.gml</script>
-        <script>scripts\get_bbox_topX.gml</script>
-        <script>scripts\get_bbox_topY.gml</script>
-        <script>scripts\get_bbox_bottomX.gml</script>
-        <script>scripts\get_bbox_bottomY.gml</script>
-        <script>scripts\get_bbox_centerX.gml</script>
-        <script>scripts\get_bbox_centerY.gml</script>
         <script>scripts\range_convert.gml</script>
         <script>scripts\is_mouse_over.gml</script>
         <script>scripts\is_mouse_over_custom.gml</script>
@@ -903,6 +897,20 @@
         <script>scripts\ds_grid_get_above.gml</script>
         <script>scripts\ds_grid_get_right.gml</script>
         <script>scripts\ds_grid_get_left.gml</script>
+      </scripts>
+      <scripts name="Debug">
+        <script>scripts\log.gml</script>
+      </scripts>
+      <scripts name="BBox">
+        <script>scripts\get_bbox_topX.gml</script>
+        <script>scripts\get_bbox_topY.gml</script>
+        <script>scripts\get_bbox_bottomX.gml</script>
+        <script>scripts\get_bbox_bottomY.gml</script>
+        <script>scripts\get_bbox_centerX.gml</script>
+        <script>scripts\get_bbox_centerY.gml</script>
+        <script>scripts\get_bbox_center_top_bottom.gml</script>
+        <script>scripts\get_bbox_top.gml</script>
+        <script>scripts\get_bbox_bottom.gml</script>
       </scripts>
     </scripts>
     <scripts name="Sound">

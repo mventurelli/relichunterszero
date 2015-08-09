@@ -32,10 +32,10 @@ name = loc_key("WPNAME_KEYTAR");
 gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
 
 object = obj_keytar;
-specialProjectile = K_PROJECTILE_SONIC;
 dropCasing = false;
 
 shake_amount = 15;
+projectile_obj = obj_sonicboom;
 projectile_speed = 25;
 projectile_speed_decay = 0.12;
 projectile_damage = 40;
@@ -56,6 +56,8 @@ crosshair_recoil = 0.1;
 sound = 'keytar';
 
 goesThroughWalls = true;
+
+joypadRumbleFactor = 0.6;
 </string>
           </argument>
         </arguments>

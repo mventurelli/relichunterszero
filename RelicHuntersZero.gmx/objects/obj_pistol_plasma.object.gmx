@@ -54,6 +54,8 @@ crosshair_recoil = 0.7;
 
 sound = 'plasma';
 weaponClass = 'pistol';
+
+joypadRumbleFactor = 0.6;
 </string>
           </argument>
         </arguments>

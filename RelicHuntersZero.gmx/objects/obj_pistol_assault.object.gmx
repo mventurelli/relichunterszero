@@ -53,6 +53,8 @@ fire_burst_rate = room_speed*0.08;
 crosshair_recoil = 0.2;
 
 weaponClass = 'pistol';
+
+joypadRumbleFactor = 0.6;
 </string>
           </argument>
         </arguments>

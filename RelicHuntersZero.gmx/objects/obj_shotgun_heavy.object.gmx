@@ -50,6 +50,8 @@ fire_amount = 8;
 crosshair_recoil = 0.1;
 sound = 'shotgun';
 weaponClass = 'shotgun';
+
+joypadRumbleFactor = 1;
 </string>
           </argument>
         </arguments>

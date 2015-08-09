@@ -37,7 +37,6 @@ allowPrecision = true;
 
 shake_amount = 0;
 
-specialProjectile = K_PROJECTILE_BASIC;
 ammo_type = type_light;
 ammo_cost = 1;
 ammo = 999;
@@ -64,6 +63,7 @@ can_fire = true;
 accuracy = 5;
 accuracy_aiming = 0.5;
 
+projectile_obj = obj_projectile_player;
 projectile_speed = 0;
 projectile_speed_decay = 0;
 projectile_damage = 0;
@@ -101,6 +101,8 @@ isPrecisionAiming = false;
 weaponClass = 'undefined';
 
 goesThroughWalls = false;
+
+joypadRumbleFactor = 0;
 </string>
           </argument>
         </arguments>
