@@ -393,7 +393,7 @@ if (isActive)
             if (ammo_type = type_grenade) ammo_diff = min(ammo_diff,floor(global.ammo_grenade[p]/ammo_cost));
             
             reloading = true;
-            if (specialProjectile != K_PROJECTILE_ROCKET) 
+            if (weaponClass != 'rocket') 
             {   
                 audio_play(owner.audio_emitter,false,1,sfx_reload_start);
                 audio_play_exclusive(owner.audio_emitter,false,1,sfx_reload_loop1,sfx_reload_loop2,sfx_reload_loop3);
