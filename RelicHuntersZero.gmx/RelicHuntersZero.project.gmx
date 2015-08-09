@@ -1441,6 +1441,8 @@
       <object>objects\obj_unlock_medium1</object>
       <object>objects\obj_unlock_medium2</object>
       <object>objects\obj_unlock_heavy1</object>
+      <object>objects\obj_unlock_shield1</object>
+      <object>objects\obj_unlock_shield2</object>
       <object>objects\obj_unlock_heavy2</object>
       <object>objects\obj_unlock_heavy3</object>
       <object>objects\obj_unlock_heavy4</object>
@@ -1458,8 +1460,11 @@
       <object>objects\obj_unlock_pistol_heavy</object>
       <objects name="Shop">
         <object>objects\class_shop_ammo</object>
+        <object>objects\class_shop_shield</object>
         <object>objects\class_shop_weapon</object>
         <object>objects\obj_shop_slot</object>
+        <object>objects\obj_shop_shield1</object>
+        <object>objects\obj_shop_shield2</object>
         <object>objects\obj_shop_light1</object>
         <object>objects\obj_shop_light2</object>
         <object>objects\obj_shop_medium1</object>

@@ -91,8 +91,6 @@ if instance_exists(owner)
             else if (sound == 'plasma')
             {
                 audio_play(owner.audio_emitter,false,1,sfx_plasma_start);
-                //projectile.playLoop = true;
-                //projectile.playLoopSound = sfx_plasma_loop; Removed because Müller thinks this is ugly :O
             }
             
             if (global.count_casings < global.max_casings)

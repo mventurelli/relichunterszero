@@ -25,12 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Variables
-event_inherited();
-
-price = global.price_light1;
+            <string>event_inherited();
+price = global.price_shield1;
 unlock = false;
-
 active = true;
 
 range = 80;
@@ -40,20 +37,10 @@ myPrompt = instance_create(x-30,y-21,fx_prompt_e);
 myPrompt.owner = id;
 
 image_speed = 0;
+
 depth = -y-25;
 
-relicSprite1 = spr_pineapple1;
-relicSprite1Draw = false;
-relicSprite2 = spr_pineapple2;
-relicSprite2Draw = true;
-relicSprite3 = spr_pineapple3;
-relicSprite3Draw = false;
-relicCompleteSprite = -1;
-
-fullRelicTextBig = loc_key("HUD_UNLOCK_RELIC");
-fullRelicTextSmall = loc_key("HUD_UNLOCK_RELIC_COMPLETE");
-
-announce = noone;
+weaponName = "I AM ERROR";
 </string>
           </argument>
         </arguments>
@@ -79,27 +66,22 @@ announce = noone;
             <string>///Buy
 if instance_exists(activationClient) &amp;&amp; (!unlock)
 {
-    if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;   
-
+    if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;    
+    
     if (wantToActivate) &amp;&amp; (in_range)
-    { 
+    {
         if (global.score_total &gt;= price)
-        {
+        { 
             global.score_total -= price;
             unlock = true;
             audio_play(activationClient.audio_emitter,false,1,sfx_buy);
             
             announce = instance_create(x,y,fx_bigMessage);
-            announce.textBig = loc_key("HUD_UNLOCK_RELIC_PIECE");
-            announce.textSmall = loc_key("HUD_UNLOCK_RELIC_ALLPIECES");
-            announce.relicSprite1 = relicSprite1;
-            announce.relicSprite1Draw = relicSprite1Draw;
-            announce.relicSprite2 = relicSprite2;
-            announce.relicSprite2Draw = relicSprite2Draw;
-            announce.relicSprite3 = relicSprite3;
-            announce.relicSprite3Draw = relicSprite3Draw;
+            announce.textBig = loc_key("HUD_UNLOCK_ITEM");
+            announce.textSmall = loc_key("HUD_UNLOCK_ITEM_GENERIC") + string(weaponName);
         }
-        else{
+        else
+        {
             guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
             guiInfo.myString = loc_key("INFO_NOTENOUGHBOUNTY");
             guiInfo.colorMain = K_BETU_RED;
