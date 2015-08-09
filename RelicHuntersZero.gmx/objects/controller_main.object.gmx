@@ -177,6 +177,8 @@ global.price_sniper_rifle = 7000;
 global.price_shotgun_heavy = 9000;
 global.price_rocketlauncher = 10000;
 
+global.price_shield1 = 1000;
+global.price_shield2 = 5000;
 global.price_light1 = 300;
 global.price_light2 = 300;
 global.price_medium1 = 500;
@@ -1059,7 +1061,7 @@ if (!level_built)
     
     //Shop Lists
     global.shop_list_1 = ds_list_create();
-    global.shop_size_1 = 10;
+    global.shop_size_1 = 11;
     if (!global.unlock_light1) ds_list_add(global.shop_list_1, obj_shop_light1);
     if (!global.unlock_pistol_assault) ds_list_add(global.shop_list_1, obj_shop_pistol_assault);
     if (!global.unlock_shotgun) ds_list_add(global.shop_list_1, obj_shop_shotgun);
@@ -1070,13 +1072,14 @@ if (!level_built)
     if (!global.relic_pineapple2) ds_list_add(global.shop_list_1, obj_shop_pineapple2);
     if (!global.relic_pineapple3) ds_list_add(global.shop_list_1, obj_shop_pineapple3);
     if (!global.relic_yottabyte1) ds_list_add(global.shop_list_1, obj_shop_yottabyte1);
+    if (!global.unlock_shield1) ds_list_add(global.shop_list_1, obj_shop_shield1);
     
     global.shop_free_1 = ds_list_create();
     ds_list_add(global.shop_free_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_grenade);
     
     
     global.shop_list_2 = ds_list_create();
-    global.shop_size_2 = 15;
+    global.shop_size_2 = 16;
     if (!global.unlock_medium2) ds_list_add(global.shop_list_2, obj_shop_medium2);
     if (!global.unlock_grenades2) ds_list_add(global.shop_list_2, obj_shop_grenades2);
     if (!global.unlock_heavy1) ds_list_add(global.shop_list_2, obj_shop_heavy1);
@@ -1091,8 +1094,8 @@ if (!level_built)
     if (!global.relic_watchful1) ds_list_add(global.shop_list_2, obj_shop_watchful1);
     if (!global.relic_watchful2) ds_list_add(global.shop_list_2, obj_shop_watchful2);
     if (!global.relic_watchful3) ds_list_add(global.shop_list_2, obj_shop_watchful3);
-    
     if (!global.relic_crystal1) ds_list_add(global.shop_list_2, obj_shop_crystal1);
+    if (!global.unlock_shield2) ds_list_add(global.shop_list_2, obj_shop_shield2);
     
     global.shop_free_2 = ds_list_create();
     ds_list_add(global.shop_free_2, obj_pickup_lightammo, obj_pickup_mediumammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_grenade);

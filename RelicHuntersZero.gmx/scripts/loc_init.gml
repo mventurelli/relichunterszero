@@ -4,7 +4,7 @@
 //          global.loc_map = noone;
 //          loc_init();
 
-testTiu = 'Não tentá você começô';
+ThisStringTestsForCharacters = 'áéíóúâêîôûãõäëïöüçàèìòù';
 
 if (!ds_exists(global.loc_map,ds_type_map)) global.loc_map = ds_map_create();
 else ds_map_clear(global.loc_map);

@@ -1,6 +1,6 @@
 ///pickup_from_shop()
 //Pickup when you are buying from the shop
-    if instance_exists(activationClient)
+if instance_exists(activationClient)
     {
         activationClient.play_sound_pickup_weapon = true;
     
@@ -196,5 +196,7 @@
             instance_destroy();
             exit;
         }
+        //If you got to this part, something went wrong!
+        show_debug_message("ERROR: Player has failed to Equip Shop Weapon");
     }
-    else show_debug_message("Oops. No activation client!");
+    else show_debug_message("ERROR: Shop weapon has no Activation Client!");

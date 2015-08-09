@@ -99,6 +99,8 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Weapons','rocketlauncher',global.unlock_rocketlauncher);
         ini_write_real('Weapons','sniper_rifle',global.unlock_sniper_rifle);
         
+        ini_write_real('Weapons','shield1',global.unlock_shield1);
+        ini_write_real('Weapons','shield2',global.unlock_shield2);
         ini_write_real('Weapons','light1',global.unlock_light1);
         ini_write_real('Weapons','light2',global.unlock_light2);
         ini_write_real('Weapons','medium1',global.unlock_medium1);

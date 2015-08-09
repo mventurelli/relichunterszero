@@ -86,32 +86,44 @@ else in_range = false;
 
 
 ///Buy
-if instance_exists(activationClient) &amp;&amp; (buy = true) &amp;&amp; (!active)
+if (buy = true) &amp;&amp; (!active)
 {
     if (myLevel == 1) myPrice = global.price_checkpoint1;
     if (myLevel == 2) myPrice = global.price_checkpoint2;
     if (myLevel == 3) myPrice = global.price_checkpoint3;
     
-    if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;   
-
-    
-    if (wantToActivate) &amp;&amp; (in_range) &amp;&amp; (global.score_total &gt;= myPrice)
-    { 
-        global.score_total -= myPrice;
-        if (myLevel == 1) global.checkpoint1 = 2;
-        if (myLevel == 2) global.checkpoint2 = 2;
-        if (myLevel == 3) global.checkpoint3 = 2;
-        audio_play(class_player.audio_emitter,false,1,sfx_buy);
+    if instance_exists(activationClient)
+    {
+        if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;   
         
-        //Raff Unlock
-        if (global.checkpoint1 == 2) &amp;&amp; (global.checkpoint2 == 2) &amp;&amp; (global.checkpoint3 == 2) &amp;&amp; (!global.unlockRaff)
-        {
-            global.unlockRaff = true;
-            achievement_give("ACHIEVEMENT_UNLOCKRAFF");
-            announce = instance_create(x,y,fx_bigMessage);
-            announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
-            announce.textSmall = loc_key("HUD_UNLOCK_RAFF");
-            announce.hunterUnlockSprite = spr_hud_face_raff;
+        if (wantToActivate) &amp;&amp; (in_range) 
+        { 
+            if (global.score_total &gt;= myPrice)
+            {
+                global.score_total -= myPrice;
+                if (myLevel == 1) global.checkpoint1 = 2;
+                if (myLevel == 2) global.checkpoint2 = 2;
+                if (myLevel == 3) global.checkpoint3 = 2;
+                audio_play(class_player.audio_emitter,false,1,sfx_buy);
+                
+                //Raff Unlock
+                if (global.checkpoint1 == 2) &amp;&amp; (global.checkpoint2 == 2) &amp;&amp; (global.checkpoint3 == 2) &amp;&amp; (!global.unlockRaff)
+                {
+                    global.unlockRaff = true;
+                    achievement_give("ACHIEVEMENT_UNLOCKRAFF");
+                    announce = instance_create(x,y,fx_bigMessage);
+                    announce.textBig = loc_key("HUD_UNLOCK_HUNTER");
+                    announce.textSmall = loc_key("HUD_UNLOCK_RAFF");
+                    announce.hunterUnlockSprite = spr_hud_face_raff;
+                }
+            }
+            else{
+                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
+                guiInfo.myString = loc_key("INFO_NOTENOUGHBOUNTY");
+                guiInfo.colorMain = K_BETU_RED;
+                guiInfo.owner = activationClient;
+                audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
+            }
         }
     }
 }

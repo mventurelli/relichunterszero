@@ -61,6 +61,8 @@ ini_open(working_directory + "\saveData.ini");
     global.unlock_rocketlauncher = ini_read_real('Weapons','rocketlauncher',0);
     global.unlock_sniper_rifle = ini_read_real('Weapons','sniper_rifle',0);
     
+    global.unlock_shield1 = ini_read_real('Weapons','shield1',0);
+    global.unlock_shield2 = ini_read_real('Weapons','shield2',0);
     global.unlock_light1 =  ini_read_real('Weapons','light1',0);
     global.unlock_light2 =  ini_read_real('Weapons','light2',0);
     global.unlock_medium1 =  ini_read_real('Weapons','medium1',0);
