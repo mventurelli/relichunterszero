@@ -57,6 +57,8 @@ criticalAimSpeed = 0.2;
 
 sound = 'rifle';
 weaponClass = 'rifle';
+
+joypadRumbleFactor = 0.42;
 </string>
           </argument>
         </arguments>

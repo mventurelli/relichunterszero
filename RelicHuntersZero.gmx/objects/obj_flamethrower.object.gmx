@@ -32,10 +32,10 @@ name = loc_key("WPNAME_FLAMETHROWER");
 gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
 
 allowPrecision = false;
-specialProjectile = K_PROJECTILE_FLAME;
 dropCasing = false;
 object = obj_flamethrower;
 shake_amount = 2;
+projectile_obj = obj_flame;
 projectile_speed = 20;
 projectile_speed_decay = 1;
 projectile_damage = 6;
@@ -56,6 +56,7 @@ crosshair_recoil = 0;
 
 sound = 'flamethrower';
 
+joypadRumbleFactor = 0.22;
 </string>
           </argument>
         </arguments>

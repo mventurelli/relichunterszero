@@ -51,6 +51,8 @@ crosshair_recoil = 0.2;
 
 sound = 'smg';
 weaponClass = 'smg';
+
+joypadRumbleFactor = 0.35;
 </string>
           </argument>
         </arguments>

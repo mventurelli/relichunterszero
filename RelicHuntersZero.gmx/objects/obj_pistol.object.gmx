@@ -51,6 +51,7 @@ fire_automatic = false;
 crosshair_recoil = 0.4;
 
 weaponClass = 'pistol';
+joypadRumbleFactor = 0.6;
 </string>
           </argument>
         </arguments>

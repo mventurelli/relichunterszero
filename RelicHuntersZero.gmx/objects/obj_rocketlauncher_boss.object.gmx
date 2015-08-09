@@ -33,6 +33,7 @@ ammo_type = type_heavy;
 is_rocket = false;
 isBossRocket = true;
 
+projectile_obj = obj_rocket;
 projectile_speed = 8;
 projectile_speed_decay = 0;
 projectile_damage = 200;

@@ -44,6 +44,7 @@ accuracy = 5;
 
 is_rocket = false;
 
+projectile_obj = obj_projectile_enemy;
 projectile_speed = 0;
 projectile_speed_decay = 0;
 projectile_damage = 0;

@@ -31,10 +31,10 @@ event_inherited();
 name = loc_key("WPNAME_ROCKETLAUNCHER");
 gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
 
-specialProjectile = K_PROJECTILE_ROCKET;
 object = obj_rocketlauncher;
 dropCasing = false;
 shake_amount = 12;
+projectile_obj = obj_rocket;
 projectile_speed = 4;
 projectile_speed_decay = -0.5;
 projectile_damage = 350;
@@ -54,6 +54,8 @@ crosshair_recoil = 0.8;
 
 sound = 'rocket';
 weaponClass = 'rocket';
+
+joypadRumbleFactor = 0.8;
 </string>
           </argument>
         </arguments>
