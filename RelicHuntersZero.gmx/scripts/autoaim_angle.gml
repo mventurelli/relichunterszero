@@ -7,14 +7,15 @@ yy = argument1;
 target = argument2;
 toReturn = -1;
 
-var ctX = get_bbox_centerX(target);
-var ctY = get_bbox_centerY(target);
+var targetBBox = get_bbox_center_top_bottom(target);
+var ctX = targetBBox[0];
+var ctY = targetBBox[1];
 
-var botX = get_bbox_bottomX(target);
-var botY = get_bbox_bottomY(target) - 16;
+var botX = targetBBox[0];
+var botY = targetBBox[3] - 16;
 
-var topX = get_bbox_topX(target);
-var topY = get_bbox_topY(target) + 16;
+var topX = targetBBox[0];
+var topY = targetBBox[2] + 16;
 
 
 if instance_exists(target)

@@ -909,6 +909,7 @@
         <script>scripts\get_bbox_centerX.gml</script>
         <script>scripts\get_bbox_centerY.gml</script>
         <script>scripts\get_bbox_center_top_bottom.gml</script>
+        <script>scripts\get_bbox_center.gml</script>
         <script>scripts\get_bbox_top.gml</script>
         <script>scripts\get_bbox_bottom.gml</script>
       </scripts>

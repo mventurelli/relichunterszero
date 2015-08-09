@@ -1093,8 +1093,9 @@ if (myGenerator != -1)
 {
     if (instance_exists(myGenerator)) 
     {
+		myGeneratorBBoxCenter = get_bbox_center(myGenerator);
         draw_set_alpha(0.6);
-        draw_line_width_colour(x,y,get_bbox_centerX(myGenerator),get_bbox_centerY(myGenerator),3,c_blue,c_blue);
+        draw_line_width_colour(x,y,myGeneratorBBoxCenter[0],myGeneratorBBoxCenter[1],3,c_blue,c_blue);
         draw_set_alpha(1);
     }
 }
