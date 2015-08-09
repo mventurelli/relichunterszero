@@ -881,6 +881,7 @@
         <script>scripts\angle_rotate.gml</script>
         <script>scripts\angle_cycle.gml</script>
         <script>scripts\angle_diff.gml</script>
+        <script>scripts\angle_precision.gml</script>
       </scripts>
       <scripts name="General">
         <script>scripts\range_finder.gml</script>

@@ -71,15 +71,35 @@ if instance_exists(activationClient)
 
     if (wantToActivate) &amp;&amp; (in_range)
     {
-            activationClient.overshield += overshield;
-            
-            audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
-            
-            guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
-            guiInfo.colorMain = K_BETU_BLUE;
-            guiInfo.myString = loc_key("INFO_SHIELDPLUS");
-            guiInfo.owner = activationClient;
-            instance_destroy();
+        if (global.character[activationClient.myPlayerId] != char_biu) //Biu can't pick up Overshield
+        {
+            if (activationClient.overshield &lt; activationClient.energy_max)
+            {
+                activationClient.overshield += min(overshield, (activationClient.energy_max - activationClient.overshield));
+                
+                audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
+                
+                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
+                guiInfo.colorMain = K_BETU_BLUE;
+                guiInfo.myString = loc_key("INFO_SHIELDPLUS");
+                guiInfo.owner = activationClient;
+                instance_destroy();
+            }
+            else{
+                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
+                guiInfo.colorMain = c_black;
+                guiInfo.myString = loc_key("INFO_SHIELDMAX");
+                guiInfo.owner = activationClient;
+                audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
+            }
+        }
+        else{
+                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
+                guiInfo.colorMain = K_BETU_RED;
+                guiInfo.myString = loc_key("INFO_CANTUSESHIELD");
+                guiInfo.owner = activationClient;
+                audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
+        }
     }
 }
 

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Unlock and Draw Weapon
+event_inherited();
 
 price = global.price_shotgun_heavy;
 weaponName = "HEAVY SHOTGUN";

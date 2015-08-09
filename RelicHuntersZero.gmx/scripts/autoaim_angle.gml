@@ -24,8 +24,7 @@ if instance_exists(target)
     if (!collisionTestCenter)
     {
         toReturn = point_direction(xx,yy,ctX,ctY);
-        return toReturn;
-        exit;
+        return toReturn; 
     }
     
     var collisionTestBottom = collision_line(xx,yy,botX,botY,class_solid,false,true);
@@ -34,7 +33,6 @@ if instance_exists(target)
     {
         toReturn = point_direction(xx,yy,botX,botY);
         return toReturn;
-        exit;
     }
     
     var collisionTestTop = collision_line(xx,yy,topX,topY,class_solid,false,true);
@@ -43,13 +41,11 @@ if instance_exists(target)
     {
         toReturn = point_direction(xx,yy,topX,topY);
         return toReturn;
-        exit;
     }
     
     //If you got to this point, just give up and cast towards the center
     toReturn = point_direction(xx,yy,ctX,ctY);
     return toReturn;
-    exit;
 }
 else
 {

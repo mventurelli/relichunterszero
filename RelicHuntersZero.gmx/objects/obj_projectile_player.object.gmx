@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if faction == f_player &amp;&amp; instance_exists(other)
+            <string>///Enemy Collision
+if faction == f_player &amp;&amp; instance_exists(other)
 {
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
@@ -52,15 +53,9 @@
         {
             if (allowPrecision)
             {
-                var tX = get_bbox_centerX(other.id);
-                var tY = get_bbox_centerY(other.id);
-                var distanceToTarget = point_distance(x,y,tX,tY) - global.precisionDistance;
-                var adjustedX = x+lengthdir_x(distanceToTarget, direction);
-                var adjustedY = y+lengthdir_y(distanceToTarget, direction);
-
-                var angleToTarget = point_direction(adjustedX, adjustedY, tX, tY);
-                
-                if ( abs( angle_difference(direction, angleToTarget) ) &lt;= global.precisionAngle ) isPrecise = true;
+                var precisionAngle = angle_precision(x,y,get_bbox_centerX(other.id),get_bbox_centerY(other.id),direction);
+                var angleToTarget = point_direction(x,y,get_bbox_centerX(other.id),get_bbox_centerY(other.id));
+                if  (precisionAngle != -1) &amp;&amp; (precisionAngle &lt;= global.precisionAngle) isPrecise = true;
                 else isPrecise = false;
                 
                 if (isPrecise) damage = damage*1.5;

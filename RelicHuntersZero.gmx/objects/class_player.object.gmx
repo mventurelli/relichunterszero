@@ -228,7 +228,7 @@ joyCrosshairDistanceTarget = 0;
 joyCrosshairDistanceSpeed = 30;
 joyCrosshairDistanceMin = 40;
 
-joyCrosshairSpeed = 24;
+joyCrosshairSpeed = 32;
 </string>
           </argument>
         </arguments>
@@ -286,7 +286,7 @@ if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(class_player) &amp;&amp; instance_exists(myGun)
 {
     var joy = global.input[myPlayerId];
-    var autoAimAngle = 10;
+    var autoAimAngle = global.autoAimAngle;
 
     var joyLookAngularVelocity, joyLookDeadzone, enemyDistance;
     
@@ -306,7 +306,7 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         
         if (global.auto_aim != K_AUTOAIM_OFF)
         {
-            targetEnemy = find_enemy_autoaim(myGun.x,myGun.y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
+            targetEnemy = find_enemy_autoaim(x,y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
             
             if (targetEnemy) &amp;&amp; instance_exists(targetEnemy)
             {
@@ -318,7 +318,7 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         {
             if (targetEnemy) &amp;&amp; instance_exists(targetEnemy)
             {
-                joyLookDirection = autoaim_angle(myGun.x,myGun.y,targetEnemy);
+                joyLookDirection = autoaim_angle(x,y,targetEnemy);
                 if (abs(angle_difference(joyLookDirection,joyLookTargetAngle) &gt; autoAimAngle)) joyAimLocked = false;
             }
             else joyAimLocked = false;
@@ -335,7 +335,7 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         {
             autoAimAngle = 360;
             
-            var candidate = find_enemy_autoaim(myGun.x,myGun.y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
+            var candidate = find_enemy_autoaim(x,y, joyLookTargetAngle, autoAimAngle, myGun.projectile_range );
             if (targetEnemy != candidate)
             {
                 global.crosshair_scale[myPlayerId] = 1.85;
@@ -347,9 +347,9 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
                 var aimingX = get_bbox_centerX(targetEnemy);
                 var aimingY = get_bbox_centerY(targetEnemy);
                     
-                joyLookDirection = autoaim_angle(myGun.x,myGun.y,targetEnemy);  
+                joyLookDirection = autoaim_angle(x,y,targetEnemy);  
                 joyLookTargetAngle = joyLookDirection;
-                joyCrosshairDistance = point_distance(myGun.x,myGun.y,aimingX,aimingY);
+                joyCrosshairDistance = point_distance(x,y,aimingX,aimingY);
                 joyAimLocked = true;
             }
             
