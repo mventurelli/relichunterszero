@@ -69,6 +69,15 @@ if (global.language == lang_german)
 if (global.language == lang_french) 
 {
     targetColumn = lang_french;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
+    global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
 }
 
 //Parse CSV File

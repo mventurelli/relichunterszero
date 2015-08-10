@@ -607,6 +607,8 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
             
             if (myEnemy.hp &lt;= 0) myEnemy.no_score = true;
         }
+        
+        audio_play(audio_emitter,false,1,sfx_kami_bite);
     }
 }
 else damage_timer_current++;

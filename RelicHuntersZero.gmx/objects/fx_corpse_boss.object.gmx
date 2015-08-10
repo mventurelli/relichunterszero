@@ -51,6 +51,7 @@ global.cutscene = true;
 
 //Stops Music
 audio_stop_all();
+audio_play_sound(sfx_boss_death,99,false);
 
 //Clean Up Enemies
 if (instance_exists(class_enemy))

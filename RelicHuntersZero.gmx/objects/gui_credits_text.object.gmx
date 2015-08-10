@@ -143,6 +143,7 @@ currentSpacing+=lineSpacing;
 
 draw_set_colour(c_white);
 draw_text(x,y+currentSpacing,"Luca-Leon Happel"); currentSpacing+=lineSpacing;
+draw_text(x,y+currentSpacing,"Luiz Henrique Gama"); currentSpacing+=lineSpacing;
 currentSpacing += 4*lineSpacing;
 
 //Thanks to

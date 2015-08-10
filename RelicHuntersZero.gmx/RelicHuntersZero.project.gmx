@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="11" name="datafiles">
+  <datafiles number="12" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -75,7 +75,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>32635</size>
+      <size>42669</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -131,9 +131,13 @@
       </sounds>
       <sounds name="Monsters">
         <sound>sound\sfx_kami_dash</sound>
+        <sound>sound\sfx_kami_bite</sound>
         <sound>sound\sfx_kami_death</sound>
+        <sound>sound\sfx_kami_fly</sound>
         <sound>sound\sfx_turtle_death</sound>
         <sound>sound\sfx_duck_death</sound>
+        <sound>sound\sfx_boss_spawn</sound>
+        <sound>sound\sfx_boss_death</sound>
         <sound>sound\sfx_precision_kill1</sound>
         <sound>sound\sfx_precision_kill2</sound>
         <sound>sound\sfx_precision_kill3</sound>
