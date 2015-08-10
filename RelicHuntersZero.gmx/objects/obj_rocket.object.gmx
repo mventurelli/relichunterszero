@@ -33,6 +33,7 @@ part_system_depth( global.smoke_system, depth-2 );
 part_system_automatic_update(global.smoke_system, false);
 
 smoke_particle = part_type_create();
+ds_list_add(global.particle_type_list, smoke_particle);
 part_type_shape(smoke_particle, pt_shape_square);
 part_type_size(smoke_particle, 0.5, 2, 0, 0);
 part_type_scale(smoke_particle,0.15,0.15);

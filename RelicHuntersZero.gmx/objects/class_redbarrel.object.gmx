@@ -181,6 +181,7 @@ if (hp &lt;= 0) &amp;&amp; (!isExploding)
     part_system_automatic_update(global.smoke_system, false);
     
     smoke_particle = part_type_create();
+	ds_list_add(global.particle_type_list, smoke_particle);
     part_type_shape(smoke_particle, pt_shape_square);
     part_type_size(smoke_particle, 0.1, 0.5, 0.05, 0);
     part_type_scale(smoke_particle,0.15,0.15);
