@@ -254,8 +254,9 @@ if (owner) &amp;&amp; (instance_exists(owner))
         
         // Player Description
         draw_set_color(c_white);
+        draw_set_valign(fa_top);
         draw_set_font(global.font_tinyText);
-        draw_text_ext(x+8,y+148,myString,20,230);
+        draw_text_ext(x+8,y+122,myString,20,230);
         
         // Player Weapon
         if sprite_exists(myWeaponSprite) draw_sprite(myWeaponSprite,1,x+190,y+212);

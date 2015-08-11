@@ -38,8 +38,11 @@ if (global.language == lang_russian) myVariable = lang_russian;
 if (global.language == lang_japanese) myVariable = lang_japanese;
 if (global.language == lang_german) myVariable = lang_german;
 if (global.language == lang_french) myVariable = lang_french;
+if (global.language == lang_spanish) myVariable = lang_spanish;
+if (global.language == lang_czech) myVariable = lang_czech;
+if (global.language == lang_korean) myVariable = lang_korean;
 
-myVariableMax = lang_french; //&lt;--- put the last language on the list here
+myVariableMax = lang_korean; //&lt;--- put the last language on the list here
 
 labelString = loc_key("SETTINGS_LANGUAGE");
 myValueString = string(myVariable);
@@ -86,6 +89,9 @@ if (myVariable == lang_russian) {   global.language = lang_russian;     myValueS
 if (myVariable == lang_japanese){   global.language = lang_japanese;    myValueString = 'JP';   }
 if (myVariable == lang_german)  {     global.language = lang_german;    myValueString = 'DE';   }
 if (myVariable == lang_french)  {     global.language = lang_french;    myValueString = 'FR';   }
+if (myVariable == lang_spanish)  {     global.language = lang_spanish;    myValueString = 'ES';   }
+if (myVariable == lang_czech)  {     global.language = lang_czech;    myValueString = 'CZ';   }
+if (myVariable == lang_korean)  {     global.language = lang_korean;    myValueString = 'KR';   }
 
 if (arrowClicked)
 {

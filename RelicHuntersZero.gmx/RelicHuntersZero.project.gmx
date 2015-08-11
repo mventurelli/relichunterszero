@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="12" name="datafiles">
+  <datafiles number="13" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -75,7 +75,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>42669</size>
+      <size>61727</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -756,6 +756,12 @@
         <sprite>sprites\spr_char_raffSel</sprite>
         <sprite>sprites\spr_char_raffFinal</sprite>
         <sprite>sprites\spr_char_raffOff</sprite>
+        <sprite>sprites\spr_card_jimmy</sprite>
+        <sprite>sprites\spr_card_ass</sprite>
+        <sprite>sprites\spr_card_biu</sprite>
+        <sprite>sprites\spr_card_pinky</sprite>
+        <sprite>sprites\spr_card_punny</sprite>
+        <sprite>sprites\spr_card_raff</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -996,7 +1002,7 @@
     <fonts name="Cyrillic">
       <font>fonts\ftRU_menuLarge</font>
     </fonts>
-    <fonts name="Latin">
+    <fonts name="Latin + Czech">
       <font>fonts\ftBR_numberSmall</font>
       <font>fonts\ftBR_numberMedium</font>
       <font>fonts\ftBR_numberLarge</font>
@@ -1007,8 +1013,19 @@
       <font>fonts\ftBR_menuLarge</font>
       <font>fonts\ftBR_menuLargest</font>
     </fonts>
-    <fonts name="Japanese">
-      <font>fonts\ftJP_menuLarge</font>
+    <fonts name="Korean">
+      <font>fonts\ftKR_shopPrice</font>
+      <font>fonts\ftKR_numberSmall</font>
+      <font>fonts\ftKR_numberMedium</font>
+      <font>fonts\ftKR_numberLarge</font>
+      <font>fonts\ftKR_numberVeryLarge</font>
+      <font>fonts\ftKR_tinyText</font>
+      <font>fonts\ftKR_balloonText</font>
+      <font>fonts\ftKR_menuSmall</font>
+      <font>fonts\ftKR_menuMedium</font>
+      <font>fonts\ftKR_menuLarge</font>
+      <font>fonts\ftKR_menuVeryLarge</font>
+      <font>fonts\ftKR_menuLargest</font>
     </fonts>
   </fonts>
   <objects name="objects">
@@ -1586,7 +1603,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="43">
+  <constants number="46">
     <constant name="char_random">99</constant>
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
@@ -1630,6 +1647,9 @@
     <constant name="lang_japanese">5</constant>
     <constant name="lang_german">6</constant>
     <constant name="lang_french">7</constant>
+    <constant name="lang_spanish">8</constant>
+    <constant name="lang_czech">9</constant>
+    <constant name="lang_korean">10</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

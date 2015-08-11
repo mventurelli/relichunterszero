@@ -5,6 +5,7 @@
 //          loc_init();
 
 ThisStringTestsForCharacters = 'áéíóúâêîôûãõäëïöüçàèìòù';
+ThisOneForCzechCharacters = 'úáůčýďžéěíňóřšť';
 
 if (!ds_exists(global.loc_map,ds_type_map)) global.loc_map = ds_map_create();
 else ds_map_clear(global.loc_map);
@@ -52,13 +53,13 @@ if (global.language == lang_huebr)
 if (global.language == lang_russian)
 {
     targetColumn = lang_russian;
-    global.font_menuLarge = ftJP_menuLarge;
+    global.font_menuLarge = ftRU_menuLarge;
 }
 
 if (global.language == lang_japanese)
 {
     targetColumn = lang_japanese;
-    global.font_menuLarge = ftJP_menuLarge;
+    //global.font_menuLarge = ftUN_menuLarge;
 }
 
 if (global.language == lang_german)
@@ -78,6 +79,51 @@ if (global.language == lang_french)
     global.font_menuMedium = ftBR_menuMedium;
     global.font_menuLarge = ftBR_menuLarge;
     global.font_menuLargest = ftBR_menuLargest;
+}
+
+if (global.language == lang_spanish) 
+{
+    targetColumn = lang_spanish;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
+    global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
+}
+
+if (global.language == lang_czech) 
+{
+    targetColumn = lang_czech;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
+    global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
+}
+
+if (global.language == lang_korean)
+{
+    targetColumn = lang_korean;
+    global.font_shopPrice = ftKR_shopPrice;
+    global.font_numberSmall = ftKR_numberSmall;
+    global.font_numberMedium = ftKR_numberMedium;
+    global.font_numberLarge = ftKR_numberLarge;
+    global.font_numberVeryLarge = ftKR_numberVeryLarge;
+    global.font_tinyText = ftKR_tinyText;
+    global.font_balloonText = ftKR_balloonText;
+    global.font_menuSmall = ftKR_menuSmall;
+    global.font_menuMedium = ftKR_menuMedium;
+    global.font_menuLarge = ftKR_menuLarge;
+    global.font_menuVeryLarge = ftKR_menuVeryLarge;
+    global.font_menuLargest = ftKR_menuLargest;
 }
 
 //Parse CSV File

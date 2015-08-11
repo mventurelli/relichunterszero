@@ -365,6 +365,26 @@
     <option_textureGroup24_parent>&lt;none&gt;</option_textureGroup24_parent>
     <option_textureGroup24_scaled>0</option_textureGroup24_scaled>
     <option_textureGroup24_targets>9223372036854775807</option_textureGroup24_targets>
+    <option_textureGroup25_border>2</option_textureGroup25_border>
+    <option_textureGroup25_nocropping>0</option_textureGroup25_nocropping>
+    <option_textureGroup25_parent>&lt;none&gt;</option_textureGroup25_parent>
+    <option_textureGroup25_scaled>0</option_textureGroup25_scaled>
+    <option_textureGroup25_targets>9223372036854775807</option_textureGroup25_targets>
+    <option_textureGroup26_border>2</option_textureGroup26_border>
+    <option_textureGroup26_nocropping>0</option_textureGroup26_nocropping>
+    <option_textureGroup26_parent>&lt;none&gt;</option_textureGroup26_parent>
+    <option_textureGroup26_scaled>0</option_textureGroup26_scaled>
+    <option_textureGroup26_targets>9223372036854775807</option_textureGroup26_targets>
+    <option_textureGroup27_border>2</option_textureGroup27_border>
+    <option_textureGroup27_nocropping>0</option_textureGroup27_nocropping>
+    <option_textureGroup27_parent>&lt;none&gt;</option_textureGroup27_parent>
+    <option_textureGroup27_scaled>0</option_textureGroup27_scaled>
+    <option_textureGroup27_targets>9223372036854775807</option_textureGroup27_targets>
+    <option_textureGroup28_border>2</option_textureGroup28_border>
+    <option_textureGroup28_nocropping>0</option_textureGroup28_nocropping>
+    <option_textureGroup28_parent>&lt;none&gt;</option_textureGroup28_parent>
+    <option_textureGroup28_scaled>0</option_textureGroup28_scaled>
+    <option_textureGroup28_targets>9223372036854775807</option_textureGroup28_targets>
     <option_textureGroup2_border>2</option_textureGroup2_border>
     <option_textureGroup2_nocropping>0</option_textureGroup2_nocropping>
     <option_textureGroup2_parent>&lt;none&gt;</option_textureGroup2_parent>
@@ -405,7 +425,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>25</option_textureGroup_count>
+    <option_textureGroup_count>29</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -424,6 +444,10 @@
     <option_textureGroups22>Splash</option_textureGroups22>
     <option_textureGroups23>Intro</option_textureGroups23>
     <option_textureGroups24>Menus</option_textureGroups24>
+    <option_textureGroups25>Fonts - Korean</option_textureGroups25>
+    <option_textureGroups26>Fonts - Unicode</option_textureGroups26>
+    <option_textureGroups27>Fonts - Russian</option_textureGroups27>
+    <option_textureGroups28>Fonts - Latin</option_textureGroups28>
     <option_textureGroups3>Spritesheet - Jimmy</option_textureGroups3>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups5>VFX - Player</option_textureGroups5>

@@ -40,6 +40,7 @@ mySpecialOkButton.owner  = id;
 myStatCard.owner = id;
 
 cardName = 'P1';
+cardSprite = spr_card_jimmy;
 </string>
           </argument>
         </arguments>
@@ -76,21 +77,19 @@ if (slotInput != -1 &amp;&amp; slotCharacter != -1)
     draw_text(x+6,y+15,cardName);
     
     var stringCharacter;
-    if slotCharacter == char_jimmy stringCharacter = loc_key("GENERAL_JIMMY");
-    if slotCharacter == char_pinky stringCharacter = loc_key("GENERAL_PINKYY");
-    if slotCharacter == char_raff stringCharacter = loc_key("GENERAL_RAFF");
-    if slotCharacter == char_biu stringCharacter = loc_key("GENERAL_BIU");
-    if slotCharacter == char_punny stringCharacter = loc_key("GENERAL_PUNNY");
-    if slotCharacter == char_ass stringCharacter = loc_key("GENERAL_ASS");
-    if slotCharacter == char_random stringCharacter = loc_key("GENERAL_RANDOM");
+    if slotCharacter == char_jimmy  { stringCharacter = loc_key("GENERAL_JIMMY");    cardSprite = spr_card_jimmy; }
+    if slotCharacter == char_pinky  { stringCharacter = loc_key("GENERAL_PINKYY");   cardSprite = spr_card_pinky; }
+    if slotCharacter == char_raff   { stringCharacter = loc_key("GENERAL_RAFF");     cardSprite = spr_card_raff; }
+    if slotCharacter == char_biu    { stringCharacter = loc_key("GENERAL_BIU");      cardSprite = spr_card_biu; }
+    if slotCharacter == char_punny  { stringCharacter = loc_key("GENERAL_PUNNY");    cardSprite = spr_card_punny; }
+    if slotCharacter == char_ass    { stringCharacter = loc_key("GENERAL_ASS");      cardSprite = spr_card_ass; }
+    if slotCharacter == char_random { stringCharacter = loc_key("GENERAL_RANDOM");   cardSprite = noone; }
     
     draw_set_halign(fa_right);
     draw_text(x+sprite_width-6,y+15,stringCharacter);
     
     //draw portrait
-    
-    
-    //there should be another child object called fx_charCard or something
+    if (sprite_exists(cardSprite)) draw_sprite(cardSprite,0,x,y+280);
 }
 </string>
           </argument>
