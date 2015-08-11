@@ -447,6 +447,7 @@ if (room == room_start)
             <string>///Particle Systems
 
 global.particle_list = ds_list_create();
+global.particle_type_list = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -1624,7 +1625,7 @@ if (!ds_list_empty(global.particle_list)) &amp;&amp; (!global.pause)
         
         if !part_particles_count(particle_system)
         {
-            part_emitter_destroy_all(particle_system);
+            //part_emitter_destroy_all(particle_system);
             part_system_destroy(particle_system);
             ds_list_delete(global.particle_list,i);
         }
@@ -1980,6 +1981,30 @@ if (timeCounter &gt;= room_speed)
     timeCounter = 0;
     global.statTotalTime++; 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///end of room cleanup
+save_and_clean();
 </string>
           </argument>
         </arguments>
