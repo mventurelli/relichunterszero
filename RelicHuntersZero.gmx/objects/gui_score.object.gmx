@@ -55,7 +55,26 @@ size_current = size_start;
 previous_value = 0;
 kill_count = 0;
 
-var testScores = instance_number(gui_score);
+while (instance_number(gui_score) &gt; 1) 
+{
+    other_gui = instance_find(gui_score,0);
+    if instance_exists(other_gui) &amp;&amp; (other_gui != id)
+    {
+        previous_value = other_gui.value;
+        kill_count+= other_gui.kill_count;
+        with (other_gui) instance_destroy();
+    }
+    else {
+        other_gui = instance_find(gui_score,1);
+        if instance_exists(other_gui) &amp;&amp; (other_gui != id)
+        {
+        previous_value = other_gui.value;
+        kill_count+= other_gui.kill_count;
+        with (other_gui) instance_destroy();
+        }
+    }
+}
+/*var testScores = instance_number(gui_score);
 if (testScores &gt; 1)
 {
     for (i=0; i&lt;testScores; i++)
@@ -68,7 +87,7 @@ if (testScores &gt; 1)
             with (other_gui) instance_destroy();
         }
     }
-}
+}*/
 
 value += previous_value;
 setup = false;
@@ -197,6 +216,22 @@ size_current += size_speed_current;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="64">
