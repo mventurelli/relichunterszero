@@ -1103,6 +1103,9 @@
     <instance objName="obj_wall_stage3" x="4000" y="576" name="inst_51538F2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_stage3" x="4064" y="576" name="inst_208DEF92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_stage3" x="3104" y="1536" name="inst_2F711DF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="2816" y="640" name="inst_5D289CC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_topLeft" x="640" y="704" name="inst_E6B38647" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_botRight" x="4032" y="2176" name="inst_63C04927" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="&lt;undefined&gt;" x="1152" y="1088" w="64" h="64" xo="128" yo="192" id="10000189" name="inst_20A79BD4" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

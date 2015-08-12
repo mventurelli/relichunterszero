@@ -69,6 +69,7 @@ event_inherited();
     sprite_death = spr_ass_death;
     sprite_melee = spr_ass_melee;
     sprite_dash_fx = spr_ass_dash_fx;
+    sprite_dig = spr_ass_dig;
     
     
 </string>

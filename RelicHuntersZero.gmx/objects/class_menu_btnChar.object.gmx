@@ -197,9 +197,9 @@ draw_set_alpha(1);
 var inputIconX = x+65;
 var inputIconY = y+56;
 
-if (global.selectedButton[K_INPUT_KEYBOARD] == id) draw_sprite_ext(spr_char_inputIcon,0,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
-if (global.selectedButton[K_INPUT_JOYSTICK1] == id) draw_sprite_ext(spr_char_inputIcon,1,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
-if (global.selectedButton[K_INPUT_JOYSTICK2] == id) draw_sprite_ext(spr_char_inputIcon,2,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
+if (global.selectedButton[K_INPUT_KEYBOARD] == id) draw_sprite_ext(spr_char_inputKey,0,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
+if (global.selectedButton[K_INPUT_JOYSTICK1] == id) draw_sprite_ext(spr_char_inputJoy1,1,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
+if (global.selectedButton[K_INPUT_JOYSTICK2] == id) draw_sprite_ext(spr_char_inputJoy2,2,inputIconX,inputIconY,starScale,starScale,0,c_white,1);
 </string>
           </argument>
         </arguments>

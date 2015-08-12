@@ -204,6 +204,14 @@ if (drawSelf)
 {
     draw_self();
     
+    if (global.relicDetected) myTextTarget = loc_key("ASS_RELIC");
+    else if (myTextTarget == loc_key("ASS_RELIC")) 
+    {
+        myTextTarget = loc_key("ASS_CONGRATS");
+        myText = '';
+        text_count=0;
+    }
+    
     if (draw_stuff)
     {
         target_lenght = string_length(myTextTarget);

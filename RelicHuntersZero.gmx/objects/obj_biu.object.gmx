@@ -71,6 +71,7 @@ event_inherited();
     sprite_death = spr_biu_death;
     sprite_melee = spr_biu_melee;
     sprite_dash_fx = spr_biu_dash_fx;
+    sprite_dig = spr_biu_dig;
     
 
     

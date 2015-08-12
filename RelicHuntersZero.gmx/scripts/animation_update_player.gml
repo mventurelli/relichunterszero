@@ -64,6 +64,11 @@ switch (animation_current)
         sprite_index = sprite_melee;
         break;
         }
+    case ('dig'):
+        {
+        sprite_index = sprite_dig;
+        break;
+        }
 }
     
 // Resolve Animation

@@ -41,6 +41,8 @@ image_speed = 0;
 depth = -y-25;
 
 weaponName = "I AM ERROR";
+
+shopType = 'shield';
 </string>
           </argument>
         </arguments>

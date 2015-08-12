@@ -32,6 +32,7 @@ randomize();
 joy_init();
 
 global.gameOver = false;
+global.relicDetected = false;
 
 global.steamApi = false;
 
@@ -55,11 +56,11 @@ global.crosshairX[2] = 0;
 global.crosshairY[2] = 0;
 global.crosshair_scale[2] = 1;
 
-main_camera = instance_create(x,y,controller_camera);
-main_effects = instance_create(x,y,controller_effects);
-
 global.default_shadow_yscale = 0.3;
 global.music = true;
+
+main_camera = instance_create(x,y,controller_camera);
+main_effects = instance_create(x,y,controller_effects);
 
 level_end = false;
 global.level_complete = false;
@@ -191,30 +192,30 @@ global.price_grenades1 = 1000;
 global.price_grenades2 = 1500;
 global.price_grenades3 = 3000;
 
-global.price_pineapple1 = 500;
-global.price_pineapple2 = 500;
-global.price_pineapple3 = 500;
-global.price_alcoholic1 = 500;
-global.price_alcoholic2 = 500;
-global.price_alcoholic3 = 500;
-global.price_crystal1 = 2000;
-global.price_crystal2 = 3000;
-global.price_crystal3 = 5000;
-global.price_infinity1 = 3000;
-global.price_infinity2 = 3000;
-global.price_infinity3 = 3000;
-global.price_midnight1 = 2000;
-global.price_midnight2 = 2000;
-global.price_midnight3 = 2000;
-global.price_watchful1 = 1200;
-global.price_watchful2 = 1200;
-global.price_watchful3 = 1200;
-global.price_dev1 = 3000;
-global.price_dev2 = 5000;
-global.price_dev3 = 7000;
-global.price_yottabyte1 = 750;
-global.price_yottabyte2 = 750;
-global.price_yottabyte3 = 750;
+global.price_pineapple1 = 1500;
+global.price_pineapple2 = 1500;
+global.price_pineapple3 = 1500;
+global.price_alcoholic1 = 1500;
+global.price_alcoholic2 = 1500;
+global.price_alcoholic3 = 1500;
+global.price_crystal1 = 3000;
+global.price_crystal2 = 5000;
+global.price_crystal3 = 7000;
+global.price_infinity1 = 4500;
+global.price_infinity2 = 4500;
+global.price_infinity3 = 4500;
+global.price_midnight1 = 4000;
+global.price_midnight2 = 4000;
+global.price_midnight3 = 4000;
+global.price_watchful1 = 2500;
+global.price_watchful2 = 2500;
+global.price_watchful3 = 2500;
+global.price_dev1 = 3500;
+global.price_dev2 = 5500;
+global.price_dev3 = 7500;
+global.price_yottabyte1 = 1750;
+global.price_yottabyte2 = 1750;
+global.price_yottabyte3 = 1750;
 
 //Players &amp; Ammo
 
@@ -368,7 +369,7 @@ if (global.music)
 
 save_sync_read();
 
-if (room == room_start) || (room == room_tutorial)
+if (room == room_start) || (room == room_tutorial) || ((global.gameMode == gamemode_endless) &amp;&amp; (room == level1_1))
 {
     global.stage_current = 1;
     char_state_initial(); 
@@ -1060,6 +1061,14 @@ if (!level_built)
     ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_shield, obj_pickup_heavyammo, obj_pickup_mediumammo);
     
     
+    //Items - ******* ENDLESS ********
+    item_endlessAmmo_1 = ds_list_create();
+    ds_list_add(item_endlessAmmo_1, obj_pickup_heavyammo, obj_pickup_mediumammo, obj_pickup_mediumammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_grenade );
+    
+    item_endlessAid_1 = ds_list_create();
+    ds_list_add(item_endlessAid_1, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_lightammo, obj_pickup_mediumammo, obj_pickup_heavyammo, obj_pickup_grenade, obj_pickup_healthBig, obj_pickup_shield);
+    
+    
     //Shop Lists
     global.shop_list_1 = ds_list_create();
     global.shop_size_1 = 11;
@@ -1137,7 +1146,7 @@ if (!level_built)
     global.shop_free_4 = ds_list_create();
     ds_list_add(global.shop_free_4, obj_pickup_heavyammo, obj_pickup_heavyammo, obj_pickup_heavyammo, obj_pickup_health, obj_pickup_grenade);
     
-    //Stage Design
+    //Stage Design - **********ADVENTURE MODE****************
     shop_empty_pool = ds_list_create();
     
     enemy_pool_1_1 = ds_list_create();
@@ -1223,6 +1232,17 @@ if (!level_built)
     ds_list_add(item_pool_boss, item_heavyweapon_1, item_heavyweapon_2, item_mediumweapon_1, item_mediumweapon_1, item_starterweapon_1, item_starterweapon_1, item_starteraid_1, item_starteraid_1, item_starteraid_1);
     ds_list_add(item_pool_boss, item_starterhealth_1, item_starterhealth_1, item_engamehealth_1, item_engamehealth_1);
     
+    
+    //Stage Design - **********ENDLESS MODE****************
+    enemy_pool_endless = ds_list_create();
+    ds_list_add(enemy_pool_endless, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,
+    monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
+    
+    ///  ///  ///
+    
+    item_pool_endless = ds_list_create();
+    ds_list_add(item_pool_endless, item_endlessAmmo_1, item_endlessAmmo_1, item_endlessAid_1, item_endlessAid_1);
+    
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -1252,14 +1272,16 @@ if (!level_built)
     }
     
     //Stop here if it's the first room
-    if (room == room_start) level_built = true;
+    if (room == room_start) { level_built = true; exit; }
     
-    if (!level_built)
-    {
-        teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
-        teleporter.active = false;
+
+    //Still here? Let's go!
+    teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
+    teleporter.active = false;
         
-        //Instantiate Enemies
+    if (global.gameMode == gamemode_adventure)
+    {
+        //Adventure Enemies
         if (room == room_shop) || (room == room_tutorial) || (room == room_boss) enemy_pool = shop_empty_pool;
         if (room == level1_1) enemy_pool = enemy_pool_1_1;
         if (room == level1_2) enemy_pool = enemy_pool_1_2;
@@ -1274,6 +1296,59 @@ if (!level_built)
         if (room == level4_2) enemy_pool = enemy_pool_4_2;
         if (room == level4_3) enemy_pool = enemy_pool_4_3;
         
+        //Adventure Items
+        if (room == room_shop) || (room == room_tutorial) item_pool = shop_empty_pool;
+        if (room == level1_1) item_pool = item_pool_1_1;
+        if (room == level1_2) item_pool = item_pool_1_2;
+        if (room == level1_3) item_pool = item_pool_1_3;
+        if (room == level2_1) item_pool = item_pool_2_1;
+        if (room == level2_2) item_pool = item_pool_2_2;
+        if (room == level2_3) item_pool = item_pool_2_3;
+        if (room == level3_1) item_pool = item_pool_3_1;
+        if (room == level3_2) item_pool = item_pool_3_2;
+        if (room == level3_3) item_pool = item_pool_3_3;
+        if (room == level4_1) item_pool = item_pool_4_1;
+        if (room == level4_2) item_pool = item_pool_4_2;
+        if (room == level4_3) item_pool = item_pool_4_3;
+        if (room == room_boss) item_pool = item_pool_boss;
+    }
+    
+    if (global.gameMode == gamemode_endless)
+    {
+        //Endless Enemies
+        if (room == room_shop) || (room == room_boss) enemy_pool = shop_empty_pool;
+        if (room == level1_1) enemy_pool = enemy_pool_endless;
+        if (room == level1_2) enemy_pool = enemy_pool_endless;
+        if (room == level1_3) enemy_pool = enemy_pool_endless;
+        if (room == level2_1) enemy_pool = enemy_pool_endless;
+        if (room == level2_2) enemy_pool = enemy_pool_endless;
+        if (room == level2_3) enemy_pool = enemy_pool_endless;
+        if (room == level3_1) enemy_pool = enemy_pool_endless;
+        if (room == level3_2) enemy_pool = enemy_pool_endless;
+        if (room == level3_3) enemy_pool = enemy_pool_endless;
+        if (room == level4_1) enemy_pool = enemy_pool_endless;
+        if (room == level4_2) enemy_pool = enemy_pool_endless;
+        if (room == level4_3) enemy_pool = enemy_pool_endless;
+        
+        //Endless Items
+        if (room == room_shop) item_pool = shop_empty_pool;
+        if (room == level1_1) item_pool = item_pool_endless;
+        if (room == level1_2) item_pool = item_pool_endless;
+        if (room == level1_3) item_pool = item_pool_endless;
+        if (room == level2_1) item_pool = item_pool_endless;
+        if (room == level2_2) item_pool = item_pool_endless;
+        if (room == level2_3) item_pool = item_pool_endless;
+        if (room == level3_1) item_pool = item_pool_endless;
+        if (room == level3_2) item_pool = item_pool_endless;
+        if (room == level3_3) item_pool = item_pool_endless;
+        if (room == level4_1) item_pool = item_pool_endless;
+        if (room == level4_2) item_pool = item_pool_endless;
+        if (room == level4_3) item_pool = item_pool_endless;
+        if (room == room_boss) item_pool = item_pool_endless;
+    }
+    
+    
+        //Resolve Enemies
         while (!ds_list_empty(enemy_pool))
         {
             pick_random_group = irandom(ds_list_size(enemy_pool)-1);
@@ -1309,23 +1384,7 @@ if (!level_built)
             instance_destroy();
         }
         
-    
-        //Instantiate Items
-        if (room == room_shop) || (room == room_tutorial) item_pool = shop_empty_pool;
-        if (room == level1_1) item_pool = item_pool_1_1;
-        if (room == level1_2) item_pool = item_pool_1_2;
-        if (room == level1_3) item_pool = item_pool_1_3;
-        if (room == level2_1) item_pool = item_pool_2_1;
-        if (room == level2_2) item_pool = item_pool_2_2;
-        if (room == level2_3) item_pool = item_pool_2_3;
-        if (room == level3_1) item_pool = item_pool_3_1;
-        if (room == level3_2) item_pool = item_pool_3_2;
-        if (room == level3_3) item_pool = item_pool_3_3;
-        if (room == level4_1) item_pool = item_pool_4_1;
-        if (room == level4_2) item_pool = item_pool_4_2;
-        if (room == level4_3) item_pool = item_pool_4_3;
-        if (room == room_boss) item_pool = item_pool_boss;
-    
+       //Resolve Items 
         while (!ds_list_empty(item_pool))
         {
             pick_random_group = irandom(ds_list_size(item_pool)-1);
@@ -1357,10 +1416,10 @@ if (!level_built)
             instance_destroy();
         }
         
-        //Done
+    //Done
         level_built = true;  
         
-        //Clear Lists From Memory
+    //Clear Lists From Memory
         ds_list_destroy(ducan_turtlesquad1_1);
         ds_list_destroy(ducan_turtlesquad1_2);
         ds_list_destroy(ducan_turtlesquad1_3);
@@ -1424,9 +1483,17 @@ if (!level_built)
         ds_list_destroy(item_heavyammo_1);
         ds_list_destroy(item_endgameaid_1);
         
+        
+        //Endless
+        ds_list_destroy(item_endlessAmmo_1);
+        ds_list_destroy(item_endlessAid_1);
+        ds_list_destroy(enemy_pool_endless);
+        ds_list_destroy(item_pool_endless);
+        
+    
+        //Global
         ds_list_destroy(enemy_pool);
         ds_list_destroy(item_pool);
-    }
 }
 </string>
           </argument>
@@ -1505,6 +1572,73 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             }
             p++;
         }
+        
+        //RELIC DETECTED!!!
+        if (global.gameMode == gamemode_adventure)
+        {
+            global.dirtColor = c_white;
+            
+            //Relic Chance
+            var relicChance = -1;
+            var shopList = -1;
+            if (room==level1_1) || (room==level1_2) || (room==level1_3) { relicChance = 0.25;    shopList = global.shop_list_1;  global.dirtColor = make_color_rgb(183,137,49); }
+            if (room==level2_1) || (room==level2_2) || (room==level2_3) { relicChance = 0.2;    shopList = global.shop_list_2;  global.dirtColor = make_color_rgb(111,197,148); }
+            if (room==level3_1) || (room==level3_2) || (room==level3_3) { relicChance = 0.2;   shopList = global.shop_list_3;  global.dirtColor = make_color_rgb(74,136,192); }
+            if (room==level4_1) || (room==level4_2) || (room==level4_3) { relicChance = 0.2;   shopList = global.shop_list_4;  global.dirtColor = make_color_rgb(159,55,60); }
+            
+            if (!global.totalDigs) relicChance = 1 //Force on the first time
+            
+            if (random(1) &lt;= relicChance)
+            {
+                //Find out if there is a relic to spawn
+                var spawnRelic = noone;
+                if ds_exists(shopList,ds_type_list) while (!ds_list_empty(shopList))
+                {
+                    var randomPos = irandom_range(0, ds_list_size(shopList)-1);
+                    var candidate = ds_list_find_value(shopList,randomPos);
+                    if (candidate)
+                    {
+                        var spawnToTestVariable = instance_create(0,0,candidate);
+                        if (spawnToTestVariable.shopType == 'relic') spawnRelic = candidate;
+                        
+                        with (spawnToTestVariable) instance_destroy();
+                        
+                        if (spawnRelic != noone) break;
+                    }
+                    ds_list_delete(shopList,randomPos);
+                }
+                
+                //Stop here if there is no relic to spawn
+                if (spawnRelic == noone) exit;
+                
+                //Randomize Dig Site Position
+                if (instance_exists(obj_spawn_topLeft)) &amp;&amp; (instance_exists(obj_spawn_botRight))
+                {
+                    var validPosition = false;
+                    var relicSpawnX, relicSpawnY;
+                    
+                    while (!validPosition)
+                    {
+                        relicSpawnX = irandom_range( obj_spawn_topLeft.x , obj_spawn_botRight.x );
+                        relicSpawnY = irandom_range( obj_spawn_topLeft.y , obj_spawn_botRight.y );
+                        if (!collision_circle(relicSpawnX,relicSpawnY,42,obj_limit,false,true)) validPosition = true;
+                    }
+                }
+                else exit;
+                
+                  
+                //Spawn Relic
+                global.relicDetected = true;
+                var announceRelic = instance_create(x,y,fx_bigMessage);
+                announceRelic.textBig = loc_key("HUD_RELIC_DETECT");
+                announceRelic.textBigColor = K_BETU_RED;
+                if (global.input[1] == K_INPUT_KEYBOARD) announceRelic.textSmall = loc_key("HUD_RELIC_DETECT_KEY");
+                else announceRelic.textSmall = loc_key("HUD_RELIC_DETECT_JOY");
+                
+                var relicDig = instance_create(relicSpawnX,relicSpawnY,obj_digSpot);
+                relicDig.myItem = spawnRelic;
+            }  
+        }
     }
 }
 </string>
@@ -1564,8 +1698,9 @@ if (global.level_complete)
     
     if (room == room_shop) || (room == room_start)
     {
-        //Test boss:  room_goto(room_boss); exit;
-
+        //Test boss: room_goto(room_boss); exit; 
+        
+        
         if (global.stage_current == 0) room_goto(level1_1);
         if (global.stage_current == 1) room_goto(level2_1);
         if (global.stage_current == 2) room_goto(level3_1);
@@ -1581,13 +1716,22 @@ if (global.level_complete)
     if (room == level4_3) { room_goto(room_shop); exit; }
     
     if (room == room_boss) 
-    { 
-        if (global.stage_current != -9)
+    {
+        if (global.gameMode == gamemode_adventure)
         {
-            room_goto(room_end); 
+                if (global.stage_current != -9)
+                {
+                    room_goto(room_end); 
+                    exit;
+                }
+                else { room_goto(level1_1); exit; } //Secret room portal
+        }
+        
+        if (global.gameMode == gamemode_endless)
+        {
+            room_goto(level1_1);
             exit;
         }
-        else { room_goto(level1_1); exit; } //Secret room portal
     }
     
     if room_exists(room_next(room)) room_goto_next();
@@ -2484,6 +2628,7 @@ while (p &lt;= global.playerCount)
                     if (fakeBarFill &lt; 100) fakeBarFill++;
                     else { isGen1Setup = true; fakeBarFill=0; }
                 }
+                 draw_sprite(spr_boss_barGen,0,drawBossX1,drawBossY1+((drawBossY2-drawBossY1)/2));
             }
             
             //Draw Generator2 Healthbar
@@ -2497,6 +2642,7 @@ while (p &lt;= global.playerCount)
                     if (fakeBarFill &lt; 100) fakeBarFill++;
                     else { isGen1Setup = true; fakeBarFill=0; }
                 }
+                 draw_sprite(spr_boss_barGen,0,drawBossX1,drawBossY1+((drawBossY2-drawBossY1)/2));
             }
             
             //Draw Generator3 Healthbar
@@ -2510,6 +2656,7 @@ while (p &lt;= global.playerCount)
                     if (fakeBarFill &lt; 100) fakeBarFill++;
                     else { isGen1Setup = true; fakeBarFill=0; }
                 }
+                draw_sprite(spr_boss_barGen,0,drawBossX1,drawBossY1+((drawBossY2-drawBossY1)/2));
             }
             
             //Draw Boss Healthbar
@@ -2521,6 +2668,10 @@ while (p &lt;= global.playerCount)
                     if (fakeBarFill &lt; 100) fakeBarFill++;
                     else { isBossSetup = true; fakeBarFill=0; }
                 }
+                var bossImage = 0;
+                if (obj_boss.hpMilestoneCurrent == 2) bossImage = 1;
+                if (obj_boss.hpMilestoneCurrent == 4) bossImage = 2;
+                draw_sprite(spr_boss_barFace,bossImage,drawBossX1,drawBossY1+((drawBossY2-drawBossY1)/2));
             }
             else drawBossText = loc_key("BOSS_SHIELDGENERATOR");
             

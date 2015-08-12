@@ -107,6 +107,9 @@ else{
         else instance_destroy();
     }
 }
+
+//Digging Hack
+if (global.relicDetected) lifeTimeCurrent = 0;
 </string>
           </argument>
         </arguments>

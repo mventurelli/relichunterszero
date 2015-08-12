@@ -143,7 +143,11 @@ else instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (isActive) draw_self();
+            <string>///Draw if not digging
+if (isActive) &amp;&amp; (owner) &amp;&amp; instance_exists(owner)
+{
+    if (!owner.isDigging) &amp;&amp; (owner.animation_current != 'dig') draw_self();
+}
 </string>
           </argument>
         </arguments>

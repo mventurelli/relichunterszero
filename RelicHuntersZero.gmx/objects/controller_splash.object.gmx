@@ -34,8 +34,9 @@ screen_update();
 //Version
 global.currentVersionNumber = "BETA v0.3";
 
-//Multiplayer
+//Multiplayer &amp; Mode
 global.playerCount = 1;
+global.gameMode = gamemode_adventure;
 
 //Sync Version &amp; Multiplayer
 ini_open(working_directory + "\saveData.ini");

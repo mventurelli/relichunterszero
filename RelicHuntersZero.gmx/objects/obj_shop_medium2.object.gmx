@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Unlock and Draw Weapon
-event_inherited();
+
 price = global.price_medium2;
 weaponName = loc_key("GENERAL_SHOP_MEDIUMAMMO");
 
@@ -47,10 +47,11 @@ if (unlock)
         if (sprite_index == spr_pickup_heavy) &amp;&amp; (global.ammo_heavy[p] &lt; global.ammo_heavy_max) { global.ammo_heavy[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
         if (sprite_index == spr_pickup_grenade) &amp;&amp; (global.grenades[p] &lt; global.grenades_max) { global.grenades[p] += ammo_box.ammo; ammo_box.want_to_die = true;}
 
-        if (ammo_box.want_to_die) ammo_box.active = false
+        if (ammo_box.want_to_die) ammo_box.isInteractiveObjectActive = false
     }
     instance_destroy();
 }
+else event_inherited();
 </string>
           </argument>
         </arguments>

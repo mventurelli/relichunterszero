@@ -158,7 +158,7 @@ WEAPON_RELOAD,RELOAD,RECARGA,,,,Nachladen,RECHARGE,Recarga,Přebití,재장전
 WEAPON_BURST,BURST,RAJADA,,,,Feuerstoss,ECLAT,Ráfaga,Výbuch,
 WEAPON_PIERCING,PIERCING,PERFURAÇÃO,,,,Panzerbrechend,PERCAGE,Perforación,Pronikavý,관통
 WPNAME_SAWEDOFF,Sawed-Off,Cano Serrado,,,,Abgesaegt,Canon scié,Aserrado,Upilovaná zbraň,
-WPNAME_PISTOL,Crude Pistol,Pistola Ruim,,,,Grobe Pistole,Pistolet grossier,,Surová pistole,
+WPNAME_PISTOL,Crude Pistol,Pistola Ruim,,,,Grobe Pistole,Pistolet grossier,Pisotla cruda,Surová pistole,
 WPNAME_PISTOLJIMMY,Elite Pistol,Pistola Elite,,,,Elitepistole,Pistolet d'élite,Pistola de élite,Elitní pistole,
 WPNAME_PISTOLHEAVY,Heavy Pistol,Pistola Pesada,,,,Schwere Pistole,Pistolet lourd,Pistola pesada,"Těžká pistole
 ",
@@ -242,7 +242,17 @@ HUD_UNLOCK_RELIC_COMPLETE,YOU HAVE FOUND ALL THE PIECES OF A RELIC,VOCÊ ENCONTR
 HUD_UNLOCK_REQ_RAFF,Buy All Checkpoints to unlock Raff,Compre todos os Portais para destravar Raff,,,,Kaufe alle Checkpoints um Raff freizuschalten,Acheter tout les checkpoints pour débloquer Raff,Comprar todos los puntos de control para desbloquear a Raff,Kup si všechny checkpointy abys odemkl Raffa,
 HUD_UNLOCK_REQ_BIU,Beat the game without using Checkpoints to unlock Biu,Complete o jogo começando pelo primeiro Portal para destravar Biu,,,,"Spiele das gesamte Spiel ohne Checkpoints, um Biu freizuschalten",Battre le jeu sans utiliser de checkpoints pour débloquer Biu,Pasarte el juego sin utilizar puntos de control para desbloquear a Biu,Dokonči hru bez použití checkpointů abys odemkl Biu,
 HUD_UNLOCK_REQ_PUNNY,Get 80000 bounty to unlock Punny,Consiga 80000 estrelas para destravar Punny,,,,Sammle 80000 Sterne um Punny freizuschalten,Obtenir 80000 de prime pour débloque Punny,Obtener 80000 estrellas para desbloquear a Punny,Získej 80 000 odměn abys odemkl Punny,
+HUD_RELIC_DETECT,RELIC DETECTED!,RELÍQUIA DETECTADA!,,,,,,"Reliquia detectada
+",,
+HUD_RELIC_DETECT_KEY,"PRESS ""E"" TO SEARCH FOR BURIED TREASURE","APERTE ""E"" PARA PROCURAR O TESOURO ENTERRADO",,,,,,"El tesoro está cerca, ponte a cavar.
+",,
+HUD_RELIC_DETECT_JOY,"PRESS ""X"" TO SEARCH FOR BURIED TREASURE","APERTE ""X"" PARA PROCURAR O TESOURO ENTERRADO",,,,,,,,
+HUD_RELIC_FOUND,YOU FOUND IT!,VOCÊ ENCONTROU!,,,,,,,,
+HUD_RELIC_FOUND_KEY,"PRESS ""E"" TO DIG","APERTE ""E"" PARA CAVAR",,,,,,,,
+HUD_RELIC_FOUND_JOY,"PRESS ""X"" TO DIG","APERTE ""X"" PARA CAVAR",,,,,,,,
 ,,,,,,,,,,
+ASS_RELIC,There's treasure buried here!,Tem tesouro enterrado aqui!,,,,,,Hay un tesoro enterrado aquí!,,
+ASS_CONGRATS,Nice find. I suppose I can't charge you for that one...,Belo achado. Imagino que não posso te cobrar por isso aí...,,,,,,,,
 ASS_TUTORIAL,"Good morning, sunshine. Maybe you should try the tutorial first?","Bom dia, lindeza. Talvez você deva tentar o tutorial primeiro.",,,,"Guten Morgen, Faulpelz. Was meinst du, ab zum Tutorial?","Bonjour, mon rayon de soleil. Peut-être que vous devriez essayer le tutoriel en premier?","Buenos días, sol. Tal vez deberías probar el tutorial primero?","Dobré ráno, možná bys nejdřív chtěl skusit tutoriál",
 ASS_GREETING,I have located some relics down on the Asteroid Dungeon. Hop on the teleporter!,Eu localizei algumas relíquias no Asteróide Masmorra. Entre no teleportador!,,,,Ich habe einige Reliquien auf dem Dungeonasteroiden entdeckt. Zum Teleporter!,J'ai localisé quelque reliques sur le donjon Astéroid. Hop sur le téléporteur!,He localizado algunas reliquias en la mazmorra Asteroide. Entra en el teletransportador!,"Zjistil jsem něaké relikvie v asteroidí kobce, šup do teleportu!",
 ASS_FIRSTSTAGEDONE,"Each relic has 3 parts. If you find any part, I’ll let you buy it from me.","Cada relíquia tem 3 partes. Se você encontrar uma, eu deixo você comprá-la de mim.",,,,"Jede Reliquie hat 3 Stuecke. Wenn du eins findest, verkauf ich es dir gerne zurueck.","Chaque relique possède 3 parties. Si vous trouvez une partie, je vous laisserai me l'acheter.","Cada reliquia tiene 3 partes. Si encuentras una parte, te la venderé.","Každá relikvie má 3 kousky, měl bys najít všechny. Nechám tě něaké koupit ode mě.",

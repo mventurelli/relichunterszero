@@ -73,7 +73,7 @@ ini_open(working_directory + "\saveData.ini");
         playerInstanceNumber++;
     }
 
- 
+        ini_write_real('Persistence','UnlockEndless',global.unlockEndless);
         ini_write_real('Persistence','UnlockPinky',global.unlockPinky);
         ini_write_real('Persistence','UnlockRaff',global.unlockRaff);
         ini_write_real('Persistence','UnlockBiu',global.unlockBiu);
@@ -81,7 +81,6 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Persistence','UnlockAss',global.unlockAss);
         
         ini_write_real('Persistence','Score',global.score_total);
-        
         
         ini_write_real('Persistence','Checkpoint1',global.checkpoint1);
         ini_write_real('Persistence','Checkpoint2',global.checkpoint2);
@@ -212,6 +211,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Stats','Kills',global.statKills);
     ini_write_real('Stats','statTotalTime',global.statTotalTime);
     ini_write_real('Stats','statRunTime',global.statRunTime);
+    ini_write_real('Stats','totalDigs',global.totalDigs);
     
     // End
 ini_close();

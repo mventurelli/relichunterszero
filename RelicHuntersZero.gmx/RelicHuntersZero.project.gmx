@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="13" name="datafiles">
+  <datafiles number="14" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -75,7 +75,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>61727</size>
+      <size>62565</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -176,6 +176,12 @@
         <sound>sound\sfx_walk3</sound>
         <sound>sound\sfx_walk4</sound>
         <sound>sound\sfx_walk5</sound>
+        <sound>sound\sfx_dig1</sound>
+        <sound>sound\sfx_dig2</sound>
+        <sound>sound\sfx_dig3</sound>
+        <sound>sound\sfx_dig4</sound>
+        <sound>sound\sfx_dig5</sound>
+        <sound>sound\sfx_dig6</sound>
         <sound>sound\sfx_player_death</sound>
       </sounds>
       <sounds name="Shield">
@@ -341,6 +347,8 @@
         <sprite>sprites\spr_turtle3_precision</sprite>
       </sprites>
       <sprites name="Boss">
+        <sprite>sprites\spr_boss_barFace</sprite>
+        <sprite>sprites\spr_boss_barGen</sprite>
         <sprite>sprites\spr_boss_idle</sprite>
         <sprite>sprites\spr_boss_walk</sprite>
         <sprite>sprites\spr_boss_hit</sprite>
@@ -429,23 +437,25 @@
       <sprite>sprites\spr_grenadeTarget</sprite>
     </sprites>
     <sprites name="Guns">
-      <sprite>sprites\spr_sawedoff</sprite>
+      <sprite>sprites\spr_assault_rifle</sprite>
+      <sprite>sprites\spr_boss_gun</sprite>
+      <sprite>sprites\spr_flamethrower</sprite>
+      <sprite>sprites\spr_highmag</sprite>
+      <sprite>sprites\spr_keytar</sprite>
+      <sprite>sprites\spr_machinegun</sprite>
       <sprite>sprites\spr_pistol</sprite>
-      <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
       <sprite>sprites\spr_pistol_heavy</sprite>
+      <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_plasma</sprite>
-      <sprite>sprites\spr_submachinegun</sprite>
-      <sprite>sprites\spr_highmag</sprite>
-      <sprite>sprites\spr_machinegun</sprite>
-      <sprite>sprites\spr_sniper_rifle</sprite>
-      <sprite>sprites\spr_assault_rifle</sprite>
-      <sprite>sprites\spr_keytar</sprite>
+      <sprite>sprites\spr_rocketlauncher</sprite>
+      <sprite>sprites\spr_sawedoff</sprite>
       <sprite>sprites\spr_shotgun</sprite>
       <sprite>sprites\spr_shotgun_heavy</sprite>
-      <sprite>sprites\spr_rocketlauncher</sprite>
-      <sprite>sprites\spr_flamethrower</sprite>
-      <sprite>sprites\spr_boss_gun</sprite>
+      <sprite>sprites\spr_sniper_rifle</sprite>
+      <sprite>sprites\spr_submachinegun</sprite>
+    </sprites>
+    <sprites name="Bullets&amp;Effects">
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_bullet_blue</sprite>
       <sprite>sprites\spr_bullet_small</sprite>
@@ -460,6 +470,9 @@
       <sprite>sprites\spr_hit_medium</sprite>
       <sprite>sprites\spr_hit_heavy</sprite>
       <sprite>sprites\spr_blood_bits</sprite>
+      <sprite>sprites\spr_digPile</sprite>
+      <sprite>sprites\spr_dirt_bits</sprite>
+      <sprite>sprites\spr_fx_weaponGround</sprite>
       <sprites name="Broken">
         <sprite>sprites\spr_broken_pistol</sprite>
         <sprite>sprites\spr_broken_shotgun</sprite>
@@ -542,6 +555,7 @@
         <sprite>sprites\spr_jimmy_dash_fx</sprite>
         <sprite>sprites\spr_jimmy_sprint</sprite>
         <sprite>sprites\spr_jimmy_melee</sprite>
+        <sprite>sprites\spr_jimmy_dig</sprite>
         <sprite>sprites\spr_jimmy_death</sprite>
         <sprite>sprites\spr_jimmy_teleport_in</sprite>
         <sprite>sprites\spr_jimmy_teleport_out</sprite>
@@ -557,6 +571,7 @@
         <sprite>sprites\spr_pinky_sprint</sprite>
         <sprite>sprites\spr_pinky_walk</sprite>
         <sprite>sprites\spr_pinky_melee</sprite>
+        <sprite>sprites\spr_pinky_dig</sprite>
         <sprite>sprites\spr_pinky_teleport_in</sprite>
         <sprite>sprites\spr_pinky_teleport_out</sprite>
         <sprite>sprites\spr_pinky_holo</sprite>
@@ -575,6 +590,7 @@
         <sprite>sprites\spr_raff_dash_fx</sprite>
         <sprite>sprites\spr_raff_hit</sprite>
         <sprite>sprites\spr_raff_melee</sprite>
+        <sprite>sprites\spr_raff_dig</sprite>
         <sprite>sprites\spr_raff_death</sprite>
         <sprite>sprites\spr_raff_sprint</sprite>
         <sprite>sprites\spr_raff_walk</sprite>
@@ -591,6 +607,7 @@
         <sprite>sprites\spr_biu_sprint</sprite>
         <sprite>sprites\spr_biu_walk</sprite>
         <sprite>sprites\spr_biu_melee</sprite>
+        <sprite>sprites\spr_biu_dig</sprite>
         <sprite>sprites\spr_biu_teleport_in</sprite>
         <sprite>sprites\spr_biu_teleport_out</sprite>
         <sprites name="Buckler">
@@ -612,6 +629,7 @@
         <sprite>sprites\spr_punny_sprint</sprite>
         <sprite>sprites\spr_punny_walk</sprite>
         <sprite>sprites\spr_punny_melee</sprite>
+        <sprite>sprites\spr_punny_dig</sprite>
         <sprite>sprites\spr_punny_holo</sprite>
       </sprites>
       <sprites name="Ass">
@@ -623,6 +641,7 @@
         <sprite>sprites\spr_ass_sprint</sprite>
         <sprite>sprites\spr_ass_walk</sprite>
         <sprite>sprites\spr_ass_melee</sprite>
+        <sprite>sprites\spr_ass_dig</sprite>
         <sprite>sprites\spr_ass_holo</sprite>
         <sprite>sprites\spr_ass_balloon</sprite>
       </sprites>
@@ -631,6 +650,8 @@
       <sprite>sprites\spr_melee</sprite>
       <sprite>sprites\spr_melee_mask</sprite>
       <sprite>sprites\spr_melee_gloves</sprite>
+      <sprite>sprites\spr_shovel_idle</sprite>
+      <sprite>sprites\spr_shovel_dig</sprite>
     </sprites>
     <sprites name="Shield">
       <sprite>sprites\spr_shield_loop</sprite>
@@ -660,6 +681,8 @@
     <sprites name="Tools">
       <sprite>sprites\spr_tool_playerspawn</sprite>
       <sprite>sprites\spr_tool_enemyspawn</sprite>
+      <sprite>sprites\spr_tool_mapTopLeft</sprite>
+      <sprite>sprites\spr_tool_mapBotRight</sprite>
       <sprite>sprites\spr_tool_itemspawn</sprite>
     </sprites>
     <sprites name="Relics">
@@ -719,7 +742,12 @@
       <sprite>sprites\spr_twitter_menu</sprite>
       <sprite>sprites\spr_intro_animated</sprite>
       <sprite>sprites\spr_char_selected</sprite>
-      <sprite>sprites\spr_char_inputIcon</sprite>
+      <sprite>sprites\spr_char_inputJoy1</sprite>
+      <sprite>sprites\spr_char_inputJoy2</sprite>
+      <sprite>sprites\spr_char_inputKey</sprite>
+      <sprite>sprites\spr_char_specialButton</sprite>
+      <sprite>sprites\spr_char_controllerB</sprite>
+      <sprite>sprites\spr_char_controllerA</sprite>
       <sprite>sprites\spr_char_statBar</sprite>
       <sprite>sprites\spr_char_playerCard</sprite>
       <sprite>sprites\spr_char_playerStat</sprite>
@@ -1147,6 +1175,8 @@
         <object>objects\obj_spawn_player</object>
         <object>objects\obj_spawn_item</object>
         <object>objects\obj_spawn_enemy</object>
+        <object>objects\obj_spawn_topLeft</object>
+        <object>objects\obj_spawn_botRight</object>
       </objects>
       <objects name="Walls">
         <object>objects\obj_wall_stage1</object>
@@ -1195,6 +1225,10 @@
         <object>objects\obj_altar_relic</object>
         <object>objects\fx_relic</object>
       </objects>
+      <objects name="Dig System">
+        <object>objects\obj_digSpot</object>
+        <object>objects\fx_detector</object>
+      </objects>
     </objects>
     <objects name="FX">
       <objects name="Shield">
@@ -1212,6 +1246,7 @@
       <object>objects\class_bouncer</object>
       <object>objects\fx_activation</object>
       <object>objects\fx_blood</object>
+      <object>objects\fx_digDirt</object>
       <object>objects\fx_skull</object>
       <object>objects\class_fx_boxbreak</object>
       <object>objects\fx_longbox_break</object>
@@ -1603,7 +1638,9 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="46">
+  <constants number="48">
+    <constant name="gamemode_adventure">0</constant>
+    <constant name="gamemode_endless">1</constant>
     <constant name="char_random">99</constant>
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>

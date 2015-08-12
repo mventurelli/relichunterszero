@@ -694,27 +694,31 @@ if (isActive) &amp;&amp; instance_exists(controller_camera)
             <string>///Main Draw
 if instance_exists(owner)
 {
-    if (reloading) blend = c_gray;
-    else blend = c_white;
-    
-    var drawGrenadeInsteadOfGun = false;
-    
-    if (owner.throw)
+    if (!owner.isDigging) &amp;&amp; (owner.animation_current != 'dig')
     {
-        if (owner.animation_current == 'melee') &amp;&amp; (owner.animation_index &lt; owner.melee_hit_frame) drawGrenadeInsteadOfGun = true;
-    }
-    
-    if (!drawGrenadeInsteadOfGun) draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,blend,1);
-    else draw_sprite_ext(spr_grenadeNew,0,drawX,drawY,1,1,image_angle,blend,1);
-    
-    // Aim
-    if (isActive) &amp;&amp; (owner.aiming)
-    {
-        var laserColor = c_red;
-        if (isPrecisionAiming) laserColor = c_white;
+        if (reloading) blend = c_gray;
+        else blend = c_white;
         
-        draw_line_width_colour(x,y,lineX,lineY,2,laserColor,laserColor);
-        if (draw_range &lt; projectile_range) draw_circle_colour(lineX, lineY, 4, laserColor, laserColor, false);
+        var drawGrenadeInsteadOfGun = false;
+        
+        if (owner.throw)
+        {
+            if (owner.animation_current == 'melee') &amp;&amp; (owner.animation_index &lt; owner.melee_hit_frame) drawGrenadeInsteadOfGun = true;
+        }
+        
+        
+        if (!drawGrenadeInsteadOfGun) draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,blend,1);
+        else draw_sprite_ext(spr_grenadeNew,0,drawX,drawY,1,1,image_angle,blend,1);
+        
+        // Aim
+        if (isActive) &amp;&amp; (owner.aiming)
+        {
+            var laserColor = c_red;
+            if (isPrecisionAiming) laserColor = c_white;
+            
+            draw_line_width_colour(x,y,lineX,lineY,2,laserColor,laserColor);
+            if (draw_range &lt; projectile_range) draw_circle_colour(lineX, lineY, 4, laserColor, laserColor, false);
+        }
     }
 }
 

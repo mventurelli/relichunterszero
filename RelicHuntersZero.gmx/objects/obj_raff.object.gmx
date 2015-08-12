@@ -64,7 +64,7 @@ event_inherited();
     sprite_death = spr_raff_death;
     sprite_melee = spr_raff_melee;
     sprite_dash_fx = spr_raff_dash_fx;
-      
+    sprite_dig = spr_raff_dig;
     
 </string>
           </argument>

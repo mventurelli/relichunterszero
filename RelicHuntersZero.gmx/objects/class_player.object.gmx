@@ -187,6 +187,7 @@ sprite_hit = spr_jimmy_walk;
 sprite_death = spr_jimmy_walk;
 sprite_melee = spr_jimmy_walk;
 sprite_dash_fx = spr_jimmy_walk;
+sprite_dig = spr_jimmy_dig;
 
 reflection_object_setup(0,-1,image_index);
 shadow_object_setup(0,-1,-1,global.default_shadow_yscale);
@@ -202,7 +203,13 @@ play_sound_pickup_weapon = false;
 if (room != room_start) audio_play(audio_emitter, false, 1, sfx_teleport);
 
 
-
+//Digging
+isDigging = false;
+digDepth = 0;
+digSpeed = 4;
+digDepthMax = 42;
+digRate = room_speed*0.3;
+digRateCurrent = digRate;
 
 //Joystick
 joyLookDirection = 0;
@@ -522,160 +529,98 @@ if (global.relic_crystal_bacon == 2)
           <argument>
             <kind>1</kind>
             <string>///Movement &amp; Stamina
-speed = move_speed;
-direction = move_direction;
+
 dodge_direction = -1;
 
-//Keyboard
-if (global.input[myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
-{   
-    //Movement
-    if input_key_left() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(180,move_accel); dodge_direction = 180; }
-    if input_key_right() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(0,move_accel); dodge_direction = 0; }
-    if input_key_up() &amp;&amp; !input_key_right() &amp;&amp; !input_key_left() { motion_add(90,move_accel); dodge_direction = 90; }
-    if input_key_down() &amp;&amp; !input_key_right() &amp;&amp; !input_key_left() { motion_add(270,move_accel); dodge_direction = 270; }
-    if input_key_left() &amp;&amp; input_key_up() { motion_add(135,move_accel); dodge_direction = 135; }
-    if input_key_left() &amp;&amp; input_key_down() { motion_add(225,move_accel); dodge_direction = 225; }
-    if input_key_right() &amp;&amp; input_key_up() { motion_add(45,move_accel); dodge_direction = 45; }
-    if input_key_right() &amp;&amp; input_key_down() { motion_add(315,move_accel); dodge_direction = 315; }
-    
-    //Sprinting
-    if (input_key_sprint_toggle()) sprintToggled = true;
-    
-    if (input_key_sprint() || input_key_sprint_toggle()) &amp;&amp; (!melee)
-    {
-        if (sprinting) &amp;&amp; (stamina &lt; sprint_stamina) sprinting = false; 
-        else if (stamina &gt;= sprint_stamina_min) sprinting = true;
-        if (sprinting) sprintOriginalDirection = direction;
-    }
-    else if (!sprintToggled) sprinting = false;
-    
-    if (sprinting) &amp;&amp; (sprintToggled)
-    {
-        if ( abs(angle_difference(direction,sprintOriginalDirection)) &gt; 100) || (speed &lt; 2) || (stamina &lt; sprint_stamina) || (melee)
-            sprinting = false;
-    }
-    
-    if (!sprinting) sprintToggled = false;
-    
-    //Dodge
-    if ( input_key_sprint() )
-    {
-        dashTimeCurrent++;
-    }
-    
-    double_tap_dodge = false;
-    
-    if (global.doubleTapDodge)
-    {
-        if input_key_left_pressed()
-        {
-            if (dodge_doubletap_direction == 180) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
-            else { dodge_doubletap_direction = 180; dodge_doubletap_time_current = 0; } 
-        }
-        if input_key_right_pressed()
-        {
-            if (dodge_doubletap_direction == 0) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
-            else { dodge_doubletap_direction = 0; dodge_doubletap_time_current = 0; } 
-        }
-        if input_key_up_pressed()
-        {
-            if (dodge_doubletap_direction == 90) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
-            else { dodge_doubletap_direction = 90; dodge_doubletap_time_current = 0; } 
-        }
-        if input_key_down_pressed()
-        {
-            if (dodge_doubletap_direction == 270) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
-            else { dodge_doubletap_direction = 270; dodge_doubletap_time_current = 0; } 
-        }
-        dodge_doubletap_time_current++;
-    }
-    
-    if ( (input_key_sprint_released() &amp;&amp; (dashTimeCurrent &lt;= dashTimeWindow) ) || (double_tap_dodge) ) &amp;&amp; (!melee)
-    {
-        if (stamina &gt;= dodge_stamina)
-        {
-            stamina -= dodge_stamina;
-            dodging = true;
-            speed = dodge_speed;
-            if (dodge_direction == -1)
-            {
-                dodge_direction = 180 + point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
-            }
-            if (!double_tap_dodge) direction = dodge_direction;
-            else direction = dodge_doubletap_direction;
-            
-            audio_play(audio_emitter,false,1,sfx_dash1,sfx_dash2,sfx_dash3);
-        }
-        else{
-            //Low Stamina Feedback
-            guiInfo = instance_create(x,y,gui_info);
-            guiInfo.colorMain = K_BETU_RED;
-            guiInfo.myString = loc_key("INFO_LOWSTAMINA");
-            guiInfo.owner = id;
-            audio_play(audio_emitter, false, 1, sfx_pickup_full);
-        }
-    }
-    
-    if ( input_key_sprint_released() ) dashTimeCurrent = 0;
-    
-    //Aiming
-    if input_key_aim() &amp;&amp; (!sprinting) &amp;&amp; (!melee) aiming = true;
-    else aiming = false;
+var allowMovement;
+if (isDigging) || (animation_current == 'dig') allowMovement = false;
+else {
+    allowMovement = true;
+    speed = move_speed;
+    direction = move_direction;
 }
 
-//////////////////////////////////////////////////////////////
-//Joystick
-if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+if (allowMovement)
 {
-    var joy = global.input[myPlayerId];
-    
-    //Movement
-    if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), joyMoveDeadzoneMin))
-    {
-        var joy_direction = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
-        motion_add(joy_direction, move_accel);
-        dodge_direction = joy_direction;
-    }
-    
-    //Sprinting
-    if (joy_check(joy,9) || joy_check(joy,1)) &amp;&amp; (!melee)
-    {
-        if (sprinting) &amp;&amp; (stamina &lt; sprint_stamina) sprinting = false; 
-        else if (stamina &gt;= sprint_stamina_min) sprinting = true;
-        if (sprinting) sprintOriginalDirection = direction;
-    }
-    else if (!global.sprint_toggle) sprinting = false;
-    
-    if (sprinting) &amp;&amp; (global.sprint_toggle)
-    {
-        if ( abs(angle_difference(direction,sprintOriginalDirection)) &gt; 100) || (speed &lt; 2) || (stamina &lt; sprint_stamina) || (melee)
-            sprinting = false;
-    }
-    
-    //Dodging
-    if joy_check(joy,1)
-    {
-        dashTimeCurrent++;
-    }
-    
-    if joy_check_released(joy,1)
-    {
-        if (dashTimeCurrent &lt;= dashTimeWindow) &amp;&amp; (!melee)
+    //Keyboard
+    if (global.input[myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+    {   
+        //Movement
+        if input_key_left() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(180,move_accel); dodge_direction = 180; }
+        if input_key_right() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(0,move_accel); dodge_direction = 0; }
+        if input_key_up() &amp;&amp; !input_key_right() &amp;&amp; !input_key_left() { motion_add(90,move_accel); dodge_direction = 90; }
+        if input_key_down() &amp;&amp; !input_key_right() &amp;&amp; !input_key_left() { motion_add(270,move_accel); dodge_direction = 270; }
+        if input_key_left() &amp;&amp; input_key_up() { motion_add(135,move_accel); dodge_direction = 135; }
+        if input_key_left() &amp;&amp; input_key_down() { motion_add(225,move_accel); dodge_direction = 225; }
+        if input_key_right() &amp;&amp; input_key_up() { motion_add(45,move_accel); dodge_direction = 45; }
+        if input_key_right() &amp;&amp; input_key_down() { motion_add(315,move_accel); dodge_direction = 315; }
+        
+        //Sprinting
+        if (input_key_sprint_toggle()) sprintToggled = true;
+        
+        if (input_key_sprint() || input_key_sprint_toggle()) &amp;&amp; (!melee)
+        {
+            if (sprinting) &amp;&amp; (stamina &lt; sprint_stamina) sprinting = false; 
+            else if (stamina &gt;= sprint_stamina_min) sprinting = true;
+            if (sprinting) sprintOriginalDirection = direction;
+        }
+        else if (!sprintToggled) sprinting = false;
+        
+        if (sprinting) &amp;&amp; (sprintToggled)
+        {
+            if ( abs(angle_difference(direction,sprintOriginalDirection)) &gt; 100) || (speed &lt; 2) || (stamina &lt; sprint_stamina) || (melee)
+                sprinting = false;
+        }
+        
+        if (!sprinting) sprintToggled = false;
+        
+        //Dodge
+        if ( input_key_sprint() )
+        {
+            dashTimeCurrent++;
+        }
+        
+        double_tap_dodge = false;
+        
+        if (global.doubleTapDodge)
+        {
+            if input_key_left_pressed()
+            {
+                if (dodge_doubletap_direction == 180) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
+                else { dodge_doubletap_direction = 180; dodge_doubletap_time_current = 0; } 
+            }
+            if input_key_right_pressed()
+            {
+                if (dodge_doubletap_direction == 0) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
+                else { dodge_doubletap_direction = 0; dodge_doubletap_time_current = 0; } 
+            }
+            if input_key_up_pressed()
+            {
+                if (dodge_doubletap_direction == 90) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
+                else { dodge_doubletap_direction = 90; dodge_doubletap_time_current = 0; } 
+            }
+            if input_key_down_pressed()
+            {
+                if (dodge_doubletap_direction == 270) &amp;&amp; (dodge_doubletap_time_current &lt; dodge_doubletap_time) double_tap_dodge = true;
+                else { dodge_doubletap_direction = 270; dodge_doubletap_time_current = 0; } 
+            }
+            dodge_doubletap_time_current++;
+        }
+        
+        if ( (input_key_sprint_released() &amp;&amp; (dashTimeCurrent &lt;= dashTimeWindow) ) || (double_tap_dodge) ) &amp;&amp; (!melee)
         {
             if (stamina &gt;= dodge_stamina)
             {
-                sprinting = false;
                 stamina -= dodge_stamina;
                 dodging = true;
                 speed = dodge_speed;
-                
                 if (dodge_direction == -1)
                 {
                     dodge_direction = 180 + point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
                 }
+                if (!double_tap_dodge) direction = dodge_direction;
+                else direction = dodge_doubletap_direction;
                 
-                direction = dodge_direction;
                 audio_play(audio_emitter,false,1,sfx_dash1,sfx_dash2,sfx_dash3);
             }
             else{
@@ -687,77 +632,152 @@ if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp;
                 audio_play(audio_emitter, false, 1, sfx_pickup_full);
             }
         }
-        dashTimeCurrent = 0; 
+        
+        if ( input_key_sprint_released() ) dashTimeCurrent = 0;
+        
+        //Aiming
+        if input_key_aim() &amp;&amp; (!sprinting) &amp;&amp; (!melee) aiming = true;
+        else aiming = false;
     }
     
-    //Aiming
-    if (joy_zpos(joy) &gt; 0.7) &amp;&amp; (!melee)
-    {  
-        sprinting = false;
-        aiming = true;
-    }
-    else aiming = false;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-
-//Look Direction
-if (!melee_dash)
-{
-    var direction_check = (global.crosshairX[myPlayerId] - x);
-    if (direction_check &gt; 0) look_direction = 1;
-    else look_direction = 0;
-}
-
-
-//Melee Step
-if (melee) &amp;&amp; (animation_current = 'melee') &amp;&amp;(animation_index = melee_hit_frame)
-{
-    speed = melee_step_speed;
-    if (myGun == obj_gloves) speed = melee_step_speed_gloves;
-    direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
-    melee_dash = true;
-    
-    if (direction &lt;= 90) || (direction &gt; 270) look_direction = 1;
-    else look_direction = 0; 
-}
-
-//Friction
-if (!dodging) motion_add(direction-180,min(speed,move_friction));
-else motion_add(direction-180,min(speed,dodgeFriction));
-
-//Resolve Movement
-var totalSpeedVector = 1;
-if (global.input[myPlayerId] != K_INPUT_KEYBOARD)
-{
-    var myJoy = global.input[myPlayerId];
-    var currentThumbstick = joy_radial_vector( joy_xpos(myJoy), joy_ypos(myJoy));
+    //////////////////////////////////////////////////////////////
+    //Joystick
+    if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
     {
-        if (currentThumbstick &gt; joyMoveDeadzoneMin) &amp;&amp; (currentThumbstick &lt; joyMoveDeadZoneMax) totalSpeedVector = joyMoveSlowSpeed;
+        var joy = global.input[myPlayerId];
+        
+        //Movement
+        if (joy_simple_deadzone( joy_xpos(joy), joy_ypos(joy), joyMoveDeadzoneMin))
+        {
+            var joy_direction = point_direction(x,y,(x+joy_xpos(joy)),(y+joy_ypos(joy)));
+            motion_add(joy_direction, move_accel);
+            dodge_direction = joy_direction;
+        }
+        
+        //Sprinting
+        if (joy_check(joy,9) || joy_check(joy,1)) &amp;&amp; (!melee)
+        {
+            if (sprinting) &amp;&amp; (stamina &lt; sprint_stamina) sprinting = false; 
+            else if (stamina &gt;= sprint_stamina_min) sprinting = true;
+            if (sprinting) sprintOriginalDirection = direction;
+        }
+        else if (!global.sprint_toggle) sprinting = false;
+        
+        if (sprinting) &amp;&amp; (global.sprint_toggle)
+        {
+            if ( abs(angle_difference(direction,sprintOriginalDirection)) &gt; 100) || (speed &lt; 2) || (stamina &lt; sprint_stamina) || (melee)
+                sprinting = false;
+        }
+        
+        //Dodging
+        if joy_check(joy,1)
+        {
+            dashTimeCurrent++;
+        }
+        
+        if joy_check_released(joy,1)
+        {
+            if (dashTimeCurrent &lt;= dashTimeWindow) &amp;&amp; (!melee)
+            {
+                if (stamina &gt;= dodge_stamina)
+                {
+                    sprinting = false;
+                    stamina -= dodge_stamina;
+                    dodging = true;
+                    speed = dodge_speed;
+                    
+                    if (dodge_direction == -1)
+                    {
+                        dodge_direction = 180 + point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
+                    }
+                    
+                    direction = dodge_direction;
+                    audio_play(audio_emitter,false,1,sfx_dash1,sfx_dash2,sfx_dash3);
+                }
+                else{
+                    //Low Stamina Feedback
+                    guiInfo = instance_create(x,y,gui_info);
+                    guiInfo.colorMain = K_BETU_RED;
+                    guiInfo.myString = loc_key("INFO_LOWSTAMINA");
+                    guiInfo.owner = id;
+                    audio_play(audio_emitter, false, 1, sfx_pickup_full);
+                }
+            }
+            dashTimeCurrent = 0; 
+        }
+        
+        //Aiming
+        if (joy_zpos(joy) &gt; 0.7) &amp;&amp; (!melee)
+        {  
+            sprinting = false;
+            aiming = true;
+        }
+        else aiming = false;
     }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Look Direction
+    if (!melee_dash)
+    {
+        var direction_check = (global.crosshairX[myPlayerId] - x);
+        if (direction_check &gt; 0) look_direction = 1;
+        else look_direction = 0;
+    }
+    
+    
+    //Melee Step
+    if (melee) &amp;&amp; (animation_current = 'melee') &amp;&amp;(animation_index = melee_hit_frame)
+    {
+        speed = melee_step_speed;
+        if (myGun == obj_gloves) speed = melee_step_speed_gloves;
+        direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
+        melee_dash = true;
+        
+        if (direction &lt;= 90) || (direction &gt; 270) look_direction = 1;
+        else look_direction = 0; 
+    }
+    
+    //Friction
+    if (!dodging) motion_add(direction-180,min(speed,move_friction));
+    else motion_add(direction-180,min(speed,dodgeFriction));
+    
+    //Resolve Movement
+    var totalSpeedVector = 1;
+    if (global.input[myPlayerId] != K_INPUT_KEYBOARD)
+    {
+        var myJoy = global.input[myPlayerId];
+        var currentThumbstick = joy_radial_vector( joy_xpos(myJoy), joy_ypos(myJoy));
+        {
+            if (currentThumbstick &gt; joyMoveDeadzoneMin) &amp;&amp; (currentThumbstick &lt; joyMoveDeadZoneMax) totalSpeedVector = joyMoveSlowSpeed;
+        }
+    }
+    
+    var maxSpeedAiming = move_speed_aiming*totalSpeedVector;
+    var maxSpeed = move_speed_max*totalSpeedVector;
+    var maxSpeedSprint = move_speed_sprint*totalSpeedVector;
+    
+    if speed &gt; maxSpeedAiming &amp;&amp; (aiming) speed -=min(move_accel,speed-maxSpeedAiming);
+    if speed &gt; maxSpeed &amp;&amp; (!sprinting) speed -= min(move_accel,speed-maxSpeed);
+    if speed &gt; maxSpeedSprint &amp;&amp; (sprinting) speed -= min(move_accel,speed-maxSpeedSprint);
+    
+    if (melee_dash) &amp;&amp; (speed == 0) melee_dash = false;
 }
 
-var maxSpeedAiming = move_speed_aiming*totalSpeedVector;
-var maxSpeed = move_speed_max*totalSpeedVector;
-var maxSpeedSprint = move_speed_sprint*totalSpeedVector;
-
-if speed &gt; maxSpeedAiming &amp;&amp; (aiming) speed -=min(move_accel,speed-maxSpeedAiming);
-if speed &gt; maxSpeed &amp;&amp; (!sprinting) speed -= min(move_accel,speed-maxSpeed);
-if speed &gt; maxSpeedSprint &amp;&amp; (sprinting) speed -= min(move_accel,speed-maxSpeedSprint);
-
-if (melee_dash) &amp;&amp; (speed == 0) melee_dash = false;
-
+//Resolve    
 move_speed = speed;
 move_direction = direction;
 speed = 0;
 direction = 0;
-
+    
 if (move_speed)
 {
     move_step_ext(x + lengthdir_x(move_speed, move_direction),y + lengthdir_y(move_speed, move_direction),0,class_solid,0,0,0,0,0,0); 
 }
 else sprinting = false;
+
+
 
 // Reset Dodge
 if (dodging)
@@ -1267,7 +1287,11 @@ else
 {   
     var joy = global.input[myPlayerId];
     
-    if joy_check_released(joy,3) if (pickupTimeCurrent &lt; pickupTimeWindow) reloadKey = true; 
+    if joy_check_released(joy,3) &amp;&amp; (pickupTimeCurrent &lt; pickupTimeWindow)
+    {
+        reloadKey = true;
+        if (global.relicDetected) interactionKey = true;//Hack 
+    }
     
     if joy_check(joy,3) 
     {
@@ -1359,6 +1383,87 @@ if (play_sound_pickup_weapon)
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Digging
+
+if (global.relicDetected) 
+{
+    if instance_exists(obj_digSpot) &amp;&amp; (interactionKey) &amp;&amp; (digRateCurrent &gt;= digRate) 
+    {
+        var digStartDistance = 90;
+    
+        animation_play('dig',0.15,an_clamp,99,3+2);
+        audio_play_exclusive(audio_emitter,false,9,sfx_dig1,sfx_dig2,sfx_dig3,sfx_dig4,sfx_dig5,sfx_dig6);
+        add_screen_shake(9,0,true);
+        
+        myDirtColor = global.dirtColor;
+        
+        repeat(irandom_range(3,8)) instance_create(x,y,fx_digDirt);
+        digRateCurrent = 0;
+    
+        if (!isDigging)
+        {
+            var dist = point_distance(x,y,obj_digSpot.x,obj_digSpot.y);
+            if (dist &lt;= digStartDistance)
+            {
+                isDigging = true;
+                
+                if instance_exists(fx_bigMessage) with (fx_bigMessage) instance_destroy();
+                var announceRelic = instance_create(x,y,fx_bigMessage);
+                announceRelic.textBig = loc_key("HUD_RELIC_FOUND");
+                if (global.input[1] == K_INPUT_KEYBOARD) announceRelic.textSmall = loc_key("HUD_RELIC_FOUND_KEY");
+                else announceRelic.textSmall = loc_key("HUD_RELIC_FOUND_JOY");
+            }
+            else instance_create(x,y,fx_detector);
+        }
+        else
+        {
+            digDepth = obj_digSpot.digDepth;
+            digDepth += digSpeed;
+            obj_digSpot.digDepth = digDepth;
+            repeat(irandom_range(1,2)) instance_create(x,y,obj_pickup_coin);
+        }
+    }
+}
+else isDigging = false;
+
+if (digRateCurrent &lt; digRate) digRateCurrent++;
+
+if (isDigging)
+{
+    if digDepth &gt;= digDepthMax
+    {
+        isDigging = false;
+        digDepth = 0;
+        digRateCurrent = digRate;
+        
+        //Feedback "Relic Unlocked goes here"
+        
+        draw_persistent(spr_digPile,2,x,y,1,1,0,myDirtColor,1);
+        
+        with (obj_digSpot) activate = true;
+        global.relicDetected = false;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>424</id>
         <kind>2</kind>
         <userelative>0</userelative>
@@ -1391,6 +1496,51 @@ if (play_sound_pickup_weapon)
             <kind>1</kind>
             <string>///CleanUp
 audio_emitter_free(audio_emitter);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Event + Digging
+
+if (!isDigging) 
+{
+    draw_self();
+    if (animation_current == 'dig') draw_sprite_ext(spr_shovel_dig,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+}
+else{
+    image_xscale = 1;
+    draw_sprite_part( sprite_index,image_index,0,0,sprite_width,sprite_height-digDepth,x-sprite_xoffset,(y-sprite_yoffset)+digDepth );
+   
+    if (animation_current != 'dig') draw_sprite(spr_shovel_idle,image_index,x,y);
+    else draw_sprite_part( spr_shovel_dig,image_index,0,0,sprite_width,sprite_height-digDepth,x-sprite_xoffset,(y-sprite_yoffset)+digDepth );
+    
+    var digProgress = digDepthMax/3;
+    var digImage = 0;
+    
+    if (digDepth &lt; digProgress) digImage = 0;
+    if (digDepth &gt;= digProgress) &amp;&amp; (digDepth &lt; (digProgress*2)) digImage = 1;
+    if (digDepth &gt;= (digProgress*2)) digImage = 2;
+ 
+    draw_sprite_ext(spr_digPile,digImage,x,y,1,1,0,myDirtColor,1);
+}
 </string>
           </argument>
         </arguments>

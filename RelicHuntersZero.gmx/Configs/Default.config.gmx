@@ -391,7 +391,7 @@
     <option_textureGroup2_scaled>0</option_textureGroup2_scaled>
     <option_textureGroup2_targets>9223372036854775807</option_textureGroup2_targets>
     <option_textureGroup3_border>2</option_textureGroup3_border>
-    <option_textureGroup3_nocropping>0</option_textureGroup3_nocropping>
+    <option_textureGroup3_nocropping>-1</option_textureGroup3_nocropping>
     <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
     <option_textureGroup3_scaled>0</option_textureGroup3_scaled>
     <option_textureGroup3_targets>9223372036854775807</option_textureGroup3_targets>

@@ -66,6 +66,8 @@ if (instance_exists(obj_rocket_homing))
 
 //Stats, Achievements &amp; Unlocks
 
+global.unlockEndless = true;
+
 global.statBossKills++;
 
 achievement_give("ACHIEVEMENT_BEATGAME");
@@ -203,7 +205,7 @@ else
             <kind>1</kind>
             <string>///Hehehehehe
 
-if (!dropHugeGun)
+if (!dropHugeGun) &amp;&amp; (global.gameMode != gamemode_endless)
 {
     bigFGun = instance_create(x,y,obj_pickup_bossGun);
     bigFGun.image_xscale = image_xscale;

@@ -38,6 +38,7 @@ ini_open(working_directory + "\saveData.ini");
     
     // Persistence
     
+    global.unlockEndless = ini_read_real('Persistence','UnlockEndless',0);
     global.unlockPinky = ini_read_real('Persistence','UnlockPinky',1);
     global.unlockRaff = ini_read_real('Persistence','UnlockRaff',0);
     global.unlockBiu = ini_read_real('Persistence','UnlockBiu',0);
@@ -217,7 +218,8 @@ ini_open(working_directory + "\saveData.ini");
     global.statKills = ini_read_real('Stats','Kills',0);
     global.statTotalTime = ini_read_real('Stats','statTotalTime',0);
     global.statRunTime = ini_read_real('Stats','statRunTime',0);
-    
+    global.totalDigs = ini_read_real('Stats','totalDigs',0);
+
     // End
     
     ini_close();

@@ -54,6 +54,8 @@ fullRelicTextBig = loc_key("HUD_UNLOCK_RELIC");
 fullRelicTextSmall = loc_key("HUD_UNLOCK_RELIC_COMPLETE");
 
 announce = noone;
+
+shopType = 'relic';
 </string>
           </argument>
         </arguments>

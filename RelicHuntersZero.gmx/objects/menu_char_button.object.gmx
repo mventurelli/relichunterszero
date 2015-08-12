@@ -34,6 +34,9 @@ trigger = false;
 
 labelString = 'MISSING_LANG';
 myFont = global.font_menuMedium;
+
+image_speed = 0;
+drawConsoleLabels = false;
 </string>
           </argument>
         </arguments>
@@ -67,6 +70,8 @@ if (instance_exists(owner))
     {
         isActive = true;
         if (is_mouse_over(id)) &amp;&amp; (owner.slotInput == K_INPUT_KEYBOARD) isMouseSelected = true;
+        
+        if (owner.slotInput != K_INPUT_KEYBOARD) drawConsoleLabels = true;
     }  
 }
 else instance_destroy();
@@ -101,13 +106,27 @@ if (isActive)
             <string>///Draw
 if (isActive)
 {
+    var textColor;
+    
+    if (!isMouseSelected) 
+    {
+        textColor = make_colour_rgb(31,191,255);
+        image_index = 0;
+    }
+    else
+    {
+        textColor = c_white;
+        image_index = 1;
+    }
     draw_self();
     
-    var textColor = c_black;
-    if (isMouseSelected) textColor = K_BETU_RED;
-    
+    draw_set_font(global.font_numberMedium);
+    draw_set_valign(fa_center);
+    draw_set_halign(fa_left);
     draw_set_colour(textColor);
-    draw_text(x,y,labelString);
+    draw_text(x+42,y+(sprite_height/2),labelString);
+    
+    //Console Labels are drawn on the OK and CANCEL child objects
 }
 </string>
           </argument>

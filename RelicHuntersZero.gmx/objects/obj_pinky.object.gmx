@@ -81,6 +81,7 @@ event_inherited();
     sprite_death = spr_pinky_death;
     sprite_melee = spr_pinky_melee;
     sprite_dash_fx = spr_pinky_dash_fx;
+    sprite_dig = spr_pinky_dig;
     
     
 </string>

@@ -43,6 +43,8 @@ image_speed = 0;
 depth = -y-25;
 
 weaponName = "I AM ERROR";
+
+shopType = 'weapon';
 </string>
           </argument>
         </arguments>

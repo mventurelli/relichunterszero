@@ -468,7 +468,6 @@
     <instance objName="obj_limit" x="2816" y="1920" name="inst_89E20DD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1536" y="896" name="inst_0394CC0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1472" y="896" name="inst_730BD9ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_limit" x="704" y="832" name="inst_FCBAD6CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="832" y="832" name="inst_0DC7595E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2304" y="768" name="inst_65104C1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3264" y="768" name="inst_E4AC8AE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -977,6 +976,9 @@
     <instance objName="obj_roots1" x="2129" y="933" name="inst_33523884" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roots1" x="1040" y="1130" name="inst_CEAC1B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="640" y="1120" name="inst_8455F850" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_topLeft" x="640" y="768" name="inst_A55DA794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_botRight" x="4032" y="1664" name="inst_8629A838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="704" y="832" name="inst_2BD70B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_desert" x="896" y="960" w="64" h="64" xo="4" yo="76" id="10005569" name="inst_7B6C100B" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

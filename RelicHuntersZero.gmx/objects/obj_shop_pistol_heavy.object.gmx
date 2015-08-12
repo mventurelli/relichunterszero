@@ -36,6 +36,7 @@ if (unlock)
     
     pickup_from_shop();
 }
+else event_inherited();
 </string>
           </argument>
         </arguments>

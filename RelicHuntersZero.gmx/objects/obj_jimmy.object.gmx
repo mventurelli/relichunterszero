@@ -61,6 +61,7 @@ event_inherited();
     sprite_death = spr_jimmy_death;
     sprite_melee = spr_jimmy_melee;
     sprite_dash_fx = spr_jimmy_dash_fx;
+    sprite_dig = spr_jimmy_dig;
     
     
 
