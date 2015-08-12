@@ -42,7 +42,8 @@ if (unlock)
         if (activationClient.overshield &lt; activationClient.energy_max)
         {
             activationClient.overshield += min(pack.overshield, (activationClient.energy_max - activationClient.overshield));
-                
+            activationClient.energy_regen_time_current = activationClient.energy_regen_time-1;
+            
             audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
                 
             guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);

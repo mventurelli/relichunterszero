@@ -294,54 +294,57 @@ display_mouse_set(window_get_width() / 2, window_get_height() / 2);
             <string>///Soundtrack &amp; Memory Cleaner
 
 global.audio_cleaner = ds_list_create();
+global.ambientSound = noone;
 
 alarm[3] = room_speed*3;
 
-if (global.music)
+if (room == room_start) || (room == room_shop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss)
 {
-    if (room == room_start) //|| (room == room_tutorial)
+    audio_stop_all();
+}
+
+//if (global.music)
+{
+    if (room == room_start)
     {
-        audio_stop_all();
         audio_play_sound(bgm_main,99,true);
     }
     
-    if room == room_shop
+    if (room == room_shop)
     {
-        audio_stop_all();
         audio_play_sound(bgm_shop,99,true);
     }
     
-    if room == level1_1
+    if (room == level1_1) || (room == level1_2) || (room == level1_3)
     {
-        audio_stop_all();
         if !audio_is_playing(bgm_stage1) audio_play_sound(bgm_stage1,99,true);
         audio_play_sound(sfx_amb_stage1,99,true);
+        global.ambientSound = sfx_amb_stage1;
     }
     
-    if room == level2_1
+    if (room == level2_1) || (room == level2_2) || (room == level2_3)
     {
-        audio_stop_all();
         if !audio_is_playing(bgm_stage3) audio_play_sound(bgm_stage3,99,true);
         audio_play_sound(sfx_amb_stage2,99,true);
+        global.ambientSound = sfx_amb_stage2;
     }
     
-    if room == level3_1
+    if (room == level3_1) || (room == level3_2) || (room == level3_3)
     {
-        audio_stop_all();
         if !audio_is_playing(bgm_stage2) audio_play_sound(bgm_stage2,99,true);
         audio_play_sound(sfx_amb_stage3,99,true);
+        global.ambientSound = sfx_amb_stage3;
     }
     
-    if room == level4_1
+    if (room == level4_1) || (room == level4_2) || (room == level4_3)
     {
-        audio_stop_all();
         if !audio_is_playing(bgm_stage4) audio_play_sound(bgm_stage4,99,true);
         audio_play_sound(sfx_amb_stage4,99,true);
+        global.ambientSound = sfx_amb_stage4;
     }
     
-    if room == room_boss
+    if (room == room_boss)
     {
-        audio_stop_all();
         if !audio_is_playing(bgm_boss) audio_play_sound(bgm_boss,99,true);
     }
 }
@@ -1628,6 +1631,11 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 
                   
                 //Spawn Relic
+                
+                audio_stop_all();
+                audio_play_sound(bgm_dig,99,true);
+                //Play Relic Detected Sound here!
+                
                 global.relicDetected = true;
                 var announceRelic = instance_create(x,y,fx_bigMessage);
                 announceRelic.textBig = loc_key("HUD_RELIC_DETECT");
@@ -1983,6 +1991,7 @@ if (debug_mode)
         steam_clear_achievement("ACHIEVEMENT_TEAMKILL"); //set on the Friendly Fire events (player projectile, sonic boom, melee arc)
         steam_clear_achievement("ACHIEVEMENT_BEATGAMECOOP"); //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_ULTIMATECOOP");   //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_FIRSTDIG"); //set by digSpot
     }
 }
 </string>
@@ -2862,7 +2871,7 @@ draw_set_font(global.font_numberSmall);
 if ((fps/room_speed) &lt; 0.9) draw_text(window_get_width()*0.99, window_get_height()*0.95, "FPS " + string(fps) + '/' + string(room_speed) );
 
 //Version Number
-draw_text(window_get_width()*0.99, window_get_height()*0.97, global.currentVersionNumber );
+//draw_text(window_get_width()*0.99, window_get_height()*0.97, global.currentVersionNumber );
 </string>
           </argument>
         </arguments>

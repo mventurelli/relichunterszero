@@ -30,7 +30,6 @@
 event_inherited();
 isAvailable = false;
 labelString = loc_key("MAINMENU_ENDLESS");
-//labelString = 'PLAY ENDLESS';
 </string>
           </argument>
         </arguments>
@@ -56,7 +55,8 @@ labelString = loc_key("MAINMENU_ENDLESS");
             <string>///Button Action
 event_inherited();
 
-if (global.unlockEndless) isAvailable = true;
+//NOT YET:
+//if (global.unlockEndless) isAvailable = true;
 
 if (executeAction)
 {

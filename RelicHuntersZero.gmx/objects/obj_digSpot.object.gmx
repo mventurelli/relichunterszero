@@ -62,6 +62,9 @@ if (activate)
         relic.unlock = true;
         
         if (instance_exists(fx_bigMessage)) with (fx_bigMessage) instance_destroy();
+        
+        audio_stop_all();
+        if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
         //Play tanananam sound here!
         
          relic.announce = instance_create(x,y,fx_bigMessage);
@@ -75,7 +78,10 @@ if (activate)
          relic.announce.relicSprite3Draw = relic.relicSprite3Draw;
     }
     
+    if (!global.totalDigs) achievement_give("ACHIEVEMENT_FIRSTDIG");
+    
     global.totalDigs++;
+    
     instance_destroy();
 }
 </string>

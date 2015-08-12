@@ -26,7 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>///Main Variables
-radius = 75;
+
+radiusStart = 12;
+radiusFinal = 122;
+
+radiusAccel = 0.3;
+radiusSpeedMax = 8;
+radiusSpeed = 0;
+
+
+radius = radiusStart;
+
+radiusAlpha = 1;
+radiusAlphaSpeed = 0.025;
 
 damage = 200;
 push_power = 10;
@@ -36,7 +48,7 @@ hit_list = ds_list_create();
 
 image_speed = 0.25;
 trigger_frame = 3;
-end_frame = 6;
+end_frame = 4;
 image_speed_unpaused = image_speed;
 want_to_pause = false;
 
@@ -83,16 +95,46 @@ draw_persistent(spr_explosion_ground,randomDecal,x,y,1.5,1.5,0,c_white,1);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Expand Radius
+
+if (image_index &gt;= trigger_frame)
+{
+    if (radiusSpeed &lt; radiusSpeedMax) radiusSpeed += min ( radiusAccel, (radiusSpeedMax-radiusSpeed));
+
+    if (radius &lt; radiusFinal) radius += min(radiusSpeed, (radiusFinal-radius) );
+    
+    radiusAlpha -= radiusAlphaSpeed;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Damage
 
 if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame)
 {    
     is_enemy = true;
-    poor_guy = collision_circle(x,y,radius,class_player,false,true);
+    poor_guy = collision_circle(x,y,radiusFinal,class_player,false,true);
     
     if (!poor_guy) || (ds_list_find_index(damage_list,poor_guy)) 
     {
-        poor_guy = collision_circle(x,y,radius,class_enemy,false,true);
+        poor_guy = collision_circle(x,y,radiusFinal,class_enemy,false,true);
     }
     else is_enemy = false;
     
@@ -141,7 +183,7 @@ if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame)
         }
     }
     
-    poor_object = collision_circle(x,y,radius,obj_wall,false,true);
+    poor_object = collision_circle(x,y,radiusFinal,obj_wall,false,true);
     if instance_exists(poor_object) &amp;&amp; (ds_list_find_index(damage_list,poor_object) &lt; 0)
     {
         ds_list_add(damage_list,poor_object);
@@ -152,10 +194,10 @@ if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame)
 }
 else
 {
-    poor_guy = collision_circle(x,y,radius,class_player,false,true);
+    poor_guy = collision_circle(x,y,radiusFinal,class_player,false,true);
     if (!poor_guy) || (ds_list_find_index(hit_list,poor_guy)) 
     {
-        poor_guy = collision_circle(x,y,radius,class_enemy,false,true);
+        poor_guy = collision_circle(x,y,radiusFinal,class_enemy,false,true);
     }
     
     if (poor_guy)
@@ -210,13 +252,13 @@ audio_emitter_position(audio_emitter, x, y, 0);
 
 if (want_to_pause) &amp;&amp; (image_index &gt;= trigger_frame)
 {
-    global.pause = room_speed*0.2;
+    global.pause = room_speed*0.07;
     want_to_pause = false;
 }
 
 if (image_index &gt;= trigger_frame)
 {
-    image_speed = 0.1;
+    image_speed = 0.2;
     image_speed_unpaused = image_speed;
 
     if (!screen_shaken)
@@ -282,16 +324,21 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>//draw_set_colour(c_red);
-//draw_circle(x,y,radius,false);
-
-depth = -999999;
-//if (image_index &gt;= (image_number-1)) draw_sprite_ext(spr_grenade_glow,0,x,y,1,1,0,c_white,0.5);
-
 
 depth = -y-50;
+draw_set_alpha(1);
 draw_self();
 
 
+if (image_index &gt;= trigger_frame)
+{
+    depth = -999999;
+    draw_set_colour(K_BETU_RED);
+    draw_set_alpha(radiusAlpha);
+    draw_rectangle(x-radius-1,y-radius-1,x+radius+1,y+radius+1,true);
+    draw_rectangle(x-radius,y-radius,x+radius,y+radius,true);
+    draw_rectangle(x-radius+1,y-radius+1,x+radius-1,y+radius-1,true);
+}
 </string>
           </argument>
         </arguments>

@@ -2,7 +2,7 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>sound\audio\sfx_dig4.wav</origname>
+  <origname>sound\audio\sfx_dirt3.wav</origname>
   <effects>0</effects>
   <volume>
     <volume>0.4</volume>
@@ -21,7 +21,7 @@
     <bitDepth>16</bitDepth>
   </bitDepths>
   <preload>-1</preload>
-  <data>sfx_dig4.wav</data>
+  <data>sfx_dirt3.wav</data>
   <compressed>0</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>

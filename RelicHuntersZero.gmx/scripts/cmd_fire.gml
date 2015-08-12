@@ -48,7 +48,7 @@ if instance_exists(owner)
             //LOW AMMO CLICK
             if (ammo_current < (ammo*0.25)) audio_play(owner.audio_emitter,false,1,sfx_click);
             
-            else if (sound == 'pistol') 
+            if (sound == 'pistol') 
             {
                 if (fire_burst_current == 1) && (fire_burst > 1) audio_play(owner.audio_emitter,false,1,sfx_burstfire_start);
                 audio_play(owner.audio_emitter,false,1,sfx_pistol,sfx_pistol,sfx_pistol);

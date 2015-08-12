@@ -3,7 +3,7 @@
   <spriteName>spr_kamikazelite_flying</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-99999999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -49,6 +49,9 @@ targetDirection = point_direction(x,y,targetX,targetY);
 landingDistance = 70;
 
 myHeight = 0;
+
+image_xscale = 1.25;
+image_yscale = 1.25;
 
 //Animation &amp; Visuals
 image_speed = 0.2;
@@ -229,12 +232,19 @@ shadow_object_setup(myHeight,-1,-1,global.default_shadow_yscale);
           <argument>
             <kind>1</kind>
             <string>///Main Draw
-depth = -y;
+
+if (flightState == 'go') 
+{
+    depth = -99999999;
+}
+else depth = -y;
 
 if (targetDirection &gt; 90) &amp;&amp; (targetDirection &lt; 270) image_xscale = -1;
 else image_xscale = 1;
 
-draw_sprite_ext(sprite_index,image_index,x,y-myHeight,image_xscale,1,image_angle,image_blend,1);
+image_yscale = 1.25;
+
+draw_sprite_ext(sprite_index,image_index,x,y-myHeight,image_xscale,image_yscale,image_angle,image_blend,1);
 
 reflection_add_sprite_update(sprite_index,image_index,x,y+myHeight,image_xscale,1,image_angle,image_blend,1);
 

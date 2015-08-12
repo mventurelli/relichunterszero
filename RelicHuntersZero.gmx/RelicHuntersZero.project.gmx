@@ -107,6 +107,7 @@
       <sound>sound\bgm_stage4</sound>
       <sound>sound\bgm_boss</sound>
       <sound>sound\bgm_victory</sound>
+      <sound>sound\bgm_dig</sound>
     </sounds>
     <sounds name="SFX">
       <sounds name="Environment">
@@ -176,12 +177,6 @@
         <sound>sound\sfx_walk3</sound>
         <sound>sound\sfx_walk4</sound>
         <sound>sound\sfx_walk5</sound>
-        <sound>sound\sfx_dig1</sound>
-        <sound>sound\sfx_dig2</sound>
-        <sound>sound\sfx_dig3</sound>
-        <sound>sound\sfx_dig4</sound>
-        <sound>sound\sfx_dig5</sound>
-        <sound>sound\sfx_dig6</sound>
         <sound>sound\sfx_player_death</sound>
       </sounds>
       <sounds name="Shield">
@@ -246,6 +241,18 @@
         <sound>sound\sfx_keyMel7</sound>
         <sound>sound\sfx_plasma_start</sound>
         <sound>sound\sfx_plasma_loop</sound>
+      </sounds>
+      <sounds name="Dig">
+        <sound>sound\sfx_dirt1</sound>
+        <sound>sound\sfx_dirt2</sound>
+        <sound>sound\sfx_dirt3</sound>
+        <sound>sound\sfx_dirt4</sound>
+        <sound>sound\sfx_dirt5</sound>
+        <sound>sound\sfx_shovel1</sound>
+        <sound>sound\sfx_shovel2</sound>
+        <sound>sound\sfx_shovel3</sound>
+        <sound>sound\sfx_detector_close</sound>
+        <sound>sound\sfx_detector_far</sound>
       </sounds>
     </sounds>
   </sounds>
