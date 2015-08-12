@@ -36,6 +36,22 @@ drawOutline = false;
 colorOutline = c_white;
 
 //There can be only one
+while (instance_number(gui_info) &gt; 1)
+{
+    otherGui = instance_find(gui_info,0);
+    if (instance_exists(otherGui) &amp;&amp; (otherGui != id))
+    {
+        with (otherGui) instance_destroy();
+    }
+    else {
+        otherGui = instance_find(gui_info,1);
+        if (instance_exists(otherGui) &amp;&amp; (otherGui != id))
+        {
+            with (otherGui) instance_destroy();
+        }
+    }
+}
+/*
 for (var i=0; i&lt;instance_number(gui_info); i++)
 {
     otherGui = instance_find(gui_info,i);
@@ -44,9 +60,26 @@ for (var i=0; i&lt;instance_number(gui_info); i++)
         with (otherGui) instance_destroy();
     }
 }
+*/
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>
