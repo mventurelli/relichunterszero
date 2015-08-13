@@ -30,8 +30,9 @@
 x = view_xview[0];
 y = view_yview[0];
 
-var w = window_get_width();
-var h = window_get_height();
+//var w = window_get_width();
+//var h = window_get_height();
+
 
 if (instance_exists(global.pauseButtonContinue))
 {
@@ -120,14 +121,14 @@ if (instance_exists(global.pausePlayerInfo))
             <kind>1</kind>
             <string>///Draw Pause Menu
 
-if background_exists(global.pauseBackground) draw_background_stretched(global.pauseBackground,x,y,view_wport[0],view_hport[0]);
+if background_exists(global.pauseBackground) draw_background_stretched(global.pauseBackground,view_xview[0], view_yview[0],view_wview[0], view_hview[0]);
 
 draw_set_alpha(0.7);
 draw_set_colour(make_colour_rgb(8,228,170));
-draw_rectangle(x,y,x+window_get_width(),y+window_get_height(),false);
+draw_rectangle(view_xview[0], view_yview[0],view_xview[0]+view_wview[0], view_yview[0]+view_hview[0],false);
 draw_set_alpha(1);
 
-draw_sprite(spr_pausemenu_corner,0,x,y);
+draw_sprite(spr_pausemenu_corner,0,view_xview[0], view_yview[0]);
 </string>
           </argument>
         </arguments>
