@@ -1634,7 +1634,8 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 
                 audio_stop_all();
                 audio_play_sound(bgm_dig,99,true);
-                //Play Relic Detected Sound here!
+                volume_update();
+                audio_play_sound(sfx_relic_on,00,false); //Relic Detected Sound Will Go Here Someday
                 
                 global.relicDetected = true;
                 var announceRelic = instance_create(x,y,fx_bigMessage);

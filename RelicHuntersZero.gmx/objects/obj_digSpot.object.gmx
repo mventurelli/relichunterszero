@@ -58,13 +58,45 @@ if (activate)
 {
     if (myItem != noone)
     {
-        var relic = instance_create(x,y,myItem);
-        relic.unlock = true;
+        var fxX, fxY;
+        if (instance_exists(class_player))
+        {
+            var pp = instance_nearest(x,y,class_player);
+            fxX = pp.x;
+            fxY = pp.y;
+        }
+        else{
+            fxX = x;
+            fxY = y;
+        }
         
-        if (instance_exists(fx_bigMessage)) with (fx_bigMessage) instance_destroy();
+        var effect = instance_create(fxX,fxY,fx_digItem);
+        var relic = instance_create(x,y,myItem);
+        
+        effect.relic = myItem;
+        effect.itemSprite = relic.sprite_index;
+        with (relic) instance_destroy();
+    }
+    
+    if (!global.totalDigs) achievement_give("ACHIEVEMENT_FIRSTDIG");
+    
+    global.totalDigs++;
+    
+    if (instance_exists(fx_bigMessage)) with (fx_bigMessage) instance_destroy();
+    
+    instance_destroy();
+}
+
+
+
+/*
+OLD CODE
+/*
+ if (instance_exists(fx_bigMessage)) with (fx_bigMessage) instance_destroy();
         
         audio_stop_all();
         if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
+        
         //Play tanananam sound here!
         
          relic.announce = instance_create(x,y,fx_bigMessage);
@@ -76,14 +108,6 @@ if (activate)
          relic.announce.relicSprite2Draw = relic.relicSprite2Draw;
          relic.announce.relicSprite3 = relic.relicSprite3;
          relic.announce.relicSprite3Draw = relic.relicSprite3Draw;
-    }
-    
-    if (!global.totalDigs) achievement_give("ACHIEVEMENT_FIRSTDIG");
-    
-    global.totalDigs++;
-    
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

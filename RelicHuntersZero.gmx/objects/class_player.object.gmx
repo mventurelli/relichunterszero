@@ -1422,6 +1422,8 @@ if (global.relicDetected)
             {
                 isDigging = true;
                 
+                audio_play_sound(sfx_relic_on,00,false); //Dig Spot Found Sound Will Go Here Someday
+                
                 if instance_exists(fx_bigMessage) with (fx_bigMessage) instance_destroy();
                 var announceRelic = instance_create(x,y,fx_bigMessage);
                 announceRelic.textBig = loc_key("HUD_RELIC_FOUND");

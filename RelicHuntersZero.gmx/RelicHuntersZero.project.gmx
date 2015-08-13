@@ -253,6 +253,7 @@
         <sound>sound\sfx_shovel3</sound>
         <sound>sound\sfx_detector_close</sound>
         <sound>sound\sfx_detector_far</sound>
+        <sound>sound\sfx_dig_done</sound>
       </sounds>
     </sounds>
   </sounds>
@@ -479,6 +480,7 @@
       <sprite>sprites\spr_blood_bits</sprite>
       <sprite>sprites\spr_digPile</sprite>
       <sprite>sprites\spr_dirt_bits</sprite>
+      <sprite>sprites\spr_fx_digItem</sprite>
       <sprite>sprites\spr_fx_weaponGround</sprite>
       <sprites name="Broken">
         <sprite>sprites\spr_broken_pistol</sprite>
@@ -1272,6 +1274,7 @@
       <object>objects\fx_fadeToBlack</object>
       <object>objects\fx_fadeFromBlack</object>
       <object>objects\fx_bigMessage</object>
+      <object>objects\fx_digItem</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>

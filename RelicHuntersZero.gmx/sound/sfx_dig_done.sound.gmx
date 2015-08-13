@@ -2,10 +2,10 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>sound\audio\sfx_relic_off.wav</origname>
+  <origname>sound\audio\sfx_dig_done.wav</origname>
   <effects>0</effects>
   <volume>
-    <volume>0.41</volume>
+    <volume>0.78</volume>
   </volume>
   <pan>0</pan>
   <bitRates>
@@ -15,13 +15,13 @@
     <sampleRate>44100</sampleRate>
   </sampleRates>
   <types>
-    <type>0</type>
+    <type>1</type>
   </types>
   <bitDepths>
     <bitDepth>16</bitDepth>
   </bitDepths>
   <preload>-1</preload>
-  <data>sfx_relic_off.wav</data>
+  <data>sfx_dig_done.wav</data>
   <compressed>0</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
