@@ -1,391 +1,396 @@
-KeyName,English (EN),Brazilian Portuguese (BR),Brazilian HUE (HUE),Russian (RU),Japanese (JP),German (DE),French (FR),Español (ES),Czech (CZ),Korean (KR)
-MAINMENU_ADVENTURE,Play Adventure,JOGAR AVENTURA,PARTIU,играть приключения,アドベンチャーをする,Abenteuermodus,MODE AVENTURE,Modo Aventura,Hraj příběh,플레이 어드벤쳐
-MAINMENU_ENDLESS,Play Endless,JOGAR INFINITO,CABA N MUNDÃO,бесконечное,エンドレス,Endlosmodus,MODE SANS FIN,Modo Infinito,"Hraj nekonečný mód
-",플레이 엔드리스
-MAINMENU_SETTINGS,Settings,OPÇÕES,FRESCURADA,опции,オプション,Optionen,OPTIONS,Opciones,Nastavení,설정
-MAINMENU_CREDITS,Credits,CRÉDITOS,N CLICA AQUE,кредиты,クレジット,Credits,CRÉDITS,Créditos,Autoři,크레딧
-MAINMENU_QUIT,Exit,SAIR,VAZA,выход,終わる,Beenden,SORTIE,Salir,Konec,나가기
-MAINMENU_CANCEL,Cancel,CANCELAR,,,,Abbrechen,ANNULER,Cancelar,Zrušit,취소
-MAINMENU_CONFIRM,Confirm,CONFIRMAR,D BOA,,,Bestaetigen,CONFIRMER,Confirmar,Potvrdit,확인
-,,,,,,,,,,
-SETTINGS_FXGAMEPLAY,GAMEPLAY OPTIONS,OPÇÕES DE JOGO,,,,Gameplay-Optionen,OPTIONS DE JEU,Opciones de Juego,Nastavení hry,게임플레이 옵션
-SETTINGS_FXPERFORMANCE,VIDEO OPTIONS,OPÇÕES DE VÍDEO,,,,Grafikoptionen,VIDEO,Opciones de Vídeo,Nastavení videa,비디오 옵션
-SETTINGS_FXMAPPING,KEY MAPPING,CONFIG TECLADO,,,,Keymapping,CLAVIER,Opciones de Teclado,Nastavení kláves,키 설정
-SETTINGS_DELETESAVE,DELETE SAVED GAME,DELETAR JOGO SALVO,,,,Spielstand loeschen,EFFACER LA SAUVEGARDE,Borrar partida,Smazání uložené hry,저장된 게임 지우기
-SETTINGS_DELETESAVE_CONFIRM,YES! DELETE!,SIM! DELETAR!,,,,Bitte loeschen!,OUI! EFFACER!,"¡Sí, borrar!","Ano, smazat!",네! 지우겠어요!
-SETTINGS_DELETESAVE_TEXT,CONFIRM YOU REALLY WANT TO DELETE ALL OF YOUR SAVED DATA,CONFIRME QUE DESEJA APAGAR TODOS OS DADOS SALVOS,,,,Spielstand wirklich loeschen?,SOUHAITEZ VOUS VRAIMENT EFFACER TOUTE VOTRE SAUVEGARDE,Confirmar que quieres borrar la partida,"Potvrď, že chceš opravdu smazat veškerá uložená data",
-SETTINGS_PERFORMANCE,VIDEO OPTIONS,OPÇÕES DE VÍDEO,,,,Grafikoptionen,VIDEO,Opciones de vídeo,Nastavení videa,비디오 옵션
-SETTINGS_GAMEPLAY,GAMEPLAY OPTIONS,OPÇÕES DE JOGO,,,,Gameplay-Optionen,OPTIONS DE JEU,Opciones de juego,Nastavení hry,게임플레이 옵션
-SETTINGS_MAPPING,KEYBOARD MAPPING,CONFIGURAR TECLADO,,,,Keymapping,CLAVIER,Opciones de teclado,Nastavení kláves,키 설정
-SETTINGS_LANGUAGE,LANGUAGE,LÍNGUA,,,,Sprache,LANGUE,Idioma,Jazyk,언어
-SETTINGS_MASTER,MASTER VOLUME,VOLUME GERAL,,,,Gesamtlautstaerke,VOLUME GLOBAL,Volumen global,Hlavní hlasitost,마스터 볼륨
-SETTINGS_SOUND,FX VOLUME,VOLUME EFEITOS,,,,Sound Effekte,VOLUME EFFETS,Volumen de efectos,Hlasitost efektů,FX 볼륨
-SETTINGS_MUSIC,MUSIC VOLUME,VOLUME MÚSICA,,,,Musik,VOLUME MUSIQUE,Volumen de música,Hlasitost hudby,음악 볼륨
-,,,,,,,,,,
-SETTINGS_ON,ON,SIM,,,,An,OUI,Encender,Zapnout,ON
-SETTINGS_OFF,OFF,NÃO,,,,Aus,NON,Apagar,Vypnout,OFF
-SETTINGS_FULL,FULL,TUDO,,,,Hoch,PLEIN,Máximo,Maximum,FULL
-SETTINGS_LOW,LOW,BAIXO,,,,Niedrig,BAS,Bajo,Minimum,LOW
-,,,,,,,,,,
-GAMEPLAY_DOUBLETAP,DOUBLE TAP TO DASH,DOIS TOQUES PARA SALTAR,,,,Mit Doppeltippen springen,APPUIE DOUBLE POUR DASH,Aprieta dos veces para deslizarse,Dvojitým zmáčnutím uháníš,두번누르면 돌진합니다
-GAMEPLAY_MWHEEL,MOUSE WHEEL TO SWITCH WEAPONS,RODA DO MOUSE TROCA DE ARMA,,,,Mit Mausrad Waffe waehlen,MOLETTE POUR CHANGER D'ARME,Usa la rueda del ratón para cambiar arma,Kolečkem myši vybíráš zbraň,마우스휠로 무기를 바꿉니다
-GAMEPLAY_SCREENSHAKE,SCREEN SHAKE AMOUNT,TREMIDA DE TELA,,,,Bild ruetteln,VIBRATION DE L'ECRAN,Vibración de la pantalla,Rozmazání obrazovky,화면 흔들림 정도
-GAMEPLAY_VIBRATION,CONTROLLER VIBRATION,VIBRAÇÃO DE CONTROLE,,,,Controllervibration,VIBRATION DE LA MANETTE,Vibración del mando,Vibrace ovladače,컨트롤러 진동
-GAMEPLAY_TARGETING,CONTROLLER AUTO-AIM,MIRA AUTOMÁTICA NO CONTROLE,,,,Controller zielt automatisch,VISE AUTOMATIQUE POUR MANETTE,Autoapuntado del mando,Auto-zaměřování ovladače,컨트롤러 자동조준
-GAMEPLAY_TARGETING_ASSIST,ASSIST,AJUDA,,,,Assist,AIDE,Asistencia,Asistování,어시스트
-GAMEPLAY_STICKY,CONTROLLER STICKY AIM,AUXÍLIO DE MIRA NO CONTROLE,,,,Controller mit Zielhilfe,MANETTE VISE COLLANTE,Ayuda al apuntar con el mando,Míra podpory v zaměřování,
-GAMEPLAY_SHOWAMMO,ALWAYS SHOW AMMO BARS,SEMPRE MOSTRAR MUNIÇÕES,,,,Munition immer anzeigen,TOUJOURS AFFICHER LES MUNITIONS,Siempre mostrar munición,Vždy zobrazit stav munice,항상 탄약상태창 활성
-,,,,,,,,,,
-CHARSELECT_TITLE,CHARACTER SELECTION,SELEÇÃO DE PERSONAGEM,,,,Charakterauswahl,SELECTION DU PERSONNAGE,Selección de personaje,Výběr postavy,캐릭터 선택
-CHARSELECT_INPUTMETHOD,INPUT METHOD,TIPO DE CONTROLE,,,,Input-Auswahl,CONTROLE,Tipo de control,Způsob ovládání,
-CHARSELECT_PLAYER1,PLAYER 1,JOGADOR 1,,,,Spieler 1,JOUEUR 1,Jugador 1,Hráč 1,플레이어 1
-CHARSELECT_PLAYER2,PLAYER 2,JOGADOR 2,,,,Spieler 2,JOUEUR 2,Jugador 2,Hráč 2,플레이어 2
-CHARSELECT_HEALTH,HEALTH,VIDA,,,,LP,VIE,Vida,Zdraví,체력
-CHARSELECT_SHIELD,SHIELD,ESCUDO,,,,Schild,BOUCLIER,Escudo,Štít,실드
-CHARSELECT_MELEE,MELEE,CORPO-A-CORPO,,,,Nahkampf,CORPS A CORPS,Cuerpo a cuerpo,"Rvaní
-",근접
-CHARSELECT_STAMINA,STAMINA,STAMINA,,,,Ausdauer,ENDURANCE,Aguante,Výdrž,스태미나
-CHARSELECT_SPEED,SPEED,VELOCIDADE,,,,Geschwindigkeit,VITESSE,Velocidad,"Rychlost
-",속도
-CHARSELECT_DESC_JIMMY,ALL-AROUND CHARACTER. SKILLED WITH ALL WEAPON TYPES.,PERSONAGEM EQUILIBRADO. USA TODAS AS ARMAS.,,,,Vielseitig talentiert. Kann alle Waffen benutzen.,PERSONNAGE EQUILIBRE. COMPETANT AVEC TOUT TYPE D'ARME,Personaje equilibrado. Usa todo tipo de armas,Univerzální postava. Ovládá všechny typy zbraní,올라운드 캐릭터. 모든 무기에 능숙
-CHARSELECT_DESC_PINKYY,"MELEE CHARACTER. SKILLED WITH PISTOLS AND ROCKET LAUNCHERS, CAN'T USE GRENADES.","PERSONAGEM DE COMBATE CORPO-A-CORPO. USA PISTOLAS E BAZUCAS, NÃO USA GRANADAS.",,,,"Nahkampfcharakter. Benutzt Pistolen und die Panzerfaust, kann keine Granaten werfen.","PERSONNAGE AU CORPS A CORPS. COMPETANT AVEC PISTOLET ET LANCE ROQUETTE, NE PEUT PAS UTILISER LES GRENADES","Personaje de cuerpo a cuerpo. Hábil con pistolas y lanzacohetes, no puede usar granadas.","Rváč používá pistole a raketomety, neumí házet granáty
-","근접 캐릭터. 피스톨과 로켓런쳐에 능숙, 그레네이드 사용불가"
-CHARSELECT_DESC_RAFF,KEYTAR GUN FIRES THROUGH WALLS. SKILLED WITH SMALL ARMS ONLY.,TECLADO ATIRA ATRAVÉS DE PAREDES. USA APENAS ARMAS LEVES.,,,,Keytar schiesst durch Wände. Kann nur kleine Waffen benutzen.,L'ARME KEYTAR PEUT TIRER A TRAVERS LES MURS. COMPETANT AVEC LES ARMES LEGERES UNIQUEMENT.,"La pistola Keytar puede atravesar paredes. Hábil con arma pequeñas. 
-","Keytar umí střílet skrz zdi, umí používat pouze malé zbraně",
-CHARSELECT_DESC_BIU,DOUBLE GRENADE PICKUP. NOT SKILLED WITH ANY WEAPON.,PEGA GRANADAS EM DOBRO. NÃO SABE USAR NENHUMA ARMA.,,,,Kann die doppelte Menge an Granaten tragen. Benutzt keine Waffe.,RAMASSE DEUX FOIS PLUS DE GRENADES. N'EST HABILE AVEC AUCUNE ARME.,Coge el doble de granadas. No es hábil con ningún arma.,"Dvojitá nálož granátů, neumí používat žádné zbraně",
-CHARSELECT_DESC_PUNNY,DESTROYER OF WORLDS. SKILLED WITH HEAVY WEAPONS ONLY.,DESTRUIDORA DE MUNDOS. USA APENAS ARMAS PESADAS.,,,,Die Weltenzerstörerin. Benutzt nur schwere Waffen.,DESTRUCTEUR DE MONDE. COMPETANT AVEC LES ARMES LOURDES UNIQUEMENT.,Destructor de mundos. Hábil armas pesadas.,Ničitel světů umí používat pouze těžké zbraně,
-CHARSELECT_DESC_ASS,"WORST CHARACTER IN THE GAME. WORTHLESS WITH ALL GUNS, GETS MORE BOUNTY.","PIOR PERSONAGEM DO JOGO. INÚTIL COM TODAS AS ARMAS, PEGA MAIS ESTRELAS.",,,,"Der schlechteste Charakter im Spiel. Mit jeder Waffe ein Desaster, fängt mehr Sterne auf.","LE PLUS MAUVAIS PERSONNAGE DU JEU. NUL AVEC TOUT TYPE D'ARME, RECOLTE PLUS DE PRIMES.","Peor personaje del juego. Inútil con cualquier arma, gana mas estrellas.","Nejhorší postava ve hře, špatný se všemi zbraněmi, ale získává největší odměnu",
-CHARSELECT_BUT_OK,START,COMEÇAR,,,,Los,DEPART,Empezar,"Začít
-",
-CHARSELECT_BUT_CANCEL,CHANGE,MUDAR,,,,Wechseln,CHANGEMENT,Cambiar,Změna,
-CHARSELECT_SCREENTITLE,CHARACTER SELECTION,PERSONAGENS,,,,Charakterauswahl,SELECTION DU PERSONNAGE,Selección de personaje,Výběr postavy,
-,,,,,,,,,,
-STATS_TOTALTIME,TOTAL PLAY TIME,TEMPO DE JOGO,,,,Gesamtspielzeit,TEMPS TOTAL DE JEU,Tiempo total,Celkově nahraný čas,총 플레이 타임
-STATS_TOTALBOUNTY,TOTAL BOUNTY,TOTAL DE ESTRELAS,,,,Sterne,PRIME TOTAL,Estrellas totales,Celkoá odměna,
-STATS_KILLS,KILLS,INIMIGOS MORTOS,,,,Kills,TUES,Muertes,Zabití,킬
-STATS_DEATHS,DEATHS,MORTES,,,,Tode,MORTS,Muertes,Smrtí,데스
-STATS_BOSSKILLS,BOSS KILLS,CHEFÕES MORTOS,,,,Boss-Kills,BOSS TUES,Jefes muertos,Zabitých bossů,보스 킬
-,,,,,,,,,,
-PERFORMANCE_RESOLUTION,WINDOW SIZE,TAMANHO DE JANELA,,,,Aufloesung,TAILLE DE LA FENETRE,Tamaño ventana,Velikost okna,창 크기
-PERFORMANCE_FULLSCREEN,WINDOW MODE,MODO DE TELA,,,,Bildschirmmodus,MODE FENETRER,Modo Ventana,Režim okna,창 모드
-PERFORMANCE_FULLSCREEN_FULL,FULL,CHEIA,,,,Vollbild,PLEIN ECRAN,Pantalla Completa,"Celá obrazovka
-",
-PERFORMANCE_FULLSCREEN_WINDOW,WINDOW,JANELA,,,,Fenster,FENETRE,Ventana,V okénku,
-PERFORMANCE_DYNAMICS,MAX DYNAMIC OBJECTS,OBJETOS DINÂMICOS,,,,Dynamische Objekte,MAX OBJET DYNAMIQUE,Objetos dinámicos,Dinamické objekty,
-PERFORMANCE_PARTICLES,PARTICLE EFFECTS,EFEITOS DE PARTÍCULA,,,,Partikeleffekte,EFFETS DE PARTICULES,Partículas,Částicové efekty,
-PERFORMANCE_SHADOWS,DYNAMIC SHADOWS,SOMBRAS DINÂMICAS,,,,Dynamische Schatten,OMBRES DYNAMIQUE,"Sombras dinámicas
-",Dinamické stíny,
-PERFORMANCE_PERSISTENT,PERSISTENT OBJECTS,OBJETOS PERSISTENTES,,,,Persistente Objekte,MAX OBJET PERSISTANT,Objetos persistentes,Persistentní objekty,
-PERFORMANCE_REFLECTIONS,REFLECTIONS,REFLEXOS,,,,Reflexion,REFLECTIONS,Reflejos,Odlesky,
-,,,,,,,,,,
-MAPPING_PRESSANYKEY,PRESS ANY KEY,APERTE TECLA,,,,Druecke Taste,APPUYEZ SUR N'IMPORTE QUEL TOUCHE,Pulsa cualquer tecla,Zmáčkni libovolnou klávesu,
-MAPPING_DEFAULT,RESET TO DEFAULT,RESTAURAR PADRÃO,,,,Einst zuruecksetzen,PARAMETRES PAR DEFAUTS,Restaurar a predeterminado,Původní nastavení,
-MAPPING_MOVEUP,Move Up,Mover Acima,,,,Oben,Avancer,Mover Arriba,Pohyb nahoru,
-MAPPING_MOVEDOWN,Move Down,Mover Abaixo,,,,Unten,Reculer,Mover Abajo,Pohyb dolů,
-MAPPING_MOVERIGHT,Move Right,Mover à Direita,,,,Rechts,Droite,Mover a la derecha,Pohyb doprava,
-MAPPING_MOVELEFT,Move Left,Mover à Esquerda,,,,Links,Gauche,Mover a la izquierda,Pohyb doleva,
-MAPPING_FIRE,Fire,Atirar,,,,Schiessen,Tirer,Disparar,Střelba,
-MAPPING_AIM,Aim,Mirar,,,,Zielen,Viser,Apuntar,Míření,
-MAPPING_GRENADE,Grenade,Granada,,,,Granate,Grenade,Granada,Granát,
-MAPPING_MELEE,Melee,Corpo-A-Corpo,,,,Nahkampf,Corps à corps,Cuerpo a cuerpo,"Útok zblízka
-",
-MAPPING_SPRINT,Sprint/Dash,Correr/Saltar,,,,Laufen/Springen,Sprint/Dash,Correr/Deslizarse,Běh,
-MAPPING_USE,Use,Usar,,,,Benutzen,Utiliser,Usar,Použít,
-MAPPING_SWITCH,Switch Weapon,Trocar Arma,,,,Waffe wechseln,Changer d'arme,Cambiar arma,Změnit zbraň,
-MAPPING_RELOAD,Reload,Recarregar,,,,Nachladen,Recharger,Recargar,Přebít zbraň,
-MAPPING_SPRINTTOGGLE,Sprint Toggle,Acionar Corrida,,,,Sprint aktivieren,Activer sprint,Activar Sprint,Přepnutí na běh,
-MAPPING_LEFTARROW,LEFT ARROW,SETA ESQUERDA,,,,Pfeil nach links,FLECHE GAUCHE,Flecha Izquierda,Šipka vlevo,
-MAPPING_RIGHTARROW,RIGHT ARROW,SETA DIREITA,,,,Pfeil nach rechts,FLECHE DROITE,Flecha Derecha,Šipka vpravo,
-MAPPING_UPARROW,UP ARROW,SETA PRA CIMA,,,,Pfeil nach oben,FLECHE HAUT,Flecha Arriba,Šipka nahoru,
-MAPPING_DOWNARROW,DOWN ARROW,SETA PRA BAIXO,,,,Pfeil nach unten,FLECHE BAS,Flecha Abajo,Šipka dolů,
-MAPPING_ENTER,ENTER,ENTER,,,,Eingabe,ENTRER,Intro,Enter,
-MAPPING_SHIFT,SHIFT,SHIFT,,,,Shift,SHIFT,Shift,Shift,
-MAPPING_CTRL,CTRL,CTRL,,,,Strg,CRTL,Control,Ctrl,
-MAPPING_ALT,ALT,ALT,,,,Alt,ALT,Alt,Alt,
-MAPPING_SPACEBAR,SPACEBAR,ESPAÇO,,,,Leertaste,ESPACE,Espacio,Mezerník,
-MAPPING_BACKSPACE,BACKSPACE,APAGAR,,,,Backspace,RETOUR ARRIERE,Retroceso,"Backspase
-",
-MAPPING_TAB,TAB,TAB,,,,Tab,TAB,Tab,TAB,
-MAPPING_HOME,HOME,HOME,,,,Pos1,DEBUT,Inicio,Domů,
-MAPPING_END,END,END,,,,Ende,FIN,Fin,Konec,
-MAPPING_DELETE,DELETE,DELETE,,,,Entfernen,SUPPR,Borrar,"Delete
-",
-MAPPING_INSERT,INSERT,INSERT,,,,Einfuegen,INSERTION,Instartar,Insert,
-MAPPING_PAGEUP,PAGE UP,PAGINA ACIMA,,,,Bild auf,PAGE SUIVANT,Re Pág,Page up,
-MAPPING_PAGEDOWN,PAGE DOWN,PAGINA ABAIXO,,,,Bild ab,PAGE PRECEDENT,Av Pág,"Page down
-",
-MAPPING_LEFTMOUSE,LEFT MOUSE,MOUSE ESQUERDO,,,,Linke Maustaste,CLIQUE GUACHE,Click Izquierdo,Levé myšítko,
-MAPPING_RIGHTMOUSE,RIGHT MOUSE,MOUSE DIREITO,,,,Rechte Maustaste,CLIQUE DROIT,Click Derecho,Pravé myšítko,
-MAPPING_MIDDLEMOUSE,MIDDLE MOUSE,MOUSE DO MEIO,,,,Mittlere Maustaste,CLIQUE CENTRAL,Click Central,Prostřední tlačítko myši,
-,,,,,,,,,,
-PAUSE_FXPAUSE,GAME PAUSED,JOGO EM PAUSA,,,,Pause,JEU EN PAUSE,En Pausa,Pauza,
-PAUSE_CONTINUE,CONTINUE,CONTINUAR,,,,Weiter,REPRENDRE,Continuar,Pokračovat,
-PAUSE_SHIP,BACK TO SHIP,VOLTAR À NAVE,,,,Zum Raumschiff,RETOUR AU VAISSEAU,Volver a la nave,Zpátky na loď,
-PAUSE_MENU,MAIN MENU,MENU,,,,Hauptmenue,MENU PRINCIPAL,Menú Principal,Zpět do menu,
-PAUSE_EXIT,EXIT,SAIR,,,,Beenden,QUITTER,Salir,Konec,
-,,,,,,,,,,
-INFO_LOWSTAMINA,Low Stamina,Stamina Baixa,,,,Zu wenig Ausdauer,Endurance faible,"Bajo aguante
-",Malá výdrž,
-INFO_OUTOFGRENADES,Out of Grenades,Sem Granadas,,,,Keine Granaten,Plus de grenades,Sin granadas,Bez granátů,
-INFO_CANTUSEGRENADES,Can't Use Grenades,Não Usa Granadas,,,,Wirft keine Granaten,Ne peux pas utiliser les grenandes,No puedes usar granadas,Nemůžeš použít granáty,
-INFO_RELOADING,Reloading,Recarregando,,,,Laedt nach,Rechargement,Recargando,Přebíjení,
-INFO_OUTOFAMMO,No Ammo,Sem Munição,,,,Keine Munition,Plus de munitions,Sin munición,Bez munice,
-INFO_FULLAMMO,Ammo Is Full,Munição Cheia,,,,Munition voll,Munitions pleinne,Munición llena,"Plná munice
-",
-INFO_HEALTHPLUS,+ Health,+ Vida,,,,+ Lebenspunkte,+ VIE,+ Vida,Zdraví+,
-INFO_HEALTHFULL,Health Is Full,Vida Cheia,,,,Lebenspunkte voll,Vie pleine,Vida llena,"Plné zdraví
-",
-INFO_SHIELDPLUS,Overshield,Escudo Extra,,,,Extraschild,Bouclier supplémentaire,"Escudo extra
+KeyName,English (EN),Brazilian Portuguese (BR),Brazilian HUE (HUE),Russian (RU),Japanese (JP),German (DE),French (FR),Español (ES),Czech (CZ),Korean (KR),Dutch (NL),Italian (IT)
+MAINMENU_ADVENTURE,Play Adventure,MODO AVENTURA,PARTIU,играть приключения,アドベンチャーをする,Abenteuermodus,MODE AVENTURE,Modo Aventura,Hraj příběh,플레이 어드벤쳐,Speel Avontuur,
+MAINMENU_ENDLESS,Play Endless,Modo Infinito,CABA N MUNDÃO,бесконечное,エンドレス,Endlosmodus,MODE SANS FIN,Modo Infinito,"Hraj nekonečný mód
+",플레이 엔드리스,Speel Eindeloos,
+MAINMENU_SETTINGS,Settings,OPÇÕES,FRESCURADA,опции,オプション,Optionen,OPTIONS,Opciones,Nastavení,설정,Instellingen,
+MAINMENU_CREDITS,Credits,CRÉDITOS,N CLICA QUE,кредиты,クレジット,Credits,CRÉDITS,Créditos,Autoři,크레딧,Credits,
+MAINMENU_QUIT,Exit,SAIR,VAZA,выход,終わる,Beenden,SORTIE,Salir,Konec,나가기,Stop,
+MAINMENU_CANCEL,Cancel,CANCELAR,SAI ZICA,Cancel,,Abbrechen,ANNULER,Cancelar,Zrušit,취소,Annuleer,
+MAINMENU_CONFIRM,Confirm,CONFIRMAR,D BOA,Confirm,,Bestaetigen,CONFIRMER,Confirmar,Potvrdit,확인,Bevestig,
+,,,,,,,,,,,,
+SETTINGS_FXGAMEPLAY,GAMEPLAY OPTIONS,OPÇÕES DE JOGO,MAIS FRESCURADA,GAMEPLAY OPTIONS,,Gameplay-Optionen,OPTIONS DE JEU,Opciones de Juego,Nastavení hry,게임플레이 옵션,Gameplay Opties,
+SETTINGS_FXPERFORMANCE,VIDEO OPTIONS,OPÇÕES DE VÍDEO,RODA CRYSIS?,VIDEO OPTIONS,,Grafikoptionen,VIDEO,Opciones de Vídeo,Nastavení videa,비디오 옵션,Video Opties,
+SETTINGS_FXMAPPING,KEY MAPPING,CONFIG TECLADO,,KEY MAPPING,,Keymapping,CLAVIER,Definir Teclas,Nastavení kláves,키 설정,Control Opties,
+SETTINGS_DELETESAVE,DELETE SAVED GAME,DELETAR JOGO SALVO,,DELETE SAVED GAME,,Spielstand loeschen,EFFACER LA SAUVEGARDE,Borrar partida,Smazání uložené hry,저장된 게임 지우기,Opgeslagen Save Verwijderen,
+SETTINGS_DELETESAVE_CONFIRM,YES! DELETE!,SIM! DELETAR!,,YES! DELETE!,,Bitte loeschen!,OUI! EFFACER!,"¡Sí, borrar!","Ano, smazat!",네! 지우겠어요!,Ja! Verwijder!,
+SETTINGS_DELETESAVE_TEXT,CONFIRM YOU REALLY WANT TO DELETE ALL OF YOUR SAVED DATA,CONFIRME QUE DESEJA APAGAR TODOS OS DADOS SALVOS,,CONFIRM YOU REALLY WANT TO DELETE ALL OF YOUR SAVED DATA,,Spielstand wirklich loeschen?,SOUHAITEZ VOUS VRAIMENT EFFACER TOUTE VOTRE SAUVEGARDE,Seguro que deseas borrar todos tus archivos guardados,"Potvrď, že chceš opravdu smazat veškerá uložená data",,Bevestig dat je echt al je opgeslagen data wilt verwijderen,
+SETTINGS_PERFORMANCE,VIDEO OPTIONS,OPÇÕES DE VÍDEO,,VIDEO OPTIONS,,Grafikoptionen,VIDEO,Opciones de vídeo,Nastavení videa,비디오 옵션,Video Opties,
+SETTINGS_GAMEPLAY,GAMEPLAY OPTIONS,OPÇÕES DE JOGO,,GAMEPLAY OPTIONS,,Gameplay-Optionen,OPTIONS DE JEU,Opciones de juego,Nastavení hry,게임플레이 옵션,Gameplay Opties,
+SETTINGS_MAPPING,KEYBOARD MAPPING,CONFIGURAR TECLADO,,KEYBOARD MAPPING,,Keymapping,CLAVIER,Opciones de teclado,Nastavení kláves,키 설정,Control Opties,
+SETTINGS_LANGUAGE,LANGUAGE,LÍNGUA,,LANGUAGE,,Sprache,LANGUE,Idioma,Jazyk,언어,Taal,
+SETTINGS_MASTER,MASTER VOLUME,VOLUME GERAL,,MASTER VOLUME,,Gesamtlautstaerke,VOLUME GLOBAL,Volumen global,Hlavní hlasitost,마스터 볼륨,Hoofdvolume,
+SETTINGS_SOUND,FX VOLUME,VOLUME EFEITOS,,FX VOLUME,,Sound Effekte,VOLUME EFFETS,Volumen de efectos,Hlasitost efektů,FX 볼륨,Effect Volume,
+SETTINGS_MUSIC,MUSIC VOLUME,VOLUME MÚSICA,,MUSIC VOLUME,,Musik,VOLUME MUSIQUE,Volumen de música,Hlasitost hudby,음악 볼륨,Music Volume,
+,,,,,,,,,,,,
+SETTINGS_LOWPERF1,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,PLACA DE VÍDEO NÃO SUPORTADA - EFEITOS AVANÇADOS DESLIGADOS,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED,VIDEO CARD NOT SUPPORTED - ADVANCED EFFECTS DISABLED
+SETTINGS_LOWPERF2,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,VOCÊ PODE RELIGAR OS EFEITOS NO MENU DE OPÇÕES,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU,YOU CAN RE-ENABLE THE EFFECTS AT THE SETTINGS MENU
+SETTINGS_LOWPERF3,PRESS ANY KEY TO CONTINUE,APERTE QUALQUER TECLA PARA CONTINUAR,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE,PRESS ANY KEY TO CONTINUE
+SETTINGS_ON,ON,SIM,PODE PAH,ON,,An,OUI,Encender,Zapnout,ON,Aan,
+SETTINGS_OFF,OFF,NÃO,DONADA,OFF,,Aus,NON,Apagar,Vypnout,OFF,Uit,
+SETTINGS_FULL,FULL,TUDO,,FULL,,Hoch,PLEIN,Máximo,Maximum,FULL,Vol,
+SETTINGS_LOW,LOW,BAIXO,,LOW,,Niedrig,BAS,Bajo,Minimum,LOW,Laag,
+,,,,,,,,,,,,
+GAMEPLAY_DOUBLETAP,DOUBLE TAP TO DASH,DOIS TOQUES PARA SALTAR,,DOUBLE TAP TO DASH,,Mit Doppeltippen sprinten,APPUIE DOUBLE POUR DASH,Aprieta dos veces para deslizarse,Dvojitým zmáčnutím uháníš,두번누르면 돌진합니다,,
+GAMEPLAY_MWHEEL,MOUSE WHEEL TO SWITCH WEAPONS,RODA DO MOUSE TROCA DE ARMA,,MOUSE WHEEL TO SWITCH WEAPONS,,Mit Mausrad Waffe waehlen,MOLETTE POUR CHANGER D'ARME,Usa la rueda del ratón para cambiar arma,Kolečkem myši vybíráš zbraň,마우스휠로 무기를 바꿉니다,,
+GAMEPLAY_SCREENSHAKE,SCREEN SHAKE AMOUNT,TREMIDA DE TELA,,SCREEN SHAKE AMOUNT,,Bild ruetteln,VIBRATION DE L'ECRAN,Vibración de la pantalla,Rozmazání obrazovky,화면 흔들림 정도,,
+GAMEPLAY_VIBRATION,CONTROLLER VIBRATION,VIBRAÇÃO DE CONTROLE,,CONTROLLER VIBRATION,,Vibration,VIBRATION DE LA MANETTE,Vibración del mando,Vibrace ovladače,컨트롤러 진동,Controller Vibratie,
+GAMEPLAY_TARGETING,CONTROLLER AUTO-AIM,MIRA AUTOMÁTICA NO CONTROLE,,CONTROLLER AUTO-AIM,,Automatisches Zielen,VISE AUTOMATIQUE POUR MANETTE,Autoapuntado del mando,Auto-zaměřování ovladače,컨트롤러 자동조준,,
+GAMEPLAY_TARGETING_ASSIST,ASSIST,AJUDA,,ASSIST,,Ziel Assistent,AIDE,Asistencia,Asistování,어시스트,Hulp,
+GAMEPLAY_STICKY,CONTROLLER STICKY AIM,AUXÍLIO DE MIRA NO CONTROLE,,CONTROLLER STICKY AIM,,Controller mit Zielhilfe,MANETTE VISE COLLANTE,Ayuda al apuntar con el mando,Míra podpory v zaměřování,,,
+GAMEPLAY_SHOWAMMO,ALWAYS SHOW AMMO BARS,SEMPRE MOSTRAR MUNIÇÕES,,ALWAYS SHOW AMMO BARS,,Munition immer anzeigen,TOUJOURS AFFICHER LES MUNITIONS,Siempre mostrar munición,Vždy zobrazit stav munice,항상 탄약상태창 활성,,
+,,,,,,,,,,,,
+CHARSELECT_TITLE,CHARACTER SELECTION,SELEÇÃO DE PERSONAGEM,,CHARACTER SELECTION,,Charakterauswahl,SELECTION DU PERSONNAGE,Selección de personaje,Výběr postavy,캐릭터 선택,,
+CHARSELECT_INPUTMETHOD,INPUT METHOD,TIPO DE CONTROLE,,INPUT METHOD,,Input Methode,CONTROLE,Tipo de control,Způsob ovládání,,,
+CHARSELECT_PLAYER1,PLAYER 1,JOGADOR 1,,PLAYER 1,,Spieler 1,JOUEUR 1,Jugador 1,Hráč 1,플레이어 1,,
+CHARSELECT_PLAYER2,PLAYER 2,JOGADOR 2,,PLAYER 2,,Spieler 2,JOUEUR 2,Jugador 2,Hráč 2,플레이어 2,,
+CHARSELECT_HEALTH,HEALTH,VIDA,,HEALTH,,Leben,VIE,Vida,Zdraví,체력,,
+CHARSELECT_SHIELD,SHIELD,ESCUDO,,SHIELD,,Schild,BOUCLIER,Escudo,Štít,실드,,
+CHARSELECT_MELEE,MELEE,CORPO-A-CORPO,,MELEE,,Nahkampf,CORPS A CORPS,Cuerpo a cuerpo,"Rvaní
+",근접,,
+CHARSELECT_STAMINA,STAMINA,STAMINA,,STAMINA,,Ausdauer,ENDURANCE,Aguante,Výdrž,스태미나,,
+CHARSELECT_SPEED,SPEED,VELOCIDADE,,SPEED,,Geschwindigkeit,VITESSE,Velocidad,"Rychlost
+",속도,,
+CHARSELECT_DESC_JIMMY,ALL-AROUND CHARACTER. SKILLED WITH ALL WEAPON TYPES.,PERSONAGEM EQUILIBRADO. USA TODAS AS ARMAS.,,ALL-AROUND CHARACTER. SKILLED WITH ALL WEAPON TYPES.,,Vielseitig talentiert. Kann alle Waffen benutzen.,PERSONNAGE EQUILIBRE. COMPETANT AVEC TOUT TYPE D'ARME,Personaje equilibrado. Usa todo tipo de armas,Univerzální postava. Ovládá všechny typy zbraní,올라운드 캐릭터. 모든 무기에 능숙,,
+CHARSELECT_DESC_PINKYY,"MELEE CHARACTER. SKILLED WITH PISTOLS AND ROCKET LAUNCHERS, CAN'T USE GRENADES.","PERSONAGEM DE COMBATE CORPO-A-CORPO. USA PISTOLAS E BAZUCAS, NÃO USA GRANADAS.",,"MELEE CHARACTER. SKILLED WITH PISTOLS AND ROCKET LAUNCHERS, CAN'T USE GRENADES.",,"Nahkampfcharakter. Benutzt Pistolen und die Panzerfaust, kann keine Granaten werfen.","PERSONNAGE AU CORPS A CORPS. COMPETANT AVEC PISTOLET ET LANCE ROQUETTE, NE PEUT PAS UTILISER LES GRENADES","Personaje de cuerpo a cuerpo. Hábil con pistolas y lanzacohetes, no puede usar granadas.","Rváč používá pistole a raketomety, neumí házet granáty
+","근접 캐릭터. 피스톨과 로켓런쳐에 능숙, 그레네이드 사용불가",,
+CHARSELECT_DESC_RAFF,KEYTAR GUN FIRES THROUGH WALLS. SKILLED WITH SMALL ARMS ONLY.,TECLADO ATIRA ATRAVÉS DE PAREDES. USA APENAS ARMAS LEVES.,,KEYTAR GUN FIRES THROUGH WALLS. SKILLED WITH SMALL ARMS ONLY.,,Keytar schiesst durch Wände. Kann nur kleine Waffen benutzen.,L'ARME KEYTAR PEUT TIRER A TRAVERS LES MURS. COMPETANT AVEC LES ARMES LEGERES UNIQUEMENT.,"La pistola Keytar puede atravesar paredes. Hábil con arma pequeñas. 
+","Keytar umí střílet skrz zdi, umí používat pouze malé zbraně",,,
+CHARSELECT_DESC_BIU,DOUBLE GRENADE PICKUP. NOT SKILLED WITH ANY WEAPON.,PEGA GRANADAS EM DOBRO. NÃO SABE USAR NENHUMA ARMA.,,DOUBLE GRENADE PICKUP. NOT SKILLED WITH ANY WEAPON.,,Kann die doppelte Menge an Granaten tragen. Benutzt keine Waffe.,RAMASSE DEUX FOIS PLUS DE GRENADES. N'EST HABILE AVEC AUCUNE ARME.,Coge el doble de granadas. No es hábil con ningún arma.,"Dvojitá nálož granátů, neumí používat žádné zbraně",,,
+CHARSELECT_DESC_PUNNY,DESTROYER OF WORLDS. SKILLED WITH HEAVY WEAPONS ONLY.,DESTRUIDORA DE MUNDOS. USA APENAS ARMAS PESADAS.,,DESTROYER OF WORLDS. SKILLED WITH HEAVY WEAPONS ONLY.,,Die Weltenzerstörerin. Benutzt nur schwere Waffen.,DESTRUCTEUR DE MONDE. COMPETANT AVEC LES ARMES LOURDES UNIQUEMENT.,Destructor de mundos. Hábil solo con armas pesadas.,Ničitel světů umí používat pouze těžké zbraně,,,
+CHARSELECT_DESC_ASS,"WORST CHARACTER IN THE GAME. WORTHLESS WITH ALL GUNS, GETS MORE BOUNTY.","PIOR PERSONAGEM DO JOGO. INÚTIL COM TODAS AS ARMAS, PEGA MAIS ESTRELAS.",,"WORST CHARACTER IN THE GAME. WORTHLESS WITH ALL GUNS, GETS MORE BOUNTY.",,"Der schlechteste Charakter im Spiel. Mit jeder Waffe ein Desaster, fängt mehr Sterne auf.","LE PLUS MAUVAIS PERSONNAGE DU JEU. NUL AVEC TOUT TYPE D'ARME, RECOLTE PLUS DE PRIMES.","Peor personaje del juego. Inútil con cualquier arma, gana mas estrellas.","Nejhorší postava ve hře, špatný se všemi zbraněmi, ale získává největší odměnu",,,
+CHARSELECT_BUT_OK,LETS GO,COMEÇAR,,LETS GO,,LOS,DEPART,EMPEZAR,"Začít
+",,,
+CHARSELECT_BUT_CANCEL,CHANGE,MUDAR,,CHANGE,,Wechseln,CHANGEMENT,Cambiar,Změna,,,
+CHARSELECT_SCREENTITLE,CHARACTER SELECTION,PERSONAGENS,,CHARACTER SELECTION,,Charakterauswahl,SELECTION DU PERSONNAGE,Selección de personaje,Výběr postavy,,,
+,,,,,,,,,,,,
+STATS_TOTALTIME,TOTAL PLAY TIME,TEMPO DE JOGO,,TOTAL PLAY TIME,,Gesamtspielzeit,TEMPS TOTAL DE JEU,Tiempo total,Celkově nahraný čas,총 플레이 타임,,
+STATS_TOTALBOUNTY,TOTAL BOUNTY,TOTAL DE ESTRELAS,,TOTAL BOUNTY,,Sterne,PRIME TOTAL,Estrellas totales,Celkoá odměna,,,
+STATS_KILLS,KILLS,INIMIGOS MORTOS,,KILLS,,Kills,TUES,Muertes,Zabití,킬,,
+STATS_DEATHS,DEATHS,MORTES,,DEATHS,,Tode,MORTS,Muertes,Smrtí,데스,,
+STATS_BOSSKILLS,BOSS KILLS,CHEFÕES MORTOS,,BOSS KILLS,,Boss-Kills,BOSS TUES,Jefes muertos,Zabitých bossů,보스 킬,,
+,,,,,,,,,,,,
+PERFORMANCE_RESOLUTION,WINDOW SIZE,TAMANHO DE JANELA,,WINDOW SIZE,,Aufloesung,TAILLE DE LA FENETRE,Tamaño ventana,Velikost okna,창 크기,,
+PERFORMANCE_FULLSCREEN,WINDOW MODE,MODO DE TELA,,WINDOW MODE,,Bildschirmmodus,MODE FENETRER,Modo Ventana,Režim okna,창 모드,,
+PERFORMANCE_FULLSCREEN_FULL,FULL,CHEIA,,FULL,,Vollbild,PLEIN ECRAN,Pantalla Completa,"Celá obrazovka
+",,,
+PERFORMANCE_FULLSCREEN_WINDOW,WINDOW,JANELA,,WINDOW,,Fenster,FENETRE,Ventana,V okénku,,,
+PERFORMANCE_DYNAMICS,MAX DYNAMIC OBJECTS,OBJETOS DINÂMICOS,,MAX DYNAMIC OBJECTS,,Dynamische Objekte,MAX OBJET DYNAMIQUE,Objetos dinámicos,Dinamické objekty,,,
+PERFORMANCE_PARTICLES,PARTICLE EFFECTS,EFEITOS DE PARTÍCULA,,PARTICLE EFFECTS,,Partikeleffekte,EFFETS DE PARTICULES,Partículas,Částicové efekty,,,
+PERFORMANCE_SHADOWS,DYNAMIC SHADOWS,SOMBRAS DINÂMICAS,,DYNAMIC SHADOWS,,Dynamische Schatten,OMBRES DYNAMIQUE,"Sombras dinámicas
+",Dinamické stíny,,,
+PERFORMANCE_PERSISTENT,PERSISTENT OBJECTS,OBJETOS PERSISTENTES,,PERSISTENT OBJECTS,,Persistente Objekte,MAX OBJET PERSISTANT,Objetos persistentes,Persistentní objekty,,,
+PERFORMANCE_REFLECTIONS,REFLECTIONS,REFLEXOS,,REFLECTIONS,,Reflexionen,REFLECTIONS,Reflejos,Odlesky,,,
+,,,,,,,,,,,,
+MAPPING_PRESSANYKEY,PRESS ANY KEY,APERTE TECLA,,PRESS ANY KEY,,Beliebige Taste drücken,APPUYEZ SUR N'IMPORTE QUEL TOUCHE,Pulsa cualquer tecla,Zmáčkni libovolnou klávesu,,,
+MAPPING_DEFAULT,RESET TO DEFAULT,RESTAURAR PADRÃO,,RESET TO DEFAULT,,Einstellungen zuruecksetzen,PARAMETRES PAR DEFAUTS,Restaurar a predeterminado,Původní nastavení,,,
+MAPPING_MOVEUP,Move Up,Mover Acima,,Move Up,,Rauf,Avancer,Mover Arriba,Pohyb nahoru,,,
+MAPPING_MOVEDOWN,Move Down,Mover Abaixo,,Move Down,,Runter,Reculer,Mover Abajo,Pohyb dolů,,,
+MAPPING_MOVERIGHT,Move Right,Mover à Direita,,Move Right,,Rechts,Droite,Mover a la derecha,Pohyb doprava,,,
+MAPPING_MOVELEFT,Move Left,Mover à Esquerda,,Move Left,,Links,Gauche,Mover a la izquierda,Pohyb doleva,,,
+MAPPING_FIRE,Fire,Atirar,,Fire,,Schiessen,Tirer,Disparar,Střelba,,,
+MAPPING_AIM,Aim,Mirar,,Aim,,Zielen,Viser,Apuntar,Míření,,,
+MAPPING_GRENADE,Grenade,Granada,,Grenade,,Granate,Grenade,Granada,Granát,,,
+MAPPING_MELEE,Melee,Corpo-A-Corpo,,Melee,,Nahkampf,Corps à corps,Cuerpo a cuerpo,"Útok zblízka
+",,,
+MAPPING_SPRINT,Sprint/Dash,Correr/Saltar,,Sprint/Dash,,Laufen/Sprinten,Sprint/Dash,Correr/Deslizarse,Běh,,,
+MAPPING_USE,Use,Usar,,Use,,Benutzen,Utiliser,Usar,Použít,,,
+MAPPING_SWITCH,Switch Weapon,Trocar Arma,,Switch Weapon,,Waffe wechseln,Changer d'arme,Cambiar arma,Změnit zbraň,,,
+MAPPING_RELOAD,Reload,Recarregar,,Reload,,Nachladen,Recharger,Recargar,Přebít zbraň,,,
+MAPPING_SPRINTTOGGLE,Sprint Toggle,Acionar Corrida,,Sprint Toggle,,Sprint aktivieren,Activer sprint,Activar Sprint,Přepnutí na běh,,,
+MAPPING_LEFTARROW,LEFT ARROW,SETA ESQUERDA,,LEFT ARROW,,Pfeil nach links,FLECHE GAUCHE,Flecha Izquierda,Šipka vlevo,,,
+MAPPING_RIGHTARROW,RIGHT ARROW,SETA DIREITA,,RIGHT ARROW,,Pfeil nach rechts,FLECHE DROITE,Flecha Derecha,Šipka vpravo,,,
+MAPPING_UPARROW,UP ARROW,SETA PRA CIMA,,UP ARROW,,Pfeil nach oben,FLECHE HAUT,Flecha Arriba,Šipka nahoru,,,
+MAPPING_DOWNARROW,DOWN ARROW,SETA PRA BAIXO,,DOWN ARROW,,Pfeil nach unten,FLECHE BAS,Flecha Abajo,Šipka dolů,,,
+MAPPING_ENTER,ENTER,ENTER,,ENTER,,Eingabe,ENTRER,Intro,Enter,,,
+MAPPING_SHIFT,SHIFT,SHIFT,,SHIFT,,Shift,SHIFT,Shift,Shift,,,
+MAPPING_CTRL,CTRL,CTRL,,CTRL,,Strg,CRTL,Control,Ctrl,,,
+MAPPING_ALT,ALT,ALT,,ALT,,Alt,ALT,Alt,Alt,,,
+MAPPING_SPACEBAR,SPACEBAR,ESPAÇO,,SPACEBAR,,Leertaste,ESPACE,Espacio,Mezerník,,,
+MAPPING_BACKSPACE,BACKSPACE,APAGAR,,BACKSPACE,,Backspace,RETOUR ARRIERE,Retroceso,"Backspase
+",,,
+MAPPING_TAB,TAB,TAB,,TAB,,Tab,TAB,Tab,TAB,,,
+MAPPING_HOME,HOME,HOME,,HOME,,Pos1,DEBUT,Inicio,Domů,,,
+MAPPING_END,END,END,,END,,Ende,FIN,Fin,Konec,,,
+MAPPING_DELETE,DELETE,DELETE,,DELETE,,Entfernen,SUPPR,Borrar,"Delete
+",,,
+MAPPING_INSERT,INSERT,INSERT,,INSERT,,Einfuegen,INSERTION,Instartar,Insert,,,
+MAPPING_PAGEUP,PAGE UP,PAGINA ACIMA,,PAGE UP,,Bild auf,PAGE SUIVANT,Re Pág,Page up,,,
+MAPPING_PAGEDOWN,PAGE DOWN,PAGINA ABAIXO,,PAGE DOWN,,Bild ab,PAGE PRECEDENT,Av Pág,"Page down
+",,,
+MAPPING_LEFTMOUSE,LEFT MOUSE,MOUSE ESQUERDO,,LEFT MOUSE,,Linke Maustaste,CLIQUE GUACHE,Click Izquierdo,Levé myšítko,,,
+MAPPING_RIGHTMOUSE,RIGHT MOUSE,MOUSE DIREITO,,RIGHT MOUSE,,Rechte Maustaste,CLIQUE DROIT,Click Derecho,Pravé myšítko,,,
+MAPPING_MIDDLEMOUSE,MIDDLE MOUSE,MOUSE DO MEIO,,MIDDLE MOUSE,,Mittlere Maustaste,CLIQUE CENTRAL,Click Central,Prostřední tlačítko myši,,,
+,,,,,,,,,,,,
+PAUSE_FXPAUSE,GAME PAUSED,JOGO EM PAUSA,,GAME PAUSED,,Pause,JEU EN PAUSE,En Pausa,Pauza,,,
+PAUSE_CONTINUE,CONTINUE,CONTINUAR,,CONTINUE,,Weiter,REPRENDRE,Continuar,Pokračovat,,,
+PAUSE_SHIP,BACK TO SHIP,VOLTAR À NAVE,,BACK TO SHIP,,Zum Raumschiff,RETOUR AU VAISSEAU,Volver a la nave,Zpátky na loď,,,
+PAUSE_MENU,MAIN MENU,MENU,,MAIN MENU,,Hauptmenue,MENU PRINCIPAL,Menú Principal,Zpět do menu,,,
+PAUSE_EXIT,EXIT,SAIR,,EXIT,,Beenden,QUITTER,Salir,Konec,,,
+,,,,,,,,,,,,
+INFO_LOWSTAMINA,Low Stamina,Stamina Baixa,,Low Stamina,,Zu wenig Ausdauer,Endurance faible,"Bajo aguante
+",Malá výdrž,,,
+INFO_OUTOFGRENADES,Out of Grenades,Sem Granadas,,Out of Grenades,,Keine Granaten,Plus de grenades,Sin granadas,Bez granátů,,,
+INFO_CANTUSEGRENADES,Can't Use Grenades,Não Usa Granadas,,Can't Use Grenades,,Wirft keine Granaten,Ne peux pas utiliser les grenandes,No puedes usar granadas,Nemůžeš použít granáty,,,
+INFO_RELOADING,Reloading,Recarregando,,Reloading,,Laedt nach,Rechargement,Recargando,Přebíjení,,,
+INFO_OUTOFAMMO,No Ammo,Sem Munição,,No Ammo,,Keine Munition,Plus de munitions,Sin munición,Bez munice,,,
+INFO_FULLAMMO,Ammo Is Full,Munição Cheia,,Ammo Is Full,,Munition voll,Munitions pleinne,Munición llena,"Plná munice
+",,,
+INFO_HEALTHPLUS,+ Health,+ Vida,,+ Health,,+ Lebenspunkte,+ VIE,+ Vida,Zdraví+,,,
+INFO_HEALTHFULL,Health Is Full,Vida Cheia,,Health Is Full,,Lebenspunkte voll,Vie pleine,Vida llena,"Plné zdraví
+",,,
+INFO_SHIELDPLUS,Overshield,Escudo Extra,,Overshield,,Extraschild,Bouclier supplémentaire,"Escudo extra
 ","Štít+
-",
-INFO_SHIELDMAX,Overshield Maxed,Escudo Máximo,,,,Maximierter Extraschild,Bouclier supplémentaire max,"Escudo máximo
+",,,
+INFO_SHIELDMAX,Overshield Maxed,Escudo Máximo,,Overshield Maxed,,Maximierter Extraschild,Bouclier supplémentaire max,"Escudo máximo
 ","Maximální štít
-",
-INFO_SHIELDLOST,Overshield Lost,Sem Escudo Extra,,,,Ohne Extraschild,Bouclier supplémentaire perdu,Sin escudo,"Štít ztracen
-",
-INFO_CANTUSESHIELD,Can't Use Shields,Não Usa Escudos,,,,Benutzt kein Schild,Ne peux pas utiliser le bouclier,No puedes usar escudo,Nemůžeš použít štít,
-INFO_NOTENOUGHBOUNTY,Not Enough Bounty,Estrelas Insuficientes,,,,,Pas assez de Prime,Estrellas insuficientes,Nedostatek bodů,
-,,,,,,,,,,
-WEAPON_DAMAGE,DAMAGE,DANO,,,,Schaden,DEGATS,Daño,Poškození,데미지
-WEAPON_RANGE,RANGE,ALCANCE,,,,Reichweite,PORTER,Alcance,Dostřel,사거리
-WEAPON_CAPACITY,CAPACITY,CAPACIDADE,,,,Magazin,CAPACITER,Capacidad,Kapacita,탄창
-WEAPON_AMMOTYPE,AMMO TYPE,TIPO MUN,,,,Munitionstyp,TYPE DE MUNITIONS,Tipo de munición,"Typ munice
-",
-WEAPON_AMMOCOST,AMMO COST,CUSTO MUN,,,,Munitionsverbrauch,COUT EN MUNITIONS,Coste de munición,Cena munice,
-WEAPON_IMPACT,IMPACT,IMPACTO,,,,Stosskraft,IMPACT,Impacto,Náraz,
-WEAPON_RATE,RATE,CADÊNCIA,,,,Feuerrate,CADENCE,Cadencia,Rychlost,
-WEAPON_RELOAD,RELOAD,RECARGA,,,,Nachladen,RECHARGE,Recarga,Přebití,재장전
-WEAPON_BURST,BURST,RAJADA,,,,Feuerstoss,ECLAT,Ráfaga,Výbuch,
-WEAPON_PIERCING,PIERCING,PERFURAÇÃO,,,,Panzerbrechend,PERCAGE,Perforación,Pronikavý,관통
-WPNAME_SAWEDOFF,Sawed-Off,Cano Serrado,,,,Abgesaegt,Canon scié,Aserrado,Upilovaná zbraň,
-WPNAME_PISTOL,Crude Pistol,Pistola Ruim,,,,Grobe Pistole,Pistolet grossier,Pisotla cruda,Surová pistole,
-WPNAME_PISTOLJIMMY,Elite Pistol,Pistola Elite,,,,Elitepistole,Pistolet d'élite,Pistola de élite,Elitní pistole,
-WPNAME_PISTOLHEAVY,Heavy Pistol,Pistola Pesada,,,,Schwere Pistole,Pistolet lourd,Pistola pesada,"Těžká pistole
-",
-WPNAME_PISTOLPLASMA,Plasma Pistol,Pistola de Plasma,,,,Plasma Pistole,Pistolet plasma,Pistola de plasma,Plasma pistole,
-WPNAME_SNIPERRIFLE,Sniper Rifle,Rifle Sniper,,,,Scharfschuetzengewehr,Fusil sniper,Rifle francotirador,Odstřelovací puška,
-WPNAME_PISTOLASSAULT,Assault Pistol,Pistola de Assalto,,,,Sturmpistole,Pistol d'assaut,Pistola de asalto,"Útočná pistole
-",
-WPNAME_SHOTGUN,Shotgun,Escopeta,,,,Flinte,Fusil à pompe,Escopeta,Brokovnice,샷건
-WPNAME_KEYTAR,Keytar Gun,Canhão Musical,,,,Keytargun,Keytargun,Pistola Keytar,Keytar,
-WPNAME_SHOTGUN_HEAVY,Heavy Shotgun,Escopeta Pesada,,,,Schwere Flinte,Fusil à pompe lourd,Escopeta pesada,"Těžká brokovnice
-",
-WPNAME_SUBMACHINEGUN,Submachine Gun,Submetralhadora,,,,Maschinenpistole,Mitraillette,Metralleta,Samopal,
-WPNAME_HIGHMAG,Highmag,Highmag,,,,Grossmagazin,,,Velký zásobník,
-WPNAME_MACHINEGUN,Machine Gun,Metralhadora,,,,Maschinengewehr,Mitrailleuse,Ametralladora,Kulomet,
-WPNAME_ASSAULT_RIFLE,Assault Rifle,Rifle de Assalto,,,,Sturmgewehr,Fusil d'assaut,Rifle de asalto,"Útočná puška
-",
-WPNAME_BOSSGUN,Big F Gun,Armão Gigante,,,,Sch...grosse Waffe,,Pistola jodidamente grande,"Šéfovská velká zbraň
-",
-WPNAME_ROCKETLAUNCHER,Rocket Launcher,Lança-foguetes,,,,Panzerfaust,Lance-roquettes,Lanzacohetes,Raketomet,
-WPNAME_FLAMETHROWER,Flamethrower,Lança-chamas,,,,Flammenwerfer,Lance-flammes,Lanzallamas,Plamenomet,
-,,,,,,,,,,
-GENERAL_JIMMY,JIMMY,JIMMY,TIÃO,JIMMY,JIMMY,JIMMY,JIMMY,JIMMY,Jimmy,JIMMY
-GENERAL_PINKYY,PINKYY,PINKYY,TRANCOSA,PINKYY,PINKYY,PINKYY,PINKYY,PINKYY,Pinkyy,PINKYY
+",,,
+INFO_SHIELDLOST,Overshield Lost,Sem Escudo Extra,,Overshield Lost,,Ohne Extraschild,Bouclier supplémentaire perdu,Sin escudo,"Štít ztracen
+",,,
+INFO_CANTUSESHIELD,Can't Use Shields,Não Usa Escudos,,Can't Use Shields,,Benutzt kein Schild,Ne peux pas utiliser le bouclier,No puedes usar escudo,Nemůžeš použít štít,,,
+INFO_NOTENOUGHBOUNTY,Not Enough Bounty,Estrelas Insuficientes,,Not Enough Bounty,,Nicht genug Sterne,Pas assez de Prime,Estrellas insuficientes,Nedostatek bodů,,,
+,,,,,,,,,,,,
+WEAPON_DAMAGE,DAMAGE,DANO,,DAMAGE,,Schaden,DEGATS,Daño,Poškození,데미지,,
+WEAPON_RANGE,RANGE,ALCANCE,,RANGE,,Reichweite,PORTER,Alcance,Dostřel,사거리,,
+WEAPON_CAPACITY,CAPACITY,CAPACIDADE,,CAPACITY,,Magazin,CAPACITER,Capacidad,Kapacita,탄창,,
+WEAPON_AMMOTYPE,AMMO TYPE,TIPO MUN,,AMMO TYPE,,Munitionstyp,TYPE DE MUNITIONS,Tipo de munición,"Typ munice
+",,,
+WEAPON_AMMOCOST,AMMO COST,CUSTO MUN,,AMMO COST,,Munitionsverbrauch,COUT EN MUNITIONS,Coste de munición,Cena munice,,,
+WEAPON_IMPACT,IMPACT,IMPACTO,,IMPACT,,Stosskraft,IMPACT,Impacto,Náraz,,,
+WEAPON_RATE,RATE,CADÊNCIA,,RATE,,Feuerrate,CADENCE,Cadencia,Rychlost,,,
+WEAPON_RELOAD,RELOAD,RECARGA,,RELOAD,,Nachladen,RECHARGE,Recarga,Přebití,재장전,,
+WEAPON_BURST,BURST,RAJADA,,BURST,,Feuerstoss,ECLAT,Ráfaga,Výbuch,,,
+WEAPON_PIERCING,PIERCING,PERFURAÇÃO,,PIERCING,,Panzerbrechend,PERCAGE,Perforación,Pronikavý,관통,,
+WPNAME_SAWEDOFF,Sawed-Off,Cano Serrado,,Sawed-Off,,Abgesaegt,Canon scié,Aserrado,Upilovaná zbraň,,,
+WPNAME_PISTOL,Crude Pistol,Pistola Ruim,,Crude Pistol,,Grobe Pistole,Pistolet grossier,Pisotla cruda,Surová pistole,,,
+WPNAME_PISTOLJIMMY,Elite Pistol,Pistola Elite,,Elite Pistol,,Elitepistole,Pistolet d'élite,Pistola de élite,Elitní pistole,,,
+WPNAME_PISTOLHEAVY,Heavy Pistol,Pistola Pesada,,Heavy Pistol,,Schwere Pistole,Pistolet lourd,Pistola pesada,"Těžká pistole
+",,,
+WPNAME_PISTOLPLASMA,Plasma Pistol,Pistola de Plasma,,Plasma Pistol,,Plasma Pistole,Pistolet plasma,Pistola de plasma,Plasma pistole,,,
+WPNAME_SNIPERRIFLE,Sniper Rifle,Rifle Sniper,,Sniper Rifle,,Scharfschuetzengewehr,Fusil sniper,Rifle francotirador,Odstřelovací puška,,,
+WPNAME_PISTOLASSAULT,Assault Pistol,Pistola de Assalto,,Assault Pistol,,Sturmpistole,Pistol d'assaut,Pistola de asalto,"Útočná pistole
+",,,
+WPNAME_SHOTGUN,Shotgun,Escopeta,,Shotgun,,Flinte,Fusil à pompe,Escopeta,Brokovnice,샷건,,
+WPNAME_KEYTAR,Keytar Gun,Canhão Musical,,Keytar Gun,,Keytargun,Keytargun,Pistola Keytar,Keytar,,,
+WPNAME_SHOTGUN_HEAVY,Heavy Shotgun,Escopeta Pesada,,Heavy Shotgun,,Schwere Flinte,Fusil à pompe lourd,Escopeta pesada,"Těžká brokovnice
+",,,
+WPNAME_SUBMACHINEGUN,Submachine Gun,Submetralhadora,MAMÃE MI XINGA,Submachine Gun,,Maschinenpistole,Mitraillette,Metralleta,Samopal,,,
+WPNAME_HIGHMAG,Highmag,Highmag,,Highmag,,Grossmagazin,,,Velký zásobník,,,
+WPNAME_MACHINEGUN,Machine Gun,Metralhadora,,Machine Gun,,Maschinengewehr,Mitrailleuse,Ametralladora,Kulomet,,,
+WPNAME_ASSAULT_RIFLE,Assault Rifle,Rifle de Assalto,,Assault Rifle,,Sturmgewehr,Fusil d'assaut,Rifle de asalto,"Útočná puška
+",,,
+WPNAME_BOSSGUN,Big F Gun,Armão Gigante,,Big F Gun,,Sch...grosse Waffe,,Pistola jodidamente grande,"Šéfovská velká zbraň
+",,,
+WPNAME_ROCKETLAUNCHER,Rocket Launcher,Lança-foguetes,,Rocket Launcher,,Panzerfaust,Lance-roquettes,Lanzacohetes,Raketomet,,,
+WPNAME_FLAMETHROWER,Flamethrower,Lança-chamas,,Flamethrower,,Flammenwerfer,Lance-flammes,Lanzallamas,Plamenomet,,,
+,,,,,,,,,,,,
+GENERAL_JIMMY,JIMMY,JIMMY,TIÃO,JIMMY,JIMMY,JIMMY,JIMMY,JIMMY,Jimmy,JIMMY,,
+GENERAL_PINKYY,PINKYY,PINKYY,TRANCOSA,PINKYY,PINKYY,PINKYY,PINKYY,PINKYY,Pinkyy,PINKYY,,
 GENERAL_RAFF,RAFF,RAFF,HIPZTER,RAFF,RAFF,RAFF,RAFF,Raff,"Raff
-",RAFF
-GENERAL_BIU,BIU,BIU,FAROFA,BIU,BIU,BIU,BIU,Biu,Biu,BIU
-GENERAL_PUNNY,PUNNY,PUNNY,BIXIN,PUNNY,PUNNY,PUNNY,PUNNY,Punny,Punny,PUNNY
-GENERAL_ASS,ASS,ASS,MULA,ASS,ASS,ASS,ASS,Ass,Ass,ASS
-GENERAL_RANDOM,RANDOM,SORTEIO,FODASE,,,Zufall,ALEATOIRE,Aleatorio,Náhodně,무작위
-GENERAL_HP,HP,VIDA,,,,LP,VIE,Vida,Zdraví,체력
-GENERAL_SHIELD,SHIELD,ESCUDO,,,,Schild,BOUCLIER,Escudo,Štít,실드
-GENERAL_STAMINA,STAMINA,STAMINA,,,,Ausdauer,ENDURANCE,Resistencia,Výdrž,스태미나
-GENERAL_LIGHTAMMO,LIGHT AMMO,MUNIÇÃO LEVE,,,,Leichte Munition,MUNITION LEGERE,Munición Ligera,Lehká munice,
-GENERAL_MEDIUMAMMO,MEDIUM AMMO,MUNIÇÃO MÉDIA,,,,Mittlere Munition,MUNITION MOYENNE,Munición Media,Střední munice,
-GENERAL_HEAVYAMMO,HEAVY AMMO,MUNIÇÃO PESADA,,,,Schwere Munition,MUNITION LOURDE,Munición Pesada,Těžká munice,
-GENERAL_GRENADES,GRENADES,GRANADAS,,,,Granaten,GRENADE,Granadas,Granát,그레네이드
-GENERAL_SHOP_OVERSHIELD,OVERSHIELD,ESCUDO EXTRA,,,,Extraschild,,Super escudo,"Štít
-",
-GENERAL_SHOP_LIGHTAMMO,EXTRA LIGHT AMMO,MUNIÇÃO LEVE EXTRA,,,,Extra leichte Munition,MUNITION LEGERE EXTRA,Munición Ligera Extra,Extra lehká munice,
-GENERAL_SHOP_MEDIUMAMMO,EXTRA MEDIUM AMMO,MUNIÇÃO MÉDIA EXTRA,,,,Extra mittlere Munition,MUNITION MOYENNE EXTRA,Munición Media Extra,Extra střední munice,
-GENERAL_SHOP_HEAVYAMMO,EXTRA HEAVY AMMO,MUNIÇÃO PESADA EXTRA,,,,Extra schwere Munition,MUNITION LOURDE EXTRA,Munición Pesada Extra,Extra těžká munice,
-GENERAL_SHOP_GRENADES,MORE GRENADES,GRANADAS EXTRAS,,,,Extra Granaten,GRENADE EXTRA,Más Granadas,Extra granáty,
-GENERAL_TELEPORTER_STAGE,STAGE:,FASE:,,,,Level:,NIVEAU:,Nivel:,"Úroveň:
-",
-GENERAL_DODGE,DODGE,ESQUIVA,,,,Ausweichen,ESQUIVE,Esquivar,Vyhnutí,
-,,,,,,,,,,
-HUD_GAMEOVER,GAME OVER,FIM DE JOGO,,,,Ende,PARTIE TERMINE,Fin de partida,Konec hry,게임오버
-HUD_GAMEOVER_RETRY,Press Space to Retry,Aperte Espaço para Recomeçar,,,,Druecke Leertaste um neu zu starten,Appuyez sur espace pour recommencer,Pulsa Espacio para reintentar,Zmáčkni mezerník pro návrat,
-HUD_GAMEOVER_RETRY_JOY,Press A to Retry,Aperte A para Recomeçar,,,,Druecke A um neu zu starten,Appuyez sur A pour recommencer,Pulsa A para reintentar,Zmáčkni A pro návrat,
-HUD_GAMEOVER_MENU,Press ESC to return to Menu,Aperte ESC para ir ao Menu Principal,,,,Druecke ESC um zum Hauptmenue zu gehen,Appuyez sur ESC pour retourner au menu principal,Pulsa ESC para volver al menú,"Stiskni ESC pro menu
-",
-HUD_GAMEOVER_MENU_JOY,Press B to return to Menu,Aperte B para ir ao Menu Principal,,,,Druecke B um zum Hauptmenue zu gehen,Appuyez sur B pour retourner au menu principal,Pulsa B para volver al menú,"Stiskni B pro menu
-",
-HUD_KILL1,KILL,MORTE,,,,Kill,,Muerte,kill,
-HUD_KILL2,DOUBLE KILL,MORTE DUPLA,,,,Doppelkill,,Doble muerte,Double Kill,
-HUD_KILL3,TRIPLE KILL,MORTE TRIPLA,,,,Dreifachkill,,Triple Muerte,Triple kill,
-HUD_KILL4,MULTI KILL,MULTI MORTE,,,,Multikill,,Multimuerte,Multi kill,
-HUD_KILL5,ULTRA KILL,ULTRA MORTE,,,,Ultrakill,,Ultramuerte,Ultra kill,
-HUD_KILL6,MONSTER KILL,MONSTER MORTE,,,,Monsterkill,,Monstermuerte,"Monsterkill
-",
-HUD_KILL7,GODLIKE,DIVINO,,,,Goettlich,DIVIN,Divino,Godlike,
-HUD_KILL8,SUPER GOD LIKE?,SUPER DIVINO?,,,,Super goettlich?,SUPER DIVIN?,Super Divino,Super GODlike,
-HUD_KILL9,YOU MUST BE CHEATING,VOCÊ TÁ ROUBANDO,,,,Du mogelst,,Debes estar haciendo trampas,Ty podvádíš že ?!,
-HUD_KILL10,ARE YOU SERIOUS?,É SÉRIO ISSO?,,,,Ernsthaft?,,En serio?,Myslíš to vážně ?,
-HUD_PRECISIONKILL,PRECISION KILL,MORTE PRECISA,,,,Praezisionskill,TIR DE PRECISION,Muerte precisa,Precizní kill,
-HUD_BOUNTY,BOUNTY,ESTRELAS,,,,Sterne,PRIME,Estrellas,Odměna,
-HUD_UNLOCK_HUNTER,NEW HUNTER UNLOCKED!,NOVO CAÇADOR DESTRAVADO!,,,,Neuer Hunter freigeschaltet!,NOUVEAU CHASSEUR DEBLOQUE!,Nuevo cazador desbloqueado!,Nový lovec odemčen !,
-HUD_UNLOCK_RAFF,YOU CAN NOW PLAY WITH RAFF,AGORA VOCÊ PODE JOGAR COM RAFF,,,,Dein neuer Hunter heisst Raff,VOUS POUVEZ JOUER AVEC RAFF,Ahora puedes jugar con Raff,Nyní můžeš hrát za Raffa,
-HUD_UNLOCK_BIU,YOU CAN NOW PLAY WITH BIU,AGORA VOCÊ PODE JOGAR COM BIU,,,,Dein neuer Hunter heisst Biu,VOUS POUVEZ JOUER AVEC BIU,Ahora puedes jugar con Biu,Nyní můžeš hrát za Biu,
-HUD_UNLOCK_PUNNY,YOU CAN NOW PLAY WITH PUNNY,AGORA VOCÊ PODE JOGAR COM PUNNY,,,,Dein neuer Hunter heisst Punny,VOUS POUVEZ JOUER AVEC PUNNY,Ahora puedes jugar con Punny,Nyní můžeš hrát za Punny,
-HUD_UNLOCK_ASS,YOU CAN NOW PLAY WITH ASS,AGORA VOCÊ PODE JOGAR COM ASS,,,,Dein neuer Hunter heisst Ass,VOUS POUVEZ JOUER AVEC ASS,Ahora puedes jugar con Ass,Nyní můžeš hrát za Ass,
-HUD_UNLOCK_ITEM,NEW ITEM UNLOCKED!,NOVO ITEM DESTRAVADO!,,,,Neues Item freigeschaltet!,NOVELLE OBJET DEBLOQUE!,Nuevo objeto desbloqueado!,"Nový předmět odemčen
-",
-HUD_UNLOCK_ITEM_GENERIC,YOU CAN NOW START WITH: ,AGORA VOCÊ PODE COMEÇAR COM: ,,,,Dieses Item ist ab jetzt verfuegbar:,VOUS POUVEZ COMMENCER AVEC:,Ahora puedes empezar con:,Nyní můžeš začít s:,
-HUD_UNLOCK_RELIC_PIECE,RELIC PIECE UNLOCKED!,PARTE DE RELÍQUIA DESTRAVADA!,,,,Reliquienstueck freigeschaltet!,PARTIE DE RELIQUE DEBLOQUE!,"Pieza de relíquia desbloqueado!
+",RAFF,,
+GENERAL_BIU,BIU,BIU,FAROFA,BIU,BIU,BIU,BIU,Biu,Biu,BIU,,
+GENERAL_PUNNY,PUNNY,PUNNY,BIXIN,PUNNY,PUNNY,PUNNY,PUNNY,Punny,Punny,PUNNY,,
+GENERAL_ASS,ASS,ASS,MULA,ASS,ASS,ASS,ASS,Ass,Ass,ASS,,
+GENERAL_RANDOM,RANDOM,SORTEIO,FODASE,RANDOM,,Zufall,ALEATOIRE,Aleatorio,Náhodně,무작위,,
+GENERAL_HP,HP,VIDA,SANGUINHO,HP,,LP,VIE,Vida,Zdraví,체력,,
+GENERAL_SHIELD,SHIELD,ESCUDO,,SHIELD,,Schild,BOUCLIER,Escudo,Štít,실드,,
+GENERAL_STAMINA,STAMINA,STAMINA,,STAMINA,,Ausdauer,ENDURANCE,Resistencia,Výdrž,스태미나,,
+GENERAL_LIGHTAMMO,LIGHT AMMO,MUNIÇÃO LEVE,,LIGHT AMMO,,Leichte Munition,MUNITION LEGERE,Munición Ligera,Lehká munice,,,
+GENERAL_MEDIUMAMMO,MEDIUM AMMO,MUNIÇÃO MÉDIA,,MEDIUM AMMO,,Mittlere Munition,MUNITION MOYENNE,Munición Media,Střední munice,,,
+GENERAL_HEAVYAMMO,HEAVY AMMO,MUNIÇÃO PESADA,,HEAVY AMMO,,Schwere Munition,MUNITION LOURDE,Munición Pesada,Těžká munice,,,
+GENERAL_GRENADES,GRENADES,GRANADAS,,GRENADES,,Granaten,GRENADE,Granadas,Granát,그레네이드,,
+GENERAL_SHOP_OVERSHIELD,OVERSHIELD,ESCUDO EXTRA,,OVERSHIELD,,Extraschild,,Super escudo,"Štít
+",,,
+GENERAL_SHOP_LIGHTAMMO,EXTRA LIGHT AMMO,MUNIÇÃO LEVE EXTRA,,EXTRA LIGHT AMMO,,Extra leichte Munition,MUNITION LEGERE EXTRA,Munición Ligera Extra,Extra lehká munice,,,
+GENERAL_SHOP_MEDIUMAMMO,EXTRA MEDIUM AMMO,MUNIÇÃO MÉDIA EXTRA,,EXTRA MEDIUM AMMO,,Extra mittlere Munition,MUNITION MOYENNE EXTRA,Munición Media Extra,Extra střední munice,,,
+GENERAL_SHOP_HEAVYAMMO,EXTRA HEAVY AMMO,MUNIÇÃO PESADA EXTRA,,EXTRA HEAVY AMMO,,Extra schwere Munition,MUNITION LOURDE EXTRA,Munición Pesada Extra,Extra těžká munice,,,
+GENERAL_SHOP_GRENADES,MORE GRENADES,GRANADAS EXTRAS,,MORE GRENADES,,Extra Granaten,GRENADE EXTRA,Más Granadas,Extra granáty,,,
+GENERAL_TELEPORTER_STAGE,STAGE:,FASE:,,STAGE:,,Level:,NIVEAU:,Nivel:,"Úroveň:
+",,,
+GENERAL_DODGE,DODGE,ESQUIVA,,DODGE,,Ausweichen,ESQUIVE,Esquivar,Vyhnutí,,,
+,,,,,,,,,,,,
+HUD_GAMEOVER,GAME OVER,FIM DE JOGO,,GAME OVER,,Ende,PARTIE TERMINE,Fin de partida,Konec hry,게임오버,,
+HUD_GAMEOVER_RETRY,Press Space to Retry,Aperte Espaço para Recomeçar,,Press Space to Retry,,Druecke Leertaste um neu zu starten,Appuyez sur espace pour recommencer,Pulsa Espacio para reintentar,Zmáčkni mezerník pro návrat,,,
+HUD_GAMEOVER_RETRY_JOY,Press A to Retry,Aperte A para Recomeçar,,Press A to Retry,,Druecke A um neu zu starten,Appuyez sur A pour recommencer,Pulsa A para reintentar,Zmáčkni A pro návrat,,,
+HUD_GAMEOVER_MENU,Press ESC to return to Menu,Aperte ESC para ir ao Menu Principal,,Press ESC to return to Menu,,Druecke ESC um zum Hauptmenue zu gehen,Appuyez sur ESC pour retourner au menu principal,Pulsa ESC para volver al menú,"Stiskni ESC pro menu
+",,,
+HUD_GAMEOVER_MENU_JOY,Press B to return to Menu,Aperte B para ir ao Menu Principal,,Press B to return to Menu,,Druecke B um zum Hauptmenue zu gehen,Appuyez sur B pour retourner au menu principal,Pulsa B para volver al menú,"Stiskni B pro menu
+",,,
+HUD_KILL1,KILL,MORTE,,KILL,,Kill,,Muerte,kill,,,
+HUD_KILL2,DOUBLE KILL,MORTE DUPLA,,DOUBLE KILL,,Doppelkill,,Doble muerte,Double Kill,,,
+HUD_KILL3,TRIPLE KILL,MORTE TRIPLA,,TRIPLE KILL,,Dreifachkill,,Triple Muerte,Triple kill,,,
+HUD_KILL4,MULTI KILL,MULTI MORTE,,MULTI KILL,,Multikill,,Multimuerte,Multi kill,,,
+HUD_KILL5,ULTRA KILL,ULTRA MORTE,,ULTRA KILL,,Ultrakill,,Ultramuerte,Ultra kill,,,
+HUD_KILL6,MONSTER KILL,MONSTER MORTE,,MONSTER KILL,,Monsterkill,,Monstermuerte,"Monsterkill
+",,,
+HUD_KILL7,GODLIKE,DIVINO,,GODLIKE,,Goettlich,DIVIN,Divino,Godlike,,,
+HUD_KILL8,SUPER GOD LIKE?,SUPER DIVINO?,,SUPER GOD LIKE?,,Super goettlich?,SUPER DIVIN?,Super Divino,Super GODlike,,,
+HUD_KILL9,YOU MUST BE CHEATING,VOCÊ TÁ ROUBANDO,,YOU MUST BE CHEATING,,Du mogelst,,Debes estar haciendo trampas,Ty podvádíš že ?!,,,
+HUD_KILL10,ARE YOU SERIOUS?,É SÉRIO ISSO?,,ARE YOU SERIOUS?,,Ernsthaft?,,En serio?,Myslíš to vážně ?,,,
+HUD_PRECISIONKILL,PRECISION KILL,MORTE PRECISA,,PRECISION KILL,,Praezisionskill,TIR DE PRECISION,Muerte precisa,Precizní kill,,,
+HUD_BOUNTY,BOUNTY,ESTRELAS,,BOUNTY,,Sterne,PRIME,Estrellas,Odměna,,,
+HUD_UNLOCK_HUNTER,NEW HUNTER UNLOCKED!,NOVO CAÇADOR DESTRAVADO!,,NEW HUNTER UNLOCKED!,,Neuer Hunter freigeschaltet!,NOUVEAU CHASSEUR DEBLOQUE!,Nuevo cazador desbloqueado!,Nový lovec odemčen !,,,
+HUD_UNLOCK_RAFF,YOU CAN NOW PLAY WITH RAFF,AGORA VOCÊ PODE JOGAR COM RAFF,,YOU CAN NOW PLAY WITH RAFF,,Dein neuer Hunter heisst Raff,VOUS POUVEZ JOUER AVEC RAFF,Ahora puedes jugar con Raff,Nyní můžeš hrát za Raffa,,,
+HUD_UNLOCK_BIU,YOU CAN NOW PLAY WITH BIU,AGORA VOCÊ PODE JOGAR COM BIU,,YOU CAN NOW PLAY WITH BIU,,Dein neuer Hunter heisst Biu,VOUS POUVEZ JOUER AVEC BIU,Ahora puedes jugar con Biu,Nyní můžeš hrát za Biu,,,
+HUD_UNLOCK_PUNNY,YOU CAN NOW PLAY WITH PUNNY,AGORA VOCÊ PODE JOGAR COM PUNNY,,YOU CAN NOW PLAY WITH PUNNY,,Dein neuer Hunter heisst Punny,VOUS POUVEZ JOUER AVEC PUNNY,Ahora puedes jugar con Punny,Nyní můžeš hrát za Punny,,,
+HUD_UNLOCK_ASS,YOU CAN NOW PLAY WITH ASS,AGORA VOCÊ PODE JOGAR COM ASS,,YOU CAN NOW PLAY WITH ASS,,Dein neuer Hunter heisst Ass,VOUS POUVEZ JOUER AVEC ASS,Ahora puedes jugar con Ass,Nyní můžeš hrát za Ass,,,
+HUD_UNLOCK_ITEM,NEW ITEM UNLOCKED!,NOVO ITEM DESTRAVADO!,,NEW ITEM UNLOCKED!,,Neues Item freigeschaltet!,NOVELLE OBJET DEBLOQUE!,Nuevo objeto desbloqueado!,"Nový předmět odemčen
+",,,
+HUD_UNLOCK_ITEM_GENERIC,YOU CAN NOW START WITH: ,AGORA VOCÊ PODE COMEÇAR COM: ,,YOU CAN NOW START WITH: ,,Dieses Item ist ab jetzt verfuegbar:,VOUS POUVEZ COMMENCER AVEC:,Ahora puedes empezar con:,Nyní můžeš začít s:,,,
+HUD_UNLOCK_RELIC_PIECE,RELIC PIECE UNLOCKED!,PARTE DE RELÍQUIA DESTRAVADA!,,RELIC PIECE UNLOCKED!,,Reliquienstueck freigeschaltet!,PARTIE DE RELIQUE DEBLOQUE!,"Pieza de relíquia desbloqueado!
 ","Kousek relikvie odemčen!
-",
-HUD_UNLOCK_RELIC_ALLPIECES,UNLOCK ALL 3 PIECES OF THIS RELIC,DESTRAVE 3 PARTES DESTA RELÍQUIA,,,,Schalte 3 Stuecke dieser Reliquie frei,DEBLOQUER TOUTE LES 3 PARTIE DE CETTE RELIQUE,Desbloquea 3 piezas de esta reliquia,Odemkni všechny 3 kousky relikvie,
-HUD_UNLOCK_RELIC,NEW RELIC UNLOCKED!,NOVA RELÍQUIA DESTRAVADA,,,,Neue Reliquie freigeschaltet!,NOUVELLE RELIQUE DEBLOQUE!,Nueva reliquia desbloqueada!,Nová relikvie odemčena!,
-HUD_UNLOCK_RELIC_COMPLETE,YOU HAVE FOUND ALL THE PIECES OF A RELIC,VOCÊ ENCONTROU TODAS AS PARTES DA RELÍQUIA,,,,Du hast alle Stuecke einer Reliquie gefunden,VOUS AVEZ TROUVER TOUT LES PARTIES D'UNE RELIQUE,Has encontrado todas las piezas de una reliquia,Našel jsi všechny kousky relikvie,
-HUD_UNLOCK_REQ_RAFF,Buy All Checkpoints to unlock Raff,Compre todos os Portais para destravar Raff,,,,Kaufe alle Checkpoints um Raff freizuschalten,Acheter tout les checkpoints pour débloquer Raff,Comprar todos los puntos de control para desbloquear a Raff,Kup si všechny checkpointy abys odemkl Raffa,
-HUD_UNLOCK_REQ_BIU,Beat the game without using Checkpoints to unlock Biu,Complete o jogo começando pelo primeiro Portal para destravar Biu,,,,"Spiele das gesamte Spiel ohne Checkpoints, um Biu freizuschalten",Battre le jeu sans utiliser de checkpoints pour débloquer Biu,Pasarte el juego sin utilizar puntos de control para desbloquear a Biu,Dokonči hru bez použití checkpointů abys odemkl Biu,
-HUD_UNLOCK_REQ_PUNNY,Get 80000 bounty to unlock Punny,Consiga 80000 estrelas para destravar Punny,,,,Sammle 80000 Sterne um Punny freizuschalten,Obtenir 80000 de prime pour débloque Punny,Obtener 80000 estrellas para desbloquear a Punny,Získej 80 000 odměn abys odemkl Punny,
-HUD_RELIC_DETECT,RELIC DETECTED!,RELÍQUIA DETECTADA!,,,,,,"Reliquia detectada
-",,
-HUD_RELIC_DETECT_KEY,"PRESS ""E"" TO SEARCH FOR BURIED TREASURE","APERTE ""E"" PARA PROCURAR O TESOURO ENTERRADO",,,,,,"El tesoro está cerca, ponte a cavar.
-",,
-HUD_RELIC_DETECT_JOY,"PRESS ""X"" TO SEARCH FOR BURIED TREASURE","APERTE ""X"" PARA PROCURAR O TESOURO ENTERRADO",,,,,,,,
-HUD_RELIC_FOUND,YOU FOUND IT!,VOCÊ ENCONTROU!,,,,,,,,
-HUD_RELIC_FOUND_KEY,"PRESS ""E"" TO DIG","APERTE ""E"" PARA CAVAR",,,,,,,,
-HUD_RELIC_FOUND_JOY,"PRESS ""X"" TO DIG","APERTE ""X"" PARA CAVAR",,,,,,,,
-,,,,,,,,,,
-ASS_RELIC,There's treasure buried here!,Tem tesouro enterrado aqui!,,,,,,Hay un tesoro enterrado aquí!,,
-ASS_CONGRATS,Nice find. I suppose I can't charge you for that one...,Belo achado. Imagino que não posso te cobrar por isso aí...,,,,,,,,
-ASS_TUTORIAL,"Good morning, sunshine. Maybe you should try the tutorial first?","Bom dia, lindeza. Talvez você deva tentar o tutorial primeiro.",,,,"Guten Morgen, Faulpelz. Was meinst du, ab zum Tutorial?","Bonjour, mon rayon de soleil. Peut-être que vous devriez essayer le tutoriel en premier?","Buenos días, sol. Tal vez deberías probar el tutorial primero?","Dobré ráno, možná bys nejdřív chtěl skusit tutoriál",
-ASS_GREETING,I have located some relics down on the Asteroid Dungeon. Hop on the teleporter!,Eu localizei algumas relíquias no Asteróide Masmorra. Entre no teleportador!,,,,Ich habe einige Reliquien auf dem Dungeonasteroiden entdeckt. Zum Teleporter!,J'ai localisé quelque reliques sur le donjon Astéroid. Hop sur le téléporteur!,He localizado algunas reliquias en la mazmorra Asteroide. Entra en el teletransportador!,"Zjistil jsem něaké relikvie v asteroidí kobce, šup do teleportu!",
-ASS_FIRSTSTAGEDONE,"Each relic has 3 parts. If you find any part, I’ll let you buy it from me.","Cada relíquia tem 3 partes. Se você encontrar uma, eu deixo você comprá-la de mim.",,,,"Jede Reliquie hat 3 Stuecke. Wenn du eins findest, verkauf ich es dir gerne zurueck.","Chaque relique possède 3 parties. Si vous trouvez une partie, je vous laisserai me l'acheter.","Cada reliquia tiene 3 partes. Si encuentras una parte, te la venderé.","Každá relikvie má 3 kousky, měl bys najít všechny. Nechám tě něaké koupit ode mě.",
-ASS_CHECKPOINTREACHED,"I could teleport you straight to Stage 2. Trouble worth some money, no?","Eu poderia te teleportar direto para a Fase 2. Vale uma grana, não?",,,,Ich koennte dich direkt zu Level 2 teleportieren. Natuerlich nicht fuer umsonst.,"Je peux vous téléportez au Niveau 2, en échange d'argent. Ca en vaut la peine non?","Podría teletransportarte a la fase 2. Pero vale dinero, no?",Můžu tě nechat teleportovat do úrovně 2 ale práce stojí něaké peníze ne ?,
-ASS_FIRSTRELIC,Assemble the first relic by collecting all of its 3 pieces in Stage 1.,Monte a primeira relíquia ao coletar suas 3 partes na Fase 1,,,,"Sammle alle 3 Stuecke der ersten Reliquie in Level 1, um sie wiederherzustellen.",Assemblez la première relique en récoltant toutes ses 3 parties au Niveau 1.,Monta la primera reliquia juntando 3 piezas de la primera fase.,Slož první relikvii ze třech dílů v úrovni 1,
-ASS_SHOP1,"While you were busy fighting everything, I found this stuff. Purchase away!","Enquanto você se ocupava matando tudo, achei isso. Compre à vontade!",,,,"Waehrend du mit der Ballerei beschaeftigt warst, habe ich was tolles gefunden. Du kannst es mir gerne abkaufen!","Pendant que vous étiez occuper à vous battre, j'ai trouver ceci. Acheter donc!","Mientras estabas ocupado luchando , me encontré con esto. ¡Cómpralo!",Zatím co jsi byl zaneprázdněn bojem jsem objevil tyhle kousky relikvie. Pokud chceš prodám je,
-ASS_SHOP2,"A relic is useless until you find all 3 parts. Buy everything, just in case.",Uma relíquia é inútil até você encontrar todas as 3 partes. Compre tudo!,,,,"Die Reliquien funktionieren erst, wenn du alle 3 Stuecke gefunden hast. Los, kauf schon.","Une relique est inutile sans toute les 3 parties. Acheter tout, juste au cas où.","Una reliquia es inútil si no tienes las 3 partes. Cómpralo todo, por si acaso.","Relikvie nemá cenu dokud neobjevíš všechny 3 části, tak nakupuj.",
-ASS_SHOP3,You can unlock weapons permanently for our Armory by buying them. From me.,Você pode destravar armas permanentemente ao comprá-las. De mim.,,,,"Du kannst alle Waffen permanent freischalten, wenn du sie kaufst. Aus meiner Hand.",Vous pouvez débloquer des armes de façon permantes pour notre armurie en les achetant. De moi.,Puedes desbloquear armas permanentemente de nuestra armería comprándomelas.,"Zbraň si můžeš odemknout napořád pokud si jí zakoupíš u mě, budeš jí mít na lodi ve zbrojovně",
-ASS_SHOP4,Im sure you will eventually buy your way to victory.,Estou certo de que você vai comprar seu caminho até a vitória.,,,,Du wirst es noch schaffen dich bis zum Ziel durchzumogeln.,Je suis sûr que vous allez finir par acheter votre chemin vers la victoire.,Estoy seguro de que comprarás tu camino a la victoria.,Jsem si jistý že když si to koupíš pomůže ti to k vítěztví,
-ASS_SHOP5,"Buy something, will ya?","Ei, compre alguma coisa!",,,,Wie waers mit einem kleinen Einkauf?,"Acheter quelque chose, voulez-vous?","Compra algo, ¿quieres?","Kup si něco, chceš ?",
-ASS_SHOP6,How do these Relics work? It is a secret to everyone.,Como essas Relíquias funcionam? É um segredo pra todo mundo.,,,,Wie funktionieren diese Reliquien? Keiner weiss es genau.,Comment ces reliques fonctionne? C'est un secret pour tout le monde.,"¿Cómo funcionan estas reliquias? Es un secreto para todo el mundo.
-",Jak ty relikvie fungují je tajemstvím pro každého,
-ASS_LEVEL1_1,I should probably have told you about these armed thugs around the Asteroid.,Acho que tinha que ter te contado sobre os capangas armados no Asteróide.,,,,"Ach ja, hier wimmelt es nur so von bewaffneten Biestern. Hups, zu spaet.",Je devrais probablement vous avoir prévenu propos de ces voyous armés autour de l'astéroïde.,Probablemente debería haberte hablado de estos matones armados en todo el asteroide.,Pravděpodobně bych ti měl říct o těch ozbrojených lupičích na asteroidu,
-ASS_LEVEL1_2,"Was that a duck? These are not just thugs. They are Ducans, after our relics.","Um pato? Esses não são só capangas. São Ducans, atrás das nossas relíquias.",,,,"War das eine Ente? Pass gut auf, das sind Ducans, und sie wollen unsere Reliquien.",Etait-ce un canard? Ce ne sont pas seulement des voyous.,"¿Era un pato? Estos no son sólo matones. Son Ducans, van tras nuestras reliquias.","Byla to kachna ? to nejsou obyčejní zloději to jsou Ducanové, chtějí naše relikvie",
-ASS_LEVEL1_3,It seems local wildlife is not very friendly. Glad you found that out first.,Parece que a fauna local não é muito amigável. Bom que você descobriu primeiro.,,,,"Die sind aber unfreundlich. Gut, dass du das fuer uns in Erfahrung gebracht hast.",Il semble faune locale est pas très sympathique. Heureux vous en êtes rendu compte le premier.,Parece que la fauna local no es muy amable. Me alegro de que lo hayas descubierto primero.,"Vypadá to že místní příroda není uplně přátelská, ještě že jsi to našel",
-ASS_LEVEL2_1,"If we take out the Ducan Commander, they will flee from the Asteroid. Probably.","Se eliminarmos o Comandante Ducan, eles irão fugir do planeta. Provavelmente.",,,,"Beseitigen wir den Ducan-Commander, fliehen die anderen vom Asteroiden.","Si nous éliminons Commandant Ducan, ils fuiront de l'astéroïde. Probablement.","Si acabamos con el Comandante Ducan, huirán del asteroide. Probablemente.","Když vyženem velitele Ducana z asteroidu, odletí s ním i ostatní, nejspíš..",
-ASS_LEVEL2_2,I’ve heard rumors about the Ducan Commander hanging out around Stage 4...,Ouvi rumores de que o Comandante Ducan está passeando pela Fase 4...,,,,"Geruechten nach, ist der Ducan-Commander in Level 4...",J'ai entendu des rumeurs à propos du Commandant Ducan traîner dans les alentour du Niveau 4.,He oído rumores sobre que el Comandante Ducan sale en la fase 4 ...,"Slyšel jsem zvěsti že velitel Ducan je na asteroidu 4 !
-",
-ASS_LEVEL2_3,You can’t face the Commander without serious firepower and some relics.,Você não pode enfrentar o Comandante sem poder de fogo sério e umas relíquias.,,,,Du kannst dem Commander nur mit viel Feuerkraft und Reliquien entgegentreten.,Vous ne pouvez affronter le Commandant Ducan dans une puissance de feu considérable et quelque reliques,No puedes enfrentarte a el comandante Ducan sin armas ni reliquias.,Nemůužeš se postavit veliteli bez slušných zbraní a relikvií,
-ASS_LEVEL3_1,Maybe Ill help you with the fighting next time.,Talvez eu te ajude com a luta da próxima vez.,,,,Vielleicht helfe ich dir beim naechsten Mal.,Peut-être que je vous aiderai avec les combats la prochaine fois,"Quizás la próxima vez te ayude a en la pelea.
-",Možná ti příště pomůžu bojovat..,
-ASS_LEVEL3_2,"Hmm, I actually meant the next time after this one.","Hmm, eu quis dizer a vez depois dessa.",,,,"Hmm, ich meinte eigentlich das Mal darauf.","Hmm, je voulais dire la prochaine après celle-ci.","Hmm, yo en realidad quería decir la próxima vez después de ésta.","Hmm, vlastně jsem myslel až po tomhle boji",
-ASS_LEVEL3_3,Relic Hunting sure sounds dangerous. Im glad you take most of the risks.,Caçar relíquias parece perigoso. Ainda bem que você toma todos os riscos.,,,,"Reliquien aufspueren, klingt gefaehrlich. Schoen, dass du all die Gefahren auf dich nimmst.",Chasseur de reliques semble plutôt dangeureux. Je suis heureux que vous prenez le plus de risques.,Cazador de reliquias suena peligroso. Me alegro de que tomes la mayor parte de los riesgos.,"Lov relikvií zní nebezpečně, tak doufám že na tom něco získáme",
-ASS_LEVEL4_1,Hmm. Maybe you do stand a chance against the Ducan Commander.,Hmm. Talvez você tenha mesmo uma chance contra o Comandante Ducan.,,,,Hmm. Vielleicht hast du doch eine Chance gegen den Ducan-Commander.,Hmm. Peut-être que vous avez une chance contre le Commandant Ducan.,Hmm. Tal vez tengas una oportunidad contra el Comandante Ducan.,Hmmm... možná jsi měl dát veliteli Duncanovi šanci,
-ASS_LEVEL4_2,Now you were just lucky. No shame in admitting it.,"Agora você só deu sorte. Admite, vai.",,,,Das jetzt war doch alles Glueck. Gibs ruhig zu.,Vous avez juste eu de la chance. Il n'y pas de honte à l'admettre.,Acabas de tener mucha suerte. No hay vergüenza en admitirlo.,Teď jsi měl prostě štěstí a neboj se to přiznat,
-ASS_LEVEL4_3,"Try not to die, ok? I need you to buy my overpriced stuff.","Tenta não morrer, ok? Preciso de você pra vender minhas coisas.",,,,"Versuch dich am Leben zu halten, ok? Sonst verlier ich meinen einzigen Kunden.","Essayez de ne pas mourrir, ok? J'ai besoin de vous pour que vous m'achetez mes affaires hors de prix","Trata de no morir, ¿de acuerdo? Necesito que me compres cosas.",Skus neumřít ano ? Chci abys ode mě koupil moje předražený věci.,
-ASS_RANDOM00,Im sure you can deal with that Ducan Commander if you fail enough times.,Com certeza você lida com aquele Comandante se falhar o suficiente.,,,,"Du bringst den Commander bestimmt zur Strecke, du musst nur oft genug scheitern.","Je suis sur que vous pouvez faire face à ce Commandant Ducan, si vous échouer suffisament de fois.","Creo que podrás acabar con el comandante Ducan, si fracasas la suficientes veces.",Myslím že se můžeš dohodnout s velitelem Ducanem pokud selžeš mockrát,
-ASS_RANDOM01,"If I were you, Id buy everything from the previous Stage before progressing.","Se eu fosse você, compraria tudo da Fase anterior antes de avançar.",,,,"Bevor du weitergehst, rate ich dir alles vom vorigem Level zu kaufen.","Si j'étais vous, je serais aller tout acheter des Niveau précédent avant de continuer.","Si fuera tú, compraría todo de la fase anterior antes de avanzar. ",Být na tvém místě koupil bych všechno z předchozího levelu před pokračováním,
-ASS_RANDOM02,You can equip up to 3 Relics at the same time. Try different combinations.,Você pode equipar até 3 Relíquias. Tente combinações diferentes.,,,,Du kannst bis zu 3 Reliquien tragen. Probier verschiedene Kombinationen aus.,Vous pouvez équiper jusqu'à 3 reliques en même temps. Essayez différentes combinaison.,Puedes equiparte 3 reliquias a la vez. Intenta distintas combinaciones.,"Můžeš použít 3 relikvie najednou, vyzkoušej si kombinace
-",
-ASS_RANDOM03,Is this a little too hard on you? Poor Hunter.,"Tá muito difícil pra você? Ô, tadinho.",,,,Zu schwer? Du armes Ding.,Est-ce un peu trop dur pour vous? Pauvre chasseur.,¿Es demasiado difícil para ti? Pobre cazador.,Není to na tebe moc těžké ? Chudáčku lovče,
-ASS_RANDOM04,Co-op is usually easier when you don't kill each other.,Co-op normalmente é mais fácil se vocês não se matarem.,,,,"Koop ist an sich leichter, wenn ihr euch nicht gegenseitig umbringt.","Co-op est en général plus facile, quand vous ne vous entretuer pas.",Co-op suele ser más fácil si no os matáis entre vosotros.,Kooperace je obvykle lehčí pokud se nepozabíjíte navzájem,
-ASS_RANDOM05,Maybe Ill help you with the fighting next time.,Talvez eu te ajude com a luta da próxima vez.,,,,Vielleicht helfe ich dir beim naechsten Mal.,Peut-être que je vous aiderai avec les combats la prochaine fois,"Quizás la próxima vez te ayude a en la pelea.
-",Možná ti příště pomůžu bojovat..,
-ASS_RANDOM06,Thanks for buying all that stuff from me. I can afford new horseshoes now.,Obrigado por comprar todas aquelas coisas. Comprei ferraduras novas.,,,,Danke fuer den Grosseinkauf. Jetzt kann ich mir neue Hufeisen leisten. ,Merci d'acheter tout ces trucs de ma part. Je peux me permettre d'acheter de nouveau fer à cheval maintenant.,Gracias por comprarme todas esas cosas. Ahora puedo permitirme nuevas herraduras.,"Děkuji že vše kupuješ ode mě, můžu si koupit nové koňské boty",
-ASS_RANDOM07,"My name might be ""Ass"", but Im not the one getting kicked out there.","Eu posso ser uma Mula, mas não sou eu que estou empacado no jogo.",,,,"Ich bin vielleicht ein Esel, aber nicht so stoerrisch wie du.",,"Puede que me llame ""Ass"", pero a mi no me patean el trasero.","Možná se jmenuju Ass, ale nikdo mě vykopávat nebude",
-ASS_RANDOM08,I wonder if my dialogue ever repeats itself.,Fico pensando se às vezes eu falo muito a mesma coisa.,,,,"Ich frage mich, ob ich mich jemals wiederhole.",Je me demande si mon dialogue fini par ce répéter.,Me pregunto si mi diálogo se repite.,Občas si připadám že si mluvím pro sebe,
-ASS_RANDOM09,"To become invincible, press ""left"", ""right"" and then... no, just messing with ya.","Para ficar invencível, aperta ""esquerda"", ""direita"" e... não, tô brincando.",,,,"Um unbesiegbar zu werden, druecke ""links"", ""rechts"" und dann... Haha, von wegen.","Pour devenir invincible, appuyez sur ""gauche"", ""droite"" et ensuite... non, juste pour jouer avec vous.","Para volverte invencible, pulsa ""izquierda"", ""derecha"" y después... no, sólo estoy jugando contigo.","pokud chceš být neporazitelný stiskni doleva, pak doprava a pak... no, zapomeň na to",
-ASS_RANDOM10,I would donate all of my money to whomever made this game.,Eu doaria todo o meu dinheiro pra quem fez esse jogo.,,,,Wer hat dieses Spiel gemacht? Denen wuerde ich all mein Geld spenden.,Je donnerai tout mon argent à celui qui à fait ce jeu.,Donaría todo mi dinero a quienquiera que haya hecho este juego.,Chci podpořit všemi svými penězmi toho kdo vytvořil tuhle hru,
-ASS_RANDOM11,Think Im annoying? At least Im not throwing grenades at you.,Me acha irritante? Pelo menos não estou jogando granadas em você.,,,,Ich soll nervig sein? Zumindest bewerfe ich dich nicht mit Granaten.,"Vous pensez que je suis ennuyant? Au moins, je ne vous jete pas de grenade dessus.",¿Piensas que soy molesto? Por lo menos no te tiro granadas.,"Myslíš že jsem otravný ? Abych po tobě nehodil granát
-",
-ASS_RANDOM12,Ever wondered how I teleport the teleporters down to the asteroid?,Já se perguntou como eu teleporto os teleportadores até o asteróide?,,,,"Hast du dich schon gefragt, wie ich die Teleporter zum Asteroiden teleportiere?",Vous êtes vous déjà demandez comment je téléporte les téléporteur sur l'astéroïd? ,Alguna vez se preguntó cómo teletransporto los teletransportadores hasta el asteroide?,Přemýšlels někdy nad tím jak teleportuji teleporty dolů na asteroidy ?,
-ASS_RANDOM13,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.","Se a Dinastia Ducan vencer aqui, a galáxia está perdida. Sem pressão.",,,,"Siegt die Ducan-Dynasty, sind wir verloren. Fuehl dich aber nicht unter Druck gesetzt.","Si la dynastie Ducan gagne ici, tout ca galaxy et condamné. Sans pression.","Si la Dinastía Ducan gana, la galaxia estará condenada. Sin presión.",Jestli tu Duncanova společnost vyhraje je s galalxií ámen,
-ASS_RANDOM14,I wonder if I could charge Bounty for my advice as well.,"Será que devo cobrar Estrelas pelos meus conselhos, também?",,,,Vielleicht sollte ich auch fuer meine wertvollen Tips Sterne verlangen.,Je me demande si je peux faire payer mes conseils également.,Me pregunto si también podría cobrar recompensa por mi consejo.,"Navrhuji vyměnit odměnu za mojí radu, je dobrá",
-ASS_RANDOM15,Did you forget to hold the right mouse button to aim this time?,Você se esqueceu de usar o botão direito do mouse para mirar dessa vez?,,,,Hast du dieses Mal vergessen mit der rechten Maustaste zu zielen?,Avez vous oublier de maintenir le clique droit pour visé cette fois?,¿Te has olvidado de apretar el click derecho para apuntar esta vez?,Nezapoměl jsi tentokrát držet pravé myšítko pro míření ?,
-ASS_RANDOM16,Was that a grenade that killed you last time? You must be getting tired.,Foi uma granada que te matou outra vez? Deve estar se cansando.,,,,"War das eine Granate, die dich das letzte Mal getoetet hat? Wirst wohl muede.",Etait-ce une grenande qui vous à tuez la dernière fois? Vous devez être fatigué.,¿Era esa la granada que te mató la última vez? Debes estar cansándote.,Nezabil tě posledně taky granát ? to musí být iritující,
-ASS_RANDOM17,I heard that the developer wanted to implement several different endings.,Ouvi que um desenvolvedor queria colocar vários finais diferentes.,,,,"Man sagt, die Entwickler wollten mehrere Endings implementieren.",J'ai entendu dire que le développeur voulais implementer plusieurs et différente fin.,He oído que el desarrollador quería poner distintos finales.,"Slyšel jem o tom že vývojář chtěl implementovat více možných konců
-",
-ASS_RANDOM18,Do you like cats? I like cats.,Você gosta de gatos? Eu gosto de gatos.,,,,Magst du Katzen? Ich mag Katzen.,Vous aimez les chats? J'aime les chats.,¿Te gustan los gatos? Me encantan los gatos,Máš rád kočky ? Já ano,
-ASS_RANDOM19,"Im not much of a dog person. Was once, though.",Não gosto tanto de cachorros quanto eu gostava antes.,,,,Ich war mal ein Hundemensch. Oder Hundeesel.,,"Antes me gustaban los perros.
-","Nejsem moc pejskař, spíš pejskůň",
-ASS_RANDOM20,"Of course ""Ass"" is not my real name. Its ""Assonius"".","Claro que ""Ass"" não é meu nome verdadeiro. É ""Assonius"".",,,,"""Ass"" ist natuerlich nicht mein echter Name. Ich heisse ""Assonius"".","Bien sur ""Ass"" n'est pas mon vrai nom. Mon vrai nom est ""Assonius"".","Claro que ""Ass"" no es mi verdadero nombre. Es ""Assonius"".","Jasně že Ass není mé celé jméno, to zní ""Assonius""",
-ASS_RANDOM21,"Hahahahahahaha! Oh sorry, just remembering a joke in my head.","Hahahahahahaha! Opa, foi mal, só lembrei de uma piada aqui.",,,,"Hahahahahahaha! Sorry, habe mich nur gerade an einen Witz erinnert.","Hahahahahahaha! Oh, désolé, je viens juste de me souvenir d'une blague dans ma tête. ","Hahahahahahaha! Oh lo siento,me acabo de acordar de un chiste.","Áhaháháhá ha, promiň, jen jsem si vzpoměl na jeden dobrý vtip",
-ASS_RANDOM22,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.","Se a Dinastia Ducan vencer aqui, a galáxia está perdida. Sem pressão.",,,,"Siegt die Ducan-Dynasty, ist alles verloren. Fuehl dich aber nicht unter Druck gesetzt.","Si la dynastie Ducan gagne ici, tout ca galaxy et condamné. Sans pression.","Si la Dinastía Ducan gana, la galaxia estará condenada. Sin presión.",Jestli tu Duncanova společnost vyhraje je s galalxií ámen,
-ASS_RANDOM23,Been thinking about the inherent misery of the human condition. Glad Im a Donkey.,Tenho pensado sobre a miséria inerente à raça humana. Ainda bem que sou Mula.,,,,Ich denke zurzeit ueber das ewige Elend der Menschheit. Zum Glueck bin ich ein Esel.,,He estado pensando en la miseria inherente de la condición humana. Me alegro de ser un burro.,"Občas přemýšlím nad kondicí lidí, díky bohu že jsem osel",
-ASS_RANDOM24,"I could explain to you exactly how to beat this game, but you wouldnt understand.","Eu poderia te explicar exatamente como zerar o jogo, mas você não entenderia.",,,,"Ich koennte dir erklaeren, wie man das Spiel abschliesst, aber du wuerdest nix verstehen.","Je pourrais vous expliquez exactement comment finir ce jeu, mais vous ne comprendriez pas.","Te podría decir como pasarte este juego, pero no lo entenderías.","Dokážu vysvětlit, jak vyhrát celou hru, ale nidko tomu nebude stejně rozumět",
-ASS_RANDOM25,Im getting sleepy. Need coffee.,Ficando com sono. Cadê o café?,,,,Ich werde muede. Gibts Kaffee?,J'ai sommeil. Besoin de café.,Me estoy durmiendo. Necesito café.,"Chce se mi spát, dal bych si kávu",
-ASS_RANDOM26,Do you think this is going to take much longer? I miss our home.,Você acha que isso ainda vai demorar muito? Saudades de casa.,,,,"Meinst du, das hier dauert noch lange? Ich vermisse unser Zuhause.",Vous pensez que ca va prendre encore longtemps? Notre maison me manque.,Piensas que nos va a llevar mucho más tiempo? Echo de menos nuestro hogar.,Opravdu tu chceš ještě zůstat ? stýská se mi po domově,
-ASS_RANDOM27,"They told me Relic Hunting was dangerous, but Im feeling quite safe actually.","Me disseram que Caçar Relíquias era perigoso, mas na real me sinto bem seguro.",,,,Reliquien aufzuspueren soll gefaehrlich sein. Ich fuehl mich aber ziemlich sicher hier.,"Ils m'ont dit que Chasseur de reliques était plutôt dangeureux, mais je me sens plutôt en sécurtié enfaite.","Me dijeron que ser cazador de reliquias era peligros, pero yo me siento bastante seguro.","Řílali mi že být lovcem relikvií je nebezpečné, ale já se cítím docela bezpečně
-",
-ASS_RANDOM28,Why is this stupid font so hard to read?,Porque essa fonte idiota é tão difícil de ler?,,,,Wieso ist diese dumme Schriftart so schlecht zu lesen?,Pourquoi cette stupide police d'écriture et si dur a lire?,¿Por qué es tan difícil leer esta estúpida fuente?,Proč se tenhle hloupý font tak špatně čte?,
-ASS_RANDOM29,This game was originally designed for Epic Game Jam.,Esse jogo foi originalmente desenvolvido durante a Epic Game Jam,,,,Dieses Spiel wurde urspruenglich bei der Epic Game Jam erstellt.,Ce jeu à été conçu à l'origine pour l'Epic Game Jam.,Este juego fue originalmente diseñado para la Epic Game Jam.,Tahle hra se původně dělala pro Epic Game Jam,
-ASS_RANDOM30,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,,,,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,Br ? br ? hue hue hue huehuehuehueheu heuehehehue,
-ASS_RANDOM31,Betu Souza drew me and all the art for this game.,"Betu Souza me desenhou, e o resto do jogo também!",,,,Betu Souza hat mich und auch den ganzen Rest des Spiels gezeichnet!,Betu Souza m'a dessiner tout les graphismes de ce jeu.,Betu Souza me dibujó a mi y a todo el arte de este juego.,Betu Souza mě nakreslil stejně jako všechno v téhle hře,
-ASS_RANDOM32,Mark venturelli designed this game. Blame him for the homing rockets.,Marcos Venturelli fez o design do jogo. A culpa dos foguetes teleguiados é dele.,,,,Marcos Venturelli ist unser Gamedesigner. Die ferngesteuerten Raketen sind seine Schuld. ,Mark Venturelli à conçu ce jeu. Reprocher lui les roquettes à tête chercheuse.,Mark enturelli diseñó este juego. Culparlo a él por los cohetes mensajeros.,"Mark Venturelli designoval celou hru, pochvalte ho za tu raketu",
-ASS_RANDOM33,Raphael Muller designed the sound of this game. And my lovely voice.,Raphael Muller fez o som deste jogo. E a minha doce voz.,,,,Raphael Mueller hat die Sounds in diesem Spiel gemacht. Und meine schoene Stimme.,Raphael Muller à conçu la musique du jeu. Et ma belle voix.,Raphael Muller diseñó el sonido de este juego. Y mi encantadora voz.,"Raphael Muller měl nastarosti všechny zvuky, včetně mého hlasu",
-ASS_RANDOM34,Goto80 made all the music in the game. Buy his new album on Bandcamp.,Goto80 fez toda a música do jogo. Compre seu disco novo no Bandcamp.,,,,Goto80 hat all die Musik geschrieben. Sein neues Album gibt es auf Bandcamp.,Goto80 à fait toute la musique du jeu. Acheter son nouvelle album sur Bandcamp.,Goto80 ha hecho la música del juego. Compra sun nuevo álbum en Bandcamp.,"Goto80 složil skvělou hudbu do téhle hry, kup si jeho nové album na Bandcampu",
-ASS_RANDOM35,"The Ducan Commander is a lie. No, just kidding, he is the final boss.","O Comandante Ducan é uma mentira. Não, brincadeira, ele é o chefão mesmo.",,,,"Den Ducan-Commander gibt es nicht wirklich. Nur ein Scherz, er ist der Endgegner.","Le Commandant Ducan et un mensonge. Non je plaisante, il est le boss final.","El comandante Ducan es una mentira. No, era broma, es el jefe final.","Velitel Duncan je fake, ne vážně dělám si srandu je to finální boss",
-ASS_RANDOM36,Can you beat this game? Im sure you cant.,Você consegue zerar esse jogo? Certeza que não.,,,,Schaffst du es bis zum Ende des Spiels? Ich bezweifle es.,Pouvez vous finir le jeu? Je suis sur que non.,¿Puedes pasarte este juego? Estoy seguro de que no.,Zvládneš tu hru dohrát ? Já si myslím že vůbec,
-ASS_RANDOM37,What are the odds of that many comets flying by our window all the time?,Quais são as chances de tantos cometas voarem perto da nossa janela o tempo todo?,,,,"Wie wahrscheinlich ist es, dass so viele Kometen an unserem Fenster vorbeifliegen?",,¿Cuáles son las probabilidades de que haya tantos cometas volando por la ventana todo el tiempo?,Co to je za komety co tu pořád lítají ? koukni se z okna,
-ASS_RANDOM38,Just realised for a moment that we are in SPACE. How cool is that?,"Acabei de me tocar de que estamos no ESPAÇO. Maneiro, né?",,,,"Ich merke gerade, wir sind im WELTALL. Wie cool ist das denn?",Je vien de réaliser que nous somme dans l'ESPACE.,"Me acabo de dar cuenta de que estamos en el ESPACIO. Mola, eh?",Právě jsem si uvědomil že jsme ve vesmíru. To je hustý,
-ASS_RANDOM39,The Ducan Dinasty is after our relics. Gotta get them before they do.,A Dinasti Ducan quer as nossas relíquias. Precisamos pegá-las antes deles.,,,,Die Ducan-Dynastie will unsere Reliquien. Wir muessen sie vor ihnen aufspueren.,La Dynastie Ducan en est après nos reliques. Nous devons les éliminer avant qu'il s'attaque à nous.,La Dinastía de Ducan va a por nuestras reliquias. Tengo que encontrarlas antes que ellos.,"Duncanova společnost jde po našich relikviích, měli bychom je získat dřív",
-ASS_RANDOM40,Ive heard there are flying monsters down there. Scary stuff.,Ouvi dizer que tem monstros voadores lá embaixo. Cruz credo.,,,,"Ich habe gehoert, da unten gibt es fliegende Monster. Hilfe!",J'ai entendu dire qu'il y avait des monstre volant en bas. Flippant.,He oído que hay monstruos voladores ahí abajo. Cosas espantosas.,"Slyšel jsem o těch létajících monstrech, dost strašidelný stvoření
-",
-ASS_RANDOM41,Where are my arms? Why do I have no arms?,Cadê meus braços? Porque eu não tenho braços?,,,,Wo sind meine Arme? Warum habe ich keine Arme?,Ou sont mes bras? Pourquoi n'ai-je pas de bras ?,¿Dónde están mis brazos? ¿Por qué no tengo brazos?,"Kde jsou mé ruce ? Proč sakra nemám ruce ?
-",
-ASS_RANDOM42,"I can say 42 different things. Makes you wonder, does it not?","Eu posso dizer 42 coisas diferentes. Te faz pensar, não?",,,,"Ich kann 42 verschiedene Dinge sagen. Interessant, oder?","Je peux dire 42 chose différentes. Ca vous fait réfléchir, n'est-ce pas?","Puedo decir 42 cosas distintas. Hace que te preguntas, ¿no es así?","Umím říct 42 různých věcí, to není uplně zlý co ?",
-ASS_RANDOM99,Im impressed you keep trying despite failing so much,"Estou impressionado por você continuar tentando, apesar de fracassar tanto.",,,,"Ich bin schwer beeindruckt. Obwohl du immer wieder scheiterst, machst du weiter.",Je suis impréssionner que vous continuer à essayer après avoir tant échouer.,Me sorprende que lo sigas intentando a pesar de fracasar tanto.,Zajmá mě kolikrát tohle všecko ještě budeš zkoušet,
-ASS_SHOP_PLAYER,"Wait, if I am there, who is selling the stuff?","Espera, se eu estou aí, quem está vendendo as coisas?",,,,"Moment, wenn ich dort bin, wer verkauft mein Zeug?","Attendez, si je suis ici, qui vend?","Espera, si estoy allí, ¿quién esta vendiendo las cosas?","Počkat.. když jsem tady, kdo teď prodává ty věci ?",
-,,,,,,,,,,
-RELIC_PINEAPPLE_NAME,The Pineapple Pudding,O Pudim de Abacaxi,,,,Der Ananaspudding,Le Pudding d'Ananas,El pudin de piña,Ananasový puding,
-RELIC_PINEAPPLE_LONG,+ Maximum Health,+ Vida Máxima,,,,+ Maximal-LP,+ Vie maximun,+ Vida máxima,Maximální zdraví+,
-RELIC_PINEAPPLE_SHORT,Extra Health,Vida Extra,,,,Extra LP,Vie Extra,Vida extra,Extra zdraví,
-RELIC_ALCOHOLIC_NAME,The Alcoholic Carrot,A Cenoura Alcóolica,,,,Die trunksuechtige Moehre,La Carotte Alcoolique,La zanahoria alcohólica,Alkoholická mrkev,
-RELIC_ALCOHOLIC_LONG,+ Stamina Regeneration,+ Regeneração de Stamina,,,,+ Ausdauerregeneration,+ Endurance régération,+ Regeneración de aguante,Regenerace výdrže +,
-RELIC_ALCOHOLIC_SHORT,+Stamina Regen,+ Regen de Stamina,,,,+ Ausdauerregen.,+ Endurance regen.,+ Regen. de aguante,Regen výdrže +,
-RELIC_CRYSTAL_NAME,The Crystal Bacon,O Bacon de Cristal,,,,Der Speck aus Kristall,Le Bacon de Crystal,El tocino de cristal,Krystalová slanina,
-RELIC_CRYSTAL_LONG,Gain Health on Kill,Ganhe Vida ao Matar,,,,Bekomme LP fuer jeden Kill,Gagne de la vie par tué,Gana vida con cada muerte,Zvýší zdraví při zabití,
-RELIC_CRYSTAL_SHORT,Health on Kill,Vida ao Matar,,,,LP fuer Kill,Vie par tué,Vida con cada muerte,Zdraví za zabití,
-RELIC_INFINITY_NAME,The Infinity Battery,A Bateria Infinita,,,,Die endlose Batterie,La Batterie Infinie,"La batería infinita
+",,,
+HUD_UNLOCK_RELIC_ALLPIECES,UNLOCK ALL 3 PIECES OF THIS RELIC,DESTRAVE 3 PARTES DESTA RELÍQUIA,,UNLOCK ALL 3 PIECES OF THIS RELIC,,Schalte 3 Stuecke dieser Reliquie frei,DEBLOQUER TOUTE LES 3 PARTIE DE CETTE RELIQUE,Desbloquea 3 piezas de esta reliquia,Odemkni všechny 3 kousky relikvie,,,
+HUD_UNLOCK_RELIC,NEW RELIC UNLOCKED!,NOVA RELÍQUIA DESTRAVADA,,NEW RELIC UNLOCKED!,,Neue Reliquie freigeschaltet!,NOUVELLE RELIQUE DEBLOQUE!,Nueva reliquia desbloqueada!,Nová relikvie odemčena!,,,
+HUD_UNLOCK_RELIC_COMPLETE,YOU HAVE FOUND ALL THE PIECES OF A RELIC,VOCÊ ENCONTROU TODAS AS PARTES DA RELÍQUIA,,YOU HAVE FOUND ALL THE PIECES OF A RELIC,,Du hast alle Stuecke einer Reliquie gefunden,VOUS AVEZ TROUVER TOUT LES PARTIES D'UNE RELIQUE,Has encontrado todas las piezas de una reliquia,Našel jsi všechny kousky relikvie,,,
+HUD_UNLOCK_REQ_RAFF,Buy All Checkpoints to unlock Raff,Compre todos os Portais para destravar Raff,,Buy All Checkpoints to unlock Raff,,Kaufe alle Checkpoints um Raff freizuschalten,Acheter tout les checkpoints pour débloquer Raff,Comprar todos los puntos de control para desbloquear a Raff,Kup si všechny checkpointy abys odemkl Raffa,,,
+HUD_UNLOCK_REQ_BIU,Beat the game without using Checkpoints to unlock Biu,Complete o jogo começando pelo primeiro Portal para destravar Biu,,Beat the game without using Checkpoints to unlock Biu,,"Spiele das gesamte Spiel ohne Checkpoints, um Biu freizuschalten",Battre le jeu sans utiliser de checkpoints pour débloquer Biu,Pasarte el juego sin utilizar puntos de control para desbloquear a Biu,Dokonči hru bez použití checkpointů abys odemkl Biu,,,
+HUD_UNLOCK_REQ_PUNNY,Get 80000 bounty to unlock Punny,Consiga 80000 estrelas para destravar Punny,,Get 80000 bounty to unlock Punny,,Sammle 80000 Sterne um Punny freizuschalten,Obtenir 80000 de prime pour débloque Punny,Obtener 80000 estrellas para desbloquear a Punny,Získej 80 000 odměn abys odemkl Punny,,,
+HUD_RELIC_DETECT,RELIC DETECTED!,RELÍQUIA DETECTADA!,,RELIC DETECTED!,,Reliquie entdeckt!,,"¡Reliquia detectada!
+",,,,
+HUD_RELIC_DETECT_KEY,"PRESS ""E"" TO SEARCH FOR BURIED TREASURE","APERTE ""E"" PARA PROCURAR O TESOURO ENTERRADO",,"PRESS ""E"" TO SEARCH FOR BURIED TREASURE",,"Druecke ""E"" um nach dem Schatz zu graben",,"Pulsa E para buscar tesoro enterrado
+",,,,
+HUD_RELIC_DETECT_JOY,"PRESS ""X"" TO SEARCH FOR BURIED TREASURE","APERTE ""X"" PARA PROCURAR O TESOURO ENTERRADO",,"PRESS ""X"" TO SEARCH FOR BURIED TREASURE",,"Druecke ""X"" um nach dem Schatz zu graben",,Pulsa X para buscar tesoro enterrado,,,,
+HUD_RELIC_FOUND,YOU FOUND IT!,VOCÊ ENCONTROU!,,YOU FOUND IT!,,Gefunden!,,"¡Lo encontraste!
+",,,,
+HUD_RELIC_FOUND_KEY,"PRESS ""E"" TO DIG","APERTE ""E"" PARA CAVAR",,"PRESS ""E"" TO DIG",,"Druecke ""E"" um zu graben",,"Pulsa E para cavar
+",,,,
+HUD_RELIC_FOUND_JOY,"PRESS ""X"" TO DIG","APERTE ""X"" PARA CAVAR",,"PRESS ""X"" TO DIG",,"Druecke ""X"" um zu graben",,Pulsa X para cavar,,,,
+,,,,,,,,,,,,
+ASS_RELIC,There is treasure buried somewhere around here!,Tem tesouro enterrado por aqui em algum lugar!,,There is treasure buried somewhere around here!,,Hier ist irgendwo ein Schatz vergraben!,,Hay un tesoro enterrado por aquí!,,,,
+ASS_CONGRATS,Nice find. I suppose I cannot charge you for that one...,Belo achado. Imagino que não posso te cobrar por isso aí...,,Nice find. I suppose I cannot charge you for that one...,,Schoener Fund. Den kriegst du wohl für umsonst.,,Enhorabuena. Supongo que no te puedo cobrar por eso...,,,,
+ASS_TUTORIAL,"Good morning, sunshine. Maybe you should try the tutorial first?","Bom dia, lindeza. Talvez você deva tentar o tutorial primeiro.",,"Good morning, sunshine. Maybe you should try the tutorial first?",,"Guten Morgen, Faulpelz. Was meinst du, ab zum Tutorial?","Bonjour, mon rayon de soleil. Peut-être que vous devriez essayer le tutoriel en premier?","Buenos días, sol. Tal vez deberías probar el tutorial primero?","Dobré ráno, možná bys nejdřív chtěl skusit tutoriál",,,
+ASS_GREETING,I have located some relics down on the Asteroid Dungeon. Hop on the teleporter!,Eu localizei algumas relíquias no Asteróide Masmorra. Entre no teleportador!,,I have located some relics down on the Asteroid Dungeon. Hop on the teleporter!,,Ich habe einige Reliquien auf dem Dungeonasteroiden entdeckt. Zum Teleporter!,J'ai localisé quelque reliques sur le donjon Astéroid. Hop sur le téléporteur!,He localizado algunas reliquias en la mazmorra Asteroide. Entra en el teletransportador!,"Zjistil jsem něaké relikvie v asteroidí kobce, šup do teleportu!",,,
+ASS_FIRSTSTAGEDONE,"Each relic has 3 parts. If you find any part, I’ll let you buy it from me.","Cada relíquia tem 3 partes. Se você encontrar uma, eu deixo você comprá-la de mim.",,"Each relic has 3 parts. If you find any part, I’ll let you buy it from me.",,"Jede Reliquie hat 3 Stuecke. Wenn du eins findest, verkauf ich es dir gerne zurueck.","Chaque relique possède 3 parties. Si vous trouvez une partie, je vous laisserai me l'acheter.","Cada reliquia tiene 3 partes. Si encuentras una parte, te la venderé.","Každá relikvie má 3 kousky, měl bys najít všechny. Nechám tě něaké koupit ode mě.",,,
+ASS_CHECKPOINTREACHED,"I could teleport you straight to Stage 2. Trouble worth some money, no?","Eu poderia te teleportar direto para a Fase 2. Vale uma grana, não?",,"I could teleport you straight to Stage 2. Trouble worth some money, no?",,Ich koennte dich direkt zu Level 2 teleportieren. Natuerlich nicht fuer umsonst.,"Je peux vous téléportez au Niveau 2, en échange d'argent. Ca en vaut la peine non?","Podría teletransportarte a la fase 2. Pero vale dinero, no?",Můžu tě nechat teleportovat do úrovně 2 ale práce stojí něaké peníze ne ?,,,
+ASS_FIRSTRELIC,Assemble the first relic by collecting all of its 3 pieces in Stage 1.,Monte a primeira relíquia ao coletar suas 3 partes na Fase 1,,Assemble the first relic by collecting all of its 3 pieces in Stage 1.,,"Sammle alle 3 Stuecke der ersten Reliquie in Level 1, um sie wiederherzustellen.",Assemblez la première relique en récoltant toutes ses 3 parties au Niveau 1.,Monta la primera reliquia juntando 3 piezas de la primera fase.,Slož první relikvii ze třech dílů v úrovni 1,,,
+ASS_SHOP1,"While you were busy fighting everything, I found this stuff. Purchase away!","Enquanto você se ocupava matando tudo, achei isso. Compre à vontade!",,"While you were busy fighting everything, I found this stuff. Purchase away!",,"Waehrend du mit der Ballerei beschaeftigt warst, habe ich was tolles gefunden. Du kannst es mir gerne abkaufen!","Pendant que vous étiez occuper à vous battre, j'ai trouver ceci. Acheter donc!","Mientras estabas ocupado luchando , me encontré con esto. ¡Cómpralo!",Zatím co jsi byl zaneprázdněn bojem jsem objevil tyhle kousky relikvie. Pokud chceš prodám je,,,
+ASS_SHOP2,"A relic is useless until you find all 3 parts. Buy everything, just in case.",Uma relíquia é inútil até você encontrar todas as 3 partes. Compre tudo!,,"A relic is useless until you find all 3 parts. Buy everything, just in case.",,"Die Reliquien funktionieren erst, wenn du alle 3 Stuecke gefunden hast. Los, kauf schon.","Une relique est inutile sans toute les 3 parties. Acheter tout, juste au cas où.","Una reliquia es inútil si no tienes las 3 partes. Cómpralo todo, por si acaso.","Relikvie nemá cenu dokud neobjevíš všechny 3 části, tak nakupuj.",,,
+ASS_SHOP3,You can unlock weapons permanently for our Armory by buying them. From me.,Você pode destravar armas permanentemente ao comprá-las. De mim.,,You can unlock weapons permanently for our Armory by buying them. From me.,,"Du kannst alle Waffen permanent freischalten, wenn du sie kaufst. Aus meiner Hand.",Vous pouvez débloquer des armes de façon permantes pour notre armurie en les achetant. De moi.,Puedes desbloquear armas permanentemente de nuestra armería comprándomelas.,"Zbraň si můžeš odemknout napořád pokud si jí zakoupíš u mě, budeš jí mít na lodi ve zbrojovně",,,
+ASS_SHOP4,Im sure you will eventually buy your way to victory.,Estou certo de que você vai comprar seu caminho até a vitória.,,Im sure you will eventually buy your way to victory.,,Du wirst es noch schaffen dich bis zum Ziel durchzumogeln.,Je suis sûr que vous allez finir par acheter votre chemin vers la victoire.,Estoy seguro de que comprarás tu camino a la victoria.,Jsem si jistý že když si to koupíš pomůže ti to k vítěztví,,,
+ASS_SHOP5,"Buy something, will ya?","Ei, compre alguma coisa!",,"Buy something, will ya?",,Wie waers mit einem kleinen Einkauf?,"Acheter quelque chose, voulez-vous?","Compra algo, ¿quieres?","Kup si něco, chceš ?",,,
+ASS_SHOP6,How do these Relics work? It is a secret to everyone.,Como essas Relíquias funcionam? É um segredo pra todo mundo.,,How do these Relics work? It is a secret to everyone.,,Wie funktionieren diese Reliquien? Keiner weiss es genau.,Comment ces reliques fonctionne? C'est un secret pour tout le monde.,"¿Cómo funcionan estas reliquias? Es un secreto para todo el mundo.
+",Jak ty relikvie fungují je tajemstvím pro každého,,,
+ASS_LEVEL1_1,I should probably have told you about these armed thugs around the Asteroid.,Acho que tinha que ter te contado sobre os capangas armados no Asteróide.,,I should probably have told you about these armed thugs around the Asteroid.,,"Ach ja, hier wimmelt es nur so von bewaffneten Biestern. Hups, zu spaet.",Je devrais probablement vous avoir prévenu propos de ces voyous armés autour de l'astéroïde.,Probablemente debería haberte hablado de estos matones armados en todo el asteroide.,Pravděpodobně bych ti měl říct o těch ozbrojených lupičích na asteroidu,,,
+ASS_LEVEL1_2,"Was that a duck? These are not just thugs. They are Ducans, after our relics.","Um pato? Esses não são só capangas. São Ducans, atrás das nossas relíquias.",,"Was that a duck? These are not just thugs. They are Ducans, after our relics.",,"War das eine Ente? Pass gut auf, das sind Ducans, und sie wollen unsere Reliquien.",Etait-ce un canard? Ce ne sont pas seulement des voyous.,"¿Era un pato? Estos no son sólo matones. Son Ducans, van tras nuestras reliquias.","Byla to kachna ? to nejsou obyčejní zloději to jsou Ducanové, chtějí naše relikvie",,,
+ASS_LEVEL1_3,It seems local wildlife is not very friendly. Glad you found that out first.,Parece que a fauna local não é muito amigável. Bom que você descobriu primeiro.,,It seems local wildlife is not very friendly. Glad you found that out first.,,"Die sind aber unfreundlich. Gut, dass du das fuer uns in Erfahrung gebracht hast.",Il semble faune locale est pas très sympathique. Heureux vous en êtes rendu compte le premier.,Parece que la fauna local no es muy amable. Me alegro de que lo hayas descubierto primero.,"Vypadá to že místní příroda není uplně přátelská, ještě že jsi to našel",,,
+ASS_LEVEL2_1,"If we take out the Ducan Commander, they will flee from the Asteroid. Probably.","Se eliminarmos o Comandante Ducan, eles irão fugir do planeta. Provavelmente.",,"If we take out the Ducan Commander, they will flee from the Asteroid. Probably.",,"Beseitigen wir den Ducan-Commander, fliehen die anderen vom Asteroiden.","Si nous éliminons Commandant Ducan, ils fuiront de l'astéroïde. Probablement.","Si acabamos con el Comandante Ducan, huirán del asteroide. Probablemente.","Když vyženem velitele Ducana z asteroidu, odletí s ním i ostatní, nejspíš..",,,
+ASS_LEVEL2_2,I’ve heard rumors about the Ducan Commander hanging out around Stage 4...,Ouvi rumores de que o Comandante Ducan está passeando pela Fase 4...,,I’ve heard rumors about the Ducan Commander hanging out around Stage 4...,,"Geruechten nach, ist der Ducan-Commander in Level 4...",J'ai entendu des rumeurs à propos du Commandant Ducan traîner dans les alentour du Niveau 4.,He oído rumores sobre que el Comandante Ducan sale en la fase 4 ...,"Slyšel jsem zvěsti že velitel Ducan je na asteroidu 4 !
+",,,
+ASS_LEVEL2_3,You can’t face the Commander without serious firepower and some relics.,Você não pode enfrentar o Comandante sem poder de fogo sério e umas relíquias.,,You can’t face the Commander without serious firepower and some relics.,,Du kannst dem Commander nur mit viel Feuerkraft und Reliquien entgegentreten.,Vous ne pouvez affronter le Commandant Ducan dans une puissance de feu considérable et quelque reliques,No puedes enfrentarte a el comandante Ducan sin armas ni reliquias.,Nemůužeš se postavit veliteli bez slušných zbraní a relikvií,,,
+ASS_LEVEL3_1,Maybe Ill help you with the fighting next time.,Talvez eu te ajude com a luta da próxima vez.,,Maybe Ill help you with the fighting next time.,,Vielleicht helfe ich dir beim naechsten Mal.,Peut-être que je vous aiderai avec les combats la prochaine fois,"Quizás la próxima vez te ayude a en la pelea.
+",Možná ti příště pomůžu bojovat..,,,
+ASS_LEVEL3_2,"Hmm, I actually meant the next time after this one.","Hmm, eu quis dizer a vez depois dessa.",,"Hmm, I actually meant the next time after this one.",,"Hmm, ich meinte eigentlich das Mal darauf.","Hmm, je voulais dire la prochaine après celle-ci.","Hmm, yo en realidad quería decir la próxima vez después de ésta.","Hmm, vlastně jsem myslel až po tomhle boji",,,
+ASS_LEVEL3_3,Relic Hunting sure sounds dangerous. Im glad you take most of the risks.,Caçar relíquias parece perigoso. Ainda bem que você toma todos os riscos.,,Relic Hunting sure sounds dangerous. Im glad you take most of the risks.,,"Reliquien aufspueren, klingt gefaehrlich. Schoen, dass du all die Gefahren auf dich nimmst.",Chasseur de reliques semble plutôt dangeureux. Je suis heureux que vous prenez le plus de risques.,Cazador de reliquias suena peligroso. Me alegro de que tomes la mayor parte de los riesgos.,"Lov relikvií zní nebezpečně, tak doufám že na tom něco získáme",,,
+ASS_LEVEL4_1,Hmm. Maybe you do stand a chance against the Ducan Commander.,Hmm. Talvez você tenha mesmo uma chance contra o Comandante Ducan.,,Hmm. Maybe you do stand a chance against the Ducan Commander.,,Hmm. Vielleicht hast du doch eine Chance gegen den Ducan-Commander.,Hmm. Peut-être que vous avez une chance contre le Commandant Ducan.,Hmm. Tal vez tengas una oportunidad contra el Comandante Ducan.,Hmmm... možná jsi měl dát veliteli Duncanovi šanci,,,
+ASS_LEVEL4_2,Now you were just lucky. No shame in admitting it.,"Agora você só deu sorte. Admite, vai.",,Now you were just lucky. No shame in admitting it.,,Das jetzt war doch alles Glueck. Gibs ruhig zu.,Vous avez juste eu de la chance. Il n'y pas de honte à l'admettre.,Acabas de tener mucha suerte. No hay vergüenza en admitirlo.,Teď jsi měl prostě štěstí a neboj se to přiznat,,,
+ASS_LEVEL4_3,"Try not to die, ok? I need you to buy my overpriced stuff.","Tenta não morrer, ok? Preciso de você pra vender minhas coisas.",,"Try not to die, ok? I need you to buy my overpriced stuff.",,"Versuch dich am Leben zu halten, ok? Sonst verlier ich meinen einzigen Kunden.","Essayez de ne pas mourrir, ok? J'ai besoin de vous pour que vous m'achetez mes affaires hors de prix","Trata de no morir, ¿de acuerdo? Necesito que me compres cosas.",Skus neumřít ano ? Chci abys ode mě koupil moje předražený věci.,,,
+ASS_RANDOM00,Im sure you can deal with that Ducan Commander if you fail enough times.,Com certeza você lida com aquele Comandante se falhar o suficiente.,,Im sure you can deal with that Ducan Commander if you fail enough times.,,"Du bringst den Commander bestimmt zur Strecke, du musst nur oft genug scheitern.","Je suis sur que vous pouvez faire face à ce Commandant Ducan, si vous échouer suffisament de fois.","Creo que podrás acabar con el comandante Ducan, si fracasas la suficientes veces.",Myslím že se můžeš dohodnout s velitelem Ducanem pokud selžeš mockrát,,,
+ASS_RANDOM01,"If I were you, Id buy everything from the previous Stage before progressing.","Se eu fosse você, compraria tudo da Fase anterior antes de avançar.",,"If I were you, Id buy everything from the previous Stage before progressing.",,"Bevor du weitergehst, rate ich dir alles vom vorigem Level zu kaufen.","Si j'étais vous, je serais aller tout acheter des Niveau précédent avant de continuer.","Si fuera tú, compraría todo de la fase anterior antes de avanzar. ",Být na tvém místě koupil bych všechno z předchozího levelu před pokračováním,,,
+ASS_RANDOM02,You can equip up to 3 Relics at the same time. Try different combinations.,Você pode equipar até 3 Relíquias. Tente combinações diferentes.,,You can equip up to 3 Relics at the same time. Try different combinations.,,Du kannst bis zu 3 Reliquien tragen. Probier verschiedene Kombinationen aus.,Vous pouvez équiper jusqu'à 3 reliques en même temps. Essayez différentes combinaison.,Puedes equiparte 3 reliquias a la vez. Intenta distintas combinaciones.,"Můžeš použít 3 relikvie najednou, vyzkoušej si kombinace
+",,,
+ASS_RANDOM03,Is this a little too hard on you? Poor Hunter.,"Tá muito difícil pra você? Ô, tadinho.",,Is this a little too hard on you? Poor Hunter.,,Zu schwer? Du armes Ding.,Est-ce un peu trop dur pour vous? Pauvre chasseur.,¿Es demasiado difícil para ti? Pobre cazador.,Není to na tebe moc těžké ? Chudáčku lovče,,,
+ASS_RANDOM04,Co-op is usually easier when you don't kill each other.,Co-op normalmente é mais fácil se vocês não se matarem.,,Co-op is usually easier when you don't kill each other.,,"Koop ist an sich leichter, wenn ihr euch nicht gegenseitig umbringt.","Co-op est en général plus facile, quand vous ne vous entretuer pas.",Co-op suele ser más fácil si no os matáis entre vosotros.,Kooperace je obvykle lehčí pokud se nepozabíjíte navzájem,,,
+ASS_RANDOM05,Maybe Ill help you with the fighting next time.,Talvez eu te ajude com a luta da próxima vez.,,Maybe Ill help you with the fighting next time.,,Vielleicht helfe ich dir beim naechsten Mal.,Peut-être que je vous aiderai avec les combats la prochaine fois,"Quizás la próxima vez te ayude a en la pelea.
+",Možná ti příště pomůžu bojovat..,,,
+ASS_RANDOM06,Thanks for buying all that stuff from me. I can afford new horseshoes now.,Obrigado por comprar todas aquelas coisas. Comprei ferraduras novas.,,Thanks for buying all that stuff from me. I can afford new horseshoes now.,,Danke fuer den Grosseinkauf. Jetzt kann ich mir neue Hufeisen leisten. ,Merci d'acheter tout ces trucs de ma part. Je peux me permettre d'acheter de nouveau fer à cheval maintenant.,Gracias por comprarme todas esas cosas. Ahora puedo permitirme nuevas herraduras.,"Děkuji že vše kupuješ ode mě, můžu si koupit nové koňské boty",,,
+ASS_RANDOM07,"My name might be ""Ass"", but Im not the one getting kicked out there.","Eu posso ser uma Mula, mas não sou eu que estou empacado no jogo.",,"My name might be ""Ass"", but Im not the one getting kicked out there.",,"Ich bin vielleicht ein Esel, aber nicht so stoerrisch wie du.",,"Puede que me llame ""Ass"", pero a mi no me patean el trasero.","Možná se jmenuju Ass, ale nikdo mě vykopávat nebude",,,
+ASS_RANDOM08,I wonder if my dialogue ever repeats itself.,Fico pensando se às vezes eu falo muito a mesma coisa.,,I wonder if my dialogue ever repeats itself.,,"Ich frage mich, ob ich mich jemals wiederhole.",Je me demande si mon dialogue fini par ce répéter.,Me pregunto si mi diálogo se repite.,Občas si připadám že si mluvím pro sebe,,,
+ASS_RANDOM09,"To become invincible, press ""left"", ""right"" and then... no, just messing with ya.","Para ficar invencível, aperta ""esquerda"", ""direita"" e... não, tô brincando.",,"To become invincible, press ""left"", ""right"" and then... no, just messing with ya.",,"Um unbesiegbar zu werden, druecke ""links"", ""rechts"" und dann... Haha, von wegen.","Pour devenir invincible, appuyez sur ""gauche"", ""droite"" et ensuite... non, juste pour jouer avec vous.","Para volverte invencible, pulsa ""izquierda"", ""derecha"" y después... no, sólo estoy jugando contigo.","pokud chceš být neporazitelný stiskni doleva, pak doprava a pak... no, zapomeň na to",,,
+ASS_RANDOM10,I would donate all of my money to whomever made this game.,Eu doaria todo o meu dinheiro pra quem fez esse jogo.,,I would donate all of my money to whomever made this game.,,Wer hat dieses Spiel gemacht? Denen wuerde ich all mein Geld spenden.,Je donnerai tout mon argent à celui qui à fait ce jeu.,Donaría todo mi dinero a quienquiera que haya hecho este juego.,Chci podpořit všemi svými penězmi toho kdo vytvořil tuhle hru,,,
+ASS_RANDOM11,Think Im annoying? At least Im not throwing grenades at you.,Me acha irritante? Pelo menos não estou jogando granadas em você.,,Think Im annoying? At least Im not throwing grenades at you.,,Ich soll nervig sein? Zumindest bewerfe ich dich nicht mit Granaten.,"Vous pensez que je suis ennuyant? Au moins, je ne vous jete pas de grenade dessus.",¿Piensas que soy molesto? Por lo menos no te tiro granadas.,"Myslíš že jsem otravný ? Abych po tobě nehodil granát
+",,,
+ASS_RANDOM12,Ever wondered how I teleport the teleporters down to the asteroid?,Já se perguntou como eu teleporto os teleportadores até o asteróide?,,Ever wondered how I teleport the teleporters down to the asteroid?,,"Hast du dich schon gefragt, wie ich die Teleporter zum Asteroiden teleportiere?",Vous êtes vous déjà demandez comment je téléporte les téléporteur sur l'astéroïd? ,Alguna vez se preguntó cómo teletransporto los teletransportadores hasta el asteroide?,Přemýšlels někdy nad tím jak teleportuji teleporty dolů na asteroidy ?,,,
+ASS_RANDOM13,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.","Se a Dinastia Ducan vencer aqui, a galáxia está perdida. Sem pressão.",,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.",,"Siegt die Ducan-Dynasty, sind wir verloren. Fuehl dich aber nicht unter Druck gesetzt.","Si la dynastie Ducan gagne ici, tout ca galaxy et condamné. Sans pression.","Si la Dinastía Ducan gana, la galaxia estará condenada. Sin presión.",Jestli tu Duncanova společnost vyhraje je s galalxií ámen,,,
+ASS_RANDOM14,I wonder if I could charge Bounty for my advice as well.,"Será que devo cobrar Estrelas pelos meus conselhos, também?",,I wonder if I could charge Bounty for my advice as well.,,Vielleicht sollte ich auch fuer meine wertvollen Tips Sterne verlangen.,Je me demande si je peux faire payer mes conseils également.,Me pregunto si también podría cobrar recompensa por mi consejo.,"Navrhuji vyměnit odměnu za mojí radu, je dobrá",,,
+ASS_RANDOM15,Did you forget to hold the right mouse button to aim this time?,Você se esqueceu de usar o botão direito do mouse para mirar dessa vez?,,Did you forget to hold the right mouse button to aim this time?,,Hast du dieses Mal vergessen mit der rechten Maustaste zu zielen?,Avez vous oublier de maintenir le clique droit pour visé cette fois?,¿Te has olvidado de apretar el click derecho para apuntar esta vez?,Nezapoměl jsi tentokrát držet pravé myšítko pro míření ?,,,
+ASS_RANDOM16,Was that a grenade that killed you last time? You must be getting tired.,Foi uma granada que te matou outra vez? Deve estar se cansando.,,Was that a grenade that killed you last time? You must be getting tired.,,"War das eine Granate, die dich das letzte Mal getoetet hat? Wirst wohl muede.",Etait-ce une grenande qui vous à tuez la dernière fois? Vous devez être fatigué.,¿Era esa la granada que te mató la última vez? Debes estar cansándote.,Nezabil tě posledně taky granát ? to musí být iritující,,,
+ASS_RANDOM17,I heard that the developer wanted to implement several different endings.,Ouvi que um desenvolvedor queria colocar vários finais diferentes.,,I heard that the developer wanted to implement several different endings.,,"Man sagt, die Entwickler wollten mehrere Endings implementieren.",J'ai entendu dire que le développeur voulais implementer plusieurs et différente fin.,He oído que el desarrollador quería poner distintos finales.,"Slyšel jem o tom že vývojář chtěl implementovat více možných konců
+",,,
+ASS_RANDOM18,Do you like cats? I like cats.,Você gosta de gatos? Eu gosto de gatos.,,Do you like cats? I like cats.,,Magst du Katzen? Ich mag Katzen.,Vous aimez les chats? J'aime les chats.,¿Te gustan los gatos? Me encantan los gatos,Máš rád kočky ? Já ano,,,
+ASS_RANDOM19,"Im not much of a dog person. Was once, though.",Não gosto tanto de cachorros quanto eu gostava antes.,,"Im not much of a dog person. Was once, though.",,Ich war mal ein Hundemensch. Oder Hundeesel.,,"Antes me gustaban los perros.
+","Nejsem moc pejskař, spíš pejskůň",,,
+ASS_RANDOM20,"Of course ""Ass"" is not my real name. Its ""Assonius"".","Claro que ""Ass"" não é meu nome verdadeiro. É ""Assonius"".",,"Of course ""Ass"" is not my real name. Its ""Assonius"".",,"""Ass"" ist natuerlich nicht mein echter Name. Ich heisse ""Assonius"".","Bien sur ""Ass"" n'est pas mon vrai nom. Mon vrai nom est ""Assonius"".","Claro que ""Ass"" no es mi verdadero nombre. Es ""Assonius"".","Jasně že Ass není mé celé jméno, to zní ""Assonius""",,,
+ASS_RANDOM21,"Hahahahahahaha! Oh sorry, just remembering a joke in my head.","Hahahahahahaha! Opa, foi mal, só lembrei de uma piada aqui.",,"Hahahahahahaha! Oh sorry, just remembering a joke in my head.",,"Hahahahahahaha! Sorry, habe mich nur gerade an einen Witz erinnert.","Hahahahahahaha! Oh, désolé, je viens juste de me souvenir d'une blague dans ma tête. ","Hahahahahahaha! Oh lo siento,me acabo de acordar de un chiste.","Áhaháháhá ha, promiň, jen jsem si vzpoměl na jeden dobrý vtip",,,
+ASS_RANDOM22,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.","Se a Dinastia Ducan vencer aqui, a galáxia está perdida. Sem pressão.",,"If the Ducan Dinasty wins here, the whole galaxy is doomed. No pressure.",,"Siegt die Ducan-Dynasty, ist alles verloren. Fuehl dich aber nicht unter Druck gesetzt.","Si la dynastie Ducan gagne ici, tout ca galaxy et condamné. Sans pression.","Si la Dinastía Ducan gana, la galaxia estará condenada. Sin presión.",Jestli tu Duncanova společnost vyhraje je s galalxií ámen,,,
+ASS_RANDOM23,Been thinking about the inherent misery of the human condition. Glad Im a Donkey.,Tenho pensado sobre a miséria inerente à raça humana. Ainda bem que sou Mula.,,Been thinking about the inherent misery of the human condition. Glad Im a Donkey.,,Ich denke zurzeit ueber das ewige Elend der Menschheit. Zum Glueck bin ich ein Esel.,,He estado pensando en la miseria inherente de la condición humana. Me alegro de ser un burro.,"Občas přemýšlím nad kondicí lidí, díky bohu že jsem osel",,,
+ASS_RANDOM24,"I could explain to you exactly how to beat this game, but you wouldnt understand.","Eu poderia te explicar exatamente como zerar o jogo, mas você não entenderia.",,"I could explain to you exactly how to beat this game, but you wouldnt understand.",,"Ich koennte dir erklaeren, wie man das Spiel abschliesst, aber du wuerdest nix verstehen.","Je pourrais vous expliquez exactement comment finir ce jeu, mais vous ne comprendriez pas.","Te podría decir como pasarte este juego, pero no lo entenderías.","Dokážu vysvětlit, jak vyhrát celou hru, ale nidko tomu nebude stejně rozumět",,,
+ASS_RANDOM25,Im getting sleepy. Need coffee.,Ficando com sono. Cadê o café?,,Im getting sleepy. Need coffee.,,Ich werde muede. Gibts Kaffee?,J'ai sommeil. Besoin de café.,Me estoy durmiendo. Necesito café.,"Chce se mi spát, dal bych si kávu",,,
+ASS_RANDOM26,Do you think this is going to take much longer? I miss our home.,Você acha que isso ainda vai demorar muito? Saudades de casa.,,Do you think this is going to take much longer? I miss our home.,,"Meinst du, das hier dauert noch lange? Ich vermisse unser Zuhause.",Vous pensez que ca va prendre encore longtemps? Notre maison me manque.,Piensas que nos va a llevar mucho más tiempo? Echo de menos nuestro hogar.,Opravdu tu chceš ještě zůstat ? stýská se mi po domově,,,
+ASS_RANDOM27,"They told me Relic Hunting was dangerous, but Im feeling quite safe actually.","Me disseram que Caçar Relíquias era perigoso, mas na real me sinto bem seguro.",,"They told me Relic Hunting was dangerous, but Im feeling quite safe actually.",,Reliquien aufzuspueren soll gefaehrlich sein. Ich fuehl mich aber ziemlich sicher hier.,"Ils m'ont dit que Chasseur de reliques était plutôt dangeureux, mais je me sens plutôt en sécurtié enfaite.","Me dijeron que ser cazador de reliquias era peligros, pero yo me siento bastante seguro.","Řílali mi že být lovcem relikvií je nebezpečné, ale já se cítím docela bezpečně
+",,,
+ASS_RANDOM28,Why is this stupid font so hard to read?,Porque essa fonte idiota é tão difícil de ler?,,Why is this stupid font so hard to read?,,Wieso ist diese dumme Schriftart so schlecht zu lesen?,Pourquoi cette stupide police d'écriture et si dur a lire?,¿Por qué es tan difícil leer esta estúpida fuente?,Proč se tenhle hloupý font tak špatně čte?,,,
+ASS_RANDOM29,This game was originally designed for Epic Game Jam.,Esse jogo foi originalmente desenvolvido durante a Epic Game Jam,,This game was originally designed for Epic Game Jam.,,Dieses Spiel wurde urspruenglich bei der Epic Game Jam erstellt.,Ce jeu à été conçu à l'origine pour l'Epic Game Jam.,Este juego fue originalmente diseñado para la Epic Game Jam.,Tahle hra se původně dělala pro Epic Game Jam,,,
+ASS_RANDOM30,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,BR? BR? HUEHUEHUEHUE HUEHUEHUEHUE HUEHUEHUEHUE,Br ? br ? hue hue hue huehuehuehueheu heuehehehue,,,
+ASS_RANDOM31,Betu Souza drew me and all the art for this game.,"Betu Souza me desenhou, e o resto do jogo também!",,Betu Souza drew me and all the art for this game.,,Betu Souza hat mich und auch den ganzen Rest des Spiels gezeichnet!,Betu Souza m'a dessiner tout les graphismes de ce jeu.,Betu Souza me dibujó a mi y a todo el arte de este juego.,Betu Souza mě nakreslil stejně jako všechno v téhle hře,,,
+ASS_RANDOM32,Mark venturelli designed this game. Blame him for the homing rockets.,Marcos Venturelli fez o design do jogo. A culpa dos foguetes teleguiados é dele.,,Mark venturelli designed this game. Blame him for the homing rockets.,,Marcos Venturelli ist unser Gamedesigner. Die ferngesteuerten Raketen sind seine Schuld. ,Mark Venturelli à conçu ce jeu. Reprocher lui les roquettes à tête chercheuse.,Mark enturelli diseñó este juego. Culparlo a él por los cohetes mensajeros.,"Mark Venturelli designoval celou hru, pochvalte ho za tu raketu",,,
+ASS_RANDOM33,Raphael Muller designed the sound of this game. And my lovely voice.,Raphael Muller fez o som deste jogo. E a minha doce voz.,,Raphael Muller designed the sound of this game. And my lovely voice.,,Raphael Mueller hat die Sounds in diesem Spiel gemacht. Und meine schoene Stimme.,Raphael Muller à conçu la musique du jeu. Et ma belle voix.,Raphael Muller diseñó el sonido de este juego. Y mi encantadora voz.,"Raphael Muller měl nastarosti všechny zvuky, včetně mého hlasu",,,
+ASS_RANDOM34,Goto80 made all the music in the game. Buy his new album on Bandcamp.,Goto80 fez toda a música do jogo. Compre seu disco novo no Bandcamp.,,Goto80 made all the music in the game. Buy his new album on Bandcamp.,,Goto80 hat all die Musik geschrieben. Sein neues Album gibt es auf Bandcamp.,Goto80 à fait toute la musique du jeu. Acheter son nouvelle album sur Bandcamp.,Goto80 ha hecho la música del juego. Compra sun nuevo álbum en Bandcamp.,"Goto80 složil skvělou hudbu do téhle hry, kup si jeho nové album na Bandcampu",,,
+ASS_RANDOM35,"The Ducan Commander is a lie. No, just kidding, he is the final boss.","O Comandante Ducan é uma mentira. Não, brincadeira, ele é o chefão mesmo.",,"The Ducan Commander is a lie. No, just kidding, he is the final boss.",,"Den Ducan-Commander gibt es nicht wirklich. Nur ein Scherz, er ist der Endgegner.","Le Commandant Ducan et un mensonge. Non je plaisante, il est le boss final.","El comandante Ducan es una mentira. No, era broma, es el jefe final.","Velitel Duncan je fake, ne vážně dělám si srandu je to finální boss",,,
+ASS_RANDOM36,Can you beat this game? Im sure you cant.,Você consegue zerar esse jogo? Certeza que não.,,Can you beat this game? Im sure you cant.,,Schaffst du es bis zum Ende des Spiels? Ich bezweifle es.,Pouvez vous finir le jeu? Je suis sur que non.,¿Puedes pasarte este juego? Estoy seguro de que no.,Zvládneš tu hru dohrát ? Já si myslím že vůbec,,,
+ASS_RANDOM37,What are the odds of that many comets flying by our window all the time?,Quais são as chances de tantos cometas voarem perto da nossa janela o tempo todo?,,What are the odds of that many comets flying by our window all the time?,,"Wie wahrscheinlich ist es, dass so viele Kometen an unserem Fenster vorbeifliegen?",,¿Cuáles son las probabilidades de que haya tantos cometas volando por la ventana todo el tiempo?,Co to je za komety co tu pořád lítají ? koukni se z okna,,,
+ASS_RANDOM38,Just realised for a moment that we are in SPACE. How cool is that?,"Acabei de me tocar de que estamos no ESPAÇO. Maneiro, né?",,Just realised for a moment that we are in SPACE. How cool is that?,,"Ich merke gerade, wir sind im WELTALL. Wie cool ist das denn?",Je vien de réaliser que nous somme dans l'ESPACE.,"Me acabo de dar cuenta de que estamos en el ESPACIO. Mola, eh?",Právě jsem si uvědomil že jsme ve vesmíru. To je hustý,,,
+ASS_RANDOM39,The Ducan Dinasty is after our relics. Gotta get them before they do.,A Dinasti Ducan quer as nossas relíquias. Precisamos pegá-las antes deles.,,The Ducan Dinasty is after our relics. Gotta get them before they do.,,Die Ducan-Dynastie will unsere Reliquien. Wir muessen sie vor ihnen aufspueren.,La Dynastie Ducan en est après nos reliques. Nous devons les éliminer avant qu'il s'attaque à nous.,La Dinastía de Ducan va a por nuestras reliquias. Tengo que encontrarlas antes que ellos.,"Duncanova společnost jde po našich relikviích, měli bychom je získat dřív",,,
+ASS_RANDOM40,Ive heard there are flying monsters down there. Scary stuff.,Ouvi dizer que tem monstros voadores lá embaixo. Cruz credo.,,Ive heard there are flying monsters down there. Scary stuff.,,"Ich habe gehoert, da unten gibt es fliegende Monster. Hilfe!",J'ai entendu dire qu'il y avait des monstre volant en bas. Flippant.,He oído que hay monstruos voladores ahí abajo. Cosas espantosas.,"Slyšel jsem o těch létajících monstrech, dost strašidelný stvoření
+",,,
+ASS_RANDOM41,Where are my arms? Why do I have no arms?,Cadê meus braços? Porque eu não tenho braços?,,Where are my arms? Why do I have no arms?,,Wo sind meine Arme? Warum habe ich keine Arme?,Ou sont mes bras? Pourquoi n'ai-je pas de bras ?,¿Dónde están mis brazos? ¿Por qué no tengo brazos?,"Kde jsou mé ruce ? Proč sakra nemám ruce ?
+",,,
+ASS_RANDOM42,"I can say 42 different things. Makes you wonder, does it not?","Eu posso dizer 42 coisas diferentes. Te faz pensar, não?",,"I can say 42 different things. Makes you wonder, does it not?",,"Ich kann 42 verschiedene Dinge sagen. Interessant, oder?","Je peux dire 42 chose différentes. Ca vous fait réfléchir, n'est-ce pas?","Puedo decir 42 cosas distintas. Hace que te preguntas, ¿no es así?","Umím říct 42 různých věcí, to není uplně zlý co ?",,,
+ASS_RANDOM99,Im impressed you keep trying despite failing so much,"Estou impressionado por você continuar tentando, apesar de fracassar tanto.",,Im impressed you keep trying despite failing so much,,"Ich bin schwer beeindruckt. Obwohl du immer wieder scheiterst, machst du weiter.",Je suis impréssionner que vous continuer à essayer après avoir tant échouer.,Me sorprende que lo sigas intentando a pesar de fracasar tanto.,Zajmá mě kolikrát tohle všecko ještě budeš zkoušet,,,
+ASS_SHOP_PLAYER,"Wait, if I am there, who is selling the stuff?","Espera, se eu estou aí, quem está vendendo as coisas?",,"Wait, if I am there, who is selling the stuff?",,"Moment, wenn ich dort bin, wer verkauft mein Zeug?","Attendez, si je suis ici, qui vend?","Espera, si estoy allí, ¿quién esta vendiendo las cosas?","Počkat.. když jsem tady, kdo teď prodává ty věci ?",,,
+,,,,,,,,,,,,
+RELIC_PINEAPPLE_NAME,The Pineapple Pudding,O Pudim de Abacaxi,,The Pineapple Pudding,,Der Ananaspudding,Le Pudding d'Ananas,El pudin de piña,Ananasový puding,,,
+RELIC_PINEAPPLE_LONG,+ Maximum Health,+ Vida Máxima,,+ Maximum Health,,+ Maximal-LP,+ Vie maximun,+ Vida máxima,Maximální zdraví+,,,
+RELIC_PINEAPPLE_SHORT,Extra Health,Vida Extra,,Extra Health,,Extra LP,Vie Extra,Vida extra,Extra zdraví,,,
+RELIC_ALCOHOLIC_NAME,The Alcoholic Carrot,A Cenoura Alcóolica,,The Alcoholic Carrot,,Die alkoholische Moehre,La Carotte Alcoolique,La zanahoria alcohólica,Alkoholická mrkev,,,
+RELIC_ALCOHOLIC_LONG,+ Stamina Regeneration,+ Regeneração de Stamina,,+ Stamina Regeneration,,+ Ausdauerregeneration,+ Endurance régération,+ Regeneración de aguante,Regenerace výdrže +,,,
+RELIC_ALCOHOLIC_SHORT,+Stamina Regen,+ Regen de Stamina,,+Stamina Regen,,+ Ausdauerregen.,+ Endurance regen.,+ Regen. de aguante,Regen výdrže +,,,
+RELIC_CRYSTAL_NAME,The Crystal Bacon,O Bacon de Cristal,,The Crystal Bacon,,Der Speck aus Kristall,Le Bacon de Crystal,El tocino de cristal,Krystalová slanina,,,
+RELIC_CRYSTAL_LONG,Gain Health on Kill,Ganhe Vida ao Matar,,Gain Health on Kill,,Bekomme LP fuer jeden Kill,Gagne de la vie par tué,Gana vida con cada muerte,Zvýší zdraví při zabití,,,
+RELIC_CRYSTAL_SHORT,Health on Kill,Vida ao Matar,,Health on Kill,,LP fuer Kill,Vie par tué,Vida con cada muerte,Zdraví za zabití,,,
+RELIC_INFINITY_NAME,The Infinity Battery,A Bateria Infinita,,The Infinity Battery,,Die endlose Batterie,La Batterie Infinie,"La batería infinita
 ","Pozoruhodná baterie
-",
-RELIC_INFINITY_LONG,+ Shield Regeneration,+ Regeneração de Escudo,,,,+ Schildregeneration,+ Bouclier régénération,+ Regeneración de escudo,Regenerace štítu +,
-RELIC_INFINITY_SHORT,+Shield Regen,+Regen de Escudo,,,,+ Schildregen.,+ Bouclier regen.,+ Regen. de escudo,Regen štítu +,
-RELIC_MIDNIGHT_NAME,The Midnight Beer,A Cerveja da Meia-Noite,,,,Das Mitternachtsbier,La Bière de Minuit,La cerveza de medianoche,"Půlnoční pivo
-",
-RELIC_MIDNIGHT_LONG,Extra Damage,Dano Extra,,,,Extra Schaden,Dégats Extra,Daño extra,Extra poškození,
-RELIC_MIDNIGHT_SHORT,Extra Damage,Dano Extra,,,,Extra Schaden,Dégats Extra,Daño extra,"Extra poškození
-",
-RELIC_WATCHFUL_NAME,The Watchful Eye,O Olho Que Tudo Vê,,,,Das wachsame Auge,L'Oeil Vigilant,El ojo vigilante,Vševidoucí oko,
-RELIC_WATCHFUL_LONG,Extra Ammo,Munição Extra,,,,Extra Munition,Munition Extra,Munición extra,Extra munice,
-RELIC_WATCHFUL_SHORT,Extra Ammo,Munição Extra,,,,Extra Munition,Munition Extra,Munición extra,Extra munice,
-RELIC_DEV_NAME,The Dev Potion,A Poção da Programação,,,,Der Developer-Trank,La Potion des Dev,La poción del desarrollador,"Devův lektvar
-",
-RELIC_DEV_LONG,Regenerates Ammo,Regenera munição,,,,Regeneriert Munition,Munition rénération,Regenera munición,Regenerace munice,
-RELIC_DEV_SHORT,Ammo Regen,Regen munição,,,,Regen. Munition,Munition regen,Regen. munición,"Regen munice
-",
-RELIC_YOTTABYTE_NAME,The Yottabyte Drive,O Drive de Yottabyte,,,,Das Yottabyte-Laufwerk,Le lecteur Yottaoctect,El drive yottabyte ,Yotabytový disk,
-RELIC_YOTTABYTE_LONG,Double Shield,Escudo Dobrado,,,,Doppelschild,Double bouclier,Escudo doble,"Dvojitý štít
-",
-RELIC_YOTTABYTE_SHORT,Extra Shield,Escudo Extra,,,,Extra Schild,Bouclier extra,Escudo extra,Extra štit,
-,,,,,,,,,,
-BOSS_DUCANCOMMANDER,DUCAN COMMANDER,COMANDANTE DUCAN,,,,Ducan-Commander,COMMANDANT DUCAN,Comandante Ducan,Velitel Ducan,
-BOSS_SHIELDGENERATOR,SHIELD GENERATOR,GERADOR DE ESCUDO,,,,Schildgenerator,GENERATEUR DE BOUCLIER,Generador de escudo,Generátor štítu,
-,,,,,,,,,,
-TUTORIAL_2_KEY,Hold SPACE to Sprint,Segure ESPAÇO para Correr,,,,Halte LEERTASTE um zu laufen,Maintenez ESPACE pour Sprint,Mantén Espacio para correr,Drž mezerník pro běh,
-TUTORIAL_2_JOY,Hold A to Sprint,Segure A para Correr,,,,Halte A um zu laufen,Maintenez A pour Sprint,Mantén A para correr,"Drž A pro běh
-",
-TUTORIAL_3_KEY,Tap SPACE to Dash,Toque ESPAÇO para Saltar,,,,Tippe LEERTASTE um zu springen,Maintenez ESPACE Dash,Toca Espacio para deslizarte,Zmáčkni mezerník pro úder,
-TUTORIAL_3_JOY,Tap A to Dash,Toque A para Saltar,,,,Tippe A um zu springen,Appuyez sur A pour Dash,Toca A para deslizarte,Zmáčkni A pro úder,
-TUTORIAL_4_KEY,HOLD RIGHT MOUSE TO AIM,SEGURE BOTÃO DIREITO PARA MIRAR,,,,Halte die rechte Maustaste um zu zielen,MAINTENEZ CLIQUE DROIT POUR VISE,Mantén Click derecho para apuntar ,Drž pravé myšítko pro zaměřování,
-TUTORIAL_4_JOY,HOLD LEFT TRIGGER TO AIM,SEGURE GATILHO ESQUERDO PARA MIRAR,,,,Halte den rechten Schalter um zu zielen,MAINTENEZ LA GACHETTE GAUCHE POUR VISE,Mantén LT para apuntar,Drž LT pro zaměřování,
-TUTORIAL_5_KEY,PRESS LEFT MOUSE TO SHOOT,MOUSE ESQUERDO PARA ATIRAR,,,,Druecke die linke Maustaste um zu schiessen,CLIQUE GAUCHE POUR TIRE,Pulsa Click izquierdo para disparar,Zmáčkni levé myšítko pro střelbu,
-TUTORIAL_5_JOY,PRESS RIGHT TRIGGER TO SHOOT,GATILHO DIREITO PARA ATIRAR,,,,Druecke den linken Schalter um zu schiessen,GACHETTE DROITE POUR TIRE,Pulsa RT para disparar,Zmáčkni RT pro střelbu,
-TUTORIAL_6_KEY,"PRESS ""F"" FOR GRENADE","APERTE ""F"" PARA GRANADA",,,,Druecke F um Granate zu werfen,"APPUYEZ SUR ""F"" POUR LANCER UNE GRENADE",Pulsa F para lanzar granada,Zmáčkni F pro hození granátu,
-TUTORIAL_6_JOY,PRESS LB FOR GRENADE,APERTE LB PARA GRANADA,,,,Druecke LB um Granate zu werfen,APPUYEZ SUR LB POUR LANCER UNE GRENADE,Pulsa LB para lanzar granada,Zmáčni LB pro hození granátu,
-TUTORIAL_7_KEY,SHOOT THE CENTER FOR EXTRA DAMAGE,ATIRE NO CENTRO PARA DANO EXTRA,,,,Sei zielgenau fuer Extraschaden,TIRER SUR LE CENTRE POUR PLUS DE DEGATS,Dispara al centro para hacer daño extra,Sřílej přesně pro extra poškození,
-TUTORIAL_7_JOY,SHOOT THE CENTER FOR EXTRA DAMAGE,ATIRE NO CENTRO PARA DANO EXTRA,,,,Sei zielgenau fuer Extraschaden,TIRER SUR LE CENTRE POUR PLUS DE DEGATS,Dispara al centro para hacer daño extra,Střílej přesně pro extra poškození,
-TUTORIAL_8_KEY,WEAPONS USE 3 DIFFERENT AMMO TYPES,ARMAS USAM 3 TIPOS DE MUNIÇÃO DIFERENTES,,,,Waffen benoetigen 3 unterschiedliche Munitionstypen,LES ARMES UTILISES 3 TYPES DIFFERENTS DE MUNITIONS,Las armas utilizan 3 tipos de munición,Zbraně používají tři odlišné druhy munice,
-TUTORIAL_8_JOY,WEAPONS USE 3 DIFFERENT AMMO TYPES,ARMAS USAM 3 TIPOS DE MUNIÇÃO DIFERENTES,,,,Waffen benoetigen 3 unterschiedliche Munitionstypen,LES ARMES UTILISES 3 TYPES DIFFERENTS DE MUNITIONS,Las armas utilizan 3 tipos de munición,Zbraně používají tři odlišné druhy munice,
-TUTORIAL_9_KEY,"PRESS ""TAB"" OR ""MOUSE WHEEL"" TO SWAP WEAPONS","RODA DO MOUSE OU ""TAB"" PARA TROCAR ARMA",,,,Mausrad oder Tab um Waffe zu waehlen,"APPUYER SUR ""TAB"" OU UTILISER LA MOLETTE DE LA SOURIS POUR CHANGER D'ARME",Pulsa TAB o la rueda del ratón para cambiar de arma,"Zmáčkni TAB, nebo otoč kolečkem myši pro změnu zbraně",
-TUTORIAL_9_JOY,PRESS Y TO SWAP WEAPONS,APERTE Y PARA TROCAR ARMA,,,,Druecke Y um Waffe zu waehlen,APPUYER SUR Y POUR CHANGER D'ARME,Pulsa Y para cambiar de arma,Zmáčkni Y pro změnu zbraně,
-TUTORIAL_10_KEY,"PRESS ""R"" TO RELOAD","APERTE ""R"" PARA RECARREGAR",,,,Druecke R um neu zu laden,"APPUYER SUR ""R"" POUR RECHARGER",Pulsa R para recargar,Zmáčni R pro přebití,
-TUTORIAL_10_JOY,PRESS X TO RELOAD,APERTE X PARA RECARREGAR,,,,Druecke X um neu zu laden,APPUYER SUR X POUR RECHARGER,Pulsa X para recargar,Zmáčkni X pro přebití,
-TUTORIAL_11_KEY,"PRESS MID MOUSE OR ""V"" FOR MELEE ATTACK","MOUSE DO MEIO OU ""V"" PARA ATAQUE CORPO-A-CORPO",,,,"Mittlere Maustaste oder ""V"" fuer Nahkampf","APPUYEZ SUR LA MOLETTE OU ""V"" POUR UNE ATTAQUE AU CORS A COPRS",Pulsa el Botón central del ratón o V para ataque cuerpo a cuerpo,"Zmáčni kolečko myši, nebo V pro útok zblízka",
-TUTORIAL_11_JOY,PRESS B FOR MELEE ATTACK,APERTE B PARA ATAQUE CORPO-A-CORPO,,,,Druecke B fuer Nahkampf,APPUYER SUR B POUR UNE ATTAQUE AU CORPS A CORPS,Pulsa B para ataque cuerpo a cuerpo,Zmáčni B pro útok zblízka,
+",,,
+RELIC_INFINITY_LONG,+ Shield Regeneration,+ Regeneração de Escudo,,+ Shield Regeneration,,+ Schildregeneration,+ Bouclier régénération,+ Regeneración de escudo,Regenerace štítu +,,,
+RELIC_INFINITY_SHORT,+Shield Regen,+Regen de Escudo,,+Shield Regen,,+ Schildregen.,+ Bouclier regen.,+ Regen. de escudo,Regen štítu +,,,
+RELIC_MIDNIGHT_NAME,The Midnight Beer,A Cerveja da Meia-Noite,,The Midnight Beer,,Das Mitternachtsbier,La Bière de Minuit,La cerveza de medianoche,"Půlnoční pivo
+",,,
+RELIC_MIDNIGHT_LONG,Extra Damage,Dano Extra,,Extra Damage,,Extra Schaden,Dégats Extra,Daño extra,Extra poškození,,,
+RELIC_MIDNIGHT_SHORT,Extra Damage,Dano Extra,,Extra Damage,,Extra Schaden,Dégats Extra,Daño extra,"Extra poškození
+",,,
+RELIC_WATCHFUL_NAME,The Watchful Eye,O Olho Que Tudo Vê,,The Watchful Eye,,Das wachsame Auge,L'Oeil Vigilant,El ojo vigilante,Vševidoucí oko,,,
+RELIC_WATCHFUL_LONG,Extra Ammo,Munição Extra,,Extra Ammo,,Extra Munition,Munition Extra,Munición extra,Extra munice,,,
+RELIC_WATCHFUL_SHORT,Extra Ammo,Munição Extra,,Extra Ammo,,Extra Munition,Munition Extra,Munición extra,Extra munice,,,
+RELIC_DEV_NAME,The Dev Potion,A Poção da Programação,,The Dev Potion,,Der Developer-Trank,La Potion des Dev,La poción del desarrollador,"Devův lektvar
+",,,
+RELIC_DEV_LONG,Regenerates Ammo,Regenera munição,,Regenerates Ammo,,Regeneriert Munition,Munition rénération,Regenera munición,Regenerace munice,,,
+RELIC_DEV_SHORT,Ammo Regen,Regen munição,,Ammo Regen,,Regen. Munition,Munition regen,Regen. munición,"Regen munice
+",,,
+RELIC_YOTTABYTE_NAME,The Yottabyte Drive,O Drive de Yottabyte,,The Yottabyte Drive,,Das Yottabyte-Laufwerk,Le lecteur Yottaoctect,El drive yottabyte ,Yotabytový disk,,,
+RELIC_YOTTABYTE_LONG,Double Shield,Escudo Dobrado,,Double Shield,,Doppelschild,Double bouclier,Escudo doble,"Dvojitý štít
+",,,
+RELIC_YOTTABYTE_SHORT,Extra Shield,Escudo Extra,,Extra Shield,,Extra Schild,Bouclier extra,Escudo extra,Extra štit,,,
+,,,,,,,,,,,,
+BOSS_DUCANCOMMANDER,DUCAN COMMANDER,COMANDANTE DUCAN,,DUCAN COMMANDER,,Ducan-Commander,COMMANDANT DUCAN,Comandante Ducan,Velitel Ducan,,,
+BOSS_SHIELDGENERATOR,SHIELD GENERATOR,GERADOR DE ESCUDO,,SHIELD GENERATOR,,Schildgenerator,GENERATEUR DE BOUCLIER,Generador de escudo,Generátor štítu,,,
+,,,,,,,,,,,,
+TUTORIAL_2_KEY,Hold SPACE to Sprint,Segure ESPAÇO para Correr,,Hold SPACE to Sprint,,Halte LEERTASTE um zu laufen,Maintenez ESPACE pour Sprint,Mantén Espacio para correr,Drž mezerník pro běh,,,
+TUTORIAL_2_JOY,Hold A to Sprint,Segure A para Correr,,Hold A to Sprint,,Halte A um zu laufen,Maintenez A pour Sprint,Mantén A para correr,"Drž A pro běh
+",,,
+TUTORIAL_3_KEY,Tap SPACE to Dash,Toque ESPAÇO para Saltar,,Tap SPACE to Dash,,Tippe LEERTASTE um zu springen,Maintenez ESPACE Dash,Toca Espacio para deslizarte,Zmáčkni mezerník pro úder,,,
+TUTORIAL_3_JOY,Tap A to Dash,Toque A para Saltar,,Tap A to Dash,,Tippe A um zu springen,Appuyez sur A pour Dash,Toca A para deslizarte,Zmáčkni A pro úder,,,
+TUTORIAL_4_KEY,HOLD RIGHT MOUSE TO AIM,SEGURE BOTÃO DIREITO PARA MIRAR,,HOLD RIGHT MOUSE TO AIM,,Halte die rechte Maustaste um zu zielen,MAINTENEZ CLIQUE DROIT POUR VISE,Mantén Click derecho para apuntar ,Drž pravé myšítko pro zaměřování,,,
+TUTORIAL_4_JOY,HOLD LEFT TRIGGER TO AIM,SEGURE GATILHO ESQUERDO PARA MIRAR,,HOLD LEFT TRIGGER TO AIM,,Halte den rechten Schalter um zu zielen,MAINTENEZ LA GACHETTE GAUCHE POUR VISE,Mantén LT para apuntar,Drž LT pro zaměřování,,,
+TUTORIAL_5_KEY,PRESS LEFT MOUSE TO SHOOT,MOUSE ESQUERDO PARA ATIRAR,,PRESS LEFT MOUSE TO SHOOT,,Druecke die linke Maustaste um zu schiessen,CLIQUE GAUCHE POUR TIRE,Pulsa Click izquierdo para disparar,Zmáčkni levé myšítko pro střelbu,,,
+TUTORIAL_5_JOY,PRESS RIGHT TRIGGER TO SHOOT,GATILHO DIREITO PARA ATIRAR,,PRESS RIGHT TRIGGER TO SHOOT,,Druecke den linken Schalter um zu schiessen,GACHETTE DROITE POUR TIRE,Pulsa RT para disparar,Zmáčkni RT pro střelbu,,,
+TUTORIAL_6_KEY,"PRESS ""F"" FOR GRENADE","APERTE ""F"" PARA GRANADA",,"PRESS ""F"" FOR GRENADE",,Druecke F um Granate zu werfen,"APPUYEZ SUR ""F"" POUR LANCER UNE GRENADE",Pulsa F para lanzar granada,Zmáčkni F pro hození granátu,,,
+TUTORIAL_6_JOY,PRESS LB FOR GRENADE,APERTE LB PARA GRANADA,,PRESS LB FOR GRENADE,,Druecke LB um Granate zu werfen,APPUYEZ SUR LB POUR LANCER UNE GRENADE,Pulsa LB para lanzar granada,Zmáčni LB pro hození granátu,,,
+TUTORIAL_7_KEY,SHOOT THE CENTER FOR EXTRA DAMAGE,ATIRE NO CENTRO PARA DANO EXTRA,,SHOOT THE CENTER FOR EXTRA DAMAGE,,Sei zielgenau fuer Extraschaden,TIRER SUR LE CENTRE POUR PLUS DE DEGATS,Dispara al centro para hacer daño extra,Sřílej přesně pro extra poškození,,,
+TUTORIAL_7_JOY,SHOOT THE CENTER FOR EXTRA DAMAGE,ATIRE NO CENTRO PARA DANO EXTRA,,SHOOT THE CENTER FOR EXTRA DAMAGE,,Sei zielgenau fuer Extraschaden,TIRER SUR LE CENTRE POUR PLUS DE DEGATS,Dispara al centro para hacer daño extra,Střílej přesně pro extra poškození,,,
+TUTORIAL_8_KEY,WEAPONS USE 3 DIFFERENT AMMO TYPES,ARMAS USAM 3 TIPOS DE MUNIÇÃO DIFERENTES,,WEAPONS USE 3 DIFFERENT AMMO TYPES,,Waffen benoetigen 3 unterschiedliche Munitionstypen,LES ARMES UTILISES 3 TYPES DIFFERENTS DE MUNITIONS,Las armas utilizan 3 tipos de munición,Zbraně používají tři odlišné druhy munice,,,
+TUTORIAL_8_JOY,WEAPONS USE 3 DIFFERENT AMMO TYPES,ARMAS USAM 3 TIPOS DE MUNIÇÃO DIFERENTES,,WEAPONS USE 3 DIFFERENT AMMO TYPES,,Waffen benoetigen 3 unterschiedliche Munitionstypen,LES ARMES UTILISES 3 TYPES DIFFERENTS DE MUNITIONS,Las armas utilizan 3 tipos de munición,Zbraně používají tři odlišné druhy munice,,,
+TUTORIAL_9_KEY,"PRESS ""TAB"" OR ""MOUSE WHEEL"" TO SWAP WEAPONS","RODA DO MOUSE OU ""TAB"" PARA TROCAR ARMA",,"PRESS ""TAB"" OR ""MOUSE WHEEL"" TO SWAP WEAPONS",,Mausrad oder Tab um Waffe zu waehlen,"APPUYER SUR ""TAB"" OU UTILISER LA MOLETTE DE LA SOURIS POUR CHANGER D'ARME",Pulsa TAB o la rueda del ratón para cambiar de arma,"Zmáčkni TAB, nebo otoč kolečkem myši pro změnu zbraně",,,
+TUTORIAL_9_JOY,PRESS Y TO SWAP WEAPONS,APERTE Y PARA TROCAR ARMA,,PRESS Y TO SWAP WEAPONS,,Druecke Y um Waffe zu waehlen,APPUYER SUR Y POUR CHANGER D'ARME,Pulsa Y para cambiar de arma,Zmáčkni Y pro změnu zbraně,,,
+TUTORIAL_10_KEY,"PRESS ""R"" TO RELOAD","APERTE ""R"" PARA RECARREGAR",,"PRESS ""R"" TO RELOAD",,Druecke R um neu zu laden,"APPUYER SUR ""R"" POUR RECHARGER",Pulsa R para recargar,Zmáčni R pro přebití,,,
+TUTORIAL_10_JOY,PRESS X TO RELOAD,APERTE X PARA RECARREGAR,,PRESS X TO RELOAD,,Druecke X um neu zu laden,APPUYER SUR X POUR RECHARGER,Pulsa X para recargar,Zmáčkni X pro přebití,,,
+TUTORIAL_11_KEY,"PRESS MID MOUSE OR ""V"" FOR MELEE ATTACK","MOUSE DO MEIO OU ""V"" PARA ATAQUE CORPO-A-CORPO",,"PRESS MID MOUSE OR ""V"" FOR MELEE ATTACK",,"Mittlere Maustaste oder ""V"" fuer Nahkampf","APPUYEZ SUR LA MOLETTE OU ""V"" POUR UNE ATTAQUE AU CORS A COPRS",Pulsa el Botón central del ratón o V para ataque cuerpo a cuerpo,"Zmáčni kolečko myši, nebo V pro útok zblízka",,,
+TUTORIAL_11_JOY,PRESS B FOR MELEE ATTACK,APERTE B PARA ATAQUE CORPO-A-CORPO,,PRESS B FOR MELEE ATTACK,,Druecke B fuer Nahkampf,APPUYER SUR B POUR UNE ATTAQUE AU CORPS A CORPS,Pulsa B para ataque cuerpo a cuerpo,Zmáčni B pro útok zblízka,,,

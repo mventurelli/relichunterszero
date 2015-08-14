@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1569325055</depth>
+  <depth>-999999999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -270,6 +270,9 @@ game_pause_init();
 //Center Mouse Position At Beggining
 display_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
+//Low Performance Detection
+global.lowPerfTime = room_speed*2;
+global.lowPerfTimeCurrent = 0;
 
 </string>
           </argument>
@@ -2797,6 +2800,39 @@ if (global.gameOver)
     draw_text_dropoutline_ext_transformed(gameOverX,gameOverY3,gameOverString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
 }
 
+///Draw Low Performance Window Pop Up
+if (instance_exists(gui_info_lowPerformance)) 
+{
+    draw_set_alpha(0.5);
+    draw_set_color(c_black);
+    draw_rectangle(view_xview[0],view_yview[0],view_xview[0]+view_xport[0],view_yview[0]+view_yport[0],false);
+    
+    draw_set_alpha(1);
+    draw_set_color(c_white);
+    
+    var rectangleWidth = width*0.5;
+    var rectangleHeight = height*0.2;
+    var rectX = width * 0.5;
+    var rectY = height * 0.5;
+    
+    draw_rectangle(rectX-(rectangleWidth/2), rectY-(rectangleHeight/2),rectX+(rectangleWidth/2), rectY+(rectangleHeight/2),false);
+    
+    var textSpacing = 52;
+    draw_set_colour(K_BETU_MAGENTA_PAUSE);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_center);
+    draw_set_font(global.font_menuMedium);
+    
+    draw_text(rectX,rectY-textSpacing,loc_key("SETTINGS_LOWPERF1"));
+    draw_set_colour(c_black);
+    draw_text(rectX,rectY,loc_key("SETTINGS_LOWPERF2"));
+    draw_set_colour(K_BETU_MAGENTA_PAUSE);
+    
+    draw_set_font(global.font_menuLarge);
+    draw_text(rectX,rectY+textSpacing,loc_key("SETTINGS_LOWPERF3"));
+}
+
+
 draw_set_alpha(1);
 surface_reset_target();
 var surfaceXScale = window_get_width()/1920;
@@ -2869,10 +2905,32 @@ draw_set_color(c_white);
 draw_set_font(global.font_numberSmall);
 
 //Draw FPS if it is low!
-if ((fps/room_speed) &lt; 0.9) draw_text(window_get_width()*0.99, window_get_height()*0.95, "FPS " + string(fps) + '/' + string(room_speed) );
+if ((fps/room_speed) &lt; 0.9) 
+{
+    draw_text(window_get_width()*0.99, window_get_height()*0.95, "FPS " + string(fps) + '/' + string(room_speed) );
+    
+    ///Low Performance Check
+    if (!global.lowPerfChecked)
+    {
+        if (global.lowPerfTimeCurrent &lt; global.lowPerfTime) global.lowPerfTimeCurrent++;
+        else{
+            global.reflections_toggle = false;
+            global.persistent_toggle = false;
+            global.shadows_toggle = false;
+            
+            instance_create(0,0,gui_info_lowPerformance);
+            
+            global.lowPerfChecked = true;
+        }
+    }
+    
+}
 
 //Version Number
 //draw_text(window_get_width()*0.99, window_get_height()*0.97, global.currentVersionNumber );
+
+
+
 </string>
           </argument>
         </arguments>

@@ -72,7 +72,9 @@ ini_open(working_directory + "\saveData.ini");
         p++;
         playerInstanceNumber++;
     }
-
+    
+        ini_write_real('Persistence','LowPerfChecked',global.lowPerfChecked);
+        
         ini_write_real('Persistence','UnlockEndless',global.unlockEndless);
         ini_write_real('Persistence','UnlockPinky',global.unlockPinky);
         ini_write_real('Persistence','UnlockRaff',global.unlockRaff);

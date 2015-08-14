@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="14" name="datafiles">
+  <datafiles number="15" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -75,7 +75,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>62565</size>
+      <size>73809</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -377,6 +377,10 @@
         <sprite>sprites\spr_wall_stage2</sprite>
         <sprite>sprites\spr_wall_stage3</sprite>
         <sprite>sprites\spr_wall_stage4</sprite>
+        <sprite>sprites\spr_wall_stage1_static</sprite>
+        <sprite>sprites\spr_wall_stage2_static</sprite>
+        <sprite>sprites\spr_wall_stage3_static</sprite>
+        <sprite>sprites\spr_wall_stage4_static</sprite>
         <sprite>sprites\spr_bigwindow</sprite>
       </sprites>
       <sprites name="Teleporter">
@@ -1188,6 +1192,7 @@
         <object>objects\obj_spawn_botRight</object>
       </objects>
       <objects name="Walls">
+        <object>objects\class_level_wall</object>
         <object>objects\obj_wall_stage1</object>
         <object>objects\obj_wall_stage2</object>
         <object>objects\obj_wall_stage3</object>
@@ -1304,6 +1309,7 @@
       <object>objects\gui_credits_text</object>
       <object>objects\gui_weaponInfo</object>
       <object>objects\gui_dynamicBar</object>
+      <object>objects\gui_info_lowPerformance</object>
       <object>objects\gui_playerInfo</object>
       <objects name="Character Selection">
         <object>objects\class_menu_btnChar</object>

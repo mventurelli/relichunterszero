@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.3');
+    global.currentVersionNumber = ini_read_string('Version','Version','BETA v0.31');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -37,6 +37,8 @@ ini_open(working_directory + "\saveData.ini");
     global.hasUsedCheckpoint = ini_read_real('Temp','CheckpointUsed',0);
     
     // Persistence
+    
+    global.lowPerfChecked = ini_read_real('Persistence','LowPerfChecked',0);
     
     global.unlockEndless = ini_read_real('Persistence','UnlockEndless',0);
     global.unlockPinky = ini_read_real('Persistence','UnlockPinky',1);

@@ -79,14 +79,12 @@ if (global.shadows)
                     lightsource = instance_nearest(x,y,class_lightsource);
                     if instance_exists(lightsource)
                     {
-                        //
                         my_shadow_sprite = sprite_index;
                         my_shadow_subimage = image_index;
                         my_shadow_yscale = sprite_shadow_yscale;
                     }
                     else
                     {
-                        //
                         my_shadow_sprite = sprite_index;
                         my_shadow_subimage = image_index;
                         my_shadow_yscale = sprite_shadow_yscale;
@@ -126,7 +124,6 @@ if (global.shadows)
                 draw_set_blend_mode(bm_normal);
     surface_reset_target();
 }
-
 
 
 

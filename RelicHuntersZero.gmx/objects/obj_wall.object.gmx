@@ -164,7 +164,8 @@ if (hp &gt; maxhp) hp = maxhp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index,damage,drawX,drawY);
+            <string>///Draw
+draw_sprite(sprite_index,damage,drawX,drawY);
 </string>
           </argument>
         </arguments>
