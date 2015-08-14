@@ -36,6 +36,8 @@ spriteSel = spr_char_randomSel;
 spriteFinal = spr_char_randomFinal;
 
 myCharacter = char_random;
+
+
 </string>
           </argument>
         </arguments>

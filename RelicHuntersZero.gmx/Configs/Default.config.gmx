@@ -525,7 +525,7 @@
     <option_windows_company_info>Rogue Snail</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_description_info></option_windows_description_info>
-    <option_windows_enable_steam>0</option_windows_enable_steam>
+    <option_windows_enable_steam>-1</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>

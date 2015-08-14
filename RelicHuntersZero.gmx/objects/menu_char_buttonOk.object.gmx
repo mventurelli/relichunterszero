@@ -50,23 +50,25 @@ labelString = 'START';
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Trigger
+            <string>///Trigger &amp; Start the Game
 event_inherited();
 
 if (isActive) &amp;&amp; (owner.slotInput != K_INPUT_KEYBOARD) if joy_check_pressed(owner.slotInput,1) trigger = true;
 
 if (trigger)
 {
+    global.character[1] = -1;
+    global.character[2] = -1;
+    
     if (instance_exists(menu_char_card1))
     {
         if (menu_char_card1.slotInput != -1) &amp;&amp; (menu_char_card1.slotCharacter != -1)
         {
             global.input[1] = menu_char_card1.slotInput;
             global.character[1] = menu_char_card1.slotCharacter;
-            if (menu_char_card1.slotCharacter == char_random) global.character[1] = irandom_range(char_jimmy,char_ass);
             global.playerCount = 1;
         }
-    } 
+    }
     
     if (instance_exists(menu_char_card2))
     {
@@ -74,10 +76,33 @@ if (trigger)
         {
             global.input[2] = menu_char_card2.slotInput;
             global.character[2] = menu_char_card2.slotCharacter;
-            if (menu_char_card2.slotCharacter == char_random) global.character[2] = irandom_range(char_jimmy,char_ass);
             global.playerCount = 2;
         }
     } 
+    
+    //Check random
+    if (global.character[1] == char_random) || (global.character[2] == char_random)
+    {
+        var randomList = ds_list_create();
+        if (global.character[1] != char_jimmy) &amp;&amp; (global.character[2] != char_jimmy) ds_list_add(randomList,char_jimmy);
+        if (global.unlockPinky) &amp;&amp; (global.character[1] != char_pinky) &amp;&amp; (global.character[2] != char_pinky) ds_list_add(randomList,char_pinky);
+        if (global.unlockRaff) &amp;&amp; (global.character[1] != char_raff) &amp;&amp; (global.character[2] != char_raff) ds_list_add(randomList,char_raff);
+        if (global.unlockBiu) &amp;&amp; (global.character[1] != char_biu) &amp;&amp; (global.character[2] != char_biu) ds_list_add(randomList,char_biu);
+        if (global.unlockPunny) &amp;&amp; (global.character[1] != char_punny) &amp;&amp; (global.character[2] != char_punny) ds_list_add(randomList,char_punny);
+        if (global.unlockAss) &amp;&amp; (global.character[1] != char_ass) &amp;&amp; (global.character[2] != char_ass) ds_list_add(randomList,char_ass);
+        
+        if (global.character[1] == char_random)
+        {
+            var randomPick = irandom_range(0,ds_list_size(randomList)-1);
+            global.character[1] = ds_list_find_value(randomList, randomPick);
+            ds_list_delete(randomList, randomPick);
+        }
+        
+        if (global.character[2] == char_random) global.character[2] = ds_list_find_value(randomList, irandom_range(0,ds_list_size(randomList)-1));
+        
+        ds_list_destroy(randomList);
+    }
+
     
     //Reset everything, save and start the game
     global.selectionLocked[K_INPUT_ALL] = false;
@@ -98,12 +123,6 @@ if (trigger)
     }
     
     ini_close();
-    
-    //Debug
-    show_debug_message("ready to go!");
-    show_debug_message("My input1 is "+string(global.input[1]));    show_debug_message("My char1 is "+string(global.character[1]));
-    if (global.playerCount &gt; 1) {   show_debug_message("My input2 is "+string(global.input[2]));    show_debug_message("My char2 is "+string(global.character[2])); }
-    //
     
     
     if (global.gameMode == gamemode_adventure) room_goto(room_start);
