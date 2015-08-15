@@ -7,7 +7,7 @@ if background_exists(global.pauseBackground) background_delete(global.pauseBackg
 global.pauseMenu = false;
 
 //Restore original input method
-global.input[1] = global.pauseInput;
+//global.input[1] = global.pauseInput;
 
 //Activate all instances, shut down Pause Menu objects
 instance_activate_all();

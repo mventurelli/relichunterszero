@@ -43,7 +43,6 @@ backgroundController.backgroundSpeed = 0.5;
 // Save File Read
 save_sync_read();
 
-
 // Debug Shit, don't mess with this
 if (os_type == os_macosx) global.version = os_macosx;
 else if (os_type == os_linux) global.version = os_linux;

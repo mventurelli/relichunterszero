@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>4</bbox_left>
+  <bbox_left>28</bbox_left>
   <bbox_right>111</bbox_right>
-  <bbox_top>28</bbox_top>
-  <bbox_bottom>93</bbox_bottom>
+  <bbox_top>42</bbox_top>
+  <bbox_bottom>91</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -33,8 +33,5 @@
     <frame index="10">images\spr_kamikazelite_death1_10.png</frame>
     <frame index="11">images\spr_kamikazelite_death1_11.png</frame>
     <frame index="12">images\spr_kamikazelite_death1_12.png</frame>
-    <frame index="13">images\spr_kamikazelite_death1_13.png</frame>
-    <frame index="14">images\spr_kamikazelite_death1_14.png</frame>
-    <frame index="15">images\spr_kamikazelite_death1_15.png</frame>
   </frames>
 </sprite>

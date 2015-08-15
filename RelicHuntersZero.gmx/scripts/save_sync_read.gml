@@ -132,6 +132,8 @@ ini_open(working_directory + "\saveData.ini");
     if (room == room_shop) global.shop_visits++;
     
     // Game Options
+    var defaultEffects = 1;
+    //if (os_type == os_macosx) defaultEffects = 0;
     
     global.masterVolume = ini_read_real('Quality','Master Volume',0.7); 
     global.musicVolume = ini_read_real('Quality','Master Music',0.6); 
@@ -151,9 +153,9 @@ ini_open(working_directory + "\saveData.ini");
     
     global.screenResolution = ini_read_real('Quality','resolution',1.0);
     global.fullscreen = ini_read_real('Quality','fullscreen',1);
-    global.reflections_toggle = ini_read_real('Quality','reflections',1);
-    global.shadows_toggle = ini_read_real('Quality','shadows',1);
-    global.persistent_toggle = ini_read_real('Quality','persistent effects',1);
+    global.reflections_toggle = ini_read_real('Quality','reflections',defaultEffects);
+    global.shadows_toggle = ini_read_real('Quality','shadows',defaultEffects);
+    global.persistent_toggle = ini_read_real('Quality','persistent effects',defaultEffects);
     global.max_particles = ini_read_real('Quality','max particles',5);
     global.max_casings = ini_read_real('Quality','max casings',100);
     global.alwaysShowAmmo = ini_read_real('Quality','Always Show Ammo',false);

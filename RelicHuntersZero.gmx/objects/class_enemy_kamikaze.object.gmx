@@ -111,7 +111,11 @@ sprite_idle = spr_kamikaze_idle;
 sprite_dash = spr_kamikaze_attack;
 sprite_death = spr_kamikaze_death;
 sprite_death2 = spr_kamikaze_death2;
-sprite_death3 = spr_kamikaze_death3;
+
+sprite_precision1 = spr_kamikaze_precision;
+sprite_precision2 = spr_kamikaze_precision2;
+sprite_precision3 = spr_kamikaze_precision3;
+
 sprite_dash_fx = spr_kamikaze_dash_fx;
 myDash = noone;
 myDash2 = noone;
@@ -277,31 +281,40 @@ if (hp &gt; hp_max) || (immortal) hp = hp_max;
 
 if hp &lt;= 0
 {
+    var corpseSprite = sprite_death;
+    
     if (no_score == false)
     {
         if (!critical_death)
         {
             global.pause = room_speed*0.1;
             score_add(global.score_kill,false);
+            
+            var randomDeath = irandom_range(1,2)
+            if (randomDeath == 1) corpseSprite = sprite_death;
+            if (randomDeath == 2) corpseSprite = sprite_death2;
         }
         else
         {
             global.pause = room_speed*0.15;
             score_add(global.score_kill+global.score_headshot,true);
+            
+            var randomDeath = irandom_range(1,3)
+            if (randomDeath == 1) corpseSprite = sprite_precision1;
+            if (randomDeath == 2) corpseSprite = sprite_precision2;
+            if (randomDeath == 3) corpseSprite = sprite_precision3;
         }
     }
     
     repeat(1) instance_create(x,y,obj_pickup_coin);
     myCorpse = instance_create(x,y,fx_corpse);
     myCorpse.image_xscale = image_xscale;
+    myCorpse.sprite_index = corpseSprite;
+    
     if (pushed)
     {
         myCorpse.speed = push_speed*2;
         myCorpse.direction = push_direction;
-        random_death = irandom_range(1,3)
-        if (random_death == 1) myCorpse.sprite_index = sprite_death;
-        if (random_death == 2) myCorpse.sprite_index = sprite_death2;
-        if (random_death == 3) myCorpse.sprite_index = sprite_death3;
     }
     
     audio_play(audio_emitter,false,1,sfx_kami_death);

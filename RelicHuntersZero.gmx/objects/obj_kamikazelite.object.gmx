@@ -43,14 +43,7 @@ push_friction = 1.2;
 image_xscale = 1.25;
 image_yscale = 1.25;
 
-sprite_hit = spr_kamikazelite_hit;
-sprite_walk = spr_kamikazelite_walk;
-sprite_idle = spr_kamikazelite_idle;
-sprite_dash = spr_kamikazelite_idle;
-sprite_death = spr_kamikazelite_death1;
-sprite_death2 = spr_kamikazelite_death2;
-sprite_death3 = spr_kamikazelite_death1;
-sprite_dash_fx = spr_kamikaze_dash_fx;
+
 </string>
           </argument>
         </arguments>
