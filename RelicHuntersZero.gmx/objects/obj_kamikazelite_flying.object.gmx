@@ -60,8 +60,38 @@ reflection_object_setup(0,-1,image_index);
 
 shadow_object_setup(myHeight,-1,-1,global.default_shadow_yscale);
 
+//Audio
+audio_emitter = audio_emitter_create();
+audio_emitter_falloff(audio_emitter, global.falloffMinorDist, global.falloffMinorMax, global.falloffMinorFactor );
+audio_emitter_gain(audio_emitter,global.soundVolume);
+
+audio_play(audio_emitter, true, 1, sfx_kami_fly);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Cleanup
+if audio_emitter_exists(audio_emitter) audio_emitter_free(audio_emitter);
 </string>
           </argument>
         </arguments>
@@ -209,6 +239,28 @@ if (flightState == 'complete')
             <kind>1</kind>
             <string>///Update Shadow Draw Position
 shadow_object_setup(myHeight,-1,-1,global.default_shadow_yscale);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Audio
+audio_emitter_position(audio_emitter, x, y, 0);
 </string>
           </argument>
         </arguments>

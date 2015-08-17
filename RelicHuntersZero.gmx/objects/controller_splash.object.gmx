@@ -32,7 +32,7 @@ save_sync_read();
 screen_update();
 
 //Version
-global.currentVersionNumber = "BETA v0.31";
+global.currentVersionNumber = "v1.0";
 
 //Multiplayer &amp; Mode
 global.playerCount = 1;

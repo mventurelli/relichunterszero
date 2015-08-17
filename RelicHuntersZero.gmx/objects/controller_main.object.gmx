@@ -1303,7 +1303,7 @@ if (!level_built)
         if (room == level4_3) enemy_pool = enemy_pool_4_3;
         
         //Adventure Items
-        if (room == room_shop) || (room == room_tutorial) item_pool = shop_empty_pool;
+        if (room == room_shop) || (room == room_tutorial) || (room == room_boss) item_pool = shop_empty_pool;
         if (room == level1_1) item_pool = item_pool_1_1;
         if (room == level1_2) item_pool = item_pool_1_2;
         if (room == level1_3) item_pool = item_pool_1_3;
@@ -1705,19 +1705,18 @@ if (global.stage_current == 3) &amp;&amp; (global.checkpoint3 == 0) global.check
 
 if (global.level_complete)
 {
-
     save_and_clean();
     
     if (room == room_shop) || (room == room_start)
     {
-        //Test boss: room_goto(room_boss); exit; 
+        //Test boss:  room_goto(room_boss); exit; 
         
         
         if (global.stage_current == 0) room_goto(level1_1);
-        if (global.stage_current == 1) room_goto(level2_1);
-        if (global.stage_current == 2) room_goto(level3_1);
-        if (global.stage_current == 3) room_goto(level4_1);
-        if (global.stage_current == 4) room_goto(room_boss);
+        else if (global.stage_current == 1) room_goto(level2_1);
+        else if (global.stage_current == 2) room_goto(level3_1);
+        else if (global.stage_current == 3) room_goto(level4_1);
+        else if (global.stage_current == 4) room_goto(room_boss);
 
         exit;
     }
@@ -1733,13 +1732,13 @@ if (global.level_complete)
         {
                 if (global.stage_current != -9)
                 {
+                    show_debug_message("CHEGUEI ATE AQUI SEM MORRER");
                     room_goto(room_end); 
                     exit;
                 }
                 else { room_goto(level1_1); exit; } //Secret room portal
         }
-        
-        if (global.gameMode == gamemode_endless)
+        else if (global.gameMode == gamemode_endless)
         {
             room_goto(level1_1);
             exit;
@@ -1901,6 +1900,7 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
           <argument>
             <kind>1</kind>
             <string>///DEBUG COMMANDS
+
 
 if (debug_mode)
 {
@@ -2169,7 +2169,7 @@ if (surface_exists(reloadBarSurface2)) surface_free(reloadBarSurface2);
 
 //destroy grids
 mp_grid_destroy(global.astar_grid);
-
+/*
 save_and_clean();
 </string>
           </argument>

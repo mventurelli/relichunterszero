@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Speed
+show_debug_message("I SPAWNERD WITHOUT CRASHING");
 
 rollSpeed = -0.65;
 

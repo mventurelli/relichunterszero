@@ -364,6 +364,9 @@ if instance_exists(other) &amp;&amp; instance_exists(owner)
             <kind>1</kind>
             <string>///Main Draw
 
+if (image_angle &gt; 90) || (image_angle &lt; 270) image_yscale = -1;
+else image_yscale = 1;
+
 //Pause Animation
 old_image_speed = image_speed;
 if (global.pause)
@@ -376,7 +379,7 @@ else
 }
 
 //Draw
-draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,c_white,myAlpha);
+draw_sprite_ext(sprite_index,image_index,x,y,1,image_yscale,image_angle,c_white,myAlpha);
 </string>
           </argument>
         </arguments>

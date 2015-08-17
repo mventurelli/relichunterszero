@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Main Shit
+show_debug_message("I INSTANTIATED WITHOUT CRASHING");
+
 joy_init();
 goToNextRoom = false;
 allowInput = false;
@@ -47,6 +49,8 @@ if (room == room_end)
 }
 
 volume_update();
+
+show_debug_message("FINISHED CREATE WITHOUT CRASHING");
 </string>
           </argument>
         </arguments>
@@ -166,18 +170,9 @@ scrollText = instance_create(0,0,gui_credits_text);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Constrain Mouse to Screen
-// This is bad but better than nothing I guess
+            <string>///Center Mouse Cursor at Start
 
-var hsafety,vsafety;
-
-hsafety = 0.05*window_get_width();
-vsafety = 0.05*window_get_height();
-
-if (window_mouse_get_x() &lt; 0+hsafety) window_mouse_set(0+hsafety, window_mouse_get_y());
-if (window_mouse_get_y() &lt; 0+vsafety) window_mouse_set(window_mouse_get_x(), 0+vsafety);
-if (window_mouse_get_x() &gt; window_get_width()-hsafety) window_mouse_set(window_get_width()-hsafety, window_mouse_get_y());
-if (window_mouse_get_y() &gt; window_get_height()-vsafety) window_mouse_set(window_mouse_get_x(), window_get_height()-vsafety);
+window_mouse_set(window_get_width()/2,window_get_height()/2);
 </string>
           </argument>
         </arguments>
@@ -201,7 +196,6 @@ if (window_mouse_get_y() &gt; window_get_height()-vsafety) window_mouse_set(wind
             <string>///Xbox 360 Controller Support
 
 //Unrestricted
-{
     var update0 = xin_update(0); 
     if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
     else
@@ -215,7 +209,7 @@ if (window_mouse_get_y() &gt; window_get_height()-vsafety) window_mouse_set(wind
     {
         joy_rumble_update(1);
     }
-}
+
 </string>
           </argument>
         </arguments>
@@ -239,7 +233,7 @@ if (window_mouse_get_y() &gt; window_get_height()-vsafety) window_mouse_set(wind
           <argument>
             <kind>1</kind>
             <string>///Take Screenshot
-steam_screenshot_check();
+//steam_screenshot_check();
 </string>
           </argument>
         </arguments>
@@ -264,6 +258,7 @@ steam_screenshot_check();
 
 if (allowInput)
 {
+    show_debug_message("ALLOWINPUT IS TRUE AND I STILL DIDNT CRASH");
     if (keyboard_check_pressed(vk_anykey)) || (mouse_check_button_pressed(mb_left))
     {
         goToNextRoom = true;
@@ -280,6 +275,7 @@ if (allowInput)
     }
     
     if (goToNextRoom) room_goto(room_splash);
+    show_debug_message("FINISHED ALLOWINPUT");
 }
 
 

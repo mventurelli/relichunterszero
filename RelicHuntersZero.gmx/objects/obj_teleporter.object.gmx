@@ -75,6 +75,7 @@ if instance_exists(activationClient) &amp;&amp; (active)
     if (wantToActivate) &amp;&amp; (in_range)
     { 
         global.level_complete = true;
+
         if (myLevel != -1)
         {
             global.stage_current = myLevel;
