@@ -2,7 +2,7 @@
 Relic Hunters Zero User License v1.0
 =====================================
 
-Marcos Venturelli and Rogue Snail Criação de Jogos LTDA ME
+Marcos Venturelli and Rogue Snail CriaÃ§Ã£o de Jogos LTDA ME
 
 Last Updated on July 27th, 2015
 
@@ -15,9 +15,9 @@ As of July 29th, 2015, I'm releasing the .gmk files for Relic Hunters Zero to th
 
 This is inspired by Derek Yu's Spelunky, which was a great example and learning tool for me. The game and the source code are being provided for the purpose of learning, entertainment and sharing. 
 
-Commercial use is also authorized, but keep in mind that this license does not include the Relic Hunters Zero intellectual property, nor any of its image and audio files. You are also not authorized to distribute the game in any way.
+Commercial use is also authorized, but keep in mind that this license does not include the Relic Hunters Zero intellectual property, nor any of its image and audio files. You are also not authorized to distribute the game in any way, unless it does not include the IP and the assets, or it is clearly communicated as a Mod.
 
-This license was based on the Spelunky® User License v1.1b and the Artistic License 2.0.
+This license was based on the SpelunkyÂ® User License v1.1b and the Artistic License 2.0.
 
 Stay creative!
 
@@ -26,7 +26,7 @@ Stay creative!
 2. Definitions
 ----------------
 
-"Rogue Snail" is defined as Marcos Venturelli and Rogue Snail Criação de Jogos LTDA ME.
+"Rogue Snail" is defined as Marcos Venturelli and Rogue Snail CriaÃ§Ã£o de Jogos LTDA ME.
 
 The "Game" is defined as the Relic Hunters Zero game, its program, and all related files.
 
