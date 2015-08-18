@@ -382,6 +382,7 @@ if energy &lt; energy_max
         myRecharge = instance_create(x,y,fx_shield_up);   
         myRecharge.owner = id;
         myRecharge.blue = false;
+        audio_play(audio_emitter,false,9,sfx_shield_regen_start);
     }
 }
 

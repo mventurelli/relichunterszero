@@ -135,9 +135,9 @@ ini_open(working_directory + "\saveData.ini");
     var defaultEffects = 1;
     //if (os_type == os_macosx) defaultEffects = 0;
     
-    global.masterVolume = ini_read_real('Quality','Master Volume',0.7); 
-    global.musicVolume = ini_read_real('Quality','Master Music',0.6); 
-    global.soundVolume = ini_read_real('Quality','Master Sound',0.9); 
+    global.masterVolume = ini_read_real('Quality','Master Volume',1); 
+    global.musicVolume = ini_read_real('Quality','Master Music',1); 
+    global.soundVolume = ini_read_real('Quality','Master Sound',1); 
     volume_update();
     
     global.input[1] =  ini_read_real('Input','Input1',K_INPUT_KEYBOARD);

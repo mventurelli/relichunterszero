@@ -108,13 +108,18 @@ if instance_exists(owner)
             
             if (global.relic_midnight_beer == 2) damage = round(damage*global.midnightDamageMultiplier ); //Midnight Beer
             
-            if (fucker.shield) fucker.energy -= damage;
+            if (fucker.shield) 
+            {
+                fucker.energy -= damage;
+                if (fucker.energy &lt;= 0) audio_play(fucker.audio_emitter,false,1,sfx_shield_destroy);
+                else audio_play_exclusive(fucker.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
+            }
             else fucker.hp -= damage;
     
             fucker.hit_taken = true;
             
             fucker.pushed = true;
-            fucker.push_direction = push_direction;
+            fucker.push_direction = point_direction(owner.x,owner.y,fucker.x,fucker.y);
             fucker.push_speed += push_power;
             
             spreadX = irandom_range(-15,15);
@@ -214,7 +219,7 @@ else instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Damage
-if instance_exists(other)
+if instance_exists(other) &amp;&amp; instance_exists(owner)
 {
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
@@ -226,7 +231,13 @@ if instance_exists(other)
         other.aggro += other.aggro_add_hit;
         if (global.relic_midnight_beer == 2) damage = round(damage*global.midnightDamageMultiplier ); //Midnight Beer
         
-        if (other.shield) other.energy -= damage;
+        if (other.shield) 
+        {
+            other.energy -= damage;
+            if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+            else audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
+            
+        }
         else 
         {
             other.hp -= damage;
@@ -235,7 +246,7 @@ if instance_exists(other)
         other.hit_taken = true;
         
         other.pushed = true;
-        other.push_direction = direction;
+        other.push_direction = point_direction(owner.x,owner.y,other.x,other.y);
         other.push_speed += push_power;
         
         damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);

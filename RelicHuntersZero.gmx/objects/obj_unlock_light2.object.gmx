@@ -111,7 +111,7 @@ if (on_top_of_object)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,1);
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,0.42);
 </string>
           </argument>
         </arguments>

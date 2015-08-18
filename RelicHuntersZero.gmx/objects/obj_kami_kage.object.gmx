@@ -59,6 +59,10 @@ audio_emitter_falloff(audio_emitter, global.falloffMinorDist, global.falloffMino
 audio_emitter_position(audio_emitter, x, y, 0);
 audio_emitter_gain(audio_emitter,global.soundVolume);
 
+impactSound1 = sfx_debris1;
+impactSound2 = sfx_debris2;
+impactSound3 = sfx_debris3;
+
 </string>
           </argument>
         </arguments>
@@ -103,6 +107,7 @@ if (hit_taken)
     if (damage == 1) sprite_index = spr_cage1_hit;
     if (damage == 2) sprite_index = spr_cage1_hit;
     
+    if (!hit_taken_time) audio_play_exclusive(audio_emitter,false,1,impactSound1,impactSound2,impactSound3);
     hit_taken_time++;
     if hit_taken_time &gt;= 5
     {

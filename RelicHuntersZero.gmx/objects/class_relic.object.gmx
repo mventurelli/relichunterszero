@@ -139,8 +139,8 @@ if (active)
 }
 else
 {
-    myColor = c_black;
-    myAlpha = 0.75;
+    myColor = c_white;
+    myAlpha = 0.42;
 }
 
 if (!((full_relic)&amp;&amp;(!active))) draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,myColor,myAlpha);

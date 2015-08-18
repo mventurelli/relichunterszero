@@ -301,7 +301,7 @@ global.ambientSound = noone;
 
 alarm[3] = room_speed*3;
 
-if (room == room_start) || (room == room_shop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss)
+if (room == room_start) || (room == room_shop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (audio_is_playing(bgm_dig))
 {
     audio_stop_all();
 }

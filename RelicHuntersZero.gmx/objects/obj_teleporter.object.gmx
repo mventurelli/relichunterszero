@@ -174,8 +174,8 @@ if myLevel == 3
 
 if (active == false) &amp;&amp; (buy == false) &amp;&amp; (myLevel != -1)
 {
-    image_blend = c_black;
-    image_alpha = 0.8;
+    image_blend = c_white;
+    image_alpha = 0.42;
 }
 else
 {

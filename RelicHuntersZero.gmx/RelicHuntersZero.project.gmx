@@ -150,8 +150,8 @@
         <sound>sound\sfx_pickup_available</sound>
         <sound>sound\sfx_pickup_health</sound>
         <sound>sound\sfx_coin1</sound>
-        <sound>sound\sfx_coin3</sound>
         <sound>sound\sfx_coin2</sound>
+        <sound>sound\sfx_coin3</sound>
         <sound>sound\sfx_pickup_full</sound>
         <sound>sound\sfx_relic_on</sound>
         <sound>sound\sfx_relic_off</sound>
@@ -209,7 +209,7 @@
         <sound>sound\sfx_impact_flesh4</sound>
         <sound>sound\sfx_pistol</sound>
         <sound>sound\sfx_flamethrower_start</sound>
-        <sound>sound\sfx_flamethrower_loop</sound>
+        <sound>sound\sfx_flamethrower_stop</sound>
         <sound>sound\sfx_reload_end</sound>
         <sound>sound\sfx_reload_start</sound>
         <sound>sound\sfx_reload_loop1</sound>
@@ -240,7 +240,6 @@
         <sound>sound\sfx_keyMel6</sound>
         <sound>sound\sfx_keyMel7</sound>
         <sound>sound\sfx_plasma_start</sound>
-        <sound>sound\sfx_plasma_loop</sound>
       </sounds>
       <sounds name="Dig">
         <sound>sound\sfx_dirt1</sound>
@@ -251,6 +250,7 @@
         <sound>sound\sfx_shovel1</sound>
         <sound>sound\sfx_shovel2</sound>
         <sound>sound\sfx_shovel3</sound>
+        <sound>sound\sfx_shovel4</sound>
         <sound>sound\sfx_detector_close</sound>
         <sound>sound\sfx_detector_far</sound>
         <sound>sound\sfx_dig_done</sound>

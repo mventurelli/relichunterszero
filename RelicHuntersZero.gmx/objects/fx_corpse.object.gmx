@@ -115,8 +115,8 @@ depth = -y;
 //Hack:
 if (sprite_index == spr_kamikaze_death) || (sprite_index == spr_kamikaze_death2) 
 {
-    image_xscale = 1.25;
-    image_yscale = 1.25;
+    //image_xscale = 1.25;
+    //image_yscale = 1.25;
 }
 </string>
           </argument>

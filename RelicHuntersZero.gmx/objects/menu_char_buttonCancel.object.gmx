@@ -75,6 +75,8 @@ if (isActive)
     
 if (trigger)
 {
+    if (!audio_is_playing(sfx_menu_click)) audio_play_sound(sfx_menu_click,9,false);  
+    
     if (instance_exists(owner))
     {
         global.selectionLocked[owner.slotInput] = false;

@@ -62,17 +62,23 @@ drawConsoleLabels = false;
             <string>///Mouse Activation &amp; Trigger
 
 isActive = false;
-isMouseSelected = false;
+
 
 if (instance_exists(owner))
 {
     if (owner.slotInput != -1) &amp;&amp; (owner.slotCharacter != -1)
     {
         isActive = true;
-        if (is_mouse_over(id)) &amp;&amp; (owner.slotInput == K_INPUT_KEYBOARD) isMouseSelected = true;
+        if (is_mouse_over(id)) &amp;&amp; (owner.slotInput == K_INPUT_KEYBOARD)
+        {
+            if (!isMouseSelected) &amp;&amp; (!audio_is_playing(sfx_menu_mouse)) audio_play_sound(sfx_menu_mouse,9,false);
+            isMouseSelected = true;
+        }
+        else isMouseSelected = false;
         
         if (owner.slotInput != K_INPUT_KEYBOARD) drawConsoleLabels = true;
     }  
+    else isMouseSelected = false;
 }
 else instance_destroy();
 

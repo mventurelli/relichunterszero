@@ -46,14 +46,14 @@ if faction == f_player &amp;&amp; instance_exists(other)
         {
             if (distance_travelled &gt; range) damage = round(damage/3);
             other.energy -= damage;
-            audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
             if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+            else audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
         }
         else 
         {
             if (allowPrecision)
             {
-				var otherBBoxCenter = get_bbox_center(other.id);
+                var otherBBoxCenter = get_bbox_center(other.id);
                 var precisionAngle = angle_precision(x,y,otherBBoxCenter[0],otherBBoxCenter[1],direction);
                 var angleToTarget = point_direction(x,y,otherBBoxCenter[0],otherBBoxCenter[1]);
                 if  (precisionAngle != -1) &amp;&amp; (precisionAngle &lt;= global.precisionAngle) isPrecise = true;
@@ -159,7 +159,7 @@ if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
                 if (distance_travelled &gt; range) ffDamage = ffDamage/3;
                 other.energy -= ffDamage;
                 audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
-                if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+                if (other.energy &lt;= 0) audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_destroy);
             }
             else
             {
