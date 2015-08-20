@@ -47,24 +47,61 @@ if (global.language == lang_ptbr)
 if (global.language == lang_huebr)
 {
     targetColumn = lang_huebr;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
     global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
 }
 
 if (global.language == lang_russian)
 {
     targetColumn = lang_russian;
+    global.font_shopPrice = ftRU_shopPrice;
+    global.font_numberSmall = ftRU_numberSmall;
+    global.font_numberMedium = ftRU_numberMedium;
+    global.font_numberLarge = ftRU_numberLarge;
+    global.font_numberVeryLarge = ftRU_numberVeryLarge;
+    global.font_tinyText = ftRU_tinyText;
+    global.font_balloonText = ftRU_balloonText;
+    global.font_menuSmall = ftRU_menuSmall;
+    global.font_menuMedium = ftRU_menuMedium;
     global.font_menuLarge = ftRU_menuLarge;
+    global.font_menuLargest = ftRU_menuLargest;
 }
 
 if (global.language == lang_japanese)
 {
     targetColumn = lang_japanese;
-    //global.font_menuLarge = ftUN_menuLarge;
+    global.font_shopPrice = ftJP_shopPrice;
+    global.font_numberSmall = ftJP_numberSmall;
+    global.font_numberMedium = ftJP_numberMedium;
+    global.font_numberLarge = ftJP_numberLarge;
+    global.font_numberVeryLarge = ftJP_numberVeryLarge;
+    global.font_tinyText = ftJP_tinyText;
+    global.font_balloonText = ftJP_balloonText;
+    global.font_menuSmall = ftJP_menuSmall;
+    global.font_menuMedium = ftJP_menuMedium;
+    global.font_menuLarge = ftJP_menuLarge;
+    global.font_menuLargest = ftJP_menuLargest;
 }
 
 if (global.language == lang_german)
 {
     targetColumn = lang_german;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
+    global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
 }
 
 if (global.language == lang_french) 
@@ -126,6 +163,50 @@ if (global.language == lang_korean)
     global.font_menuLargest = ftKR_menuLargest;
 }
 
+if (global.language == lang_dutch)
+{
+    targetColumn = lang_dutch;
+}
+
+
+if (global.language == lang_italian)
+{
+    targetColumn = lang_italian;
+    global.font_numberSmall = ftBR_numberSmall;
+    global.font_numberMedium = ftBR_numberMedium;
+    global.font_numberLarge = ftBR_numberLarge;
+    global.font_numberVeryLarge = ftBR_numberVeryLarge;
+    global.font_tinyText = ftBR_tinyText;
+    global.font_menuSmall = ftBR_menuSmall;
+    global.font_menuMedium = ftBR_menuMedium;
+    global.font_menuLarge = ftBR_menuLarge;
+    global.font_menuLargest = ftBR_menuLargest;
+}
+
+
+if (global.language == lang_chineseTr)
+{
+    targetColumn = lang_chineseTr;
+    global.font_menuLarge = ftCH_menuLarge;
+}
+
+
+if (global.language == lang_chineseSp)
+{
+    targetColumn = lang_chineseSp;
+    global.font_shopPrice = ftCH_menuLarge;
+    global.font_numberSmall = ftCH_menuLarge;
+    global.font_numberMedium = ftCH_menuLarge;
+    global.font_numberLarge = ftCH_menuLarge;
+    global.font_numberVeryLarge = ftCH_menuLarge;
+    global.font_tinyText = ftCH_menuLarge;
+    global.font_balloonText = ftCH_menuLarge;
+    global.font_menuSmall = ftCH_menuLarge;
+    global.font_menuMedium = ftCH_menuLarge;
+    global.font_menuLarge = ftCH_menuLarge;
+    global.font_menuLargest = ftCH_menuLarge;
+}
+
 //Parse CSV File
 var localization = file_text_open_read(working_directory+"/locSheet.csv");
 
@@ -141,7 +222,7 @@ while (!file_text_eof(localization))
     for (var i=1; i<stringLength; i++)
     {
         var char = string_char_at(rowString,i);
-
+        
         if !( (char == ',') && (string_char_at(rowString,i+1) != ' ') )
         {
             if (column == 0) key+=char;
@@ -153,11 +234,14 @@ while (!file_text_eof(localization))
     }
     
     //Remove quotation marks from the CSV and resolve
+    
     var textLength = string_length(text)
     if (string_char_at(text,0) == '"') text = string_delete(text,1,1);
     if (string_char_at(text,textLength-1) == '"') text = string_delete(text,textLength-1,1);
     
+    
     ds_map_add(global.loc_map,key,text);
+    
 }
 
 file_text_close(localization);

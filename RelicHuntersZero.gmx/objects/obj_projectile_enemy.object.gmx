@@ -30,7 +30,7 @@
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
         
-    if (!other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+    if (!other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0) &amp;&amp; (other.isVulnerable)
     {
         ds_list_add(damage_list,other.id);
         
@@ -92,12 +92,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if faction == f_enemy &amp;&amp; instance_exists(other)
+            <string>if (faction == f_enemy) &amp;&amp; (instance_exists(other))
 {
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
     
-    if (!other.dodging)
+    if (!other.dodging) &amp;&amp; (other.isVulnerable)
     {
         if (other.shield)
         {

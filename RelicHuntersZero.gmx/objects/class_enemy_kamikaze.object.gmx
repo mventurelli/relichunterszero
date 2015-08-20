@@ -32,8 +32,9 @@ energy = energy_max;
 hp_max = 99999;
 hp = hp_max;
 critical_death = false;
-immortal = true;
-alarm[0] = room_speed*2;
+
+isVulnerable = false;
+alarm[0] = room_speed*1;
 
 speed_walk = 3.2;
 speed_sprint = 3.2;
@@ -152,7 +153,9 @@ audio_emitter_gain(audio_emitter,global.soundVolume);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>immortal = false;
+            <string>///Make enemy vulnerable after spawning
+
+isVulnerable = true;
 </string>
           </argument>
         </arguments>
@@ -277,7 +280,7 @@ else
             <kind>1</kind>
             <string>///Life &amp; Death
 
-if (hp &gt; hp_max) || (immortal) hp = hp_max;
+if (hp &gt; hp_max) hp = hp_max;
 
 if hp &lt;= 0
 {

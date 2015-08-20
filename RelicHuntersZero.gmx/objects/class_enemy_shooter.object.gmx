@@ -31,6 +31,8 @@ shield = true;
 
 coins = 1;
 
+isVulnerable = true;
+
 energy_max = 99999;
 energy = energy_max;
 hp_max = 99999;

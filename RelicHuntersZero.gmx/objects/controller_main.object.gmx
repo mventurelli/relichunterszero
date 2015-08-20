@@ -2470,35 +2470,38 @@ while (p &lt;= global.playerCount)
         }
         
         //Grenades
-        var grenadesVerSpacing = 30;
-        var grenadesHorSpacing = 25;
-        var grenadesHorOrientation = 1;
-        
-        var pGrenadesX = width*0.025;
-        var pGrenadesY = height*0.85;
-        
-        if (playerId != 1) 
+        if (global.character[playerId] != char_pinky)
         {
-            pGrenadesX = width*0.975;
-            grenadesHorOrientation = -1;
-        }
-        
-        var grenadeCount = global.grenades[playerId];
-        var grMaxHorizontal = 5;
-        var grDrawCount = 0;
-        var grOffsetX = 0;
-        var grOffsetY = 0;
-        
-        repeat (grenadeCount)
-        {
-            draw_sprite_ext(spr_grenadeNew,0,pGrenadesX+grOffsetX, pGrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
-            grOffsetX += grenadesHorSpacing*grenadesHorOrientation;
-            grDrawCount++;
-            if (grDrawCount &gt;= grMaxHorizontal)
+            var grenadesVerSpacing = 30;
+            var grenadesHorSpacing = 25;
+            var grenadesHorOrientation = 1;
+            
+            var pGrenadesX = width*0.025;
+            var pGrenadesY = height*0.85;
+            
+            if (playerId != 1) 
             {
-                grOffsetX = 0;
-                grOffsetY -= grenadesVerSpacing;
-                grDrawCount = 0;
+                pGrenadesX = width*0.975;
+                grenadesHorOrientation = -1;
+            }
+            
+            var grenadeCount = global.grenades[playerId];
+            var grMaxHorizontal = 5;
+            var grDrawCount = 0;
+            var grOffsetX = 0;
+            var grOffsetY = 0;
+            
+            repeat (grenadeCount)
+            {
+                draw_sprite_ext(spr_grenadeNew,0,pGrenadesX+grOffsetX, pGrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
+                grOffsetX += grenadesHorSpacing*grenadesHorOrientation;
+                grDrawCount++;
+                if (grDrawCount &gt;= grMaxHorizontal)
+                {
+                    grOffsetX = 0;
+                    grOffsetY -= grenadesVerSpacing;
+                    grDrawCount = 0;
+                }
             }
         }
         

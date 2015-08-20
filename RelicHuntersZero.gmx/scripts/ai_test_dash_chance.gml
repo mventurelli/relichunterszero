@@ -7,4 +7,3 @@ if (ai_dash_cooldown_current >= ai_dash_cooldown) {
 }
 else
     return false;
-

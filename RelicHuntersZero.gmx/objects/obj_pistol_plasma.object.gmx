@@ -32,6 +32,7 @@ name = loc_key("WPNAME_PISTOLPLASMA");
 gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
 
 object = obj_pistol_plasma;
+projectile_obj = obj_projectile_plasma;
 shake_amount = 15;
 
 projectile_speed = 0.02;

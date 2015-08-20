@@ -30,6 +30,8 @@
 event_inherited();
 isAvailable = false;
 labelString = loc_key("MAINMENU_ENDLESS");
+
+
 </string>
           </argument>
         </arguments>
@@ -63,6 +65,8 @@ if (executeAction)
     global.gameMode = gamemode_endless;
     room_goto(room_charSelection);
 }
+
+show_debug_message("ENDLESS IS: "+string(loc_key("MAINMENU_ENDLESS")));
 </string>
           </argument>
         </arguments>

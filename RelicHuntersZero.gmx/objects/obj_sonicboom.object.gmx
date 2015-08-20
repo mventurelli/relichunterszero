@@ -289,7 +289,7 @@ if faction == f_player &amp;&amp; instance_exists(other)
             <string>///Friendly Fire
 if instance_exists(other) &amp;&amp; instance_exists(owner)
 {
-    if (other.myPlayerId != owner.myPlayerId)
+    if (other.myPlayerId != owner.myPlayerId) &amp;&amp; (other.isVulnerable)
     {
         ffDamage = round(damage * global.friendlyFireDamageRatio);
         
@@ -364,7 +364,7 @@ if instance_exists(other) &amp;&amp; instance_exists(owner)
             <kind>1</kind>
             <string>///Main Draw
 
-if (image_angle &gt; 90) || (image_angle &lt; 270) image_yscale = -1;
+if (image_angle &gt; 90) &amp;&amp; (image_angle &lt; 270) image_yscale = -1;
 else image_yscale = 1;
 
 //Pause Animation

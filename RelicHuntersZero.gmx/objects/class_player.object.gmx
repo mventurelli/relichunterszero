@@ -36,6 +36,9 @@ interactionKey = false;
 myDynamicBar = instance_create(x,y,gui_dynamicBar);
 myDynamicBar.owner = id;
 
+isVulnerable = false;
+alarm[0] = room_speed*2;
+
 energy_max = 100;
 energy_max_regular = energy_max;
 energy_max_relic = energy_max*2;
@@ -261,6 +264,31 @@ joyCrosshairSpeed = 24;
             <string>///CleanUp
 audio_emitter_free(audio_emitter);
 //ds_priority_destroy(myPickupList); This is crashing the game for some reason?!?!
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Make player vulnerable after spawning
+
+isVulnerable = true;
 </string>
           </argument>
         </arguments>

@@ -69,9 +69,8 @@ ai_grenade_chance = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Achievement
+            <string>///Clean
 event_inherited();
-achievement_give("ACHIEVEMENT_TUTORIAL");
 </string>
           </argument>
         </arguments>
@@ -129,7 +128,9 @@ if (instance_exists(id))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///Achievement &amp; Force Stop
+
+event_inherited();
 if (instance_exists(id))
 {
     if (dash_speed = 20)
@@ -143,6 +144,7 @@ if (instance_exists(id))
     speed_sprint = 0;
 }
 
+if (!hp) achievement_give("ACHIEVEMENT_TUTORIAL");
 
 </string>
           </argument>

@@ -140,7 +140,7 @@ if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame)
     
     if (poor_guy)
     {
-        if (ds_list_find_index(damage_list,poor_guy) &lt; 0)
+        if (ds_list_find_index(damage_list,poor_guy) &lt; 0) &amp;&amp; (poor_guy.isVulnerable)
         {
             ds_list_add(damage_list,poor_guy);
             

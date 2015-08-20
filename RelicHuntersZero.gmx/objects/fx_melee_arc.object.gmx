@@ -100,7 +100,7 @@ if instance_exists(owner)
     if instance_exists(fucker)
     {
         
-        if (ds_list_find_index(damage_list,fucker.id) &lt; 0) &amp;&amp; (ds_list_size(damage_list) &lt; max_hits)
+        if (ds_list_find_index(damage_list,fucker.id) &lt; 0) &amp;&amp; (ds_list_size(damage_list) &lt; max_hits) &amp;&amp; (fucker.isVulnerable)
         {
             ds_list_add(damage_list,fucker.id);
             
@@ -224,7 +224,7 @@ if instance_exists(other) &amp;&amp; instance_exists(owner)
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
         
-    if (ds_list_find_index(damage_list,other.id) &lt; 0) &amp;&amp; (ds_list_size(damage_list) &lt; max_hits)
+    if (ds_list_find_index(damage_list,other.id) &lt; 0) &amp;&amp; (ds_list_size(damage_list) &lt; max_hits) &amp;&amp; (other.isVulnerable) &amp;&amp; (!other.dodging)
     {
         ds_list_add(damage_list,other.id);
         
@@ -299,7 +299,7 @@ if instance_exists(other)
         spreadX = irandom_range(-15,15);
         spreadY = irandom_range(-15,15);
                 
-        if (!other.dodging)
+        if (!other.dodging) &amp;&amp; (other.isVulnerable)
         {
             ffDamage = round(damage * global.friendlyFireDamageRatio);
             

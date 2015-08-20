@@ -11,4 +11,3 @@ global.statKills++;
 if (argument1) gui.headshot = true;
 else gui.headshot = false;
 
-

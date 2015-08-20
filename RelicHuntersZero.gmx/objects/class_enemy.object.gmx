@@ -46,6 +46,8 @@ shield = false;
 pushed = false;
 push_direction = 0;
 push_speed = 0;
+
+isVulnerable = true;
 </string>
           </argument>
         </arguments>

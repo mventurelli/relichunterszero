@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="15" name="datafiles">
+  <datafiles number="20" name="datafiles">
     <datafile>
       <name>8-BIT WONDER.TTF</name>
       <exists>-1</exists>
@@ -73,9 +73,26 @@
       <filename>wendy.ttf</filename>
     </datafile>
     <datafile>
+      <name>Heiti_TC.ttf</name>
+      <exists>-1</exists>
+      <size>22817256</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Heiti_TC.ttf</filename>
+    </datafile>
+    <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>73809</size>
+      <size>140609</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -444,6 +461,7 @@
         <sprite>sprites\spr_altar_relics</sprite>
         <sprite>sprites\spr_altar_relic_light</sprite>
       </sprites>
+      <sprite>sprites\spr_exitArrow</sprite>
     </sprites>
     <sprites name="Grenades">
       <sprite>sprites\spr_grenade_exp1</sprite>
@@ -506,6 +524,7 @@
         <sprite>sprites\spr_broken_highmag</sprite>
         <sprite>sprites\spr_broken_keytar</sprite>
       </sprites>
+      <sprite>sprites\spr_bullet_plasma</sprite>
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_crosshair_reload</sprite>
@@ -755,6 +774,7 @@
       <sprite>sprites\spr_pausemenu_corner</sprite>
       <sprite>sprites\spr_menu_playerInfo</sprite>
       <sprite>sprites\spr_forums_menu</sprite>
+      <sprite>sprites\spr_opensource_menu</sprite>
       <sprite>sprites\spr_facebook_menu</sprite>
       <sprite>sprites\spr_twitter_menu</sprite>
       <sprite>sprites\spr_intro_animated</sprite>
@@ -1045,7 +1065,18 @@
       <font>fonts\ftEN_menuLargest</font>
     </fonts>
     <fonts name="Cyrillic">
+      <font>fonts\ftRU_shopPrice</font>
+      <font>fonts\ftRU_numberSmall</font>
+      <font>fonts\ftRU_numberMedium</font>
+      <font>fonts\ftRU_numberLarge</font>
+      <font>fonts\ftRU_numberVeryLarge</font>
+      <font>fonts\ftRU_tinyText</font>
+      <font>fonts\ftRU_balloonText</font>
+      <font>fonts\ftRU_menuSmall</font>
+      <font>fonts\ftRU_menuMedium</font>
       <font>fonts\ftRU_menuLarge</font>
+      <font>fonts\ftRU_menuVeryLarge</font>
+      <font>fonts\ftRU_menuLargest</font>
     </fonts>
     <fonts name="Latin + Czech">
       <font>fonts\ftBR_numberSmall</font>
@@ -1071,6 +1102,23 @@
       <font>fonts\ftKR_menuLarge</font>
       <font>fonts\ftKR_menuVeryLarge</font>
       <font>fonts\ftKR_menuLargest</font>
+    </fonts>
+    <fonts name="Japanese">
+      <font>fonts\ftJP_numberSmall</font>
+      <font>fonts\ftJP_shopPrice</font>
+      <font>fonts\ftJP_numberMedium</font>
+      <font>fonts\ftJP_numberLarge</font>
+      <font>fonts\ftJP_numberVeryLarge</font>
+      <font>fonts\ftJP_tinyText</font>
+      <font>fonts\ftJP_balloonText</font>
+      <font>fonts\ftJP_menuSmall</font>
+      <font>fonts\ftJP_menuMedium</font>
+      <font>fonts\ftJP_menuLarge</font>
+      <font>fonts\ftJP_menuVeryLarge</font>
+      <font>fonts\ftJP_menuLargest</font>
+    </fonts>
+    <fonts name="Chinese">
+      <font>fonts\ftCH_menuLarge</font>
     </fonts>
   </fonts>
   <objects name="objects">
@@ -1284,6 +1332,7 @@
       <object>objects\fx_fadeFromBlack</object>
       <object>objects\fx_bigMessage</object>
       <object>objects\fx_digItem</object>
+      <object>objects\fx_exitArrow</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
@@ -1353,6 +1402,7 @@
         <object>objects\menu_fx_mapping</object>
         <object>objects\menu_fx_rogue</object>
         <object>objects\menu_fx_forums</object>
+        <object>objects\menu_fx_opensource</object>
         <object>objects\menu_fx_twitter</object>
         <object>objects\menu_fx_facebook</object>
         <object>objects\menu_fx_zoeira</object>
@@ -1488,6 +1538,7 @@
       <object>objects\obj_flame</object>
       <object>objects\obj_sonicboom</object>
       <object>objects\obj_projectile_enemy</object>
+      <object>objects\obj_projectile_plasma</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\class_tutorial_animated</object>
@@ -1658,7 +1709,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="48">
+  <constants number="52">
     <constant name="gamemode_adventure">0</constant>
     <constant name="gamemode_endless">1</constant>
     <constant name="char_random">99</constant>
@@ -1707,6 +1758,10 @@
     <constant name="lang_spanish">8</constant>
     <constant name="lang_czech">9</constant>
     <constant name="lang_korean">10</constant>
+    <constant name="lang_dutch">11</constant>
+    <constant name="lang_italian">12</constant>
+    <constant name="lang_chineseTr">13</constant>
+    <constant name="lang_chineseSp">14</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

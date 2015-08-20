@@ -30,6 +30,8 @@
 var bossBar = 666;
 draw_healthbar_delayed_init(bossBar);
 
+isVulnerable = true;
+
 //Shooter Class Derivative
 elite = false;
 shield = false;

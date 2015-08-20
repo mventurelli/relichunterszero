@@ -201,7 +201,7 @@
     <option_mac_app_id></option_mac_app_id>
     <option_mac_appstore_incoming_allow>0</option_mac_appstore_incoming_allow>
     <option_mac_appstore_outgoing_allow>0</option_mac_appstore_outgoing_allow>
-    <option_mac_build_version>1</option_mac_build_version>
+    <option_mac_build_version>2</option_mac_build_version>
     <option_mac_copyright_info>Rogue Snail</option_mac_copyright_info>
     <option_mac_create_app_store>0</option_mac_create_app_store>
     <option_mac_display_name>Relic Hunters Zero</option_mac_display_name>
@@ -218,8 +218,8 @@
     <option_mac_showcursor>0</option_mac_showcursor>
     <option_mac_sizeable>0</option_mac_sizeable>
     <option_mac_splash_png>Configs\Default\mac\splash.png</option_mac_splash_png>
-    <option_mac_steam_app_id>0</option_mac_steam_app_id>
-    <option_mac_sync>0</option_mac_sync>
+    <option_mac_steam_app_id>382490</option_mac_steam_app_id>
+    <option_mac_sync>1</option_mac_sync>
     <option_mac_texture_page>2048</option_mac_texture_page>
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
@@ -385,11 +385,21 @@
     <option_textureGroup28_parent>&lt;none&gt;</option_textureGroup28_parent>
     <option_textureGroup28_scaled>0</option_textureGroup28_scaled>
     <option_textureGroup28_targets>9223372036854775807</option_textureGroup28_targets>
+    <option_textureGroup29_border>2</option_textureGroup29_border>
+    <option_textureGroup29_nocropping>0</option_textureGroup29_nocropping>
+    <option_textureGroup29_parent>&lt;none&gt;</option_textureGroup29_parent>
+    <option_textureGroup29_scaled>0</option_textureGroup29_scaled>
+    <option_textureGroup29_targets>9223372036854775807</option_textureGroup29_targets>
     <option_textureGroup2_border>2</option_textureGroup2_border>
     <option_textureGroup2_nocropping>0</option_textureGroup2_nocropping>
     <option_textureGroup2_parent>&lt;none&gt;</option_textureGroup2_parent>
     <option_textureGroup2_scaled>0</option_textureGroup2_scaled>
     <option_textureGroup2_targets>9223372036854775807</option_textureGroup2_targets>
+    <option_textureGroup30_border>2</option_textureGroup30_border>
+    <option_textureGroup30_nocropping>0</option_textureGroup30_nocropping>
+    <option_textureGroup30_parent>&lt;none&gt;</option_textureGroup30_parent>
+    <option_textureGroup30_scaled>0</option_textureGroup30_scaled>
+    <option_textureGroup30_targets>9223372036854775807</option_textureGroup30_targets>
     <option_textureGroup3_border>2</option_textureGroup3_border>
     <option_textureGroup3_nocropping>-1</option_textureGroup3_nocropping>
     <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
@@ -425,7 +435,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>29</option_textureGroup_count>
+    <option_textureGroup_count>31</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -448,7 +458,9 @@
     <option_textureGroups26>Fonts - Unicode</option_textureGroups26>
     <option_textureGroups27>Fonts - Russian</option_textureGroups27>
     <option_textureGroups28>Fonts - Latin</option_textureGroups28>
+    <option_textureGroups29>Fonts - Japanese</option_textureGroups29>
     <option_textureGroups3>Spritesheet - Jimmy</option_textureGroups3>
+    <option_textureGroups30>Fonts - Chinese</option_textureGroups30>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
     <option_textureGroups6>GUI</option_textureGroups6>

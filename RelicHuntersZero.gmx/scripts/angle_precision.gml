@@ -22,4 +22,3 @@ else show_debug_message('Deu merda no seno de B');
 show_debug_message('Input direction was '+string(angle));
 show_debug_message('Precision angle returned '+string(toReturn));
 return toReturn;
-

@@ -33,6 +33,8 @@ hp_max = 99999;
 hp = hp_max;
 critical_death = false;
 
+isVulnerable = true;
+
 speed_walk = 2;
 speed_sprint = 2;
 

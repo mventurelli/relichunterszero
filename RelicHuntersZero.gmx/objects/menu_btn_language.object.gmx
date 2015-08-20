@@ -41,8 +41,12 @@ if (global.language == lang_french) myVariable = lang_french;
 if (global.language == lang_spanish) myVariable = lang_spanish;
 if (global.language == lang_czech) myVariable = lang_czech;
 if (global.language == lang_korean) myVariable = lang_korean;
+if (global.language == lang_dutch) myVariable = lang_dutch;
+if (global.language == lang_italian) myVariable = lang_italian;
+//if (global.language == lang_chineseTr) myVariable = lang_chineseTr;
+//if (global.language == lang_chineseSp) myVariable = lang_chineseSp;
 
-myVariableMax = lang_korean; //&lt;--- put the last language on the list here
+myVariableMax = lang_italian; //&lt;--- put the last language on the list here
 
 labelString = loc_key("SETTINGS_LANGUAGE");
 myValueString = string(myVariable);
@@ -92,6 +96,12 @@ if (myVariable == lang_french)  {     global.language = lang_french;    myValueS
 if (myVariable == lang_spanish)  {     global.language = lang_spanish;    myValueString = 'ES';   }
 if (myVariable == lang_czech)  {     global.language = lang_czech;    myValueString = 'CZ';   }
 if (myVariable == lang_korean)  {     global.language = lang_korean;    myValueString = 'KR';   }
+if (myVariable == lang_dutch)  {     global.language = lang_dutch;    myValueString = 'DU';   }
+if (myVariable == lang_italian)  {     global.language = lang_italian;    myValueString = 'IT';   }
+if (myVariable == lang_chineseTr)  {     global.language = lang_chineseTr;    myValueString = 'CHT';   }
+if (myVariable == lang_chineseSp)  {     global.language = lang_chineseSp;    myValueString = 'CHS';   }
+
+
 
 if (arrowClicked)
 {
