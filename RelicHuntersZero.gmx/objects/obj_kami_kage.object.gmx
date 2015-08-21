@@ -155,6 +155,8 @@ if hp &lt; 0
         spawnY = y + irandom_range(-10,10) + 64;
         instance_create(spawnX,spawnY,obj_kamikaze1);
     }    
+    
+    instance_create(x,y,fx_kami_cageDestroy);
     instance_destroy();
 }
 </string>

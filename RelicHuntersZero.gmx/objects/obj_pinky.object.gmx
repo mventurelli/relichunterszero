@@ -30,7 +30,7 @@ event_inherited();
 
     playerName = "PINKYY";
     
-    energy_max = 40;
+    energy_max = 50;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;

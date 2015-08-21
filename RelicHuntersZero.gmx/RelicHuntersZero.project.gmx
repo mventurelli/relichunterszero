@@ -323,6 +323,7 @@
         <sprite>sprites\spr_cage2_hit</sprite>
         <sprite>sprites\spr_cage3</sprite>
         <sprite>sprites\spr_cage3_hit</sprite>
+        <sprite>sprites\spr_cage_destroy</sprite>
       </sprites>
       <sprites name="Kamikaze">
         <sprite>sprites\spr_kamikaze_idle</sprite>
@@ -1333,6 +1334,7 @@
       <object>objects\fx_bigMessage</object>
       <object>objects\fx_digItem</object>
       <object>objects\fx_exitArrow</object>
+      <object>objects\fx_kami_cageDestroy</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>

@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,45 +25,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Find my item and spawn it!
+            <string>///Wait for controller_main, find my item and spawn it
 
-if (global.stage_current &lt;= 1)  
+if (instance_exists(controller_main))
 {
-    list = global.shop_list_1;
-    freelist = global.shop_free_1;
-}
-
-if (global.stage_current == 2)
-{
-    list = global.shop_list_2;
-    freelist = global.shop_free_2;
-}
-
-if (global.stage_current == 3)
-{
-    list = global.shop_list_3;
-    freelist = global.shop_free_3;
-}
-
-if (global.stage_current &gt; 3)
-{
-    list = global.shop_list_4;
-    freelist = global.shop_free_4;
-}
-
-if (!ds_list_empty(list))
-{
-    random_position = irandom_range(0, ds_list_size(list)-1);
-    item = ds_list_find_value(list,random_position);
-    instance_create(x,y,item);
-    ds_list_delete(list,random_position);
-    instance_destroy();
-}   
-else
-{
-    random_free_item = ds_list_find_value(freelist, irandom_range(0, ds_list_size(freelist)-1) );
-    instance_create(x,y,random_free_item);
-    instance_destroy();
+    if (controller_main.level_built)
+    {
+        ///Find my item and spawn it!
+        if (global.stage_current &lt;= 1)  
+        {
+            list = global.shop_list_1;
+            freelist = global.shop_free_1;
+        }
+        
+        if (global.stage_current == 2)
+        {
+            list = global.shop_list_2;
+            freelist = global.shop_free_2;
+        }
+        
+        if (global.stage_current == 3)
+        {
+            list = global.shop_list_3;
+            freelist = global.shop_free_3;
+        }
+        
+        if (global.stage_current &gt; 3)
+        {
+            list = global.shop_list_4;
+            freelist = global.shop_free_4;
+        }
+        
+        if (!ds_list_empty(list))
+        {
+            random_position = irandom_range(0, ds_list_size(list)-1);
+            item = ds_list_find_value(list,random_position);
+            instance_create(x,y,item);
+            ds_list_delete(list,random_position);
+            instance_destroy();
+        }   
+        else
+        {
+            random_free_item = ds_list_find_value(freelist, irandom_range(0, ds_list_size(freelist)-1) );
+            instance_create(x,y,random_free_item);
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>

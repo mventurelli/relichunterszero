@@ -229,8 +229,8 @@ if (drawSelf)
         draw_set_font(global.font_balloonText);
         draw_set_colour(c_black);
         draw_set_halign(fa_center);
-        draw_set_valign(fa_top);
-        draw_text_ext(x+42, y-124, myText+parser, 10, 186);
+        draw_set_valign(fa_center);
+        draw_text_ext(x+56, y-122, myText+parser, 14, 220);
      }
 }
 </string>
