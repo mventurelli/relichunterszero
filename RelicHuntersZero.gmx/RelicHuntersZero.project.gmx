@@ -1362,6 +1362,7 @@
       <object>objects\fx_prompt_e</object>
       <object>objects\gui_intro_text</object>
       <object>objects\gui_credits_text</object>
+      <object>objects\gui_confirm_exit_text</object>
       <object>objects\gui_weaponInfo</object>
       <object>objects\gui_dynamicBar</object>
       <object>objects\gui_info_lowPerformance</object>
@@ -1409,6 +1410,8 @@
         <object>objects\menu_fx_facebook</object>
         <object>objects\menu_fx_zoeira</object>
         <object>objects\menu_fx_logo</object>
+        <object>objects\menu_btn_confirm_quit</object>
+        <object>objects\menu_btn_cancel_quit</object>
       </objects>
       <objects name="Settings Menu">
         <object>objects\menu_btn_cancel</object>
@@ -1689,6 +1692,7 @@
     <room>rooms\room_charSelection</room>
     <room>rooms\room_settings</room>
     <room>rooms\room_delete</room>
+    <room>rooms\room_menu_exit</room>
     <room>rooms\room_credits</room>
     <room>rooms\room_mapping</room>
     <room>rooms\room_gameplay</room>

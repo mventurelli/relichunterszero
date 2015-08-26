@@ -1820,7 +1820,7 @@ if (!global.gameOver) &amp;&amp; instance_exists(class_player)
         if (global.playerAlive[p])
         {
             if (global.input[p] == K_INPUT_KEYBOARD &amp;&amp; keyboard_check_pressed(vk_escape)) || (global.input[p] != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(global.input[p],8))
-            {
+            {            
                 pauseKeyPressed = true;
                 global.pauseClient = p;
             }
@@ -1831,7 +1831,7 @@ if (!global.gameOver) &amp;&amp; instance_exists(class_player)
     if (!pauseKeyPressed) //Force ESC pausing
     {
         if (keyboard_check_pressed(vk_escape))
-        {
+        {        
             pauseKeyPressed = true;
             if global.playerAlive[1] global.pauseClient = 1;
             else if global.playerAlive[2] global.pauseClient = 2;
@@ -1841,7 +1841,7 @@ if (!global.gameOver) &amp;&amp; instance_exists(class_player)
 
 if (pauseKeyPressed)
 {
-    if (!global.pauseMenu) game_pause();
+    if (!global.pauseMenu)   game_pause();
     else game_unpause();
 }
 

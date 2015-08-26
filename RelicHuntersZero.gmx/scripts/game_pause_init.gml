@@ -22,6 +22,7 @@ global.pauseWeapon2 = instance_create(0,0,gui_weaponInfo);
 global.pauseController = instance_create(0,0,controller_pause);
 global.pauseMenuButtonController = instance_create(0,0,controller_menuButtons);
 
+
 //All Pause Menu objects must start the game deactivated
 instance_deactivate_object(global.pauseFX);
 instance_deactivate_object(global.pauseButtonContinue);

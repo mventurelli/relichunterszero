@@ -32,6 +32,7 @@ isAvailable = true;
 labelString = loc_key("PAUSE_EXIT" );
 allowConsoleSelection = true;
 textXOffset -= 25;
+
 </string>
           </argument>
         </arguments>
@@ -55,6 +56,7 @@ textXOffset -= 25;
           <argument>
             <kind>1</kind>
             <string>///Button Action
+
 event_inherited();
 
 if (executeAction)
