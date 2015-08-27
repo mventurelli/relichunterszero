@@ -951,6 +951,7 @@
         <script>scripts\game_pause_init.gml</script>
         <script>scripts\game_pause.gml</script>
         <script>scripts\game_unpause.gml</script>
+        <script>scripts\game_quit_confirmation.gml</script>
         <script>scripts\char_state_initial.gml</script>
       </scripts>
       <scripts name="Angles and Such">
@@ -1362,6 +1363,7 @@
       <object>objects\fx_prompt_e</object>
       <object>objects\gui_intro_text</object>
       <object>objects\gui_credits_text</object>
+      <object>objects\gui_confirm_exit_text</object>
       <object>objects\gui_weaponInfo</object>
       <object>objects\gui_dynamicBar</object>
       <object>objects\gui_info_lowPerformance</object>
@@ -1409,6 +1411,8 @@
         <object>objects\menu_fx_facebook</object>
         <object>objects\menu_fx_zoeira</object>
         <object>objects\menu_fx_logo</object>
+        <object>objects\menu_btn_confirm_quit</object>
+        <object>objects\menu_btn_cancel_quit</object>
       </objects>
       <objects name="Settings Menu">
         <object>objects\menu_btn_cancel</object>
@@ -1495,6 +1499,8 @@
         <object>objects\pausemenu_btn_ship</object>
         <object>objects\pausemenu_btn_menu</object>
         <object>objects\pausemenu_btn_exit</object>
+        <object>objects\pausemenu_btn_confirm_exit</object>
+        <object>objects\pausemenu_btn_cancel_exit</object>
       </objects>
     </objects>
     <objects name="Pickups">
@@ -1689,6 +1695,7 @@
     <room>rooms\room_charSelection</room>
     <room>rooms\room_settings</room>
     <room>rooms\room_delete</room>
+    <room>rooms\room_menu_exit</room>
     <room>rooms\room_credits</room>
     <room>rooms\room_mapping</room>
     <room>rooms\room_gameplay</room>

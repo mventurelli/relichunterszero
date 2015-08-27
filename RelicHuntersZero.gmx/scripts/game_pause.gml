@@ -1,7 +1,7 @@
 ///game_pause();
 
 //Takes screengrab, reset camera zoom, pauses the game
-screen_save("pauseScreen.png");
+if(!global.cancelExit) screen_save("pauseScreen.png"); //Test if user canceled an Exit confirmation to prevent screenshot
 view_wview[0] = 1280;
 view_hview[0] = 720;
 global.pauseBackground = background_add("pauseScreen.png",0,0);
@@ -61,6 +61,10 @@ instance_activate_object(global.pauseButtonExit);
 instance_activate_object(global.pauseWeapon1);
 instance_activate_object(global.pauseWeapon2);
 instance_activate_object(global.pausePlayerInfo);
+
+    //Confirmation menu objects maintain deactivate
+    instance_deactivate_object(global.pauseButtonConfirmExit);
+    instance_deactivate_object(global.pauseButtonCancelExit);    
 
 //Dynamic GUIs
 instance_activate_object(global.dynamicBounty);

@@ -33,7 +33,6 @@ y = view_yview[0];
 //var w = window_get_width();
 //var h = window_get_height();
 
-
 if (instance_exists(global.pauseButtonContinue))
 {
     global.pauseButtonContinue.x = x + 192;
@@ -80,6 +79,19 @@ if (instance_exists(global.pausePlayerInfo))
 {
     global.pausePlayerInfo.x = x + 441;
     global.pausePlayerInfo.y = y + 200;
+}
+
+//Confirmation quit
+if (instance_exists(global.pauseButtonConfirmExit))
+{
+    global.pauseButtonConfirmExit.x = x + 884;
+    global.pauseButtonConfirmExit.y = y + 352;
+}
+
+if (instance_exists(global.pauseButtonCancelExit))
+{
+    global.pauseButtonCancelExit.x = x + 541;
+    global.pauseButtonCancelExit.y = y + 352;
 }
 </string>
           </argument>

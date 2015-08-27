@@ -60,7 +60,7 @@ event_inherited();
 
 if (executeAction)
 {
-    game_end();
+    room_goto(room_menu_exit);
 }
 </string>
           </argument>
