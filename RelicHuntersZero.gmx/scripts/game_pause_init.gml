@@ -19,6 +19,11 @@ global.pausePlayerInfo = instance_create(0,0,gui_playerInfo);
 global.pauseWeapon1 = instance_create(0,0,gui_weaponInfo);
 global.pauseWeapon2 = instance_create(0,0,gui_weaponInfo);
 
+    //Confirmation menu objects
+    global.pauseButtonConfirmExit = instance_create(0,0,pausemenu_btn_confirm_exit);
+    global.pauseButtonCancelExit = instance_create(0,0,pausemenu_btn_cancel_exit);
+    //global.guiConfirmExitText = instance_create(0,0,gui_confirm_exit_text);
+
 global.pauseController = instance_create(0,0,controller_pause);
 global.pauseMenuButtonController = instance_create(0,0,controller_menuButtons);
 
@@ -33,6 +38,11 @@ instance_deactivate_object(global.pauseButtonExit);
 instance_deactivate_object(global.pausePlayerInfo);
 instance_deactivate_object(global.pauseWeapon1);
 instance_deactivate_object(global.pauseWeapon2);
+
+    //Confirmation menu objects
+    instance_deactivate_object(global.pauseButtonConfirmExit);
+    instance_deactivate_object(global.pauseButtonCancelExit);
+    //instance_deactivate_object(global.guiConfirmExitText);
 
 instance_deactivate_object(global.pauseController);
 instance_deactivate_object(global.pauseMenuButtonController);

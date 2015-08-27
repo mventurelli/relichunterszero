@@ -951,6 +951,7 @@
         <script>scripts\game_pause_init.gml</script>
         <script>scripts\game_pause.gml</script>
         <script>scripts\game_unpause.gml</script>
+        <script>scripts\game_quit_confirmation.gml</script>
         <script>scripts\char_state_initial.gml</script>
       </scripts>
       <scripts name="Angles and Such">
@@ -1498,6 +1499,8 @@
         <object>objects\pausemenu_btn_ship</object>
         <object>objects\pausemenu_btn_menu</object>
         <object>objects\pausemenu_btn_exit</object>
+        <object>objects\pausemenu_btn_confirm_exit</object>
+        <object>objects\pausemenu_btn_cancel_exit</object>
       </objects>
     </objects>
     <objects name="Pickups">

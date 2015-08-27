@@ -53,8 +53,8 @@
   <instances>
     <instance objName="controller_menu_main" x="32" y="32" name="inst_39309C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gui_confirm_exit_text" x="320" y="192" name="inst_21252673" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="pausemenu_btn_cancel_exit" x="448" y="448" name="inst_78DABD0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="pausemenu_btn_confirm_exit" x="800" y="448" name="inst_49A530A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="pausemenu_btn_cancel_exit" x="448" y="448" name="inst_82FB1001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="pausemenu_btn_confirm_exit" x="800" y="448" name="inst_98F06170" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

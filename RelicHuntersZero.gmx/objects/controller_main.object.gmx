@@ -1500,6 +1500,7 @@ if (!level_built)
         //Global
         ds_list_destroy(enemy_pool);
         ds_list_destroy(item_pool);
+        
 }
 </string>
           </argument>
@@ -1841,7 +1842,11 @@ if (!global.gameOver) &amp;&amp; instance_exists(class_player)
 
 if (pauseKeyPressed)
 {
-    if (!global.pauseMenu)   game_pause();
+
+    //Used to take screenshot on game_pause();
+    global.cancelExit = false;
+
+    if (!global.pauseMenu) game_pause();
     else game_unpause();
 }
 

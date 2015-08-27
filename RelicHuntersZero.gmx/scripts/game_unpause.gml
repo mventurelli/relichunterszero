@@ -23,6 +23,11 @@ instance_deactivate_object(global.pauseWeapon1);
 instance_deactivate_object(global.pauseWeapon2);
 instance_deactivate_object(global.pausePlayerInfo);
 
+    //Confirm Quit
+    instance_deactivate_object(global.pauseButtonConfirmExit);
+    instance_deactivate_object(global.pauseButtonCancelExit);
+    //instance_deactivate_object(global.guiConfirmExitText);
+
 //Return all tile layers and music volume
 tile_layer_show(-9999);
 tile_layer_show(-99999);

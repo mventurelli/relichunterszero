@@ -61,7 +61,8 @@ event_inherited();
 
 if (executeAction)
 {
-    game_end();
+    //game_end();
+    game_quit_confirmation();
 }
 </string>
           </argument>

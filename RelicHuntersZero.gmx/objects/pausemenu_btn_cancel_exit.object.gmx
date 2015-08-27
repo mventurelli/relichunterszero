@@ -89,7 +89,12 @@ event_inherited();
 
 if (executeAction)
 {
-    game_unpause();
+    executeAction = false;
+    
+    //Used to prevent screenshot on game_pause();
+    global.cancelExit = true;
+    
+    game_pause();
 }
 </string>
           </argument>
