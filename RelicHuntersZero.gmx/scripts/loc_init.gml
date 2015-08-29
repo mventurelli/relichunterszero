@@ -207,6 +207,86 @@ if (global.language == lang_chineseSp)
     global.font_menuLargest = ftCH_menuLarge;
 }
 
+if (global.language == lang_indonesian)
+{
+    targetColumn = lang_indonesian;
+}
+
+if (global.language == lang_polish)
+{
+    targetColumn = lang_polish;
+}
+
+if (global.language == lang_hungary)
+{
+    targetColumn = lang_hungary;
+}
+
+if (global.language == lang_thai)
+{
+    targetColumn = lang_thai;
+}
+
+if (global.language == lang_norwegian)
+{
+    targetColumn = lang_norwegian;
+}
+
+if (global.language == lang_danish)
+{
+    targetColumn = lang_danish;
+}
+
+if (global.language == lang_roumanian)
+{
+    targetColumn = lang_roumanian;
+}
+
+if (global.language == lang_pirate)
+{
+    targetColumn = lang_pirate;
+}
+
+if (global.language == lang_hebrew)
+{
+    targetColumn = lang_hebrew;
+}
+
+if (global.language == lang_swedish)
+{
+    targetColumn = lang_swedish;
+}
+
+if (global.language == lang_greek)
+{
+    targetColumn = lang_greek;
+}
+
+if (global.language == lang_vietnam)
+{
+    targetColumn = lang_vietnam;
+}
+
+if (global.language == lang_turkish)
+{
+    targetColumn = lang_turkish;
+}
+
+if (global.language == lang_arabic)
+{
+    targetColumn = lang_arabic;
+}
+
+if (global.language == lang_ptpt)
+{
+    targetColumn = lang_ptpt;
+}
+
+if (global.language == lang_suomi)
+{
+    targetColumn = lang_suomi;
+}
+
 //Parse CSV File
 var localization = file_text_open_read(working_directory+"/locSheet.csv");
 

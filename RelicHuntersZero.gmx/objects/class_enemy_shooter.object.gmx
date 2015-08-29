@@ -878,19 +878,6 @@ if (global.pause)
     path_end();
 }
 else image_speed = old_image_speed;
-
-//Shield
-//if (shield) draw_sprite_ext(spr_shield,0,x,y,1,1,0,c_white,shield_alpha);
-
-//Debug
-/*
-draw_set_font(global.font_numberSmall);
-draw_text(x,y-30,ai_state);
-
-if (ai_state == 'PATROL')
-{
-    draw_text(x,y+30,string(ai_patrol_x)+','+string(ai_patrol_y));
-}
 </string>
           </argument>
         </arguments>

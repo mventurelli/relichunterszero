@@ -383,14 +383,18 @@ if (isActive)
     {
         var p = owner.myPlayerId;
         
-        if (ammo_type == type_light &amp;&amp; floor(global.ammo_light[p]/ammo_cost)) || (ammo_type == type_medium &amp;&amp; floor(global.ammo_medium[p]/ammo_cost)) || (ammo_type == type_heavy &amp;&amp; floor(global.ammo_heavy[p]/ammo_cost)) || (ammo_type == type_grenade &amp;&amp; floor(global.ammo_grenade[p]/ammo_cost))
+        var ammoTotal = 999;
+        if (ammo_cost &gt; 0)
         {
-            ammo_diff = (ammo - ammo_current);
-            
-            if (ammo_type = type_light) ammo_diff = min(ammo_diff,floor(global.ammo_light[p]/ammo_cost));
-            if (ammo_type = type_medium) ammo_diff = min(ammo_diff,floor(global.ammo_medium[p]/ammo_cost));
-            if (ammo_type = type_heavy) ammo_diff = min(ammo_diff,floor(global.ammo_heavy[p]/ammo_cost));
-            if (ammo_type = type_grenade) ammo_diff = min(ammo_diff,floor(global.ammo_grenade[p]/ammo_cost));
+            if (ammo_type == type_light) ammoTotal = floor(global.ammo_light[p]/ammo_cost);
+            if (ammo_type == type_medium) ammoTotal = floor(global.ammo_medium[p]/ammo_cost);
+            if (ammo_type == type_heavy) ammoTotal = floor(global.ammo_heavy[p]/ammo_cost);
+            if (ammo_type == type_grenade) ammoTotal = floor(global.ammo_grenade[p]/ammo_cost);
+        }
+        
+        if (ammoTotal)
+        {
+            ammo_diff = min(ammoTotal, (ammo - ammo_current));
             
             reloading = true;
 

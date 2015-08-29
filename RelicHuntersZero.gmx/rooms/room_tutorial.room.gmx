@@ -3,8 +3,8 @@
   <caption></caption>
   <width>5000</width>
   <height>3500</height>
-  <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <vsnap>64</vsnap>
+  <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -323,6 +323,11 @@
     <instance objName="obj_longbox" x="768" y="1344" name="inst_9B27B666" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fx_tutorial7" x="2736" y="1144" name="inst_321E1380" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fx_tutorial8" x="2240" y="1272" name="inst_3AAB1BEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1920" y="832" name="inst_18862439" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1920" y="768" name="inst_722359DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1984" y="704" name="inst_B3265847" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1920" y="704" name="inst_DF47684D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1856" y="832" name="inst_881E990D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ship_tileset" x="2048" y="640" w="64" h="64" xo="220" yo="76" id="10011489" name="inst_3A94F417" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

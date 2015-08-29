@@ -3,96 +3,98 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="20" name="datafiles">
-    <datafile>
-      <name>8-BIT WONDER.TTF</name>
-      <exists>-1</exists>
-      <size>14328</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>8-BIT WONDER.TTF</filename>
-    </datafile>
-    <datafile>
-      <name>Grand9K Pixel_0.ttf</name>
-      <exists>-1</exists>
-      <size>22108</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Grand9K Pixel_0.ttf</filename>
-    </datafile>
-    <datafile>
-      <name>pf_arma_five.ttf</name>
-      <exists>-1</exists>
-      <size>66872</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>pf_arma_five.ttf</filename>
-    </datafile>
-    <datafile>
-      <name>wendy.ttf</name>
-      <exists>-1</exists>
-      <size>10480</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>wendy.ttf</filename>
-    </datafile>
-    <datafile>
-      <name>Heiti_TC.ttf</name>
-      <exists>-1</exists>
-      <size>22817256</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Heiti_TC.ttf</filename>
-    </datafile>
+  <datafiles number="23" name="datafiles">
+    <datafiles number="23" name="fonts">
+      <datafile>
+        <name>8-BIT WONDER.TTF</name>
+        <exists>-1</exists>
+        <size>14328</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>8-BIT WONDER.TTF</filename>
+      </datafile>
+      <datafile>
+        <name>wendy.ttf</name>
+        <exists>-1</exists>
+        <size>10480</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>wendy.ttf</filename>
+      </datafile>
+      <datafile>
+        <name>Heiti_TC.ttf</name>
+        <exists>-1</exists>
+        <size>22817256</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Heiti_TC.ttf</filename>
+      </datafile>
+      <datafile>
+        <name>Grand9K Pixel_0.ttf</name>
+        <exists>-1</exists>
+        <size>22108</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Grand9K Pixel_0.ttf</filename>
+      </datafile>
+      <datafile>
+        <name>pf_arma_five.ttf</name>
+        <exists>-1</exists>
+        <size>66872</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>pf_arma_five.ttf</filename>
+      </datafile>
+    </datafiles>
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>140609</size>
+      <size>291055</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -1711,7 +1713,7 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="52">
+  <constants number="68">
     <constant name="gamemode_adventure">0</constant>
     <constant name="gamemode_endless">1</constant>
     <constant name="char_random">99</constant>
@@ -1764,6 +1766,22 @@
     <constant name="lang_italian">12</constant>
     <constant name="lang_chineseTr">13</constant>
     <constant name="lang_chineseSp">14</constant>
+    <constant name="lang_indonesian">15</constant>
+    <constant name="lang_polish">16</constant>
+    <constant name="lang_hungary">17</constant>
+    <constant name="lang_thai">18</constant>
+    <constant name="lang_norwegian">19</constant>
+    <constant name="lang_danish">20</constant>
+    <constant name="lang_roumanian">21</constant>
+    <constant name="lang_pirate">22</constant>
+    <constant name="lang_hebrew">23</constant>
+    <constant name="lang_swedish">24</constant>
+    <constant name="lang_greek">25</constant>
+    <constant name="lang_vietnam">26</constant>
+    <constant name="lang_turkish">27</constant>
+    <constant name="lang_arabic">28</constant>
+    <constant name="lang_ptpt">29</constant>
+    <constant name="lang_suomi">30</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

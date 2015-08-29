@@ -55,6 +55,8 @@ reflection_init();
 reflection_add_object(class_player);
 reflection_add_object(class_enemy);
 reflection_add_object(class_gun);
+reflection_add_object(obj_gloves);
+reflection_add_object(obj_buckler);
 reflection_add_object(class_gun_enemy);
 reflection_add_object(class_projectile);
 reflection_add_object(class_grenadeNew);

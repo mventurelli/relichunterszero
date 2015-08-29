@@ -30,7 +30,7 @@ if (global.reflections)
                     if (sprite_reflection)
                     {
                         my_reflection_sprite = sprite_reflection;
-                        my_reflection_subimage = sprite_reflection_subimage
+                        my_reflection_subimage = sprite_reflection_subimage;
                     }
                     else
                     {

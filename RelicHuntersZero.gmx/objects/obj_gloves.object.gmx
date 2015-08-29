@@ -73,9 +73,7 @@ recoil_max = 7;
 drawX = x;
 drawY = y;
 
-reflection_height = y+25;
-sprite_reflection = -1;
-sprite_reflection_subimage = 0;
+reflection_object_setup(0,-1,image_index);
 </string>
           </argument>
         </arguments>
@@ -118,6 +116,31 @@ if instance_exists(owner)
 }
 else instance_destroy();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set Camera Distance When Zoomed
+if (isActive) &amp;&amp; instance_exists(controller_camera)
+{
+    controller_camera.weaponRange = 500;
+}
 </string>
           </argument>
         </arguments>

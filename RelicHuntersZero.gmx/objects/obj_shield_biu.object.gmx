@@ -31,7 +31,7 @@ owner = noone;
 isActive = true;
 
 staminaMin = 5;
-staminaCost = 0.35;
+staminaCost = 0.25;
 
 reflectAngleMin = -12;
 reflectAngleMax = 12;
@@ -186,7 +186,7 @@ if (instance_exists(owner))
                 owner.owner.stamina -= staminaCost;
             }
         }
-        if (owner.owner.melee) || (owner.owner.throw) isActive = true;
+        if (owner.owner.throw) isActive = true;
     }
 }
 </string>

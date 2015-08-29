@@ -30,6 +30,13 @@ image_speed = 0.2;
 drawSelf = true;
 draw_stuff = false;
 
+hideForPlayer = false;
+
+myAlpha = 1;
+targetAlpha = 1;
+alphaSpeed = 0.04;
+alphaOrientation = -1;
+
 text_speed = 0.5;
 text_count = 0;
 myText = '';
@@ -134,6 +141,54 @@ if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hide For Player - False
+hideForPlayer = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="class_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hide For Player - False
+hideForPlayer = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
@@ -202,7 +257,20 @@ draw_stuff = true;
             <string>///Draw
 if (drawSelf)
 {
-    draw_self();
+    ///Alpha Animation
+    if (hideForPlayer) targetAlpha = 0.2;
+    else targetAlpha = 1;
+    
+    if (myAlpha != targetAlpha)
+    {
+        if (targetAlpha &gt; myAlpha) alphaOrientation = 1;
+        else alphaOrientation = -1;
+        
+        myAlpha += alphaOrientation * min(alphaSpeed, abs(targetAlpha-myAlpha));
+    }
+     
+    //Draw Self
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,myAlpha);
     
     if (global.relicDetected) myTextTarget = loc_key("ASS_RELIC");
     else if (myTextTarget == loc_key("ASS_RELIC")) 
@@ -230,7 +298,9 @@ if (drawSelf)
         draw_set_colour(c_black);
         draw_set_halign(fa_center);
         draw_set_valign(fa_center);
+        draw_set_alpha(myAlpha);
         draw_text_ext(x+56, y-122, myText+parser, 14, 220);
+        draw_set_alpha(1);
      }
 }
 </string>

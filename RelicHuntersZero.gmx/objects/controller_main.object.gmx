@@ -2462,7 +2462,8 @@ while (p &lt;= global.playerCount)
             draw_set_halign(fa_left);
             draw_set_valign(fa_center);
             draw_set_font(global.font_numberMedium);
-            draw_text_dropshadow_ext_transformed(ammoNumberTotalX, ammoNumberTotalY, string(floor(pAmmoTotal/weaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
+            
+            if (weaponSelected.ammo_cost &gt; 0) draw_text_dropshadow_ext_transformed(ammoNumberTotalX, ammoNumberTotalY, string(floor(pAmmoTotal/weaponSelected.ammo_cost)), c_white, c_black, 0.8, 2, 1, 1,0, main_hud_alpha);
         
             //Total Ammo Bar
             draw_healthbar_delayed(pAmmoBarId, ammoBarTotalX-(ammoBarTotalWidth/2), ammoBarTotalY-(ammoBarTotalHeight/2), ammoBarTotalX+(ammoBarTotalWidth/2), ammoBarTotalY+(ammoBarTotalHeight/2), 
