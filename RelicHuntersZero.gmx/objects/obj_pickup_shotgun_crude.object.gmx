@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>class_gun</parentName>
+  <parentName>class_pickup_weapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,33 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Attributes
-event_inherited();
+            <string>event_inherited();
 
-name = loc_key("WPNAME_SHOTGUN");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
-
-object = obj_shotgun;
-shake_amount = 22;
-projectile_speed = 45;
-projectile_speed_decay = 1;
-projectile_damage = 18;
-projectile_range = 315;
-projectile_power = 2;
-accuracy = 20;
-accuracy_aiming = 10;
-ammo = 5;
-ammo_type = type_medium;
-ammo_cost = 4;
-reload_time = room_speed*3;
-fire_rate = room_speed*0.5;
-fire_automatic = false;
-fire_amount = 9;
-crosshair_recoil = 0.1;
-sound = 'shotgun';
-weaponClass = 'shotgun';
-
-joypadRumbleFactor = 1;
+sprite = sprite_index;
+gun = obj_shotgun_crude;
+gun_ammo_current = 9999;
 </string>
           </argument>
         </arguments>
@@ -70,7 +48,7 @@ joypadRumbleFactor = 1;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>5,9</point>
-    <point>9,9</point>
+    <point>18,10</point>
+    <point>30,30</point>
   </PhysicsShapePoints>
 </object>

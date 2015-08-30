@@ -263,6 +263,12 @@ global.falloffMinorFactor = 1;
 
 //Stats
 timeCounter = 0;
+gameOverHint = '';
+
+//Endless Score
+global.scoreEndlessLevel = 600; 
+global.scoreEndlessLoop = 2000;
+global.scoreEndlessLoopMultiplier = 2;
 
 //Pause Menu
 game_pause_init();
@@ -271,7 +277,7 @@ game_pause_init();
 display_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
 //Low Performance Detection
-global.lowPerfTime = room_speed*2;
+global.lowPerfTime = room_speed*4.2;
 global.lowPerfTimeCurrent = 0;
 
 </string>
@@ -963,297 +969,9 @@ var p = 1; while (p &lt;= global.playerCount)
 
 if (!level_built)
 {
-    //Enemy Group Design (Spawns Everything Within the Group)
-    ducan_turtlesquad1_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_1, obj_turtle1,obj_turtle1,obj_turtle1);
-    
-    ducan_turtlesquad1_2 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_2, obj_turtle1,obj_turtle1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_turtlesquad1_3 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_3, obj_duck1,obj_turtle1_pistoleer,obj_turtle1_pistoleer,obj_turtle1_pistoleer);
-    
-    ducan_turtlesquad2_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad2_1, obj_turtle2, obj_turtle2_assaultpistol, obj_turtle2, obj_turtle2_shotgun );
-    
-    ducan_turtlesquad2_2 = ds_list_create();
-    ds_list_add(ducan_turtlesquad2_2, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_shotgun );
-    
-    ducan_turtlesquad3_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad3_1, obj_turtle3, obj_turtle3, obj_turtle3, obj_turtle3 );
-    
-    ducan_turtlesniper = ds_list_create();
-    ds_list_add(ducan_turtlesniper, obj_turtle3_sniper );
-    
-    /// /// /// ///
-    
-    ducan_ducksquad1_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_1, obj_duck1,obj_turtle1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_ducksquad1_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_2, obj_duck1_submachinegun,obj_turtle1,obj_turtle1_pistoleer,obj_turtle1_shotgun);
-    
-    ducan_ducksquad1_3 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_3, obj_duck1_submachinegun,obj_duck1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_ducksquad2_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_1, obj_duck2_heavy, obj_turtle1_pistoleer, obj_turtle1_pistoleer, obj_turtle2_shotgun);
-    
-    ducan_ducksquad2_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_2, obj_duck2_submachinegun, obj_duck1, obj_duck1, obj_turtle2_assaultpistol);
-    
-    ducan_ducksquad2_3 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_3, obj_duck2_shotgun, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_submachinegun);
-    
-    ducan_ducksquad3_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad3_1, obj_duck3, obj_duck2_shotgun, obj_duck2_shotgun, obj_turtle3);
-    
-    ducan_ducksquad3_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad3_2, obj_duck3_rocket, obj_turtle3, obj_turtle3);
-    
-    /// /// /// ///
-    
-    monster_kamikaze_1 = ds_list_create();
-    ds_list_add(monster_kamikaze_1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
-    
-    monster_kamikaze_2 = ds_list_create();
-    ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
-    
-    //Item Group Design (Spawns One Item Randomly)
-    
-    item_starterweapon_1 = ds_list_create();
-    ds_list_add(item_starterweapon_1, obj_pickup_pistol_assault,obj_pickup_shotgun);
-    
-    item_mediumweapon_1 = ds_list_create();
-    ds_list_add(item_mediumweapon_1, obj_pickup_submachinegun, obj_pickup_pistol_heavy);
-    
-    item_mediumweapon_2 = ds_list_create();
-    ds_list_add(item_mediumweapon_2, obj_pickup_pistol_heavy, obj_pickup_assault_rifle);
-    
-    item_heavyweapon_1 = ds_list_create();
-    ds_list_add(item_heavyweapon_1, obj_pickup_machinegun, obj_pickup_assault_rifle);
-    
-    item_heavyweapon_2 = ds_list_create();
-    ds_list_add(item_heavyweapon_2, obj_pickup_assault_rifle, obj_pickup_sniper_rifle);
-    
-    item_superweapon_1 = ds_list_create();
-    ds_list_add(item_superweapon_1, obj_pickup_shotgun_heavy, obj_pistol_plasma,  obj_pistol_plasma, obj_pickup_machinegun, obj_pickup_assault_rifle, obj_pickup_pistol_heavy );
-    
-    item_rocketlauncher_1 = ds_list_create();
-    ds_list_add(item_rocketlauncher_1, obj_pickup_rocketlauncher);
-    
-    item_starterammo_1 = ds_list_create();
-    ds_list_add(item_starterammo_1, obj_pickup_lightammo,obj_pickup_lightammo,obj_pickup_mediumammo);
-    
-    item_starterhealth_1 = ds_list_create();
-    ds_list_add(item_starterhealth_1, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_shield);
-    
-    item_engamehealth_1 = ds_list_create();
-    ds_list_add(item_engamehealth_1, obj_pickup_healthBig, obj_pickup_shield);
-    
-    item_starteraid_1 = ds_list_create();
-    ds_list_add(item_starteraid_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_health, obj_pickup_shield, obj_pickup_healthBig, obj_pickup_grenade);
-    
-    item_grenade_1 = ds_list_create();
-    ds_list_add(item_grenade_1, obj_pickup_grenade);
-    
-    item_mediumammo_1 = ds_list_create();
-    ds_list_add(item_mediumammo_1, obj_pickup_mediumammo, obj_pickup_mediumammo, obj_pickup_heavyammo, obj_pickup_grenade);
-    
-    item_heavyammo_1 = ds_list_create();
-    ds_list_add(item_heavyammo_1, obj_pickup_heavyammo);
-    
-    item_endgameaid_1 = ds_list_create();
-    ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_shield, obj_pickup_heavyammo, obj_pickup_mediumammo);
-    
-    
-    //Items - ******* ENDLESS ********
-    item_endlessAmmo_1 = ds_list_create();
-    ds_list_add(item_endlessAmmo_1, obj_pickup_heavyammo, obj_pickup_mediumammo, obj_pickup_mediumammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_grenade );
-    
-    item_endlessAid_1 = ds_list_create();
-    ds_list_add(item_endlessAid_1, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_lightammo, obj_pickup_mediumammo, obj_pickup_heavyammo, obj_pickup_grenade, obj_pickup_healthBig, obj_pickup_shield);
-    
-    
-    //Shop Lists
-    global.shop_list_1 = ds_list_create();
-    global.shop_size_1 = 11;
-    if (!global.unlock_light1) ds_list_add(global.shop_list_1, obj_shop_light1);
-    if (!global.unlock_pistol_assault) ds_list_add(global.shop_list_1, obj_shop_pistol_assault);
-    if (!global.unlock_shotgun) ds_list_add(global.shop_list_1, obj_shop_shotgun);
-    if (!global.unlock_light2) ds_list_add(global.shop_list_1, obj_shop_light2);
-    if (!global.unlock_medium1) ds_list_add(global.shop_list_1, obj_shop_medium1);
-    if (!global.unlock_grenades1) ds_list_add(global.shop_list_1, obj_shop_grenades1);
-    if (!global.relic_pineapple1) ds_list_add(global.shop_list_1, obj_shop_pineapple1);
-    if (!global.relic_pineapple2) ds_list_add(global.shop_list_1, obj_shop_pineapple2);
-    if (!global.relic_pineapple3) ds_list_add(global.shop_list_1, obj_shop_pineapple3);
-    if (!global.relic_yottabyte1) ds_list_add(global.shop_list_1, obj_shop_yottabyte1);
-    if (!global.unlock_shield1) ds_list_add(global.shop_list_1, obj_shop_shield1);
-    
-    global.shop_free_1 = ds_list_create();
-    ds_list_add(global.shop_free_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_grenade);
-    
-    
-    global.shop_list_2 = ds_list_create();
-    global.shop_size_2 = 16;
-    if (!global.unlock_medium2) ds_list_add(global.shop_list_2, obj_shop_medium2);
-    if (!global.unlock_grenades2) ds_list_add(global.shop_list_2, obj_shop_grenades2);
-    if (!global.unlock_heavy1) ds_list_add(global.shop_list_2, obj_shop_heavy1);
-    if (!global.unlock_assault_rifle) ds_list_add(global.shop_list_2, obj_shop_assault_rifle);
-    if (!global.unlock_pistol_heavy) ds_list_add(global.shop_list_2, obj_shop_pistol_heavy);
-    if (!global.unlock_submachinegun) ds_list_add(global.shop_list_2, obj_shop_submachinegun);
-    if (!global.relic_alcoholic1) ds_list_add(global.shop_list_2, obj_shop_alcoholic1);
-    if (!global.relic_alcoholic2) ds_list_add(global.shop_list_2, obj_shop_alcoholic2);
-    if (!global.relic_alcoholic3) ds_list_add(global.shop_list_2, obj_shop_alcoholic3);
-    if (!global.relic_yottabyte2) ds_list_add(global.shop_list_2, obj_shop_yottabyte2);
-    if (!global.relic_yottabyte3) ds_list_add(global.shop_list_2, obj_shop_yottabyte3);
-    if (!global.relic_watchful1) ds_list_add(global.shop_list_2, obj_shop_watchful1);
-    if (!global.relic_watchful2) ds_list_add(global.shop_list_2, obj_shop_watchful2);
-    if (!global.relic_watchful3) ds_list_add(global.shop_list_2, obj_shop_watchful3);
-    if (!global.relic_crystal1) ds_list_add(global.shop_list_2, obj_shop_crystal1);
-    if (!global.unlock_shield2) ds_list_add(global.shop_list_2, obj_shop_shield2);
-    
-    global.shop_free_2 = ds_list_create();
-    ds_list_add(global.shop_free_2, obj_pickup_lightammo, obj_pickup_mediumammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_grenade);
-    
-    
-    global.shop_list_3 = ds_list_create();
-    global.shop_size_3 = 16;
-    if (!global.unlock_grenades3) ds_list_add(global.shop_list_3, obj_shop_grenades3);
-    if (!global.unlock_heavy2) ds_list_add(global.shop_list_3, obj_shop_heavy2);
-    if (!global.unlock_heavy3) ds_list_add(global.shop_list_3, obj_shop_heavy3);
-    if (!global.unlock_heavy4) ds_list_add(global.shop_list_3, obj_shop_heavy4);
-    if (!global.unlock_pistol_plasma) ds_list_add(global.shop_list_3, obj_shop_pistol_plasma);
-    if (!global.unlock_highmag) ds_list_add(global.shop_list_3, obj_shop_highmag);
-    if (!global.unlock_machinegun) ds_list_add(global.shop_list_3, obj_shop_machinegun);
-    if (!global.unlock_sniper_rifle) ds_list_add(global.shop_list_3, obj_shop_sniper_rifle);
-    if (!global.relic_midnight1) ds_list_add(global.shop_list_3, obj_shop_midnight1);
-    if (!global.relic_midnight2) ds_list_add(global.shop_list_3, obj_shop_midnight2);
-    if (!global.relic_midnight3) ds_list_add(global.shop_list_3, obj_shop_midnight3);
-    if (!global.relic_infinity1) ds_list_add(global.shop_list_3, obj_shop_infinity1);
-    if (!global.relic_infinity2) ds_list_add(global.shop_list_3, obj_shop_infinity2);
-    if (!global.relic_infinity3) ds_list_add(global.shop_list_3, obj_shop_infinity3);
-    if (!global.relic_crystal2) ds_list_add(global.shop_list_3, obj_shop_crystal2);
-    if (!global.relic_dev1) ds_list_add(global.shop_list_3, obj_shop_dev1);
-    
-    global.shop_free_3 = ds_list_create();
-    ds_list_add(global.shop_free_3, obj_pickup_mediumammo, obj_pickup_heavyammo, obj_pickup_health, obj_pickup_health, obj_pickup_grenade);
-    
-    
-    global.shop_list_4 = ds_list_create();
-    global.shop_size_4 = 5;
-    
-    if (!global.unlock_shotgun_heavy) ds_list_add(global.shop_list_4, obj_shop_shotgun_heavy);
-    if (!global.unlock_rocketlauncher) ds_list_add(global.shop_list_4, obj_shop_rocketlauncher);
-    if (!global.relic_crystal3) ds_list_add(global.shop_list_4, obj_shop_crystal3);
-    if (!global.relic_dev2) ds_list_add(global.shop_list_4, obj_shop_dev2);
-    if (!global.relic_dev3) ds_list_add(global.shop_list_4, obj_shop_dev3);
-    
-    global.shop_free_4 = ds_list_create();
-    ds_list_add(global.shop_free_4, obj_pickup_heavyammo, obj_pickup_heavyammo, obj_pickup_heavyammo, obj_pickup_health, obj_pickup_grenade);
-    
-    //Stage Design - **********ADVENTURE MODE****************
-    shop_empty_pool = ds_list_create();
-    
-    enemy_pool_1_1 = ds_list_create();
-    ds_list_add(enemy_pool_1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1 );
-    
-    enemy_pool_1_2 = ds_list_create();
-    ds_list_add(enemy_pool_1_2, ducan_ducksquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_2 );
-    
-    enemy_pool_1_3 = ds_list_create();
-    ds_list_add(enemy_pool_1_3, ducan_turtlesquad1_2, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1 );
-    
-    enemy_pool_2_1 = ds_list_create();
-    ds_list_add(enemy_pool_2_1, ducan_turtlesquad1_3, ducan_ducksquad1_1, ducan_ducksquad1_1, ducan_ducksquad1_2, ducan_turtlesquad2_1 );
-    
-    enemy_pool_2_2 = ds_list_create();
-    ds_list_add(enemy_pool_2_2, ducan_ducksquad1_3, ducan_ducksquad1_2, ducan_ducksquad1_2, ducan_ducksquad1_1 );
-    
-    enemy_pool_2_3 = ds_list_create();
-    ds_list_add(enemy_pool_2_3, ducan_ducksquad2_1, ducan_ducksquad1_3, ducan_turtlesquad2_1, ducan_turtlesquad2_1, ducan_turtlesquad2_2 );
-    
-    enemy_pool_3_1 = ds_list_create();
-    ds_list_add(enemy_pool_3_1, ducan_ducksquad2_3, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_2, monster_kamikaze_2 );
-    
-    enemy_pool_3_2 = ds_list_create();
-    ds_list_add(enemy_pool_3_2, monster_kamikaze_2, monster_kamikaze_2, monster_kamikaze_2, monster_kamikaze_2, ducan_ducksquad2_2, ducan_ducksquad2_3, ducan_ducksquad2_1);
-    
-    enemy_pool_3_3 = ds_list_create();
-    ds_list_add(enemy_pool_3_3, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1);
-    
-    enemy_pool_4_1 = ds_list_create();
-    ds_list_add(enemy_pool_4_1, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_turtlesniper, ducan_turtlesniper, ducan_turtlesniper, ducan_turtlesniper);
-    
-    enemy_pool_4_2 = ds_list_create();
-    ds_list_add(enemy_pool_4_2, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_ducksquad2_1, ducan_ducksquad3_1, ducan_ducksquad3_1);
-    
-    enemy_pool_4_3 = ds_list_create();
-     ds_list_add(enemy_pool_4_3, ducan_turtlesquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_2, ducan_ducksquad3_2);
-    
-    
-    ///  ///  ///
-    
-    item_pool_1_1 = ds_list_create();
-    ds_list_add(item_pool_1_1, item_starterammo_1, item_starterammo_1, item_starterhealth_1, item_starteraid_1, item_starteraid_1);
-    
-    item_pool_1_2 = ds_list_create();
-    ds_list_add(item_pool_1_2, item_starterweapon_1, item_starterammo_1, item_starteraid_1, item_starterammo_1, item_starteraid_1);
-    
-    item_pool_1_3 = ds_list_create();
-    ds_list_add(item_pool_1_3, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_grenade_1);
-    
-    item_pool_2_1 = ds_list_create();
-    ds_list_add(item_pool_2_1, item_starterammo_1, item_starteraid_1, item_mediumammo_1, item_starteraid_1);
-    
-    item_pool_2_2 = ds_list_create();
-    ds_list_add(item_pool_2_2, item_starterweapon_1, item_starterammo_1, item_starterammo_1, item_starteraid_1, item_starteraid_1);
-    
-    item_pool_2_3 = ds_list_create();
-    ds_list_add(item_pool_2_3, item_mediumweapon_1, item_starterammo_1, item_mediumammo_1, item_grenade_1, item_starteraid_1, item_grenade_1);
-    
-    item_pool_3_1 = ds_list_create();
-    ds_list_add(item_pool_3_1, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_starteraid_1, item_starteraid_1, item_grenade_1);
-    
-    item_pool_3_2 = ds_list_create();
-    ds_list_add(item_pool_3_2, item_starterweapon_1, item_starteraid_1, item_starterhealth_1, item_grenade_1, item_starterammo_1, item_grenade_1);
-    
-    item_pool_3_3 = ds_list_create();
-    ds_list_add(item_pool_3_3, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_starteraid_1, item_superweapon_1, item_starteraid_1, item_grenade_1);
-    
-    item_pool_4_1 = ds_list_create();
-    ds_list_add(item_pool_4_1, item_heavyweapon_1, item_heavyweapon_2, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_endgameaid_1, item_starteraid_1);
-    
-    item_pool_4_2 = ds_list_create();
-    ds_list_add(item_pool_4_2, item_heavyammo_1, item_mediumammo_1, item_starteraid_1, item_endgameaid_1, item_grenade_1, item_starterammo_1, item_mediumammo_1);
-    
-    item_pool_4_3 = ds_list_create();
-    ds_list_add(item_pool_4_3, item_rocketlauncher_1, item_heavyammo_1, item_heavyammo_1, item_mediumammo_1, item_endgameaid_1, item_grenade_1, item_mediumammo_1, item_starterammo_1);
-    
-    
-    item_pool_boss = ds_list_create();
-    ds_list_add(item_pool_boss, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1);
-    ds_list_add(item_pool_boss, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1);
-    ds_list_add(item_pool_boss, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_starterammo_1);
-    ds_list_add(item_pool_boss, item_heavyweapon_1, item_heavyweapon_2, item_mediumweapon_1, item_mediumweapon_1, item_starterweapon_1, item_starterweapon_1, item_starteraid_1, item_starteraid_1, item_starteraid_1);
-    ds_list_add(item_pool_boss, item_starterhealth_1, item_starterhealth_1, item_engamehealth_1, item_engamehealth_1);
-    
-    
-    //Stage Design - **********ENDLESS MODE****************
-    enemy_pool_endless = ds_list_create();
-    ds_list_add(enemy_pool_endless, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,
-    monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
-    
-    ///  ///  ///
-    
-    item_pool_endless = ds_list_create();
-    ds_list_add(item_pool_endless, item_endlessAmmo_1, item_endlessAmmo_1, item_endlessAid_1, item_endlessAid_1);
-    
-}
+    //Create global shop data if relevant
+    if (room == room_shop || room == room_start) instance_create(0,0,data_shop);
 
-/////////////////////////////////////////////////////////////////////
-if (!level_built)
-{
     //Instantiate Player
     player_spawn_number = instance_number(obj_spawn_player);
     random_spawn = irandom(player_spawn_number-1);
@@ -1280,77 +998,27 @@ if (!level_built)
     //Stop here if it's the first room
     if (room == room_start) { level_built = true; exit; }
     
-
-    //Still here? Let's go!
+    //Still here? Create the teleporter entry point;
     teleporter = instance_create(target_spawn.spawnX,target_spawn.spawnY-10,obj_teleporter);
     teleporter.active = false;
-        
+    
+    //Instantiate Data Objects and set enemy and item lists
     if (global.gameMode == gamemode_adventure)
     {
-        //Adventure Enemies
-        if (room == room_shop) || (room == room_tutorial) || (room == room_boss) enemy_pool = shop_empty_pool;
-        if (room == level1_1) enemy_pool = enemy_pool_1_1;
-        if (room == level1_2) enemy_pool = enemy_pool_1_2;
-        if (room == level1_3) enemy_pool = enemy_pool_1_3;
-        if (room == level2_1) enemy_pool = enemy_pool_2_1;
-        if (room == level2_2) enemy_pool = enemy_pool_2_2;
-        if (room == level2_3) enemy_pool = enemy_pool_2_3;
-        if (room == level3_1) enemy_pool = enemy_pool_3_1;
-        if (room == level3_2) enemy_pool = enemy_pool_3_2;
-        if (room == level3_3) enemy_pool = enemy_pool_3_3;
-        if (room == level4_1) enemy_pool = enemy_pool_4_1;
-        if (room == level4_2) enemy_pool = enemy_pool_4_2;
-        if (room == level4_3) enemy_pool = enemy_pool_4_3;
+        enemyData = instance_create(0,0,data_enemies);
+        itemData = instance_create(0,0,data_items);
         
-        //Adventure Items
-        if (room == room_shop) || (room == room_tutorial) || (room == room_boss) item_pool = shop_empty_pool;
-        if (room == level1_1) item_pool = item_pool_1_1;
-        if (room == level1_2) item_pool = item_pool_1_2;
-        if (room == level1_3) item_pool = item_pool_1_3;
-        if (room == level2_1) item_pool = item_pool_2_1;
-        if (room == level2_2) item_pool = item_pool_2_2;
-        if (room == level2_3) item_pool = item_pool_2_3;
-        if (room == level3_1) item_pool = item_pool_3_1;
-        if (room == level3_2) item_pool = item_pool_3_2;
-        if (room == level3_3) item_pool = item_pool_3_3;
-        if (room == level4_1) item_pool = item_pool_4_1;
-        if (room == level4_2) item_pool = item_pool_4_2;
-        if (room == level4_3) item_pool = item_pool_4_3;
-        if (room == room_boss) item_pool = item_pool_boss;
+        enemy_pool = enemyData.enemyPool;
+        item_pool = itemData.itemPool;
     }
     
     if (global.gameMode == gamemode_endless)
     {
-        //Endless Enemies
-        if (room == room_shop) || (room == room_boss) enemy_pool = shop_empty_pool;
-        if (room == level1_1) enemy_pool = enemy_pool_endless;
-        if (room == level1_2) enemy_pool = enemy_pool_endless;
-        if (room == level1_3) enemy_pool = enemy_pool_endless;
-        if (room == level2_1) enemy_pool = enemy_pool_endless;
-        if (room == level2_2) enemy_pool = enemy_pool_endless;
-        if (room == level2_3) enemy_pool = enemy_pool_endless;
-        if (room == level3_1) enemy_pool = enemy_pool_endless;
-        if (room == level3_2) enemy_pool = enemy_pool_endless;
-        if (room == level3_3) enemy_pool = enemy_pool_endless;
-        if (room == level4_1) enemy_pool = enemy_pool_endless;
-        if (room == level4_2) enemy_pool = enemy_pool_endless;
-        if (room == level4_3) enemy_pool = enemy_pool_endless;
+        enemyData = instance_create(0,0,data_enemiesEndless);
+        itemData = instance_create(0,0,data_itemsEndless);
         
-        //Endless Items
-        if (room == room_shop) item_pool = shop_empty_pool;
-        if (room == level1_1) item_pool = item_pool_endless;
-        if (room == level1_2) item_pool = item_pool_endless;
-        if (room == level1_3) item_pool = item_pool_endless;
-        if (room == level2_1) item_pool = item_pool_endless;
-        if (room == level2_2) item_pool = item_pool_endless;
-        if (room == level2_3) item_pool = item_pool_endless;
-        if (room == level3_1) item_pool = item_pool_endless;
-        if (room == level3_2) item_pool = item_pool_endless;
-        if (room == level3_3) item_pool = item_pool_endless;
-        if (room == level4_1) item_pool = item_pool_endless;
-        if (room == level4_2) item_pool = item_pool_endless;
-        if (room == level4_3) item_pool = item_pool_endless;
-        if (room == room_boss) item_pool = item_pool_endless;
+        enemy_pool = enemyData.enemyPool;
+        item_pool = itemData.itemPool;
     }
     
     
@@ -1417,89 +1085,11 @@ if (!level_built)
             ds_list_destroy(current_group);
         }
         
-        with (obj_spawn_item)
-        {
-            instance_destroy();
-        }
+        with (obj_spawn_item) instance_destroy();
+
         
-    //Done
+    //All Done
         level_built = true;  
-        
-    //Clear Lists From Memory
-        ds_list_destroy(ducan_turtlesquad1_1);
-        ds_list_destroy(ducan_turtlesquad1_2);
-        ds_list_destroy(ducan_turtlesquad1_3);
-        ds_list_destroy(ducan_turtlesquad2_1);
-        ds_list_destroy(ducan_turtlesquad2_2);
-        ds_list_destroy(ducan_turtlesquad3_1);
-        ds_list_destroy(ducan_turtlesniper);
-        
-        ds_list_destroy(ducan_ducksquad1_1);
-        ds_list_destroy(ducan_ducksquad1_2);
-        ds_list_destroy(ducan_ducksquad1_3);
-        ds_list_destroy(ducan_ducksquad2_1);
-        ds_list_destroy(ducan_ducksquad2_2);
-        ds_list_destroy(ducan_ducksquad2_3);
-        ds_list_destroy(ducan_ducksquad3_1);
-        ds_list_destroy(ducan_ducksquad3_2);
-        
-        ds_list_destroy(monster_kamikaze_1);
-        ds_list_destroy(monster_kamikaze_2);
-        
-        ds_list_destroy(shop_empty_pool);
-        ds_list_destroy(enemy_pool_1_1);
-        ds_list_destroy(enemy_pool_1_2);
-        ds_list_destroy(enemy_pool_1_3);
-        ds_list_destroy(enemy_pool_2_1);
-        ds_list_destroy(enemy_pool_2_2);
-        ds_list_destroy(enemy_pool_2_3);
-        ds_list_destroy(enemy_pool_3_1);
-        ds_list_destroy(enemy_pool_3_2);
-        ds_list_destroy(enemy_pool_3_3);
-        ds_list_destroy(enemy_pool_4_1);
-        ds_list_destroy(enemy_pool_4_2);
-        ds_list_destroy(enemy_pool_4_3);
-        ds_list_destroy(item_pool_1_1);
-        ds_list_destroy(item_pool_1_2);
-        ds_list_destroy(item_pool_1_3);
-        ds_list_destroy(item_pool_2_1);
-        ds_list_destroy(item_pool_2_2);
-        ds_list_destroy(item_pool_2_3);
-        ds_list_destroy(item_pool_3_1);
-        ds_list_destroy(item_pool_3_2);
-        ds_list_destroy(item_pool_3_3);
-        ds_list_destroy(item_pool_4_1);
-        ds_list_destroy(item_pool_4_2);
-        ds_list_destroy(item_pool_4_3);
-        ds_list_destroy(item_pool_boss);
-        
-        ds_list_destroy(item_starterweapon_1);
-        ds_list_destroy(item_mediumweapon_1);
-        ds_list_destroy(item_mediumweapon_2);
-        ds_list_destroy(item_heavyweapon_1);
-        ds_list_destroy(item_heavyweapon_2);
-        ds_list_destroy(item_superweapon_1);
-        ds_list_destroy(item_rocketlauncher_1);
-        ds_list_destroy(item_starterammo_1);
-        ds_list_destroy(item_starterhealth_1);
-        ds_list_destroy(item_engamehealth_1);
-        ds_list_destroy(item_starteraid_1);
-        ds_list_destroy(item_grenade_1);
-        ds_list_destroy(item_mediumammo_1);
-        ds_list_destroy(item_heavyammo_1);
-        ds_list_destroy(item_endgameaid_1);
-        
-        
-        //Endless
-        ds_list_destroy(item_endlessAmmo_1);
-        ds_list_destroy(item_endlessAid_1);
-        ds_list_destroy(enemy_pool_endless);
-        ds_list_destroy(item_pool_endless);
-        
-    
-        //Global
-        ds_list_destroy(enemy_pool);
-        ds_list_destroy(item_pool);
 }
 </string>
           </argument>
@@ -1548,40 +1138,41 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             }
         }
         ass = instance_create(randomX,randomY,obj_ass);   
-        
-        //Revives any dead player
-        var revivePlayerX = class_player.x;
-        var revivePlayerY = class_player.y;
-        
-        var p = 1; while (p &lt;= global.playerCount)
-        {
-            if (!global.playerAlive[p])
-            {
-                var playerSpawned;
-                if (global.character[p] == char_jimmy) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_jimmy);
-                if (global.character[p] == char_pinky) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_pinky);
-                if (global.character[p] == char_raff) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_raff);
-                if (global.character[p] == char_biu) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_biu);
-                if (global.character[p] == char_punny) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_punny);
-                if (global.character[p] == char_ass) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_assPlayer);
-                
-                playerSpawned.myPlayerId = p;
-                
-                //Reset weapons and HP
-                char_state_initial(); //this also sets playerAlive to true!
-                with (playerSpawned) event_perform(ev_other,ev_user0);
-                
-                playerSpawned.hp = playerSpawned.hp_max * global.reviveHealth;
-                global.ammo_light[p] = global.reviveAmmoLight;
-                global.ammo_medium[p] = global.reviveAmmoMedium;
-                global.ammo_heavy[p] = global.reviveAmmoHeavy;
-            }
-            p++;
-        }
-        
-        //RELIC DETECTED!!!
+ 
         if (global.gameMode == gamemode_adventure)
         {
+            //Revives any dead player
+            var revivePlayerX = class_player.x;
+            var revivePlayerY = class_player.y;
+            
+            var p = 1; while (p &lt;= global.playerCount)
+            {
+                if (!global.playerAlive[p])
+                {
+                    var playerSpawned;
+                    if (global.character[p] == char_jimmy) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_jimmy);
+                    if (global.character[p] == char_pinky) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_pinky);
+                    if (global.character[p] == char_raff) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_raff);
+                    if (global.character[p] == char_biu) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_biu);
+                    if (global.character[p] == char_punny) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_punny);
+                    if (global.character[p] == char_ass) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_assPlayer);
+                    
+                    playerSpawned.myPlayerId = p;
+                    
+                    //Reset weapons and HP
+                    char_state_initial(); //this also sets playerAlive to true!
+                    with (playerSpawned) event_perform(ev_other,ev_user0);
+                    
+                    playerSpawned.hp = playerSpawned.hp_max * global.reviveHealth;
+                    global.ammo_light[p] = global.reviveAmmoLight;
+                    global.ammo_medium[p] = global.reviveAmmoMedium;
+                    global.ammo_heavy[p] = global.reviveAmmoHeavy;
+                }
+                p++;
+            }
+        
+        
+            //RELIC DETECTED!!!
             global.dirtColor = c_white;
             
             //Relic Chance
@@ -1705,12 +1296,14 @@ if (global.stage_current == 3) &amp;&amp; (global.checkpoint3 == 0) global.check
 
 if (global.level_complete)
 {
+    //Update Endless Score
+    if (global.gameMode == gamemode_endless) global.scoreEndless += round(global.scoreEndlessLevel * max(1, (global.currentLoop*global.scoreEndlessLoopMultiplier) ));
+
     save_and_clean();
     
     if (room == room_shop) || (room == room_start)
     {
         //Test boss:  room_goto(room_boss); exit; 
-        
         
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
@@ -1740,6 +1333,7 @@ if (global.level_complete)
         }
         else if (global.gameMode == gamemode_endless)
         {
+            global.currentLoop++;
             room_goto(level1_1);
             exit;
         }
@@ -2041,27 +1635,73 @@ steam_screenshot_check();
           <argument>
             <kind>1</kind>
             <string>///Game Over
-
-///Restart &amp; Back to Menu
 if (global.gameOver)
 {
+    //TIPS
+    if (gameOverHint == '')
+    {
+        if (global.statTotalDeaths &lt;= 1) gameOverHint = loc_key("TIPS_FIRSTDEATH");
+        else if (!global.totalDigs &amp;&amp; global.gameMode == gamemode_adventure) gameOverHint = loc_key("TIPS_DIG");
+        else if ((global.relic_pineapple_pudding || global.relic_alcoholic_carrot) &amp;&amp; global.relic_slot[1] == '' &amp;&amp; global.gameMode == gamemode_adventure) gameOverHint = loc_key("TIPS_RELIC");
+        else{
+            var randomHint = irandom_range(1,10);
+            switch (randomHint){
+                case 1: gameOverHint = loc_key("TIPS_RANDOM1"); break;
+                case 2: gameOverHint = loc_key("TIPS_RANDOM2"); break;
+                case 3: gameOverHint = loc_key("TIPS_RANDOM3"); break;
+                case 4: gameOverHint = loc_key("TIPS_RANDOM4"); break;
+                case 5: gameOverHint = loc_key("TIPS_RANDOM5"); break;
+                case 6: gameOverHint = loc_key("TIPS_RANDOM6"); break;
+                case 7: gameOverHint = loc_key("TIPS_RANDOM7"); break;
+                case 8: gameOverHint = loc_key("TIPS_RANDOM8"); break;
+                case 9: gameOverHint = loc_key("TIPS_RANDOM9"); break;
+                case 10: gameOverHint = loc_key("TIPS_RANDOM10"); break;
+            }
+        }
+    }
+    
+    var wantToRestart = false;
+    var wantToQuit = false;
+    
+    //Restart &amp; Back to Menu
     var p = 1; while (p &lt;= global.playerCount)
     {
         var input = global.input[p];
         
         if (input != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(input,1)) || ( input == K_INPUT_KEYBOARD &amp;&amp; (keyboard_check(vk_space)))
         {
-            save_and_clean();
-            room_goto(room_start);
+            wantToRestart = true;
+            break;
         }
         
         if (input != K_INPUT_KEYBOARD &amp;&amp; joy_check_pressed(input,2)) || ( input == K_INPUT_KEYBOARD &amp;&amp; (keyboard_check(vk_escape)))
         {
-            save_and_clean();
+            wantToQuit = true;
+            break;
+        }
+  
+        p++;
+    }
+    
+    if (wantToRestart || wantToQuit)
+    {
+        //Update stats
+        if (!global.statLongestRun || global.statRunTime &gt; global.statLongestRun) global.statLongestRun = global.statRunTime;
+        if (!global.scoreEndlessBest || global.scoreEndless &gt; global.scoreEndlessBest) global.scoreEndlessBest = global.scoreEndless;
+        if (!global.statBestLoop || global.currentLoop &gt; global.statBestLoop) global.statBestLoop = global.currentLoop;
+        
+        save_and_clean();
+        
+        //Resolve
+        if (wantToRestart)
+        {
+            if (global.gameMode == gamemode_adventure) room_goto(room_start);
+            else room_goto(level1_1);
+        }
+        else if (wantToQuit)
+        {
             game_restart();
         }
-        
-        p++;
     }
 }
 </string>
@@ -2136,7 +1776,9 @@ timeCounter++
 if (timeCounter &gt;= room_speed)
 {
     timeCounter = 0;
-    global.statTotalTime++; 
+    global.statTotalTime++;
+    
+    if (!global.gameOver) &amp;&amp; (!global.pauseMenu) global.statRunTime++;
 }
 </string>
           </argument>
@@ -2723,11 +2365,13 @@ else draw_set_alpha(1);
 
 var dynamicBountyX = width*0.5;
 var dynamicBountyY = -1*height*0.1;
-    
+var bountyString = string(global.score_total);
+if (global.gameMode == gamemode_endless) bountyString = string(global.bountyEndless);
+
 if (instance_exists(gui_dynamic_bounty))
 {
     draw_sprite(gui_dynamic_bounty.sprite_index,gui_dynamic_bounty.image_index, dynamicBountyX+gui_dynamic_bounty.offsetX, dynamicBountyY+gui_dynamic_bounty.offsetY);
-    draw_text(dynamicBountyX+gui_dynamic_bounty.offsetX+103, dynamicBountyY+gui_dynamic_bounty.offsetY+2, string(global.score_total));
+    draw_text(dynamicBountyX+gui_dynamic_bounty.offsetX+103, dynamicBountyY+gui_dynamic_bounty.offsetY+2, bountyString);
 }
 
 //Dynamic Relics
@@ -2802,6 +2446,40 @@ if (global.gameOver)
             
     draw_text_dropoutline_ext_transformed(gameOverX,gameOverY2,gameOverString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
     draw_text_dropoutline_ext_transformed(gameOverX,gameOverY3,gameOverString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+    
+    //Endless Stats
+    if (global.gameMode == gamemode_endless)
+    {
+        var endlessY1 = height*0.26;
+        var endlessY2 = height*0.30;
+        var endlessY3 = height*0.34;
+        var endlessString1 = loc_key("HUD_ENDLESS_SCORE") + ": " + string(global.scoreEndless);
+        var endlessString2 = loc_key("HUD_LOOP") + ": " + string(global.currentLoop);
+        
+        var myTime = global.statRunTime;
+        var myTimeMinutes = myTime div 60;
+        var myTimeSeconds = myTime mod 60;
+        var myTimeString = string(myTimeMinutes) + 'm ' + string(myTimeSeconds);
+        
+        var endlessString3 = loc_key("HUD_ENDLESS_TIME") + ": " + myTimeString;
+        
+        draw_set_font(global.font_numberMedium);
+        draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
+        draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+        draw_text_dropoutline_ext_transformed(gameOverX,endlessY3,endlessString3,c_white,c_white,c_black,0.6,4,1,1,0,1);
+    }
+    
+    //Gameplay Hints
+    if (gameOverHint != '')
+    {
+        var hintY = height*0.6;
+        var hintString = loc_key("TIPS_TITLE") + ": " + gameOverHint;
+        
+        draw_set_font(global.font_numberSmall);
+        draw_set_colour(K_BETU_RED);
+        
+        draw_text_ext(gameOverX, hintY, hintString, 16, 720);
+    }
 }
 
 ///Draw Low Performance Window Pop Up
@@ -2842,12 +2520,6 @@ surface_reset_target();
 var surfaceXScale = window_get_width()/1920;
 var surfaceYScale = window_get_height()/1080;
 if (surface_exists(guiSurface)) draw_surface_ext(guiSurface, 0, 0, surfaceXScale, surfaceYScale, 0, c_white, 1);
-
-
-
-
-
-
 
 </string>
           </argument>

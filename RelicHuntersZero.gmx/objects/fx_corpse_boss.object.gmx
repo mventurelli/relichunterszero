@@ -65,10 +65,11 @@ if (instance_exists(obj_rocket_homing))
 }
 
 //Stats, Achievements &amp; Unlocks
-
 global.unlockEndless = true;
 
 global.statBossKills++;
+
+if ((global.statRunTime &lt; global.statRunBest || !global.statRunBest) &amp;&amp; (global.hasUsedCheckpoint == false)) global.statRunBest = global.statRunTime;
 
 achievement_give("ACHIEVEMENT_BEATGAME");
 

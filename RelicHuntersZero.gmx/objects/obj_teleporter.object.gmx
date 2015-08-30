@@ -223,7 +223,7 @@ if (buy) &amp;&amp; (!active)
     draw_text_outline(x-2,y+56,string(myPrice),color);
 }
 
-if (active)
+if (active) &amp;&amp; (room == room_start)
 {
     unlock_max = global.shop_size_1;
     unlock_current = (unlock_max - ds_list_size(global.shop_list_1));
@@ -246,11 +246,8 @@ if (active)
         unlock_current = (unlock_max - ds_list_size(global.shop_list_4));
     }
     
-    if (room == room_start)
-    {
-        draw_sprite(spr_unlock,0,x-18,y+56);
-        draw_text_outline(x-6,y+56,string(unlock_current)+' / '+string(unlock_max),c_white);
-    }
+    draw_sprite(spr_unlock,0,x-18,y+56);
+    draw_text_outline(x-6,y+56,string(unlock_current)+' / '+string(unlock_max),c_white);
 }
 
 //Draw Stage Feedback

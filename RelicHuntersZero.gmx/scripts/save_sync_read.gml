@@ -32,9 +32,12 @@ ini_open(working_directory + "\saveData.ini");
         p++;
     }
     
+    global.bountyEndless = ini_read_real('Temp','Bounty Endless',0);
+    global.currentLoop = ini_read_real('Temp','Loop',0);
     global.stage_current = ini_read_real('Temp','Stage',0);
     global.hasPickedWeapon = ini_read_real('Temp','WeaponPickedUp',0);
     global.hasUsedCheckpoint = ini_read_real('Temp','CheckpointUsed',0);
+    global.scoreEndless = ini_read_real('Temp','Score Endless',0);
     
     // Persistence
     
@@ -222,8 +225,12 @@ ini_open(working_directory + "\saveData.ini");
     global.statKills = ini_read_real('Stats','Kills',0);
     global.statTotalTime = ini_read_real('Stats','statTotalTime',0);
     global.statRunTime = ini_read_real('Stats','statRunTime',0);
+    global.statRunBest = ini_read_real('Stats','statRunBest',0);
+    global.statLongestRun = ini_read_real('Stats','statLongestRun',0);
     global.totalDigs = ini_read_real('Stats','totalDigs',0);
-
+    global.scoreEndlessBest = ini_read_real('Stats','scoreEndlessBest',0);
+    global.statBestLoop = ini_read_real('Stats','statBestLoop',0);
+    
     // End
     
     ini_close();

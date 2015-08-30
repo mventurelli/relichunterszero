@@ -25,7 +25,10 @@ ini_open(working_directory + "\saveData.ini");
 
     ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
     ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
-        
+    ini_write_real('Temp','Bounty Endless',global.bountyEndless);
+    ini_write_real('Temp','Loop',global.currentLoop);
+    ini_write_real('Temp','Score Endless',global.scoreEndless);
+    
     ini_write_real('Character','playerCount',global.playerCount);
         
     var p = 1;
@@ -213,7 +216,11 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Stats','Kills',global.statKills);
     ini_write_real('Stats','statTotalTime',global.statTotalTime);
     ini_write_real('Stats','statRunTime',global.statRunTime);
+    ini_write_real('Stats','statRunBest',global.statRunBest);
+    ini_write_real('Stats','statLongestRun',global.statLongestRun);
     ini_write_real('Stats','totalDigs',global.totalDigs);
+    ini_write_real('Stats','scoreEndlessBest',global.scoreEndlessBest);
+    ini_write_real('Stats','statBestLoop',global.statBestLoop);
     
     // End
 ini_close();

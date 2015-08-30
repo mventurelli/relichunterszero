@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="23" name="datafiles">
-    <datafiles number="23" name="fonts">
+  <datafiles number="24" name="datafiles">
+    <datafiles number="24" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>291055</size>
+      <size>296397</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -1139,6 +1139,14 @@
       <object>objects\class_lightsource</object>
       <object>objects\controller_menuButtons</object>
     </objects>
+    <objects name="Data Objects">
+      <object>objects\class_dataObject</object>
+      <object>objects\data_enemies</object>
+      <object>objects\data_items</object>
+      <object>objects\data_shop</object>
+      <object>objects\data_enemiesEndless</object>
+      <object>objects\data_itemsEndless</object>
+    </objects>
     <objects name="Player">
       <object>objects\class_player</object>
       <object>objects\class_gun</object>
@@ -1162,6 +1170,7 @@
         <object>objects\obj_sniper_rifle</object>
         <object>objects\obj_pistol_assault</object>
         <object>objects\obj_shotgun</object>
+        <object>objects\obj_shotgun_crude</object>
         <object>objects\obj_keytar</object>
         <object>objects\obj_shotgun_heavy</object>
         <object>objects\obj_submachinegun</object>
@@ -1514,6 +1523,7 @@
       <object>objects\obj_pickup_heavyammo</object>
       <object>objects\obj_pickup_grenade</object>
       <object>objects\obj_pickup_shotgun</object>
+      <object>objects\obj_pickup_shotgun_crude</object>
       <object>objects\obj_pickup_sawedoff</object>
       <object>objects\obj_pickup_keytar</object>
       <object>objects\obj_pickup_shotgun_heavy</object>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1215758111</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,17 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setup
-
-display = true;
-allowInput = false;
-alarm[0] = room_speed*0.7;
+            <string>///cleanUp list
+cleanUp = ds_list_create();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,80 +49,24 @@ alarm[0] = room_speed*0.7;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Allow Input
-allowInput = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Keep game paused until input is pressed
+            <string>///Clean and destroy
 
-if (allowInput) &amp;&amp; (display)
+if (ds_exists(cleanUp,ds_type_list)) 
 {
-    if keyboard_check_pressed(vk_anykey) || (mouse_check_button_pressed(mb_left)) display = false;
+    var target;
     
-    if (global.input[1] != K_INPUT_KEYBOARD)
+    while (!ds_list_empty(cleanUp)) 
     {
-        if (joy_check_any(global.input[1])) display = false;
+        target = ds_list_find_value(cleanUp, 0);
+        if (ds_exists(target,ds_type_list)) ds_list_destroy(target);
+        ds_list_delete(cleanUp,0);
     }
-    
-    if (global.playerCount == 2)
-    {
-        if (global.input[2] != K_INPUT_KEYBOARD)  if (joy_check_any(global.input[2])) display = false;
-    }
+
+    ds_list_destroy(cleanUp);
 }
 
-if (display)
-{
-    global.pause = 99;
-}
-else 
-{
-    show_debug_message("CARALHO");
-    global.pause = 9;
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Drawn by the GUI event @ controller_main
+
+instance_destroy();
 </string>
           </argument>
         </arguments>
