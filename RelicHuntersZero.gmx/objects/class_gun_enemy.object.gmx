@@ -155,9 +155,10 @@ if instance_exists(owner)
     if instance_exists(owner.ai_target)
     {
         image_angle = point_direction(x,y,owner.ai_target.x,owner.ai_target.y);
+        if owner.look_direction == 0 image_angle = image_angle+180;
     }
     
-    if owner.look_direction == 0 { image_xscale = -1; image_angle = image_angle+180; }
+    if owner.look_direction == 0 image_xscale = -1;
     if owner.look_direction == 1 image_xscale = 1; 
     
     depth = (owner.depth)-1;
