@@ -31,7 +31,7 @@ ammo_type = type_heavy;
 
 projectile_speed = 25;
 projectile_speed_decay = 0.4;
-projectile_damage = 12;
+projectile_damage = 10;
 projectile_range = 560;
 
 accuracy = 10;

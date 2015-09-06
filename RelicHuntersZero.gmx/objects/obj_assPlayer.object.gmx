@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Gameplay
 event_inherited();
-    playerName = "ASS";
+    playerName = "ACE";
     
     melee_damage = 75;
     
@@ -41,15 +41,15 @@ event_inherited();
     hp_max_relic = hp_max*2;
     
     
-    base_accuracy = 4;
+    base_accuracy = 3;
     //Weapon Skills, "1" is perfect, higher is worse
-    accPistol = 4;
-    accMachinegun = 4;
+    accPistol = 3;
+    accMachinegun = 2;
     accShotgun = 2;
-    accSniper = 9;
-    accSmg = 4;
-    accRocket = 8;
-    accRifle = 9;
+    accSniper = 5;
+    accSmg = 2;
+    accRocket = 6;
+    accRifle = 4;
     
     stamina_max = 100;
     stamina = stamina_max;
@@ -131,6 +131,7 @@ if global.weapon2[myPlayerId] != noone
     {
         weapon2 = instance_create(x,y,global.weapon2[myPlayerId]);
         weapon2.owner = id;
+        weapon2.weaponLevel = global.weapon2Level[myPlayerId];
         draw_gun(weapon2);
         if (room!=room_start) weapon2.ammo_current = global.weapon2_ammo[myPlayerId];
     }
@@ -139,6 +140,7 @@ if global.weapon2[myPlayerId] != noone
     {
         weapon1 = instance_create(x,y,global.weapon1[myPlayerId]);
         weapon1.owner = id;
+        weapon1.weaponLevel = global.weapon1Level[myPlayerId];
         draw_gun(weapon1);
         if (room!=room_start) weapon1.ammo_current = global.weapon1_ammo[myPlayerId];
     }

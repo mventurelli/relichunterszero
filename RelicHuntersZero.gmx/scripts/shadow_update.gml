@@ -128,8 +128,3 @@ if (global.shadows)
 
 
 
-
-
-
-
-

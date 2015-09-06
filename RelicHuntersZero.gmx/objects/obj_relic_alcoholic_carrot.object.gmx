@@ -56,7 +56,7 @@ relicDescription = loc_key("RELIC_ALCOHOLIC_LONG");
 event_inherited();
 if (global.relic_alcoholic1) &amp;&amp; (global.relic_alcoholic2) &amp;&amp; (global.relic_alcoholic3) &amp;&amp; (global.relic_alcoholic_carrot == 0)
 {
-    global.relic_alcoholic_carrot = 1;
+    if (global.gameMode == gamemode_adventure) global.relic_alcoholic_carrot = 1;
 }
 
 if (global.relic_alcoholic_carrot) active = true;
@@ -71,42 +71,15 @@ if (toggle)
 {
     toggle = false;
     
-    if (global.relic_alcoholic_carrot == 1)
-    {
-        freeSlot = -1;
-        
-        for (i=1; i&lt;4; i++)
-        {
-            if (global.relic_slot[i] == '')
-            {
-                freeSlot = i;
-                break;
-            }
-        }
-
-        if (freeSlot)
-        {
-            global.relic_slot[freeSlot] = object;
-            global.relic_alcoholic_carrot = 2;
-            audio_play_sound(sfx_relic_on,1,false);
-        }
-        else show_debug_message('No free slots, cannot equip Relic');
+    if (global.relic_alcoholic_carrot != 2){
+        var equip = relic_slot_equip(object);
+        if (equip) global.relic_alcoholic_carrot = 2;
+        else global.relic_alcoholic_carrot = 1;
     }
-    else
-    {
-        if (global.relic_alcoholic_carrot == 2) 
-        {
-            global.relic_alcoholic_carrot = 1;
-            audio_play_sound(sfx_relic_off,1,false);
-        }
-        //Free all slots that contain the object
-        for (i=1; i&lt;4; i++)
-        {
-            if (global.relic_slot[i] == object)
-            {
-                global.relic_slot[i] = '';
-            }
-        }
+    else{
+        global.relic_alcoholic_carrot = 1;
+        var unequip = relic_slot_free(object);
+        if (unequip) audio_play_sound(sfx_relic_off,1,false);
     }
 }
 </string>

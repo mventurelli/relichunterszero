@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="24" name="datafiles">
-    <datafiles number="24" name="fonts">
+  <datafiles number="35" name="datafiles">
+    <datafiles number="35" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>296397</size>
+      <size>344014</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -459,6 +459,7 @@
         <sprite>sprites\spr_redbarrel_hit</sprite>
       </sprites>
       <sprite>sprites\spr_shop</sprite>
+      <sprite>sprites\spr_shop2</sprite>
       <sprites name="Altars">
         <sprite>sprites\spr_altar_players</sprite>
         <sprite>sprites\spr_altar_relics</sprite>
@@ -475,21 +476,34 @@
     </sprites>
     <sprites name="Guns">
       <sprite>sprites\spr_assault_rifle</sprite>
+      <sprite>sprites\spr_rifle_relic</sprite>
+      <sprite>sprites\spr_assault_rifle_crude</sprite>
       <sprite>sprites\spr_boss_gun</sprite>
       <sprite>sprites\spr_flamethrower</sprite>
       <sprite>sprites\spr_highmag</sprite>
+      <sprite>sprites\spr_bouncer</sprite>
       <sprite>sprites\spr_keytar</sprite>
       <sprite>sprites\spr_machinegun</sprite>
       <sprite>sprites\spr_pistol</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
+      <sprite>sprites\spr_pistol_bouncer</sprite>
       <sprite>sprites\spr_pistol_heavy</sprite>
       <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_plasma</sprite>
+      <sprite>sprites\spr_pistol_relic</sprite>
       <sprite>sprites\spr_rocketlauncher</sprite>
+      <sprite>sprites\spr_rocketlauncher_relic</sprite>
       <sprite>sprites\spr_sawedoff</sprite>
       <sprite>sprites\spr_shotgun</sprite>
+      <sprite>sprites\spr_shotgun_relic</sprite>
+      <sprite>sprites\spr_shotgun_crude</sprite>
       <sprite>sprites\spr_shotgun_heavy</sprite>
+      <sprite>sprites\spr_smg_crude</sprite>
+      <sprite>sprites\spr_smg_plasma</sprite>
+      <sprite>sprites\spr_smg_relic</sprite>
       <sprite>sprites\spr_sniper_rifle</sprite>
+      <sprite>sprites\spr_sniper_relic</sprite>
+      <sprite>sprites\spr_sniper_ghost</sprite>
       <sprite>sprites\spr_submachinegun</sprite>
     </sprites>
     <sprites name="Bullets&amp;Effects">
@@ -574,6 +588,9 @@
       <sprite>sprites\spr_dynamic_relic</sprite>
       <sprite>sprites\spr_icon_health</sprite>
       <sprite>sprites\spr_icon_shield</sprite>
+      <sprite>sprites\spr_priceTag</sprite>
+      <sprite>sprites\spr_challengeCommon</sprite>
+      <sprite>sprites\spr_challengeUnique</sprite>
     </sprites>
     <sprites name="Items">
       <sprite>sprites\spr_pickup_health</sprite>
@@ -587,6 +604,44 @@
       <sprite>sprites\spr_coin_ground</sprite>
     </sprites>
     <sprites name="Player">
+      <sprites name="Ass">
+        <sprite>sprites\spr_ass_idle</sprite>
+        <sprite>sprites\spr_ass_dash</sprite>
+        <sprite>sprites\spr_ass_dash_fx</sprite>
+        <sprite>sprites\spr_ass_hit</sprite>
+        <sprite>sprites\spr_ass_death</sprite>
+        <sprite>sprites\spr_ass_sprint</sprite>
+        <sprite>sprites\spr_ass_walk</sprite>
+        <sprite>sprites\spr_ass_melee</sprite>
+        <sprite>sprites\spr_ass_dig</sprite>
+        <sprite>sprites\spr_ass_holo</sprite>
+        <sprite>sprites\spr_ass_balloon</sprite>
+      </sprites>
+      <sprites name="Biu">
+        <sprite>sprites\spr_biu_idle</sprite>
+        <sprite>sprites\spr_biu_dash</sprite>
+        <sprite>sprites\spr_biu_dash_fx</sprite>
+        <sprite>sprites\spr_biu_hit</sprite>
+        <sprite>sprites\spr_biu_death</sprite>
+        <sprite>sprites\spr_biu_sprint</sprite>
+        <sprite>sprites\spr_biu_walk</sprite>
+        <sprite>sprites\spr_biu_melee</sprite>
+        <sprite>sprites\spr_biu_dig</sprite>
+        <sprite>sprites\spr_biu_teleport_in</sprite>
+        <sprite>sprites\spr_biu_teleport_out</sprite>
+        <sprites name="Buckler">
+          <sprite>sprites\spr_buckler_dash</sprite>
+          <sprite>sprites\spr_buckler_idle</sprite>
+          <sprite>sprites\spr_buckler_hit</sprite>
+          <sprite>sprites\spr_buckler_melee</sprite>
+          <sprite>sprites\spr_buckler_sprint</sprite>
+          <sprite>sprites\spr_buckler_walk</sprite>
+        </sprites>
+        <sprite>sprites\spr_biu_holo</sprite>
+      </sprites>
+      <sprites name="Gunnar">
+        <sprite>sprites\spr_gunnar_idle</sprite>
+      </sprites>
       <sprites name="Jimmy">
         <sprite>sprites\spr_jimmy_idle</sprite>
         <sprite>sprites\spr_jimmy_walk</sprite>
@@ -623,6 +678,18 @@
           <sprite>sprites\spr_gloves_walk</sprite>
         </sprites>
       </sprites>
+      <sprites name="Punny">
+        <sprite>sprites\spr_punny_idle</sprite>
+        <sprite>sprites\spr_punny_dash</sprite>
+        <sprite>sprites\spr_punny_dash_fx</sprite>
+        <sprite>sprites\spr_punny_hit</sprite>
+        <sprite>sprites\spr_punny_death</sprite>
+        <sprite>sprites\spr_punny_sprint</sprite>
+        <sprite>sprites\spr_punny_walk</sprite>
+        <sprite>sprites\spr_punny_melee</sprite>
+        <sprite>sprites\spr_punny_dig</sprite>
+        <sprite>sprites\spr_punny_holo</sprite>
+      </sprites>
       <sprites name="Raff">
         <sprite>sprites\spr_raff_idle</sprite>
         <sprite>sprites\spr_raff_dash</sprite>
@@ -637,60 +704,16 @@
         <sprite>sprites\spr_raff_teleport_out</sprite>
         <sprite>sprites\spr_raff_holo</sprite>
       </sprites>
-      <sprites name="Biu">
-        <sprite>sprites\spr_biu_idle</sprite>
-        <sprite>sprites\spr_biu_dash</sprite>
-        <sprite>sprites\spr_biu_dash_fx</sprite>
-        <sprite>sprites\spr_biu_hit</sprite>
-        <sprite>sprites\spr_biu_death</sprite>
-        <sprite>sprites\spr_biu_sprint</sprite>
-        <sprite>sprites\spr_biu_walk</sprite>
-        <sprite>sprites\spr_biu_melee</sprite>
-        <sprite>sprites\spr_biu_dig</sprite>
-        <sprite>sprites\spr_biu_teleport_in</sprite>
-        <sprite>sprites\spr_biu_teleport_out</sprite>
-        <sprites name="Buckler">
-          <sprite>sprites\spr_buckler_dash</sprite>
-          <sprite>sprites\spr_buckler_idle</sprite>
-          <sprite>sprites\spr_buckler_hit</sprite>
-          <sprite>sprites\spr_buckler_melee</sprite>
-          <sprite>sprites\spr_buckler_sprint</sprite>
-          <sprite>sprites\spr_buckler_walk</sprite>
-        </sprites>
-        <sprite>sprites\spr_biu_holo</sprite>
+      <sprites name="Sae">
+        <sprite>sprites\spr_sae_idleShop</sprite>
       </sprites>
-      <sprites name="Punny">
-        <sprite>sprites\spr_punny_idle</sprite>
-        <sprite>sprites\spr_punny_dash</sprite>
-        <sprite>sprites\spr_punny_dash_fx</sprite>
-        <sprite>sprites\spr_punny_hit</sprite>
-        <sprite>sprites\spr_punny_death</sprite>
-        <sprite>sprites\spr_punny_sprint</sprite>
-        <sprite>sprites\spr_punny_walk</sprite>
-        <sprite>sprites\spr_punny_melee</sprite>
-        <sprite>sprites\spr_punny_dig</sprite>
-        <sprite>sprites\spr_punny_holo</sprite>
-      </sprites>
-      <sprites name="Ass">
-        <sprite>sprites\spr_ass_idle</sprite>
-        <sprite>sprites\spr_ass_dash</sprite>
-        <sprite>sprites\spr_ass_dash_fx</sprite>
-        <sprite>sprites\spr_ass_hit</sprite>
-        <sprite>sprites\spr_ass_death</sprite>
-        <sprite>sprites\spr_ass_sprint</sprite>
-        <sprite>sprites\spr_ass_walk</sprite>
-        <sprite>sprites\spr_ass_melee</sprite>
-        <sprite>sprites\spr_ass_dig</sprite>
-        <sprite>sprites\spr_ass_holo</sprite>
-        <sprite>sprites\spr_ass_balloon</sprite>
-      </sprites>
-      <sprite>sprites\spr_reload_char</sprite>
-      <sprite>sprites\spr_sprint</sprite>
       <sprite>sprites\spr_melee</sprite>
-      <sprite>sprites\spr_melee_mask</sprite>
       <sprite>sprites\spr_melee_gloves</sprite>
-      <sprite>sprites\spr_shovel_idle</sprite>
+      <sprite>sprites\spr_melee_mask</sprite>
+      <sprite>sprites\spr_reload_char</sprite>
       <sprite>sprites\spr_shovel_dig</sprite>
+      <sprite>sprites\spr_shovel_idle</sprite>
+      <sprite>sprites\spr_sprint</sprite>
     </sprites>
     <sprites name="Shield">
       <sprite>sprites\spr_shield_loop</sprite>
@@ -757,6 +780,11 @@
       <sprite>sprites\spr_yottabyte1</sprite>
       <sprite>sprites\spr_yottabyte2</sprite>
       <sprite>sprites\spr_yottabyte3</sprite>
+      <sprite>sprites\spr_pineapple_pie</sprite>
+      <sprite>sprites\spr_morning_star</sprite>
+      <sprite>sprites\spr_midnight_meal</sprite>
+      <sprite>sprites\spr_yottabyte_processor</sprite>
+      <sprite>sprites\spr_rabbit_foot</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_menu_button</sprite>
@@ -929,6 +957,7 @@
       <script>scripts\autoaim_angle.gml</script>
       <script>scripts\find_enemy_autoaim.gml</script>
       <script>scripts\pickup_from_shop.gml</script>
+      <script>scripts\projectile_bounce.gml</script>
     </scripts>
     <scripts name="AI">
       <script>scripts\ai_test_dash_chance.gml</script>
@@ -954,6 +983,8 @@
         <script>scripts\game_pause.gml</script>
         <script>scripts\game_unpause.gml</script>
         <script>scripts\char_state_initial.gml</script>
+        <script>scripts\relic_slot_equip.gml</script>
+        <script>scripts\relic_slot_free.gml</script>
       </scripts>
       <scripts name="Angles and Such">
         <script>scripts\angle_rotate.gml</script>
@@ -1144,6 +1175,7 @@
       <object>objects\data_enemies</object>
       <object>objects\data_items</object>
       <object>objects\data_shop</object>
+      <object>objects\data_shopEndless</object>
       <object>objects\data_enemiesEndless</object>
       <object>objects\data_itemsEndless</object>
     </objects>
@@ -1162,24 +1194,36 @@
       <object>objects\obj_buckler</object>
       <object>objects\fx_melee_arc</object>
       <objects name="Guns">
-        <object>objects\obj_sawedoff</object>
-        <object>objects\obj_pistol</object>
-        <object>objects\obj_pistol_jimmy</object>
-        <object>objects\obj_pistol_heavy</object>
-        <object>objects\obj_pistol_plasma</object>
-        <object>objects\obj_sniper_rifle</object>
-        <object>objects\obj_pistol_assault</object>
-        <object>objects\obj_shotgun</object>
-        <object>objects\obj_shotgun_crude</object>
-        <object>objects\obj_keytar</object>
-        <object>objects\obj_shotgun_heavy</object>
-        <object>objects\obj_submachinegun</object>
-        <object>objects\obj_highmag</object>
-        <object>objects\obj_machinegun</object>
         <object>objects\obj_assault_rifle</object>
+        <object>objects\obj_assault_rifle_crude</object>
         <object>objects\obj_bossGun</object>
-        <object>objects\obj_rocketlauncher</object>
         <object>objects\obj_flamethrower</object>
+        <object>objects\obj_highmag</object>
+        <object>objects\obj_bouncer</object>
+        <object>objects\obj_keytar</object>
+        <object>objects\obj_machinegun</object>
+        <object>objects\obj_pistol</object>
+        <object>objects\obj_pistol_assault</object>
+        <object>objects\obj_pistol_bouncer</object>
+        <object>objects\obj_pistol_heavy</object>
+        <object>objects\obj_pistol_jimmy</object>
+        <object>objects\obj_pistol_plasma</object>
+        <object>objects\obj_pistol_relic</object>
+        <object>objects\obj_rifle_relic</object>
+        <object>objects\obj_rocketlauncher</object>
+        <object>objects\obj_rocketlauncher_relic</object>
+        <object>objects\obj_sawedoff</object>
+        <object>objects\obj_shotgun</object>
+        <object>objects\obj_shotgun_relic</object>
+        <object>objects\obj_shotgun_crude</object>
+        <object>objects\obj_shotgun_heavy</object>
+        <object>objects\obj_smg_crude</object>
+        <object>objects\obj_smg_relic</object>
+        <object>objects\obj_smg_plasma</object>
+        <object>objects\obj_sniper_rifle</object>
+        <object>objects\obj_sniper_relic</object>
+        <object>objects\obj_sniper_ghost</object>
+        <object>objects\obj_submachinegun</object>
       </objects>
     </objects>
     <objects name="Enemies">
@@ -1206,6 +1250,15 @@
           <object>objects\obj_turtle3</object>
           <object>objects\obj_turtle3_sniper</object>
         </objects>
+        <objects name="Kamis">
+          <object>objects\obj_kamikazelite</object>
+          <object>objects\obj_kamikazelite_flying</object>
+          <object>objects\obj_kamikaze1</object>
+        </objects>
+        <objects name="Bosses">
+          <object>objects\obj_boss</object>
+          <object>objects\obj_boss_spawner</object>
+        </objects>
       </objects>
       <objects name="Guns">
         <object>objects\obj_pistol_enemy</object>
@@ -1220,16 +1273,11 @@
         <object>objects\obj_assaultrifle_boss</object>
         <object>objects\obj_rocketlauncher_boss</object>
       </objects>
-      <object>objects\obj_boss_spawner</object>
-      <object>objects\obj_boss</object>
       <object>objects\class_enemy_shooter</object>
       <object>objects\class_enemy_kamikaze</object>
       <object>objects\class_enemy_jumper</object>
       <object>objects\class_enemy</object>
       <object>objects\class_gun_enemy</object>
-      <object>objects\obj_kamikaze1</object>
-      <object>objects\obj_kamikazelite</object>
-      <object>objects\obj_kamikazelite_flying</object>
       <object>objects\obj_turtle_dummy</object>
       <object>objects\obj_turtle_dummy_immortal</object>
       <object>objects\obj_tentacle1</object>
@@ -1294,9 +1342,12 @@
         <object>objects\obj_swap_biu</object>
         <object>objects\obj_swap_punny</object>
         <object>objects\obj_swap_ass</object>
-        <object>objects\obj_ass_baloon</object>
+        <object>objects\class_balloon</object>
+        <object>objects\obj_ass_balloon</object>
+        <object>objects\obj_gunnar_balloon</object>
         <object>objects\obj_ass</object>
         <object>objects\obj_shop</object>
+        <object>objects\obj_shop2</object>
         <object>objects\obj_altar_players</object>
       </objects>
       <objects name="Relic Altars">
@@ -1527,24 +1578,37 @@
       <object>objects\obj_pickup_sawedoff</object>
       <object>objects\obj_pickup_keytar</object>
       <object>objects\obj_pickup_shotgun_heavy</object>
+      <object>objects\obj_pickup_shotgun_relic</object>
       <object>objects\obj_pickup_rocketlauncher</object>
+      <object>objects\obj_pickup_rocketlauncher_relic</object>
       <object>objects\obj_pickup_flamethrower</object>
       <object>objects\obj_pickup_bossGun</object>
       <object>objects\obj_pickup_gloves</object>
       <object>objects\obj_pickup_buckler</object>
       <object>objects\obj_pickup_pistol_assault</object>
+      <object>objects\obj_pickup_pistol_bouncer</object>
       <object>objects\obj_pickup_pistol_plasma</object>
       <object>objects\obj_pickup_pistol</object>
+      <object>objects\obj_pickup_pistol_relic</object>
       <object>objects\obj_pickup_pistol_jimmy</object>
       <object>objects\obj_pickup_pistol_heavy</object>
       <object>objects\obj_pickup_sniper_rifle</object>
+      <object>objects\obj_pickup_sniper_relic</object>
+      <object>objects\obj_pickup_sniper_ghost</object>
       <object>objects\obj_pickup_assault_rifle</object>
+      <object>objects\obj_pickup_rifle_relic</object>
+      <object>objects\obj_pickup_assault_rifle_crude</object>
       <object>objects\obj_pickup_submachinegun</object>
+      <object>objects\obj_pickup_smg_relic</object>
+      <object>objects\obj_pickup_smg_crude</object>
+      <object>objects\obj_pickup_smg_plasma</object>
       <object>objects\obj_pickup_machinegun</object>
       <object>objects\obj_pickup_highmag</object>
+      <object>objects\obj_pickup_bouncer</object>
     </objects>
     <objects name="Projectiles">
       <object>objects\class_projectile</object>
+      <object>objects\obj_rocket_relic</object>
       <object>objects\obj_rocket_homing</object>
       <object>objects\obj_rocket</object>
       <object>objects\obj_redbarrel_projectile</object>
@@ -1667,6 +1731,11 @@
       <object>objects\obj_relic_watchful_eye</object>
       <object>objects\obj_relic_dev_potion</object>
       <object>objects\obj_relic_yottabyte_drive</object>
+      <object>objects\obj_relic_morning_star</object>
+      <object>objects\obj_relic_pineapple_pie</object>
+      <object>objects\obj_relic_rabbit_foot</object>
+      <object>objects\obj_relic_midnight_meal</object>
+      <object>objects\obj_relic_yottabyte_processor</object>
       <object>objects\obj_relic_pineapple1</object>
       <object>objects\obj_relic_pineapple2</object>
       <object>objects\obj_relic_pineapple3</object>
@@ -1692,7 +1761,68 @@
       <object>objects\obj_relic_yottabyte2</object>
       <object>objects\obj_relic_yottabyte3</object>
     </objects>
-    <object>objects\testeCanto</object>
+    <objects name="Endless Shop">
+      <objects name="Classes and Slots">
+        <object>objects\obj_gunnar</object>
+        <object>objects\class_endshop_tiered</object>
+        <object>objects\class_endShop_weapon</object>
+        <object>objects\class_endShop_relic</object>
+        <object>objects\class_endShop_resource</object>
+        <object>objects\class_endShop_ammo</object>
+        <object>objects\class_slot_tiered</object>
+        <object>objects\obj_slot_tiered1</object>
+        <object>objects\obj_slot_tiered2</object>
+        <object>objects\obj_slot_tiered3</object>
+        <object>objects\obj_slot_resource</object>
+      </objects>
+      <objects name="Resources">
+        <object>objects\obj_endShop_health</object>
+        <object>objects\obj_endShop_overshield</object>
+        <object>objects\obj_endShop_ammoLight</object>
+        <object>objects\obj_endShop_ammoMedium</object>
+        <object>objects\obj_endShop_ammoGrenades</object>
+        <object>objects\obj_endShop_ammoHeavy</object>
+      </objects>
+      <objects name="Weapons">
+        <object>objects\obj_endShop_assaultPistol</object>
+        <object>objects\obj_endShop_assaultRifle</object>
+        <object>objects\obj_endShop_bouncer</object>
+        <object>objects\obj_endShop_bouncerPistol</object>
+        <object>objects\obj_endShop_crudeAssaultRifle</object>
+        <object>objects\obj_endShop_heavyPistol</object>
+        <object>objects\obj_endShop_heavyShotgun</object>
+        <object>objects\obj_endShop_highmag</object>
+        <object>objects\obj_endShop_machinegun</object>
+        <object>objects\obj_endShop_plasmaPistol</object>
+        <object>objects\obj_endShop_plasmaSMG</object>
+        <object>objects\obj_endShop_relicPistol</object>
+        <object>objects\obj_endShop_relicRifle</object>
+        <object>objects\obj_endShop_relicRocket</object>
+        <object>objects\obj_endShop_relicShotgun</object>
+        <object>objects\obj_endShop_relicSMG</object>
+        <object>objects\obj_endShop_relicSniper</object>
+        <object>objects\obj_endShop_rocketLauncher</object>
+        <object>objects\obj_endShop_sawedoff</object>
+        <object>objects\obj_endShop_shotgun</object>
+        <object>objects\obj_endShop_smg</object>
+        <object>objects\obj_endShop_sniperRifle</object>
+      </objects>
+      <objects name="Relics">
+        <object>objects\obj_endShop_alcoholicCarrot</object>
+        <object>objects\obj_endShop_crystalBacon</object>
+        <object>objects\obj_endShop_devPotion</object>
+        <object>objects\obj_endShop_infinityBattery</object>
+        <object>objects\obj_endShop_midnightBeer</object>
+        <object>objects\obj_endShop_midnightMeal</object>
+        <object>objects\obj_endShop_morningStar</object>
+        <object>objects\obj_endShop_pineapplePie</object>
+        <object>objects\obj_endShop_pineapplePudding</object>
+        <object>objects\obj_endShop_rabbitFoot</object>
+        <object>objects\obj_endShop_watchfulEye</object>
+        <object>objects\obj_endShop_yottabyteDrive</object>
+        <object>objects\obj_endShop_yottabyteProcessor</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>
@@ -1720,6 +1850,7 @@
     <room>rooms\level4_3</room>
     <room>rooms\room_boss</room>
     <room>rooms\room_shop</room>
+    <room>rooms\room_endShop</room>
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>

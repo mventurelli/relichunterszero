@@ -35,7 +35,8 @@ if faction == f_player &amp;&amp; instance_exists(other)
     {
         ds_list_add(damage_list,other.id);
         
-        if (global.relic_midnight_beer == 2) damage = round(damage*global.midnightDamageMultiplier ); //Midnight Beer
+        if (global.relic_midnight_beer == 2) damage += round(damage*global.midnightDamageMultiplier ); //Midnight Beer
+        if (global.relic_midnight_meal == 2) damage += round(damage*global.midnightDamageMultiplier ); //Midnight Meal
         
         other.aggro += other.aggro_add_hit;
         
@@ -45,6 +46,7 @@ if faction == f_player &amp;&amp; instance_exists(other)
         if (other.shield)
         {
             if (distance_travelled &gt; range) damage = round(damage/3);
+            if (global.challengeSupressor) damage = damage*2;
             other.energy -= damage;
             if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
             else audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
@@ -100,12 +102,14 @@ if faction == f_player &amp;&amp; instance_exists(other)
             hit.type = ammo_type;
         }
         
-        if (!piercing) || (other.hp)
+        if (piercing) &amp;&amp; (other.hp &lt;= 0) piercing--;
+        else if (bounce) &amp;&amp; (bounceMax &gt; bounceCurrent) projectile_bounce();
+        else if (!isBouncing)
         {
             ds_list_add(global.audio_cleaner,audio_emitter);
             instance_destroy();
         }
-        else piercing--;
+            
         damage = originalDamage;
     }
     
@@ -152,7 +156,8 @@ if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
         {
             ds_list_add(damage_list,other.id);
             
-            if (global.relic_midnight_beer == 2) ffDamage = round(ffDamage*global.midnightDamageMultiplier ); //Midnight Beer
+            if (global.relic_midnight_beer == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Beer
+            if (global.relic_midnight_meal == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Meal
             
             if (other.shield)
             {

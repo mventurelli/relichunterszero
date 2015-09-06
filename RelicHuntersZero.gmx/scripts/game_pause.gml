@@ -15,6 +15,11 @@ global.selectedButton[K_INPUT_ALL] = -1;
 if ds_exists(global.buttonGrid,ds_type_grid) ds_grid_destroy(global.buttonGrid);
 
 //Prepare player info
+//Don't let player execute input right after pause
+if (instance_exists(class_player)) {
+    with (class_player) inputLocked = true;
+}
+
 //Find the player with the correct playerID
 var char = noone;
 for (var i=0; i<instance_number(class_player); i++)

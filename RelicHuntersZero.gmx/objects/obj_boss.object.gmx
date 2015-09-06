@@ -40,13 +40,13 @@ coins = 1;
 
 energy_max = 999999;
 energy = 0;
-hp_max = 9600;
+hp_max = 6000;
 hp = hp_max;
 
 hpMilestoneCurrent = 0;
-hpMilestone1 = 9000;
-hpMilestone2 = 6000;
-hpMilestone3 = 3500;
+hpMilestone1 = 4500;
+hpMilestone2 = 3000;
+hpMilestone3 = 1500;
 
 critical_death = false;
 
@@ -646,6 +646,7 @@ if (fireRocket)
     var myRocket = instance_create(x,y,obj_rocket_homing);
     if (instance_exists(my_gun)) myRocket.direction = fireAngleModifier + my_gun.shoot_direction;
     myRocket.owner = id;
+    myRocket.damage = 160;
     fireRocket = false;
 }
 </string>

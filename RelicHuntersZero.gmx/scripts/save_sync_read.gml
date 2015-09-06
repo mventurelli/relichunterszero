@@ -3,19 +3,21 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','v1.11');
+    global.currentVersionNumber = ini_read_string('Version','Version','v1.2');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
     
     global.playerCount = ini_read_real('Character','playerCount',1);
     
-    var p = 1; while (p <= 2)//global.playerCount)
+    var p = 1; while (p <= 2)
     {
         global.playerAlive[p] = ini_read_real('Character','Alive'+string(p),true);
         global.character[p] = ini_read_real('Character','Character'+string(p),char_jimmy);
         global.weapon1[p] = ini_read_real('Character','Weapon1Player'+string(p),noone);
         global.weapon2[p] = ini_read_real('Character','Weapon2Player'+string(p),noone);
+        global.weapon1Level[p] = ini_read_real('Character','Weapon1LevelPlayer'+string(p),0);
+        global.weapon2Level[p] = ini_read_real('Character','Weapon2LevelPlayer'+string(p),0);
         global.weapon1_ammo[p] = ini_read_real('Character','Ammo1Player'+string(p),999);
         global.weapon2_ammo[p] = ini_read_real('Character','Ammo2Player'+string(p),999);
         global.hp[p] = ini_read_real('Character','Health'+string(p),999999);
@@ -32,8 +34,23 @@ ini_open(working_directory + "\saveData.ini");
         p++;
     }
     
+    //Endless Temp
     global.bountyEndless = ini_read_real('Temp','Bounty Endless',0);
     global.currentLoop = ini_read_real('Temp','Loop',0);
+    global.endPriceTier_lightAmmo = ini_read_real('Temp','endPriceTier_lightAmmo',0);
+    global.endPriceTier_mediumAmmo = ini_read_real('Temp','endPriceTier_mediumAmmo',0);
+    global.endPriceTier_heavyAmmo = ini_read_real('Temp','endPriceTier_heavyAmmo',0);
+    global.endPriceTier_grenades = ini_read_real('Temp','endPriceTier_grenades',0);
+    global.endPriceTier_overshield = ini_read_real('Temp','endPriceTier_overshield',0);
+    global.endPriceTier_health = ini_read_real('Temp','endPriceTier_health',0);
+    global.endTierSlot1 = ini_read_real('Temp','endTierSlot1',1);
+    global.endTierSlot2 = ini_read_real('Temp','endTierSlot2',1);
+    global.endTierSlot3 = ini_read_real('Temp','endTierSlot3',1);
+    global.endTierItem1 = ini_read_real('Temp','endTierItem1',noone);
+    global.endTierItem2 = ini_read_real('Temp','endTierItem2',noone);
+    global.endTierItem3 = ini_read_real('Temp','endTierItem3',noone);
+    
+    //Temp
     global.stage_current = ini_read_real('Temp','Stage',0);
     global.hasPickedWeapon = ini_read_real('Temp','WeaponPickedUp',0);
     global.hasUsedCheckpoint = ini_read_real('Temp','CheckpointUsed',0);
@@ -126,7 +143,37 @@ ini_open(working_directory + "\saveData.ini");
     global.relic_dev1 = ini_read_real('Relics','dev1',0);
     global.relic_dev2 = ini_read_real('Relics','dev2',0);
     global.relic_dev3 = ini_read_real('Relics','dev3',0);
+    
+    global.relic_morning_star = ini_read_real('Relics','morning_star',0);
+    global.relic_pineapple_pie = ini_read_real('Relics','pineapple_pie',0);
+    global.relic_rabbit_foot = ini_read_real('Relics','rabbit_foot',0);
+    global.relic_midnight_meal = ini_read_real('Relics','midnight_meal',0);
+    global.relic_yottabyte_processor = ini_read_real('Relics','yottabyte_processor',0);
    
+    //Challenges
+    global.challengeSteroids = ini_read_real('Challenges','challengeSteroids',0);
+    global.challengeWanted = ini_read_real('Challenges','challengeWanted',0);
+    global.challengeHighTech = ini_read_real('Challenges','challengeHighTech',0);
+    global.challengeLightFocus = ini_read_real('Challenges','challengeLightFocus',0);
+    global.challengeMediumFocus = ini_read_real('Challenges','challengeMediumFocus',0);
+    global.challengeHeavyFocus = ini_read_real('Challenges','challengeHeavyFocus',0);
+    global.challengeReinforcements = ini_read_real('Challenges','challengeReinforcements',0);
+        
+    global.challengeHunger = ini_read_real('Challenges','challengeHunger',0);
+    global.challengeThirst = ini_read_real('Challenges','challengeThirst',0);
+    global.challengeOvercharge = ini_read_real('Challenges','challengeOvercharge',0);
+    global.challengeMedieval = ini_read_real('Challenges','challengeMedieval',0);
+    global.challengeCatapult = ini_read_real('Challenges','challengeCatapult',0);
+    global.challengeDucanWeapons = ini_read_real('Challenges','challengeDucanWeapons',0);
+    global.challengeHeavyBurden = ini_read_real('Challenges','challengeHeavyBurden',0);
+    global.challengeSupressor = ini_read_real('Challenges','challengeSupressor',0);
+    global.challengeBloodlust = ini_read_real('Challenges','challengeBloodlust',0);
+    global.challengeJaws = ini_read_real('Challenges','challengeJaws',0);
+    global.challengeCountdown = ini_read_real('Challenges','challengeCountdown',0);
+    
+    
+    
+    
     // Game Progression
     
     global.tutorial_done = ini_read_real('Ass','tutorial',0);

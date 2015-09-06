@@ -70,6 +70,7 @@ part_emitter_burst(global.smoke_system, smoke_emitter, smoke_particle, 1);
           <argument>
             <kind>1</kind>
             <string>///Main Shit
+immortalTimer = room_speed*0.1;
 damage = 0;
 radius = 75;
 range = 0;
@@ -157,6 +158,7 @@ if (!global.pause)
         speed_reset = false;
     }
     
+    immortalTimer--;
     image_angle = direction;
     speed -= decay;
     if (speed &gt; maxSpeed) speed = maxSpeed;
@@ -263,7 +265,7 @@ if (explode)
           <argument>
             <kind>1</kind>
             <string>///Explode = true
-explode = true;
+if (!immortalTimer) explode = true;
 </string>
           </argument>
         </arguments>
@@ -287,7 +289,7 @@ explode = true;
           <argument>
             <kind>1</kind>
             <string>///Explode = true
-explode = true;
+if (!immortalTimer) explode = true;
 </string>
           </argument>
         </arguments>
@@ -311,8 +313,7 @@ explode = true;
           <argument>
             <kind>1</kind>
             <string>///Explode = true
-if faction == f_player
-explode = true;
+if (!immortalTimer) &amp;&amp; (faction == f_player) explode = true;
 </string>
           </argument>
         </arguments>
@@ -336,8 +337,7 @@ explode = true;
           <argument>
             <kind>1</kind>
             <string>///Explode = true
-if faction == f_enemy
-explode = true;
+if (!immortalTimer) &amp;&amp; (faction == f_enemy) explode = true;
 </string>
           </argument>
         </arguments>
@@ -363,7 +363,7 @@ explode = true;
             <string>///Main Draw
 
 //Draw
-draw_sprite_ext(sprite_index,image_index,drawX,drawY,1,1,image_angle,c_white,1);
+draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,c_white,1);
 </string>
           </argument>
         </arguments>

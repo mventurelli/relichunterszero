@@ -39,6 +39,16 @@ distance_travelled = 0;
 allowPrecision = true;
 piercing = 0;
 
+bounce = false;
+bounceMax = 1;
+bounceCurrent = 0;
+
+isBouncing = false;
+bounceTime = room_speed*0.1;
+bounceTimeCurrent = 0;
+
+goesThroughWalls = false;
+
 myAlpha = 1;
 fade = 0.2;
 
@@ -153,6 +163,37 @@ if (playLoop)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bounce Control
+
+if (isBouncing)
+{
+    if (bounceTimeCurrent &lt; bounceTime) bounceTimeCurrent++;
+    else
+    {
+        isBouncing = false;
+        bounceTimeCurrent = 0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_wall">
       <action>
@@ -171,8 +212,8 @@ if (playLoop)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    //if (faction == f_enemy) other.hp -= damage*2;
-    //else other.hp -= damage;
+            <string>if (!goesThroughWalls)
+{
     
     other.hp -= damage;
     other.shake_direction = direction;
@@ -184,7 +225,11 @@ if (playLoop)
     {
         piercing--;
     }
-    else 
+    else if (bounce) &amp;&amp; (bounceMax &gt; bounceCurrent)
+    {
+        projectile_bounce();
+    }
+    else if (!isBouncing)
     {
         ds_list_destroy(damage_list);
         ds_list_add(global.audio_cleaner,audio_emitter);
@@ -195,7 +240,7 @@ if (playLoop)
         }
         instance_destroy();
     }
-
+}
 </string>
           </argument>
         </arguments>
@@ -218,15 +263,26 @@ if (playLoop)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-ds_list_destroy(damage_list);
-ds_list_add(global.audio_cleaner,audio_emitter);
-if (!instance_exists(hit)) &amp;&amp; (global.count_particles &lt; global.max_particles)
+            <string>///Bounce or Die
+if (!goesThroughWalls)
 {
-    hit = instance_create(x,y,fx_hit);
-    hit.type = ammo_type;
+    if (bounce &amp;&amp; bounceMax &gt; bounceCurrent)
+    {
+        projectile_bounce();
+    }
+    else if (!isBouncing)
+    {
+        
+        ds_list_destroy(damage_list);
+        ds_list_add(global.audio_cleaner,audio_emitter);
+        if (!instance_exists(hit)) &amp;&amp; (global.count_particles &lt; global.max_particles)
+        {
+            hit = instance_create(x,y,fx_hit);
+            hit.type = ammo_type;
+        }
+        instance_destroy();
+    }
 }
-instance_destroy();
 </string>
           </argument>
         </arguments>

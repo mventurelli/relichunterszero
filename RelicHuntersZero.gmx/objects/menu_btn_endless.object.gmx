@@ -28,7 +28,7 @@
             <string>///Button Config
 
 event_inherited();
-isAvailable = false;
+isAvailable = true;
 labelString = loc_key("MAINMENU_ENDLESS");
 
 

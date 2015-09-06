@@ -240,7 +240,8 @@ if (myTime &gt;= life_time)
 if (vertical_speed_start &lt; interactive_speed) &amp;&amp; (instance_exists(other))
 {
     var myScore = 10;
-    if (global.character[1] == char_ass || global.character[2] == char_ass) myScore = 20;
+    if (global.character[1] == char_ass || global.character[2] == char_ass) myScore += 12;
+    if (global.relic_morning_star == 2) myScore += 12;
     
     if (global.gameMode == gamemode_adventure) global.score_total += myScore;
     else if (global.gameMode == gamemode_endless) 

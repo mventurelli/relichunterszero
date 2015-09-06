@@ -109,43 +109,43 @@ switch (room)
         break;
     
     case level1_3:
-        ds_list_add(itemPool, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_grenade_1);
+        ds_list_add(itemPool, item_starterammo_1, item_starterammo_1, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_grenade_1,item_starterhealth_1,item_starteraid_1);
         break;    
 
     case level2_1:
-        ds_list_add(itemPool, item_starterammo_1, item_starteraid_1, item_mediumammo_1, item_starteraid_1);
+        ds_list_add(itemPool, item_starterammo_1, item_starteraid_1, item_mediumammo_1, item_starteraid_1,item_starterhealth_1,item_starteraid_1);
         break;
         
     case level2_2:
-        ds_list_add(itemPool, item_starterweapon_1, item_starterammo_1, item_starterammo_1, item_starteraid_1, item_starteraid_1);
+        ds_list_add(itemPool, item_starterweapon_1, item_starterammo_1, item_starterammo_1, item_starteraid_1, item_starteraid_1,item_starterhealth_1,item_starteraid_1);
         break;
         
     case level2_3:
-        ds_list_add(itemPool, item_mediumweapon_1, item_starterammo_1, item_mediumammo_1, item_grenade_1, item_starteraid_1, item_grenade_1);
+        ds_list_add(itemPool, item_mediumweapon_1, item_starterammo_1, item_mediumammo_1, item_grenade_1, item_starteraid_1, item_grenade_1,item_starterhealth_1,item_starteraid_1);
         break;
         
     case level3_1:
-        ds_list_add(itemPool, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_starteraid_1, item_starteraid_1, item_grenade_1);
+        ds_list_add(itemPool, item_starterammo_1, item_mediumammo_1, item_starteraid_1, item_starteraid_1, item_starteraid_1, item_grenade_1,item_starteraid_1);
         break;
         
     case level3_2:
-        ds_list_add(itemPool, item_starterweapon_1, item_starteraid_1, item_starterhealth_1, item_grenade_1, item_starterammo_1, item_grenade_1);
+        ds_list_add(itemPool, item_starterweapon_1, item_starteraid_1, item_starterhealth_1, item_grenade_1, item_starterammo_1, item_grenade_1,item_starteraid_1);
         break;
         
     case level3_3:
-        ds_list_add(itemPool, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_starteraid_1, item_superweapon_1, item_starteraid_1, item_grenade_1);
+        ds_list_add(itemPool, item_mediumammo_1, item_mediumammo_1, item_mediumammo_1, item_starteraid_1, item_superweapon_1, item_starteraid_1, item_grenade_1,item_starteraid_1,item_starterhealth_1);
         break;
     
     case level4_1:
-        ds_list_add(itemPool, item_heavyweapon_1, item_heavyweapon_2, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_endgameaid_1, item_starteraid_1);
+        ds_list_add(itemPool, item_heavyweapon_1, item_heavyweapon_2, item_heavyammo_1, item_heavyammo_1, item_heavyammo_1, item_endgameaid_1, item_starteraid_1,item_starterhealth_1,item_starteraid_1);
         break;
         
     case level4_2:
-        ds_list_add(itemPool, item_heavyammo_1, item_mediumammo_1, item_starteraid_1, item_endgameaid_1, item_grenade_1, item_starterammo_1, item_mediumammo_1);
+        ds_list_add(itemPool, item_heavyammo_1, item_mediumammo_1, item_starteraid_1, item_endgameaid_1, item_grenade_1, item_starterammo_1, item_mediumammo_1,item_starterhealth_1,item_starteraid_1);
         break;
         
     case level4_3:
-        ds_list_add(itemPool, item_rocketlauncher_1, item_heavyammo_1, item_heavyammo_1, item_mediumammo_1, item_endgameaid_1, item_grenade_1, item_mediumammo_1, item_starterammo_1);
+        ds_list_add(itemPool, item_rocketlauncher_1, item_heavyammo_1, item_heavyammo_1, item_mediumammo_1, item_endgameaid_1, item_grenade_1, item_mediumammo_1, item_starterammo_1,item_starterhealth_1);
         break;
         
     case room_boss:

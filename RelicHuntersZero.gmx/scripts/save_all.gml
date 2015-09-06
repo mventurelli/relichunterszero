@@ -25,10 +25,24 @@ ini_open(working_directory + "\saveData.ini");
 
     ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
     ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
+    
     ini_write_real('Temp','Bounty Endless',global.bountyEndless);
     ini_write_real('Temp','Loop',global.currentLoop);
     ini_write_real('Temp','Score Endless',global.scoreEndless);
-    
+    ini_write_real('Temp','endPriceTier_lightAmmo',global.endPriceTier_lightAmmo);
+    ini_write_real('Temp','endPriceTier_mediumAmmo',global.endPriceTier_mediumAmmo);
+    ini_write_real('Temp','endPriceTier_heavyAmmo',global.endPriceTier_heavyAmmo);
+    ini_write_real('Temp','endPriceTier_grenades',global.endPriceTier_grenades);
+    ini_write_real('Temp','endPriceTier_overshield',global.endPriceTier_overshield);
+    ini_write_real('Temp','endPriceTier_health',global.endPriceTier_health);
+    ini_write_real('Temp','endTierSlot1',global.endTierSlot1);
+    ini_write_real('Temp','endTierSlot2',global.endTierSlot2);
+    ini_write_real('Temp','endTierSlot3',global.endTierSlot3);
+    ini_write_real('Temp','endTierItem1',global.endTierItem1);
+    ini_write_real('Temp','endTierItem2',global.endTierItem2);
+    ini_write_real('Temp','endTierItem3',global.endTierItem3);
+
+        
     ini_write_real('Character','playerCount',global.playerCount);
         
     var p = 1;
@@ -52,6 +66,7 @@ ini_open(working_directory + "\saveData.ini");
             if instance_exists(curPlayer.weapon1)
             {
                 ini_write_real('Character','Weapon1Player'+string(playerId),curPlayer.weapon1.object);
+                ini_write_real('Character','Weapon1LevelPlayer'+string(playerId),curPlayer.weapon1.weaponLevel);
                 ini_write_real('Character','Ammo1Player'+string(playerId),curPlayer.weapon1.ammo_current);
             }
             else ini_write_real('Character','Weapon1Player'+string(playerId),noone);
@@ -59,6 +74,7 @@ ini_open(working_directory + "\saveData.ini");
             if instance_exists(curPlayer.weapon2)
             {
                 ini_write_real('Character','Weapon2Player'+string(playerId),curPlayer.weapon2.object);
+                ini_write_real('Character','Weapon2LevelPlayer'+string(playerId),curPlayer.weapon2.weaponLevel);
                 ini_write_real('Character','Ammo2Player'+string(playerId),curPlayer.weapon2.ammo_current);
             }
             else ini_write_real('Character','Weapon2Player'+string(playerId),noone);
@@ -161,11 +177,37 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Relics','dev2',global.relic_dev2);
         ini_write_real('Relics','dev3',global.relic_dev3);
         
+        ini_write_real('Relics','morning_star',global.relic_morning_star);
+        ini_write_real('Relics','pineapple_pie',global.relic_pineapple_pie);
+        ini_write_real('Relics','rabbit_foot',global.relic_rabbit_foot);
+        ini_write_real('Relics','midnight_meal',global.relic_midnight_meal);
+        ini_write_real('Relics','yottabyte_processor',global.relic_yottabyte_processor);
+       
         ini_write_real('Temp','Stage',global.stage_current);
         
         if (room != room_start) && (room != room_tutorial) ini_write_real('Ass','first_stage',1);
         ini_write_real('Ass','shop_visits',global.shop_visits);
 
+    //Challenges
+    ini_write_real('Challenges','challengeSteroids',global.challengeSteroids);
+    ini_write_real('Challenges','challengeWanted',global.challengeWanted);
+    ini_write_real('Challenges','challengeHighTech',global.challengeHighTech);
+    ini_write_real('Challenges','challengeLightFocus',global.challengeLightFocus);
+    ini_write_real('Challenges','challengeMediumFocus',global.challengeMediumFocus);
+    ini_write_real('Challenges','challengeHeavyFocus',global.challengeHeavyFocus);
+    ini_write_real('Challenges','challengeReinforcements',global.challengeReinforcements);
+    
+    ini_write_real('Challenges','challengeHunger',global.challengeHunger);
+    ini_write_real('Challenges','challengeThirst',global.challengeThirst);
+    ini_write_real('Challenges','challengeOvercharge',global.challengeOvercharge);
+    ini_write_real('Challenges','challengeMedieval',global.challengeMedieval);
+    ini_write_real('Challenges','challengeCatapult',global.challengeCatapult);
+    ini_write_real('Challenges','challengeDucanWeapons',global.challengeDucanWeapons);
+    ini_write_real('Challenges','challengeHeavyBurden',global.challengeHeavyBurden);
+    ini_write_real('Challenges','challengeSupressor',global.challengeSupressor);
+    ini_write_real('Challenges','challengeBloodlust',global.challengeBloodlust);
+    ini_write_real('Challenges','challengeJaws',global.challengeJaws);
+    ini_write_real('Challenges','challengeCountdown',global.challengeCountdown);
     
     // Game Options
     ini_write_real('Quality','reflections',global.reflections_toggle);

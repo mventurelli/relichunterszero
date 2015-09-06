@@ -246,7 +246,7 @@ if (!global.persistent_toggle) global.persistent_objects = false;
 else global.persistent_objects = true;
 
 // SUPER DISGUSTING HACK GO!
-if (room == room_start) || (room == room_shop) || (room == room_tutorial) || (room == level3_1) || (room == level3_2) || (room == level3_3)
+if (room == room_start) || (room == room_shop) || (room == room_shop) || (room == room_tutorial) || (room == level3_1) || (room == level3_2) || (room == level3_3) || (room == room_endShop)
 {
     global.shadows = false;
     if (global.reflections_toggle) global.reflections = true;

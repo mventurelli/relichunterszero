@@ -26,10 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///Main Shit from class_gun
-name = "Gloves";
+name = loc_key("WPNAME_GLOVES");
 owner = noone;
 isActive = true;
 object = obj_gloves;
+
+weaponLevel = 0;
+storeOriginalDamage = -1;
+storeOriginalName = '';
 
 shake_amount = 0;
 
@@ -80,6 +84,50 @@ reflection_object_setup(0,-1,image_index);
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Weapon Level
+if (instance_exists(owner)){
+    if (!storeOriginalDamage) || (storeOriginalName == '') {
+        projectile_damage = owner.melee_damage_gloves;
+        weaponLevelBonus[0] = 0;
+        weaponLevelBonus[1] = 0.25*projectile_damage;
+        weaponLevelBonus[2] = 0.5*projectile_damage;
+        weaponLevelBonus[3] = 0.75*projectile_damage;
+        weaponLevelBonus[4] = 1.0*projectile_damage;
+        weaponLevelBonus[5] = 1.25*projectile_damage;
+        weaponLevelBonus[6] = 1.5*projectile_damage;
+        weaponLevelBonus[7] = 1.75*projectile_damage;
+        weaponLevelBonus[8] = 2*projectile_damage;
+        weaponLevelBonus[9] = 3*projectile_damage;
+        
+        storeOriginalDamage = projectile_damage;
+        storeOriginalName = name;
+    }
+    else {
+        projectile_damage = round(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
+        if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
+        owner.melee_damage_gloves = projectile_damage;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

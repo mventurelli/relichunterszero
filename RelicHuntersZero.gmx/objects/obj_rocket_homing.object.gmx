@@ -53,7 +53,9 @@ angleDiffMin = 5;
 curveDistanceMax = 1200;
 curveDistanceMin = 100;
 
-curveTarget = instance_nearest(x,y,class_player);
+curveTarget = noone;
+
+
 </string>
           </argument>
         </arguments>
@@ -80,7 +82,11 @@ curveTarget = instance_nearest(x,y,class_player);
 
 event_inherited();
 
-if (faction == f_enemy)
+var myTargetType = -1;
+if (faction == f_enemy) myTargetType = class_player;
+else if (faction == f_player) myTargetType = class_enemy;
+
+if (myTargetType != -1)
 {
     if (curveRatio &gt; curveRatioMin) curveRatio -= curveRatioDecay
     
@@ -98,7 +104,10 @@ if (faction == f_enemy)
             direction += rotationDirection * (curveRatio);
         }
     }
-    else curveTarget = instance_nearest(x,y,class_player);
+    else {
+        if (faction == f_enemy) curveTarget = instance_nearest(x,y,myTargetType);
+        else curveTarget = find_enemy_autoaim(x,y,direction,180,range);
+    }
     
     if (speed &gt; maxSpeed) speed = maxSpeed;
 }

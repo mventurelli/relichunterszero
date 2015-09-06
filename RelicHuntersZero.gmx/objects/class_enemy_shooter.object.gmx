@@ -129,6 +129,7 @@ firing = false;
 
 fire_range = 350;
 
+catapultApplied = false;
 grenade_count = 99999;
 grenade_count_max = 99999;
 my_gun = noone;
@@ -160,6 +161,33 @@ audio_emitter_gain(audio_emitter,global.soundVolume);
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Challenges
+if (global.challengeCatapult) &amp;&amp; (!catapultApplied) {
+    grenade_count_max = grenade_count_max * global.challengeCatapultMultiplier;
+    grenade_count = grenade_count_max;
+    ai_grenade_chance = ai_grenade_chance * 2 * global.challengeCatapultMultiplier;
+    catapultApplied = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>408</id>
@@ -218,7 +246,6 @@ else image_xscale = -1;
 //Hit Taken
 if (hit_taken)
 {   
-    
     energy_regen_time_current = 0;
     
     if (shield)
@@ -320,7 +347,7 @@ if hp &lt;= 0
     
     if (drop_gun)
     {
-        if (random(1)&lt;=drop_gun_chance) instance_create(x,y,drop_gun);
+        if (random(1)&lt;=drop_gun_chance) &amp;&amp; (global.gameMode == gamemode_adventure) instance_create(x,y,drop_gun);
         else 
         {
             if (drop_gun == obj_pickup_pistol) broken_gun = spr_broken_pistol;

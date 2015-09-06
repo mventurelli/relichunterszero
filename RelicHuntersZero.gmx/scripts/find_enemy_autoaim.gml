@@ -27,10 +27,9 @@ if instance_exists(class_enemy)
 
         testAngle = point_direction(xx+lengthdir_x(testDistance-global.precisionDistance,aimAngle),yy+lengthdir_y(testDistance-global.precisionDistance,aimAngle),testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]);
         
-        //if (testAngle <= maxAngle)
         if ((abs(angle_difference(aimAngle,testAngle))) <= maxAngle)
         {
-            show_debug_message('Auto-Aim Target found! Aim is '+string(aimAngle)+',Enemy is '+ string(point_direction(xx, yy, testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]))+'And difference is '+string(testAngle));
+            //show_debug_message('Auto-Aim Target found! Aim is '+string(aimAngle)+',Enemy is '+ string(point_direction(xx, yy, testEnemyBBoxCenter[0], testEnemyBBoxCenter[1]))+'And difference is '+string(testAngle));
             ds_priority_add(priorityList, testEnemy, testAngle);
         }
     }

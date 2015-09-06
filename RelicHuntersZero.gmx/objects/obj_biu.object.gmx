@@ -31,6 +31,7 @@ event_inherited();
     playerName = "BIU";
     
     melee_damage = 150;
+    melee_stamina_cost = 15;
     
     energy_max = 0;
     energy_max_regular = energy_max;
@@ -137,12 +138,14 @@ if global.weapon2[myPlayerId] != noone
             instance_create(x,y,obj_buckler);
             weapon2 = obj_buckler;
             weapon2.owner = id;
+            weapon2.weaponLevel = global.weapon2Level[myPlayerId];
             draw_gun(weapon2);
         }
         else
         {
             weapon2 = instance_create(x,y,global.weapon2[myPlayerId]);
             weapon2.owner = id;
+            weapon2.weaponLevel = global.weapon2Level[myPlayerId];
             draw_gun(weapon2);
             weapon2.ammo_current = global.weapon2_ammo[myPlayerId];
         }
@@ -156,12 +159,14 @@ if global.weapon2[myPlayerId] != noone
             instance_create(x,y,obj_buckler);
             weapon1 = obj_buckler;
             weapon1.owner = id;
+            weapon1.weaponLevel = global.weapon1Level[myPlayerId];
             draw_gun(weapon1);
         }
         else
         {
             weapon1 = instance_create(x,y,global.weapon1[myPlayerId]);
             weapon1.owner = id;
+            weapon1.weaponLevel = global.weapon1Level[myPlayerId];
             draw_gun(weapon1);
             weapon1.ammo_current = global.weapon1_ammo[myPlayerId];
         }

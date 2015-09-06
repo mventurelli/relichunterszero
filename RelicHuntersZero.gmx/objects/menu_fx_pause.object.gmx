@@ -39,7 +39,7 @@ myFont2 = global.font_menuSmall;
 myText2 = 'I AM ERROR';
 
 if (room == room_start) || (room==room_tutorial) myText2 = loc_key("HUD_SPACEHEART");
-if (room == room_shop) myText2 = loc_key("HUD_SHOP");
+if (room == room_shop) || (room == room_endShop) myText2 = loc_key("HUD_SHOP");
 if (room == level1_1) myText2 = loc_key("HUD_STAGE") + " " + '1 - 1';
 if (room == level1_2) myText2 = loc_key("HUD_STAGE") + " " + '1 - 2';
 if (room == level1_3) myText2 = loc_key("HUD_STAGE") + " " + '1 - 3';

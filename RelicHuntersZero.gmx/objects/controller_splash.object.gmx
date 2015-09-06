@@ -26,22 +26,29 @@
           <argument>
             <kind>1</kind>
             <string>///Bootstrap
+randomize();
 
 // Sync Save
 save_sync_read();
 screen_update();
 
 //Version
-global.currentVersionNumber = "v1.11";
+global.currentVersionNumber = "v1.2";
 
 //Multiplayer &amp; Mode
 global.playerCount = 1;
 global.gameMode = gamemode_adventure;
+global.currentLoop = 0;
 
-//Sync Version &amp; Multiplayer
+//Global Data Structures
+global.challengeList = ds_list_create();
+
+//Sync 
 ini_open(working_directory + "\saveData.ini");
 ini_write_string('Version','Version',global.currentVersionNumber);
 ini_write_real('Character','playerCount',global.playerCount);
+ini_write_real('Temp','Loop',global.currentLoop);
+
 ini_close();
 
 //Setup

@@ -26,8 +26,11 @@ if instance_exists(owner)
                 projectile.range = projectile_range;
                 projectile.push_power = projectile_power;
                 projectile.piercing = projectile_piercing;
+                projectile.bounce = projectileBounce;
+                projectile.bounceMax = projectileBouceMax;
                 projectile.ammo_type = ammo_type;
                 projectile.allowPrecision = allowPrecision;
+                projectile.goesThroughWalls = goesThroughWalls;
                 projectile.owner = owner;
                             
                 var precision;
@@ -38,7 +41,13 @@ if instance_exists(owner)
                             
                 projectile.faction = f_player;
                 projectile.type = shot_type;
-                projectile.damage = projectile_damage;
+                
+                var damageBonus = 0;
+                if (ammo_type == type_light) damageBonus += round(projectile_damage * (global.challengeLightFocus*global.challengeLightFocusMultiplier));
+                if (ammo_type == type_medium) damageBonus += round(projectile_damage * (global.challengeMediumFocus*global.challengeMediumFocusMultiplier));
+                if (ammo_type == type_heavy) damageBonus += round(projectile_damage * (global.challengeHeavyFocus*global.challengeHeavyFocusMultiplier));
+                if (global.challengeMedieval) damageBonus -= round(projectile_damage * global.challengeMedievalPenalty);
+                projectile.damage = projectile_damage + damageBonus;
             }
             
             add_screen_shake(shake_amount,shoot_direction+180,false);

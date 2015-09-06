@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1215752191</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>class_balloon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,21 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Text Initialization
-image_speed = 0.2;
-drawSelf = true;
-draw_stuff = false;
-
-hideForPlayer = false;
-
-myAlpha = 1;
-targetAlpha = 1;
-alphaSpeed = 0.04;
-alphaOrientation = -1;
-
-text_speed = 0.5;
-text_count = 0;
-myText = '';
+            <string>///Ass Text Initialization
+event_inherited();
 
 //Audio
 audio_emitter = audio_emitter_create();
@@ -111,7 +98,7 @@ if (room == room_start)
     
 }
 
-if (room == room_shop)
+if (room == room_shop) || (room == room_endShop) 
 {
     if (global.shop_visits &lt;= 1) myTextTarget = loc_key("ASS_SHOP1");
     if (global.shop_visits == 2) myTextTarget = loc_key("ASS_SHOP2");
@@ -141,7 +128,7 @@ if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -158,57 +145,15 @@ if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Hide For Player - False
-hideForPlayer = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="class_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Hide For Player - False
-hideForPlayer = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_index = image_number-1;
-image_speed = 0;
-draw_stuff = true;
+            <string>///Override Text On Relic Found
+event_inherited();
+
+if (global.relicDetected) myTextTarget = loc_key("ASS_RELIC");
+else if (myTextTarget == loc_key("ASS_RELIC")) {
+    myTextTarget = loc_key("ASS_CONGRATS");
+    myText = '';
+    text_count=0;
+}
 </string>
           </argument>
         </arguments>
@@ -231,78 +176,9 @@ draw_stuff = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_emitter_free(audio_emitter);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw
-if (drawSelf)
-{
-    ///Alpha Animation
-    if (hideForPlayer) targetAlpha = 0.2;
-    else targetAlpha = 1;
-    
-    if (myAlpha != targetAlpha)
-    {
-        if (targetAlpha &gt; myAlpha) alphaOrientation = 1;
-        else alphaOrientation = -1;
-        
-        myAlpha += alphaOrientation * min(alphaSpeed, abs(targetAlpha-myAlpha));
-    }
-     
-    //Draw Self
-    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,myAlpha);
-    
-    if (global.relicDetected) myTextTarget = loc_key("ASS_RELIC");
-    else if (myTextTarget == loc_key("ASS_RELIC")) 
-    {
-        myTextTarget = loc_key("ASS_CONGRATS");
-        myText = '';
-        text_count=0;
-    }
-    
-    if (draw_stuff)
-    {
-        target_lenght = string_length(myTextTarget);
-     
-        parser = '|';
-        
-        if text_count &lt; target_lenght
-        {
-            text_count++;
-            insert_char = string_char_at(myTextTarget, text_count);
-            myText += insert_char;
-        }
-        else parser = '';
-        
-        draw_set_font(global.font_balloonText);
-        draw_set_colour(c_black);
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_center);
-        draw_set_alpha(myAlpha);
-        draw_text_ext(x+56, y-122, myText+parser, 14, 220);
-        draw_set_alpha(1);
-     }
-}
+            <string>///Free Audio Emitter and Self
+audio_emitter_free(audio_emitter);
+instance_destroy();
 </string>
           </argument>
         </arguments>

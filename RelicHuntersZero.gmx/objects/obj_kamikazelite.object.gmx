@@ -30,6 +30,8 @@ event_inherited();
 
 energy_max = 0;
 hp_max = 100;
+hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
+
 damage = 30;
 
 speed_walk = 3.25;

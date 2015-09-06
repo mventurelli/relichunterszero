@@ -66,7 +66,7 @@ event_inherited();
 
 if (!timedActive) isActive = false;
 
-if (global.pauseMenu)
+if (global.pauseMenu) || (room == room_endShop)
 {
     isActive = true;
 }
@@ -103,6 +103,23 @@ if (global.relic_slot[myNumber] == 'midnight') { mySprite = spr_midnight_beer; m
 if (global.relic_slot[myNumber] == 'watchful') { mySprite = spr_watchful_eye; myString = loc_key("RELIC_WATCHFUL_SHORT");   }
 if (global.relic_slot[myNumber] == 'crystal') { mySprite = spr_crystal_bacon; myString = loc_key("RELIC_CRYSTAL_SHORT");   }
 if (global.relic_slot[myNumber] == 'dev') { mySprite = spr_dev_potion; myString = loc_key("RELIC_DEV_SHORT");   }
+
+if (global.relic_slot[myNumber] == 'morning_star') { mySprite = spr_morning_star; myString = loc_key("RELIC_MORNINGSTAR_SHORT");   }
+if (global.relic_slot[myNumber] == 'pineapple_pie') { mySprite = spr_pineapple_pie; myString = loc_key("RELIC_PINEAPPLEPIE_SHORT");   }
+if (global.relic_slot[myNumber] == 'rabbit_foot') { mySprite = spr_rabbit_foot; myString = loc_key("RELIC_RABBITFOOT_SHORT");   }
+if (global.relic_slot[myNumber] == 'midnight_meal') { mySprite = spr_midnight_meal; myString = loc_key("RELIC_MIDNIGHTMEAL_SHORT");   }
+if (global.relic_slot[myNumber] == 'yottabyte_processor') { mySprite = spr_yottabyte_processor; myString = loc_key("RELIC_PROCESSOR_SHORT");   }
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>

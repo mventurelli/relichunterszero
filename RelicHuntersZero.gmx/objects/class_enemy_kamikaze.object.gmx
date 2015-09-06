@@ -603,9 +603,15 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
         
         if (myEnemy.energy)
         {
+            damage = damage*2;
+            if (global.challengeSupressor) damage = damage*2;
             myEnemy.energy -= damage*2;
-            if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
-            else audio_play(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
+            
+            
+            if (global.challengeJaws) myEnemy.energy = 0;
+            
+            if (myEnemy.energy &lt;= 0) audio_play(myEnemy.audio_emitter,false,1,sfx_shield_destroy);
+            else audio_play(myEnemy.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
         }
         else myEnemy.hp -= damage;
         

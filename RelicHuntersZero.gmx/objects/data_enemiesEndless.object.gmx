@@ -111,8 +111,61 @@ event_inherited();
 
 enemyPool = ds_list_create();
 
-ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,
-monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
+if (global.currentLoop &gt; 0) {
+    ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,
+    monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
+}
+else{
+    switch (room) {
+        case level1_1:
+            ds_list_add(enemyPool, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1 );
+            break;
+            
+        case level1_2:
+            ds_list_add(enemyPool, ducan_ducksquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_1, ducan_turtlesquad1_2 );
+            break;
+        
+        case level1_3:
+            ds_list_add(enemyPool, ducan_turtlesquad1_2, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1 );
+            break;    
+    
+        case level2_1:
+            ds_list_add(enemyPool, ducan_turtlesquad1_3, ducan_ducksquad1_1, ducan_ducksquad1_1, ducan_ducksquad1_2, ducan_turtlesquad2_1 );
+            break;
+            
+        case level2_2:
+            ds_list_add(enemyPool, ducan_ducksquad1_3, ducan_ducksquad1_2, ducan_ducksquad1_2, ducan_ducksquad1_1 );
+            break;
+            
+        case level2_3:
+            ds_list_add(enemyPool, ducan_ducksquad2_1, ducan_ducksquad1_3, ducan_turtlesquad2_1, ducan_turtlesquad2_1, ducan_turtlesquad2_2 );
+            break;
+            
+        case level3_1:
+            ds_list_add(enemyPool, ducan_ducksquad2_3, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_1, monster_kamikaze_2, monster_kamikaze_2 );
+            break;
+            
+        case level3_2:
+            ds_list_add(enemyPool, monster_kamikaze_2, monster_kamikaze_2, monster_kamikaze_2, monster_kamikaze_2, ducan_ducksquad2_2, ducan_ducksquad2_3, ducan_ducksquad2_1);
+            break;
+            
+        case level3_3:
+            ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1);
+            break;
+        
+        case level4_1:
+            ds_list_add(enemyPool, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_turtlesniper, ducan_turtlesniper, ducan_turtlesniper, ducan_turtlesniper);
+            break;
+            
+        case level4_2:
+            ds_list_add(enemyPool, ducan_turtlesquad3_1, ducan_turtlesquad3_1, ducan_ducksquad2_1, ducan_ducksquad3_1, ducan_ducksquad3_1);
+            break;
+            
+        case level4_3:
+            ds_list_add(enemyPool, ducan_turtlesquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_2, ducan_ducksquad3_2);
+            break;
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -10,8 +10,8 @@ if instance_exists(owner)
             projectileY = y+(lengthdir_y(spawn_distance_from_barrel,shoot_direction));
             
             projectile = instance_create(projectileX,projectileY,projectile_obj);
-            projectile.speed = projectile_speed;
-            projectile.decay = projectile_speed_decay;
+            projectile.speed = projectile_speed * global.enemyProjectileSpeed;
+            projectile.decay = projectile_speed_decay * global.enemyProjectileSpeed;
             projectile.range = projectile_range;
             projectile.push_power = projectile_power;
             projectile.ammo_type = ammo_type;
@@ -22,7 +22,14 @@ if instance_exists(owner)
                         
             projectile.faction = f_enemy;
             projectile.type = shot_type;
-            projectile.damage = projectile_damage;
+            
+            var damageBonus;
+            damageBonus = round(projectile_damage * (global.challengeWanted*global.challengeWantedMultiplier));
+            if (ammo_type == type_light) damageBonus += round(projectile_damage * (global.challengeLightFocus*global.challengeLightFocusMultiplier));
+            if (ammo_type == type_medium) damageBonus += round(projectile_damage * (global.challengeMediumFocus*global.challengeMediumFocusMultiplier));
+            if (ammo_type == type_heavy) damageBonus += round(projectile_damage * (global.challengeHeavyFocus*global.challengeHeavyFocusMultiplier));
+            
+            projectile.damage = projectile_damage + damageBonus;
             
             if (sound == 'pistol') 
             {

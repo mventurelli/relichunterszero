@@ -27,9 +27,9 @@
   </ranges>
   <glyphs>
     <glyph character="87" x="290" y="52" w="22" h="39" shift="24" offset="3"/>
-    <glyph character="50" x="338" y="143" w="19" h="39" shift="24" offset="3"/>
-    <glyph character="108" x="275" y="143" w="19" h="39" shift="24" offset="3"/>
     <glyph character="1061" x="188" y="93" w="19" h="39" shift="24" offset="3"/>
+    <glyph character="108" x="275" y="143" w="19" h="39" shift="24" offset="3"/>
+    <glyph character="50" x="338" y="143" w="19" h="39" shift="24" offset="3"/>
     <glyph character="1090" x="128" y="225" w="19" h="39" shift="24" offset="3"/>
     <glyph character="1070" x="235" y="2" w="25" h="39" shift="24" offset="0"/>
     <glyph character="56" x="170" y="225" w="19" h="39" shift="24" offset="3"/>

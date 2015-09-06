@@ -400,6 +400,11 @@
     <option_textureGroup30_parent>&lt;none&gt;</option_textureGroup30_parent>
     <option_textureGroup30_scaled>0</option_textureGroup30_scaled>
     <option_textureGroup30_targets>9223372036854775807</option_textureGroup30_targets>
+    <option_textureGroup31_border>2</option_textureGroup31_border>
+    <option_textureGroup31_nocropping>0</option_textureGroup31_nocropping>
+    <option_textureGroup31_parent>&lt;none&gt;</option_textureGroup31_parent>
+    <option_textureGroup31_scaled>0</option_textureGroup31_scaled>
+    <option_textureGroup31_targets>9223372036854775807</option_textureGroup31_targets>
     <option_textureGroup3_border>2</option_textureGroup3_border>
     <option_textureGroup3_nocropping>-1</option_textureGroup3_nocropping>
     <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
@@ -435,7 +440,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>31</option_textureGroup_count>
+    <option_textureGroup_count>32</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -461,6 +466,7 @@
     <option_textureGroups29>Fonts - Japanese</option_textureGroups29>
     <option_textureGroups3>Spritesheet - Jimmy</option_textureGroups3>
     <option_textureGroups30>Fonts - Chinese</option_textureGroups30>
+    <option_textureGroups31>SpriteSheep - Gunnar</option_textureGroups31>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
     <option_textureGroups6>GUI</option_textureGroups6>
@@ -489,7 +495,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>15</option_version_build>
+    <option_version_build>17</option_version_build>
     <option_version_company>Rogue Snail</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>
@@ -533,7 +539,7 @@
     <option_win8_texture_page>1024</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
-    <option_windows_build_version>15</option_windows_build_version>
+    <option_windows_build_version>17</option_windows_build_version>
     <option_windows_company_info>Rogue Snail</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_description_info></option_windows_description_info>

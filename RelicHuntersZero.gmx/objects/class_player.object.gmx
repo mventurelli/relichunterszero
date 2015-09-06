@@ -40,15 +40,10 @@ isVulnerable = false;
 alarm[0] = room_speed*2;
 
 energy_max = 100;
-energy_max_regular = energy_max;
-energy_max_relic = energy_max*2;
 energy = energy_max;
-
 overshield = 0;
 
 hp_max = 100;
-hp_max_regular = hp_max;
-hp_max_relic = hp_max*1.5;
 hp = hp_max;
 
 hp_regen_time = room_speed*1;
@@ -95,7 +90,7 @@ dodge_doubletap_direction = 0;
 grenade_speed = 7;
 
 dashTimeWindow = room_speed*0.25;
-dashTimeCurrent = 99;
+dashTimeCurrent = 0;
 
 pickupTimeWindow = room_speed*0.35;
 pickupTimeCurrent = 0;
@@ -165,6 +160,7 @@ myDash = instance_create(x,y,fx_player_dash);
 myDash.owner = id;
 
 //Melee
+meleeDamageUpdated = false;
 melee_damage = 100;
 melee_push_power = 14;
 
@@ -214,6 +210,11 @@ digDepthMax = 42;
 digRate = room_speed*0.3;
 digRateCurrent = digRate;
 
+//Global Input Lock on Game Enter + Unpause
+inputLocked = true;
+inputLockTime = room_speed*0.25;
+inputLockTimeCurrent = 0;
+
 //Joystick
 joyLookDirection = 0;
 joyLookTargetAngle = 0;
@@ -239,6 +240,15 @@ joyCrosshairDistanceSpeed = 30;
 joyCrosshairDistanceMin = 40;
 
 joyCrosshairSpeed = 24;
+
+//Relics and Challenges
+staminaRegenUpdated = false;
+energyRegenUpdated = false;
+
+hpPuddingUpdated = false;
+hpPieUpdated = false;
+energyDriveUpdated = false;
+energyProcessorUpdated = false;
 </string>
           </argument>
         </arguments>
@@ -436,6 +446,36 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Release Input Lock
+
+if (inputLocked) {
+    if (inputLockTimeCurrent &lt; inputLockTime) inputLockTimeCurrent++;
+    else {
+        inputLocked = false;
+        inputLockTimeCurrent = 0;
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -454,54 +494,56 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) &amp;&amp; instance_exists(cla
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Relic Buffs &amp; First Room Invulnerability
+            <string>///Relic Buffs, Challenges &amp; First Room Invulnerability
 
+//Invulnerable in first room
 if (room == room_start) hp = hp_max;
 
-//Pineapple Pudding
-if (global.relic_pineapple_pudding == 2) hp_max = hp_max_relic;
-else hp_max = hp_max_regular;
-
-
-//Yottabyte Drive
-if (global.relic_yottabyte_drive == 2) energy_max = energy_max_relic;
-else energy_max = energy_max_regular;
-
-
-//Alcoholic Carrot
+// Relics
 if (global.relic_alcoholic_carrot == 2) stamina_regen = stamina_regen_relic;
 else stamina_regen = stamina_regen_regular;
 
-//Infinity Battery
 if (global.relic_infinity_battery == 2) energy_regen_time = energy_regen_time_relic;
 else energy_regen_time = energy_regen_time_regular;
 
-//Watchful Eye
-// See controller_main;
-
-//Midnight Beer
-// See projectile_player and melee_arc
-
-//Crystal Bacon
-// See fx_corpse for the new "On-kill" effect
-/* OLD CONSTANT REGEN:
-if (global.relic_crystal_bacon == 2)
-{
-    if (hp &lt; hp_max)
-    {
-        hp_regen_time_current++;
-        if hp_regen_time_current &gt;= hp_regen_time
-        {
-            hp += hp_regen_amount;
-            hp_regen_time_current=0;
-        }
-    }
-    else hp_regen_time_current=0;
+//New Relics - a.k.a. Too lazy to refactor this horrible gamejam code, so why not make it even worse? :sigh: 
+if (global.relic_pineapple_pudding == 2) &amp;&amp; (!hpPuddingUpdated){
+    hp_max += round(hp_max * global.relicHpBonus);
+    hpPuddingUpdated = true;
 }
-*/
 
-//Dev Potion
-// See class_gun
+if (global.relic_pineapple_pie == 2) &amp;&amp; (!hpPieUpdated){
+    hp_max += round(hp_max * global.relicHpBonus);
+    hpPieUpdated = true;
+}
+
+if (global.relic_yottabyte_drive == 2) &amp;&amp; (!energyDriveUpdated){
+    energy_max += round(energy_max * global.relicEnergyBonus);
+    energyDriveUpdated = true;
+}
+
+if (global.relic_yottabyte_processor == 2) &amp;&amp; (!energyProcessorUpdated){
+    energy_max += round(energy_max * global.relicEnergyBonus);
+    energyProcessorUpdated = true;
+}
+
+//Watchful Eye: See controller_main;
+//Midnight Beer and Midnight Meal: See projectile_player and melee_arc
+//Crystal Bacon: See fx_corpse
+//Dev Potion: See class_gun
+//Morning Star: See coin pickup
+//The Rabbit Foot: You won't find out what it does here :)
+
+// Challenges
+if (global.challengeMedieval) &amp;&amp; (!meleeDamageUpdated) {
+    melee_damage += round(melee_damage * global.challengeMedievalBonus);
+    meleeDamageUpdated = true;
+}
+
+if (global.challengeHeavyBurden) &amp;&amp; (!staminaRegenUpdated) {
+    stamina_regen -= stamina_regen * global.challengeHeavyBurdenPenalty;
+    staminaRegenUpdated = true;
+}
 </string>
           </argument>
         </arguments>
@@ -571,7 +613,7 @@ else {
 if (allowMovement)
 {
     //Keyboard
-    if (global.input[myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+    if (global.input[myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!dodging) &amp;&amp; (!melee_dash) &amp;&amp; (!inputLocked)
     {   
         //Movement
         if input_key_left() &amp;&amp; !input_key_up() &amp;&amp; !input_key_down() { motion_add(180,move_accel); dodge_direction = 180; }
@@ -670,7 +712,7 @@ if (allowMovement)
     
     //////////////////////////////////////////////////////////////
     //Joystick
-    if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp; (!melee_dash)
+    if global.input[myPlayerId] != K_INPUT_KEYBOARD &amp;&amp; (!dodging) &amp;&amp; (!melee_dash) &amp;&amp; (!inputLocked)
     {
         var joy = global.input[myPlayerId];
         
@@ -873,7 +915,7 @@ else
 if (hit_taken)
 {
     energy_regen_time_current = 0;
-
+    
     if (shield)
     {
         shield_effect = instance_create(x,y,fx_shield);
@@ -1273,6 +1315,8 @@ if (!energy) &amp;&amp; (shield == true) &amp;&amp; (energy_max)
     mySparks = instance_create(x,y,fx_shield_down);
     mySparks.owner = id;
     shield = false;
+    
+    if (global.challengeOvercharge) hp -= global.challengeOverchargeDamage;
 }
 
 if (!energy_max) shield = false;

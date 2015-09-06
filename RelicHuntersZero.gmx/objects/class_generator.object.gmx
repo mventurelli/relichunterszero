@@ -29,7 +29,7 @@
 
 breakObject = fx_barrel_break;
 
-maxhp = 1000;
+maxhp = 600;
 hp = maxhp;
 
 isVulnerable = false;

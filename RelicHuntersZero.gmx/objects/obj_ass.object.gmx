@@ -39,7 +39,7 @@ reflection_object_setup(0,-1,image_index);
 myTeleporter = noone;
 alarm[0] = room_speed*1.5;
 
-if (room == room_start) || (room == room_shop) sprite_index = spr_ass_idle;
+if (room == room_start) || (room == room_shop) || (room == room_endShop) sprite_index = spr_ass_idle;
 
 mySwap = noone;
 if (room == room_start) mySwap = instance_create(x,y,obj_swap_ass);
@@ -69,7 +69,7 @@ if (room == room_start) mySwap = instance_create(x,y,obj_swap_ass);
             <kind>1</kind>
             <string>///Spawn Teleporter
 
-if (!instance_exists(myTeleporter)) &amp;&amp; (room != room_start) &amp;&amp; (room != room_shop) &amp;&amp; instance_exists(class_player)
+if (!instance_exists(myTeleporter)) &amp;&amp; (room != room_start) &amp;&amp; (room != room_shop) &amp;&amp; (room != room_endShop) &amp;&amp; instance_exists(class_player)
 {
     randomX = x+140;
     randomY = y-20;
@@ -118,6 +118,11 @@ if (global.character[1] == char_ass) || (global.playerCount &gt; 1 &amp;&amp; gl
     if (room == room_start) instance_destroy();
 }
 else drawBalloon = true;
+
+if (room == room_shop) || (room == room_endShop){
+    drawSelf = true;
+    drawBalloon = true;
+}
 </string>
           </argument>
         </arguments>
@@ -142,9 +147,9 @@ else drawBalloon = true;
 if instance_exists(class_player)
 {
     if point_distance(x,y,class_player.x,class_player.y) &lt;= 350
-    if (!instance_exists(obj_ass_baloon))
+    if (!instance_exists(obj_ass_balloon))
     {
-        myBalloon = instance_create(x,y,obj_ass_baloon);
+        myBalloon = instance_create(x,y,obj_ass_balloon);
         if (!image_xscale) myBalloon.x -= 50;
     }
 }

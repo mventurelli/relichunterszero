@@ -27,11 +27,15 @@
             <kind>1</kind>
             <string>///Main Shit
 owner = noone;
-name = "NOT-NAMED GUN";
+name = "I AM ERROR";
 object = obj_pistol;
 isActive = true;
 lineX = x;
 lineY = y;
+
+weaponLevel = 0;
+storeOriginalDamage = -1;
+storeOriginalName = '';
 
 allowPrecision = true;
 
@@ -41,6 +45,7 @@ ammo_type = type_light;
 ammo_cost = 1;
 ammo = 999;
 ammo_current = ammo;
+ammoCostDebuff = false;
 
 ammo_regen_time = global.devPotionRegenTime;
 ammo_regen_time_current = 0;
@@ -72,10 +77,12 @@ projectile_power = 5;
 projectile_recoil = 4;
 projectile_piercing = 0;
 
+projectileBounce = false;
+projectileBouceMax = 1;
+
 crosshair_recoil = 0.25;
 
 spawn_distance_from_barrel = 24;
-
 
 recoil_speed = 0;
 recoil_return = 1.25;
@@ -228,7 +235,7 @@ if instance_exists(owner)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Relic Buffs
+            <string>///Relic Buffs, Weapon Level &amp; Challenges
 
 //Dev Potion
 if (global.relic_dev_potion == 2)
@@ -243,6 +250,34 @@ if (global.relic_dev_potion == 2)
         }
     }
     else ammo_regen_time_current = 0;
+}
+
+//Weapon Level
+if (!storeOriginalDamage) || (storeOriginalName == '') {
+    weaponLevelBonus[0] = 0;
+    weaponLevelBonus[1] = 0.25*projectile_damage;
+    weaponLevelBonus[2] = 0.5*projectile_damage;
+    weaponLevelBonus[3] = 0.75*projectile_damage;
+    weaponLevelBonus[4] = 1.0*projectile_damage;
+    weaponLevelBonus[5] = 1.25*projectile_damage;
+    weaponLevelBonus[6] = 1.5*projectile_damage;
+    weaponLevelBonus[7] = 1.75*projectile_damage;
+    weaponLevelBonus[8] = 2*projectile_damage;
+    weaponLevelBonus[9] = 3*projectile_damage;
+    
+    storeOriginalDamage = projectile_damage;
+    storeOriginalName = name;
+}
+else {
+    projectile_damage = ceil(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
+    if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
+}
+
+//Challenges
+
+if global.challengeThirst &amp;&amp; (!ammoCostDebuff){
+    ammo_cost += ammo_cost*global.challengeThirstMultiplier;
+    ammoCostDebuff = true;
 }
 </string>
           </argument>
@@ -532,12 +567,12 @@ if (isActive) &amp;&amp; (owner) &amp;&amp; instance_exists(owner)
     input_held = false;
     input_pressed = false;
     
-    if (global.input[owner.myPlayerId] == K_INPUT_KEYBOARD)
+    if (global.input[owner.myPlayerId] == K_INPUT_KEYBOARD) &amp;&amp; (!owner.inputLocked)
     {
         if input_key_fire() input_held = true;
         if input_key_fire_pressed() input_pressed = true;
     }
-    else
+    else if (!owner.inputLocked)
     {
         var joy = global.input[owner.myPlayerId];
         if (joy_rpos(joy) &gt; 0.7) 

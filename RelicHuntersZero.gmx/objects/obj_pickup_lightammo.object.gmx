@@ -28,6 +28,8 @@
             <string>event_inherited();
 sprite_index = spr_pickup_light;
 ammo = 70;
+
+if (global.relic_watchful_eye) ammo = round(ammo * global.watchfulEyePickupBonus);
 </string>
           </argument>
         </arguments>

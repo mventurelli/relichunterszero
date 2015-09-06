@@ -222,6 +222,8 @@ if instance_exists(owner)
             if (owner.firing) fire_rate_current++;
         }
         
+        if (global.challengeBloodlust) fire_rate_current += global.challengeBloodlustRate;
+        
         if fire_rate_current &gt;= fire_rate
         {
             fire_rate_current = 0;

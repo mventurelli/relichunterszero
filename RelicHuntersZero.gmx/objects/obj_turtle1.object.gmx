@@ -34,6 +34,7 @@ fire_range = 500;
 elite = false;
 energy_max = 0;
 hp_max = 50;
+hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
 
 sprite_hit = spr_turtle_hit;
 sprite_walk = spr_turtle_walk;
