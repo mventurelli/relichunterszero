@@ -366,6 +366,11 @@ if instance_exists(owner)
     }
 }
 
+//Adjust Gun Height for Rider
+
+if (instance_exists(owner)) if (owner.myChar == char_rider){
+    y -= 18;
+}
 
 //Recoil
 

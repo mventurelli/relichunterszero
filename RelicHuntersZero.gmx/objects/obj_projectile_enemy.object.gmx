@@ -75,7 +75,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="class_player">
+    <event eventtype="4" ename="faction_player">
       <action>
         <libid>1</libid>
         <id>603</id>

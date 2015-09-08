@@ -92,7 +92,7 @@ if instance_exists(owner)
 {
     depth = owner.depth+2;
     image_xscale = owner.image_xscale;
-    if (!owner.melee) instance_destroy();
+    if (!owner.melee) &amp;&amp; (!owner.dodging) instance_destroy();
 
     //Player back damage
     fucker = collision_ellipse(owner.bbox_left,owner.bbox_top,owner.bbox_right,owner.bbox_bottom,class_enemy,false,true);

@@ -327,7 +327,7 @@ current_distance = 0;
 move_speed = speed_walk;
 firing = false;
 
-var myClosestPlayer = instance_nearest(x,y,class_player);
+var myClosestPlayer = instance_nearest(x,y,faction_player);
 
 distance_to_player = 0;
 if (instance_exists(myClosestPlayer)) distance_to_player = point_distance(x,y,myClosestPlayer.x,myClosestPlayer.y);
@@ -527,7 +527,7 @@ else push_speed = 0;
 
 is_player = false;
 myEnemy = noone;
-myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,class_player,false,true);
+myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_player,false,true);
 if (!myEnemy) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_ducan,false,true);
 else is_player = true;
 
@@ -535,6 +535,8 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
 {
     if (!myEnemy.dodging)
     {
+        var originalDamage = damage;
+        
         damage_timer_current = 0;
         
         if (myEnemy.energy)
@@ -559,6 +561,8 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
             
             if (myEnemy.hp &lt;= 0) myEnemy.no_score = true;
         }
+        
+        damage = originalDamage;
     }
 }
 else damage_timer_current++;

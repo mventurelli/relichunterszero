@@ -29,6 +29,7 @@
 event_inherited();
 
     playerName = "PUNNY";
+    myChar = char_punny;
     
     melee_damage=50;
     

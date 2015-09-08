@@ -35,7 +35,7 @@ priceArray = global.endPrice_mediumAmmo;
 ammo = 70;
 ammoType = type_medium;
 
-if (global.relic_watchful_eye) ammo = round(ammo * global.watchfulEyePickupBonus);
+if (global.relic_watchful_eye == 2) ammo = round(ammo * global.watchfulEyePickupBonus);
 </string>
           </argument>
         </arguments>

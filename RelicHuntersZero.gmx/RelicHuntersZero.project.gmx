@@ -555,6 +555,7 @@
       <sprite>sprites\spr_hud_face_raff</sprite>
       <sprite>sprites\spr_hud_face_punny</sprite>
       <sprite>sprites\spr_hud_face_ass</sprite>
+      <sprite>sprites\spr_hud_face_rider</sprite>
       <sprite>sprites\spr_hud_ammo_bar</sprite>
       <sprite>sprites\spr_hud_ammo_selected</sprite>
       <sprite>sprites\spr_hud_weapon_selected</sprite>
@@ -706,6 +707,17 @@
       </sprites>
       <sprites name="Sae">
         <sprite>sprites\spr_sae_idleShop</sprite>
+      </sprites>
+      <sprites name="Rider">
+        <sprite>sprites\spr_rider_idle</sprite>
+        <sprite>sprites\spr_rider_hit</sprite>
+        <sprite>sprites\spr_rider_dash</sprite>
+        <sprite>sprites\spr_rider_dash_fx</sprite>
+        <sprite>sprites\spr_rider_walk</sprite>
+        <sprite>sprites\spr_rider_melee</sprite>
+        <sprite>sprites\spr_rider_teleport_out</sprite>
+        <sprite>sprites\spr_rider_teleport_in</sprite>
+        <sprite>sprites\spr_rider_holo</sprite>
       </sprites>
       <sprite>sprites\spr_melee</sprite>
       <sprite>sprites\spr_melee_gloves</sprite>
@@ -1180,10 +1192,12 @@
       <object>objects\data_itemsEndless</object>
     </objects>
     <objects name="Player">
+      <object>objects\faction_player</object>
       <object>objects\class_player</object>
       <object>objects\class_gun</object>
       <object>objects\fx_corpse_player</object>
       <object>objects\obj_jimmy</object>
+      <object>objects\obj_rider</object>
       <object>objects\obj_pinky</object>
       <object>objects\obj_raff</object>
       <object>objects\obj_biu</object>
@@ -1254,6 +1268,7 @@
           <object>objects\obj_kamikazelite</object>
           <object>objects\obj_kamikazelite_flying</object>
           <object>objects\obj_kamikaze1</object>
+          <object>objects\obj_kamiAlly</object>
         </objects>
         <objects name="Bosses">
           <object>objects\obj_boss</object>
@@ -1275,6 +1290,7 @@
       </objects>
       <object>objects\class_enemy_shooter</object>
       <object>objects\class_enemy_kamikaze</object>
+      <object>objects\class_summon</object>
       <object>objects\class_enemy_jumper</object>
       <object>objects\class_enemy</object>
       <object>objects\class_gun_enemy</object>
@@ -1402,6 +1418,7 @@
       <object>objects\fx_explosion_regular</object>
       <object>objects\class_grenadeNew</object>
       <object>objects\obj_grenadeNew</object>
+      <object>objects\obj_grenadeKami</object>
       <object>objects\obj_grenade_enemyNew</object>
       <object>objects\fx_grenadeTarget</object>
     </objects>
@@ -1431,6 +1448,7 @@
       <objects name="Character Selection">
         <object>objects\class_menu_btnChar</object>
         <object>objects\menu_char_jimmy</object>
+        <object>objects\menu_char_rider</object>
         <object>objects\menu_char_pinky</object>
         <object>objects\menu_char_biu</object>
         <object>objects\menu_char_punny</object>
@@ -1854,10 +1872,11 @@
     <room>rooms\room_end</room>
     <room>rooms\room_tutorial</room>
   </rooms>
-  <constants number="68">
+  <constants number="69">
     <constant name="gamemode_adventure">0</constant>
     <constant name="gamemode_endless">1</constant>
     <constant name="char_random">99</constant>
+    <constant name="char_rider">7</constant>
     <constant name="char_ass">6</constant>
     <constant name="char_punny">5</constant>
     <constant name="char_biu">4</constant>

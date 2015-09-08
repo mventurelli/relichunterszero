@@ -38,7 +38,7 @@ ammoType = type_grenade;
 if (global.character[1] == char_biu) || (global.character[2] == char_biu) ammo = 2;
 else ammo = 1;
 
-if (global.relic_watchful_eye) ammo++;
+if (global.relic_watchful_eye == 2) ammo+=1;
 </string>
           </argument>
         </arguments>
@@ -65,6 +65,32 @@ if (global.relic_watchful_eye) ammo++;
 event_inherited();
 
 global.endPriceTier_grenades = priceTier;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hack: buy relic and try to buy grenade afterwards
+
+if (global.relic_watchful_eye == 2){
+    if (ammo == 1) ammo = 2;
+    if (global.character[1] == char_biu) || (global.character[2] == char_biu) ammo = 3;
+}
 </string>
           </argument>
         </arguments>

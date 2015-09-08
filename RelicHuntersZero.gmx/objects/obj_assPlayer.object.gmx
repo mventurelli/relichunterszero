@@ -28,6 +28,7 @@
             <string>///Gameplay
 event_inherited();
     playerName = "ACE";
+    myChar = char_ass;
     
     melee_damage = 75;
     

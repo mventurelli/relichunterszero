@@ -529,10 +529,79 @@ if (room == room_start) || (room == room_shop) || (room == room_endShop) || (roo
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Save Game, Achievements &amp; Options Synchronization 
+            <string>///Read Save File, Set Stage, State Initial, Achievements
 
 save_sync_read();
 
+//Achievements
+///"Unlock-All" Achievements
+
+if (room == room_start)
+{
+    if (global.relic_pineapple_pudding) achievement_give("ACHIEVEMENT_FIRSTRELIC");
+
+    var allUnlocks = true;
+    
+    if (global.unlockPinky) &amp;&amp; 
+    (global.unlockRaff) &amp;&amp; 
+    (global.unlockBiu) &amp;&amp; 
+    (global.unlockPunny) &amp;&amp; 
+    (global.unlockAss)
+        {
+            achievement_give("ACHIEVEMENT_UNLOCKALLHUNTERS");
+        }
+        else allUnlocks = false;
+    
+    if (global.relic_alcoholic_carrot &amp;&amp;
+    global.relic_yottabyte_drive &amp;&amp;
+    global.relic_pineapple_pudding &amp;&amp;
+    global.relic_infinity_battery &amp;&amp;
+    global.relic_crystal_bacon &amp;&amp;
+    global.relic_midnight_beer &amp;&amp;
+    global.relic_watchful_eye &amp;&amp;
+    global.relic_dev_potion)
+        {
+            achievement_give("ACHIEVEMENT_ALLRELICS");
+        }
+        else allUnlocks = false;
+
+    
+    if (allUnlocks &amp;&amp;
+    global.checkpoint1 &amp;&amp;
+    global.checkpoint2 &amp;&amp;
+    global.checkpoint3 &amp;&amp;
+        
+    global.unlock_pistol_assault &amp;&amp;
+    global.unlock_pistol_heavy &amp;&amp;
+    global.unlock_pistol_plasma &amp;&amp;
+    global.unlock_shotgun &amp;&amp;
+    global.unlock_shotgun_heavy &amp;&amp;
+    global.unlock_submachinegun &amp;&amp;
+    global.unlock_highmag &amp;&amp;
+    global.unlock_machinegun &amp;&amp;
+    global.unlock_assault_rifle &amp;&amp;
+    global.unlock_rocketlauncher &amp;&amp;
+    global.unlock_sniper_rifle &amp;&amp;
+        
+    global.unlock_light1 &amp;&amp;
+    global.unlock_light2 &amp;&amp;
+    global.unlock_medium1 &amp;&amp;
+    global.unlock_medium2 &amp;&amp;
+    global.unlock_heavy1 &amp;&amp;
+    global.unlock_heavy2 &amp;&amp;
+    global.unlock_heavy3 &amp;&amp;
+    global.unlock_heavy4 &amp;&amp;
+    global.unlock_grenades1 &amp;&amp;
+    global.unlock_grenades2 &amp;&amp;
+    global.unlock_grenades3)
+        
+        {
+            achievement_give("ACHIEVEMENT_UNLOCKALL");
+        }
+}
+
+
+//Char State Initial
 if (room == room_start) || (room == room_tutorial) || ((global.gameMode == gamemode_endless) &amp;&amp; (room == level1_1))
 {
     global.stage_current = 1;
@@ -546,12 +615,13 @@ if (room == level3_3) global.stage_current = 3;
 if (room == level4_3) global.stage_current = 4;
 
 
-//Achievements
+//Prepare for Achievements
 if (room == room_start) global.hasPickedWeapon = false;
 show_debug_message('Test if weapon was picked up before: '+string(global.hasPickedWeapon));
 
 if (room == room_start) global.hasUsedCheckpoint = false;
 show_debug_message('Test if Checkpoint was used before: '+string(global.hasUsedCheckpoint));
+
 </string>
           </argument>
         </arguments>
@@ -641,91 +711,6 @@ reloadBarThickness = 8;
 reloadBarSurfaceSize = 40;
 reloadBarSurface = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
 reloadBarSurface2 = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///"Unlock-All" Achievements
-
-if (room == room_start)
-{
-    if (global.relic_pineapple_pudding) achievement_give("ACHIEVEMENT_FIRSTRELIC");
-
-    var allUnlocks = true;
-    
-    if (global.unlockPinky) &amp;&amp; 
-    (global.unlockRaff) &amp;&amp; 
-    (global.unlockBiu) &amp;&amp; 
-    (global.unlockPunny) &amp;&amp; 
-    (global.unlockAss)
-        {
-            achievement_give("ACHIEVEMENT_UNLOCKALLHUNTERS");
-        }
-        else allUnlocks = false;
-    
-    if (global.relic_alcoholic_carrot &amp;&amp;
-    global.relic_yottabyte_drive &amp;&amp;
-    global.relic_pineapple_pudding &amp;&amp;
-    global.relic_infinity_battery &amp;&amp;
-    global.relic_crystal_bacon &amp;&amp;
-    global.relic_midnight_beer &amp;&amp;
-    global.relic_watchful_eye &amp;&amp;
-    global.relic_dev_potion)
-        {
-            achievement_give("ACHIEVEMENT_ALLRELICS");
-        }
-        else allUnlocks = false;
-
-    
-    if (allUnlocks &amp;&amp;
-    global.checkpoint1 &amp;&amp;
-    global.checkpoint2 &amp;&amp;
-    global.checkpoint3 &amp;&amp;
-        
-    global.unlock_pistol_assault &amp;&amp;
-    global.unlock_pistol_heavy &amp;&amp;
-    global.unlock_pistol_plasma &amp;&amp;
-    global.unlock_shotgun &amp;&amp;
-    global.unlock_shotgun_heavy &amp;&amp;
-    global.unlock_submachinegun &amp;&amp;
-    global.unlock_highmag &amp;&amp;
-    global.unlock_machinegun &amp;&amp;
-    global.unlock_assault_rifle &amp;&amp;
-    global.unlock_rocketlauncher &amp;&amp;
-    global.unlock_sniper_rifle &amp;&amp;
-        
-    global.unlock_light1 &amp;&amp;
-    global.unlock_light2 &amp;&amp;
-    global.unlock_medium1 &amp;&amp;
-    global.unlock_medium2 &amp;&amp;
-    global.unlock_heavy1 &amp;&amp;
-    global.unlock_heavy2 &amp;&amp;
-    global.unlock_heavy3 &amp;&amp;
-    global.unlock_heavy4 &amp;&amp;
-    global.unlock_grenades1 &amp;&amp;
-    global.unlock_grenades2 &amp;&amp;
-    global.unlock_grenades3)
-        
-        {
-            achievement_give("ACHIEVEMENT_UNLOCKALL");
-        }
-}
 </string>
           </argument>
         </arguments>
@@ -1232,6 +1217,7 @@ if (!level_built)
             if (global.character[p] == char_biu) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_biu);
             if (global.character[p] == char_punny) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_punny);
             if (global.character[p] == char_ass) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_assPlayer);
+            if (global.character[p] == char_rider) playerSpawned = instance_create(target_spawn.spawnX,target_spawn.spawnY,obj_rider);
             
             playerSpawned.myPlayerId = p;
             with (playerSpawned) event_perform(ev_other,ev_user0);
@@ -1400,7 +1386,7 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                     if (global.character[p] == char_biu) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_biu);
                     if (global.character[p] == char_punny) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_punny);
                     if (global.character[p] == char_ass) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_assPlayer);
-                    
+                    if (global.character[p] == char_rider) playerSpawned = instance_create(revivePlayerX,revivePlayerY,obj_rider);
                     playerSpawned.myPlayerId = p;
                     
                     //Reset weapons and HP
@@ -1547,7 +1533,7 @@ if (global.level_complete)
     
     if (room == room_shop) || (room == room_start) || (room == room_endShop)
     {
-        //Test boss:  room_goto(room_boss); exit; 
+        //Test boss: room_goto(room_boss); exit;  
         
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
@@ -2196,6 +2182,7 @@ while (p &lt;= global.playerCount)
         if (global.character[playerId] == char_biu) draw_sprite_ext(spr_hud_face_biu,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
         if (global.character[playerId] == char_punny) draw_sprite_ext(spr_hud_face_punny,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
         if (global.character[playerId] == char_ass) draw_sprite_ext(spr_hud_face_ass,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
+        if (global.character[playerId] == char_rider) draw_sprite_ext(spr_hud_face_rider,sprite_face,charPortraitX,charPortraitY,1.5*charPortraitOrientation,1.5,1,c_white,main_hud_alpha);
         
         //Character Bars
         var charLifeBarTopX = width*0.08;

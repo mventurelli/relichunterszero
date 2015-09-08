@@ -130,6 +130,12 @@ if instance_exists(activationClient) &amp;&amp; (active)
             global.character[p] = char_ass;
             newChar = instance_create(activationClient.x,activationClient.y,obj_assPlayer);
         }
+        else if (myCharacter == char_rider) 
+        {
+            myCharacter = global.character[p];
+            global.character[p] = char_rider;
+            newChar = instance_create(activationClient.x,activationClient.y,obj_rider);
+        }
         
         newChar.myPlayerId = p;
         isClientLocked = false;
@@ -160,6 +166,8 @@ if instance_exists(activationClient) &amp;&amp; (active)
 
 if (myCharacter != char_jimmy) unlock = false;
 else unlock = true; 
+
+if (myCharacter == char_rider) unlock = true;
 
 if (myCharacter == char_pinky) &amp;&amp; (global.unlockPinky) unlock = true; //Starts unlocked
 
@@ -216,6 +224,7 @@ if (myCharacter == char_raff) sprite_index = spr_raff_holo;
 if (myCharacter == char_biu) sprite_index = spr_biu_holo;
 if (myCharacter == char_punny) sprite_index = spr_punny_holo;
 if (myCharacter == char_ass) sprite_index = spr_ass_holo;
+if (myCharacter == char_rider) sprite_index = spr_rider_idle;
 
 if (active) draw_self();
 
@@ -237,7 +246,7 @@ else
         if (myCharacter == char_biu) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_BIU");
         if (myCharacter == char_punny) stringUnlockCharacter = loc_key("HUD_UNLOCK_REQ_PUNNY");
         if (myCharacter == char_jimmy) stringUnlockCharacter = 'I AM ERROR';
-        
+        if (myCharacter == char_rider) stringUnlockCharacter = 'I AM ERROR';
         
         draw_text_ext(x, y-28, stringUnlockCharacter, 19, 150);
     }

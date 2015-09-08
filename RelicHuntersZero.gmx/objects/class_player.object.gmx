@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>faction_player</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,6 +29,7 @@
 
 myPlayerId = 1;
 playerName = "NONAME";
+myChar = char_jimmy;
 
 setup_initial = false;
 interactionKey = false;
@@ -87,6 +88,7 @@ dodge_doubletap_time = room_speed*0.2;
 dodge_doubletap_time_current = dodge_doubletap_time;
 dodge_doubletap_direction = 0;
 
+myGrenadeObject = obj_grenadeNew;
 grenade_speed = 7;
 
 dashTimeWindow = room_speed*0.25;
@@ -249,6 +251,10 @@ hpPuddingUpdated = false;
 hpPieUpdated = false;
 energyDriveUpdated = false;
 energyProcessorUpdated = false;
+
+//Special Character Stuff
+riderGrenadeCost = 0;
+riderDodgeAttack = noone;
 </string>
           </argument>
         </arguments>
@@ -1075,6 +1081,22 @@ if (melee) &amp;&amp; (animation_current == 'melee')
     }
 }
 
+//Rider's Dash attack
+
+if (myChar == char_rider) &amp;&amp; (!instance_exists(riderDodgeAttack)) {
+    if (dodging) {
+        if (!riderDodgeAttack){
+            riderDodgeAttack = instance_create(x,y,fx_melee_arc);
+            riderDodgeAttack.owner = id;
+            riderDodgeAttack.damage = melee_damage;  
+            riderDodgeAttack.push_power = melee_push_power;
+            riderDodgeAttack.max_hits = 5;
+            audio_play(audio_emitter,false,1,sfx_kami_dash);
+        }
+    }
+    else riderDodgeAttack = noone;
+}
+
 
 
 
@@ -1129,13 +1151,25 @@ if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
             throw = true;
             audio_play(audio_emitter,false,1,sfx_melee);
         }
-        else{
+        else if (myChar != char_rider) || (hp &lt;= riderGrenadeCost){
             //Out of greandes feedback
             guiInfo = instance_create(x,y,gui_info);
             guiInfo.colorMain = K_BETU_RED;
             guiInfo.myString = loc_key("INFO_OUTOFGRENADES");
             guiInfo.owner = id;
             audio_play(audio_emitter, false, 1, sfx_pickup_full);
+        }
+        else{
+            hp -= riderGrenadeCost;
+            throw = true;
+            audio_play(audio_emitter,false,1,sfx_melee);
+            bloodAmount = min(5, (global.max_casings-global.count_casings));
+            if (bloodAmount) repeat(bloodAmount) blood = instance_create(x,y,fx_blood);
+            hit_taken = true;
+            var spreadX = irandom_range(-15,15);
+            var spreadY = irandom_range(-15,15);
+            damage_fx = instance_create(x+spreadX,y+spreadY,fx_damage);
+            damage_fx.damage = riderGrenadeCost;
         }
     }
     else{
@@ -1155,7 +1189,7 @@ if (throw) &amp;&amp; (animation_current == 'melee')
     {
         global.grenades[myPlayerId]--;
     
-        myGrenade = instance_create(x,y,obj_grenadeNew);
+        myGrenade = instance_create(x,y,myGrenadeObject);
         myGrenade.speed = grenade_speed;
         myGrenade.direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
     }
@@ -1274,6 +1308,7 @@ if (hp &lt;= 0)
     if (global.character[myPlayerId] == char_biu) corpse.sprite_index = spr_biu_death;
     if (global.character[myPlayerId] == char_punny) corpse.sprite_index = spr_punny_death;
     if (global.character[myPlayerId] == char_ass) corpse.sprite_index = spr_ass_death;
+    if (global.character[myPlayerId] == char_rider) corpse.sprite_index = spr_jimmy_death;
     instance_destroy();
 }
 else hp = round(hp);

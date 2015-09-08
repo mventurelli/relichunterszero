@@ -33,7 +33,7 @@ sprite_index = spr_pickup_grenade;
 if (global.character[1] == char_biu) || (global.character[2] == char_biu) ammo = 2;
 else ammo = 1;
 
-if (global.relic_watchful_eye) ammo++;
+if (global.relic_watchful_eye == 2) ammo++;
 </string>
           </argument>
         </arguments>

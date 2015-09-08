@@ -142,6 +142,17 @@ if (owner) &amp;&amp; (instance_exists(owner))
             myString = loc_key("CHARSELECT_DESC_ASS");
         }
         
+        if owner.slotCharacter == char_rider
+        {
+            statHealth = 3;
+            statShield = 3;
+            statMelee = 3;
+            statStamina = 3;
+            statSpeed = 3;
+            myWeaponSprite = spr_pistol;
+            myString = loc_key("CHARSELECT_DESC_ASS");
+        }
+        
         if owner.slotCharacter == char_random
         {
             statHealth = 5;

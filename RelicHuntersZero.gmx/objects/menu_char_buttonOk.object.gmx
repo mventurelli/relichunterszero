@@ -92,6 +92,7 @@ if (trigger)
         if (global.unlockBiu) &amp;&amp; (global.character[1] != char_biu) &amp;&amp; (global.character[2] != char_biu) ds_list_add(randomList,char_biu);
         if (global.unlockPunny) &amp;&amp; (global.character[1] != char_punny) &amp;&amp; (global.character[2] != char_punny) ds_list_add(randomList,char_punny);
         if (global.unlockAss) &amp;&amp; (global.character[1] != char_ass) &amp;&amp; (global.character[2] != char_ass) ds_list_add(randomList,char_ass);
+        if (global.unlockRider) &amp;&amp; (global.character[1] != char_rider) &amp;&amp; (global.character[2] != char_rider) ds_list_add(randomList,char_rider);
         
         if (global.character[1] == char_random)
         {

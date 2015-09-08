@@ -66,6 +66,7 @@ ini_open(working_directory + "\saveData.ini");
     global.unlockBiu = ini_read_real('Persistence','UnlockBiu',0);
     global.unlockPunny = ini_read_real('Persistence','UnlockPunny',0);
     global.unlockAss = ini_read_real('Persistence','UnlockAss',0);
+    global.unlockRider = ini_read_real('Persistence','UnlockRider',0);
     
     global.score_total = ini_read_real('Persistence','Score',0);
     global.checkpoint1 = ini_read_real('Persistence','Checkpoint1',0);

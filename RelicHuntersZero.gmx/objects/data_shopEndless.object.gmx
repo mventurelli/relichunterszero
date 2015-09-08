@@ -94,6 +94,7 @@ if (random(1) &lt;= 0.4){
 global.endShop_tier[3] = ds_list_create();
 ds_list_add(global.endShop_tier[3], 
     obj_endShop_plasmaSMG,
+    obj_endShop_assaultRifle,
     obj_endShop_relicSMG,
     obj_endShop_relicShotgun,
     obj_endShop_rocketLauncher,

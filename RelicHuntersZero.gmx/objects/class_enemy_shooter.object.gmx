@@ -458,7 +458,7 @@ current_distance = 0;
 move_speed = speed_walk;
 firing = false;
 
-var myClosestPlayer = instance_nearest(x,y,class_player);
+var myClosestPlayer = instance_nearest(x,y,faction_player);
 
 distance_to_player = 0;
 if (instance_exists(myClosestPlayer)) distance_to_player = point_distance(x,y,myClosestPlayer.x,myClosestPlayer.y);

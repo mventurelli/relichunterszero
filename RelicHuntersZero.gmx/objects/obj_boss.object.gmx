@@ -680,7 +680,7 @@ move_speed = speed_walk;
 firing = false;
 
 distance_to_player = 0;
-if (instance_exists(class_player)) distance_to_player = point_distance(x,y,class_player.x,class_player.y);
+if (instance_exists(faction_player)) distance_to_player = point_distance(x,y,faction_player.x,faction_player.y);
 
 if (grenade_count &gt; grenade_count_max) grenade_count = grenade_count_max;
 
@@ -689,9 +689,9 @@ if (hit_taken) want_to_activate = true;
 
 if (!ai_active)
 {
-    if (distance_to_player &lt; ai_activation_range) &amp;&amp; instance_exists(class_player) &amp;&amp; (!want_to_activate)
+    if (distance_to_player &lt; ai_activation_range) &amp;&amp; instance_exists(faction_player) &amp;&amp; (!want_to_activate)
     {
-        if collision_line(x,y,class_player.x,class_player.y,obj_limit,false,true) &lt; 0
+        if collision_line(x,y,faction_player.x,faction_player.y,obj_limit,false,true) &lt; 0
         {
             want_to_activate = true;
         }
@@ -713,13 +713,13 @@ if (ai_active) &amp;&amp; ( (distance_to_player &lt; ai_shutdown_range) || (on_s
     {
         ai_target_change_current = 0;
 
-        ai_target = class_player;
+        ai_target = faction_player;
         distance_to_target = distance_to_player;
     }
     else 
     {
         ai_target_change_current++;
-        if (ai_target == class_player) distance_to_target = distance_to_player;
+        if (ai_target == faction_player) distance_to_target = distance_to_player;
     }
     
         
@@ -813,7 +813,7 @@ if (ai_active) &amp;&amp; ( (distance_to_player &lt; ai_shutdown_range) || (on_s
                 grenade_count--;
             }
             
-            if (distance_to_target &gt; fire_range) || ( (sight_blocked) &amp;&amp; (!ai_supression) ) || (sight_forbidden &amp;&amp; (!ai_supression)) || (sight_blocked &amp;&amp; ai_target != class_player)
+            if (distance_to_target &gt; fire_range) || ( (sight_blocked) &amp;&amp; (!ai_supression) ) || (sight_forbidden &amp;&amp; (!ai_supression)) || (sight_blocked &amp;&amp; ai_target != faction_player)
             {
                 ai_movetarget_x = ai_target.x;
                 ai_movetarget_y = ai_target.y;

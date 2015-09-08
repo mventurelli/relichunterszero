@@ -29,6 +29,7 @@
 event_inherited();
 
     playerName = "PINKYY";
+    myChar = char_pinky;
     
     energy_max = 50;
     energy_max_regular = energy_max;

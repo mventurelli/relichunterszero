@@ -100,6 +100,7 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Persistence','UnlockBiu',global.unlockBiu);
         ini_write_real('Persistence','UnlockPunny',global.unlockPunny);
         ini_write_real('Persistence','UnlockAss',global.unlockAss);
+        ini_write_real('Persistence','UnlockRider',global.unlockRider);
         
         ini_write_real('Persistence','Score',global.score_total);
         

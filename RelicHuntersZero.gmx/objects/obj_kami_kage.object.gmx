@@ -149,11 +149,14 @@ if (hp &gt; maxhp) hp = maxhp;
 
 if hp &lt; 0
 {
+    var spawnObj = obj_kamikaze1;
+    if (global.character[1] == char_rider) || (global.character[2] == char_rider) spawnObj = obj_kamiAlly;
+    
     repeat(6)
     {
         spawnX = x + irandom_range(-10,10) + 64;
         spawnY = y + irandom_range(-10,10) + 64;
-        instance_create(spawnX,spawnY,obj_kamikaze1);
+        instance_create(spawnX,spawnY,spawnObj);
     }    
     
     instance_create(x,y,fx_kami_cageDestroy);
