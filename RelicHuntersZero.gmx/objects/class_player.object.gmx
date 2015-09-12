@@ -257,6 +257,8 @@ hpPieUpdated = false;
 energyDriveUpdated = false;
 energyProcessorUpdated = false;
 
+receivedCrystalBaconHealing = false;
+
 //Special Character Stuff
 riderGrenadeCost = 0;
 riderDodgeAttack = noone;
@@ -538,9 +540,24 @@ if (global.relic_yottabyte_processor == 2) &amp;&amp; (!energyProcessorUpdated){
     energyProcessorUpdated = true;
 }
 
+//Crystal Bacon on Level End
+if (global.relic_crystal_bacon ==2) &amp;&amp; (instance_exists(controller_main)){
+    if (controller_main.level_end) &amp;&amp; (!receivedCrystalBaconHealing){
+        hp += min(hp_max*0.2, hp_max-hp);
+                
+        audio_play(audio_emitter,false,1,sfx_pickup_health);
+                
+        guiInfo = instance_create(x,y,gui_info);
+        guiInfo.colorMain = c_white;
+        guiInfo.myString = loc_key("INFO_HEALTHPLUS");
+        guiInfo.owner = id;
+        
+        receivedCrystalBaconHealing = true;
+    }
+}
+
 //Watchful Eye: See controller_main;
 //Midnight Beer and Midnight Meal: See projectile_player and melee_arc
-//Crystal Bacon: See fx_corpse
 //Dev Potion: See class_gun
 //Morning Star: See coin pickup
 //The Rabbit Foot: You won't find out what it does here :)
@@ -1351,6 +1368,9 @@ if (!energy) &amp;&amp; (shield == true) &amp;&amp; (energy_max)
 if (!energy_max) shield = false;
 
 if (superShield){
+    energy = energy_max+overshield;
+    shield = true;
+
     if (!instance_exists(mySuperShieldFx)) {
         mySuperShieldFx = instance_create(x,y,fx_superShield);
         mySuperShieldFx.owner = id;

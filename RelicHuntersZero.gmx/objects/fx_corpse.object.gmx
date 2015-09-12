@@ -33,20 +33,6 @@ speed_reset = false;
 old_speed = 0;
 
 max_speed = 10;
-
-///Crystal Bacon
-if (global.relic_crystal_bacon == 2)
-{
-    if (instance_exists(class_player))
-    {
-        var playerCount = instance_number(class_player);
-        for (var i=0; i&lt;playerCount; i++)
-        {
-            var currentPlayer = instance_find(class_player,i);
-            currentPlayer.hp += min(global.crystalBaconRegen, (currentPlayer.hp_max - currentPlayer.hp));
-        }
-    }
-}
 </string>
           </argument>
         </arguments>
