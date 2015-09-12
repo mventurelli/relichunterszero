@@ -34,14 +34,13 @@ radiusAccel = 0.3;
 radiusSpeedMax = 8;
 radiusSpeed = 0;
 
-
 radius = radiusStart;
 
 radiusAlpha = 1;
 radiusAlphaSpeed = 0.025;
 
 damage = 200;
-push_power = 10;
+push_power = 20;
 
 damage_list = ds_list_create();
 hit_list = ds_list_create();

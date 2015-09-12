@@ -410,6 +410,11 @@
     <option_textureGroup32_parent>&lt;none&gt;</option_textureGroup32_parent>
     <option_textureGroup32_scaled>0</option_textureGroup32_scaled>
     <option_textureGroup32_targets>9223372036854775807</option_textureGroup32_targets>
+    <option_textureGroup33_border>2</option_textureGroup33_border>
+    <option_textureGroup33_nocropping>0</option_textureGroup33_nocropping>
+    <option_textureGroup33_parent>&lt;none&gt;</option_textureGroup33_parent>
+    <option_textureGroup33_scaled>0</option_textureGroup33_scaled>
+    <option_textureGroup33_targets>9223372036854775807</option_textureGroup33_targets>
     <option_textureGroup3_border>2</option_textureGroup3_border>
     <option_textureGroup3_nocropping>-1</option_textureGroup3_nocropping>
     <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
@@ -445,7 +450,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>33</option_textureGroup_count>
+    <option_textureGroup_count>34</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -473,6 +478,7 @@
     <option_textureGroups30>Fonts - Chinese</option_textureGroups30>
     <option_textureGroups31>SpriteSheep - Gunnar</option_textureGroups31>
     <option_textureGroups32>SpriteSheet - Rider</option_textureGroups32>
+    <option_textureGroups33>Stage Halloween</option_textureGroups33>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
     <option_textureGroups6>GUI</option_textureGroups6>

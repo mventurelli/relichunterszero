@@ -31,6 +31,8 @@ owner = noone;
 isActive = true;
 object = obj_buckler;
 
+isMeleeWeapon = false;
+
 weaponLevel = 0;
 storeOriginalDamage = -1;
 storeOriginalName = '';

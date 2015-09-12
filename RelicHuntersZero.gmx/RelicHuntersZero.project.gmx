@@ -389,6 +389,11 @@
         <sprite>sprites\spr_boss_egg_crack</sprite>
         <sprite>sprites\spr_boss_egg_idle</sprite>
       </sprites>
+      <sprites name="Ghost Ducan">
+        <sprite>sprites\spr_ghost_idle</sprite>
+        <sprite>sprites\spr_ghost_facing</sprite>
+        <sprite>sprites\spr_ghost_walking</sprite>
+      </sprites>
     </sprites>
     <sprites name="Environment">
       <sprites name="Base">
@@ -401,6 +406,7 @@
         <sprite>sprites\spr_wall_stage2</sprite>
         <sprite>sprites\spr_wall_stage3</sprite>
         <sprite>sprites\spr_wall_stage4</sprite>
+        <sprite>sprites\spr_wallHalloween</sprite>
         <sprite>sprites\spr_wall_stage1_static</sprite>
         <sprite>sprites\spr_wall_stage2_static</sprite>
         <sprite>sprites\spr_wall_stage3_static</sprite>
@@ -444,6 +450,9 @@
         <sprite>sprites\spr_crate_hit</sprite>
         <sprite>sprites\spr_crate_dirt</sprite>
         <sprite>sprites\spr_crate</sprite>
+        <sprite>sprites\spr_pumpkin</sprite>
+        <sprite>sprites\spr_pumpkin_hit</sprite>
+        <sprite>sprites\spr_pumpkin_break</sprite>
         <sprite>sprites\spr_generator</sprite>
         <sprite>sprites\spr_generatorOff</sprite>
         <sprite>sprites\spr_generatorActivation</sprite>
@@ -466,9 +475,13 @@
         <sprite>sprites\spr_altar_relic_light</sprite>
       </sprites>
       <sprite>sprites\spr_exitArrow</sprite>
+      <sprites name="Traps">
+        <sprite>sprites\spr_spikeTrap</sprite>
+      </sprites>
     </sprites>
     <sprites name="Grenades">
       <sprite>sprites\spr_grenade_exp1</sprite>
+      <sprite>sprites\spr_grenade_expRider</sprite>
       <sprite>sprites\spr_grenade_glow</sprite>
       <sprite>sprites\spr_explosion_ground</sprite>
       <sprite>sprites\spr_grenadeNew</sprite>
@@ -524,6 +537,7 @@
       <sprite>sprites\spr_digPile</sprite>
       <sprite>sprites\spr_dirt_bits</sprite>
       <sprite>sprites\spr_fx_digItem</sprite>
+      <sprite>sprites\spr_bullet_plasma</sprite>
       <sprite>sprites\spr_fx_weaponGround</sprite>
       <sprites name="Broken">
         <sprite>sprites\spr_broken_pistol</sprite>
@@ -541,7 +555,6 @@
         <sprite>sprites\spr_broken_highmag</sprite>
         <sprite>sprites\spr_broken_keytar</sprite>
       </sprites>
-      <sprite>sprites\spr_bullet_plasma</sprite>
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_crosshair_reload</sprite>
@@ -596,6 +609,7 @@
     <sprites name="Items">
       <sprite>sprites\spr_pickup_health</sprite>
       <sprite>sprites\spr_pickup_shield</sprite>
+      <sprite>sprites\spr_pickup_supershield</sprite>
       <sprite>sprites\spr_pickup_healthBig</sprite>
       <sprite>sprites\spr_pickup_light</sprite>
       <sprite>sprites\spr_pickup_medium</sprite>
@@ -715,9 +729,11 @@
         <sprite>sprites\spr_rider_dash_fx</sprite>
         <sprite>sprites\spr_rider_walk</sprite>
         <sprite>sprites\spr_rider_melee</sprite>
+        <sprite>sprites\spr_rider_dig</sprite>
         <sprite>sprites\spr_rider_teleport_out</sprite>
         <sprite>sprites\spr_rider_teleport_in</sprite>
         <sprite>sprites\spr_rider_holo</sprite>
+        <sprite>sprites\spr_rider_death</sprite>
       </sprites>
       <sprite>sprites\spr_melee</sprite>
       <sprite>sprites\spr_melee_gloves</sprite>
@@ -734,6 +750,7 @@
       <sprite>sprites\spr_shield_down</sprite>
       <sprite>sprites\spr_shield_down_blue</sprite>
       <sprite>sprites\spr_shield_blue</sprite>
+      <sprite>sprites\spr_supershield</sprite>
       <sprite>sprites\spr_shield_biu</sprite>
       <sprite>sprites\spr_shield_boss</sprite>
       <sprite>sprites\spr_shield_up_blue</sprite>
@@ -872,6 +889,19 @@
         <sprite>sprites\spr_card_raff</sprite>
       </sprites>
     </sprites>
+    <sprites name="Zombie Turtle">
+      <sprite>sprites\spr_zombieTurtle_idle</sprite>
+      <sprite>sprites\spr_zombieTurtle_hit</sprite>
+      <sprite>sprites\spr_zombieTurtle_death</sprite>
+      <sprite>sprites\spr_zombieTurtle_rise</sprite>
+    </sprites>
+    <sprites name="Worm">
+      <sprite>sprites\spr_worm_idle</sprite>
+      <sprite>sprites\spr_worm_walk</sprite>
+      <sprite>sprites\spr_worm_death1</sprite>
+      <sprite>sprites\spr_worm_death2</sprite>
+      <sprite>sprites\spr_worm_spawn</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_end</background>
@@ -907,6 +937,10 @@
       <background>background\bg_menu_settings</background>
       <background>background\bg_menu_nested</background>
       <background>background\bg_menu_tile</background>
+    </backgrounds>
+    <backgrounds name="Stage Halloween">
+      <background>background\tileset_halloween</background>
+      <background>background\floor_halloween</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -1062,6 +1096,7 @@
     <scripts name="Input Customization">
       <scripts name="Keyboard &amp; Mouse">
         <script>scripts\input_key_aim.gml</script>
+        <script>scripts\input_key_aim_pressed.gml</script>
         <script>scripts\input_key_down.gml</script>
         <script>scripts\input_key_down_pressed.gml</script>
         <script>scripts\input_key_down_released.gml</script>
@@ -1194,6 +1229,8 @@
     <objects name="Player">
       <object>objects\faction_player</object>
       <object>objects\class_player</object>
+      <object>objects\class_weapon</object>
+      <object>objects\class_melee</object>
       <object>objects\class_gun</object>
       <object>objects\fx_corpse_player</object>
       <object>objects\obj_jimmy</object>
@@ -1325,6 +1362,7 @@
         <object>objects\obj_wall_stage2</object>
         <object>objects\obj_wall_stage3</object>
         <object>objects\obj_wall_stage4</object>
+        <object>objects\obj_wall_halloween</object>
         <object>objects\obj_bigwindow</object>
       </objects>
       <objects name="Blockers">
@@ -1336,6 +1374,7 @@
         <object>objects\obj_redbarrel_spawner</object>
         <object>objects\obj_redbarrel</object>
         <object>objects\obj_crate</object>
+        <object>objects\obj_pumpkin</object>
         <object>objects\class_generator</object>
         <object>objects\obj_wonderwall1</object>
         <object>objects\obj_wonderwall2</object>
@@ -1374,6 +1413,7 @@
         <object>objects\obj_digSpot</object>
         <object>objects\fx_detector</object>
       </objects>
+      <object>objects\obj_spikeTrap</object>
     </objects>
     <objects name="FX">
       <objects name="Shield">
@@ -1396,6 +1436,7 @@
       <object>objects\class_fx_boxbreak</object>
       <object>objects\fx_longbox_break</object>
       <object>objects\fx_crate_break</object>
+      <object>objects\fx_pumpkin_break</object>
       <object>objects\fx_barrel_break</object>
       <object>objects\fx_roots_break</object>
       <object>objects\fx_crate_particles</object>
@@ -1413,6 +1454,7 @@
       <object>objects\fx_digItem</object>
       <object>objects\fx_exitArrow</object>
       <object>objects\fx_kami_cageDestroy</object>
+      <object>objects\fx_explosionKami</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
@@ -1866,6 +1908,7 @@
     <room>rooms\level4_1</room>
     <room>rooms\level4_2</room>
     <room>rooms\level4_3</room>
+    <room>rooms\levelHalloween_1</room>
     <room>rooms\room_boss</room>
     <room>rooms\room_shop</room>
     <room>rooms\room_endShop</room>

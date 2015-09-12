@@ -29,11 +29,11 @@
   </ranges>
   <glyphs>
     <glyph character="87" x="113" y="2" w="35" h="45" shift="40" offset="0"/>
-    <glyph character="50" x="288" y="106" w="20" h="45" shift="25" offset="0"/>
-    <glyph character="108" x="131" y="153" w="15" h="45" shift="20" offset="0"/>
     <glyph character="227" x="310" y="106" w="20" h="45" shift="25" offset="0"/>
-    <glyph character="56" x="244" y="106" w="20" h="45" shift="25" offset="0"/>
+    <glyph character="108" x="131" y="153" w="15" h="45" shift="20" offset="0"/>
+    <glyph character="50" x="288" y="106" w="20" h="45" shift="25" offset="0"/>
     <glyph character="122" x="165" y="153" w="15" h="45" shift="20" offset="0"/>
+    <glyph character="56" x="244" y="106" w="20" h="45" shift="25" offset="0"/>
     <glyph character="47" x="231" y="2" w="25" h="45" shift="30" offset="0"/>
     <glyph character="246" x="266" y="106" w="20" h="45" shift="25" offset="0"/>
     <glyph character="48" x="376" y="106" w="20" h="45" shift="25" offset="0"/>

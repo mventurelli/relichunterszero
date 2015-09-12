@@ -62,8 +62,8 @@ event_inherited();
     stamina_regen = 0.7;
     energy_regen_speed = 2;
     
-    move_speed_max = 3.5;
-    move_speed_sprint = 5;
+    move_speed_max = 4;
+    move_speed_sprint = 6;
     move_speed_aiming = 2.5;
     
     //Sprites

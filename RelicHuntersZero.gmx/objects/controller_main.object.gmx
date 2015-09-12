@@ -831,7 +831,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
     global.challengeMedievalBonus = 1;
     global.challengeCatapultMultiplier = 3;
     global.challengeHeavyBurdenPenalty = 0.8;
-    global.challengeBloodlustRate = 2; //Im applying this to the fire rate at class_gun_enemy
+    global.challengeBloodlustRate = 1.5; //Im applying this to the fire rate at class_gun_enemy
     global.challengeDucanWeaponsSpeed = 1.2;
     
 //Apply these right here, right now

@@ -30,12 +30,7 @@ event_inherited();
 if (enemyTrigger) detonationTimeCurrent = detonationTime;
 
 if (goBoom){
-    repeat(6)
-    {
-        spawnX = x + irandom_range(-10,10) + 64;
-        spawnY = y + irandom_range(-10,10) + 64;
-        instance_create(spawnX,spawnY,obj_kamiAlly);
-    }    
+    instance_create(x,y,fx_explosionKami); 
     instance_destroy();
 }
 </string>

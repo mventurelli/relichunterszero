@@ -31,7 +31,7 @@ owner = noone;
 isActive = true;
 
 staminaMin = 5;
-staminaCost = 0.25;
+staminaCost = 0.15;
 
 reflectAngleMin = -12;
 reflectAngleMax = 12;

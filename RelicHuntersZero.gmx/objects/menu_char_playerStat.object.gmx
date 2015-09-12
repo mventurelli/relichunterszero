@@ -90,7 +90,7 @@ if (owner) &amp;&amp; (instance_exists(owner))
         if owner.slotCharacter == char_pinky
         {
             statHealth = 4;
-            statShield = 2;
+            statShield = 3;
             statMelee = 5;
             statStamina = 4;
             statSpeed = 4;

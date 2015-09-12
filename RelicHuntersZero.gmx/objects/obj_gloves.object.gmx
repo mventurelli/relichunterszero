@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>class_melee</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,197 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Shit from class_gun
+            <string>///Setup
+event_inherited();
+
 name = loc_key("WPNAME_GLOVES");
-owner = noone;
-isActive = true;
 object = obj_gloves;
 
-weaponLevel = 0;
-storeOriginalDamage = -1;
-storeOriginalName = '';
+meleeDamage = 160;
+meleeStepSpeed = 25;
+maxHits = 5;
+pushPower = 15;
 
-shake_amount = 0;
+animationIdle = spr_gloves_idle;
+animationWalk = spr_gloves_walk;
+animationSprint = spr_gloves_sprint;
+animationDash = spr_gloves_dash;
+animationHit = spr_gloves_hit;
+animationMelee = spr_gloves_melee;
+
+meleeArcSprite = spr_melee_gloves;
 
 ammo_type = type_light;
 ammo_cost = 1;
 ammo = 0;
 ammo_current = ammo;
-reloading = false;
-reload_time = room_speed*2.5;
-reload_time_current = 0;
 
-fire_automatic = false;
-fire_amount = 1;
-fire_burst = 1;
-fire_burst_current = 0;
-fire_burst_rate = room_speed*0.1;
-fire_burst_rate_current = 0;
-fire_rate = room_speed*0.1;
-fire_rate_current = 0;
-can_fire = true;
-
-accuracy = 5;
-accuracy_aiming = 0.5;
-
-projectile_speed = 0;
-projectile_speed_decay = 0;
-projectile_damage = 0;
-projectile_range = 0;
-projectile_power = 5;
-projectile_recoil = 4;
-projectile_piercing = 0;
-
-crosshair_recoil = 0.25;
-
-spawn_distance_from_barrel = 24;
-
-recoil_speed = 0;
-recoil_return = 1.25;
-recoil_current = 0;
-recoil_max = 7;
-drawX = x;
-drawY = y;
-
-reflection_object_setup(0,-1,image_index);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Weapon Level
-if (instance_exists(owner)){
-    if (!storeOriginalDamage) || (storeOriginalName == '') {
-        projectile_damage = owner.melee_damage_gloves;
-        weaponLevelBonus[0] = 0;
-        weaponLevelBonus[1] = 0.25*projectile_damage;
-        weaponLevelBonus[2] = 0.5*projectile_damage;
-        weaponLevelBonus[3] = 0.75*projectile_damage;
-        weaponLevelBonus[4] = 1.0*projectile_damage;
-        weaponLevelBonus[5] = 1.25*projectile_damage;
-        weaponLevelBonus[6] = 1.5*projectile_damage;
-        weaponLevelBonus[7] = 1.75*projectile_damage;
-        weaponLevelBonus[8] = 2*projectile_damage;
-        weaponLevelBonus[9] = 3*projectile_damage;
-        
-        storeOriginalDamage = projectile_damage;
-        storeOriginalName = name;
-    }
-    else {
-        projectile_damage = round(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
-        if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
-        owner.melee_damage_gloves = projectile_damage;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Animation &amp; Movement
-
-if instance_exists(owner)
-{
-    x = owner.x;
-    y = owner.y;
-    
-    if (owner.animation_current == 'idle')      sprite_index = spr_gloves_idle;
-    if (owner.animation_current == 'walk')      sprite_index = spr_gloves_walk;
-    if (owner.animation_current == 'sprint')    sprite_index = spr_gloves_sprint;
-    if (owner.animation_current == 'dash')      sprite_index = spr_gloves_dash;
-    if (owner.animation_current == 'hit')       sprite_index = spr_gloves_hit;
-    if (owner.animation_current == 'melee')     sprite_index = spr_gloves_melee;
-    
-    image_speed = owner.animation_speed;
-    image_xscale = owner.image_xscale;
-    depth = owner.depth-1;
-}
-else instance_destroy();
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Set Camera Distance When Zoomed
-if (isActive) &amp;&amp; instance_exists(controller_camera)
-{
-    controller_camera.weaponRange = 500;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw if not digging
-if (isActive) &amp;&amp; (owner) &amp;&amp; instance_exists(owner)
-{
-    if (!owner.isDigging) &amp;&amp; (owner.animation_current != 'dig') draw_self();
-}
 </string>
           </argument>
         </arguments>

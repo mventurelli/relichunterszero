@@ -23,9 +23,9 @@
     <glyph character="61" x="216" y="86" w="8" h="34" shift="12" offset="0"/>
     <glyph character="77" x="31" y="2" w="20" h="38" shift="22" offset="0"/>
     <glyph character="122" x="296" y="46" w="12" h="38" shift="16" offset="0"/>
+    <glyph character="35" x="53" y="2" w="20" h="38" shift="22" offset="0"/>
     <glyph character="115" x="310" y="46" w="12" h="38" shift="16" offset="0"/>
     <glyph character="56" x="385" y="2" w="12" h="38" shift="16" offset="0"/>
-    <glyph character="35" x="53" y="2" w="20" h="38" shift="22" offset="0"/>
     <glyph character="105" x="280" y="86" w="4" h="38" shift="8" offset="0"/>
     <glyph character="47" x="380" y="46" w="12" h="38" shift="24" offset="0"/>
     <glyph character="80" x="394" y="46" w="12" h="38" shift="16" offset="0"/>
@@ -34,12 +34,12 @@
     <glyph character="48" x="366" y="46" w="12" h="38" shift="16" offset="0"/>
     <glyph character="32" x="100" y="86" w="8" h="52" shift="8" offset="0"/>
     <glyph character="91" x="206" y="86" w="8" h="38" shift="12" offset="0"/>
-    <glyph character="79" x="450" y="46" w="12" h="38" shift="16" offset="0"/>
-    <glyph character="97" x="464" y="46" w="12" h="38" shift="16" offset="0"/>
-    <glyph character="114" x="254" y="46" w="12" h="38" shift="16" offset="0"/>
     <glyph character="57" x="408" y="46" w="12" h="38" shift="16" offset="0"/>
-    <glyph character="107" x="436" y="46" w="12" h="38" shift="16" offset="0"/>
+    <glyph character="79" x="450" y="46" w="12" h="38" shift="16" offset="0"/>
     <glyph character="98" x="422" y="46" w="12" h="38" shift="16" offset="0"/>
+    <glyph character="97" x="464" y="46" w="12" h="38" shift="16" offset="0"/>
+    <glyph character="107" x="436" y="46" w="12" h="38" shift="16" offset="0"/>
+    <glyph character="114" x="254" y="46" w="12" h="38" shift="16" offset="0"/>
     <glyph character="46" x="268" y="86" w="4" h="38" shift="8" offset="0"/>
     <glyph character="38" x="110" y="86" w="12" h="34" shift="16" offset="0"/>
     <glyph character="100" x="268" y="46" w="12" h="38" shift="16" offset="0"/>

@@ -66,7 +66,6 @@
     <instance objName="menu_fx_charSelection" x="210" y="48" name="inst_2EDA33DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_statsBox" x="8" y="368" name="inst_6E1B2E99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_charBar" x="0" y="128" name="inst_D4A6E9FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_rider" x="304" y="256" name="inst_D8241985" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -48,10 +48,10 @@
   </ranges>
   <glyphs>
     <glyph character="353" x="74" y="43" w="7" h="16" shift="8" offset="0"/>
-    <glyph character="227" x="173" y="43" w="7" h="16" shift="8" offset="0"/>
-    <glyph character="344" x="202" y="23" w="8" h="16" shift="10" offset="0"/>
     <glyph character="50" x="182" y="23" w="8" h="16" shift="10" offset="0"/>
     <glyph character="108" x="10" y="83" w="2" h="16" shift="4" offset="0"/>
+    <glyph character="227" x="173" y="43" w="7" h="16" shift="8" offset="0"/>
+    <glyph character="344" x="202" y="23" w="8" h="16" shift="10" offset="0"/>
     <glyph character="56" x="112" y="23" w="8" h="16" shift="10" offset="0"/>
     <glyph character="122" x="122" y="23" w="8" h="16" shift="10" offset="0"/>
     <glyph character="367" x="128" y="43" w="7" h="16" shift="8" offset="0"/>

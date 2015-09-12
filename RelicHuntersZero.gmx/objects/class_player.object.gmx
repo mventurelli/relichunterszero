@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Shit
+            <string>///Setup
 
 myPlayerId = 1;
 playerName = "NONAME";
@@ -807,7 +807,7 @@ if (allowMovement)
     if (melee) &amp;&amp; (animation_current = 'melee') &amp;&amp;(animation_index = melee_hit_frame)
     {
         speed = melee_step_speed;
-        if (myGun == obj_gloves) speed = melee_step_speed_gloves;
+        if (instance_exists(myGun)) if (myGun.isMeleeWeapon) speed = myGun.meleeStepSpeed;
         direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
         melee_dash = true;
         
@@ -1003,7 +1003,7 @@ animation_update_player();
             <string>///Melee Attack + Biu's Shield
 
 var input_melee = false;
-var input_gloves = false;
+var input_meleeWeapon = false;
 
 if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
 {
@@ -1014,7 +1014,7 @@ if (global.input[myPlayerId] == K_INPUT_KEYBOARD)
     
     if input_key_fire_pressed()
     {
-        input_gloves = true; // Pinkyy's gloves
+        input_meleeWeapon = true;
     }
     
     if input_key_fire()
@@ -1034,55 +1034,57 @@ else
     
     if (joy_rpos(joy) &gt; 0.7)
     {
-        input_gloves = true;
+        input_meleeWeapon = true;
         inputShield = true;
     }
     else inputShield = false;
 }
 
-if (!melee) &amp;&amp; (!throw)
-{
-    if (input_melee) || ( myGun == obj_gloves &amp;&amp; input_gloves )
+if (instance_exists(myGun)){
+    if (!melee) &amp;&amp; (!throw)
     {
-        melee = true;   
-        if (myGun == obj_gloves)
+        if (input_melee) || ( myGun.isMeleeWeapon &amp;&amp; input_meleeWeapon )
         {
-            audio_play(audio_emitter,false,1,sfx_gloves1,sfx_gloves2,sfx_gloves3,sfx_gloves4,sfx_gloves5,sfx_gloves6,sfx_gloves7);
+            melee = true;   
+            if (myGun.isMeleeWeapon)
+            {
+                audio_play(audio_emitter,false,1,myGun.swingSound1,myGun.swingSound2,myGun.swingSound3,myGun.swingSound4,myGun.swingSound5,myGun.swingSound6,myGun.swingSound7);
+            }
+            else audio_play(audio_emitter,false,1,sfx_melee);
         }
-        else audio_play(audio_emitter,false,1,sfx_melee);
     }
-}
-
-if (melee) &amp;&amp; (animation_current == 'melee')
-{
-    if (animation_index = melee_hit_frame)
+    
+    if (melee) &amp;&amp; (animation_current == 'melee')
     {
-        meleeArc = instance_create(x,y,fx_melee_arc);
-        meleeArc.owner = id;
-        meleeArc.damage = melee_damage;
-        
-        meleeArc.push_power = melee_push_power;
-        stamina -= melee_stamina_cost;
-        if stamina &lt; 0 stamina = 0;
-        
-        if (myGun == obj_gloves) 
+        if (animation_index = melee_hit_frame)
         {
-            meleeArc.damage = melee_damage_gloves;
-            meleeArc.push_power = melee_push_power_gloves;
-            meleeArc.sprite_index = spr_melee_gloves;
-            meleeArc.max_hits = 5;  
-        }  
-    }
-
-    if (animation_index &gt;= (animation_frames-1))
-    {
-        melee = false;
-        animation_priority = 0;
+            meleeArc = instance_create(x,y,fx_melee_arc);
+            meleeArc.owner = id;
+            meleeArc.damage = melee_damage;
+            
+            meleeArc.push_power = melee_push_power;
+            stamina -= melee_stamina_cost;
+            if stamina &lt; 0 stamina = 0;
+            
+            if (myGun.isMeleeWeapon) 
+            {
+                meleeArc.damage = myGun.meleeDamage;
+                meleeArc.max_hits = myGun.maxHits;  
+                meleeArc.push_power = myGun.pushPower;
+                meleeArc.sprite_index = myGun.meleeArcSprite;
+            }  
+        }
+    
+        if (animation_index &gt;= (animation_frames-1))
+        {
+            melee = false;
+            animation_priority = 0;
+        }
     }
 }
 
 //Rider's Dash attack
-
+    
 if (myChar == char_rider) &amp;&amp; (!instance_exists(riderDodgeAttack)) {
     if (dodging) {
         if (!riderDodgeAttack){
@@ -1096,9 +1098,6 @@ if (myChar == char_rider) &amp;&amp; (!instance_exists(riderDodgeAttack)) {
     }
     else riderDodgeAttack = noone;
 }
-
-
-
 
 </string>
           </argument>
@@ -1308,7 +1307,7 @@ if (hp &lt;= 0)
     if (global.character[myPlayerId] == char_biu) corpse.sprite_index = spr_biu_death;
     if (global.character[myPlayerId] == char_punny) corpse.sprite_index = spr_punny_death;
     if (global.character[myPlayerId] == char_ass) corpse.sprite_index = spr_ass_death;
-    if (global.character[myPlayerId] == char_rider) corpse.sprite_index = spr_jimmy_death;
+    if (global.character[myPlayerId] == char_rider) corpse.sprite_index = spr_rider_death;
     instance_destroy();
 }
 else hp = round(hp);
