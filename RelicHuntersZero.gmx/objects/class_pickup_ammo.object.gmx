@@ -87,17 +87,7 @@ if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
         
         if (sprite_index == spr_pickup_grenade) 
         {
-            if (global.character[player.myPlayerId] != char_pinky) //pinkyy can't use grenades
-            {
                 if (global.grenades[p] &lt; global.grenades_max) { global.grenades[p] += ammo; want_to_die = true;} else isAmmoFull = true;
-            }
-            else{
-                guiInfo = instance_create(player.x,player.y,gui_info);
-                guiInfo.myString = loc_key("INFO_CANTUSEGRENADES");
-                guiInfo.colorMain = K_BETU_RED;
-                guiInfo.owner = player;
-                audio_play(player.audio_emitter, false, 1, sfx_pickup_full);
-            }
         }
         
         if (want_to_die)

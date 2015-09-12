@@ -6,11 +6,11 @@
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
-  <bboxmode>0</bboxmode>
-  <bbox_left>28</bbox_left>
-  <bbox_right>85</bbox_right>
-  <bbox_top>28</bbox_top>
-  <bbox_bottom>85</bbox_bottom>
+  <bboxmode>1</bboxmode>
+  <bbox_left>0</bbox_left>
+  <bbox_right>113</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>93</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>

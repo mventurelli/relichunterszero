@@ -101,6 +101,7 @@
     {
         if (other.shield)
         {
+            if (other.superShield) damage = 0;
             if (distance_travelled &gt; range) damage = round(damage/3);
             if (global.challengeSupressor) damage = damage*2;
             other.energy -= damage;

@@ -541,6 +541,7 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
         
         if (myEnemy.energy)
         {
+            if (is_player) if (myEnemy.superShield) damage = 0;
             myEnemy.energy -= damage*2;
             if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
         }

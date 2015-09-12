@@ -43,6 +43,7 @@ alarm[0] = room_speed*2;
 energy_max = 100;
 energy = energy_max;
 overshield = 0;
+superShield = false;
 
 hp_max = 100;
 hp = hp_max;
@@ -153,6 +154,10 @@ shield_alpha = 0;
 shield_alpha_speed = 0;
 shield_alpha_accel = 0.2;
 shield_alpha_speed_max = 2;
+
+superShieldTime = 0;
+superShieldTimeCurrent = 0;
+mySuperShieldFx = noone;
 
 //Biu's Shield
 inputShield = false;
@@ -927,6 +932,7 @@ if (hit_taken)
         shield_effect = instance_create(x,y,fx_shield);
         shield_effect.owner = id;
         hit_taken = false;
+        if (superShield) shield_effect.sprite_index = spr_supershield;
     }
     else
     {
@@ -1143,8 +1149,6 @@ else
 
 if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
 {
-    if (global.character[myPlayerId] != char_pinky)
-    {
         if (global.grenades[myPlayerId])
         {
             throw = true;
@@ -1170,15 +1174,6 @@ if ( (grenade_input) &amp;&amp; (!melee) &amp;&amp; (!throw) )
             damage_fx = instance_create(x+spreadX,y+spreadY,fx_damage);
             damage_fx.damage = riderGrenadeCost;
         }
-    }
-    else{
-        //Pinky pinkyy grenade throw fail feedback
-        guiInfo = instance_create(x,y,gui_info);
-        guiInfo.colorMain = K_BETU_RED;
-        guiInfo.myString = loc_key("INFO_CANTUSEGRENADES");
-        guiInfo.owner = id;
-        audio_play(audio_emitter, false, 1, sfx_pickup_full);
-    }
 }
 
 
@@ -1354,6 +1349,22 @@ if (!energy) &amp;&amp; (shield == true) &amp;&amp; (energy_max)
 }
 
 if (!energy_max) shield = false;
+
+if (superShield){
+    if (!instance_exists(mySuperShieldFx)) {
+        mySuperShieldFx = instance_create(x,y,fx_superShield);
+        mySuperShieldFx.owner = id;
+        audio_play(audio_emitter,false,9,sfx_shield_regen_start);
+    }
+    
+    if (superShieldTimeCurrent &lt; superShieldTime) superShieldTimeCurrent++;
+    else{
+        superShieldTimeCurrent = 0;
+        superShieldTime = 0;
+        superShield = false;
+        if (instance_exists(mySuperShieldFx)) with (mySuperShieldFx){instance_destroy();}
+    }   
+}
 </string>
           </argument>
         </arguments>

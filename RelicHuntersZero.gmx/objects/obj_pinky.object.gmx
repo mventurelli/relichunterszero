@@ -31,7 +31,9 @@ event_inherited();
     playerName = "PINKYY";
     myChar = char_pinky;
     
-    energy_max = 60;
+    myGrenadeObject = obj_grenadeSuperShield;
+    
+    energy_max = 50;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;
@@ -45,7 +47,7 @@ event_inherited();
     stamina = stamina_max;
     energy_regen_speed = 2;
 
-    energy_regen_time = room_speed*3;
+    energy_regen_time = room_speed*4;
     energy_regen_time_regular = energy_regen_time;
     energy_regen_time_relic = round(energy_regen_time/2);
     

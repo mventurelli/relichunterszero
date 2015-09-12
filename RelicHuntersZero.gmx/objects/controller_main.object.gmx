@@ -2213,6 +2213,7 @@ while (p &lt;= global.playerCount)
         var charLifeColor = make_color_rgb(184,49,35);
         var charShieldColor = make_color_rgb(50,133,158);
         if (curPlayer.overshield) &amp;&amp; (energy &gt; curPlayer.energy_max) charShieldColor = make_color_rgb(86,216,255);
+        if (curPlayer.superShield) charShieldColor = K_BETU_ORANGE;
         var charBarDelaySpeed = 0.008;
         var charBarDelayTime = room_speed*0.6;
         
@@ -2382,8 +2383,6 @@ while (p &lt;= global.playerCount)
         }
         
         //Grenades
-        if (global.character[playerId] != char_pinky)
-        {
             var grenadesVerSpacing = 30;
             var grenadesHorSpacing = 25;
             var grenadesHorOrientation = 1;
@@ -2415,7 +2414,6 @@ while (p &lt;= global.playerCount)
                     grDrawCount = 0;
                 }
             }
-        }
         
         //gui_score Objects
         if instance_exists(gui_score)

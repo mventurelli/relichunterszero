@@ -63,16 +63,7 @@ if instance_exists(activationClient) &amp;&amp; (isInteractiveObjectActive)
     if (ammoType == type_light) if (global.ammo_light[p] &gt;= global.ammo_light_max) canActivate = false;
     else if (ammoType == type_medium) if (global.ammo_medium[p] &gt;= global.ammo_medium_max) canActivate = false;
     else if (ammoType == type_heavy) if (global.ammo_heavy[p] &gt;= global.ammo_heavy_max) canActivate = false;
-    else if (ammoType == type_grenade)
-    {
-        if (global.character[player.myPlayerId] != char_pinky) //pinkyy can't use grenades
-        {
-            if (global.grenades[p] &gt;= global.grenades_max) { 
-                canActivate = false;
-                infoString = loc_key("INFO_CANTUSEGRENADES"); 
-            }
-        }
-    }
+    else if (ammoType == type_grenade) if (global.grenades[p] &gt;= global.grenades_max) canActivate = false;
     
     if (!canActivate) &amp;&amp; (infoString == "") infoString = loc_key("INFO_FULLAMMO");
 }

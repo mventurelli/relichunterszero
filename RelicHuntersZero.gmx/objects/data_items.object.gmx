@@ -58,10 +58,10 @@ event_inherited();
     ds_list_add(item_starterhealth_1, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_health, obj_pickup_shield);
     
     item_engamehealth_1 = ds_list_create();
-    ds_list_add(item_engamehealth_1, obj_pickup_healthBig, obj_pickup_shield);
+    ds_list_add(item_engamehealth_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_shield, obj_pickup_shield, obj_pickup_superShield);
     
     item_starteraid_1 = ds_list_create();
-    ds_list_add(item_starteraid_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_health, obj_pickup_shield, obj_pickup_healthBig, obj_pickup_grenade);
+    ds_list_add(item_starteraid_1, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_lightammo, obj_pickup_health, obj_pickup_health, obj_pickup_shield, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_superShield);
     
     item_grenade_1 = ds_list_create();
     ds_list_add(item_grenade_1, obj_pickup_grenade);
@@ -73,7 +73,7 @@ event_inherited();
     ds_list_add(item_heavyammo_1, obj_pickup_heavyammo);
     
     item_endgameaid_1 = ds_list_create();
-    ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_shield, obj_pickup_heavyammo, obj_pickup_mediumammo);
+    ds_list_add(item_endgameaid_1, obj_pickup_healthBig, obj_pickup_healthBig, obj_pickup_grenade, obj_pickup_shield, obj_pickup_heavyammo, obj_pickup_mediumammo, obj_pickup_superShield);
 </string>
           </argument>
         </arguments>

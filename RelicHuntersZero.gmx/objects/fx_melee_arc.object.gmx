@@ -239,8 +239,12 @@ if instance_exists(other) &amp;&amp; instance_exists(owner)
         if (other.shield) 
         {
             if (global.challengeSupressor) damage = damage*2;
+            var excessDamage = (damage - other.energy);
             other.energy -= damage;
-            if (other.energy &lt;= 0) audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+            if (other.energy &lt;= 0) {
+                audio_play(other.audio_emitter,false,1,sfx_shield_destroy);
+                if (excessDamage) other.hp -= excessDamage;
+            }
             else audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
             
         }

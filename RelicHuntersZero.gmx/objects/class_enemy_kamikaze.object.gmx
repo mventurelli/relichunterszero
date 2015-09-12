@@ -606,6 +606,8 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
         
         if (myEnemy.energy)
         {
+            if (is_player) if (myEnemy.superShield) damage = 0;
+            
             damage = damage*2;
             if (global.challengeSupressor) damage = damage*2;
             myEnemy.energy -= damage*2;

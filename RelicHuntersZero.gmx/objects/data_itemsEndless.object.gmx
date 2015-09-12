@@ -49,6 +49,7 @@ event_inherited();
         obj_pickup_grenade, 
         obj_pickup_shield,
         obj_pickup_shield,
+        obj_pickup_superShield
     );
     
     if (!global.challengeHunger) {

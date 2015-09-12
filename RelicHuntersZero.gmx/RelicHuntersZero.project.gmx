@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="35" name="datafiles">
-    <datafiles number="35" name="fonts">
+  <datafiles number="36" name="datafiles">
+    <datafiles number="36" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>344014</size>
+      <size>344102</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -1241,9 +1241,9 @@
       <object>objects\obj_punny</object>
       <object>objects\obj_assPlayer</object>
       <object>objects\obj_gloves</object>
-      <object>objects\obj_shield_biu</object>
       <object>objects\obj_buckler</object>
       <object>objects\fx_melee_arc</object>
+      <object>objects\obj_shield_biu</object>
       <objects name="Guns">
         <object>objects\obj_assault_rifle</object>
         <object>objects\obj_assault_rifle_crude</object>
@@ -1428,6 +1428,7 @@
         <object>objects\fx_corpse</object>
         <object>objects\fx_corpse_boss</object>
       </objects>
+      <object>objects\fx_superShield</object>
       <object>objects\class_bouncer</object>
       <object>objects\fx_activation</object>
       <object>objects\fx_blood</object>
@@ -1461,6 +1462,7 @@
       <object>objects\class_grenadeNew</object>
       <object>objects\obj_grenadeNew</object>
       <object>objects\obj_grenadeKami</object>
+      <object>objects\obj_grenadeSuperShield</object>
       <object>objects\obj_grenade_enemyNew</object>
       <object>objects\fx_grenadeTarget</object>
     </objects>
@@ -1625,9 +1627,11 @@
       <object>objects\class_pickup_ammo</object>
       <object>objects\class_pickup_health</object>
       <object>objects\class_pickup_shield</object>
+      <object>objects\class_pickup_superShield</object>
       <object>objects\obj_pickup_coin</object>
       <object>objects\obj_pickup_health</object>
       <object>objects\obj_pickup_shield</object>
+      <object>objects\obj_pickup_superShield</object>
       <object>objects\obj_pickup_healthBig</object>
       <object>objects\obj_pickup_lightammo</object>
       <object>objects\obj_pickup_mediumammo</object>

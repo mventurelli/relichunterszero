@@ -29,7 +29,7 @@
 
 range = 130;
 in_range = false;
-overshield = 50;
+superShieldTime = room_speed*5;
 active = false;
 
 myPrompt = instance_create(x+10,y-25,fx_prompt_e);
@@ -71,28 +71,19 @@ if instance_exists(activationClient)
 
     if (wantToActivate) &amp;&amp; (in_range)
     {
-        if (global.character[activationClient.myPlayerId] != char_biu) //Biu can't pick up Overshield
+        if (global.character[activationClient.myPlayerId] != char_biu) //Biu can't pick up Super Shield
         {
-            if (activationClient.overshield &lt; activationClient.energy_max)
-            {
-                activationClient.overshield += min(overshield, (activationClient.energy_max - activationClient.overshield));
-                activationClient.energy_regen_time_current = activationClient.energy_regen_time-1;
+            activationClient.superShieldTime = max(superShieldTime, activationClient.superShieldTime);
+            activationClient.energy = activationClient.energy_max;
+            activationClient.superShield = true;
+            
+            audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
                 
-                audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
-                
-                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
-                guiInfo.colorMain = K_BETU_ORANGE;
-                guiInfo.myString = loc_key("INFO_SHIELDPLUS");
-                guiInfo.owner = activationClient;
-                instance_destroy();
-            }
-            else{
-                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
-                guiInfo.colorMain = c_black;
-                guiInfo.myString = loc_key("INFO_SHIELDMAX");
-                guiInfo.owner = activationClient;
-                audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
-            }
+            guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
+            guiInfo.colorMain = K_BETU_ORANGE;
+            guiInfo.myString = loc_key("INFO_SUPERSHIELD");
+            guiInfo.owner = activationClient;
+            instance_destroy();
         }
         else{
                 guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
