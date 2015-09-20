@@ -55,7 +55,7 @@ event_inherited();
     if (!global.challengeHunger) {
         ds_list_add(item_endlessAid_1, obj_pickup_health, obj_pickup_health);
     
-        if (random(1) &lt;= 0.1) ds_list_add(item_endlessAid_1, 
+        if (random(1) &lt;= 0.1) || (global.relic_rabbit_foot == 2) ds_list_add(item_endlessAid_1, 
             obj_pickup_healthBig,
         );
     }
@@ -69,7 +69,7 @@ event_inherited();
         obj_pickup_lightammo
     );
     
-    if (random(1) &lt;= 0.32) ds_list_add(item_endlessTrash, 
+    if (random(1) &lt;= 0.32) || (global.relic_rabbit_foot == 2) ds_list_add(item_endlessTrash, 
         obj_pickup_sawedoff,
         obj_pickup_pistol_assault
     );
@@ -88,7 +88,7 @@ event_inherited();
         obj_pickup_grenade
     );
     
-    if (random(1) &lt;= 0.3) ds_list_add(item_endlessTrashPlus, 
+    if (random(1) &lt;= 0.3) || (global.relic_rabbit_foot == 2) ds_list_add(item_endlessTrashPlus, 
         obj_pickup_assault_rifle,
         obj_pickup_pistol_bouncer
     );

@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="41" name="datafiles">
-    <datafiles number="41" name="fonts">
+  <datafiles number="42" name="datafiles">
+    <datafiles number="42" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>371040</size>
+      <size>371228</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -393,6 +393,19 @@
         <sprite>sprites\spr_ghost_idle</sprite>
         <sprite>sprites\spr_ghost_facing</sprite>
         <sprite>sprites\spr_ghost_walking</sprite>
+      </sprites>
+      <sprites name="Worm">
+        <sprite>sprites\spr_worm_idle</sprite>
+        <sprite>sprites\spr_worm_walk</sprite>
+        <sprite>sprites\spr_worm_death1</sprite>
+        <sprite>sprites\spr_worm_death2</sprite>
+        <sprite>sprites\spr_worm_spawn</sprite>
+      </sprites>
+      <sprites name="Zombie Turtle">
+        <sprite>sprites\spr_zombieTurtle_idle</sprite>
+        <sprite>sprites\spr_zombieTurtle_hit</sprite>
+        <sprite>sprites\spr_zombieTurtle_death</sprite>
+        <sprite>sprites\spr_zombieTurtle_rise</sprite>
       </sprites>
     </sprites>
     <sprites name="Environment">
@@ -897,19 +910,6 @@
         <sprite>sprites\spr_card_raff</sprite>
       </sprites>
     </sprites>
-    <sprites name="Zombie Turtle">
-      <sprite>sprites\spr_zombieTurtle_idle</sprite>
-      <sprite>sprites\spr_zombieTurtle_hit</sprite>
-      <sprite>sprites\spr_zombieTurtle_death</sprite>
-      <sprite>sprites\spr_zombieTurtle_rise</sprite>
-    </sprites>
-    <sprites name="Worm">
-      <sprite>sprites\spr_worm_idle</sprite>
-      <sprite>sprites\spr_worm_walk</sprite>
-      <sprite>sprites\spr_worm_death1</sprite>
-      <sprite>sprites\spr_worm_death2</sprite>
-      <sprite>sprites\spr_worm_spawn</sprite>
-    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_end</background>
@@ -1233,6 +1233,7 @@
       <object>objects\data_shopEndless</object>
       <object>objects\data_enemiesEndless</object>
       <object>objects\data_itemsEndless</object>
+      <object>objects\data_chestItems</object>
     </objects>
     <objects name="Player">
       <object>objects\faction_player</object>
@@ -1470,6 +1471,7 @@
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
+      <object>objects\fx_explosion_shield</object>
       <object>objects\class_grenadeNew</object>
       <object>objects\obj_grenadeNew</object>
       <object>objects\obj_grenadeKami</object>
@@ -1904,6 +1906,11 @@
         <object>objects\obj_endShop_yottabyteDrive</object>
         <object>objects\obj_endShop_yottabyteProcessor</object>
       </objects>
+    </objects>
+    <objects name="Endless Dig">
+      <object>objects\class_treasureChest</object>
+      <object>objects\obj_chestRegular</object>
+      <object>objects\fx_chestRegular</object>
     </objects>
   </objects>
   <rooms name="rooms">

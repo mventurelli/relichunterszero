@@ -43,6 +43,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','endTierItem3',global.endTierItem3);
     ini_write_real('Temp','endPriceTier_revive',global.endPriceTier_revive);
     ini_write_real('Temp','endPriceTier_hack',global.endPriceTier_hack);
+    ini_write_real('Temp','relicChanceBonus',global.relicChanceBonus);
         
     ini_write_real('Character','playerCount',global.playerCount);
         

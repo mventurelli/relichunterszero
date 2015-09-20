@@ -67,6 +67,8 @@
         global.endTierItem2 = noone;
         global.endTierItem3 = noone;
         
+        global.relicChanceBonus = 0;
+        
         //Challenge list clear
         if (is_undefined(global.challengeList)) global.challengeList = ds_list_create();
         else if (ds_exists(global.challengeList,ds_type_list)) { 

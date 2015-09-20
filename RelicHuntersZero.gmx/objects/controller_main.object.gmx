@@ -837,7 +837,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                 case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescritpion="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
                 case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescritpion="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
                 case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescritpion="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
-                case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescritpion="CHALLENGE_HEAVYFOCUS"; listName="CHALLENGE_HEAVYFOCUS"; break;
+                case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescritpion="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
             }
         }
         
@@ -1375,7 +1375,7 @@ if (!level_built)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Level Exit
+            <string>///Level Exit + Relic Detected
 
 if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(room == room_shop)) &amp;&amp; (!(room == room_boss)) &amp;&amp; (!(room == room_endShop))
 {
@@ -1513,7 +1513,67 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 
                 var relicDig = instance_create(relicSpawnX,relicSpawnY,obj_digSpot);
                 relicDig.myItem = spawnRelic;
-            } 
+            }
+        }
+        
+        if (global.gameMode == gamemode_endless)
+        {
+            global.dirtColor = c_white;
+            
+            //Treasure Chance
+            var relicChance = -1;
+            if (room==level1_1) || (room==level1_2) || (room==level1_3) { relicChance = 0.25 + global.relicChanceBonus;    global.dirtColor = make_color_rgb(183,137,49); }
+            if (room==level2_1) || (room==level2_2) || (room==level2_3) { relicChance = 0.2 + global.relicChanceBonus;    global.dirtColor = make_color_rgb(111,197,148); }
+            if (room==level3_1) || (room==level3_2) || (room==level3_3) { relicChance = 0.2 + global.relicChanceBonus;   global.dirtColor = make_color_rgb(74,136,192); }
+            if (room==level4_1) || (room==level4_2) || (room==level4_3) { relicChance = 0.2 + global.relicChanceBonus;   global.dirtColor = make_color_rgb(159,55,60); }
+            relicChance -= 0.2 * global.currentLoop
+            if (global.relic_rabbit_foot == 2) relicChance += 0.2;
+            
+            if (random(1) &lt;= relicChance)
+            {
+                global.relicChanceBonus = -0.15;
+ 
+                //Define object to spawn
+                var spawnObject = noone;               
+                spawnObject = obj_chestRegular // &lt;-- one day this will check chances for Chest types, teleporter pad, slot machine and sacrifice table
+                
+                //Stop here if there is no object to spawn
+                if (spawnObject == noone) exit;
+                
+                //Randomize Dig Site Position
+                if (instance_exists(obj_spawn_topLeft)) &amp;&amp; (instance_exists(obj_spawn_botRight))
+                {
+                    var validPosition = false;
+                    var relicSpawnX, relicSpawnY;
+                    
+                    while (!validPosition)
+                    {
+                        relicSpawnX = irandom_range( obj_spawn_topLeft.x , obj_spawn_botRight.x );
+                        relicSpawnY = irandom_range( obj_spawn_topLeft.y , obj_spawn_botRight.y );
+                        if (!collision_circle(relicSpawnX,relicSpawnY,42,obj_limit,false,true)) validPosition = true;
+                    }
+                }
+                else exit;
+                
+                //Spawn
+                audio_stop_all();
+                audio_play_sound(bgm_dig,99,true);
+                volume_update();
+                audio_play_sound(sfx_relic_on,00,false); //&lt;-- Relic Detected sound will go here someday
+                
+                global.relicDetected = true;
+                var announceRelic = instance_create(x,y,fx_bigMessage);
+                announceRelic.textBig = loc_key("HUD_TREASURE_DETECT");
+                announceRelic.textBigColor = K_BETU_RED;
+                if (global.input[1] == K_INPUT_KEYBOARD) announceRelic.textSmall = loc_key("HUD_RELIC_DETECT_KEY");
+                else announceRelic.textSmall = loc_key("HUD_RELIC_DETECT_JOY");
+                
+                var relicDig = instance_create(relicSpawnX,relicSpawnY,obj_digSpot);
+                relicDig.myItem = spawnObject;
+            }
+            else{
+                global.relicChanceBonus += 0.12;
+            }
         }
     }
 }

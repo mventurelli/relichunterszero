@@ -54,15 +54,17 @@ bounce_min = 1;
 bounce_max = 2;
 
 speed = random_range(2,4);
-dirMin = -30;
-dirMax = 30;
-direction = 180 + random_range(dirMin,dirMax);
 friction = 0.05;
  
 randomizeDir = false;
 image_speed = 0.2;
 
+direction = random(360);
 
+/*
+dirMin = -30;
+dirMax = 30;
+direction = 180 + random_range(dirMin,dirMax);
 </string>
           </argument>
         </arguments>

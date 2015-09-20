@@ -58,24 +58,46 @@ if (activate)
 {
     if (myItem != noone)
     {
-        var fxX, fxY;
-        if (instance_exists(class_player))
+        if (global.gameMode == gamemode_adventure)
         {
-            var pp = instance_nearest(x,y,class_player);
-            fxX = pp.x;
-            fxY = pp.y;
-        }
-        else{
-            fxX = x;
-            fxY = y;
+            var fxX, fxY;
+            if (instance_exists(class_player))
+            {
+                var pp = instance_nearest(x,y,class_player);
+                fxX = pp.x;
+                fxY = pp.y;
+            }
+            else{
+                fxX = x;
+                fxY = y;
+            }
+            
+            var effect = instance_create(fxX,fxY,fx_digItem);
+            var relic = instance_create(x,y,myItem);
+            
+            effect.relic = myItem;
+            effect.itemSprite = relic.sprite_index;
+            with (relic) instance_destroy();
         }
         
-        var effect = instance_create(fxX,fxY,fx_digItem);
-        var relic = instance_create(x,y,myItem);
         
-        effect.relic = myItem;
-        effect.itemSprite = relic.sprite_index;
-        with (relic) instance_destroy();
+        if (global.gameMode == gamemode_endless)
+        {
+            var oX, oY;
+            if (instance_exists(class_player))
+            {
+                var pp = instance_nearest(x,y,class_player);
+                oX = pp.x;
+                oY = pp.y;
+            }
+            else{
+                oX = x;
+                oY = y;
+            }
+            audio_stop_all();
+            instance_create(oX,oY,myItem);
+            if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
+        }
     }
     
     if (!global.totalDigs) achievement_give("ACHIEVEMENT_FIRSTDIG");
@@ -86,28 +108,6 @@ if (activate)
     
     instance_destroy();
 }
-
-
-
-/*
-OLD CODE
-/*
- if (instance_exists(fx_bigMessage)) with (fx_bigMessage) instance_destroy();
-        
-        audio_stop_all();
-        if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
-        
-        //Play tanananam sound here!
-        
-         relic.announce = instance_create(x,y,fx_bigMessage);
-         relic.announce.textBig = loc_key("HUD_UNLOCK_RELIC_PIECE");
-         relic.announce.textSmall = loc_key("HUD_UNLOCK_RELIC_ALLPIECES");
-         relic.announce.relicSprite1 = relic.relicSprite1;
-         relic.announce.relicSprite1Draw = relic.relicSprite1Draw;
-         relic.announce.relicSprite2 = relic.relicSprite2;
-         relic.announce.relicSprite2Draw = relic.relicSprite2Draw;
-         relic.announce.relicSprite3 = relic.relicSprite3;
-         relic.announce.relicSprite3Draw = relic.relicSprite3Draw;
 </string>
           </argument>
         </arguments>

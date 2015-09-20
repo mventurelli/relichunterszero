@@ -51,6 +51,8 @@ ini_open(working_directory + "\saveData.ini");
     global.endTierItem3 = ini_read_real('Temp','endTierItem3',noone);
     global.endPriceTier_revive = ini_read_real('Temp','endPriceTier_revive',0);
     global.endPriceTier_hack = ini_read_real('Temp','endPriceTier_hack',0);
+    global.relicChanceBonus = ini_read_real('Temp','relicChanceBonus',0);
+    
     
     //Temp
     global.stage_current = ini_read_real('Temp','Stage',0);

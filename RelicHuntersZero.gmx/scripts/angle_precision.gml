@@ -17,8 +17,8 @@ var b = point_distance(myX,myY,tX,tY);
 var senB = (senC*b)/c;
 
 if (senB <= 1) && (senB >= -1) toReturn = abs(darcsin(senB));
-else show_debug_message('sen of B out of bounds');
+//else show_debug_message('sen of B out of bounds');
 
-show_debug_message('Input direction was '+string(angle));
-show_debug_message('Precision angle returned '+string(toReturn));
+//show_debug_message('Input direction was '+string(angle));
+//show_debug_message('Precision angle returned '+string(toReturn));
 return toReturn;

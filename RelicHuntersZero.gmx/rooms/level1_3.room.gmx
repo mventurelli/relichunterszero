@@ -1210,8 +1210,8 @@
     <instance objName="obj_spawn_item" x="2368" y="2976" name="inst_35000C8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_item" x="3648" y="2976" name="inst_EC519F09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_item" x="3520" y="2976" name="inst_FF74843F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_topLeft" x="640" y="512" name="inst_137869D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_botRight" x="4032" y="3008" name="inst_29B40F90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_topLeft" x="1664" y="832" name="inst_137869D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_botRight" x="3584" y="2752" name="inst_29B40F90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3968" y="2496" name="inst_B72B2D40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3968" y="2560" name="inst_B9D36FF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="3968" y="2624" name="inst_6494779F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

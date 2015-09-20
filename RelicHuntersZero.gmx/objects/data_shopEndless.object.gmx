@@ -57,7 +57,7 @@ if (!global.relic_watchful_eye) ds_list_add(global.endShop_tier[1],obj_endShop_w
 if (!global.relic_alcoholic_carrot) ds_list_add(global.endShop_tier[1],obj_endShop_alcoholicCarrot);
 if (!global.relic_infinity_battery) ds_list_add(global.endShop_tier[1],obj_endShop_infinityBattery);
 
-if (random(1) &lt;= 0.4){
+if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     ds_list_add(global.endShop_tier[1], 
         obj_endShop_bouncer,
         obj_endShop_bouncerPistol
@@ -81,7 +81,7 @@ if (!global.relic_pineapple_pudding) ds_list_add(global.endShop_tier[2],obj_endS
 if (!global.relic_pineapple_pie) ds_list_add(global.endShop_tier[2],obj_endShop_pineapplePie);
 if (!global.relic_midnight_beer) ds_list_add(global.endShop_tier[2],obj_endShop_midnightBeer);
 
-if (random(1) &lt;= 0.4){
+if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     ds_list_add(global.endShop_tier[2], 
         obj_endShop_rocketLauncher,
         obj_endShop_relicPistol
@@ -104,7 +104,7 @@ if (!global.relic_dev_potion) ds_list_add(global.endShop_tier[3],obj_endShop_dev
 if (!global.relic_midnight_meal) ds_list_add(global.endShop_tier[3],obj_endShop_midnightMeal);
 if (!global.relic_yottabyte_processor) ds_list_add(global.endShop_tier[3],obj_endShop_yottabyteProcessor);
 
-if (random(1) &lt;= 0.4){
+if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     ds_list_add(global.endShop_tier[3], 
         obj_endShop_relicRifle,
         obj_endShop_relicSniper,

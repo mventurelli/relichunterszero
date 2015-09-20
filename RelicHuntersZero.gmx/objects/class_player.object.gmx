@@ -1393,6 +1393,7 @@ if (superShield){
         superShieldTime = 0;
         superShield = false;
         if (instance_exists(mySuperShieldFx)) with (mySuperShieldFx){instance_destroy();}
+        instance_create(x,y,fx_explosion_shield);
     }   
 }
 </string>

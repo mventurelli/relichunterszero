@@ -30,6 +30,7 @@ event_inherited();
     playerName = "ACE";
     myChar = char_ass;
     
+    global.relic_rabbit_foot = 2; //&lt;-- Born lucky
     melee_damage = 75;
     
     energy_max = 30;
@@ -101,6 +102,9 @@ if global.character[myPlayerId] != char_ass
     audio_emitter_free(audio_emitter);
     instance_destroy();
 }
+
+
+show_debug_message("Rabbit foot is "+string(global.relic_rabbit_foot));
 </string>
           </argument>
         </arguments>

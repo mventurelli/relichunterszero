@@ -25,32 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///Setup
+event_inherited();
+
+audio_play_sound(sfx_relic_on,99,false);
+unlock = false;
+
+canActivate = false;
+activateTime = room_speed*0.6;
+activateTimeCurrent = 0;
+
+image_speed = 0.2;
+image_xscale = 2
+image_yscale = 2;
+
+
+
+depth = -y-16;
 
 range = 130;
 in_range = false;
-superShieldTime = room_speed*5;
-active = false;
 
 myPrompt = instance_create(x+10,y-25,fx_prompt_e);
 myPrompt.owner = id;
-image_speed = 0;
 
-name = loc_key("INFO_SUPERSHIELD");
-myInfo = instance_create(x,y,fx_info_pickup);
-myInfo.owner = id;
-
-depth=-y-2;
+name = loc_key("INFO_TREASURECHEST");
+myWeaponInfo = instance_create(x,y,fx_info_pickup);
+myWeaponInfo.owner = id;
 
 reflection_object_setup(25,-1,image_index);
-
-on_top_of_object = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -67,58 +76,24 @@ on_top_of_object = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pick Up
+            <string>///Open
 
-if instance_exists(activationClient)
+event_inherited();
+
+if (!canActivate) {
+    if (activateTimeCurrent &lt; activateTime) activateTimeCurrent++;
+    else canActivate = true;
+}
+
+if instance_exists(activationClient) &amp;&amp; (canActivate)
 {
     if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;
 
     if (wantToActivate) &amp;&amp; (in_range)
     {
-        if (global.character[activationClient.myPlayerId] != char_biu) //Biu can't pick up Super Shield
-        {
-            activationClient.superShieldTime = max(superShieldTime, activationClient.superShieldTime);
-            activationClient.energy = activationClient.energy_max;
-            activationClient.superShield = true;
-            
-            audio_play(activationClient.audio_emitter,false,1,sfx_pickup_health);
-                
-            guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
-            guiInfo.colorMain = K_BETU_ORANGE;
-            guiInfo.myString = loc_key("INFO_SUPERSHIELD");
-            guiInfo.owner = activationClient;
-            instance_destroy();
-        }
-        else{
-                guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);
-                guiInfo.colorMain = K_BETU_RED;
-                guiInfo.myString = loc_key("INFO_CANTUSESHIELD");
-                guiInfo.owner = activationClient;
-                audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
-        }
+        unlock = true;
     }
 }
-
-//Betu Goze
-if (!on_top_of_object)
-{
-    myObject = collision_point(x,y,obj_wall,false,true);
-    if (instance_exists(myObject)) on_top_of_object = true;
-}
-
-if (on_top_of_object)
-{
-    if (!instance_exists(myObject))
-    {
-        y+=32;
-        on_top_of_object = false;
-    }
-}
-
-///Animation
-if (in_range) image_index = 1;
-else image_index = 0;
-
 </string>
           </argument>
         </arguments>
