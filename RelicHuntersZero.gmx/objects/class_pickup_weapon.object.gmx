@@ -39,6 +39,10 @@ active = false;
 myPrompt = instance_create(x+10,y-25,fx_prompt_e);
 myPrompt.owner = id;
 
+name = "I AM ERROR";
+myWeaponInfo = instance_create(x,y,fx_info_pickup);
+myWeaponInfo.owner = id;
+
 depth=-y-5;
 image_speed = 0;
 
@@ -120,6 +124,7 @@ if instance_exists(activationClient)
             if activationClient.weapon1 == obj_gloves
             {
                 new_pickup = instance_create(x,y,obj_pickup_gloves);
+                new_pickup.weaponLevel = activationClient.weapon1.weaponLevel;
                 with (obj_gloves)
                 {
                     instance_destroy();
@@ -140,6 +145,7 @@ if instance_exists(activationClient)
             if activationClient.weapon2 == obj_gloves
             {
                 new_pickup = instance_create(x,y,obj_pickup_gloves);
+                new_pickup.weaponLevel = activationClient.weapon2.weaponLevel;
                 with (obj_gloves)
                 {
                     instance_destroy();
@@ -165,6 +171,7 @@ if instance_exists(activationClient)
             if activationClient.weapon1 == obj_buckler
             {
                 new_pickup = instance_create(x,y,obj_pickup_buckler);
+                new_pickup.weaponLevel = activationClient.weapon1.weaponLevel;
                 with (obj_buckler)
                 {
                     instance_destroy();
@@ -185,6 +192,7 @@ if instance_exists(activationClient)
             if activationClient.weapon2 == obj_buckler
             {
                 new_pickup = instance_create(x,y,obj_pickup_buckler);
+                new_pickup.weaponLevel = activationClient.weapon2.weaponLevel;
                 with (obj_buckler)
                 {
                     instance_destroy();
@@ -211,6 +219,7 @@ if instance_exists(activationClient)
             new_pickup.gun_ammo_current = activationClient.weapon1.ammo_current;
             new_pickup.sprite = activationClient.weapon1.sprite_index;
             new_pickup.weaponLevel = activationClient.weapon1.weaponLevel;
+            new_pickup.name = activationClient.weapon1.name;
             
             with(activationClient.weapon1)
             {
@@ -262,6 +271,7 @@ if instance_exists(activationClient)
             new_pickup.gun_ammo_current = activationClient.weapon2.ammo_current;
             new_pickup.sprite = activationClient.weapon2.sprite_index;
             new_pickup.weaponLevel = activationClient.weapon2.weaponLevel;
+            new_pickup.name = activationClient.weapon2.name;
             
             with(activationClient.weapon2)
             {

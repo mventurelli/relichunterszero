@@ -373,6 +373,40 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_health[8] = 600;
     global.endPrice_health[9] = 700;
     
+    global.endPrice_revive[0] = 500;
+    global.endPrice_revive[1] = 2000;
+    global.endPrice_revive[2] = 3000;
+    global.endPrice_revive[3] = 4000;
+    global.endPrice_revive[4] = 5000;
+    global.endPrice_revive[5] = 6000;
+    global.endPrice_revive[6] = 7000;
+    global.endPrice_revive[7] = 8000;
+    global.endPrice_revive[8] = 9000;
+    global.endPrice_revive[9] = 9999;
+    
+    global.endPrice_hackCommon[0] = 500;
+    global.endPrice_hackCommon[1] = 1200;
+    global.endPrice_hackCommon[2] = 1600;
+    global.endPrice_hackCommon[3] = 3000;
+    global.endPrice_hackCommon[4] = 3300;
+    global.endPrice_hackCommon[5] = 3600;
+    global.endPrice_hackCommon[6] = 3900;
+    global.endPrice_hackCommon[7] = 4200;
+    global.endPrice_hackCommon[8] = 4500;
+    global.endPrice_hackCommon[9] = 5000;
+    
+    global.endPrice_hackUnique[0] = 1000;
+    global.endPrice_hackUnique[1] = 2400;
+    global.endPrice_hackUnique[2] = 3200;
+    global.endPrice_hackUnique[3] = 5000;
+    global.endPrice_hackUnique[4] = 6000;
+    global.endPrice_hackUnique[5] = 7000;
+    global.endPrice_hackUnique[6] = 8000;
+    global.endPrice_hackUnique[7] = 9000;
+    global.endPrice_hackUnique[8] = 9999;
+    global.endPrice_hackUnique[9] = 9999;
+    
+    
     //Gunnar
     global.price_weaponUpgrade[0] = 500;
     global.price_weaponUpgrade[1] = 800;
@@ -830,7 +864,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
     global.challengeMedievalPenalty = 0.4;
     global.challengeMedievalBonus = 1;
     global.challengeCatapultMultiplier = 3;
-    global.challengeHeavyBurdenPenalty = 0.8;
+    global.challengeHeavyBurdenPenalty = 0.55;
     global.challengeBloodlustRate = 1.5; //Im applying this to the fire rate at class_gun_enemy
     global.challengeDucanWeaponsSpeed = 1.2;
     
@@ -1390,7 +1424,16 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                     playerSpawned.myPlayerId = p;
                     
                     //Reset weapons and HP
-                    char_state_initial(); //this also sets playerAlive to true!
+                    global.playerAlive[p] = true;
+                    global.weapon1[p] = noone;
+                    global.weapon2[p] = noone;
+                    global.weapon1Level[p] = 0;
+                    global.weapon2Level[p] = 0;
+                    global.hp[p] = 999999;
+                    global.overshield[p] = 0;
+                    global.currentlyEquippedWeapon[p] = 0;
+                    global.grenades[p] = 2;
+                    
                     with (playerSpawned) event_perform(ev_other,ev_user0);
                     
                     playerSpawned.hp = playerSpawned.hp_max * global.reviveHealth;
@@ -1740,10 +1783,7 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
             <kind>1</kind>
             <string>///DEBUG COMMANDS
 
-
-if (debug_mode)
-{
-    //Debug: Kill Everything
+//Debug: Kill Everything
     if keyboard_check_pressed(vk_f9)
     {
         if instance_exists(class_enemy)
@@ -1757,6 +1797,10 @@ if (debug_mode)
     
     //Debug Endless Bounty
     if keyboard_check_pressed(ord('M')) global.bountyEndless += 500;
+
+if (debug_mode)
+{
+    
     
 
     ///Mute the Music
@@ -2702,7 +2746,7 @@ if (global.pauseMenu) &amp;&amp; (global.gameMode == gamemode_endless)
             var challenge = ds_list_find_value(global.challengeList,i);
             
             var chSprite = spr_challengeUnique;
-            if (challenge == "CHALLENGE_STEROIDS") || (challenge == "CHALLENGE_WANTED") || (challenge == "CHALLENGE_LIGHTFOCUS") || 
+            if (challenge == "CHALLENGE_STEROIDS") || (challenge == "CHALLENGE_WANTED") || (challenge == "CHALLENGE_LIGHTFOCUS") || (challenge == "CHALLENGE_HIGHTECH") ||
             (challenge == "CHALLENGE_MEDIUMFOCUS") || (challenge == "CHALLENGE_HEAVYFOCUS") || (challenge == "CHALLENGE_REINFORCEMENTS"){
                     chSprite = spr_challengeCommon;
             }
@@ -2772,13 +2816,18 @@ if (global.gameOver)
     //Gameplay Hints
     if (gameOverHint != '')
     {
-        var hintY = height*0.6;
+        var hintBoxWidth = 740;
+        var hintBoxHeight = 80;
+        var hintVOffset = 15;
+        var hintY = height*0.7;
         var hintString = loc_key("TIPS_TITLE") + ": " + gameOverHint;
         
+        draw_set_colour(c_white);
+        draw_rectangle(gameOverX-(hintBoxWidth/2), hintY-(hintBoxHeight/2)+hintVOffset, gameOverX+(hintBoxWidth/2), hintY+(hintBoxHeight/2)+hintVOffset,false);
         draw_set_font(global.font_numberSmall);
         draw_set_colour(K_BETU_RED);
         
-        draw_text_ext(gameOverX, hintY, hintString, 20, 720);
+        draw_text_ext(gameOverX, hintY, hintString, 24, 720);
     }
 }
 
@@ -2819,6 +2868,13 @@ draw_set_alpha(1);
 surface_reset_target();
 var surfaceXScale = window_get_width()/1920;
 var surfaceYScale = window_get_height()/1080;
+
+if (global.gameOver){ //Game Over Base Overlay
+    draw_set_alpha(0.42);
+    draw_set_colour(c_black);
+    draw_rectangle(0,0,width,height,false);
+    draw_set_alpha(1);
+}
 if (surface_exists(guiSurface)) draw_surface_ext(guiSurface, 0, 0, surfaceXScale, surfaceYScale, 0, c_white, 1);
 
 </string>

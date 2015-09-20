@@ -29,6 +29,7 @@
 
 price = global.price_light2;
 weaponName = loc_key("GENERAL_SHOP_LIGHTAMMO");
+name = weaponName;
 
 if (unlock)
 {

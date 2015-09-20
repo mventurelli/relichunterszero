@@ -8,16 +8,16 @@
   <sepmasks>0</sepmasks>
   <bboxmode>2</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>332</bbox_right>
+  <bbox_right>303</bbox_right>
   <bbox_top>16</bbox_top>
-  <bbox_bottom>75</bbox_bottom>
+  <bbox_bottom>72</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>1</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>333</width>
+  <width>304</width>
   <height>114</height>
   <frames>
     <frame index="0">images\spr_shop2_0.png</frame>

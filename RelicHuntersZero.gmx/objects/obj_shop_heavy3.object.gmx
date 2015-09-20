@@ -29,6 +29,7 @@
 
 price = global.price_heavy3;
 weaponName = loc_key("GENERAL_SHOP_HEAVYAMMO");
+name = weaponName;
 
 if (unlock)
 {

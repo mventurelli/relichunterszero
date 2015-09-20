@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="39" name="datafiles">
-    <datafiles number="39" name="fonts">
+  <datafiles number="41" name="datafiles">
+    <datafiles number="41" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>344147</size>
+      <size>371040</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -467,17 +467,23 @@
         <sprite>sprites\spr_redbarrel_reflection</sprite>
         <sprite>sprites\spr_redbarrel_hit</sprite>
       </sprites>
-      <sprite>sprites\spr_shop</sprite>
-      <sprite>sprites\spr_shop2</sprite>
       <sprites name="Altars">
         <sprite>sprites\spr_altar_players</sprite>
         <sprite>sprites\spr_altar_relics</sprite>
         <sprite>sprites\spr_altar_relic_light</sprite>
       </sprites>
-      <sprite>sprites\spr_exitArrow</sprite>
       <sprites name="Traps">
         <sprite>sprites\spr_spikeTrap</sprite>
       </sprites>
+      <sprites name="Shop">
+        <sprite>sprites\spr_shop</sprite>
+        <sprite>sprites\spr_shop2</sprite>
+        <sprite>sprites\spr_terminal</sprite>
+        <sprite>sprites\spr_terminalChallengeCommon</sprite>
+        <sprite>sprites\spr_terminalChallengeUnique</sprite>
+        <sprite>sprites\spr_terminalClear</sprite>
+      </sprites>
+      <sprite>sprites\spr_exitArrow</sprite>
     </sprites>
     <sprites name="Grenades">
       <sprite>sprites\spr_grenade_exp1</sprite>
@@ -617,6 +623,8 @@
       <sprite>sprites\spr_pickup_grenade</sprite>
       <sprite>sprites\spr_coin_drop</sprite>
       <sprite>sprites\spr_coin_ground</sprite>
+      <sprite>sprites\spr_chest_idle</sprite>
+      <sprite>sprites\spr_chest_open</sprite>
     </sprites>
     <sprites name="Player">
       <sprites name="Ass">
@@ -1240,8 +1248,6 @@
       <object>objects\obj_biu</object>
       <object>objects\obj_punny</object>
       <object>objects\obj_assPlayer</object>
-      <object>objects\obj_gloves</object>
-      <object>objects\obj_buckler</object>
       <object>objects\fx_melee_arc</object>
       <object>objects\obj_shield_biu</object>
       <objects name="Guns">
@@ -1275,6 +1281,10 @@
         <object>objects\obj_sniper_relic</object>
         <object>objects\obj_sniper_ghost</object>
         <object>objects\obj_submachinegun</object>
+      </objects>
+      <objects name="Melee Weapons">
+        <object>objects\obj_gloves</object>
+        <object>objects\obj_buckler</object>
       </objects>
     </objects>
     <objects name="Enemies">
@@ -1400,6 +1410,7 @@
         <object>objects\class_balloon</object>
         <object>objects\obj_ass_balloon</object>
         <object>objects\obj_gunnar_balloon</object>
+        <object>objects\obj_sae_balloon</object>
         <object>objects\obj_ass</object>
         <object>objects\obj_shop</object>
         <object>objects\obj_shop2</object>
@@ -1454,8 +1465,8 @@
       <object>objects\fx_bigMessage</object>
       <object>objects\fx_digItem</object>
       <object>objects\fx_exitArrow</object>
-      <object>objects\fx_kami_cageDestroy</object>
       <object>objects\fx_explosionKami</object>
+      <object>objects\fx_kami_cageDestroy</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
@@ -1483,6 +1494,7 @@
       <object>objects\gui_info</object>
       <object>objects\gui_logo</object>
       <object>objects\fx_prompt_e</object>
+      <object>objects\fx_info_pickup</object>
       <object>objects\gui_intro_text</object>
       <object>objects\gui_credits_text</object>
       <object>objects\gui_weaponInfo</object>
@@ -1827,7 +1839,13 @@
     </objects>
     <objects name="Endless Shop">
       <objects name="Classes and Slots">
+        <object>objects\obj_revival_hologram</object>
+        <object>objects\obj_sae</object>
         <object>objects\obj_gunnar</object>
+        <object>objects\class_hack</object>
+        <object>objects\obj_hackTerminal1</object>
+        <object>objects\obj_hackTerminal2</object>
+        <object>objects\obj_shopReset</object>
         <object>objects\class_endshop_tiered</object>
         <object>objects\class_endShop_weapon</object>
         <object>objects\class_endShop_relic</object>

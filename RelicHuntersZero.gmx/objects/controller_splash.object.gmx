@@ -33,7 +33,7 @@ save_sync_read();
 screen_update();
 
 //Version
-global.currentVersionNumber = "v1.2";
+global.currentVersionNumber = "UPDATE 5";
 
 //Multiplayer &amp; Mode
 global.playerCount = 1;

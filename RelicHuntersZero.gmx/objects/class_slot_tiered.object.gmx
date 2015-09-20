@@ -30,7 +30,7 @@
 spawnedItem = noone;
 hasSpawned = false;
 
-//I set these at the childs:
+//I set these at the children:
 //tier = global.endTierSlot1;
 //myItem = global.endTierItem1;
 
@@ -70,8 +70,13 @@ if (!instance_exists(spawnedItem)) {
         if (myItem) spawn = myItem;
         else if (ds_exists(global.endShop_tier[tier],ds_type_list)) {
             list = global.endShop_tier[tier];
-            if (ds_list_empty(list)) instance_destroy();
-
+            if (ds_list_empty(list)) {
+                with (data_shopEndless){
+                    event_perform(ev_create,0);
+                }
+                list = global.endShop_tier[tier];
+                if (ds_list_empty(list)) instance_destroy();
+            }
             var randomSpawn = irandom(ds_list_size(list)-1);
             spawn = ds_list_find_value(list,randomSpawn);
             tier++;

@@ -27,10 +27,9 @@
             <kind>1</kind>
             <string>///Unlock and Draw Weapon
 
-
-
 price = global.price_shotgun_heavy;
-weaponName = "HEAVY SHOTGUN";
+weaponName = loc_key("WPNAME_SHOTGUN_HEAVY");
+name = weaponName;
 
 if (unlock)
 {

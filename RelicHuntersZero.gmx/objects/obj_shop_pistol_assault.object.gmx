@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>///Unlock and Draw Weapon
 
-weaponName = "ASSAULT PISTOL";
+weaponName = loc_key("WPNAME_PISTOLASSAULT");
 price = global.price_pistol_assault;
+name = weaponName;
 
 if (unlock)
 {

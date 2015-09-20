@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','v1.2');
+    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 5');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -49,6 +49,8 @@ ini_open(working_directory + "\saveData.ini");
     global.endTierItem1 = ini_read_real('Temp','endTierItem1',noone);
     global.endTierItem2 = ini_read_real('Temp','endTierItem2',noone);
     global.endTierItem3 = ini_read_real('Temp','endTierItem3',noone);
+    global.endPriceTier_revive = ini_read_real('Temp','endPriceTier_revive',0);
+    global.endPriceTier_hack = ini_read_real('Temp','endPriceTier_hack',0);
     
     //Temp
     global.stage_current = ini_read_real('Temp','Stage',0);

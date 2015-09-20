@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_highmag;
-weaponName = "HIGHMAG";
+weaponName = loc_key("WPNAME_HIGHMAG");
+name = weaponName;
 
 if (unlock)
 {

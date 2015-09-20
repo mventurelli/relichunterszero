@@ -28,6 +28,7 @@
             <string>event_inherited();
 price = global.price_endless_alcoholicCarrot;
 spawnObject = obj_relic_alcoholic_carrot;
+name = loc_key("RELIC_ALCOHOLIC_NAME");
 </string>
           </argument>
         </arguments>

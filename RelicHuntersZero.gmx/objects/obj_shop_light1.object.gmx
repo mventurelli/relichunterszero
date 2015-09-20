@@ -28,6 +28,7 @@
             <string>///Unlock and Draw Weapon
 price = global.price_light1;
 weaponName = loc_key("GENERAL_SHOP_LIGHTAMMO");
+name = weaponName;
 
 if (unlock)
 {

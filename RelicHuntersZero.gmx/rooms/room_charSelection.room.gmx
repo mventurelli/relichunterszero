@@ -60,7 +60,7 @@
     <instance objName="menu_char_biu" x="216" y="176" name="inst_FD34205A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_char_punny" x="496" y="176" name="inst_1323340C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_char_ass" x="776" y="176" name="inst_7A8C5DC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_char_random" x="632" y="256" name="inst_FF2EC2F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_char_random" x="456" y="256" name="inst_FF2EC2F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_char_card1" x="488" y="368" name="inst_0D98D9EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_char_card2" x="912" y="368" name="inst_36D13F5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_charSelection" x="210" y="48" name="inst_2EDA33DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

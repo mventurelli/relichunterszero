@@ -249,7 +249,8 @@ joyCrosshairDistanceMin = 40;
 joyCrosshairSpeed = 24;
 
 //Relics and Challenges
-staminaRegenUpdated = false;
+staminaChallengeUpdated = false;
+staminaRelicUpdated = false;
 energyRegenUpdated = false;
 
 hpPuddingUpdated = false;
@@ -513,8 +514,17 @@ if (inputLocked) {
 if (room == room_start) hp = hp_max;
 
 // Relics
-if (global.relic_alcoholic_carrot == 2) stamina_regen = stamina_regen_relic;
-else stamina_regen = stamina_regen_regular;
+if (!staminaRelicUpdated){
+    if (global.relic_alcoholic_carrot == 2) stamina_regen = stamina_regen_relic;
+    else stamina_regen = stamina_regen_regular;
+    
+    staminaRelicUpdated = true;
+}
+
+staminaChallengeUpdated = false;
+staminaRelicUpdated = false;
+
+
 
 if (global.relic_infinity_battery == 2) energy_regen_time = energy_regen_time_relic;
 else energy_regen_time = energy_regen_time_regular;
@@ -568,9 +578,9 @@ if (global.challengeMedieval) &amp;&amp; (!meleeDamageUpdated) {
     meleeDamageUpdated = true;
 }
 
-if (global.challengeHeavyBurden) &amp;&amp; (!staminaRegenUpdated) {
+if (global.challengeHeavyBurden) &amp;&amp; (!staminaChallengeUpdated) {
     stamina_regen -= stamina_regen * global.challengeHeavyBurdenPenalty;
-    staminaRegenUpdated = true;
+    staminaChallengeUpdated = true;
 }
 </string>
           </argument>
@@ -1091,7 +1101,7 @@ if (instance_exists(myGun)){
             
             if (myGun.isMeleeWeapon) 
             {
-                meleeArc.damage = myGun.meleeDamage;
+                meleeArc.damage = myGun.damage;
                 meleeArc.max_hits = myGun.maxHits;  
                 meleeArc.push_power = myGun.pushPower;
                 meleeArc.sprite_index = myGun.meleeArcSprite;

@@ -29,6 +29,7 @@
 
 price = global.price_medium1;
 weaponName = loc_key("GENERAL_SHOP_MEDIUMAMMO");
+name = weaponName;
 
 if (unlock)
 {

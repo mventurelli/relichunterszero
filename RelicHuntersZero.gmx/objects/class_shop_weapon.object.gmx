@@ -36,6 +36,11 @@ in_range = false;
 myPrompt = instance_create(x-30,y-21,fx_prompt_e);
 myPrompt.owner = id;
 
+name = "I AM ERROR";
+myWeaponInfo = instance_create(x,y,fx_info_pickup);
+myWeaponInfo.owner = id;
+
+
 gun_ammo_current = 999;
 
 image_speed = 0;

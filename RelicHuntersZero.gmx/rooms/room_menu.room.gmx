@@ -52,8 +52,8 @@
   </views>
   <instances>
     <instance objName="controller_menu_main" x="32" y="32" name="inst_39309C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_play" x="224" y="384" name="inst_73075F67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_endless" x="160" y="448" name="inst_C959B5F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_play" x="160" y="448" name="inst_73075F67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_endless" x="224" y="384" name="inst_C959B5F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_settings" x="96" y="512" name="inst_4EFD28C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_quit" x="-32" y="640" name="inst_EC1B5773" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_credits" x="32" y="576" name="inst_A7328650" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

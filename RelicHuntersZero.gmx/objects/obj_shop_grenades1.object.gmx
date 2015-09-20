@@ -29,6 +29,7 @@
 
 price = global.price_grenades1;
 weaponName = loc_key("GENERAL_SHOP_GRENADES");
+name = weaponName;
 
 if (unlock)
 {

@@ -28,6 +28,7 @@
             <string>event_inherited();
 price = global.price_endless_pineapplePudding;
 spawnObject = obj_relic_pineapple_pudding;
+name = loc_key("RELIC_PINEAPPLE_NAME");
 </string>
           </argument>
         </arguments>

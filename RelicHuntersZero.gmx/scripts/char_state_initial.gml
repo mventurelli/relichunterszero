@@ -33,7 +33,6 @@
         global.ammo_medium[2] = 0;
         global.ammo_heavy[2] = 0;
         global.grenades[2] = 2;
-    
     }
     
     if (global.gameMode == gamemode_endless)
@@ -58,6 +57,8 @@
         global.endPriceTier_grenades = 0;
         global.endPriceTier_health = 0;
         global.endPriceTier_overshield = 0;
+        global.endPriceTier_revive = 0;
+        global.endPriceTier_hack = 0;
         
         global.endTierSlot1 = 1;
         global.endTierSlot2 = 1;

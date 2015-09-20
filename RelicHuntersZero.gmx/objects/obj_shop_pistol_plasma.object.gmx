@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_pistol_plasma;
-weaponName = "PLASMA PISTOL";
+weaponName = loc_key("WPNAME_PISTOL_PLASMA");
+name = weaponName;
 
 if (unlock)
 {

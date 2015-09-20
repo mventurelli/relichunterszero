@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_rocketlauncher;
-weaponName = "ROCKET LAUNCHER";
+weaponName = loc_key("WPNAME_ROCKETLAUNCHER");
+name = weaponName;
 
 if (unlock)
 {

@@ -39,6 +39,8 @@ if (global.character[1] == char_biu) || (global.character[2] == char_biu) ammo =
 else ammo = 1;
 
 if (global.relic_watchful_eye == 2) ammo+=1;
+
+name = loc_key("GENERAL_GRENADES");
 </string>
           </argument>
         </arguments>

@@ -116,7 +116,7 @@ if (startAnimating)
         for (i=0; i&lt;instance_number(class_player); i++)
         {
             pCur = instance_find(class_player,i);
-            if point_distance(x,y,pCur.x,pCur.y) &lt; 64
+            if point_distance(x,y,pCur.x,pCur.y) &lt; 96
             {
                 pCur.x = pCur.x + lengthdir_x(64,180 + point_direction(x,y,pCur.x,pCur.y));
                 pCur.y = pCur.y + lengthdir_y(64,180 + point_direction(x,y,pCur.x,pCur.y));

@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_pistol_heavy;
-weaponName = "HEAVY PISTOL";
+weaponName = loc_key("WPNAME_PISTOLHEAVY");
+name = weaponName;
 if (unlock)
 {
     global.unlock_pistol_heavy = 1;

@@ -28,6 +28,7 @@
             <string>event_inherited();
 price = global.price_endless_midnightMeal;
 spawnObject = obj_relic_midnight_meal;
+name = loc_key("RELIC_MIDNIGHTMEAL_NAME");
 </string>
           </argument>
         </arguments>

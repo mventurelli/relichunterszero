@@ -35,8 +35,8 @@ image_speed = 0.4;
 
 rocketList = ds_list_create();
 
-reflectAngleMin = -12;
-reflectAngleMax = 12;
+reflectRocketMin = -12;
+reflectRocketMax = 12;
 
 animationTriggerTime = room_speed*2.5;
 animationTriggerTimeCurrent = 0;
@@ -212,7 +212,7 @@ animationTrigger = true;
             <kind>1</kind>
             <string>///Reflect
 
-if (isActive) &amp;&amp; (!ds_list_find_index(rocketList,other.id))
+if (!ds_list_find_index(rocketList,other.id)) &amp;&amp; (other.faction != f_player) 
 {
     ds_list_add(rocketList,other.id);
 

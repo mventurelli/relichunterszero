@@ -28,6 +28,7 @@
             <string>///Setup
 isMeleeWeapon = true;
 
+damage = 0;
 meleeDamage = 160;
 meleeStepSpeed = 25;
 maxHits = 5;
@@ -128,25 +129,27 @@ recoil_max = 7;
             <string>///Weapon Level
 if (instance_exists(owner)){
     if (!storeOriginalDamage) || (storeOriginalName == '') {
-        projectile_damage = owner.melee_damage_gloves;
+
         weaponLevelBonus[0] = 0;
-        weaponLevelBonus[1] = 0.25*projectile_damage;
-        weaponLevelBonus[2] = 0.5*projectile_damage;
-        weaponLevelBonus[3] = 0.75*projectile_damage;
-        weaponLevelBonus[4] = 1.0*projectile_damage;
-        weaponLevelBonus[5] = 1.25*projectile_damage;
-        weaponLevelBonus[6] = 1.5*projectile_damage;
-        weaponLevelBonus[7] = 1.75*projectile_damage;
-        weaponLevelBonus[8] = 2*projectile_damage;
-        weaponLevelBonus[9] = 3*projectile_damage;
+        weaponLevelBonus[1] = 0.25*meleeDamage;
+        weaponLevelBonus[2] = 0.5*meleeDamage;
+        weaponLevelBonus[3] = 0.75*meleeDamage;
+        weaponLevelBonus[4] = 1.0*meleeDamage;
+        weaponLevelBonus[5] = 1.25*meleeDamage;
+        weaponLevelBonus[6] = 1.5*meleeDamage;
+        weaponLevelBonus[7] = 1.75*meleeDamage;
+        weaponLevelBonus[8] = 2*meleeDamage;
+        weaponLevelBonus[9] = 3*meleeDamage;
         
-        storeOriginalDamage = projectile_damage;
+        storeOriginalDamage = meleeDamage;
         storeOriginalName = name;
     }
     else {
-        projectile_damage = round(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
+        meleeDamage = round(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
         if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
-        meleeDamage = projectile_damage;
+        
+        damage = owner.melee_damage + meleeDamage;
+        projectile_damage = damage;
     }
 }
 </string>

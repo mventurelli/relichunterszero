@@ -29,7 +29,10 @@
 
 event_inherited();
 
-textXOffset = view_xview[0]+(point_distance(x,y,bbox_left,y) - x) + 50;
+var horAdjustment = 50;
+if (room == room_menu) horAdjustment = 20;
+
+textXOffset = view_xview[0]+(point_distance(x,y,bbox_left,y) - x) + horAdjustment;
 textYOffset = 0;
 
 myFont = global.font_menuLarge;

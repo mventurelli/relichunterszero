@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_sniper_rifle;
-weaponName = "SNIPER RIFLE";
+weaponName = loc_key("WPNAME_SNIPERRIFLE");
+name = weaponName;
 
 if (unlock)
 {

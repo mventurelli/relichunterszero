@@ -31,7 +31,7 @@ event_inherited();
 name = loc_key("WPNAME_GLOVES");
 object = obj_gloves;
 
-meleeDamage = 160;
+meleeDamage = 60;
 meleeStepSpeed = 25;
 maxHits = 5;
 pushPower = 15;

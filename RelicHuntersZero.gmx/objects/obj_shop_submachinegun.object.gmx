@@ -28,7 +28,8 @@
             <string>///Unlock and Draw Weapon
 
 price = global.price_submachinegun;
-weaponName = "SUBMACHINEGUN";
+weaponName = loc_key("WPNAME_SUBMACHINEGUN");
+name = weaponName;
 
 if (unlock)
 {
