@@ -91,6 +91,7 @@ if instance_exists(activationClient)
                 unlock = true;
                 audio_play(activationClient.audio_emitter,false,1,sfx_buy);
                 priceTier++;
+                global.hasPurchasedAnything = true;
             }
             else displayWarning = true;
         }

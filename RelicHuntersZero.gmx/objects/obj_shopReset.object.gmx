@@ -80,6 +80,7 @@ if instance_exists(activationClient)
         {
                 wantToActivate = false;
                 global.bountyEndless -= price;
+                global.hasPurchasedAnything = true;
                 
                 //Reset slots
                 global.endTierSlot1 = 1;

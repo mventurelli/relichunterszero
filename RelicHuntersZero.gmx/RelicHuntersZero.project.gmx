@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="42" name="datafiles">
-    <datafiles number="42" name="fonts">
+  <datafiles number="44" name="datafiles">
+    <datafiles number="44" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>371228</size>
+      <size>382963</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -318,6 +318,15 @@
         <sprite>sprites\spr_duck3_death3</sprite>
         <sprite>sprites\spr_duck3_walk</sprite>
       </sprites>
+      <sprites name="Ducan Elite">
+        <sprite>sprites\spr_ducanElite_idle</sprite>
+        <sprite>sprites\spr_ducanElite_walk</sprite>
+        <sprite>sprites\spr_ducanElite_dash</sprite>
+        <sprite>sprites\spr_ducanElite_hit</sprite>
+        <sprite>sprites\spr_ducanElite_death</sprite>
+        <sprite>sprites\spr_ducanElite_death2</sprite>
+        <sprite>sprites\spr_ducanElite_death3</sprite>
+      </sprites>
       <sprites name="Kami_Kage">
         <sprite>sprites\spr_cage1</sprite>
         <sprite>sprites\spr_cage1_hit</sprite>
@@ -508,12 +517,16 @@
     </sprites>
     <sprites name="Guns">
       <sprite>sprites\spr_assault_rifle</sprite>
-      <sprite>sprites\spr_rifle_relic</sprite>
       <sprite>sprites\spr_assault_rifle_crude</sprite>
       <sprite>sprites\spr_boss_gun</sprite>
+      <sprite>sprites\spr_bouncer</sprite>
+      <sprite>sprites\spr_ducan_plasma</sprite>
+      <sprite>sprites\spr_ducan_rifle</sprite>
+      <sprite>sprites\spr_ducan_rocketLauncher</sprite>
+      <sprite>sprites\spr_ducan_shotgun</sprite>
+      <sprite>sprites\spr_ducan_sniper</sprite>
       <sprite>sprites\spr_flamethrower</sprite>
       <sprite>sprites\spr_highmag</sprite>
-      <sprite>sprites\spr_bouncer</sprite>
       <sprite>sprites\spr_keytar</sprite>
       <sprite>sprites\spr_machinegun</sprite>
       <sprite>sprites\spr_pistol</sprite>
@@ -523,19 +536,20 @@
       <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_plasma</sprite>
       <sprite>sprites\spr_pistol_relic</sprite>
+      <sprite>sprites\spr_rifle_relic</sprite>
       <sprite>sprites\spr_rocketlauncher</sprite>
       <sprite>sprites\spr_rocketlauncher_relic</sprite>
       <sprite>sprites\spr_sawedoff</sprite>
       <sprite>sprites\spr_shotgun</sprite>
-      <sprite>sprites\spr_shotgun_relic</sprite>
       <sprite>sprites\spr_shotgun_crude</sprite>
       <sprite>sprites\spr_shotgun_heavy</sprite>
+      <sprite>sprites\spr_shotgun_relic</sprite>
       <sprite>sprites\spr_smg_crude</sprite>
       <sprite>sprites\spr_smg_plasma</sprite>
       <sprite>sprites\spr_smg_relic</sprite>
-      <sprite>sprites\spr_sniper_rifle</sprite>
-      <sprite>sprites\spr_sniper_relic</sprite>
       <sprite>sprites\spr_sniper_ghost</sprite>
+      <sprite>sprites\spr_sniper_relic</sprite>
+      <sprite>sprites\spr_sniper_rifle</sprite>
       <sprite>sprites\spr_submachinegun</sprite>
     </sprites>
     <sprites name="Bullets&amp;Effects">
@@ -1253,6 +1267,7 @@
       <object>objects\obj_shield_biu</object>
       <objects name="Guns">
         <object>objects\obj_assault_rifle</object>
+        <object>objects\obj_ducanRifle</object>
         <object>objects\obj_assault_rifle_crude</object>
         <object>objects\obj_bossGun</object>
         <object>objects\obj_flamethrower</object>
@@ -1322,17 +1337,33 @@
           <object>objects\obj_boss</object>
           <object>objects\obj_boss_spawner</object>
         </objects>
+        <objects name="Spooky">
+          <object>objects\obj_ghost_ducan</object>
+        </objects>
+        <objects name="Ducan Elite">
+          <object>objects\obj_ducanElite_rifle</object>
+          <object>objects\obj_ducanElite_shotgun</object>
+          <object>objects\obj_ducanElite_sniper</object>
+          <object>objects\obj_ducanElite_rocket</object>
+          <object>objects\obj_ducanElite_plasma</object>
+        </objects>
       </objects>
       <objects name="Guns">
         <object>objects\obj_pistol_enemy</object>
+        <object>objects\obj_pistol_plasma_enemy</object>
+        <object>objects\obj_ducanPlasma_enemy</object>
         <object>objects\obj_pistol_heavy_enemy</object>
         <object>objects\obj_submachinegun_enemy</object>
         <object>objects\obj_machinegun_enemy</object>
         <object>objects\obj_assaultpistol_enemy</object>
         <object>objects\obj_assaultrifle_enemy</object>
+        <object>objects\obj_ducanRifle_enemy</object>
         <object>objects\obj_shotgun_enemy</object>
+        <object>objects\obj_ducanShotgun_enemy</object>
         <object>objects\obj_sniperrifle_enemy</object>
+        <object>objects\obj_ducanSniper_enemy</object>
         <object>objects\obj_rocketlauncher_enemy</object>
+        <object>objects\obj_ducanRocket_enemy</object>
         <object>objects\obj_assaultrifle_boss</object>
         <object>objects\obj_rocketlauncher_boss</object>
       </objects>
@@ -1408,9 +1439,11 @@
         <object>objects\obj_swap_biu</object>
         <object>objects\obj_swap_punny</object>
         <object>objects\obj_swap_ass</object>
+        <object>objects\obj_endlessUnlock</object>
         <object>objects\class_balloon</object>
         <object>objects\obj_ass_balloon</object>
         <object>objects\obj_gunnar_balloon</object>
+        <object>objects\obj_endless_balloon</object>
         <object>objects\obj_sae_balloon</object>
         <object>objects\obj_ass</object>
         <object>objects\obj_shop</object>
@@ -1674,6 +1707,7 @@
       <object>objects\obj_pickup_sniper_relic</object>
       <object>objects\obj_pickup_sniper_ghost</object>
       <object>objects\obj_pickup_assault_rifle</object>
+      <object>objects\obj_pickup_ducan_rifle</object>
       <object>objects\obj_pickup_rifle_relic</object>
       <object>objects\obj_pickup_assault_rifle_crude</object>
       <object>objects\obj_pickup_submachinegun</object>
@@ -1695,6 +1729,7 @@
       <object>objects\obj_sonicboom</object>
       <object>objects\obj_projectile_enemy</object>
       <object>objects\obj_projectile_plasma</object>
+      <object>objects\obj_projectile_plasmaEnemy</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\class_tutorial_animated</object>

@@ -140,7 +140,7 @@ if (room==room_end)
     currentSpacing+=lineSpacing;
     draw_set_font(global.font_menuLarge);
     draw_set_colour(c_white);
-    draw_text(x,y+currentSpacing,"COMING SOON"); currentSpacing+=lineSpacing;
+    draw_text(x,y+currentSpacing,"IS NOW AVAILABLE"); currentSpacing+=lineSpacing;
     currentSpacing += 4*lineSpacing;
     currentSpacing += 4*lineSpacing;
 }

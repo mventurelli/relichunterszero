@@ -81,6 +81,7 @@ if instance_exists(activationClient)
                 global.bountyEndless -= price;
                 unlock = true;
                 audio_play(activationClient.audio_emitter,false,1,sfx_buy);
+                global.hasPurchasedAnything = true;
         }
         else{
            guiInfo = instance_create(activationClient.x,activationClient.y,gui_info);

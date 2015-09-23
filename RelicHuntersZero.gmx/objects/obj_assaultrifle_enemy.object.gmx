@@ -32,7 +32,7 @@ is_sniper = true;
 
 projectile_speed = 30;
 projectile_speed_decay = 0.12;
-projectile_damage = 16;
+projectile_damage = 12;
 projectile_range = 600;
 
 accuracy = 3;

@@ -91,6 +91,16 @@ if instance_exists(activationClient)
                 priceTier++; 
                 global.endPriceTier_hack = priceTier;
                 
+                
+                //Stats and Achievements
+                global.statTotalHacks++;
+                global.hacksOnThisRun++;
+                global.hasPurchasedAnything = true;
+                if (global.hacksOnThisRun == 3) achievement_give("ACHIEVEMENT_SAE_3");
+                
+                steam_set_stat_int("STAT_TOTAL_HACKS", steam_get_stat_int("STAT_TOTAL_HACKS") + 1  );
+                if (steam_get_stat_int("STAT_TOTAL_HACKS") &gt;= 200) achievement_give("ACHIEVEMENT_SAE_200");
+                
                 //Remove the challenge
                 var challengePos = ds_list_find_index(global.challengeList,myChallenge);
                 if (challengePos &gt;= 0){

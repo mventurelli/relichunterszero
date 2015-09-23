@@ -356,6 +356,10 @@ else
 if (hp &gt; hp_max) hp = hp_max;
 if (energy &gt; energy_max) energy = energy_max;
 
+if instance_exists(controller_main){
+    if (controller_main.debug_forceLevelExit) hp = 0;
+}
+
 if (!elite)
 {
     shield = false;

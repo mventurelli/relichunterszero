@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Setup
+event_inherited();
+
 isMeleeWeapon = false;
 owner = noone;
 name = "I AM ERROR";

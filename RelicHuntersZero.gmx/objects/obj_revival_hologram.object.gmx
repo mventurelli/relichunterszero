@@ -102,6 +102,7 @@ if instance_exists(activationClient) &amp;&amp; (active) &amp;&amp; (price){
             global.bountyEndless -= price;
             global.endPriceTier_revive++;
             audio_play(activationClient.audio_emitter, false, 1, sfx_buy);
+            global.hasPurchasedAnything = true;
             
             var playerSpawned = instance_create(x,y,charToSpawn);
             playerSpawned.myPlayerId = idToSpawn;

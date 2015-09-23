@@ -185,6 +185,7 @@ shadow_add_object(obj_kamikazelite_flying);
 shadow_add_object_tall(obj_wall_stage1);
 shadow_add_object_tall(obj_wall_stage2);
 shadow_add_object_tall(obj_wall_stage4);
+shadow_add_object_tall(obj_wall_halloween);
 
 tall_object = instance_create(x,y,controller_shadow_tall);
 </string>

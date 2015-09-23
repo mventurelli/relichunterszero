@@ -18,6 +18,7 @@
   <androidsourcedir></androidsourcedir>
   <macsourcedir></macsourcedir>
   <maclinkerflags></maclinkerflags>
+  <maccompilerflags></maccompilerflags>
   <androidinject></androidinject>
   <iosSystemFrameworks/>
   <iosThirdPartyFrameworks/>

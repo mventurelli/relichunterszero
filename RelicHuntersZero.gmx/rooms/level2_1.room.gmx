@@ -1025,7 +1025,7 @@
     <instance objName="obj_spawn_item" x="640" y="1504" name="inst_0A12C016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_item" x="700" y="862" name="inst_A48238D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_item" x="2368" y="1216" name="inst_FCA70850" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_enemy" x="2752" y="896" name="inst_56C8EB52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_enemy" x="2816" y="896" name="inst_56C8EB52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="1664" y="960" name="inst_04A162CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="2336" y="896" name="inst_FF86D5A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="2080" y="1568" name="inst_38B1B5E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

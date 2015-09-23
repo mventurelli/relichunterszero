@@ -51,6 +51,8 @@ moving = false;
 ai_active = false;
 want_to_activate = false;
 ai_activation_range = 600;
+aiActivationTime = room_speed*3.5;
+aiActivationTimeCurrent = 0;
 
 aggro = random_range(0,50);
 aggro_max = 200;
@@ -470,20 +472,23 @@ if (hit_taken) want_to_activate = true;
 
 if (!ai_active)
 {
-    if (distance_to_player &lt; ai_activation_range) &amp;&amp; instance_exists(myClosestPlayer) &amp;&amp; (!want_to_activate)
-    {
-        if collision_line(x,y,myClosestPlayer.x,myClosestPlayer.y,obj_limit,false,true) &lt; 0
+    if (aiActivationTimeCurrent &gt;= aiActivationTime){
+        if (distance_to_player &lt; ai_activation_range) &amp;&amp; instance_exists(myClosestPlayer) &amp;&amp; (!want_to_activate)
         {
-            want_to_activate = true;
+            if collision_line(x,y,myClosestPlayer.x,myClosestPlayer.y,obj_limit,false,true) &lt; 0
+            {
+                want_to_activate = true;
+            }
+        }
+        
+        if (want_to_activate)
+        {
+            ai_active = true;
+            activationFX = instance_create(x,y,fx_activation);
+            activationFX.owner = id;
         }
     }
-    
-    if (want_to_activate)
-    {
-        ai_active = true;
-        activationFX = instance_create(x,y,fx_activation);
-        activationFX.owner = id;
-    }
+    else aiActivationTimeCurrent++;
 }
 
 //Resolve AI

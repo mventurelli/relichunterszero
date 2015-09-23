@@ -146,7 +146,7 @@ energy_regen_time = room_speed*5;
 energy_regen_time_regular = energy_regen_time;
 energy_regen_time_relic = round(energy_regen_time/2);
 
-energy_regen_time_current = 0;
+energy_regen_time_current = energy_regen_time;
 energy_regen_speed = 1;
 
 shield_fading = false;
@@ -508,7 +508,7 @@ if (inputLocked) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Relic Buffs, Challenges &amp; First Room Invulnerability
+            <string>///Relic Buffs, Challenges, Invulnerability, Achievements
 
 //Invulnerable in first room
 if (room == room_start) hp = hp_max;
@@ -581,6 +581,13 @@ if (global.challengeMedieval) &amp;&amp; (!meleeDamageUpdated) {
 if (global.challengeHeavyBurden) &amp;&amp; (!staminaChallengeUpdated) {
     stamina_regen -= stamina_regen * global.challengeHeavyBurdenPenalty;
     staminaChallengeUpdated = true;
+}
+
+//Achievements
+if (global.gameMode == gamemode_endless) {
+    if (instance_exists(weapon1)) &amp;&amp; (instance_exists(weapon2)){
+        if (weapon1.isRelicWeapon) &amp;&amp; (weapon2.isRelicWeapon) achievement_give("ACHIEVEMENT_RELICWEAPONS");    
+    }
 }
 </string>
           </argument>
@@ -1348,7 +1355,7 @@ if energy &lt; (energy_max+overshield)
     if energy_regen_time_current = energy_regen_time
     {
         myRecharge = instance_create(x,y,fx_shield_up);  
-        audio_play(audio_emitter,false,1,sfx_shield_regen_start); 
+        audio_play(audio_emitter,false,1,sfx_shield_regen_start);
         myRecharge.owner = id;
     }
     

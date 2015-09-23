@@ -44,6 +44,9 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','endPriceTier_revive',global.endPriceTier_revive);
     ini_write_real('Temp','endPriceTier_hack',global.endPriceTier_hack);
     ini_write_real('Temp','relicChanceBonus',global.relicChanceBonus);
+    ini_write_real('Temp','hasPurchasedAnything',global.hasPurchasedAnything);
+    ini_write_real('Temp','hacksOnThisRun',global.hacksOnThisRun);
+    
         
     ini_write_real('Character','playerCount',global.playerCount);
         
@@ -266,6 +269,10 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Stats','totalDigs',global.totalDigs);
     ini_write_real('Stats','scoreEndlessBest',global.scoreEndlessBest);
     ini_write_real('Stats','statBestLoop',global.statBestLoop);
+    ini_write_real('Stats','statTotalLoops',global.statTotalLoops);
+    ini_write_real('Stats','statTotalHacks',global.statTotalHacks);
+    ini_write_real('Stats','statTotalWeaponUpgrades',global.statTotalWeaponUpgrades);
+
     
     // End
 ini_close();

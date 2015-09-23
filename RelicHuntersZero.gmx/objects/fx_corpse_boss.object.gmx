@@ -64,7 +64,29 @@ if (instance_exists(obj_rocket_homing))
     with(obj_rocket_homing) instance_destroy();
 }
 
-//Stats, Achievements &amp; Unlocks
+//hehehehe
+dropHugeGun = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stats, Achievements &amp; Unlocks
 global.unlockEndless = true;
 
 global.statBossKills++;
@@ -120,9 +142,33 @@ if (global.playerCount &gt; 1)
     if (global.hasUsedCheckpoint == false) &amp;&amp; (global.relic_slot[1] = '') &amp;&amp; (global.relic_slot[2] = '') &amp;&amp; (global.relic_slot[3] = '') achievement_give("ACHIEVEMENT_ULTIMATECOOP");
 }
 
+//Endless-specific achievements
+if (global.gameMode == gamemode_endless)
+{
+    achievement_give("ACHIEVEMENT_FIRSTLOOP");
+    if (global.currentLoop == 1) { // &lt;-- Loop number only increases when you leave the Boss room!
+        if (global.character[1] == char_jimmy || global.character[2] == char_jimmy) achievement_give("ACHIEVEMENT_LOOP2_JIMMY");
+        if (global.character[1] == char_pinky || global.character[2] == char_pinky ) achievement_give("ACHIEVEMENT_LOOP2_PINKYY");
+        if (global.character[1] == char_raff || global.character[2] == char_raff) achievement_give("ACHIEVEMENT_LOOP2_RAFF");
+        if (global.character[1] == char_biu || global.character[2] == char_biu) achievement_give("ACHIEVEMENT_LOOP2_BIU");
+        if (global.character[1] == char_punny || global.character[2] == char_punny) achievement_give("ACHIEVEMENT_LOOP2_PUNNY");
+        if (global.character[1] == char_ass) || (global.character[2] == char_ass) achievement_give("ACHIEVEMENT_LOOP2_ACE");
+    }
+    
+    if (global.currentLoop == 2) achievement_give("ACHIEVEMENT_LOOP3");
+    
+    if (!global.hasPurchasedAnything) achievement_give("ACHIEVEMENT_LOOP_NOBUY");
+}
 
-//hehehehe
-dropHugeGun = false;
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>

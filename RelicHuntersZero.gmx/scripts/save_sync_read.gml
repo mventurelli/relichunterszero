@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 5');
+    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 6');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -59,6 +59,8 @@ ini_open(working_directory + "\saveData.ini");
     global.hasPickedWeapon = ini_read_real('Temp','WeaponPickedUp',0);
     global.hasUsedCheckpoint = ini_read_real('Temp','CheckpointUsed',0);
     global.scoreEndless = ini_read_real('Temp','Score Endless',0);
+    global.hasPurchasedAnything = ini_read_real('Temp','hasPurchasedAnything',0);
+    global.hacksOnThisRun = ini_read_real('Temp','hacksOnThisRun',0);
     
     // Persistence
     
@@ -282,6 +284,10 @@ ini_open(working_directory + "\saveData.ini");
     global.totalDigs = ini_read_real('Stats','totalDigs',0);
     global.scoreEndlessBest = ini_read_real('Stats','scoreEndlessBest',0);
     global.statBestLoop = ini_read_real('Stats','statBestLoop',0);
+    global.statTotalLoops = ini_read_real('Stats','statTotalLoops',0);
+    global.statTotalHacks = ini_read_real('Stats','statTotalHacks',0);
+    global.statTotalWeaponUpgrades = ini_read_real('Stats','statTotalWeaponUpgrades',0);
+    
     
     // End
     

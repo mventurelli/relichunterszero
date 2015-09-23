@@ -22,6 +22,9 @@
     
     global.statRunTime = 0;
     
+    global.hasPurchasedAnything = false;
+    global.hacksOnThisRun = 0;
+    
     if (global.gameMode == gamemode_adventure)
     {
         global.ammo_light[1] = 120;

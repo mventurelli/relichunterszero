@@ -251,6 +251,7 @@ global.devPotionRegenTime = room_speed*0.75;
 global.watchfulEyePickupBonus = 1.5;
 global.relicHpBonus = 1;
 global.relicEnergyBonus = 1;
+awarded4RelicsAchievement = false;
 
 //Audio
 global.falloffMainDist = 1280;
@@ -283,6 +284,8 @@ display_mouse_set(window_get_width() / 2, window_get_height() / 2);
 //Low Performance Detection
 global.lowPerfTime = room_speed*4.2;
 global.lowPerfTimeCurrent = 0;
+
+debug_forceLevelExit = false;
 
 </string>
           </argument>
@@ -1379,7 +1382,7 @@ if (!level_built)
 
 if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(room == room_shop)) &amp;&amp; (!(room == room_boss)) &amp;&amp; (!(room == room_endShop))
 {
-    if (!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (!level_end)
+    if ((!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (!level_end)) || (debug_forceLevelExit &amp;&amp; !level_end)
     {
         //Instantiates Ass
         var tries;
@@ -1637,6 +1640,10 @@ if (global.level_complete)
     if (room == room_shop) || (room == room_start) || (room == room_endShop)
     {
         //Test boss: room_goto(room_boss); exit;  
+        //Test halloween: room_goto(levelHalloween_1); exit;  
+        
+
+        
         
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
@@ -1680,6 +1687,9 @@ if (global.level_complete)
         else if (global.gameMode == gamemode_endless)
         {
             global.currentLoop++;
+            global.statTotalLoops++;
+            steam_set_stat_int("STAT_TOTAL_LOOPS", steam_get_stat_int("STAT_TOTAL_LOOPS") + 1  ); 
+            if (steam_get_stat_int("STAT_TOTAL_LOOPS") &gt;= 50) achievement_give("ACHIEVEMENT_LOOPS_50");
             global.stage_current = 0;
             save_all();
             room_goto(room_endShop);
@@ -1843,7 +1853,13 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
             <kind>1</kind>
             <string>///DEBUG COMMANDS
 
-//Debug: Kill Everything
+//Debug: Stage Clear
+    if keyboard_check_pressed(vk_f10)
+    {
+        debug_forceLevelExit = true;
+    }
+    
+    //Debug: Kill Everything
     if keyboard_check_pressed(vk_f9)
     {
         if instance_exists(class_enemy)
@@ -1857,9 +1873,11 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
     
     //Debug Endless Bounty
     if keyboard_check_pressed(ord('M')) global.bountyEndless += 500;
-
+    
 if (debug_mode)
 {
+    
+    
     
     
 
@@ -1911,13 +1929,6 @@ if (debug_mode)
     
     
     
-    //Debug: Erase Save File
-    if keyboard_check_pressed(vk_f10)
-    {
-        file_delete(working_directory + "\saveData.ini");
-        game_restart();
-    }
-    
     //Debug: Toggle Hud, comment this to deactivate
     main_hud_alpha = 0;
 
@@ -1945,6 +1956,24 @@ if (debug_mode)
         steam_clear_achievement("ACHIEVEMENT_BEATGAMECOOP"); //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_ULTIMATECOOP");   //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_FIRSTDIG"); //set by digSpot
+        
+        steam_clear_achievement("ACHIEVEMENT_FIRSTLOOP"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_JIMMY"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_PINKYY");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_RAFF");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_BIU");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_PUNNY");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_ACE");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_GUNNAR_3"); //set by Gunnar
+        steam_clear_achievement("ACHIEVEMENT_GUNNAR_9"); //set by Gunnar
+        steam_clear_achievement("ACHIEVEMENT_SAE_3"); // set by class_hack
+        steam_clear_achievement("ACHIEVEMENT_RELICWEAPONS"); //set by class_player
+        steam_clear_achievement("ACHIEVEMENT_LOOPS_50"); //set when I do currentLoop++ on controller_main
+        steam_clear_achievement("ACHIEVEMENT_GUNNAR_360"); //set by Gunnar
+        steam_clear_achievement("ACHIEVEMENT_SAE_200"); // set by class_hack
+        steam_clear_achievement("ACHIEVEMENT_LOOP_NOBUY"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP3"); //set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_RELICS_4"); //set by controller_main Step event
     }
 }
 </string>
@@ -2118,8 +2147,26 @@ if (global.statKilledByBoss &gt;= 5) &amp;&amp; (!global.unlockAss)
     announce.hunterUnlockSprite = spr_hud_face_ass;
 }
 
-
-
+if (global.gameMode == gamemode_endless) &amp;&amp; (!awarded4RelicsAchievement) {
+    var countRelics = 0;
+    if (global.relic_morning_star) countRelics++;
+    if (global.relic_pineapple_pie) countRelics++;
+    if (global.relic_rabbit_foot) countRelics++;
+    if (global.relic_midnight_meal) countRelics++;
+    if (global.relic_yottabyte_processor) countRelics++;
+    if (global.relic_alcoholic_carrot) countRelics++;
+    if (global.relic_yottabyte_drive)  countRelics++;
+    if (global.relic_pineapple_pudding)  countRelics++;
+    if (global.relic_infinity_battery)   countRelics++;
+    if (global.relic_crystal_bacon) countRelics++;
+    if (global.relic_midnight_beer) countRelics++;
+    if (global.relic_watchful_eye) countRelics++;
+    if (global.relic_dev_potion) countRelics++;
+    if (countRelics &gt;= 4) {
+        achievement_give("ACHIEVEMENT_RELICS_4");
+        awarded4RelicsAchievement = true;
+    }
+}
 
 </string>
           </argument>
