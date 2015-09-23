@@ -21,7 +21,7 @@
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_version>0</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
-    <option_android_display_name>MightyDungeoneers</option_android_display_name>
+    <option_android_display_name>Relic Hunters Zero</option_android_display_name>
     <option_android_flurry_enable>0</option_android_flurry_enable>
     <option_android_flurry_id></option_android_flurry_id>
     <option_android_google_analytics_enable>0</option_android_google_analytics_enable>
@@ -65,7 +65,7 @@
     <option_android_ouya_icon>Configs\Default\android\icons\ouyaIcon.png</option_android_ouya_icon>
     <option_android_package_company>companyname</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
-    <option_android_package_product>MightyDungeoneers</option_android_package_product>
+    <option_android_package_product>Relic Hunters Zero</option_android_package_product>
     <option_android_permission_flags>8</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
@@ -147,7 +147,7 @@
     <option_ios_build_version>0</option_ios_build_version>
     <option_ios_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_ios_certificate>
     <option_ios_device_type>3</option_ios_device_type>
-    <option_ios_display_name>MightyDungeoneers</option_ios_display_name>
+    <option_ios_display_name>Relic Hunters Zero</option_ios_display_name>
     <option_ios_flurry_enable>0</option_ios_flurry_enable>
     <option_ios_flurry_id></option_ios_flurry_id>
     <option_ios_google_analytics_enable>0</option_ios_google_analytics_enable>
@@ -193,7 +193,7 @@
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>0</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
-    <option_linux_display_name>MightyDungeoneers</option_linux_display_name>
+    <option_linux_display_name>Relic Hunters Zero</option_linux_display_name>
     <option_linux_enable_steam>0</option_linux_enable_steam>
     <option_linux_fullscreen>0</option_linux_fullscreen>
     <option_linux_homepage>http://www.RelicHuntersZero.com</option_linux_homepage>
@@ -509,9 +509,9 @@
     <option_textureGroups7>Spritesheet - Turtle</option_textureGroups7>
     <option_textureGroups8>VFX - General</option_textureGroups8>
     <option_textureGroups9>Spritesheet - Tentacle</option_textureGroups9>
-    <option_tizen_app_id>http://yourdomain/MightyDungeoneers</option_tizen_app_id>
+    <option_tizen_app_id>http://yourdomain/Relic Hunters Zero</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
-    <option_tizen_display_name>MightyDungeoneers</option_tizen_display_name>
+    <option_tizen_display_name>Relic Hunters Zero</option_tizen_display_name>
     <option_tizen_flurry_enable>0</option_tizen_flurry_enable>
     <option_tizen_flurry_id></option_tizen_flurry_id>
     <option_tizen_google_analytics_enable>0</option_tizen_google_analytics_enable>
@@ -617,7 +617,7 @@
     <option_winphone_cycle_wide_image_8>Configs\Default\WinPhone\CycleWide8.png</option_winphone_cycle_wide_image_8>
     <option_winphone_cycle_wide_image_9>Configs\Default\WinPhone\CycleWide9.png</option_winphone_cycle_wide_image_9>
     <option_winphone_description>YourDescription</option_winphone_description>
-    <option_winphone_display_name>MightyDungeoneers</option_winphone_display_name>
+    <option_winphone_display_name>Relic Hunters Zero</option_winphone_display_name>
     <option_winphone_flip_content_back></option_winphone_flip_content_back>
     <option_winphone_flip_content_front></option_winphone_flip_content_front>
     <option_winphone_flip_medium_back_image>Configs\Default\WinPhone\FlipMedBack.png</option_winphone_flip_medium_back_image>
