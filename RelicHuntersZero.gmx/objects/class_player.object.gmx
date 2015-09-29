@@ -1562,7 +1562,6 @@ if (global.relicDetected)
     
         animation_play('dig',0.15,an_clamp,99,3+2);
         audio_play_exclusive(audio_emitter,false,9,sfx_shovel1,sfx_shovel2,sfx_shovel3);
-        audio_play_exclusive(audio_emitter,false,9,sfx_dirt1,sfx_dirt2,sfx_dirt3,sfx_dirt4,sfx_dirt5);
         add_screen_shake(9,0,true);
         
         myDirtColor = global.dirtColor;

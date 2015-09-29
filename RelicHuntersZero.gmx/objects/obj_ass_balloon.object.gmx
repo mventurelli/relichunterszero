@@ -110,18 +110,54 @@ if (room == room_shop) || (room == room_endShop)
     if (global.character[1] == char_ass) || (global.playerCount &gt; 1 &amp;&amp; global.character[2] == char_ass) myTextTarget = loc_key("ASS_SHOP_PLAYER");
 }
 
-if (room == level1_1) myTextTarget = loc_key("ASS_LEVEL1_1");
-if (room == level1_2) myTextTarget = loc_key("ASS_LEVEL1_2");
-if (room == level1_3) myTextTarget = loc_key("ASS_LEVEL1_3");
-if (room == level2_1) myTextTarget = loc_key("ASS_LEVEL2_1");
-if (room == level2_2) myTextTarget = loc_key("ASS_LEVEL2_2");
-if (room == level2_3) myTextTarget = loc_key("ASS_LEVEL2_3");
-if (room == level3_1) myTextTarget = loc_key("ASS_LEVEL3_1");
-if (room == level3_2) myTextTarget = loc_key("ASS_LEVEL3_2");
-if (room == level3_3) myTextTarget = loc_key("ASS_LEVEL3_3");
-if (room == level4_1) myTextTarget = loc_key("ASS_LEVEL4_1");
-if (room == level4_2) myTextTarget = loc_key("ASS_LEVEL4_2");
-if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
+if (global.gameMode == gamemode_adventure) || (global.currentLoop == 0)
+{
+    if (room == level1_1) myTextTarget = loc_key("ASS_LEVEL1_1");
+    if (room == level1_2) myTextTarget = loc_key("ASS_LEVEL1_2");
+    if (room == level1_3) myTextTarget = loc_key("ASS_LEVEL1_3");
+    if (room == level2_1) myTextTarget = loc_key("ASS_LEVEL2_1");
+    if (room == level2_2) myTextTarget = loc_key("ASS_LEVEL2_2");
+    if (room == level2_3) myTextTarget = loc_key("ASS_LEVEL2_3");
+    if (room == level3_1) myTextTarget = loc_key("ASS_LEVEL3_1");
+    if (room == level3_2) myTextTarget = loc_key("ASS_LEVEL3_2");
+    if (room == level3_3) myTextTarget = loc_key("ASS_LEVEL3_3");
+    if (room == level4_1) myTextTarget = loc_key("ASS_LEVEL4_1");
+    if (room == level4_2) myTextTarget = loc_key("ASS_LEVEL4_2");
+    if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
+}
+else if (global.currentLoop == 1)
+{
+    if (room == level1_1) myTextTarget = loc_key("ASS_LOOP1_GREETING");
+    else{
+        var randomAss = irandom(6);
+        switch (randomAss){
+            case 0 : myTextTarget = loc_key("ASS_LOOP1_1"); break;
+            case 1 : myTextTarget = loc_key("ASS_LOOP1_2"); break;
+            case 2 : myTextTarget = loc_key("ASS_LOOP1_3"); break;
+            case 3 : myTextTarget = loc_key("ASS_LOOP1_4"); break;
+            case 4 : myTextTarget = loc_key("ASS_LOOP1_5"); break;
+            case 5 : myTextTarget = loc_key("ASS_LOOP1_6"); break;
+            case 6 : myTextTarget = loc_key("ASS_LOOP1_7"); break;
+        }
+    }
+}
+else if (global.currentLoop == 2)
+{
+    if (room == level1_1) myTextTarget = loc_key("ASS_LOOP2_GREETING");
+    else{
+        var randomAss = irandom(6);
+        switch (randomAss){
+            case 0 : myTextTarget = loc_key("ASS_LOOP2_1"); break;
+            case 1 : myTextTarget = loc_key("ASS_LOOP2_2"); break;
+            case 2 : myTextTarget = loc_key("ASS_LOOP2_3"); break;
+            case 3 : myTextTarget = loc_key("ASS_LOOP2_4"); break;
+            case 4 : myTextTarget = loc_key("ASS_LOOP2_5"); break;
+            case 5 : myTextTarget = loc_key("ASS_LOOP2_6"); break;
+            case 6 : myTextTarget = loc_key("ASS_LOOP2_7"); break;
+        }
+    }
+}
+
 
 </string>
           </argument>

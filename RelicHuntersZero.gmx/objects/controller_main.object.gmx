@@ -777,72 +777,86 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         room == level2_3 ||
         room == level3_2 ||
         room == level4_1 ||
-        room == level4_3
-    ){
+        room == level4_3 ||
+        (global.currentLoop &gt;= 3 &amp;&amp; room != room_endShop)
+        )
+    {
         var stringChallenge = "";
         var stringDescritpion = "";
         var listName = "";
         var chUnique = false;
         
-        var uniqueChallengeChance = random(1);
-        if (uniqueChallengeChance &lt;= 0.35){
-            chUnique = true;
-            var randomChallenge = irandom(9);
-            switch (randomChallenge){
-                case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) { 
-                    global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescritpion="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
-                    } break;
+        if (global.currentLoop &lt; 2)
+        {
+            var uniqueChallengeChance = random(1);
+            if (uniqueChallengeChance &lt;= 0.35){
+                chUnique = true;
+                var randomChallenge = irandom(9);
+                switch (randomChallenge){
+                    case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) { 
+                        global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescritpion="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
+                        } break;
+                        
+                    case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1) { 
+                        global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescritpion="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
+                        } break;
                     
-                case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1) { 
-                    global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescritpion="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
-                    } break;
-                
-                case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1) { 
-                    global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescritpion="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
-                    } break;
+                    case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1) { 
+                        global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescritpion="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
+                        } break;
+                        
+                    case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1) { 
+                        global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescritpion="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
+                        } break;
+                        
+                    case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1) { 
+                        global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescritpion="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
+                        } break;
                     
-                case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1) { 
-                    global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescritpion="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
-                    } break;
+                    case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) { 
+                        global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescritpion="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
+                        } break;
+                        
+                    case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1) { 
+                        global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescritpion="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
+                        } break;
+                      
+                    case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1) { 
+                        global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescritpion="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
+                        } break;
                     
-                case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1) { 
-                    global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescritpion="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
-                    } break;
-                
-                case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) { 
-                    global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescritpion="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
-                    } break;
-                    
-                case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1) { 
-                    global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescritpion="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
-                    } break;
-                  
-                case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1) { 
-                    global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescritpion="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
-                    } break;
-                
-                case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) { 
-                    global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescritpion="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
-                    } break;
-                    
-                case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1) { 
-                    global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescritpion="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
-                    } break;
+                    case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) { 
+                        global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescritpion="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
+                        } break;
+                        
+                    case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1) { 
+                        global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescritpion="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
+                        } break;
+                }
+            }
+            
+            //No luck? Roll the common ones
+            if (stringChallenge == "") {
+                var randomChallenge = irandom(5);
+                switch (randomChallenge){
+                    case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescritpion="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
+                    case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescritpion="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
+                    case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescritpion="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
+                    case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescritpion="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
+                    case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescritpion="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
+                    case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescritpion="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
+                }
             }
         }
-        
-        //No luck? Roll the common ones
-        if (stringChallenge == "") {
-            var randomChallenge = irandom(5);
+        else{
+            var randomChallenge = irandom(2);
             switch (randomChallenge){
                 case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescritpion="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
                 case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescritpion="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
                 case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescritpion="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
-                case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescritpion="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
-                case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescritpion="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
-                case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescritpion="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
             }
         }
+        
         
         if (listName != "") ds_list_add(global.challengeList, listName);
         
@@ -1642,8 +1656,6 @@ if (global.level_complete)
         //Test boss: room_goto(room_boss); exit;  
         //Test halloween: room_goto(levelHalloween_1); exit;  
         
-
-        
         
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
@@ -1851,9 +1863,31 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///DEBUG COMMANDS
+            <string>///DEBUG COMMANDS   
 
-//Debug: Stage Clear
+if keyboard_check_pressed(ord('M')) global.currentLoop++;
+
+//Debug Endless Bounty
+    if keyboard_check_pressed(ord('B')) global.bountyEndless += 500;
+    
+//Debug: Kill Everything
+    if keyboard_check_pressed(vk_f9)
+    {
+        if instance_exists(class_enemy)
+        {
+            with (class_enemy)
+            {
+                instance_destroy();
+            }
+        }
+    }
+    
+if (debug_mode)
+{
+       
+    
+       
+    //Debug: Stage Clear
     if keyboard_check_pressed(vk_f10)
     {
         debug_forceLevelExit = true;
@@ -1870,14 +1904,6 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
             }
         }
     }
-    
-    //Debug Endless Bounty
-    if keyboard_check_pressed(ord('M')) global.bountyEndless += 500;
-    
-if (debug_mode)
-{
-    
-    
     
     
 
@@ -2809,7 +2835,7 @@ draw_set_font(global.font_numberMedium);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 var relicTextSep = 30;
-var relicTextWidth = 100;
+var relicTextWidth = 132;
 
 if (instance_exists(gui_dynamic_relic1)) 
 {

@@ -27,14 +27,28 @@
             <kind>1</kind>
             <string>event_inherited();
 
-maxhp = 100;
-sprite = spr_barrel;
-sprite_hit = spr_barrel_hit;
-sprite_dirt = spr_crate_dirt;
+if (global.currentLoop &lt; 2)
+{
+    maxhp = 100;
+    sprite = spr_barrel;
+    sprite_hit = spr_barrel_hit;
+    sprite_dirt = spr_crate_dirt;
+    
+    breakObject = fx_barrel_break;
+    
+    reflection_object_setup(0,spr_barrel_reflection,image_index);
+}
+else {
+    maxhp = 500;
+    sprite = spr_barrelDucan;
+    sprite_hit = spr_barrelDucan;
+    sprite_dirt = spr_crate_dirt;
+    
+    breakObject = fx_barrel_break;
+    
+    reflection_object_setup(0,spr_barrel_reflection,image_index);
+}
 
-breakObject = fx_barrel_break;
-
-reflection_object_setup(0,spr_barrel_reflection,image_index);
 
 depth = -y+96;
 </string>

@@ -101,7 +101,9 @@
     global.challengeJaws = 0;
     global.challengeCountdown = 0;
     
-    //Reset Relic Selection
+//Reset Relic Selection
+if (global.gameMode == gamemode_endless)
+{
     global.relic_slot[1] = '';
     global.relic_slot[2] = '';
     global.relic_slot[3] = '';
@@ -120,4 +122,5 @@
     global.relic_rabbit_foot = 0;
     global.relic_midnight_meal = 0;
     global.relic_yottabyte_processor = 0;
+}
     

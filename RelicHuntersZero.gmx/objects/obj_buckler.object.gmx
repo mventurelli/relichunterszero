@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>class_weapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Main Shit from class_gun + Special Shield Object
+            <string>///Setup + Special Shield Object
+event_inherited();
+
 name = loc_key("WPNAME_BUCKLER");
 owner = noone;
 isActive = true;

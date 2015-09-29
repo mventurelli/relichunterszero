@@ -27,14 +27,28 @@
             <kind>1</kind>
             <string>event_inherited();
 
-maxhp = 220;
-sprite = spr_longbox;
-sprite_hit = spr_longbox_hit;
-sprite_dirt = spr_longbox_dirt;
-breakObject = fx_longbox_break;
+if (global.currentLoop &lt; 2)
+{
+    maxhp = 220;
+    sprite = spr_longbox;
+    sprite_hit = spr_longbox_hit;
+    sprite_dirt = spr_longbox_dirt;
+    breakObject = fx_longbox_break;
+    
+    reflection_object_setup(0,spr_longbox_reflection,image_index);
+    shadow_object_setup(0,spr_longbox_reflection,image_index,global.default_shadow_yscale);
+}
+else{
+    maxhp = 1100;
+    sprite = spr_longboxDucan;
+    sprite_hit = spr_longboxDucan;
+    sprite_dirt = spr_longbox_dirt;
+    breakObject = fx_longbox_break;
+    
+    reflection_object_setup(0,spr_longbox_reflection,image_index);
+    shadow_object_setup(0,spr_longbox_reflection,image_index,global.default_shadow_yscale);
+}
 
-reflection_object_setup(0,spr_longbox_reflection,image_index);
-shadow_object_setup(0,spr_longbox_reflection,image_index,global.default_shadow_yscale);
 
 depth = -y+96;
 </string>

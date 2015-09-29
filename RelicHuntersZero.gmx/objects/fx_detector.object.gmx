@@ -58,8 +58,8 @@ noRadiusSpeed = 2;
 allowChild = true;
 
 if (drawShort) audio_play_sound(sfx_detector_close,99,false);
-else if (drawLong) audio_play_sound(sfx_detector_far,99,false);
-else audio_play_sound(sfx_relic_off,99,false);
+else if (drawLong) audio_play_sound(sfx_detector_mid,99,false);
+else audio_play_sound(sfx_detector_far,99,false);
 </string>
           </argument>
         </arguments>

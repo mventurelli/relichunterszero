@@ -32,7 +32,7 @@ image_speed = 0.2;
 image_xscale = -1;
 depth = -y;
 
-price = 10000;
+price = 6000;
 allowBuy = false;
 unlock = false;
 

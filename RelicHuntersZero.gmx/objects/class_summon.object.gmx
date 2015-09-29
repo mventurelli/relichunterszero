@@ -29,6 +29,7 @@
 shield = false;
 energy_max = 99999;
 energy = energy_max;
+superShield = false;
 hp_max = 99999;
 hp = hp_max;
 critical_death = false;

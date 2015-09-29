@@ -65,7 +65,7 @@
     <option_android_ouya_icon>Configs\Default\android\icons\ouyaIcon.png</option_android_ouya_icon>
     <option_android_package_company>companyname</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
-    <option_android_package_product>Relic Hunters Zero</option_android_package_product>
+    <option_android_package_product>Relic_Hunters_Zero</option_android_package_product>
     <option_android_permission_flags>8</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
@@ -438,11 +438,46 @@
     <option_textureGroup34_parent>&lt;none&gt;</option_textureGroup34_parent>
     <option_textureGroup34_scaled>0</option_textureGroup34_scaled>
     <option_textureGroup34_targets>9223372036854775807</option_textureGroup34_targets>
+    <option_textureGroup35_border>2</option_textureGroup35_border>
+    <option_textureGroup35_nocropping>0</option_textureGroup35_nocropping>
+    <option_textureGroup35_parent>&lt;none&gt;</option_textureGroup35_parent>
+    <option_textureGroup35_scaled>0</option_textureGroup35_scaled>
+    <option_textureGroup35_targets>9223372036854775807</option_textureGroup35_targets>
+    <option_textureGroup36_border>2</option_textureGroup36_border>
+    <option_textureGroup36_nocropping>0</option_textureGroup36_nocropping>
+    <option_textureGroup36_parent>&lt;none&gt;</option_textureGroup36_parent>
+    <option_textureGroup36_scaled>0</option_textureGroup36_scaled>
+    <option_textureGroup36_targets>9223372036854775807</option_textureGroup36_targets>
+    <option_textureGroup37_border>2</option_textureGroup37_border>
+    <option_textureGroup37_nocropping>0</option_textureGroup37_nocropping>
+    <option_textureGroup37_parent>&lt;none&gt;</option_textureGroup37_parent>
+    <option_textureGroup37_scaled>0</option_textureGroup37_scaled>
+    <option_textureGroup37_targets>9223372036854775807</option_textureGroup37_targets>
+    <option_textureGroup38_border>2</option_textureGroup38_border>
+    <option_textureGroup38_nocropping>0</option_textureGroup38_nocropping>
+    <option_textureGroup38_parent>&lt;none&gt;</option_textureGroup38_parent>
+    <option_textureGroup38_scaled>0</option_textureGroup38_scaled>
+    <option_textureGroup38_targets>9223372036854775807</option_textureGroup38_targets>
+    <option_textureGroup39_border>2</option_textureGroup39_border>
+    <option_textureGroup39_nocropping>0</option_textureGroup39_nocropping>
+    <option_textureGroup39_parent>&lt;none&gt;</option_textureGroup39_parent>
+    <option_textureGroup39_scaled>0</option_textureGroup39_scaled>
+    <option_textureGroup39_targets>9223372036854775807</option_textureGroup39_targets>
     <option_textureGroup3_border>2</option_textureGroup3_border>
     <option_textureGroup3_nocropping>-1</option_textureGroup3_nocropping>
     <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
     <option_textureGroup3_scaled>0</option_textureGroup3_scaled>
     <option_textureGroup3_targets>9223372036854775807</option_textureGroup3_targets>
+    <option_textureGroup40_border>2</option_textureGroup40_border>
+    <option_textureGroup40_nocropping>0</option_textureGroup40_nocropping>
+    <option_textureGroup40_parent>&lt;none&gt;</option_textureGroup40_parent>
+    <option_textureGroup40_scaled>0</option_textureGroup40_scaled>
+    <option_textureGroup40_targets>9223372036854775807</option_textureGroup40_targets>
+    <option_textureGroup41_border>2</option_textureGroup41_border>
+    <option_textureGroup41_nocropping>0</option_textureGroup41_nocropping>
+    <option_textureGroup41_parent>&lt;none&gt;</option_textureGroup41_parent>
+    <option_textureGroup41_scaled>0</option_textureGroup41_scaled>
+    <option_textureGroup41_targets>9223372036854775807</option_textureGroup41_targets>
     <option_textureGroup4_border>2</option_textureGroup4_border>
     <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
     <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
@@ -473,7 +508,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>35</option_textureGroup_count>
+    <option_textureGroup_count>42</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -499,11 +534,18 @@
     <option_textureGroups29>Fonts - Japanese</option_textureGroups29>
     <option_textureGroups3>Spritesheet - Jimmy</option_textureGroups3>
     <option_textureGroups30>Fonts - Chinese</option_textureGroups30>
-    <option_textureGroups31>SpriteSheep - Gunnar</option_textureGroups31>
+    <option_textureGroups31>SpriteSheep - Endless Shop</option_textureGroups31>
     <option_textureGroups32>SpriteSheet - Rider</option_textureGroups32>
     <option_textureGroups33>Stage Halloween</option_textureGroups33>
     <option_textureGroups34>SpriteSheet - Ducan Elite</option_textureGroups34>
+    <option_textureGroups35>SpriteSheet - Ducan Commander</option_textureGroups35>
+    <option_textureGroups36>Spritesheet - Ace</option_textureGroups36>
+    <option_textureGroups37>SpriteSheet - Pinkyy</option_textureGroups37>
+    <option_textureGroups38>SpriteSheet - Biu</option_textureGroups38>
+    <option_textureGroups39>SpriteSheet - Punny</option_textureGroups39>
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
+    <option_textureGroups40>SpriteSheet - Raff</option_textureGroups40>
+    <option_textureGroups41>Tools and Editor</option_textureGroups41>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
     <option_textureGroups6>GUI</option_textureGroups6>
     <option_textureGroups7>Spritesheet - Turtle</option_textureGroups7>
@@ -531,7 +573,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>17</option_version_build>
+    <option_version_build>19</option_version_build>
     <option_version_company>Rogue Snail</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>

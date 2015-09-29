@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="44" name="datafiles">
-    <datafiles number="44" name="fonts">
+  <datafiles number="46" name="datafiles">
+    <datafiles number="46" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>382963</size>
+      <size>414640</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -261,17 +261,13 @@
         <sound>sound\sfx_plasma_start</sound>
       </sounds>
       <sounds name="Dig">
-        <sound>sound\sfx_dirt1</sound>
-        <sound>sound\sfx_dirt2</sound>
-        <sound>sound\sfx_dirt3</sound>
-        <sound>sound\sfx_dirt4</sound>
-        <sound>sound\sfx_dirt5</sound>
         <sound>sound\sfx_shovel1</sound>
         <sound>sound\sfx_shovel2</sound>
         <sound>sound\sfx_shovel3</sound>
         <sound>sound\sfx_shovel4</sound>
         <sound>sound\sfx_detector_close</sound>
         <sound>sound\sfx_detector_far</sound>
+        <sound>sound\sfx_detector_mid</sound>
         <sound>sound\sfx_dig_done</sound>
       </sounds>
     </sounds>
@@ -446,6 +442,7 @@
       </sprites>
       <sprites name="Blockers">
         <sprite>sprites\spr_barrel</sprite>
+        <sprite>sprites\spr_barrelDucan</sprite>
         <sprite>sprites\spr_barrel_hit</sprite>
         <sprite>sprites\spr_barrel_reflection</sprite>
         <sprite>sprites\spr_barrel_break</sprite>
@@ -466,12 +463,14 @@
         <sprite>sprites\spr_root1</sprite>
         <sprite>sprites\spr_root1_break</sprite>
         <sprite>sprites\spr_longbox</sprite>
+        <sprite>sprites\spr_longboxDucan</sprite>
         <sprite>sprites\spr_longbox_break</sprite>
         <sprite>sprites\spr_longbox_break2</sprite>
         <sprite>sprites\spr_crate_reflection</sprite>
         <sprite>sprites\spr_crate_hit</sprite>
         <sprite>sprites\spr_crate_dirt</sprite>
         <sprite>sprites\spr_crate</sprite>
+        <sprite>sprites\spr_crateDucan</sprite>
         <sprite>sprites\spr_pumpkin</sprite>
         <sprite>sprites\spr_pumpkin_hit</sprite>
         <sprite>sprites\spr_pumpkin_break</sprite>
@@ -1325,6 +1324,7 @@
           <object>objects\obj_turtle2_assaultpistol</object>
           <object>objects\obj_turtle2_shotgun</object>
           <object>objects\obj_turtle3</object>
+          <object>objects\obj_turtle3_plasma</object>
           <object>objects\obj_turtle3_sniper</object>
         </objects>
         <objects name="Kamis">
@@ -1810,6 +1810,7 @@
     <objects name="Relics">
       <object>objects\class_relic</object>
       <object>objects\class_shop_relic</object>
+      <object>objects\obj_relicReset</object>
       <objects name="Relic_Shop">
         <object>objects\obj_shop_pineapple1</object>
         <object>objects\obj_shop_pineapple2</object>

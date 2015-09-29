@@ -352,6 +352,7 @@ if hp &lt;= 0
         if (random(1)&lt;=drop_gun_chance) &amp;&amp; (global.gameMode == gamemode_adventure) instance_create(x,y,drop_gun);
         else 
         {
+            var broken_gun = noone;
             if (drop_gun == obj_pickup_pistol) broken_gun = spr_broken_pistol;
             if (drop_gun == obj_pickup_pistol_assault) broken_gun = spr_broken_pistol_assault;
             if (drop_gun == obj_pickup_pistol_heavy) broken_gun = spr_broken_pistol_heavy;
@@ -361,7 +362,7 @@ if hp &lt;= 0
             if (drop_gun == obj_pickup_submachinegun) broken_gun = spr_broken_submachinegun;
             if (drop_gun == obj_pickup_machinegun) broken_gun = spr_broken_machinegun;
             if (drop_gun == obj_pickup_rocketlauncher) broken_gun = spr_broken_rocketlauncher;
-            draw_persistent(broken_gun,0,x,y,1,1,irandom(360),c_white,1);
+            if (sprite_exists(broken_gun)) draw_persistent(broken_gun,0,x,y,1,1,irandom(360),c_white,1);
         }
     }
 

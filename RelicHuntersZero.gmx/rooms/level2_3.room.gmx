@@ -1064,6 +1064,8 @@
     <instance objName="obj_limit" x="1472" y="2048" name="inst_2233392B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1536" y="2048" name="inst_3A0DE272" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1600" y="2048" name="inst_358A3D11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1728" y="1728" name="inst_CD3528DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_limit" x="1728" y="1664" name="inst_BC19660C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_green" x="576" y="640" w="64" h="64" xo="148" yo="76" id="10005690" name="inst_4E4ED324" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
