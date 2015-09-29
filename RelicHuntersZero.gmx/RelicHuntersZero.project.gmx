@@ -637,6 +637,7 @@
       <sprite>sprites\spr_priceTag</sprite>
       <sprite>sprites\spr_challengeCommon</sprite>
       <sprite>sprites\spr_challengeUnique</sprite>
+      <sprite>sprites\spr_edgeTrackEnemy</sprite>
     </sprites>
     <sprites name="Items">
       <sprite>sprites\spr_pickup_health</sprite>
@@ -1062,6 +1063,7 @@
       <scripts name="General">
         <script>scripts\range_finder.gml</script>
         <script>scripts\on_screen.gml</script>
+        <script>scripts\on_screen_offset.gml</script>
         <script>scripts\range_convert.gml</script>
         <script>scripts\is_mouse_over.gml</script>
         <script>scripts\is_mouse_over_custom.gml</script>

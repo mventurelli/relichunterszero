@@ -287,6 +287,9 @@ global.lowPerfTimeCurrent = 0;
 
 debug_forceLevelExit = false;
 
+///Enemy Tracker
+global.edgeTrackEnemyList = noone;
+
 </string>
           </argument>
         </arguments>
@@ -2229,6 +2232,55 @@ if (timeCounter &gt;= room_speed)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Edge Tracking for Enemies
+
+var maxEdgeTrackingDistance = 1000;
+
+if (!ds_exists(global.edgeTrackEnemyList,ds_type_list)) global.edgeTrackEnemyList = ds_list_create();
+ds_list_clear(global.edgeTrackEnemyList);
+
+if (instance_exists(class_enemy))
+{
+    var enemyCount = instance_number(class_enemy);
+    for (var i=0; i&lt;enemyCount; i++)
+    {
+        var enemy = instance_find(class_enemy,i);
+        if (instance_exists(enemy)) 
+        {
+            if (!on_screen_offset(enemy.x,enemy.y,32)) 
+            {
+                var enemyDist = abs(point_distance(view_xview[0]+(view_wview[0]/2),view_yview[0]+(view_hview[0]/2),enemy.x,enemy.y));
+                if (enemyDist &lt;= maxEdgeTrackingDistance) 
+                {
+                    ds_list_add(global.edgeTrackEnemyList,enemy);
+                }
+            }
+        }
+    }
+}
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="5">
       <action>
@@ -2997,6 +3049,8 @@ if (instance_exists(gui_info_lowPerformance))
 }
 
 
+
+
 draw_set_alpha(1);
 surface_reset_target();
 var surfaceXScale = window_get_width()/1920;
@@ -3243,6 +3297,52 @@ if (!global.pauseMenu) &amp;&amp; (!global.gameOver) &amp;&amp; (instance_exists
             if global.crosshair_scale[p] &gt; 1
             {
                 global.crosshair_scale[p] -= 0.05;
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Edge Tracking Enemies
+
+if (ds_exists(global.edgeTrackEnemyList,ds_type_list)) &amp;&amp; (!global.pauseMenu) &amp;&amp; (!global.gameOver) &amp;&amp; (instance_exists(class_player))
+{
+    if (!ds_list_empty(global.edgeTrackEnemyList)) 
+    {
+        for (var i=0; i&lt;ds_list_size(global.edgeTrackEnemyList); i++)
+        {
+            var trackee = ds_list_find_value(global.edgeTrackEnemyList,i);
+            if (instance_exists(trackee))
+            {
+                var trackX, trackY;
+                
+                if (trackee.x &gt;= view_xview[0]) trackX = min(view_xview[0]+view_wview[0], trackee.x);
+                else trackX = max(view_xview[0], trackee.x);
+                
+                if (trackee.y &gt;= view_yview[0]) trackY = min(view_yview[0]+view_hview[0], trackee.y);
+                else trackY = max(view_yview[0], trackee.y);
+                
+                var trackDir = point_direction(trackX, trackY, trackee.x, trackee.y);
+                
+                draw_sprite_ext(spr_edgeTrackEnemy,0,trackX,trackY,0.5,0.5,trackDir,c_white,1);
             }
         }
     }
