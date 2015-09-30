@@ -26,7 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-sprite_index = choose(spr_crate_break,spr_crate_break2);
+
+
+if (global.currentLoop &lt; 2){
+    sprite_index = choose(spr_crate_break,spr_crate_break2);
+}
+else{
+    sprite_index = spr_barrelDucan_break;
+}
 </string>
           </argument>
         </arguments>

@@ -478,6 +478,11 @@
     <option_textureGroup41_parent>&lt;none&gt;</option_textureGroup41_parent>
     <option_textureGroup41_scaled>0</option_textureGroup41_scaled>
     <option_textureGroup41_targets>9223372036854775807</option_textureGroup41_targets>
+    <option_textureGroup42_border>2</option_textureGroup42_border>
+    <option_textureGroup42_nocropping>0</option_textureGroup42_nocropping>
+    <option_textureGroup42_parent>&lt;none&gt;</option_textureGroup42_parent>
+    <option_textureGroup42_scaled>0</option_textureGroup42_scaled>
+    <option_textureGroup42_targets>9223372036854775807</option_textureGroup42_targets>
     <option_textureGroup4_border>2</option_textureGroup4_border>
     <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
     <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
@@ -508,7 +513,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>42</option_textureGroup_count>
+    <option_textureGroup_count>43</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -546,6 +551,7 @@
     <option_textureGroups4>Spritesheet - Duck</option_textureGroups4>
     <option_textureGroups40>SpriteSheet - Raff</option_textureGroups40>
     <option_textureGroups41>Tools and Editor</option_textureGroups41>
+    <option_textureGroups42>Zueira Video</option_textureGroups42>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
     <option_textureGroups6>GUI</option_textureGroups6>
     <option_textureGroups7>Spritesheet - Turtle</option_textureGroups7>
@@ -618,11 +624,11 @@
     <option_win8_texture_page>1024</option_win8_texture_page>
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
-    <option_windows_build_version>17</option_windows_build_version>
+    <option_windows_build_version>19</option_windows_build_version>
     <option_windows_company_info>Rogue Snail</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_description_info></option_windows_description_info>
-    <option_windows_enable_steam>-1</option_windows_enable_steam>
+    <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>

@@ -30,7 +30,7 @@
 elite = true;
 energy_max = 420;
 energy_max += round(energy_max*(global.challengeHighTech*global.challengeHighTechMultiplier));
-hp_max = 800;
+hp_max = 1200;
 hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
 
 ai_cover_hp_threshold = 1;

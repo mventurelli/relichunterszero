@@ -30,7 +30,7 @@ event_inherited();
 
 elite = false;
 energy_max = 0;
-hp_max = 200;
+hp_max = 300;
 hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
 
 drop_gun_chance = 0.1;

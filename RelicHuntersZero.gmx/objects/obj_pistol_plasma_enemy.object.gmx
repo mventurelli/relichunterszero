@@ -34,7 +34,7 @@ projectile_obj = obj_projectile_plasmaEnemy;
 
 projectile_speed = 0.02;
 projectile_speed_decay = -0.07;
-projectile_damage = 50;
+projectile_damage = 60;
 projectile_range = 600;
 
 accuracy = 8;

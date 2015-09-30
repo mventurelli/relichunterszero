@@ -25,61 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Bootstrap
-randomize();
-
-// Sync Save
-save_sync_read();
-screen_update();
-
-//Version
-global.currentVersionNumber = "UPDATE 7";
-
-//Multiplayer &amp; Mode
-global.playerCount = 1;
-global.gameMode = gamemode_adventure;
-global.currentLoop = 0;
-
-//Global Data Structures
-global.challengeList = ds_list_create();
-
-//Sync 
-ini_open(working_directory + "\saveData.ini");
-ini_write_string('Version','Version',global.currentVersionNumber);
-ini_write_real('Character','playerCount',global.playerCount);
-ini_write_real('Temp','Loop',global.currentLoop);
-
-ini_close();
-
+            <string>
 //Setup
 goToNextRoom = false;
 rogueLogo = noone;
 
 //Timeline
-fade = instance_create(x,y,fx_fadeFromBlack);
-fade.fadeDuration = room_speed*3;
-alarm[0] = room_speed*3; //spawn Logo
-alarm[1] = room_speed*6; //spawn FadetoBlack
-alarm[2] = room_speed*9; //go to next room
-
-
-//Language Init
-global.loc_map = noone;
-loc_init();
-
-// Debug Shit, don't mess with this
-audio_stop_all();
-if (!audio_group_is_loaded(ag_music)) audio_group_load(ag_music);
-
-if (os_type == os_macosx) global.version = os_macosx;
-else if (os_type == os_linux) global.version = os_linux;
-else global.version = os_windows;
-
-joy_init();
-
-volume_update();
-
-
+alarm[0] = room_speed*1; //spawn Logo
+alarm[1] = room_speed*4; //spawn FadetoBlack
+alarm[2] = room_speed*7; //go to next room
 </string>
           </argument>
         </arguments>

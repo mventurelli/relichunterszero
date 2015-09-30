@@ -28,6 +28,7 @@
             <string>depth = -y;
 
 active = false;
+image_speed = 0;
 
 fx = instance_create(x,y,fx_relic);
 fx.owner = id;
@@ -53,8 +54,13 @@ fx.owner = id;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_altar_relics,image_index,x,y);
-if (active) draw_self();
+            <string>if (active) image_speed = 0.2;
+else {
+    image_speed = 0;
+    image_index = 16;
+}
+draw_self();
+
 </string>
           </argument>
         </arguments>

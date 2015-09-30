@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///Setup
+event_inherited();
+
+myFlag = noone;
 
 if (global.currentLoop &lt; 2)
 {
@@ -33,7 +36,6 @@ if (global.currentLoop &lt; 2)
     sprite = spr_longbox;
     sprite_hit = spr_longbox_hit;
     sprite_dirt = spr_longbox_dirt;
-    breakObject = fx_longbox_break;
     
     reflection_object_setup(0,spr_longbox_reflection,image_index);
     shadow_object_setup(0,spr_longbox_reflection,image_index,global.default_shadow_yscale);
@@ -41,15 +43,19 @@ if (global.currentLoop &lt; 2)
 else{
     maxhp = 1100;
     sprite = spr_longboxDucan;
-    sprite_hit = spr_longboxDucan;
+    sprite_hit = spr_longboxDucan_hit;
     sprite_dirt = spr_longbox_dirt;
-    breakObject = fx_longbox_break;
     
-    reflection_object_setup(0,spr_longbox_reflection,image_index);
-    shadow_object_setup(0,spr_longbox_reflection,image_index,global.default_shadow_yscale);
+    reflection_object_setup(0,spr_longboxDucan_reflection,image_index);
+    shadow_object_setup(0,spr_longboxDucan_reflection,image_index,global.default_shadow_yscale);
+    
+    if (irandom(2) = 0) {
+        myFlag = instance_create(x+62,y-68,fx_ducanFlag);
+        myFlag.owner = id;
+    }
 }
 
-
+breakObject = fx_longbox_break;
 depth = -y+96;
 </string>
           </argument>

@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Init
+draw_texture_flush();
+
 buttonController = instance_create(0,0,controller_menuButtons);
 //buttonController.allowDynamicInputSwitch = true;
 goToNextRoom = false;

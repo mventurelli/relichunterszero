@@ -21,5 +21,7 @@
   <height>112</height>
   <frames>
     <frame index="0">images\spr_crateDucan_0.png</frame>
+    <frame index="1">images\spr_crateDucan_1.png</frame>
+    <frame index="2">images\spr_crateDucan_2.png</frame>
   </frames>
 </sprite>

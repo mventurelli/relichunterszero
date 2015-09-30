@@ -3,8 +3,8 @@
   <caption></caption>
   <width>5000</width>
   <height>3500</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -102,7 +102,7 @@
     <instance objName="obj_teleporter_2" x="2851" y="897" name="inst_2566F802" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2176" y="1088" name="inst_9BEA79C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1280" y="960" name="inst_708EED2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_yottabyte1" x="2616" y="1362" name="inst_029D4B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_yottabyte1" x="2625" y="1363" name="inst_029D4B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1664" y="832" name="inst_00B31C43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="1408" y="832" name="inst_770F014E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="384" y="1088" name="inst_D0C60730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -144,7 +144,7 @@
     <instance objName="obj_limit" x="832" y="960" name="inst_07C32BF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="576" y="960" name="inst_B1F491E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_altar_relic" x="3104" y="1376" name="inst_3F836B3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_yottabyte3" x="2698" y="1360" name="inst_8FA6E5ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_yottabyte3" x="2685" y="1365" name="inst_8FA6E5ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_yottabyte2" x="2654" y="1362" name="inst_4110FED7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2240" y="1536" name="inst_8CA74E02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="2112" y="832" name="inst_471DF564" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -260,31 +260,31 @@
     <instance objName="obj_unlock_heavy4" x="1887" y="1332" name="inst_CC465DAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="2112" y="1600" name="inst_7848B956" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_pineapple_pudding" x="2434" y="1361" name="inst_355E48E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_pineapple1" x="2401" y="1358" name="inst_16C18A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_pineapple2" x="2433" y="1353" name="inst_C7944BA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_pineapple3" x="2465" y="1358" name="inst_187885F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_pineapple1" x="2410" y="1363" name="inst_16C18A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_pineapple2" x="2433" y="1362" name="inst_C7944BA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_pineapple3" x="2457" y="1362" name="inst_187885F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_alcoholic_carrot" x="3104" y="1365" name="inst_92962F2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_crystal_bacon" x="2880" y="1494" name="inst_3C53558A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_infinity_battery" x="2430" y="1496" name="inst_512281D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_infinity_battery" x="2434" y="1491" name="inst_512281D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_midnight_beer" x="2656" y="1495" name="inst_D1ABF6D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_watchful_eye" x="2882" y="1364" name="inst_05126856" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_dev_potion" x="3106" y="1496" name="inst_FCEE49F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_yottabyte_drive" x="2656" y="1365" name="inst_777EDDC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_alcoholic1" x="3073" y="1367" name="inst_980D7B82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_alcoholic1" x="3077" y="1367" name="inst_980D7B82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_alcoholic2" x="3103" y="1371" name="inst_03F10148" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_alcoholic3" x="3135" y="1368" name="inst_B672CE99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_crystal1" x="2848" y="1493" name="inst_1FF61AE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_alcoholic3" x="3130" y="1368" name="inst_B672CE99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_crystal1" x="2854" y="1493" name="inst_1FF61AE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_crystal2" x="2880" y="1493" name="inst_02B3C27F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_crystal3" x="2912" y="1493" name="inst_257C06C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_infinity1" x="2428" y="1490" name="inst_987A9896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_infinity2" x="2401" y="1491" name="inst_49D22264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_infinity3" x="2463" y="1491" name="inst_8FF9570B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_midnight1" x="2624" y="1496" name="inst_D5E648D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_crystal3" x="2905" y="1493" name="inst_257C06C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_infinity1" x="2432" y="1485" name="inst_987A9896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_infinity2" x="2408" y="1488" name="inst_49D22264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_infinity3" x="2456" y="1488" name="inst_8FF9570B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_midnight1" x="2630" y="1496" name="inst_D5E648D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_midnight2" x="2656" y="1495" name="inst_F8B99488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_midnight3" x="2685" y="1494" name="inst_EF5961A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_watchful1" x="2849" y="1364" name="inst_38E3498C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_midnight3" x="2683" y="1494" name="inst_EF5961A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_watchful1" x="2857" y="1364" name="inst_38E3498C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_watchful2" x="2882" y="1367" name="inst_2AD4D579" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_relic_watchful3" x="2913" y="1363" name="inst_6EAD3A47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_watchful3" x="2906" y="1364" name="inst_6EAD3A47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_dev1" x="3076" y="1498" name="inst_95268AB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_dev2" x="3105" y="1498" name="inst_6EFBAA90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_relic_dev3" x="3132" y="1495" name="inst_52A4D78C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

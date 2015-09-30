@@ -29,7 +29,7 @@
 
 event_inherited();
 
-image_speed = 0.1;
+image_speed = 0.2;
 sprite_index = spr_terminalClear;
 
 range = 150;
@@ -230,6 +230,8 @@ draw_sprite(spr_terminal,terminalImage,x,y);
 
 if (sprite_exists(sprite_index)) draw_self();
 
+draw_sprite(spr_priceTag,0,x,y+50);
+
 if (price){
     draw_set_font(global.font_shopPrice);
     draw_set_halign(fa_left);
@@ -238,7 +240,7 @@ if (price){
     var myColor = c_white;
     if (global.bountyEndless &lt; price) myColor = K_BETU_RED;
         
-    draw_text_outline(x-4,y-34,string(price),myColor);
+    draw_text_outline(x-4,y+62,string(price),myColor);
 }
 </string>
           </argument>

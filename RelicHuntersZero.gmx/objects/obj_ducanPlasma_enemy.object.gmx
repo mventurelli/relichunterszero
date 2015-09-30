@@ -34,10 +34,10 @@ projectile_obj = obj_projectile_plasmaEnemy;
 
 projectile_speed = 0.02;
 projectile_speed_decay = -0.07;
-projectile_damage = 50;
+projectile_damage = 55;
 projectile_range = 1200;
 
-accuracy = 15;
+accuracy = 45;
 
 fire_burst = irandom_range(6,9);
 fire_burst_rate = room_speed*0.1;

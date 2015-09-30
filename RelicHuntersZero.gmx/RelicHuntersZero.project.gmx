@@ -144,6 +144,7 @@
       </sounds>
       <sounds name="Menu">
         <sound>sound\sfx_roguesnail</sound>
+        <sound>sound\sfx_zueira</sound>
         <sound>sound\sfx_menu_click</sound>
         <sound>sound\sfx_menu_pause</sound>
         <sound>sound\sfx_menu_unpause</sound>
@@ -441,52 +442,62 @@
         <sprite>sprites\spr_tp_stage4</sprite>
       </sprites>
       <sprites name="Blockers">
-        <sprite>sprites\spr_barrel</sprite>
-        <sprite>sprites\spr_barrelDucan</sprite>
-        <sprite>sprites\spr_barrel_hit</sprite>
-        <sprite>sprites\spr_barrel_reflection</sprite>
-        <sprite>sprites\spr_barrel_break</sprite>
-        <sprite>sprites\spr_barrel_break2</sprite>
-        <sprite>sprites\spr_longbox_reflection</sprite>
-        <sprite>sprites\spr_longbox_hit</sprite>
-        <sprite>sprites\spr_longbox_dirt</sprite>
-        <sprite>sprites\spr_root4_hit</sprite>
-        <sprite>sprites\spr_root4</sprite>
-        <sprite>sprites\spr_root4_break</sprite>
-        <sprite>sprites\spr_root3_hit</sprite>
-        <sprite>sprites\spr_root3</sprite>
-        <sprite>sprites\spr_root3_break</sprite>
-        <sprite>sprites\spr_root2_hit</sprite>
-        <sprite>sprites\spr_root2</sprite>
-        <sprite>sprites\spr_root2_break</sprite>
-        <sprite>sprites\spr_root1_hit</sprite>
-        <sprite>sprites\spr_root1</sprite>
-        <sprite>sprites\spr_root1_break</sprite>
-        <sprite>sprites\spr_longbox</sprite>
-        <sprite>sprites\spr_longboxDucan</sprite>
-        <sprite>sprites\spr_longbox_break</sprite>
-        <sprite>sprites\spr_longbox_break2</sprite>
-        <sprite>sprites\spr_crate_reflection</sprite>
-        <sprite>sprites\spr_crate_hit</sprite>
-        <sprite>sprites\spr_crate_dirt</sprite>
-        <sprite>sprites\spr_crate</sprite>
-        <sprite>sprites\spr_crateDucan</sprite>
-        <sprite>sprites\spr_pumpkin</sprite>
-        <sprite>sprites\spr_pumpkin_hit</sprite>
-        <sprite>sprites\spr_pumpkin_break</sprite>
-        <sprite>sprites\spr_generator</sprite>
-        <sprite>sprites\spr_generatorOff</sprite>
-        <sprite>sprites\spr_generatorActivation</sprite>
-        <sprite>sprites\spr_generator_hit</sprite>
-        <sprite>sprites\spr_crate_break</sprite>
-        <sprite>sprites\spr_crate_break2</sprite>
         <sprites name="Blocker FX">
           <sprite>sprites\spr_crate_particles</sprite>
         </sprites>
+        <sprite>sprites\spr_barrel</sprite>
+        <sprite>sprites\spr_barrel_break</sprite>
+        <sprite>sprites\spr_barrel_break2</sprite>
+        <sprite>sprites\spr_barrel_hit</sprite>
+        <sprite>sprites\spr_barrel_reflection</sprite>
+        <sprite>sprites\spr_barrelDucan</sprite>
+        <sprite>sprites\spr_barrelDucan_break</sprite>
+        <sprite>sprites\spr_barrelDucan_hit</sprite>
+        <sprite>sprites\spr_barrelDucan_reflection</sprite>
+        <sprite>sprites\spr_crate</sprite>
+        <sprite>sprites\spr_crate_break</sprite>
+        <sprite>sprites\spr_crate_break2</sprite>
+        <sprite>sprites\spr_crate_dirt</sprite>
+        <sprite>sprites\spr_crate_hit</sprite>
+        <sprite>sprites\spr_crate_reflection</sprite>
+        <sprite>sprites\spr_crateDucan</sprite>
+        <sprite>sprites\spr_crateDucan_hit</sprite>
+        <sprite>sprites\spr_crateDucan_reflection</sprite>
+        <sprite>sprites\spr_eliteFlag_break</sprite>
+        <sprite>sprites\spr_eliteFlag_idle</sprite>
+        <sprite>sprites\spr_generator</sprite>
+        <sprite>sprites\spr_generator_hit</sprite>
+        <sprite>sprites\spr_generatorActivation</sprite>
+        <sprite>sprites\spr_generatorOff</sprite>
+        <sprite>sprites\spr_longbox</sprite>
+        <sprite>sprites\spr_longbox_break</sprite>
+        <sprite>sprites\spr_longbox_break2</sprite>
+        <sprite>sprites\spr_longbox_dirt</sprite>
+        <sprite>sprites\spr_longbox_hit</sprite>
+        <sprite>sprites\spr_longbox_reflection</sprite>
+        <sprite>sprites\spr_longboxDucan</sprite>
+        <sprite>sprites\spr_longboxDucan_break</sprite>
+        <sprite>sprites\spr_longboxDucan_hit</sprite>
+        <sprite>sprites\spr_longboxDucan_reflection</sprite>
+        <sprite>sprites\spr_pumpkin</sprite>
+        <sprite>sprites\spr_pumpkin_break</sprite>
+        <sprite>sprites\spr_pumpkin_hit</sprite>
         <sprite>sprites\spr_redbarrel</sprite>
-        <sprite>sprites\spr_redbarrel_spawner</sprite>
-        <sprite>sprites\spr_redbarrel_reflection</sprite>
         <sprite>sprites\spr_redbarrel_hit</sprite>
+        <sprite>sprites\spr_redbarrel_reflection</sprite>
+        <sprite>sprites\spr_redbarrel_spawner</sprite>
+        <sprite>sprites\spr_root1</sprite>
+        <sprite>sprites\spr_root1_break</sprite>
+        <sprite>sprites\spr_root1_hit</sprite>
+        <sprite>sprites\spr_root2</sprite>
+        <sprite>sprites\spr_root2_break</sprite>
+        <sprite>sprites\spr_root2_hit</sprite>
+        <sprite>sprites\spr_root3</sprite>
+        <sprite>sprites\spr_root3_break</sprite>
+        <sprite>sprites\spr_root3_hit</sprite>
+        <sprite>sprites\spr_root4</sprite>
+        <sprite>sprites\spr_root4_break</sprite>
+        <sprite>sprites\spr_root4_hit</sprite>
       </sprites>
       <sprites name="Altars">
         <sprite>sprites\spr_altar_players</sprite>
@@ -503,6 +514,8 @@
         <sprite>sprites\spr_terminalChallengeCommon</sprite>
         <sprite>sprites\spr_terminalChallengeUnique</sprite>
         <sprite>sprites\spr_terminalClear</sprite>
+        <sprite>sprites\spr_resetButton</sprite>
+        <sprite>sprites\spr_resetButton_press</sprite>
       </sprites>
       <sprite>sprites\spr_exitArrow</sprite>
     </sprites>
@@ -512,6 +525,7 @@
       <sprite>sprites\spr_grenade_glow</sprite>
       <sprite>sprites\spr_explosion_ground</sprite>
       <sprite>sprites\spr_grenadeNew</sprite>
+      <sprite>sprites\spr_grenadeRider</sprite>
       <sprite>sprites\spr_grenadeTarget</sprite>
     </sprites>
     <sprites name="Guns">
@@ -923,6 +937,9 @@
         <sprite>sprites\spr_card_punny</sprite>
         <sprite>sprites\spr_card_raff</sprite>
       </sprites>
+      <sprites name="Splash">
+        <sprite>sprites\spr_zueiraVinheta</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1227,11 +1244,13 @@
   </fonts>
   <objects name="objects">
     <objects name="Controllers">
+      <object>objects\controller_bootstrap</object>
       <object>objects\controller_main</object>
       <object>objects\controller_pause</object>
       <object>objects\controller_camera</object>
       <object>objects\controller_effects</object>
       <object>objects\controller_splash</object>
+      <object>objects\controller_splashZueira</object>
       <object>objects\controller_shadow_tall</object>
       <object>objects\controller_menu_main</object>
       <object>objects\controller_menu_background</object>
@@ -1503,6 +1522,7 @@
       <object>objects\fx_exitArrow</object>
       <object>objects\fx_explosionKami</object>
       <object>objects\fx_kami_cageDestroy</object>
+      <object>objects\fx_ducanFlag</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
@@ -1576,6 +1596,7 @@
         <object>objects\menu_fx_pause</object>
         <object>objects\menu_fx_mapping</object>
         <object>objects\menu_fx_rogue</object>
+        <object>objects\splash_fx_zueira</object>
         <object>objects\menu_fx_forums</object>
         <object>objects\menu_fx_opensource</object>
         <object>objects\menu_fx_twitter</object>
@@ -1952,6 +1973,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_bootstrap</room>
+    <room>rooms\room_splashZueira</room>
     <room>rooms\room_splash</room>
     <room>rooms\room_intro</room>
     <room>rooms\room_menu</room>

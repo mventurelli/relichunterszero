@@ -26,7 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-sprite_index = choose(spr_longbox_break,spr_longbox_break2);
+
+if (global.currentLoop &lt; 2){
+    sprite_index = choose(spr_longbox_break,spr_longbox_break2);
+}
+else{
+    sprite_index = spr_longboxDucan_break;
+}
 </string>
           </argument>
         </arguments>

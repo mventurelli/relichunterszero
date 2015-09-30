@@ -50,7 +50,7 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(owner)) depth = owner.depth-1;
+            <string>if (instance_exists(owner)) depth = owner.depth-5;
 </string>
           </argument>
         </arguments>
