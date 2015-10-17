@@ -28,13 +28,15 @@
             <string>///Bootstrap
 draw_texture_flush();
 randomize();
+shadow_init(0.4);
+reflection_init();
 
 // Sync Save
 save_sync_read();
 screen_update();
 
 //Version
-global.currentVersionNumber = "UPDATE 7";
+global.currentVersionNumber = "UPDATE 8";
 
 //Multiplayer &amp; Mode
 global.playerCount = 1;

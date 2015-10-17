@@ -34,6 +34,8 @@ isClientLocked = false;
 
 clientLockRelease = room_speed*0.5;
 clientLockReleaseCurrent = 0;
+
+activationOverride = false;
 </string>
           </argument>
         </arguments>
@@ -58,9 +60,11 @@ clientLockReleaseCurrent = 0;
             <kind>1</kind>
             <string>///Reset my own activation before Player checks
 
-activationClient = noone;
-wantToActivate = false;
-in_range = false;
+if (!activationOverride){
+    activationClient = noone;
+    wantToActivate = false;
+    in_range = false;
+}
 </string>
           </argument>
         </arguments>

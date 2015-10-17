@@ -29,6 +29,7 @@
 event_inherited();
 
 isMeleeWeapon = false;
+
 owner = noone;
 name = "I AM ERROR";
 object = obj_pistol;
@@ -67,6 +68,12 @@ fire_burst_rate_current = 0;
 fire_rate = room_speed*0.1;
 fire_rate_current = 0;
 can_fire = true;
+
+fireRateDecay = 0;
+fireRateDecayRecovery = 0;
+fireRateDecayMin = 0;
+fireRateDecayMax = 0;
+fireRateDecayCurrent = 0;
 
 accuracy = 5;
 accuracy_aiming = 0.5;
@@ -111,6 +118,8 @@ isPrecisionAiming = false;
 weaponClass = 'undefined';
 
 goesThroughWalls = false;
+beamColor = c_purple;
+beamThickness = 2;
 
 joypadRumbleFactor = 0;
 </string>
@@ -148,6 +157,70 @@ if instance_exists(owner)
       </action>
     </event>
     <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Relic Buffs, Weapon Level &amp; Challenges
+
+//Dev Potion
+if (global.relic_dev_potion == 2)
+{
+    if ammo_current &lt; ammo
+    {
+        ammo_regen_time_current++;
+        if ammo_regen_time_current &gt;= (ammo_regen_time*ammo_cost)
+        {
+            ammo_current += ammo_regen_amount;
+            ammo_regen_time_current = 0;
+        }
+    }
+    else ammo_regen_time_current = 0;
+}
+
+//Weapon Level
+if (!storeOriginalDamage) || (storeOriginalName == '') {
+    weaponLevelBonus[0] = 0;
+    weaponLevelBonus[1] = 0.25*projectile_damage;
+    weaponLevelBonus[2] = 0.5*projectile_damage;
+    weaponLevelBonus[3] = 0.75*projectile_damage;
+    weaponLevelBonus[4] = 1.0*projectile_damage;
+    weaponLevelBonus[5] = 1.25*projectile_damage;
+    weaponLevelBonus[6] = 1.5*projectile_damage;
+    weaponLevelBonus[7] = 1.75*projectile_damage;
+    weaponLevelBonus[8] = 2*projectile_damage;
+    weaponLevelBonus[9] = 3*projectile_damage;
+    
+    storeOriginalDamage = projectile_damage;
+    storeOriginalName = name;
+}
+else {
+    projectile_damage = ceil(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
+    if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
+}
+
+//Challenges
+
+if global.challengeThirst &amp;&amp; (!ammoCostDebuff){
+    ammo_cost += ammo_cost*global.challengeThirstMultiplier;
+    ammoCostDebuff = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -221,70 +294,6 @@ if instance_exists(owner)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Relic Buffs, Weapon Level &amp; Challenges
-
-//Dev Potion
-if (global.relic_dev_potion == 2)
-{
-    if ammo_current &lt; ammo
-    {
-        ammo_regen_time_current++;
-        if ammo_regen_time_current &gt;= (ammo_regen_time*ammo_cost)
-        {
-            ammo_current += ammo_regen_amount;
-            ammo_regen_time_current = 0;
-        }
-    }
-    else ammo_regen_time_current = 0;
-}
-
-//Weapon Level
-if (!storeOriginalDamage) || (storeOriginalName == '') {
-    weaponLevelBonus[0] = 0;
-    weaponLevelBonus[1] = 0.25*projectile_damage;
-    weaponLevelBonus[2] = 0.5*projectile_damage;
-    weaponLevelBonus[3] = 0.75*projectile_damage;
-    weaponLevelBonus[4] = 1.0*projectile_damage;
-    weaponLevelBonus[5] = 1.25*projectile_damage;
-    weaponLevelBonus[6] = 1.5*projectile_damage;
-    weaponLevelBonus[7] = 1.75*projectile_damage;
-    weaponLevelBonus[8] = 2*projectile_damage;
-    weaponLevelBonus[9] = 3*projectile_damage;
-    
-    storeOriginalDamage = projectile_damage;
-    storeOriginalName = name;
-}
-else {
-    projectile_damage = ceil(storeOriginalDamage + weaponLevelBonus[weaponLevel]);
-    if (weaponLevel) name = storeOriginalName + ' +' + string(weaponLevel);
-}
-
-//Challenges
-
-if global.challengeThirst &amp;&amp; (!ammoCostDebuff){
-    ammo_cost += ammo_cost*global.challengeThirstMultiplier;
-    ammoCostDebuff = true;
-}
-</string>
-          </argument>
-        </arguments>
       </action>
       <action>
         <libid>1</libid>
@@ -502,7 +511,7 @@ else
 if instance_exists(owner) &amp;&amp; (isActive)
 {
     var p = owner.myPlayerId;
-    if (owner.aiming)
+    if (owner.aiming) || (projectile_obj == obj_projectile_beam) 
     {
         aiming_direction = point_direction(x,y,global.crosshairX[p],global.crosshairY[p]);
           
@@ -537,11 +546,10 @@ if instance_exists(owner) &amp;&amp; (isActive)
         var enemyTargetTest = collision_line(x, y, x+lengthdir_x(projectile_range,aiming_direction), y+lengthdir_y(projectile_range,aiming_direction), class_enemy , false , true )
         if instance_exists(enemyTargetTest)
         {
-			var bbox_center = get_bbox_center(enemyTargetTest);
+            var bbox_center = get_bbox_center(enemyTargetTest);
             var distanceToTarget = point_distance(x,y, bbox_center[0], bbox_center[1]) - global.precisionDistance;
             var angleToTarget = point_direction(x+lengthdir_x(distanceToTarget,aiming_direction), y+lengthdir_y(distanceToTarget,aiming_direction), bbox_center[0], bbox_center[1]);
             
-            //if ( abs( angle_difference(aiming_direction, angleToTarget) ) + (accuracy_aiming*owner.base_accuracy) &lt;= global.precisionAngle/2 )
             if ( abs( angle_difference(aiming_direction, angleToTarget) ) &lt;= (global.precisionAngle) )
             {
                 isPrecisionAiming = true;
@@ -634,12 +642,18 @@ if (isActive) &amp;&amp; (owner) &amp;&amp; instance_exists(owner)
     if (!can_fire)
     {
         fire_rate_current++;
-        if fire_rate_current &gt;= fire_rate
+        if fire_rate_current &gt;= (fire_rate + fireRateDecayCurrent)
         {
             fire_rate_current = 0;
             fire_burst_current = 0;
             can_fire = true;
         }
+    }
+    
+    //Rate of Fire Decay Recovery
+    if (!input_held) || (reloading) || (!ammo_current)
+    {
+        fireRateDecayCurrent  += fireRateDecayRecovery;
     }
     
     //Burst Fire
@@ -767,7 +781,14 @@ if instance_exists(owner)
             if (owner.animation_current == 'melee') &amp;&amp; (owner.animation_index &lt; owner.melee_hit_frame) drawGrenadeInsteadOfGun = true;
         }
         
+        // Laser Beams
+        if (projectile_obj == obj_projectile_beam) &amp;&amp; (isActive) &amp;&amp; (input_held) &amp;&amp; (!reloading) &amp;&amp; (can_fire) &amp;&amp; (!owner.sprinting) &amp;&amp; (!owner.melee)
+        {
+            draw_line_width_colour(x,y,lineX,lineY,beamThickness,beamColor,beamColor);
+            if (draw_range &lt; projectile_range) draw_circle_colour(lineX, lineY, 4, beamColor, beamColor, false);
+        }
         
+        //Draw Self
         if (!drawGrenadeInsteadOfGun) draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,blend,1);
         else draw_sprite_ext(spr_grenadeNew,0,drawX,drawY,1,1,image_angle,blend,1);
         
@@ -782,10 +803,6 @@ if instance_exists(owner)
         }
     }
 }
-
-
-/*
-(animation_index = melee_hit_frame)
 </string>
           </argument>
         </arguments>

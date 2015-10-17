@@ -27,10 +27,6 @@
             <kind>1</kind>
             <string>///What Is My Treasure?
 event_inherited();
-spawnRelic = noone;
-spawnWeapon = noone;
-spawnCoins = 0;
-spawnSprite = noone;
 
 // Find Treasure Type
 var treasureType = "NADA";
@@ -143,40 +139,6 @@ repeat (10) instance_create(x,y,obj_pickup_coin);
 spawnCoins--;
 
 if (spawnCoins) alarm[0] = room_speed*0.5;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Unlock
-
-event_inherited();
-
-if (unlock){
-    open = instance_create(x,y,fx_chestRegular);
-    open.spawnRelic = spawnRelic;
-    open.spawnWeapon = spawnWeapon;
-    open.spawnSprite = spawnSprite;
-    open.spawnCoins = spawnCoins;
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

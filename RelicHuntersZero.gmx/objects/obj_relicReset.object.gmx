@@ -129,6 +129,7 @@ if instance_exists(activationClient)
 if (sprite_index == spr_resetButton_press)
 {
     sprite_index = spr_resetButton;
+    image_index = 0;
     image_speed = 0;
 }
 </string>
@@ -155,11 +156,13 @@ if (sprite_index == spr_resetButton_press)
             <kind>1</kind>
             <string>///Draw
 
-if (in_range) image_index = 1;
-else image_index = 0;
+if (sprite_index = spr_resetButton){
+    if (in_range)image_index = 1;
+    else image_index = 0;
+}
+
 draw_self();
         
-
 draw_set_font(global.font_shopPrice);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);

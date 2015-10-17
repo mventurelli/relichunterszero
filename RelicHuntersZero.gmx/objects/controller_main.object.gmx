@@ -27,7 +27,13 @@
             <kind>1</kind>
             <string>///Main Configuration
 
+/*if (room == room_start) || (room == room_shop) || (room == room_endShop)
+{
+    draw_texture_flush();
+}*/
+
 //Initialization
+draw_texture_flush();
 randomize();
 joy_init();
 
@@ -413,6 +419,9 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_hackUnique[8] = 9999;
     global.endPrice_hackUnique[9] = 9999;
     
+    global.endPrice_hackHunted = 6000;
+    global.endPrice_hackHaunted = 4000;
+    
     
     //Gunnar
     global.price_weaponUpgrade[0] = 500;
@@ -436,24 +445,26 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_bouncer = 1900;
     global.price_endless_highmag = 2000;
     
-    global.price_endless_morningStar = 1000;
+    global.price_endless_morningStar = 1800;
     global.price_endless_watchfulEye = 1000;
     global.price_endless_alcoholicCarrot = 800;
     global.price_endless_infinityBattery = 800;
+    global.price_endless_rabbitFoot = 1200;
     
     //Tier2
     global.price_endless_plasmaPistol = 2000;
     global.price_endless_machinegun = 2250;
+    global.price_endless_minigun = 2600;
+    global.price_endless_flakCannon = 2600;
     global.price_endless_assaultRifle = 2500;
     global.price_endless_rocketLauncher = 3000;
     global.price_endless_sniperRifle = 3200;
-    global.price_endless_heavyShotgun = 3500;
+    global.price_endless_heavyShotgun = 3000;
     global.price_endless_relicPistol = 3500;
     
     global.price_endless_yottabyteDrive = 2500;
     global.price_endless_pineapplePudding = 1800;
     global.price_endless_pineapplePie = 1800;
-    global.price_endless_rabbitFoot = 2200;
     global.price_endless_midnightBeer = 2200;
     
     //Tier3
@@ -462,6 +473,8 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_relicShotgun = 4000;
     global.price_endless_relicRifle = 4000;
     global.price_endless_relicSniper = 4500;
+    global.price_endless_relicMinigun = 4000;
+    global.price_endless_relicCannon = 4000;
     global.price_endless_relicRocket = 5200;
     
     global.price_endless_devPotion = 4000;
@@ -786,7 +799,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         )
     {
         var stringChallenge = "";
-        var stringDescritpion = "";
+        var stringDescription = "";
         var listName = "";
         var chUnique = false;
         
@@ -798,43 +811,43 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                 var randomChallenge = irandom(9);
                 switch (randomChallenge){
                     case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) { 
-                        global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescritpion="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
+                        global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescription="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
                         } break;
                         
                     case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1) { 
-                        global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescritpion="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
+                        global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescription="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
                         } break;
                     
                     case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1) { 
-                        global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescritpion="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
+                        global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescription="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
                         } break;
                         
                     case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1) { 
-                        global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescritpion="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
+                        global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescription="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
                         } break;
                         
                     case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1) { 
-                        global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescritpion="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
+                        global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescription="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
                         } break;
                     
                     case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) { 
-                        global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescritpion="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
+                        global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescription="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
                         } break;
                         
                     case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1) { 
-                        global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescritpion="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
+                        global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescription="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
                         } break;
                       
                     case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1) { 
-                        global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescritpion="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
+                        global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescription="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
                         } break;
                     
                     case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) { 
-                        global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescritpion="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
+                        global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescription="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
                         } break;
                         
                     case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1) { 
-                        global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescritpion="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
+                        global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescription="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
                         } break;
                 }
             }
@@ -843,21 +856,21 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
             if (stringChallenge == "") {
                 var randomChallenge = irandom(5);
                 switch (randomChallenge){
-                    case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescritpion="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
-                    case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescritpion="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
-                    case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescritpion="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
-                    case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescritpion="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
-                    case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescritpion="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
-                    case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescritpion="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
+                    case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescription="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
+                    case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescription="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
+                    case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescription="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
+                    case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescription="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
+                    case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescription="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
+                    case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescription="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
                 }
             }
         }
         else{
             var randomChallenge = irandom(2);
             switch (randomChallenge){
-                case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescritpion="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
-                case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescritpion="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
-                case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescritpion="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
+                case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescription="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
+                case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescription="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
+                case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescription="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
             }
         }
         
@@ -869,7 +882,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         if (chUnique) announceChallenge.hunterUnlockSprite = spr_challengeUnique;
         else announceChallenge.hunterUnlockSprite = spr_challengeCommon;
         announceChallenge.textBig = loc_key(stringChallenge);
-        announceChallenge.textSmall = loc_key(stringDescritpion);
+        announceChallenge.textSmall = loc_key(stringDescription);
     }
 }    
 
@@ -1308,6 +1321,43 @@ if (!level_built)
     
     
         //Resolve Enemies
+        
+        //Challenge Enemies
+        if (global.challengeHunted)
+        {
+            enemy_spawn_number = instance_number(obj_spawn_enemy);
+            random_spawn = irandom(enemy_spawn_number-1);
+            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+            
+            if (instance_exists(target_spawn)){
+                spawnX = target_spawn.spawnX + random_range(-128,128);
+                spawnY = target_spawn.spawnY + random_range(-128,128);
+                
+                if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 {
+                    spawnee = obj_ducanElite_rifle;
+                    instance_create(spawnX,spawnY,spawnee);
+                }
+            }
+        }
+        
+        if (global.challengeHaunted)
+        {
+            enemy_spawn_number = instance_number(obj_spawn_enemy);
+            random_spawn = irandom(enemy_spawn_number-1);
+            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+            
+            if (instance_exists(target_spawn)){
+                spawnX = target_spawn.spawnX + random_range(-128,128);
+                spawnY = target_spawn.spawnY + random_range(-128,128);
+                
+                if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 {
+                    spawnee = obj_ghost_ducan;
+                    instance_create(spawnX,spawnY,spawnee);
+                }
+            }
+        }
+        
+        //Regular Enemies
         while (!ds_list_empty(enemy_pool))
         {
             pick_random_group = irandom(ds_list_size(enemy_pool)-1);
@@ -1396,7 +1446,7 @@ if (!level_built)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Level Exit + Relic Detected
+            <string>///Level Exit + Dig System
 
 if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(room == room_shop)) &amp;&amp; (!(room == room_boss)) &amp;&amp; (!(room == room_endShop))
 {
@@ -1555,8 +1605,11 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 global.relicChanceBonus = -0.15;
  
                 //Define object to spawn
-                var spawnObject = noone;               
-                spawnObject = obj_chestRegular // &lt;-- one day this will check chances for Chest types, teleporter pad, slot machine and sacrifice table
+                var spawnObject = noone;    
+                var randomRoll = random(100);           
+                if (randomRoll &lt;= 80) spawnObject = obj_chestRegular; // &lt;-- one day this will check chances for teleporter pad, slot machine and sacrifice table
+                else if (randomRoll &lt;= 90) &amp;&amp; (!global.challengeHunted) spawnObject = obj_chestDucan;
+                else if (!global.challengeHaunted) spawnObject = obj_chestHaunted;
                 
                 //Stop here if there is no object to spawn
                 if (spawnObject == noone) exit;
@@ -1871,10 +1924,10 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
     
 if (debug_mode)
 {
-       
-    if keyboard_check_pressed(ord('M')) global.currentLoop++;
+if keyboard_check_pressed(ord('M')) global.currentLoop++;
 
-//Debug Endless Bounty
+
+    //Debug Endless Bounty
     if keyboard_check_pressed(ord('B')) global.bountyEndless += 500;
     
 //Debug: Kill Everything

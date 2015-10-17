@@ -290,7 +290,7 @@ if hp &lt;= 0
     {
         if (!critical_death)
         {
-            global.pause = room_speed*0.1;
+            if (global.allowKillFreeze) global.pause = room_speed*0.1;
             score_add(global.score_kill,false);
             
             var randomDeath = irandom_range(1,2)
@@ -299,7 +299,7 @@ if hp &lt;= 0
         }
         else
         {
-            global.pause = room_speed*0.15;
+            if (global.allowKillFreeze) global.pause = room_speed*0.15;
             score_add(global.score_kill+global.score_headshot,true);
             
             var randomDeath = irandom_range(1,3)

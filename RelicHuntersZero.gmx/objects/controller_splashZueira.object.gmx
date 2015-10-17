@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>//Setup
+
+room_goto_next();
+
+/*
 goToNextRoom = false;
 zueiraLogo = instance_create(room_width/2,room_height/2,splash_fx_zueira);
 

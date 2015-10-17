@@ -101,6 +101,9 @@
     global.challengeJaws = 0;
     global.challengeCountdown = 0;
     
+    global.challengeHaunted = 0;
+    global.challengeHunted = 0;
+    
 //Reset Relic Selection
 if (global.gameMode == gamemode_endless)
 {

@@ -90,7 +90,8 @@ event_inherited();
     
     if (random(1) &lt;= 0.3) || (global.relic_rabbit_foot == 2) ds_list_add(item_endlessTrashPlus, 
         obj_pickup_assault_rifle,
-        obj_pickup_pistol_bouncer
+        obj_pickup_pistol_bouncer,
+        obj_pickup_flakCannon
     );
     
 </string>

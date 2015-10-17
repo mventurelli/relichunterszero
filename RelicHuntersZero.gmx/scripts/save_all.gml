@@ -215,12 +215,16 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Challenges','challengeJaws',global.challengeJaws);
     ini_write_real('Challenges','challengeCountdown',global.challengeCountdown);
     
+    ini_write_real('Challenges','challengeHunted',global.challengeHunted);
+    ini_write_real('Challenges','challengeHaunted',global.challengeHaunted);
+    
     // Game Options
     ini_write_real('Quality','reflections',global.reflections_toggle);
     ini_write_real('Quality','shadows',global.shadows_toggle);
     ini_write_real('Quality','persistent effects',global.persistent_toggle);
     ini_write_real('Quality','max particles',global.max_particles);
     ini_write_real('Quality','max casings',global.max_casings);
+    ini_write_real('Quality','allowKillFreeze',global.allowKillFreeze);
     
     //Keyboard&Mouse Input
     ini_write_real('Mapping','Keyboard Fire1',global.inputFire1);

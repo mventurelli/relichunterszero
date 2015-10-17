@@ -67,15 +67,21 @@ if (toggle)
 {
     toggle = false;
     
-    if (global.relic_rabbit_foot != 2){
-        var equip = relic_slot_equip(object);
-        if (equip) global.relic_rabbit_foot = 2;
-        else global.relic_rabbit_foot = 1;
-    }
-    else{
-        global.relic_rabbit_foot = 1;
-        var unequip = relic_slot_free(object);
-        if (unequip) audio_play_sound(sfx_relic_off,1,false);
+    if (instance_exists(activationClient))
+    {
+        if (activationClient.myChar != char_ass)
+        {
+            if (global.relic_rabbit_foot != 2){
+                var equip = relic_slot_equip(object);
+                if (equip) global.relic_rabbit_foot = 2;
+                else global.relic_rabbit_foot = 1;
+            }
+            else{
+                global.relic_rabbit_foot = 1;
+                var unequip = relic_slot_free(object);
+                if (unequip) audio_play_sound(sfx_relic_off,1,false);
+            }
+        }
     }
 }
 </string>

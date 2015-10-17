@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="46" name="datafiles">
-    <datafiles number="46" name="fonts">
+  <datafiles number="50" name="datafiles">
+    <datafiles number="50" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>414640</size>
+      <size>457556</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -260,6 +260,9 @@
         <sound>sound\sfx_keyMel6</sound>
         <sound>sound\sfx_keyMel7</sound>
         <sound>sound\sfx_plasma_start</sound>
+        <sound>sound\sfx_weapon_reaper1</sound>
+        <sound>sound\sfx_weapon_reaper2</sound>
+        <sound>sound\sfx_weapon_reaper3</sound>
       </sounds>
       <sounds name="Dig">
         <sound>sound\sfx_shovel1</sound>
@@ -538,10 +541,13 @@
       <sprite>sprites\spr_ducan_rocketLauncher</sprite>
       <sprite>sprites\spr_ducan_shotgun</sprite>
       <sprite>sprites\spr_ducan_sniper</sprite>
+      <sprite>sprites\spr_flak_cannon</sprite>
       <sprite>sprites\spr_flamethrower</sprite>
       <sprite>sprites\spr_highmag</sprite>
       <sprite>sprites\spr_keytar</sprite>
       <sprite>sprites\spr_machinegun</sprite>
+      <sprite>sprites\spr_minigun</sprite>
+      <sprite>sprites\spr_minigun_relic</sprite>
       <sprite>sprites\spr_pistol</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
       <sprite>sprites\spr_pistol_bouncer</sprite>
@@ -549,6 +555,7 @@
       <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_plasma</sprite>
       <sprite>sprites\spr_pistol_relic</sprite>
+      <sprite>sprites\spr_relic_cannon</sprite>
       <sprite>sprites\spr_rifle_relic</sprite>
       <sprite>sprites\spr_rocketlauncher</sprite>
       <sprite>sprites\spr_rocketlauncher_relic</sprite>
@@ -563,6 +570,9 @@
       <sprite>sprites\spr_sniper_ghost</sprite>
       <sprite>sprites\spr_sniper_relic</sprite>
       <sprite>sprites\spr_sniper_rifle</sprite>
+      <sprite>sprites\spr_spooky_beamer</sprite>
+      <sprite>sprites\spr_spooky_pistol</sprite>
+      <sprite>sprites\spr_spooky_reaper</sprite>
       <sprite>sprites\spr_submachinegun</sprite>
     </sprites>
     <sprites name="Bullets&amp;Effects">
@@ -584,6 +594,7 @@
       <sprite>sprites\spr_dirt_bits</sprite>
       <sprite>sprites\spr_fx_digItem</sprite>
       <sprite>sprites\spr_bullet_plasma</sprite>
+      <sprite>sprites\spr_bulletSkull</sprite>
       <sprite>sprites\spr_fx_weaponGround</sprite>
       <sprites name="Broken">
         <sprite>sprites\spr_broken_pistol</sprite>
@@ -937,9 +948,6 @@
         <sprite>sprites\spr_card_punny</sprite>
         <sprite>sprites\spr_card_raff</sprite>
       </sprites>
-      <sprites name="Splash">
-        <sprite>sprites\spr_zueiraVinheta</sprite>
-      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1070,6 +1078,8 @@
         <script>scripts\char_state_initial.gml</script>
         <script>scripts\relic_slot_equip.gml</script>
         <script>scripts\relic_slot_free.gml</script>
+        <script>scripts\init_advanced_effects.gml</script>
+        <script>scripts\check_weapon_owned.gml</script>
       </scripts>
       <scripts name="Angles and Such">
         <script>scripts\angle_rotate.gml</script>
@@ -1287,14 +1297,19 @@
       <object>objects\obj_shield_biu</object>
       <objects name="Guns">
         <object>objects\obj_assault_rifle</object>
-        <object>objects\obj_ducanRifle</object>
         <object>objects\obj_assault_rifle_crude</object>
         <object>objects\obj_bossGun</object>
+        <object>objects\obj_bouncer</object>
+        <object>objects\obj_ducanRifle</object>
+        <object>objects\obj_ducanShotgun</object>
+        <object>objects\obj_ducanPlasma</object>
+        <object>objects\obj_flakCannon</object>
         <object>objects\obj_flamethrower</object>
         <object>objects\obj_highmag</object>
-        <object>objects\obj_bouncer</object>
         <object>objects\obj_keytar</object>
         <object>objects\obj_machinegun</object>
+        <object>objects\obj_minigun</object>
+        <object>objects\obj_minigun_relic</object>
         <object>objects\obj_pistol</object>
         <object>objects\obj_pistol_assault</object>
         <object>objects\obj_pistol_bouncer</object>
@@ -1302,20 +1317,24 @@
         <object>objects\obj_pistol_jimmy</object>
         <object>objects\obj_pistol_plasma</object>
         <object>objects\obj_pistol_relic</object>
+        <object>objects\obj_relicCannon</object>
         <object>objects\obj_rifle_relic</object>
         <object>objects\obj_rocketlauncher</object>
         <object>objects\obj_rocketlauncher_relic</object>
         <object>objects\obj_sawedoff</object>
         <object>objects\obj_shotgun</object>
-        <object>objects\obj_shotgun_relic</object>
         <object>objects\obj_shotgun_crude</object>
         <object>objects\obj_shotgun_heavy</object>
+        <object>objects\obj_shotgun_relic</object>
         <object>objects\obj_smg_crude</object>
-        <object>objects\obj_smg_relic</object>
         <object>objects\obj_smg_plasma</object>
-        <object>objects\obj_sniper_rifle</object>
-        <object>objects\obj_sniper_relic</object>
+        <object>objects\obj_smg_relic</object>
         <object>objects\obj_sniper_ghost</object>
+        <object>objects\obj_sniper_relic</object>
+        <object>objects\obj_sniper_rifle</object>
+        <object>objects\obj_spookyBeamer</object>
+        <object>objects\obj_spookyPistol</object>
+        <object>objects\obj_spookyReaper</object>
         <object>objects\obj_submachinegun</object>
       </objects>
       <objects name="Melee Weapons">
@@ -1628,6 +1647,7 @@
           <object>objects\menu_btn_vibration</object>
           <object>objects\menu_btn_targeting</object>
           <object>objects\menu_btn_sticky</object>
+          <object>objects\menu_btn_allowFreeze</object>
           <object>objects\menu_btn_showammo</object>
         </objects>
         <objects name="Performance Options">
@@ -1716,9 +1736,14 @@
       <object>objects\obj_pickup_rocketlauncher</object>
       <object>objects\obj_pickup_rocketlauncher_relic</object>
       <object>objects\obj_pickup_flamethrower</object>
+      <object>objects\obj_pickup_flakCannon</object>
+      <object>objects\obj_pickup_relicCannon</object>
       <object>objects\obj_pickup_bossGun</object>
       <object>objects\obj_pickup_gloves</object>
       <object>objects\obj_pickup_buckler</object>
+      <object>objects\obj_pickup_spookyPistol</object>
+      <object>objects\obj_pickup_spookyReaper</object>
+      <object>objects\obj_pickup_spooky_beamer</object>
       <object>objects\obj_pickup_pistol_assault</object>
       <object>objects\obj_pickup_pistol_bouncer</object>
       <object>objects\obj_pickup_pistol_plasma</object>
@@ -1730,7 +1755,11 @@
       <object>objects\obj_pickup_sniper_relic</object>
       <object>objects\obj_pickup_sniper_ghost</object>
       <object>objects\obj_pickup_assault_rifle</object>
+      <object>objects\obj_pickup_minigun</object>
+      <object>objects\obj_pickup_minigun_relic</object>
       <object>objects\obj_pickup_ducan_rifle</object>
+      <object>objects\obj_pickup_ducan_shotgun</object>
+      <object>objects\obj_pickup_ducan_plasma</object>
       <object>objects\obj_pickup_rifle_relic</object>
       <object>objects\obj_pickup_assault_rifle_crude</object>
       <object>objects\obj_pickup_submachinegun</object>
@@ -1748,10 +1777,14 @@
       <object>objects\obj_rocket</object>
       <object>objects\obj_redbarrel_projectile</object>
       <object>objects\obj_projectile_player</object>
+      <object>objects\obj_projectile_beam</object>
       <object>objects\obj_flame</object>
       <object>objects\obj_sonicboom</object>
       <object>objects\obj_projectile_enemy</object>
       <object>objects\obj_projectile_plasma</object>
+      <object>objects\obj_projectile_skull</object>
+      <object>objects\obj_projectile_flak</object>
+      <object>objects\obj_projectile_flakRelic</object>
       <object>objects\obj_projectile_plasmaEnemy</object>
     </objects>
     <objects name="Tutorial">
@@ -1936,10 +1969,14 @@
         <object>objects\obj_endShop_heavyShotgun</object>
         <object>objects\obj_endShop_highmag</object>
         <object>objects\obj_endShop_machinegun</object>
+        <object>objects\obj_endShop_minigun</object>
+        <object>objects\obj_endShop_flakCannon</object>
         <object>objects\obj_endShop_plasmaPistol</object>
         <object>objects\obj_endShop_plasmaSMG</object>
         <object>objects\obj_endShop_relicPistol</object>
         <object>objects\obj_endShop_relicRifle</object>
+        <object>objects\obj_endShop_relicCannon</object>
+        <object>objects\obj_endShop_relicMinigun</object>
         <object>objects\obj_endShop_relicRocket</object>
         <object>objects\obj_endShop_relicShotgun</object>
         <object>objects\obj_endShop_relicSMG</object>
@@ -1968,8 +2005,13 @@
     </objects>
     <objects name="Endless Dig">
       <object>objects\class_treasureChest</object>
+      <object>objects\class_chestFX</object>
       <object>objects\obj_chestRegular</object>
       <object>objects\fx_chestRegular</object>
+      <object>objects\obj_chestDucan</object>
+      <object>objects\fx_chestDucan</object>
+      <object>objects\obj_chestHaunted</object>
+      <object>objects\fx_chestHaunted</object>
     </objects>
   </objects>
   <rooms name="rooms">

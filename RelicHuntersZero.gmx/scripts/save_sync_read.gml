@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 7');
+    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 8');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -178,7 +178,8 @@ ini_open(working_directory + "\saveData.ini");
     global.challengeJaws = ini_read_real('Challenges','challengeJaws',0);
     global.challengeCountdown = ini_read_real('Challenges','challengeCountdown',0);
     
-    
+    global.challengeHunted = ini_read_real('Challenges','challengeHunted',0);
+    global.challengeHaunted = ini_read_real('Challenges','challengeHaunted',0);
     
     
     // Game Progression
@@ -207,6 +208,8 @@ ini_open(working_directory + "\saveData.ini");
     global.allowMouseWheel = ini_read_real('Input','Allow Mouse Wheel',true);
     global.screenShakeRatio = ini_read_real('Quality','screenshake',1.0);
     global.vibrationRatio = ini_read_real('Quality','controller vibration',1.0);
+    
+    global.allowKillFreeze = ini_read_real('Quality','allowKillFreeze',true);
     
     global.screenResolution = ini_read_real('Quality','resolution',1.0);
     global.fullscreen = ini_read_real('Quality','fullscreen',1);

@@ -137,6 +137,8 @@ if (endlessWeapon != noone)
 if (endlessRelic != noone)
 {
     var myRelic = instance_create(0,0,endlessRelic);
+    myRelic.activationOverride = true;
+    myRelic.activationClient = activationClient;
     myRelic.toggle = true;
     with (myRelic) {
         event_perform(ev_step,ev_step_begin);

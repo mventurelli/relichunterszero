@@ -92,6 +92,10 @@ if instance_exists(owner)
                 if (fire_burst_current == 1) && (fire_burst > 1) audio_play(owner.audio_emitter,false,1,sfx_burstfire_start);
                 audio_play(owner.audio_emitter,false,1,sfx_rifle1,sfx_rifle2,sfx_rifle3);
             }
+            else if (sound == 'reaper') 
+            {
+                if (fire_burst_current == 1) audio_play(owner.audio_emitter,false,1,sfx_weapon_reaper1,sfx_weapon_reaper2,sfx_weapon_reaper3);
+            }
             else if (sound == 'keytar')
             {
                 audio_play(owner.audio_emitter,false,1,sfx_keyShot1,sfx_keyShot2,sfx_keyShot3,sfx_keyShot4);
@@ -113,5 +117,10 @@ if instance_exists(owner)
             
             //joypad rumble
             joy_rumble(joy,joypadRumbleFactor, joypadRumbleFactor);
+            
+            //Fire Rate Decay Update
+            fireRateDecayCurrent += fireRateDecay;
+            if (fireRateDecayCurrent > fireRateDecayMax) fireRateDecayCurrent = fireRateDecayMax;
+            if (fireRateDecayCurrent < fireRateDecayMin) fireRateDecayCurrent = fireRateDecayMin;
     }
 }

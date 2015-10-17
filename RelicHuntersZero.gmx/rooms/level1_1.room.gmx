@@ -974,11 +974,15 @@
     <instance objName="obj_roots2" x="3904" y="1120" name="inst_FA5A0E19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roots1" x="3728" y="1120" name="inst_7575C6BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_roots1" x="2129" y="933" name="inst_33523884" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_roots1" x="1040" y="1130" name="inst_CEAC1B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_roots1" x="1088" y="1152" name="inst_CEAC1B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_longbox" x="640" y="1120" name="inst_8455F850" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_topLeft" x="640" y="768" name="inst_A55DA794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_botRight" x="4032" y="1664" name="inst_8629A838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="704" y="832" name="inst_2BD70B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chestHaunted" x="1024" y="1216" name="inst_ED439040" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chestHaunted" x="1024" y="1280" name="inst_F78D4677" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chestDucan" x="1152" y="1408" name="inst_053FEC82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chestDucan" x="1216" y="1472" name="inst_E9E059F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_desert" x="896" y="960" w="64" h="64" xo="4" yo="76" id="10005569" name="inst_7B6C100B" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

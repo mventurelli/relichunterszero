@@ -3,7 +3,7 @@
   <spriteName>spr_sonicboom</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9999999</depth>
+  <depth>-999999999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -47,6 +47,8 @@ image_speed = 0.2;
 
 damage_list = ds_list_create();
 hit = noone;
+
+isPrecise = false;
 
 reflection_object_setup(30,-1,image_index);
 
@@ -225,8 +227,16 @@ if faction == f_player &amp;&amp; instance_exists(other)
         }
         else 
         {
-            //if (type == 1) damage = damage*1.2;
-            //if (type == 2) damage = damage*1.7;
+            if (allowPrecision)
+            {
+                var otherBBoxCenter = get_bbox_center(other.id);
+                var precisionAngle = angle_precision(x,y,otherBBoxCenter[0],otherBBoxCenter[1],direction);
+                var angleToTarget = point_direction(x,y,otherBBoxCenter[0],otherBBoxCenter[1]);
+                if  (precisionAngle != -1) &amp;&amp; (precisionAngle &lt;= global.precisionAngle) isPrecise = true;
+                else isPrecise = false;
+                
+                if (isPrecise) damage = damage*1.5;
+            }
             
             other.hp -= damage;
             
@@ -250,7 +260,7 @@ if faction == f_player &amp;&amp; instance_exists(other)
         spreadY = irandom_range(-15,15);
         
         damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
-        if (type == 2) &amp;&amp; (!other.shield) damageEffect.critical = true;
+        if (isPrecise) &amp;&amp; (!other.shield) damageEffect.critical = true;
         damageEffect.damage = damage;
         
         if (global.count_particles &lt; global.max_particles)

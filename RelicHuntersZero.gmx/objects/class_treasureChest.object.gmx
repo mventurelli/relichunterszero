@@ -27,9 +27,16 @@
             <kind>1</kind>
             <string>///Setup
 event_inherited();
+spawnRelic = noone;
+spawnWeapon = noone;
+spawnCoins = 0;
+spawnSprite = noone;
+spawnChallenge = '';
 
 audio_play_sound(sfx_relic_on,99,false);
 unlock = false;
+
+fxObject = fx_chestRegular;
 
 canActivate = false;
 activateTime = room_speed*0.6;
@@ -38,8 +45,6 @@ activateTimeCurrent = 0;
 image_speed = 0.2;
 image_xscale = 2
 image_yscale = 2;
-
-
 
 depth = -y-16;
 
@@ -54,6 +59,42 @@ myWeaponInfo = instance_create(x,y,fx_info_pickup);
 myWeaponInfo.owner = id;
 
 reflection_object_setup(25,-1,image_index);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Unlock
+
+event_inherited();
+
+if (unlock){
+    open = instance_create(x,y,fxObject);
+    open.spawnRelic = spawnRelic;
+    open.spawnWeapon = spawnWeapon;
+    open.spawnSprite = spawnSprite;
+    open.spawnCoins = spawnCoins;
+    open.spawnChallenge = spawnChallenge;
+    open.activationClient = activationClient;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

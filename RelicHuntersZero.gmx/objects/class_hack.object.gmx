@@ -194,6 +194,10 @@ if (myChallenge != "") {
 
     priceTier = global.endPriceTier_hack;
     price = priceArray [ min(priceTier,9) ];
+    
+    if (myChallenge == "CHALLENGE_HUNTED") price = global.endPrice_hackHunted;
+    if (myChallenge == "CHALLENGE_HAUNTED") price = global.endPrice_hackHaunted;
+    
     name = loc_key("SAE_INFO_REMOVE") + " " + loc_key(myChallenge);
 }
 else{
