@@ -118,6 +118,8 @@ part_emitter_burst(global.smokeSystem[id], smoke_emitter, smoke_particle, 1);
 
 goBoom = false;
 
+damage = 200;
+
 myTarget = instance_create(x,y,fx_grenadeTarget);
 myTarget.parent = id;
 targetSetup = false;
@@ -349,9 +351,6 @@ if (!vertical_speed_start) detonationTimeCurrent++;
 if (detonationTimeCurrent &gt;= detonationTime)
 {
     goBoom = true;
-    //var explosion = instance_create(x,y,fx_explosion_regular);
-    //explosion.radius = detonationRadius;
-    //instance_destroy();
 }
 </string>
           </argument>

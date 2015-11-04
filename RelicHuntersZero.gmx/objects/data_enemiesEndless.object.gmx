@@ -119,6 +119,27 @@ event_inherited();
     
     elite_rocket_3 = ds_list_create();
     ds_list_add(elite_rocket_3, obj_ducanElite_rocket, obj_ducanElite_rocket);
+    
+    /// /// /// ///
+    
+    spooky_worms = ds_list_create();
+    ds_list_add(spooky_worms, obj_wormTurtle, obj_wormTurtle, obj_wormTurtle );
+    
+    spooky_zombies_1 = ds_list_create();
+    ds_list_add(spooky_zombies_1, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
+    
+    spooky_zombies_2 = ds_list_create();
+    ds_list_add(spooky_zombies_2, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
+    
+    spooky_shooters_1 = ds_list_create();
+    ds_list_add(spooky_shooters_1, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtle );
+    
+    spooky_shooters_2 = ds_list_create();
+    ds_list_add(spooky_shooters_2, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtleReaper );
+    
+    spooky_shooters_3 = ds_list_create();
+    ds_list_add(spooky_shooters_3, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
+    
 
 </string>
           </argument>
@@ -144,7 +165,7 @@ event_inherited();
 
 enemyPool = ds_list_create();
 
-if (global.currentLoop &gt;= 2) 
+if (global.currentLoop &gt;= 2)  ////////// The Ducan Elite /////////////////////////
 {
     switch (room) {
         case level1_1:
@@ -194,12 +215,27 @@ if (global.currentLoop &gt;= 2)
         case level4_3:
             ds_list_add(enemyPool, elite_squad_2, elite_squad_2, elite_rocket_3, elite_rocket_2, elite_rocket_2);
             break;
+            
+        case levelHalloween_1:
+            ds_list_add(enemyPool, spooky_shooters_2, spooky_shooters_3, spooky_shooters_3, spooky_shooters_2, spooky_shooters_3, spooky_shooters_1, spooky_shooters_2, spooky_shooters_3 );
+            break;
+            
+        case levelHalloween_2:
+            ds_list_add(enemyPool, spooky_shooters_3, spooky_shooters_2, spooky_shooters_3, spooky_shooters_3, spooky_shooters_2, spooky_shooters_3, spooky_shooters_1, spooky_shooters_1, spooky_shooters_1, spooky_shooters_3 );
+            break;
+            
+        case levelHalloween_3:
+            ds_list_add(enemyPool, spooky_shooters_1, spooky_shooters_1, spooky_shooters_2, spooky_shooters_2, spooky_shooters_3, spooky_shooters_3, spooky_shooters_2, spooky_shooters_3, spooky_shooters_2 );
+            break;
     }
 }
-else if (global.currentLoop == 1) ////////// The War /////////////////////////
+else if (global.currentLoop == 1) &amp;&amp;  ////////// The War /////////////////////////
+    (room != levelHalloween_1) &amp;&amp; 
+    (room != levelHalloween_2) &amp;&amp; 
+    (room != levelHalloween_3)
 {
-    ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,
-    monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
+        ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,
+        monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
 }
 else{ /////////////////////////////////// Regular Spawn /////////////////
     switch (room) {
@@ -249,6 +285,18 @@ else{ /////////////////////////////////// Regular Spawn /////////////////
             
         case level4_3:
             ds_list_add(enemyPool, ducan_turtlesquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_2, ducan_ducksquad3_2);
+            break;
+            
+        case levelHalloween_1:
+            ds_list_add(enemyPool, spooky_worms, spooky_zombies_1, spooky_zombies_2, spooky_zombies_2, spooky_zombies_1, spooky_shooters_1, spooky_shooters_2, spooky_shooters_3 );
+            break;
+            
+        case levelHalloween_2:
+            ds_list_add(enemyPool, spooky_zombies_1, spooky_zombies_1, spooky_zombies_1, spooky_zombies_2, spooky_zombies_2, spooky_zombies_2, spooky_zombies_1, spooky_zombies_1, spooky_zombies_1, spooky_zombies_1 );
+            break;
+            
+        case levelHalloween_3:
+            ds_list_add(enemyPool, spooky_shooters_1, spooky_shooters_1, spooky_shooters_2, spooky_shooters_2, spooky_shooters_3, spooky_zombies_1, spooky_zombies_1, spooky_zombies_1, spooky_zombies_1 );
             break;
     }
 }
@@ -305,6 +353,13 @@ if (ds_exists(cleanUp,ds_type_list))
     ds_list_add(cleanUp, elite_rocket);
     ds_list_add(cleanUp, elite_rocket_2);
     ds_list_add(cleanUp, elite_rocket_3);
+    
+    ds_list_add(cleanUp, spooky_worms);
+    ds_list_add(cleanUp, spooky_zombies_1);
+    ds_list_add(cleanUp, spooky_zombies_2);
+    ds_list_add(cleanUp, spooky_shooters_1);
+    ds_list_add(cleanUp, spooky_shooters_2);
+    ds_list_add(cleanUp, spooky_shooters_3);
     
     ds_list_add(cleanUp, enemyPool);
 }

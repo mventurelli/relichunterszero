@@ -63,6 +63,20 @@ if (room == room_menu)
 }
 
 volume_update();
+
+
+///////////////////////////////////////////////////////////////
+//Special Youtuber Stuff YOUTUBE DELETE LATER PLEASE TODO TO DO
+///////////////////////////////////////////////////////////////
+
+global.unlockEndless = true;
+global.unlockPinky = true;
+global.unlockRaff =  true;
+global.unlockBiu =  true;
+global.unlockPunny = true;
+global.unlockAss =  true;
+
+///////////////////////////////////////////////////////////////
 </string>
           </argument>
         </arguments>

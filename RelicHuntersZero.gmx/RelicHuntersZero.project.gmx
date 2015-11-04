@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="50" name="datafiles">
-    <datafiles number="50" name="fonts">
+  <datafiles number="51" name="datafiles">
+    <datafiles number="51" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>457556</size>
+      <size>461173</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -124,6 +124,7 @@
       <sound>sound\bgm_stage2</sound>
       <sound>sound\bgm_stage3</sound>
       <sound>sound\bgm_stage4</sound>
+      <sound>sound\bgm_halloween</sound>
       <sound>sound\bgm_boss</sound>
       <sound>sound\bgm_victory</sound>
       <sound>sound\bgm_dig</sound>
@@ -198,6 +199,7 @@
         <sound>sound\sfx_walk4</sound>
         <sound>sound\sfx_walk5</sound>
         <sound>sound\sfx_player_death</sound>
+        <sound>sound\sfx_switch_char</sound>
       </sounds>
       <sounds name="Shield">
         <sound>sound\sfx_shield_regen_start</sound>
@@ -412,9 +414,17 @@
       </sprites>
       <sprites name="Zombie Turtle">
         <sprite>sprites\spr_zombieTurtle_idle</sprite>
+        <sprite>sprites\spr_zombieTurtle_walk</sprite>
         <sprite>sprites\spr_zombieTurtle_hit</sprite>
         <sprite>sprites\spr_zombieTurtle_death</sprite>
+        <sprite>sprites\spr_zombieTurtle_precision</sprite>
         <sprite>sprites\spr_zombieTurtle_rise</sprite>
+      </sprites>
+      <sprites name="Worm Turtle">
+        <sprite>sprites\spr_wormTurtle_idle</sprite>
+        <sprite>sprites\spr_wormTurtle_walk</sprite>
+        <sprite>sprites\spr_wormTurtle_hit</sprite>
+        <sprite>sprites\spr_wormTurtle_death</sprite>
       </sprites>
     </sprites>
     <sprites name="Environment">
@@ -438,7 +448,9 @@
       <sprites name="Teleporter">
         <sprite>sprites\spr_teleporter_spawn</sprite>
         <sprite>sprites\spr_teleporter</sprite>
+        <sprite>sprites\spr_teleporterHaunted</sprite>
         <sprite>sprites\spr_teleporter_fx</sprite>
+        <sprite>sprites\spr_teleporter_fxHaunted</sprite>
         <sprite>sprites\spr_tp_stage1</sprite>
         <sprite>sprites\spr_tp_stage2</sprite>
         <sprite>sprites\spr_tp_stage3</sprite>
@@ -650,6 +662,9 @@
         <sprite>sprites\spr_stage4_1</sprite>
         <sprite>sprites\spr_stage4_2</sprite>
         <sprite>sprites\spr_stage4_3</sprite>
+        <sprite>sprites\spr_stageSpooky_1</sprite>
+        <sprite>sprites\spr_stageSpooky_2</sprite>
+        <sprite>sprites\spr_stageSpooky_3</sprite>
         <sprite>sprites\spr_stage_shop</sprite>
         <sprite>sprites\spr_stage_boss</sprite>
       </sprites>
@@ -677,6 +692,14 @@
       <sprite>sprites\spr_coin_ground</sprite>
       <sprite>sprites\spr_chest_idle</sprite>
       <sprite>sprites\spr_chest_open</sprite>
+      <sprite>sprites\spr_chestHaunted_idle</sprite>
+      <sprite>sprites\spr_chestHaunted_open</sprite>
+      <sprite>sprites\spr_chestDucan_idle</sprite>
+      <sprite>sprites\spr_chestDucan_open</sprite>
+      <sprite>sprites\spr_candySmall_drop</sprite>
+      <sprite>sprites\spr_candySmall_ground</sprite>
+      <sprite>sprites\spr_candyLarge1</sprite>
+      <sprite>sprites\spr_candyLarge2</sprite>
     </sprites>
     <sprites name="Player">
       <sprites name="Ass">
@@ -1379,6 +1402,11 @@
         </objects>
         <objects name="Spooky">
           <object>objects\obj_ghost_ducan</object>
+          <object>objects\obj_worm</object>
+          <object>objects\obj_zombieTurtle</object>
+          <object>objects\obj_wormTurtle</object>
+          <object>objects\obj_zombieTurtlePistol</object>
+          <object>objects\obj_zombieTurtleReaper</object>
         </objects>
         <objects name="Ducan Elite">
           <object>objects\obj_ducanElite_rifle</object>
@@ -1391,7 +1419,9 @@
       <objects name="Guns">
         <object>objects\obj_pistol_enemy</object>
         <object>objects\obj_pistol_plasma_enemy</object>
+        <object>objects\obj_pistol_spooky_enemy</object>
         <object>objects\obj_ducanPlasma_enemy</object>
+        <object>objects\obj_reaper_enemy</object>
         <object>objects\obj_pistol_heavy_enemy</object>
         <object>objects\obj_submachinegun_enemy</object>
         <object>objects\obj_machinegun_enemy</object>
@@ -1407,8 +1437,10 @@
         <object>objects\obj_assaultrifle_boss</object>
         <object>objects\obj_rocketlauncher_boss</object>
       </objects>
+      <object>objects\class_enemy_zombieShooter</object>
       <object>objects\class_enemy_shooter</object>
       <object>objects\class_enemy_kamikaze</object>
+      <object>objects\class_enemy_zombie</object>
       <object>objects\class_summon</object>
       <object>objects\class_enemy_jumper</object>
       <object>objects\class_enemy</object>
@@ -1427,6 +1459,7 @@
         <object>objects\obj_teleporter_2</object>
         <object>objects\obj_teleporter_3</object>
         <object>objects\obj_teleporter_secret</object>
+        <object>objects\obj_teleporter_haunted</object>
         <object>objects\obj_teleporter_spawn</object>
         <object>objects\obj_teleporter_tutorial</object>
         <object>objects\fx_teleporter</object>
@@ -1501,47 +1534,50 @@
       <object>objects\obj_spikeTrap</object>
     </objects>
     <objects name="FX">
+      <object>objects\class_bouncer</object>
+      <object>objects\class_fx_boxbreak</object>
+      <objects name="Death_and_Damage">
+        <object>objects\fx_corpse</object>
+        <object>objects\fx_corpse_boss</object>
+        <object>objects\fx_corpseRevive</object>
+        <object>objects\fx_damage</object>
+        <object>objects\fx_death_generic</object>
+        <object>objects\fx_reviveZombie</object>
+      </objects>
+      <object>objects\fx_activation</object>
+      <object>objects\fx_barrel_break</object>
+      <object>objects\fx_bigMessage</object>
+      <object>objects\fx_blood</object>
+      <object>objects\fx_worm</object>
+      <object>objects\fx_casing</object>
+      <object>objects\fx_crate_break</object>
+      <object>objects\fx_crate_particles</object>
+      <object>objects\fx_digDirt</object>
+      <object>objects\fx_digItem</object>
+      <object>objects\fx_dirt</object>
+      <object>objects\fx_ducanFlag</object>
+      <object>objects\fx_duck_dash</object>
+      <object>objects\fx_exitArrow</object>
+      <object>objects\fx_explosionKami</object>
+      <object>objects\fx_fadeFromBlack</object>
+      <object>objects\fx_fadeToBlack</object>
+      <object>objects\fx_hit</object>
+      <object>objects\fx_kami_cageDestroy</object>
+      <object>objects\fx_kamikaze_dash</object>
+      <object>objects\fx_kamikaze_fly</object>
+      <object>objects\fx_longbox_break</object>
+      <object>objects\fx_player_dash</object>
+      <object>objects\fx_pumpkin_break</object>
+      <object>objects\fx_roots_break</object>
+      <object>objects\fx_skull</object>
+      <object>objects\fx_sprint</object>
+      <object>objects\fx_superShield</object>
       <objects name="Shield">
         <object>objects\fx_shield</object>
         <object>objects\fx_shield_down</object>
         <object>objects\fx_shield_explosion</object>
         <object>objects\fx_shield_up</object>
       </objects>
-      <objects name="Death_and_Damage">
-        <object>objects\fx_damage</object>
-        <object>objects\fx_death_generic</object>
-        <object>objects\fx_corpse</object>
-        <object>objects\fx_corpse_boss</object>
-      </objects>
-      <object>objects\fx_superShield</object>
-      <object>objects\class_bouncer</object>
-      <object>objects\fx_activation</object>
-      <object>objects\fx_blood</object>
-      <object>objects\fx_digDirt</object>
-      <object>objects\fx_skull</object>
-      <object>objects\class_fx_boxbreak</object>
-      <object>objects\fx_longbox_break</object>
-      <object>objects\fx_crate_break</object>
-      <object>objects\fx_pumpkin_break</object>
-      <object>objects\fx_barrel_break</object>
-      <object>objects\fx_roots_break</object>
-      <object>objects\fx_crate_particles</object>
-      <object>objects\fx_casing</object>
-      <object>objects\fx_dirt</object>
-      <object>objects\fx_duck_dash</object>
-      <object>objects\fx_hit</object>
-      <object>objects\fx_kamikaze_dash</object>
-      <object>objects\fx_kamikaze_fly</object>
-      <object>objects\fx_player_dash</object>
-      <object>objects\fx_sprint</object>
-      <object>objects\fx_fadeToBlack</object>
-      <object>objects\fx_fadeFromBlack</object>
-      <object>objects\fx_bigMessage</object>
-      <object>objects\fx_digItem</object>
-      <object>objects\fx_exitArrow</object>
-      <object>objects\fx_explosionKami</object>
-      <object>objects\fx_kami_cageDestroy</object>
-      <object>objects\fx_ducanFlag</object>
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
@@ -1719,6 +1755,8 @@
       <object>objects\class_pickup_shield</object>
       <object>objects\class_pickup_superShield</object>
       <object>objects\obj_pickup_coin</object>
+      <object>objects\obj_pickup_candy</object>
+      <object>objects\obj_pickup_candyLarge</object>
       <object>objects\obj_pickup_health</object>
       <object>objects\obj_pickup_shield</object>
       <object>objects\obj_pickup_superShield</object>
@@ -1783,6 +1821,7 @@
       <object>objects\obj_projectile_enemy</object>
       <object>objects\obj_projectile_plasma</object>
       <object>objects\obj_projectile_skull</object>
+      <object>objects\obj_projectile_skullEnemy</object>
       <object>objects\obj_projectile_flak</object>
       <object>objects\obj_projectile_flakRelic</object>
       <object>objects\obj_projectile_plasmaEnemy</object>
@@ -2041,6 +2080,8 @@
     <room>rooms\level4_2</room>
     <room>rooms\level4_3</room>
     <room>rooms\levelHalloween_1</room>
+    <room>rooms\levelHalloween_2</room>
+    <room>rooms\levelHalloween_3</room>
     <room>rooms\room_boss</room>
     <room>rooms\room_shop</room>
     <room>rooms\room_endShop</room>

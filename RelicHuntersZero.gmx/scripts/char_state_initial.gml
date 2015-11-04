@@ -43,6 +43,7 @@
         global.scoreEndless = 0;
         global.currentLoop = 0;
         global.bountyEndless = 0;
+        global.spookylandsVisited = false;
         
         global.ammo_light[1] = 80;
         global.ammo_medium[1] = 50;
@@ -105,8 +106,11 @@
     global.challengeHunted = 0;
     
 //Reset Relic Selection
-if (global.gameMode == gamemode_endless)
+if (global.gameMode == gamemode_endless) || (global.playedEndless)
 {
+    if (global.gameMode == gamemode_endless) global.playedEndless = true;
+    else global.playedEndless = false;
+    
     global.relic_slot[1] = '';
     global.relic_slot[2] = '';
     global.relic_slot[3] = '';

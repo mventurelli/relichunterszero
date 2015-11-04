@@ -74,7 +74,7 @@ ai_cover_priority = ds_priority_create();
 ai_cover_check_range = 400;
 ai_cover_hp_threshold = hp_max*0.5;
 
-ai_dash_chance = 0;
+ai_dash_chance = 3;
 ai_dash_cooldown = room_speed*1;
 ai_dash_cooldown_current = ai_dash_cooldown;
 
@@ -105,7 +105,12 @@ damage = 20;
 damage_timer = room_speed*1;
 damage_timer_current = damage_timer;
 
-//Sprites
+//Sprites &amp; Death
+myRegularScore = global.score_kill;
+myPrecisionScore = global.score_headshot;
+myCoinDropAmount = 1;
+deathSfx = sfx_kami_death;
+
 sprite_hit = spr_kamikaze_hit;
 sprite_walk = spr_kamikaze_walk;
 sprite_idle = spr_kamikaze_idle;
@@ -291,7 +296,7 @@ if hp &lt;= 0
         if (!critical_death)
         {
             if (global.allowKillFreeze) global.pause = room_speed*0.1;
-            score_add(global.score_kill,false);
+            score_add(myRegularScore,false);
             
             var randomDeath = irandom_range(1,2)
             if (randomDeath == 1) corpseSprite = sprite_death;
@@ -300,7 +305,7 @@ if hp &lt;= 0
         else
         {
             if (global.allowKillFreeze) global.pause = room_speed*0.15;
-            score_add(global.score_kill+global.score_headshot,true);
+            score_add(myRegularScore+myPrecisionScore,true);
             
             var randomDeath = irandom_range(1,3)
             if (randomDeath == 1) corpseSprite = sprite_precision1;
@@ -309,7 +314,7 @@ if hp &lt;= 0
         }
     }
     
-    repeat(1) instance_create(x,y,obj_pickup_coin);
+    repeat(myCoinDropAmount) instance_create(x,y,obj_pickup_coin);
     myCorpse = instance_create(x,y,fx_corpse);
     myCorpse.image_xscale = image_xscale;
     myCorpse.sprite_index = corpseSprite;
@@ -320,7 +325,7 @@ if hp &lt;= 0
         myCorpse.direction = push_direction;
     }
     
-    audio_play(audio_emitter,false,1,sfx_kami_death);
+    audio_play(audio_emitter,false,1,deathSfx);
     
     if (critical_death) audio_play_exclusive(audio_emitter,false,1,sfx_precision_kill1,sfx_precision_kill2,sfx_precision_kill3,sfx_precision_kill4,sfx_precision_kill5);
     

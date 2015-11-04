@@ -45,9 +45,12 @@
 
 if (room != room_start) &amp;&amp; (global.shadows)
 {
-    darkBlue = make_color_rgb(2,56,163);
+    shadowColor = make_color_rgb(2,56,163);
+    if (room == levelHalloween_1) || (room == levelHalloween_2) ||(room == levelHalloween_3 ){
+        shadowColor = make_color_rgb(10,10,10);
+    }
     shadow_update();
-    shadow_draw_tall(darkBlue,0.5);
+    shadow_draw_tall(shadowColor,0.5);
 }
 </string>
           </argument>

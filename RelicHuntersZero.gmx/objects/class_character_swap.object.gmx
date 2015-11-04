@@ -140,6 +140,8 @@ if instance_exists(activationClient) &amp;&amp; (active)
         newChar.myPlayerId = p;
         isClientLocked = false;
         with (newChar) event_perform(ev_other,ev_user0);
+        
+        audio_play(newChar.audio_emitter, false, 1, sfx_switch_char);
     }
 }
 </string>

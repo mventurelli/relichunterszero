@@ -124,6 +124,9 @@ if (global.gameMode == gamemode_adventure) || (global.currentLoop == 0)
     if (room == level4_1) myTextTarget = loc_key("ASS_LEVEL4_1");
     if (room == level4_2) myTextTarget = loc_key("ASS_LEVEL4_2");
     if (room == level4_3) myTextTarget = loc_key("ASS_LEVEL4_3");
+    if (room == levelHalloween_1) myTextTarget = loc_key("ASS_SPOOKY1");
+    if (room == levelHalloween_2) myTextTarget = loc_key("ASS_SPOOKY2");
+    if (room == levelHalloween_3) myTextTarget = loc_key("ASS_SPOOKY3");
 }
 else if (global.currentLoop == 1)
 {

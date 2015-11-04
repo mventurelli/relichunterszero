@@ -117,6 +117,9 @@ if instance_exists(activationClient)
                         case "CHALLENGE_BLOODLUST" : global.challengeBloodlust = false; break;
                         case "CHALLENGE_HEAVYBURDEN" : global.challengeHeavyBurden = false; break;
                         
+                        case "CHALLENGE_HUNTED" : global.challengeHunted = false; break;
+                        case "CHALLENGE_HAUNTED" : global.challengeHaunted = false; break;
+                        
                         case "CHALLENGE_STEROIDS" : global.challengeSteroids -= (min(1,global.challengeSteroids)); break;
                         case "CHALLENGE_WANTED" : global.challengeWanted -= (min(1,global.challengeWanted)); break;
                         case "CHALLENGE_HIGHTECH" : global.challengeHighTech -= (min(1,global.challengeHighTech)); break;

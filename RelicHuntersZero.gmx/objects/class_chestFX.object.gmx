@@ -112,8 +112,14 @@ if (!spawned) &amp;&amp; (image_index &gt;= spawnFrame){
     
         switch (spawnChallenge){
             case "CHALLENGE_HUNTED" : if (!global.challengeHunted){ global.challengeHunted=true; stringChallenge="CHALLENGE_HUNTED"; stringDescription="CHALLENGE_HUNTED_DESC"; listName="CHALLENGE_HUNTED"; }break;
-            case "CHALLENGE_HAUNTED" : if (!global.challengeHaunted){ global.challengeHaunted=true; stringChallenge="CHALLENGE_HAUNTED"; stringDescription="CHALLENGE_HAUNTED_DESC"; listName="CHALLENGE_HAUNTED"; }break;
+            case "CHALLENGE_HAUNTED" : if (!global.challengeHaunted) &amp;&amp; (room != levelHalloween_3) { global.challengeHaunted=true; stringChallenge="CHALLENGE_HAUNTED"; stringDescription="CHALLENGE_HAUNTED_DESC"; listName="CHALLENGE_HAUNTED"; }break;
         };
+        
+        //Spawn Halloween candy
+        if (spawnChallenge == "CHALLENGE_HAUNTED") {
+            repeat(irandom_range(4,7)) instance_create(x,y,obj_pickup_candy);
+            repeat(irandom_range(4,7)) instance_create(x,y,obj_pickup_candyLarge);
+        }
         
         if (listName != '') {
             ds_list_add(global.challengeList, listName);

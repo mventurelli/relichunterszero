@@ -35,8 +35,8 @@ alpha = 1;
 alpha_duration = room_speed*0.1;
 alpha_duration_current = 0;
 myTime = 0;
-life_time = room_speed*(random_range(9,12));
-alert_time = room_speed*6;
+life_time = room_speed*(random_range(12,15));
+alert_time = room_speed*8;
 
 sprite1 = spr_coin_drop;
 sprite2 = spr_coin_ground;
@@ -60,11 +60,6 @@ randomizeDir = false;
 image_speed = 0.2;
 
 direction = random(360);
-
-/*
-dirMin = -30;
-dirMax = 30;
-direction = 180 + random_range(dirMin,dirMax);
 </string>
           </argument>
         </arguments>

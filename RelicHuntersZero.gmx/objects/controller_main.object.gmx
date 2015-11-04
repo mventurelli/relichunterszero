@@ -40,6 +40,8 @@ joy_init();
 
 global.gameOver = false;
 global.relicDetected = false;
+global.overrideLevel = noone;
+
 
 global.steamApi = false;
 
@@ -75,6 +77,12 @@ global.pause = 0;
 
 view_xview[0] = x;
 view_yview[0] = y;
+
+//Survival Mode Configuration
+global.survivalWaves = 0;
+survivalWaveSize = 0;
+
+if (room == levelHalloween_3) {global.survivalWaves = 3; survivalWaveSize = 3;}
 
 //Combat Options
 global.autoAimAngle = 38;
@@ -513,7 +521,7 @@ global.ambientSound = noone;
 
 alarm[3] = room_speed*3;
 
-if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (audio_is_playing(bgm_dig))
+if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (room == levelHalloween_1) || (audio_is_playing(bgm_dig))
 {
     audio_stop_all();
 }
@@ -562,6 +570,13 @@ if (room == room_start) || (room == room_shop) || (room == room_endShop) || (roo
     {
         if !audio_is_playing(bgm_boss) audio_play_sound(bgm_boss,99,true);
     }
+    
+    if (room == levelHalloween_1) || (room == levelHalloween_2) || (room == levelHalloween_3)
+    {
+        if !audio_is_playing(bgm_halloween) audio_play_sound(bgm_halloween,99,true);
+        audio_play_sound(sfx_amb_stage4,99,true);
+        global.ambientSound = sfx_amb_stage4;
+    }
 }
 </string>
           </argument>
@@ -588,6 +603,13 @@ if (room == room_start) || (room == room_shop) || (room == room_endShop) || (roo
 save_sync_read();
 
 //Achievements
+
+///Halloween Achievements
+if (room == levelHalloween_1) {
+    global.spookylandsVisited = true;
+    achievement_give("ACHIEVEMENT_ENTER_SPOOKYLANDS");
+}
+
 ///"Unlock-All" Achievements
 
 if (room == room_start)
@@ -795,6 +817,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         room == level3_2 ||
         room == level4_1 ||
         room == level4_3 ||
+        room == levelHalloween_2 ||
         (global.currentLoop &gt;= 3 &amp;&amp; room != room_endShop)
         )
     {
@@ -1334,7 +1357,13 @@ if (!level_built)
                 spawnY = target_spawn.spawnY + random_range(-128,128);
                 
                 if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 {
-                    spawnee = obj_ducanElite_rifle;
+                    var randomSpawnRoll = irandom_range(1,4);
+                    switch (randomSpawnRoll){
+                        case 1 : spawnee = obj_ducanElite_rifle; break;
+                        case 2 : spawnee = obj_ducanElite_shotgun; break;
+                        case 3 : spawnee = obj_ducanElite_sniper; break;
+                        case 4 : spawnee = obj_ducanElite_plasma; break;
+                    }
                     instance_create(spawnX,spawnY,spawnee);
                 }
             }
@@ -1358,39 +1387,42 @@ if (!level_built)
         }
         
         //Regular Enemies
-        while (!ds_list_empty(enemy_pool))
+        if (!global.survivalWaves) 
         {
-            pick_random_group = irandom(ds_list_size(enemy_pool)-1);
-            random_group = ds_list_find_value(enemy_pool,pick_random_group);
-            ds_list_delete(enemy_pool,pick_random_group);
-            
-            current_group = ds_list_create();
-            ds_list_copy(current_group, random_group);
-            
-            enemy_spawn_number = instance_number(obj_spawn_enemy);
-            random_spawn = irandom(enemy_spawn_number-1);
-            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
-            
-            while (!ds_list_empty(current_group)) &amp;&amp; (instance_exists(target_spawn))
+            while (!ds_list_empty(enemy_pool))
             {
-                spawnX = target_spawn.spawnX + random_range(-128,128);
-                spawnY = target_spawn.spawnY + random_range(-128,128);
+                pick_random_group = irandom(ds_list_size(enemy_pool)-1);
+                random_group = ds_list_find_value(enemy_pool,pick_random_group);
+                ds_list_delete(enemy_pool,pick_random_group);
                 
-                if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 
+                current_group = ds_list_create();
+                ds_list_copy(current_group, random_group);
+                
+                enemy_spawn_number = instance_number(obj_spawn_enemy);
+                random_spawn = irandom(enemy_spawn_number-1);
+                target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+                
+                while (!ds_list_empty(current_group)) &amp;&amp; (instance_exists(target_spawn))
                 {
-                    list_position = ds_list_size(current_group)-1;
-                    spawnee = ds_list_find_value(current_group, list_position);
-                    instance_create(spawnX,spawnY,spawnee);
-                    ds_list_delete(current_group,list_position);
+                    spawnX = target_spawn.spawnX + random_range(-128,128);
+                    spawnY = target_spawn.spawnY + random_range(-128,128);
+                    
+                    if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 
+                    {
+                        list_position = ds_list_size(current_group)-1;
+                        spawnee = ds_list_find_value(current_group, list_position);
+                        instance_create(spawnX,spawnY,spawnee);
+                        ds_list_delete(current_group,list_position);
+                    }
                 }
+                ds_list_destroy(current_group);
+                with (target_spawn) { instance_destroy(); }
             }
-            ds_list_destroy(current_group);
-            with (target_spawn) { instance_destroy(); }
-        }
-        
-        with (obj_spawn_enemy)
-        {
-            instance_destroy();
+            
+            with (obj_spawn_enemy)
+            {
+                instance_destroy();
+            }
         }
         
        //Resolve Items 
@@ -1450,7 +1482,7 @@ if (!level_built)
 
 if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(room == room_shop)) &amp;&amp; (!(room == room_boss)) &amp;&amp; (!(room == room_endShop))
 {
-    if ((!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (!level_end)) || (debug_forceLevelExit &amp;&amp; !level_end)
+    if ((!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (!global.survivalWaves) &amp;&amp; (!level_end)) || (debug_forceLevelExit &amp;&amp; !level_end)
     {
         //Instantiates Ass
         var tries;
@@ -1597,6 +1629,8 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             if (room==level2_1) || (room==level2_2) || (room==level2_3) { relicChance = 0.2 + global.relicChanceBonus;    global.dirtColor = make_color_rgb(111,197,148); }
             if (room==level3_1) || (room==level3_2) || (room==level3_3) { relicChance = 0.2 + global.relicChanceBonus;   global.dirtColor = make_color_rgb(74,136,192); }
             if (room==level4_1) || (room==level4_2) || (room==level4_3) { relicChance = 0.2 + global.relicChanceBonus;   global.dirtColor = make_color_rgb(159,55,60); }
+            if (room==levelHalloween_1) { relicChance = 0.3;   shopList = global.shop_list_3;  global.dirtColor = make_color_rgb(10,10,10); }
+                        
             relicChance -= 0.2 * global.currentLoop
             if (global.relic_rabbit_foot == 2) relicChance += 0.2;
             
@@ -1606,10 +1640,14 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
  
                 //Define object to spawn
                 var spawnObject = noone;    
-                var randomRoll = random(100);           
-                if (randomRoll &lt;= 80) spawnObject = obj_chestRegular; // &lt;-- one day this will check chances for teleporter pad, slot machine and sacrifice table
-                else if (randomRoll &lt;= 90) &amp;&amp; (!global.challengeHunted) spawnObject = obj_chestDucan;
+                var randomRoll = random(100);  
+                         
+                if (randomRoll &lt;= 80) spawnObject = obj_chestRegular; // &lt;-- one day this will add chances for slot machine and sacrifice table
+                else if (randomRoll &lt;= 90 &amp;&amp; !global.spookylandsVisited || room == level1_1) spawnObject = obj_teleporter_haunted;
+                else if (randomRoll &lt;= 95) &amp;&amp; (!global.challengeHunted) spawnObject = obj_chestDucan;
                 else if (!global.challengeHaunted) spawnObject = obj_chestHaunted;
+                else spawnObject = obj_chestRegular;
+                
                 
                 //Stop here if there is no object to spawn
                 if (spawnObject == noone) exit;
@@ -1648,6 +1686,13 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             else{
                 global.relicChanceBonus += 0.12;
             }
+        }
+        
+        //Special Rewards!!!
+        if (room == levelHalloween_3)
+        {
+            instance_create(2432,1664,obj_chestHaunted);
+            achievement_give("ACHIEVEMENT_COMPLETE_SPOOKYLANDS");
         }
     }
 }
@@ -1708,11 +1753,12 @@ if (global.level_complete)
 
     save_and_clean();
     
+    if (global.overrideLevel != noone) &amp;&amp; (room_exists(global.overrideLevel)) { room_goto(global.overrideLevel); exit; }
+
     if (room == room_shop) || (room == room_start) || (room == room_endShop)
     {
         //Test boss: room_goto(room_boss); exit;  
-        //Test halloween: room_goto(levelHalloween_1); exit;  
-        
+        //Test halloween: room_goto(levelHalloween_1); exit; 
         
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
@@ -1738,6 +1784,7 @@ if (global.level_complete)
         if (room == level2_3) { room_goto(room_endShop); exit; }
         if (room == level3_3) { room_goto(room_endShop); exit; }
         if (room == level4_3) { room_goto(room_endShop); exit; }
+        if (room == levelHalloween_3) { global.stage_current = min(4,global.stage_current+2); room_goto(room_endShop); exit; }
     }
     
     
@@ -1921,13 +1968,14 @@ global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
           <argument>
             <kind>1</kind>
             <string>///DEBUG COMMANDS   
-    
+  
+
+      
 if (debug_mode)
 {
 if keyboard_check_pressed(ord('M')) global.currentLoop++;
 
-
-    //Debug Endless Bounty
+        //Debug Endless Bounty
     if keyboard_check_pressed(ord('B')) global.bountyEndless += 500;
     
 //Debug: Kill Everything
@@ -1941,25 +1989,14 @@ if keyboard_check_pressed(ord('M')) global.currentLoop++;
             }
         }
     }
+
        
     //Debug: Stage Clear
     if keyboard_check_pressed(vk_f10)
     {
         debug_forceLevelExit = true;
     }
-    
-    //Debug: Kill Everything
-    if keyboard_check_pressed(vk_f9)
-    {
-        if instance_exists(class_enemy)
-        {
-            with (class_enemy)
-            {
-                instance_destroy();
-            }
-        }
-    }
-    
+
     
 
     ///Mute the Music
@@ -2055,6 +2092,10 @@ if keyboard_check_pressed(ord('M')) global.currentLoop++;
         steam_clear_achievement("ACHIEVEMENT_LOOP_NOBUY"); //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_LOOP3"); //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_RELICS_4"); //set by controller_main Step event
+        
+        steam_clear_achievement("ACHIEVEMENT_ENTER_SPOOKYLANDS"); //set by controller_main Create event
+        steam_clear_achievement("ACHIEVEMENT_COMPLETE_SPOOKYLANDS"); //set by controller_main on the Level Exit script
+        steam_clear_achievement("ACHIEVEMENT_EAT_CANDY"); //set by the candy pickup
     }
 }
 </string>
@@ -2329,6 +2370,70 @@ if (instance_exists(class_enemy))
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawn Survival Wave Enemies
+
+if ((!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelite_flying)) &amp;&amp; (instance_exists(class_player)) &amp;&amp; (global.survivalWaves))
+{
+    global.survivalWaves--;
+    
+    repeat(survivalWaveSize){
+       if (!ds_list_empty(enemy_pool))
+       {
+            pick_random_group = irandom(ds_list_size(enemy_pool)-1);
+            random_group = ds_list_find_value(enemy_pool,pick_random_group);
+            ds_list_delete(enemy_pool,pick_random_group);
+                
+            current_group = ds_list_create();
+            ds_list_copy(current_group, random_group);
+                
+            enemy_spawn_number = instance_number(obj_spawn_enemy);
+            random_spawn = irandom(enemy_spawn_number-1);
+            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+                
+            while (!ds_list_empty(current_group)) &amp;&amp; (instance_exists(target_spawn))
+            {
+                spawnX = target_spawn.spawnX + random_range(-128,128);
+                spawnY = target_spawn.spawnY + random_range(-128,128);
+                    
+                if collision_circle(spawnX,spawnY,40,class_solid,false,true) &lt; 0 
+                {
+                    list_position = ds_list_size(current_group)-1;
+                    spawnee = ds_list_find_value(current_group, list_position);
+                    spawnedEnemy = instance_create(spawnX,spawnY,spawnee);
+                    
+                    spawnedEnemy.ai_activation_range = 2000;
+                    spawnedEnemy.ai_shutdown_range = 2000;
+                    
+                    ds_list_delete(current_group,list_position);
+                }
+            }
+            
+            ds_list_destroy(current_group);
+            with (target_spawn) { instance_destroy(); }
+       }
+       else exit;
+    }
+}
 </string>
           </argument>
         </arguments>

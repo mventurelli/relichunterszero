@@ -155,6 +155,10 @@ if (room == room_boss){
         item_endlessAid_1
     );
 }
+
+if (room == levelHalloween_1) || (room == levelHalloween_2) {
+    ds_list_add(itemPool,item_endlessAmmo_1,item_endlessAmmo_1,item_endlessAmmo_1,item_endlessAmmo_1);
+}
 </string>
           </argument>
         </arguments>

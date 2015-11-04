@@ -38,21 +38,31 @@ myText = loc_key("PAUSE_FXPAUSE");
 myFont2 = global.font_menuSmall;
 myText2 = 'I AM ERROR';
 
-if (room == room_start) || (room==room_tutorial) myText2 = loc_key("HUD_SPACEHEART");
-if (room == room_shop) || (room == room_endShop) myText2 = loc_key("HUD_SHOP");
-if (room == level1_1) myText2 = loc_key("HUD_STAGE") + " " + '1 - 1';
-if (room == level1_2) myText2 = loc_key("HUD_STAGE") + " " + '1 - 2';
-if (room == level1_3) myText2 = loc_key("HUD_STAGE") + " " + '1 - 3';
-if (room == level2_1) myText2 = loc_key("HUD_STAGE") + " " + '2 - 1';
-if (room == level2_2) myText2 = loc_key("HUD_STAGE") + " " + '2 - 2';
-if (room == level2_3) myText2 = loc_key("HUD_STAGE") + " " + '2 - 3';
-if (room == level3_1) myText2 = loc_key("HUD_STAGE") + " " + '3 - 1';
-if (room == level3_2) myText2 = loc_key("HUD_STAGE") + " " + '3 - 2';
-if (room == level3_3) myText2 = loc_key("HUD_STAGE") + " " + '3 - 3';
-if (room == level4_1) myText2 = loc_key("HUD_STAGE") + " " + '4 - 1';
-if (room == level4_2) myText2 = loc_key("HUD_STAGE") + " " + '4 - 2';
-if (room == level4_3) myText2 = loc_key("HUD_STAGE") + " " + '4 - 3';
-if (room == room_boss) myText2 = loc_key("HUD_STAGE_BOSS");
+
+switch (room){
+
+    case (room_start) :
+    case (room_tutorial) : myText2 = loc_key("HUD_SPACEHEART"); break;
+    case (room_shop) :
+    case (room_endShop) : myText2 = loc_key("HUD_SHOP"); break;
+    case (level1_1) : myText2 = loc_key("HUD_STAGE") + " " + '1 - 1'; break;
+    case (level1_2) : myText2 = loc_key("HUD_STAGE") + " " + '1 - 2'; break;
+    case (level1_3) : myText2 = loc_key("HUD_STAGE") + " " + '1 - 3'; break;
+    case (level2_1) : myText2 = loc_key("HUD_STAGE") + " " + '2 - 1'; break;
+    case (level2_2) : myText2 = loc_key("HUD_STAGE") + " " + '2 - 2'; break;
+    case (level2_3) : myText2 = loc_key("HUD_STAGE") + " " + '2 - 3'; break;
+    case (level3_1) : myText2 = loc_key("HUD_STAGE") + " " + '3 - 1'; break;
+    case (level3_2) : myText2 = loc_key("HUD_STAGE") + " " + '3 - 2'; break;
+    case (level3_3) : myText2 = loc_key("HUD_STAGE") + " " + '3 - 3'; break;
+    case (level4_1) : myText2 = loc_key("HUD_STAGE") + " " + '4 - 1'; break;
+    case (level4_2) : myText2 = loc_key("HUD_STAGE") + " " + '4 - 2'; break;
+    case (level4_3) : myText2 = loc_key("HUD_STAGE") + " " + '4 - 3'; break;
+    case (room_boss) : myText2 = loc_key("HUD_STAGE_BOSS"); break;
+    case (levelHalloween_1) :
+    case (levelHalloween_2) :
+    case (levelHalloween_3) : myText2 = loc_key("HUD_STAGE_BONUS"); break;
+
+}
 
 loopText = loc_key("HUD_LOOP") + " " + string(global.currentLoop);
 </string>

@@ -26,6 +26,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
     ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
     
+    ini_write_real('Temp','playedEndless',global.playedEndless);
     ini_write_real('Temp','Bounty Endless',global.bountyEndless);
     ini_write_real('Temp','Loop',global.currentLoop);
     ini_write_real('Temp','Score Endless',global.scoreEndless);
@@ -46,6 +47,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','relicChanceBonus',global.relicChanceBonus);
     ini_write_real('Temp','hasPurchasedAnything',global.hasPurchasedAnything);
     ini_write_real('Temp','hacksOnThisRun',global.hacksOnThisRun);
+    ini_write_real('Temp','spookylandsVisited',global.spookylandsVisited);
     
         
     ini_write_real('Character','playerCount',global.playerCount);

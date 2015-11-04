@@ -43,6 +43,9 @@ myEffect.owner = id;
 
 myLevel = -1;
 myPrice = 0;
+
+overrideCurrentLevel = false;
+overrideLevel = noone;
 </string>
           </argument>
         </arguments>
@@ -71,7 +74,6 @@ if instance_exists(activationClient) &amp;&amp; (active)
 {
     if (point_distance(x,y,activationClient.x,activationClient.y) &lt;= range) in_range = true;   
 
-    
     if (wantToActivate) &amp;&amp; (in_range)
     { 
         global.level_complete = true;
@@ -80,6 +82,11 @@ if instance_exists(activationClient) &amp;&amp; (active)
         {
             global.stage_current = myLevel;
             global.hasUsedCheckpoint = true; //Achievement purposes
+        }
+        
+        if (overrideCurrentLevel)
+        {
+            global.overrideLevel = overrideLevel;
         }
     }
 }

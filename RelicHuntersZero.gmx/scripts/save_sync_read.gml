@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 8');
+    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 10');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -35,6 +35,7 @@ ini_open(working_directory + "\saveData.ini");
     }
     
     //Endless Temp
+    global.playedEndless = ini_read_real('Temp','playedEndless',false);
     global.bountyEndless = ini_read_real('Temp','Bounty Endless',0);
     global.currentLoop = ini_read_real('Temp','Loop',0);
     global.endPriceTier_lightAmmo = ini_read_real('Temp','endPriceTier_lightAmmo',0);
@@ -53,7 +54,6 @@ ini_open(working_directory + "\saveData.ini");
     global.endPriceTier_hack = ini_read_real('Temp','endPriceTier_hack',0);
     global.relicChanceBonus = ini_read_real('Temp','relicChanceBonus',0);
     
-    
     //Temp
     global.stage_current = ini_read_real('Temp','Stage',0);
     global.hasPickedWeapon = ini_read_real('Temp','WeaponPickedUp',0);
@@ -61,6 +61,7 @@ ini_open(working_directory + "\saveData.ini");
     global.scoreEndless = ini_read_real('Temp','Score Endless',0);
     global.hasPurchasedAnything = ini_read_real('Temp','hasPurchasedAnything',0);
     global.hacksOnThisRun = ini_read_real('Temp','hacksOnThisRun',0);
+    global.spookylandsVisited = ini_read_real('Temp','spookylandsVisited',false);
     
     // Persistence
     

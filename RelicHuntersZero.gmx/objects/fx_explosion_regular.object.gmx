@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Main Variables
+maxTargets = 5;
+currentTargets = 0;
 
 radiusStart = 12;
 radiusFinal = 122;
@@ -65,8 +67,6 @@ audio_play(audio_emitter, false, 99, sfx_grenade_explosion);
 global.shock_enabled = true;
 global.shock_positionX = x;
 global.shock_positionY = y;
-
-
 
 //Explosion Ground Effect
 var randomDecal = irandom(2);
@@ -126,7 +126,7 @@ if (image_index &gt;= trigger_frame)
             <kind>1</kind>
             <string>///Damage
 
-if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame) &amp;&amp; (damage)
+if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame) &amp;&amp; (damage) &amp;&amp; (currentTargets &lt; maxTargets)
 {    
     is_enemy = true;
     poor_guy = collision_circle(x,y,radiusFinal,faction_player,false,true);
@@ -187,6 +187,8 @@ if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame) &a
                 poor_guy.push_direction = point_direction(x,y,poor_guy.x,poor_guy.y);
                 poor_guy.push_speed = push_power;
             }
+            
+            currentTargets++;
         }
     }
     

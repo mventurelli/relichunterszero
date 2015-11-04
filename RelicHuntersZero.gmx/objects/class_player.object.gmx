@@ -1220,6 +1220,10 @@ if (throw) &amp;&amp; (animation_current == 'melee')
         myGrenade = instance_create(x,y,myGrenadeObject);
         myGrenade.speed = grenade_speed;
         myGrenade.direction = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
+
+        if (global.relic_midnight_beer == 2) myGrenade.damage += round(myGrenade.damage*global.midnightDamageMultiplier ); //Midnight Beer
+        if (global.relic_midnight_meal == 2) myGrenade.damage += round(myGrenade.damage*global.midnightDamageMultiplier ); //Midnight Meal
+        if (instance_exists(myGun)) myGrenade.damage += round((myGrenade.damage * myGun.weaponLevel)/3); //Weapon Level
     }
 
     if (animation_index &gt;= (animation_frames-1))

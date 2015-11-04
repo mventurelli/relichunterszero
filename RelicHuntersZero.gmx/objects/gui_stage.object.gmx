@@ -43,6 +43,10 @@ if (room == level4_1) sprite_index = spr_stage4_1;
 if (room == level4_2) sprite_index = spr_stage4_2;
 if (room == level4_3) sprite_index = spr_stage4_3;
 
+if (room == levelHalloween_1) sprite_index = spr_stageSpooky_1;
+if (room == levelHalloween_2) sprite_index = spr_stageSpooky_2;
+if (room == levelHalloween_3) sprite_index = spr_stageSpooky_3;
+
 if (room == room_shop) || (room == room_endShop) sprite_index = spr_stage_shop;
 if (room == room_start) || (room == room_tutorial) || (room == room_boss) instance_destroy();
 

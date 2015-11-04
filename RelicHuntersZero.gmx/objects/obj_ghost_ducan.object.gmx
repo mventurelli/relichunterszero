@@ -27,12 +27,15 @@
             <kind>1</kind>
             <string>///Main Shit
 
-speed_walk = 3.2;
+speed_walk = 3.8;
 moving = false;
 shy = false;
 shyTrigger = false;
 activationFX = noone;
 shyMaxDistance = 650;
+
+teleportTime = room_speed*4;
+teleportTimeCurrent = 0;
 
 //Attack
 look_direction = 1;
@@ -51,7 +54,7 @@ want_to_activate = false;
 ai_activation_range = 600;
 
 ai_target = noone;
-ai_shutdown_range = 600;
+ai_shutdown_range = 1200;
 ai_state = 'CHASE';
 
 reflection_object_setup(0,-1,image_index);
@@ -159,6 +162,31 @@ else if (!shyTrigger){
 
 if (look_direction == 1) image_xscale = 1;
 else image_xscale = -1;
+
+
+//Teleport If Shy For Too Long
+if (shy)
+{
+    if (teleportTimeCurrent &gt;= teleportTime)
+    {   
+        teleportTimeCurrent = 0;
+        
+        if (instance_exists(obj_spawn_topLeft)) &amp;&amp; (instance_exists(obj_spawn_botRight)){
+            var validPosition = false;
+            var teleportX, teleportY;
+            
+            while (!validPosition){
+                teleportX = irandom_range( obj_spawn_topLeft.x , obj_spawn_botRight.x );
+                teleportY = irandom_range( obj_spawn_topLeft.y , obj_spawn_botRight.y );
+                if (!collision_circle(teleportX,teleportY,42,obj_limit,false,true)) validPosition = true;
+            }
+            
+            x = teleportX;
+            y = teleportY;
+        }
+    }
+    else if (image_speed == 0) teleportTimeCurrent++;
+}
 </string>
           </argument>
         </arguments>
