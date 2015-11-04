@@ -979,10 +979,6 @@
     <instance objName="obj_spawn_topLeft" x="640" y="768" name="inst_A55DA794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_botRight" x="4032" y="1664" name="inst_8629A838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="704" y="832" name="inst_2BD70B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chestRegular" x="704" y="1216" name="inst_ADDF4F9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chestRegular" x="704" y="1280" name="inst_CCC46DD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chestRegular" x="704" y="1344" name="inst_D8152415" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chestRegular" x="704" y="1408" name="inst_FD1CBC0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_desert" x="896" y="960" w="64" h="64" xo="4" yo="76" id="10005569" name="inst_7B6C100B" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

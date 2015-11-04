@@ -217,7 +217,6 @@
     <instance objName="obj_hackTerminal1" x="1998" y="1425" name="inst_7DF54B45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hackTerminal2" x="1999" y="1567" name="inst_99DD939E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shopReset" x="3179" y="946" name="inst_09BF0EA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_teleporter_haunted" x="3072" y="1280" name="inst_77E33F7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ship_tileset" x="640" y="1408" w="64" h="64" xo="4" yo="148" id="10002563" name="inst_DAD6C983" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
