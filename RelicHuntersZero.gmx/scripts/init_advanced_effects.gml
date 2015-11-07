@@ -13,6 +13,7 @@ if (global.shadows_toggle){
 if (global.reflections_toggle){
     reflection_init();
     if (!surface_exists(global.reflection_surface)) {
+        var offsetReflections = global.surface_view_offset_reflections/2;
         global.reflection_surface = surface_create(1280+offsetReflections, 720+offsetReflections); 
     }
 }

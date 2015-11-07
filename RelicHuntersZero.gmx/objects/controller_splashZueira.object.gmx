@@ -108,6 +108,7 @@ if (instance_exists(zueiraLogo)) with (zueiraLogo) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Play Logo
+zueiraLogo = instance_create(room_width/2,room_height/2,class_gui_fader);
 zueiraLogo.image_speed = 0.5;
 audio_play_sound(sfx_zueira,1,false);
 if (room == room_start) game_end();
