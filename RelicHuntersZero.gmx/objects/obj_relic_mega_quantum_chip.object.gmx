@@ -61,7 +61,7 @@ else equipped = false;
 
 //Equip/Unequip The Relic
 full_relic = true;
-object = 'mega quantum chip';
+object = 'mega_quantum_chip';
 
 if (toggle)
 {
