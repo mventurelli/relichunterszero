@@ -109,7 +109,7 @@ if (global.relic_slot[myNumber] == 'pineapple_pie') { mySprite = spr_pineapple_p
 if (global.relic_slot[myNumber] == 'rabbit_foot') { mySprite = spr_rabbit_foot; myString = loc_key("RELIC_RABBITFOOT_SHORT");   }
 if (global.relic_slot[myNumber] == 'midnight_meal') { mySprite = spr_midnight_meal; myString = loc_key("RELIC_MIDNIGHTMEAL_SHORT");   }
 if (global.relic_slot[myNumber] == 'yottabyte_processor') { mySprite = spr_yottabyte_processor; myString = loc_key("RELIC_PROCESSOR_SHORT");   }
-
+if (global.relic_slot[myNumber] == 'mega_quantum_chip') { mySprite = spr_mega_quantum_chip; myString = loc_key("RELIC_MEGAQUANTUMCHIP_SHORT");   }
 
 
 

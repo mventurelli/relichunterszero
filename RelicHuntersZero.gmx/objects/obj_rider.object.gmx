@@ -28,7 +28,7 @@
             <string>///Gameplay
 event_inherited();
 
-    playerName = "RIDER";
+    playerName = "RED";
     myChar = char_rider;
     
     riderGrenadeCost = 20;

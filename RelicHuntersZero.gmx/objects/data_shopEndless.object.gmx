@@ -56,6 +56,7 @@ if (!global.relic_watchful_eye) ds_list_add(global.endShop_tier[1],obj_endShop_w
 if (!global.relic_alcoholic_carrot) ds_list_add(global.endShop_tier[1],obj_endShop_alcoholicCarrot);
 if (!global.relic_infinity_battery) ds_list_add(global.endShop_tier[1],obj_endShop_infinityBattery);
 if (!global.relic_pineapple_pudding) ds_list_add(global.endShop_tier[1],obj_endShop_pineapplePudding);
+if (!global.relic_mega_quantum_chip) ds_list_add(global.endShop_tier[1],obj_endShop_megaQuantumChip);
 
 if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     if (!check_weapon_owned(obj_bouncer,1)) ds_list_add(global.endShop_tier[1], obj_endShop_bouncer);
@@ -75,6 +76,7 @@ if (!check_weapon_owned(obj_pistol_plasma,1)) ds_list_add(global.endShop_tier[2]
 if (!check_weapon_owned(obj_sniper_rifle,1)) ds_list_add(global.endShop_tier[2], obj_endShop_sniperRifle);
 if (!check_weapon_owned(obj_flakCannon,1)) ds_list_add(global.endShop_tier[2], obj_endShop_flakCannon);
 if (!check_weapon_owned(obj_minigun,1)) ds_list_add(global.endShop_tier[2], obj_endShop_minigun);
+if (!check_weapon_owned(obj_highmag,1)) ds_list_add(global.endShop_tier[2], obj_endShop_highmag);
 
 if (!global.relic_yottabyte_drive) ds_list_add(global.endShop_tier[2],obj_endShop_yottabyteDrive);
 if (!global.relic_pineapple_pie) ds_list_add(global.endShop_tier[2],obj_endShop_pineapplePie);
@@ -83,6 +85,8 @@ if (!global.relic_midnight_beer) ds_list_add(global.endShop_tier[2],obj_endShop_
 if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     if (!check_weapon_owned(obj_rocketlauncher,1)) ds_list_add(global.endShop_tier[2], obj_endShop_rocketLauncher);
     if (!check_weapon_owned(obj_pistol_relic,1)) ds_list_add(global.endShop_tier[2], obj_endShop_relicPistol);
+    if (!check_weapon_owned(obj_blitz,1)) ds_list_add(global.endShop_tier[2], obj_endShop_blitz);
+    if (!check_weapon_owned(obj_kamilauncher,1)) ds_list_add(global.endShop_tier[2], obj_endShop_kamilauncher);
 }
 
 //Tier 3 //////////////////

@@ -458,6 +458,7 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_alcoholicCarrot = 800;
     global.price_endless_infinityBattery = 800;
     global.price_endless_rabbitFoot = 1200;
+    global.price_endless_megaQuantumChip = 1000;
     
     //Tier2
     global.price_endless_plasmaPistol = 2000;
@@ -465,10 +466,12 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_minigun = 2600;
     global.price_endless_flakCannon = 2600;
     global.price_endless_assaultRifle = 2500;
+    global.price_endless_blitz = 2500;
     global.price_endless_rocketLauncher = 3000;
     global.price_endless_sniperRifle = 3200;
     global.price_endless_heavyShotgun = 3000;
     global.price_endless_relicPistol = 3500;
+    global.price_endless_kamilauncher = 3000;
     
     global.price_endless_yottabyteDrive = 2500;
     global.price_endless_pineapplePudding = 1800;
@@ -2284,6 +2287,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (!awarded4RelicsAchievement)
     if (global.relic_midnight_beer) countRelics++;
     if (global.relic_watchful_eye) countRelics++;
     if (global.relic_dev_potion) countRelics++;
+    if (global.relic_mega_quantum_chip) countRelics++;
     if (countRelics &gt;= 4) {
         achievement_give("ACHIEVEMENT_RELICS_4");
         awarded4RelicsAchievement = true;

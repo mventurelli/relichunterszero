@@ -198,6 +198,7 @@ if (myBalloon) &amp;&amp; instance_exists(myBalloon)
           <argument>
             <kind>1</kind>
             <string>if (drawSelf) draw_self();
+else reflection_object_setup(0,spr_blood_blob,image_index);
 </string>
           </argument>
         </arguments>

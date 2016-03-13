@@ -7,7 +7,7 @@
   <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>4636654</colour>
   <showcolour>0</showcolour>
   <code></code>
@@ -217,6 +217,8 @@
     <instance objName="obj_hackTerminal1" x="1998" y="1425" name="inst_7DF54B45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hackTerminal2" x="1999" y="1567" name="inst_99DD939E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shopReset" x="3179" y="946" name="inst_09BF0EA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_altar_relic" x="2783" y="1920" name="inst_4DE542B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_relic_mega_quantum_chip" x="2784" y="1909" name="inst_E4A7510B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ship_tileset" x="640" y="1408" w="64" h="64" xo="4" yo="148" id="10002563" name="inst_DAD6C983" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

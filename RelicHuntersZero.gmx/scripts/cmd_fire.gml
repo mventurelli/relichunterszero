@@ -34,9 +34,16 @@ if instance_exists(owner)
                 projectile.owner = owner;
                             
                 var precision;
-                            
-                if (owner.aiming) precision = random_range(-accuracy_aiming*owner.base_accuracy,accuracy_aiming*owner.base_accuracy);
-                else precision = random_range(-accuracy*owner.base_accuracy,accuracy*owner.base_accuracy);
+                
+                if (global.relic_mega_quantum_chip == 2) //Check for Relic buff
+                {
+                    precision = 0;
+                }
+                else
+                {
+                    if (owner.aiming) precision = random_range(-accuracy_aiming*owner.base_accuracy,accuracy_aiming*owner.base_accuracy);
+                    else precision = random_range(-accuracy*owner.base_accuracy,accuracy*owner.base_accuracy);
+                }
                 projectile.direction = shoot_direction+precision;
                             
                 projectile.faction = f_player;

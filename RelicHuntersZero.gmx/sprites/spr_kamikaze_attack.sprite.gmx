@@ -14,7 +14,7 @@
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
-    <TextureGroup0>16</TextureGroup0>
+    <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
   <width>114</width>
@@ -23,10 +23,5 @@
     <frame index="0">images\spr_kamikaze_attack_0.png</frame>
     <frame index="1">images\spr_kamikaze_attack_1.png</frame>
     <frame index="2">images\spr_kamikaze_attack_2.png</frame>
-    <frame index="3">images\spr_kamikaze_attack_3.png</frame>
-    <frame index="4">images\spr_kamikaze_attack_4.png</frame>
-    <frame index="5">images\spr_kamikaze_attack_5.png</frame>
-    <frame index="6">images\spr_kamikaze_attack_6.png</frame>
-    <frame index="7">images\spr_kamikaze_attack_7.png</frame>
   </frames>
 </sprite>

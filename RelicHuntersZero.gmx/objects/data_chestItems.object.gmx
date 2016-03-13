@@ -75,6 +75,7 @@ if (!global.relic_watchful_eye) ds_list_add(relics[1], obj_relic_watchful_eye);
 if (!global.relic_alcoholic_carrot) ds_list_add(relics[1], obj_relic_alcoholic_carrot);
 if (!global.relic_infinity_battery) ds_list_add(relics[1], obj_relic_infinity_battery);
 if (!global.relic_morning_star) ds_list_add(relics[1], obj_relic_morning_star);
+if (!global.relic_mega_quantum_chip) ds_list_add(relics[1], obj_relic_mega_quantum_chip);
 
 relics[2] = ds_list_create();
 

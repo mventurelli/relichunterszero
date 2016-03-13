@@ -157,6 +157,7 @@ ini_open(working_directory + "\saveData.ini");
     global.relic_rabbit_foot = ini_read_real('Relics','rabbit_foot',0);
     global.relic_midnight_meal = ini_read_real('Relics','midnight_meal',0);
     global.relic_yottabyte_processor = ini_read_real('Relics','yottabyte_processor',0);
+    global.relic_mega_quantum_chip = ini_read_real('Relics','mega_quantum_chip',0);
    
     //Challenges
     global.challengeSteroids = ini_read_real('Challenges','challengeSteroids',0);

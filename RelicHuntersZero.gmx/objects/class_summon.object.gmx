@@ -109,16 +109,16 @@ damage_timer = room_speed*1;
 damage_timer_current = damage_timer;
 
 //Sprites
-sprite_hit = spr_kamikaze_hit;
-sprite_walk = spr_kamikaze_walk;
-sprite_idle = spr_kamikaze_idle;
-sprite_dash = spr_kamikaze_attack;
-sprite_death = spr_kamikaze_death;
-sprite_death2 = spr_kamikaze_death2;
+sprite_hit = spr_kamired_hit;
+sprite_walk = spr_kamired_walk;
+sprite_idle = spr_kamired_idle;
+sprite_dash = spr_kamired_attack;
+sprite_death = spr_kamired_death;
+sprite_death2 = spr_kamired_death2;
 
-sprite_precision1 = spr_kamikaze_precision;
-sprite_precision2 = spr_kamikaze_precision2;
-sprite_precision3 = spr_kamikaze_precision3;
+sprite_precision1 = spr_kamired_precision;
+sprite_precision2 = spr_kamired_precision2;
+sprite_precision3 = spr_kamired_precision3;
 
 sprite_dash_fx = spr_kamikaze_dash_fx;
 myDash = noone;
@@ -622,7 +622,6 @@ if (myEnemy) &amp;&amp; (damage_timer_current &gt;= damage_timer) &amp;&amp; ins
                 damage = damage*2;
                 if (global.challengeSupressor) damage = damage*2;
                 myEnemy.energy -= damage*2;
-                
                 
                 if (global.challengeJaws) myEnemy.energy = 0;
                 

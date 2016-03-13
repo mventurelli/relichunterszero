@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="51" name="datafiles">
-    <datafiles number="51" name="fonts">
+  <datafiles number="53" name="datafiles">
+    <datafiles number="53" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>461173</size>
+      <size>476352</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -337,6 +337,17 @@
         <sprite>sprites\spr_cage3</sprite>
         <sprite>sprites\spr_cage3_hit</sprite>
         <sprite>sprites\spr_cage_destroy</sprite>
+      </sprites>
+      <sprites name="Kamikaze Red">
+        <sprite>sprites\spr_kamired_idle</sprite>
+        <sprite>sprites\spr_kamired_walk</sprite>
+        <sprite>sprites\spr_kamired_precision</sprite>
+        <sprite>sprites\spr_kamired_precision2</sprite>
+        <sprite>sprites\spr_kamired_precision3</sprite>
+        <sprite>sprites\spr_kamired_death</sprite>
+        <sprite>sprites\spr_kamired_death2</sprite>
+        <sprite>sprites\spr_kamired_attack</sprite>
+        <sprite>sprites\spr_kamired_hit</sprite>
       </sprites>
       <sprites name="Kamikaze">
         <sprite>sprites\spr_kamikaze_idle</sprite>
@@ -586,6 +597,8 @@
       <sprite>sprites\spr_spooky_pistol</sprite>
       <sprite>sprites\spr_spooky_reaper</sprite>
       <sprite>sprites\spr_submachinegun</sprite>
+      <sprite>sprites\spr_blitz</sprite>
+      <sprite>sprites\spr_kami_launcher</sprite>
     </sprites>
     <sprites name="Bullets&amp;Effects">
       <sprite>sprites\spr_bullet</sprite>
@@ -894,6 +907,7 @@
       <sprite>sprites\spr_yottabyte3</sprite>
       <sprite>sprites\spr_pineapple_pie</sprite>
       <sprite>sprites\spr_morning_star</sprite>
+      <sprite>sprites\spr_mega_quantum_chip</sprite>
       <sprite>sprites\spr_midnight_meal</sprite>
       <sprite>sprites\spr_yottabyte_processor</sprite>
       <sprite>sprites\spr_rabbit_foot</sprite>
@@ -1320,6 +1334,7 @@
       <object>objects\obj_shield_biu</object>
       <objects name="Guns">
         <object>objects\obj_assault_rifle</object>
+        <object>objects\obj_blitz</object>
         <object>objects\obj_assault_rifle_crude</object>
         <object>objects\obj_bossGun</object>
         <object>objects\obj_bouncer</object>
@@ -1343,6 +1358,7 @@
         <object>objects\obj_relicCannon</object>
         <object>objects\obj_rifle_relic</object>
         <object>objects\obj_rocketlauncher</object>
+        <object>objects\obj_kamilauncher</object>
         <object>objects\obj_rocketlauncher_relic</object>
         <object>objects\obj_sawedoff</object>
         <object>objects\obj_shotgun</object>
@@ -1558,7 +1574,6 @@
       <object>objects\fx_ducanFlag</object>
       <object>objects\fx_duck_dash</object>
       <object>objects\fx_exitArrow</object>
-      <object>objects\fx_explosionKami</object>
       <object>objects\fx_fadeFromBlack</object>
       <object>objects\fx_fadeToBlack</object>
       <object>objects\fx_hit</object>
@@ -1582,6 +1597,7 @@
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
       <object>objects\fx_explosion_shield</object>
+      <object>objects\fx_explosionKami</object>
       <object>objects\class_grenadeNew</object>
       <object>objects\obj_grenadeNew</object>
       <object>objects\obj_grenadeKami</object>
@@ -1771,6 +1787,7 @@
       <object>objects\obj_pickup_keytar</object>
       <object>objects\obj_pickup_shotgun_heavy</object>
       <object>objects\obj_pickup_shotgun_relic</object>
+      <object>objects\obj_pickup_kamilauncher</object>
       <object>objects\obj_pickup_rocketlauncher</object>
       <object>objects\obj_pickup_rocketlauncher_relic</object>
       <object>objects\obj_pickup_flamethrower</object>
@@ -1800,6 +1817,7 @@
       <object>objects\obj_pickup_ducan_plasma</object>
       <object>objects\obj_pickup_rifle_relic</object>
       <object>objects\obj_pickup_assault_rifle_crude</object>
+      <object>objects\obj_pickup_blitz</object>
       <object>objects\obj_pickup_submachinegun</object>
       <object>objects\obj_pickup_smg_relic</object>
       <object>objects\obj_pickup_smg_crude</object>
@@ -1813,6 +1831,7 @@
       <object>objects\obj_rocket_relic</object>
       <object>objects\obj_rocket_homing</object>
       <object>objects\obj_rocket</object>
+      <object>objects\obj_kamiRocket</object>
       <object>objects\obj_redbarrel_projectile</object>
       <object>objects\obj_projectile_player</object>
       <object>objects\obj_projectile_beam</object>
@@ -1941,6 +1960,7 @@
       <object>objects\obj_relic_dev_potion</object>
       <object>objects\obj_relic_yottabyte_drive</object>
       <object>objects\obj_relic_morning_star</object>
+      <object>objects\obj_relic_mega_quantum_chip</object>
       <object>objects\obj_relic_pineapple_pie</object>
       <object>objects\obj_relic_rabbit_foot</object>
       <object>objects\obj_relic_midnight_meal</object>
@@ -2001,6 +2021,7 @@
       <objects name="Weapons">
         <object>objects\obj_endShop_assaultPistol</object>
         <object>objects\obj_endShop_assaultRifle</object>
+        <object>objects\obj_endShop_blitz</object>
         <object>objects\obj_endShop_bouncer</object>
         <object>objects\obj_endShop_bouncerPistol</object>
         <object>objects\obj_endShop_crudeAssaultRifle</object>
@@ -2009,6 +2030,7 @@
         <object>objects\obj_endShop_highmag</object>
         <object>objects\obj_endShop_machinegun</object>
         <object>objects\obj_endShop_minigun</object>
+        <object>objects\obj_endShop_kamilauncher</object>
         <object>objects\obj_endShop_flakCannon</object>
         <object>objects\obj_endShop_plasmaPistol</object>
         <object>objects\obj_endShop_plasmaSMG</object>
@@ -2034,6 +2056,7 @@
         <object>objects\obj_endShop_midnightBeer</object>
         <object>objects\obj_endShop_midnightMeal</object>
         <object>objects\obj_endShop_morningStar</object>
+        <object>objects\obj_endShop_megaQuantumChip</object>
         <object>objects\obj_endShop_pineapplePie</object>
         <object>objects\obj_endShop_pineapplePudding</object>
         <object>objects\obj_endShop_rabbitFoot</object>

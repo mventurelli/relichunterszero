@@ -45,13 +45,13 @@
         global.bountyEndless = 0;
         global.spookylandsVisited = false;
         
-        global.ammo_light[1] = 80;
-        global.ammo_medium[1] = 50;
-        global.ammo_heavy[1] = 80;
+        global.ammo_light[1] = 100;
+        global.ammo_medium[1] = 100;
+        global.ammo_heavy[1] = 100;
         global.grenades[1] = 0;
     
         global.ammo_light[2] = 80;
-        global.ammo_medium[2] = 50;
+        global.ammo_medium[2] = 80;
         global.ammo_heavy[2] = 80;
         global.grenades[2] = 0;
         
@@ -129,5 +129,6 @@ if (global.gameMode == gamemode_endless) || (global.playedEndless)
     global.relic_rabbit_foot = 0;
     global.relic_midnight_meal = 0;
     global.relic_yottabyte_processor = 0;
+    global.relic_mega_quantum_chip = 0;
 }
     

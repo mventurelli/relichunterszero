@@ -189,8 +189,10 @@ ini_open(working_directory + "\saveData.ini");
         ini_write_real('Relics','pineapple_pie',global.relic_pineapple_pie);
         ini_write_real('Relics','rabbit_foot',global.relic_rabbit_foot);
         ini_write_real('Relics','midnight_meal',global.relic_midnight_meal);
+        ini_write_real('Relics','midnight_meal',global.relic_midnight_meal);
         ini_write_real('Relics','yottabyte_processor',global.relic_yottabyte_processor);
-       
+        ini_write_real('Relics','mega_quantum_chip',global.relic_mega_quantum_chip);
+        
         ini_write_real('Temp','Stage',global.stage_current);
         
         if (room != room_start) && (room != room_tutorial) ini_write_real('Ass','first_stage',1);

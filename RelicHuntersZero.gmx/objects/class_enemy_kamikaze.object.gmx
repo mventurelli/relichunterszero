@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Main Shit
 shield = false;
-energy_max = 99999;
+energy_max = 0;
 energy = energy_max;
 hp_max = 99999;
 hp = hp_max;

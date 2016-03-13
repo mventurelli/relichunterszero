@@ -144,13 +144,13 @@ if (owner) &amp;&amp; (instance_exists(owner))
         
         if owner.slotCharacter == char_rider
         {
-            statHealth = 3;
-            statShield = 3;
-            statMelee = 3;
+            statHealth = 4;
+            statShield = 1;
+            statMelee = 5;
             statStamina = 3;
-            statSpeed = 3;
-            myWeaponSprite = spr_pistol;
-            myString = loc_key("CHARSELECT_DESC_ASS");
+            statSpeed = 5;
+            myWeaponSprite = spr_kamired_idle;
+            myString = loc_key("CHARSELECT_DESC_RIDER");
         }
         
         if owner.slotCharacter == char_random
