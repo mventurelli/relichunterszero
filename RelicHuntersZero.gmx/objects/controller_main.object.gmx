@@ -1783,11 +1783,12 @@ if (global.level_complete)
     
     if (global.gameMode == gamemode_endless)
     {
-        if (room == level1_3) { room_goto(room_endShop); exit; }
-        if (room == level2_3) { room_goto(room_endShop); exit; }
-        if (room == level3_3) { room_goto(room_endShop); exit; }
-        if (room == level4_3) { room_goto(room_endShop); exit; }
-        if (room == levelHalloween_3) { global.stage_current = min(4,global.stage_current+2); room_goto(room_endShop); exit; }
+        show_debug_message("Time to change the room!");
+        if (room == level1_3) {  show_debug_message("I am on Level 1-3, it's shop time!"); room_goto(room_endShop); exit; }
+        if (room == level2_3) {  show_debug_message("I am on Level 2-3, it's shop time!"); room_goto(room_endShop); exit; }
+        if (room == level3_3) {  show_debug_message("I am on Level 3-3, it's shop time!"); room_goto(room_endShop);exit; }
+        if (room == level4_3) {  show_debug_message("I am on Level 4-3, it's shop time!"); room_goto(room_endShop);exit; }
+        if (room == levelHalloween_3) { global.stage_current = min(4,global.stage_current+2); room_goto(room_endShop); show_debug_message("I am on Level Halloween-3, it's shop time!"); exit; }
     }
     
     
@@ -1978,7 +1979,10 @@ if (debug_mode)
 {
 if keyboard_check_pressed(ord('M')) global.currentLoop++;
 
-        //Debug Endless Bounty
+//Debug Endless Shop Portal
+if keyboard_check_pressed(ord('N')) room_goto(room_endShop);
+
+//Debug Endless Bounty
     if keyboard_check_pressed(ord('B')) global.bountyEndless += 500;
     
 //Debug: Kill Everything
