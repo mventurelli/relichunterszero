@@ -122,6 +122,8 @@ beamColor = c_purple;
 beamThickness = 2;
 
 joypadRumbleFactor = 0;
+
+grenadeSpriteOverride = spr_grenadeNew;
 </string>
           </argument>
         </arguments>
@@ -790,7 +792,12 @@ if instance_exists(owner)
         
         //Draw Self
         if (!drawGrenadeInsteadOfGun) draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,blend,1);
-        else draw_sprite_ext(spr_grenadeNew,0,drawX,drawY,1,1,image_angle,blend,1);
+        else 
+        {
+            if (instance_exists(owner)) if (owner.myChar == char_rider) grenadeSpriteOverride = spr_grenadeRider;
+            
+            draw_sprite_ext(grenadeSpriteOverride,0,drawX,drawY,1,1,image_angle,blend,1);
+        }
         
         // Aim
         if (isActive) &amp;&amp; (owner.aiming)
