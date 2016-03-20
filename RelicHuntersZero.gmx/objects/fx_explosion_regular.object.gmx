@@ -61,7 +61,7 @@ audio_emitter = audio_emitter_create();
 audio_emitter_falloff(audio_emitter, global.falloffMediumDist, global.falloffMediumMax, global.falloffMediumFactor);
 audio_emitter_gain(audio_emitter,global.soundVolume);
 
-audio_play(audio_emitter, false, 99, sfx_grenade_explosion);
+//audio_play(audio_emitter, false, 99, sfx_grenade_explosion);  &lt;--- Moved to the place I do the screen shake at the Step event
 
 //Test
 global.shock_enabled = true;
@@ -178,6 +178,11 @@ if (image_index &gt;= trigger_frame) &amp;&amp; (image_index &lt;= end_frame) &a
                 }
             }
             
+            var spreadX = irandom_range(-15,15);
+            var spreadY = irandom_range(-15,15);
+            var damage_fx = instance_create(poor_guy.x+spreadX,poor_guy.y+spreadY,fx_damage);
+            damage_fx.damage = damage;
+            
             if (poor_guy.hp &lt;= 0) want_to_pause = true;
             poor_guy.hit_taken = true;
             
@@ -260,6 +265,7 @@ if (image_index &gt;= trigger_frame)
     {
         add_screen_shake(75,0,true);
         screen_shaken = true;
+        audio_play(audio_emitter, false, 99, sfx_grenade_explosion);
     }
 }
 

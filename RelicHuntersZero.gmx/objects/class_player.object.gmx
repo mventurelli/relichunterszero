@@ -1132,7 +1132,7 @@ if (myChar == char_rider) &amp;&amp; (!instance_exists(riderDodgeAttack)) {
             riderDodgeAttack.owner = id;
             riderDodgeAttack.damage = melee_damage;  
             riderDodgeAttack.push_power = melee_push_power;
-            riderDodgeAttack.max_hits = 5;
+            riderDodgeAttack.max_hits = 1;
             audio_play(audio_emitter,false,1,sfx_kami_dash);
         }
     }

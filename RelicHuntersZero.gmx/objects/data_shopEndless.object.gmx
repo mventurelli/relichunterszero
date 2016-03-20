@@ -61,6 +61,7 @@ if (!global.relic_mega_quantum_chip) ds_list_add(global.endShop_tier[1],obj_endS
 if (random(1) &lt;= 0.4) || (global.relic_rabbit_foot == 2) {
     if (!check_weapon_owned(obj_bouncer,1)) ds_list_add(global.endShop_tier[1], obj_endShop_bouncer);
     if (!check_weapon_owned(obj_pistol_bouncer,1)) ds_list_add(global.endShop_tier[1], obj_endShop_bouncerPistol);
+    if (!check_weapon_owned(obj_pistol_blast,1)) ds_list_add(global.endShop_tier[1], obj_endShop_blastPistol);
     
     if (!global.relic_morning_star) ds_list_add(global.endShop_tier[1],obj_endShop_morningStar);
     if (!global.relic_rabbit_foot) ds_list_add(global.endShop_tier[1],obj_endShop_rabbitFoot);

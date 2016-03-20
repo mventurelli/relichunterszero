@@ -450,6 +450,7 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_bouncerPistol = 1000;
     global.price_endless_heavyPistol = 1500;
     global.price_endless_crudeAssaultRifle = 1600;
+    global.price_endless_blastPistol = 1600;
     global.price_endless_bouncer = 1900;
     global.price_endless_highmag = 2000;
     
@@ -2796,7 +2797,7 @@ while (p &lt;= global.playerCount)
             var grOffsetX = 0;
             var grOffsetY = 0;
             
-            repeat (grenadeCount)
+            if (grenadeCount) repeat (grenadeCount)
             {
                 draw_sprite_ext(spr_grenadeNew,0,pGrenadesX+grOffsetX, pGrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
                 grOffsetX += grenadesHorSpacing*grenadesHorOrientation;
@@ -2807,6 +2808,11 @@ while (p &lt;= global.playerCount)
                     grOffsetY -= grenadesVerSpacing;
                     grDrawCount = 0;
                 }
+            }
+            else if (global.character[playerId] == char_rider) {
+                //If it's rider, draw a special grenade icon for zero grenades
+                draw_sprite_ext(spr_grenadeNew,0,pGrenadesX+grOffsetX, pGrenadesY+grOffsetY, 1, 1, 0, c_white, main_hud_alpha);
+                draw_sprite_ext(spr_icon_health,0,pGrenadesX+grOffsetX+8, pGrenadesY+grOffsetY+8, 1, 1, 0, K_BETU_RED, main_hud_alpha);
             }
         
         //gui_score Objects

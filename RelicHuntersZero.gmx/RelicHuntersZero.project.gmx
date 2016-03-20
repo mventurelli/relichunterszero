@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="53" name="datafiles">
-    <datafiles number="53" name="fonts">
+  <datafiles number="56" name="datafiles">
+    <datafiles number="56" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>476352</size>
+      <size>477122</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -577,6 +577,7 @@
       <sprite>sprites\spr_pistol_heavy</sprite>
       <sprite>sprites\spr_pistol_jimmy</sprite>
       <sprite>sprites\spr_pistol_plasma</sprite>
+      <sprite>sprites\spr_pistol_blast</sprite>
       <sprite>sprites\spr_pistol_relic</sprite>
       <sprite>sprites\spr_relic_cannon</sprite>
       <sprite>sprites\spr_rifle_relic</sprite>
@@ -1351,6 +1352,7 @@
         <object>objects\obj_pistol</object>
         <object>objects\obj_pistol_assault</object>
         <object>objects\obj_pistol_bouncer</object>
+        <object>objects\obj_pistol_blast</object>
         <object>objects\obj_pistol_heavy</object>
         <object>objects\obj_pistol_jimmy</object>
         <object>objects\obj_pistol_plasma</object>
@@ -1596,6 +1598,7 @@
     </objects>
     <objects name="Grenades">
       <object>objects\fx_explosion_regular</object>
+      <object>objects\fx_explosion_mini</object>
       <object>objects\fx_explosion_shield</object>
       <object>objects\fx_explosionKami</object>
       <object>objects\class_grenadeNew</object>
@@ -1806,6 +1809,7 @@
       <object>objects\obj_pickup_pistol_relic</object>
       <object>objects\obj_pickup_pistol_jimmy</object>
       <object>objects\obj_pickup_pistol_heavy</object>
+      <object>objects\obj_pickup_pistol_blast</object>
       <object>objects\obj_pickup_sniper_rifle</object>
       <object>objects\obj_pickup_sniper_relic</object>
       <object>objects\obj_pickup_sniper_ghost</object>
@@ -1834,6 +1838,7 @@
       <object>objects\obj_kamiRocket</object>
       <object>objects\obj_redbarrel_projectile</object>
       <object>objects\obj_projectile_player</object>
+      <object>objects\obj_projectile_blast</object>
       <object>objects\obj_projectile_beam</object>
       <object>objects\obj_flame</object>
       <object>objects\obj_sonicboom</object>
@@ -2024,6 +2029,7 @@
         <object>objects\obj_endShop_blitz</object>
         <object>objects\obj_endShop_bouncer</object>
         <object>objects\obj_endShop_bouncerPistol</object>
+        <object>objects\obj_endShop_blastPistol</object>
         <object>objects\obj_endShop_crudeAssaultRifle</object>
         <object>objects\obj_endShop_heavyPistol</object>
         <object>objects\obj_endShop_heavyShotgun</object>
