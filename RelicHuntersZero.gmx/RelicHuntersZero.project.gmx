@@ -979,7 +979,12 @@
         <sprite>sprites\spr_char_raffSel</sprite>
         <sprite>sprites\spr_char_raffFinal</sprite>
         <sprite>sprites\spr_char_raffOff</sprite>
+        <sprite>sprites\spr_char_redOn</sprite>
+        <sprite>sprites\spr_char_redSel</sprite>
+        <sprite>sprites\spr_char_redFinal</sprite>
+        <sprite>sprites\spr_char_redOff</sprite>
         <sprite>sprites\spr_card_jimmy</sprite>
+        <sprite>sprites\spr_card_red</sprite>
         <sprite>sprites\spr_card_ass</sprite>
         <sprite>sprites\spr_card_biu</sprite>
         <sprite>sprites\spr_card_pinky</sprite>

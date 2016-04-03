@@ -2090,6 +2090,7 @@ if keyboard_check_pressed(ord('N')) room_goto(room_endShop);
         steam_clear_achievement("ACHIEVEMENT_LOOP2_BIU");//set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_LOOP2_PUNNY");//set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_LOOP2_ACE");//set by Boss corpse
+        steam_clear_achievement("ACHIEVEMENT_LOOP2_RIDER"); //set by Boss corpse
         steam_clear_achievement("ACHIEVEMENT_GUNNAR_3"); //set by Gunnar
         steam_clear_achievement("ACHIEVEMENT_GUNNAR_9"); //set by Gunnar
         steam_clear_achievement("ACHIEVEMENT_SAE_3"); // set by class_hack
@@ -2104,6 +2105,9 @@ if keyboard_check_pressed(ord('N')) room_goto(room_endShop);
         steam_clear_achievement("ACHIEVEMENT_ENTER_SPOOKYLANDS"); //set by controller_main Create event
         steam_clear_achievement("ACHIEVEMENT_COMPLETE_SPOOKYLANDS"); //set by controller_main on the Level Exit script
         steam_clear_achievement("ACHIEVEMENT_EAT_CANDY"); //set by the candy pickup
+        
+        steam_clear_achievement("ACHIEVEMENT_UNLOCK_RIDER"); //set by the cage on its Destroy event;
+        steam_clear_achievement("ACHIEVEMENT_DESTROY_KAMIKAGES"); //set by the cage on its Destroy event (alongside Steam Stat);
     }
 }
 </string>

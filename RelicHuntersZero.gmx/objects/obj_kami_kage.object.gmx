@@ -160,6 +160,15 @@ if hp &lt; 0
     }    
     
     instance_create(x,y,fx_kami_cageDestroy);
+    
+    //Stats and Achievements
+    steam_set_stat_int("STAT_TOTAL_KAMICAGES", steam_get_stat_int("STAT_TOTAL_KAMICAGES") + 1  ); 
+    if (steam_get_stat_int("STAT_TOTAL_KAMICAGES") &gt;= 20) 
+    {
+        achievement_give("ACHIEVEMENT_DESTROY_KAMIKAGES");
+        achievement_give("ACHIEVEMENT_UNLOCK_RIDER");
+        global.unlockRider = 1;
+    }
     instance_destroy();
 }
 </string>

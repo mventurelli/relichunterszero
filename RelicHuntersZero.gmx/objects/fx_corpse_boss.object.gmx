@@ -153,6 +153,7 @@ if (global.gameMode == gamemode_endless)
         if (global.character[1] == char_biu || global.character[2] == char_biu) achievement_give("ACHIEVEMENT_LOOP2_BIU");
         if (global.character[1] == char_punny || global.character[2] == char_punny) achievement_give("ACHIEVEMENT_LOOP2_PUNNY");
         if (global.character[1] == char_ass) || (global.character[2] == char_ass) achievement_give("ACHIEVEMENT_LOOP2_ACE");
+        if (global.character[1] == char_rider) || (global.character[2] == char_rider) achievement_give("ACHIEVEMENT_LOOP2_RIDER");
     }
     
     if (global.currentLoop == 2) achievement_give("ACHIEVEMENT_LOOP3");

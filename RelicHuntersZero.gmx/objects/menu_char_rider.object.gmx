@@ -30,36 +30,12 @@ event_inherited();
 myCharacter = char_rider;
 labelString = loc_key("GENERAL_RIDER");
 
-spriteOn = spr_char_jimmyOn;
-spriteOff = spr_char_jimmyOff;
-spriteSel = spr_char_jimmySel;
-spriteFinal = spr_char_jimmyFinal;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Placeholder "BETA"
-event_inherited();
-draw_set_font(ftEN_menuLarge);
-draw_text_outline_ext(x+180,y+42,'BETA',K_BETU_RED,c_white);
+if (!global.unlockRider) isAvailable = false;
+
+spriteOn = spr_char_redOn;
+spriteOff = spr_char_redOff;
+spriteSel = spr_char_redSel;
+spriteFinal = spr_char_redFinal;
 </string>
           </argument>
         </arguments>

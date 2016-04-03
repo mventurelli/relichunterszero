@@ -110,6 +110,10 @@ if instance_exists(class_player)
                 distance = weaponRange  / distance_ratio_aiming;
                 if distance &gt; hard_limit distance = hard_limit;
             }
+            else if (global.input[pId] != K_INPUT_KEYBOARD) { // &lt;-- NEW CODE: Adjust position if angle diff is 45 degrees or greater
+                var trueAngle = point_direction(class_player.x, class_player.y, global.crosshairX[pId], global.crosshairY[pId]);
+                if (abs(angle-trueAngle) &gt; 45) angle = trueAngle;
+            }
         }
         else 
         {

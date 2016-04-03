@@ -86,7 +86,7 @@ if (slotInput != -1 &amp;&amp; slotCharacter != -1)
     if slotCharacter == char_biu    { stringCharacter = loc_key("GENERAL_BIU");      cardSprite = spr_card_biu; }
     if slotCharacter == char_punny  { stringCharacter = loc_key("GENERAL_PUNNY");    cardSprite = spr_card_punny; }
     if slotCharacter == char_ass    { stringCharacter = loc_key("GENERAL_ASS");      cardSprite = spr_card_ass; }
-    if slotCharacter == char_rider    { stringCharacter = loc_key("GENERAL_RIDER");      cardSprite = spr_card_jimmy; }
+    if slotCharacter == char_rider    { stringCharacter = loc_key("GENERAL_RIDER");      cardSprite = spr_card_red; }
     if slotCharacter == char_random { stringCharacter = loc_key("GENERAL_RANDOM");   cardSprite = noone; }
     
     draw_set_halign(fa_right);
