@@ -65,8 +65,8 @@ event_inherited();
     
     energy_regen_time = room_speed*3;
     
-    move_speed_max = 5;
-    move_speed_sprint = 7.5;
+    move_speed_max = 6;
+    move_speed_sprint = 8.5;
     move_speed_aiming = 4;
     
     //Sprites

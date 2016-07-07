@@ -34,6 +34,7 @@
 
 //Initialization
 draw_texture_flush();
+
 randomize();
 joy_init();
 
@@ -3292,7 +3293,7 @@ if instance_exists(class_player)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///FPS and Autoaim
+            <string>///FPS, Autoaim, Low Performance Check
 draw_set_halign(fa_right);
 draw_set_valign(fa_center);
 draw_set_color(c_white);
@@ -3308,9 +3309,9 @@ if ((fps/room_speed) &lt; 0.9)
     {
         if (global.lowPerfTimeCurrent &lt; global.lowPerfTime) global.lowPerfTimeCurrent++;
         else{
-            global.reflections_toggle = false;
+            //global.reflections_toggle = false;
             global.persistent_toggle = false;
-            global.shadows_toggle = false;
+            //global.shadows_toggle = false;
             
             instance_create(0,0,gui_info_lowPerformance);
             

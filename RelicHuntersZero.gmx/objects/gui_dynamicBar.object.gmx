@@ -38,6 +38,20 @@ drawHealth = false;
 
 myAlpha = 0;
 myAlphaSpeed = 0.025;
+
+barWidth = 60;
+barHeight = 6;
+
+barShields = 1;
+barHp = 2;
+draw_healthbar_delayed_init(barShields);
+draw_healthbar_delayed_init(barHp);
+
+charBarDelaySpeed = 0.012;
+charBarDelayTime = room_speed*0.6;
+
+healthColor = make_color_rgb(184,49,35);
+shieldColor = make_color_rgb(50,133,158);
 </string>
           </argument>
         </arguments>
@@ -68,7 +82,8 @@ if (owner) &amp;&amp; (instance_exists(owner))
     hp = owner.hp;
     hpMax = owner.hp_max;
     shield = owner.energy;
-    shieldMax = owner.energy_max;
+    if (owner.energy_max) shieldMax = owner.energy_max + owner.overshield;
+    else shieldMax = 0; 
 }
 
 //Set State
@@ -129,32 +144,30 @@ else if (myAlpha != 0)
             <kind>1</kind>
             <string>///Draw
 
-if (instance_exists(owner))
+if (instance_exists(owner)) //TODO: separate the update from the draw and get all this logic code out of the Draw event
 {
-    var barWidth = 60;
-    var barHeight = 6;
     var topX = owner.x - barWidth/2;
     var topY = owner.y - 90;
-    
+
     draw_set_alpha(0.6 * myAlpha);
     draw_set_colour(c_black);
     draw_rectangle(topX,topY,topX+barWidth,topY+barHeight,false);
     draw_set_alpha(1 * myAlpha);
-   
-    var shieldColor = make_color_rgb(50,133,158);
-    if (shieldMax) draw_healthbar(topX-2,topY-2,topX+barWidth-2,topY+barHeight-2,(shield/shieldMax)*100,c_black,shieldColor,shieldColor,0,false,false);
     
-    if (drawHealth)
-    {
-        var healthColor = make_color_rgb(184,49,35);
-        draw_healthbar(topX-2,topY-2,topX+barWidth-2,topY+barHeight-2,(hp/hpMax)*100,c_black,healthColor,healthColor,0,false,false);
-    }
+    if (!shieldMax) draw_set_alpha(0);
+    draw_healthbar_delayed(barShields, topX-2,topY-2,topX+barWidth-2,topY+barHeight-2, shield, shieldMax, shieldColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+    draw_set_alpha(1 * myAlpha);
+        
+    if (!drawHealth) draw_set_alpha(0);
+    draw_healthbar_delayed(barHp, topX-2,topY-2,topX+barWidth-2,topY+barHeight-2, hp, hpMax, healthColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
+    
+        
+        //OLD:
+        //draw_healthbar(topX-2,topY-2,topX+barWidth-2,topY+barHeight-2,(hp/hpMax)*100,c_black,healthColor,healthColor,0,false,false);
     
     //End
     draw_set_alpha(1);
 }
-
-
 </string>
           </argument>
         </arguments>

@@ -73,9 +73,9 @@ event_inherited();
     
     melee_stamina_cost = 10;
     
-    move_speed_max = 5;
-    move_speed_sprint = 6.5;
-    move_speed_aiming = 3;
+    move_speed_max = 6; //5
+    move_speed_sprint = 8; //6.5
+    move_speed_aiming = 3.5; //3
     
     //Sprites
     sprite_idle = spr_pinky_idle;

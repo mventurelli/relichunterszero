@@ -36,8 +36,8 @@ critical_death = false;
 isVulnerable = false;
 alarm[0] = room_speed*1;
 
-speed_walk = 3.2;
-speed_sprint = 3.2;
+speed_walk = 4;
+speed_sprint = 4;
 
 dash_speed = 20;
 dodging = false;
@@ -128,6 +128,10 @@ myDash2 = noone;
 
 reflection_object_setup(0,-1,image_index);
 shadow_object_setup(0,-1,-1,global.default_shadow_yscale);
+
+//Lifebar
+myDynamicBar = instance_create(x,y,gui_dynamicBarEnemy);
+myDynamicBar.owner = id;
 
 //Audio
 audio_emitter = audio_emitter_create();

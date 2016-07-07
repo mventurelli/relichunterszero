@@ -29,9 +29,9 @@
 sound = 'machinegun';
 ammo_type = type_heavy;
 
-projectile_speed = 25;
+projectile_speed = 30;
 projectile_speed_decay = 0.4;
-projectile_damage = 10;
+projectile_damage = 7;
 projectile_range = 560;
 
 accuracy = 10;

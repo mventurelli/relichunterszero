@@ -1105,6 +1105,7 @@
         <script>scripts\draw_text_colortags.gml</script>
         <script>scripts\draw_persistent.gml</script>
         <script>scripts\draw_healthbar_delayed_init.gml</script>
+        <script>scripts\draw_healthbar_delayed_update.gml</script>
         <script>scripts\draw_healthbar_delayed.gml</script>
       </scripts>
       <scripts name="RH Specific">
@@ -1552,6 +1553,7 @@
       </objects>
       <objects name="Dig System">
         <object>objects\obj_digSpot</object>
+        <object>objects\fx_detectorArrow</object>
         <object>objects\fx_detector</object>
       </objects>
       <object>objects\obj_spikeTrap</object>
@@ -1635,6 +1637,7 @@
       <object>objects\gui_credits_text</object>
       <object>objects\gui_weaponInfo</object>
       <object>objects\gui_dynamicBar</object>
+      <object>objects\gui_dynamicBarEnemy</object>
       <object>objects\gui_info_lowPerformance</object>
       <object>objects\gui_playerInfo</object>
       <objects name="Character Selection">

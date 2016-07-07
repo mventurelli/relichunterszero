@@ -75,11 +75,12 @@ dodge_stamina = 50;
 sprint_stamina = 0.3;
 sprint_stamina_min = 10;
 
-move_speed_max = 4.5;
-move_speed_sprint = 5.5;
-move_speed_aiming = 2;
+move_speed_max = 5.5; //4.5
+move_speed_sprint = 7.5; //6
+move_speed_aiming = 4; //3
+
 move_accel = 1.5;
-move_friction = 0.4;
+move_friction = 0.45; //0.4
 
 dodge_speed = 35;
 dodge_duration = room_speed*0.4;

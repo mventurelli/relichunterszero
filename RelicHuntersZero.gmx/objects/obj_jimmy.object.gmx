@@ -48,10 +48,6 @@ event_inherited();
     
     energy_regen_time = room_speed*3;
     
-    move_speed_max = 4.5;
-    move_speed_sprint = 6;
-    move_speed_aiming = 3;
-    
     //Sprites
     sprite_idle = spr_jimmy_idle;
     sprite_walk = spr_jimmy_walk;

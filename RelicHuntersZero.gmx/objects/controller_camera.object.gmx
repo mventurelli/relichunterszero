@@ -37,6 +37,7 @@ shake_direction = 0;
 shake_recovery = 3;
 shake_max = 100;
 
+gameZoom = 1;
 zoom = 1;
 zoom_speed_in = 0.015;
 zoom_speed_out = 0.01;
@@ -159,8 +160,8 @@ if instance_exists(class_player)
         else followSpeedCurrent = 0;
         
         //Screen Zoom
-        if (class_player.sprinting) || (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = 0.9;
-        else zoom = 1;
+        if (class_player.sprinting) || (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = gameZoom*0.9;
+        else zoom = gameZoom;
     }
     
     if (countPlayers == 2)
@@ -202,6 +203,7 @@ if zoom_current != zoom
     }
     else zoom_current += min(zoom_speed_out,zoom-zoom_current);
 }
+
 
 view_wview[0] = 1280*zoom_current; //I am overriding this on the "game_pause()" script
 view_hview[0] = 720*zoom_current;

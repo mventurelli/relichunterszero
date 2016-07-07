@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 12');
+    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 14');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values

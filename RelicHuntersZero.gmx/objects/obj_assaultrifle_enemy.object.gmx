@@ -30,9 +30,9 @@ sound = 'rifle';
 ammo_type = type_heavy;
 is_sniper = true;
 
-projectile_speed = 30;
+projectile_speed = 35;
 projectile_speed_decay = 0.12;
-projectile_damage = 12;
+projectile_damage = 9;
 projectile_range = 600;
 
 accuracy = 3;

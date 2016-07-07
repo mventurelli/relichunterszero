@@ -44,6 +44,7 @@ event_inherited();
     
     
     base_accuracy = 1;
+    
     //Weapon Skills, "1" is perfect, higher is worse
     accPistol = 4;
     accMachinegun = 3;
