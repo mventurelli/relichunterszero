@@ -77,7 +77,7 @@ sprint_stamina_min = 10;
 
 move_speed_max = 5.5; //4.5
 move_speed_sprint = 7.5; //6
-move_speed_aiming = 4; //3
+move_speed_aiming = 3; //3
 
 move_accel = 1.5;
 move_friction = 0.45; //0.4
@@ -143,12 +143,14 @@ hit_taken = false;
 //Shield
 shield = true;
 
-energy_regen_time = room_speed*5;
+energy_regen_time = room_speed*2.5;
 energy_regen_time_regular = energy_regen_time;
-energy_regen_time_relic = round(energy_regen_time/2);
+energy_regen_time_relic = energy_regen_time;
 
 energy_regen_time_current = energy_regen_time;
-energy_regen_speed = 1;
+energy_regen_speed = 0.25;
+energy_regen_speed_regular = energy_regen_speed;
+energy_regen_speed_relic = energy_regen_speed*4;
 
 shield_fading = false;
 shield_alpha = 0;
@@ -170,7 +172,7 @@ myDash.owner = id;
 //Melee
 meleeDamageUpdated = false;
 melee_damage = 100;
-melee_push_power = 14;
+melee_push_power = 8;
 
 melee = false;
 melee_dash = false;
@@ -180,8 +182,8 @@ melee_step_speed = 18;
 melee_stamina_cost = 0;
 
 melee_damage_gloves = 160;
-melee_push_power_gloves = 15;
-melee_step_speed_gloves = 25;
+melee_push_power_gloves = 12;
+melee_step_speed_gloves = 20;
 
 throw = false;
 
@@ -525,12 +527,20 @@ if (!staminaRelicUpdated){
 staminaChallengeUpdated = false;
 staminaRelicUpdated = false;
 
+if (global.relic_infinity_battery == 2) 
+{
+    energy_regen_time = energy_regen_time_relic;
+    energy_regen_speed = energy_regen_speed_relic;
+}
+else 
+{
+    energy_regen_time = energy_regen_time_regular;
+    energy_regen_speed = energy_regen_speed_regular;
+}
 
-
-if (global.relic_infinity_battery == 2) energy_regen_time = energy_regen_time_relic;
-else energy_regen_time = energy_regen_time_regular;
 
 //New Relics - a.k.a. Too lazy to refactor this horrible gamejam code, so why not make it even worse? :sigh: 
+
 if (global.relic_pineapple_pudding == 2) &amp;&amp; (!hpPuddingUpdated){
     hp_max += round(hp_max * global.relicHpBonus);
     hpPuddingUpdated = true;
@@ -968,12 +978,14 @@ if (hit_taken)
         shield_effect.owner = id;
         hit_taken = false;
         if (superShield) shield_effect.sprite_index = spr_supershield;
+        if (global.input[myPlayerId] != K_INPUT_KEYBOARD) joy_rumble(global.input[myPlayerId],1,1);
     }
     else
     {
         animation_play('hit',0.2,an_clamp,10,3);
         hit_taken = false;
         audio_play(audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
+        if (global.input[myPlayerId] != K_INPUT_KEYBOARD) joy_rumble(global.input[myPlayerId],4,4);
     }
 }
 

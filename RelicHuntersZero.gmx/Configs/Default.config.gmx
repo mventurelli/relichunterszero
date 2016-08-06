@@ -637,11 +637,61 @@
     <option_textureGroup42_parent>&lt;none&gt;</option_textureGroup42_parent>
     <option_textureGroup42_scaled>0</option_textureGroup42_scaled>
     <option_textureGroup42_targets>9223372036854775807</option_textureGroup42_targets>
+    <option_textureGroup43_border>2</option_textureGroup43_border>
+    <option_textureGroup43_nocropping>0</option_textureGroup43_nocropping>
+    <option_textureGroup43_parent>&lt;none&gt;</option_textureGroup43_parent>
+    <option_textureGroup43_scaled>0</option_textureGroup43_scaled>
+    <option_textureGroup43_targets>9223372036854775807</option_textureGroup43_targets>
+    <option_textureGroup44_border>2</option_textureGroup44_border>
+    <option_textureGroup44_nocropping>0</option_textureGroup44_nocropping>
+    <option_textureGroup44_parent>&lt;none&gt;</option_textureGroup44_parent>
+    <option_textureGroup44_scaled>0</option_textureGroup44_scaled>
+    <option_textureGroup44_targets>9223372036854775807</option_textureGroup44_targets>
+    <option_textureGroup45_border>2</option_textureGroup45_border>
+    <option_textureGroup45_nocropping>0</option_textureGroup45_nocropping>
+    <option_textureGroup45_parent>&lt;none&gt;</option_textureGroup45_parent>
+    <option_textureGroup45_scaled>0</option_textureGroup45_scaled>
+    <option_textureGroup45_targets>9223372036854775807</option_textureGroup45_targets>
+    <option_textureGroup46_border>2</option_textureGroup46_border>
+    <option_textureGroup46_nocropping>0</option_textureGroup46_nocropping>
+    <option_textureGroup46_parent>&lt;none&gt;</option_textureGroup46_parent>
+    <option_textureGroup46_scaled>0</option_textureGroup46_scaled>
+    <option_textureGroup46_targets>9223372036854775807</option_textureGroup46_targets>
+    <option_textureGroup47_border>2</option_textureGroup47_border>
+    <option_textureGroup47_nocropping>0</option_textureGroup47_nocropping>
+    <option_textureGroup47_parent>&lt;none&gt;</option_textureGroup47_parent>
+    <option_textureGroup47_scaled>0</option_textureGroup47_scaled>
+    <option_textureGroup47_targets>9223372036854775807</option_textureGroup47_targets>
+    <option_textureGroup48_border>2</option_textureGroup48_border>
+    <option_textureGroup48_nocropping>0</option_textureGroup48_nocropping>
+    <option_textureGroup48_parent>&lt;none&gt;</option_textureGroup48_parent>
+    <option_textureGroup48_scaled>0</option_textureGroup48_scaled>
+    <option_textureGroup48_targets>9223372036854775807</option_textureGroup48_targets>
+    <option_textureGroup49_border>2</option_textureGroup49_border>
+    <option_textureGroup49_nocropping>0</option_textureGroup49_nocropping>
+    <option_textureGroup49_parent>&lt;none&gt;</option_textureGroup49_parent>
+    <option_textureGroup49_scaled>0</option_textureGroup49_scaled>
+    <option_textureGroup49_targets>9223372036854775807</option_textureGroup49_targets>
     <option_textureGroup4_border>2</option_textureGroup4_border>
     <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
     <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
     <option_textureGroup4_scaled>0</option_textureGroup4_scaled>
     <option_textureGroup4_targets>9223372036854775807</option_textureGroup4_targets>
+    <option_textureGroup50_border>2</option_textureGroup50_border>
+    <option_textureGroup50_nocropping>0</option_textureGroup50_nocropping>
+    <option_textureGroup50_parent>&lt;none&gt;</option_textureGroup50_parent>
+    <option_textureGroup50_scaled>0</option_textureGroup50_scaled>
+    <option_textureGroup50_targets>9223372036854775807</option_textureGroup50_targets>
+    <option_textureGroup51_border>2</option_textureGroup51_border>
+    <option_textureGroup51_nocropping>0</option_textureGroup51_nocropping>
+    <option_textureGroup51_parent>&lt;none&gt;</option_textureGroup51_parent>
+    <option_textureGroup51_scaled>0</option_textureGroup51_scaled>
+    <option_textureGroup51_targets>9223372036854775807</option_textureGroup51_targets>
+    <option_textureGroup52_border>2</option_textureGroup52_border>
+    <option_textureGroup52_nocropping>0</option_textureGroup52_nocropping>
+    <option_textureGroup52_parent>&lt;none&gt;</option_textureGroup52_parent>
+    <option_textureGroup52_scaled>0</option_textureGroup52_scaled>
+    <option_textureGroup52_targets>9223372036854775807</option_textureGroup52_targets>
     <option_textureGroup5_border>2</option_textureGroup5_border>
     <option_textureGroup5_nocropping>0</option_textureGroup5_nocropping>
     <option_textureGroup5_parent>&lt;none&gt;</option_textureGroup5_parent>
@@ -667,7 +717,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>43</option_textureGroup_count>
+    <option_textureGroup_count>53</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -706,8 +756,18 @@
     <option_textureGroups40>SpriteSheet - Raff</option_textureGroups40>
     <option_textureGroups41>Tools and Editor</option_textureGroups41>
     <option_textureGroups42>Zueira Video</option_textureGroups42>
+    <option_textureGroups43>SpriteSheet - KamiElite</option_textureGroups43>
+    <option_textureGroups44>Spritesheet - Ghost</option_textureGroups44>
+    <option_textureGroups45>DontLoad</option_textureGroups45>
+    <option_textureGroups46>Environment - Standard</option_textureGroups46>
+    <option_textureGroups47>Environment - Loop 2</option_textureGroups47>
+    <option_textureGroups48>Guns 2</option_textureGroups48>
+    <option_textureGroups49>Interface - Pause Menu</option_textureGroups49>
     <option_textureGroups5>VFX - Player</option_textureGroups5>
-    <option_textureGroups6>GUI</option_textureGroups6>
+    <option_textureGroups50>Rewards</option_textureGroups50>
+    <option_textureGroups51>Holograms</option_textureGroups51>
+    <option_textureGroups52>Stage Tutorial</option_textureGroups52>
+    <option_textureGroups6>Interface - HUD</option_textureGroups6>
     <option_textureGroups7>Spritesheet - Turtle</option_textureGroups7>
     <option_textureGroups8>VFX - General</option_textureGroups8>
     <option_textureGroups9>Spritesheet - Tentacle</option_textureGroups9>
@@ -809,7 +869,7 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
-    <option_windows_build_version>36</option_windows_build_version>
+    <option_windows_build_version>37</option_windows_build_version>
     <option_windows_company_info>Rogue Snail</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>True</option_windows_create_textures_on_demand>

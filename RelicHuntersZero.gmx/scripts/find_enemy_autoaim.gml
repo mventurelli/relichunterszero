@@ -34,6 +34,8 @@ if instance_exists(class_enemy)
         }
     }
     
+    /* REMOVING THIS FROM THE GAME FOR NOW
+    
     var tacticalCount = instance_number(class_tactical_target);
     
     for (i=0; i<tacticalCount; i++)
@@ -50,6 +52,7 @@ if instance_exists(class_enemy)
             ds_priority_add(priorityList, testEnemy, testAngle);
         }
     }
+    */
     
     if !ds_priority_empty(priorityList)
     {

@@ -44,10 +44,7 @@ event_inherited();
     
     stamina_max = 100;
     stamina = stamina_max;
-    energy_regen_speed = 1;
-    
-    energy_regen_time = room_speed*3;
-    
+
     //Sprites
     sprite_idle = spr_jimmy_idle;
     sprite_walk = spr_jimmy_walk;

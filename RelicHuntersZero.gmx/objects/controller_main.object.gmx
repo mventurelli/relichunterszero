@@ -27,11 +27,6 @@
             <kind>1</kind>
             <string>///Main Configuration
 
-/*if (room == room_start) || (room == room_shop) || (room == room_endShop)
-{
-    draw_texture_flush();
-}*/
-
 //Initialization
 draw_texture_flush();
 
@@ -1136,7 +1131,7 @@ if (global.version = os_windows)
     {
         var joy = global.input[1];
         var update = xin_update(joy); 
-        if (!update) show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
+        if (!update) {}//show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
         else
         {
             joy_rumble_update(joy);
@@ -1147,7 +1142,7 @@ if (global.version = os_windows)
     {
         var joy = global.input[2];
         var update = xin_update(joy); 
-        if (!update) show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
+        if (!update) {}//show_debug_message('Trying to update unconnected Xbox 360 Controller ('+ string(joy) +')');   
         else
         {
             joy_rumble_update(joy);
@@ -1158,14 +1153,14 @@ if (global.version = os_windows)
     if (global.pauseMenu)
     {
         var update0 = xin_update(0); 
-        if (!update0) show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
+        if (!update0) {}//show_debug_message('Trying to update unconnected Xbox 360 Controller (0)');   
         else
         {
             joy_rumble_update(0);
         }
         
         var update1 = xin_update(1); 
-        if (!update1) show_debug_message('Trying to update unconnected Xbox 360 Controller (1)');   
+        if (!update1) {}//show_debug_message('Trying to update unconnected Xbox 360 Controller (1)');   
         else
         {
             joy_rumble_update(1);
@@ -2640,7 +2635,7 @@ while (p &lt;= global.playerCount)
         draw_sprite_ext(spr_icon_shield,0,charShieldBarTopX+20,charShieldBarTopY+(charShieldBarHeight/2),1.5,1.5,0,c_white,main_hud_alpha);
         draw_set_color(c_white);
         draw_set_font(global.font_numberMedium);
-        draw_text(charLifeBarTopX+charShieldBarWidth-16, charShieldBarTopY+12,string(energy));
+        draw_text(charLifeBarTopX+charShieldBarWidth-16, charShieldBarTopY+12,string(round(energy)));
         
         var staminaColor1,staminaColor2;
         if (stamina &gt; (stamina_max/2)) staminaColor1 = c_white;
@@ -3308,22 +3303,21 @@ if ((fps/room_speed) &lt; 0.9)
     if (!global.lowPerfChecked)
     {
         if (global.lowPerfTimeCurrent &lt; global.lowPerfTime) global.lowPerfTimeCurrent++;
-        else{
-            //global.reflections_toggle = false;
+        else
+        {
             global.persistent_toggle = false;
+            //global.reflections_toggle = false;
             //global.shadows_toggle = false;
             
             instance_create(0,0,gui_info_lowPerformance);
             
             global.lowPerfChecked = true;
+            
+            draw_texture_flush();
         }
     }
     
 }
-
-//Version Number
-//draw_text(window_get_width()*0.99, window_get_height()*0.97, global.currentVersionNumber );
-
 
 
 </string>

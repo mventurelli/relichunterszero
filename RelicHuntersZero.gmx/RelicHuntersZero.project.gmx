@@ -282,8 +282,6 @@
     <sprites name="Enemy">
       <sprites name="_Common">
         <sprite>sprites\spr_death_generic0</sprite>
-        <sprite>sprites\sprite366</sprite>
-        <sprite>sprites\sprite360</sprite>
         <sprite>sprites\spr_death_generic1</sprite>
         <sprite>sprites\spr_death_generic2</sprite>
         <sprite>sprites\spr_kamikaze_dash_fx</sprite>
@@ -1465,9 +1463,9 @@
       <object>objects\class_enemy_shooter</object>
       <object>objects\class_enemy_kamikaze</object>
       <object>objects\class_enemy_zombie</object>
+      <object>objects\class_enemy</object>
       <object>objects\class_summon</object>
       <object>objects\class_enemy_jumper</object>
-      <object>objects\class_enemy</object>
       <object>objects\class_gun_enemy</object>
       <object>objects\obj_turtle_dummy</object>
       <object>objects\obj_turtle_dummy_immortal</object>

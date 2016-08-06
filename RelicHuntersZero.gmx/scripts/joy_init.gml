@@ -17,7 +17,7 @@ global.joy_rumbleRight[3] = 0;
 global.joy_rumbleLeft[4] = 0;
 global.joy_rumbleRight[4] = 0;
 
-global.joy_rumbleRecoverSpeed = 0.045;
+global.joy_rumbleRecoverSpeed = 0.09; //Was 0.045
 
 if gamepad_is_connected(0) gamepad_set_axis_deadzone(0, 0);
 if gamepad_is_connected(1) gamepad_set_axis_deadzone(1, 0);

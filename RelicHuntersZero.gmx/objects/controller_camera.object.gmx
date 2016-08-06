@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -34,8 +34,8 @@ weaponRange = 0;
 
 screen_shake = 0;
 shake_direction = 0;
-shake_recovery = 3;
-shake_max = 100;
+shake_recovery = 4;
+shake_max = 50;
 
 gameZoom = 1;
 zoom = 1;

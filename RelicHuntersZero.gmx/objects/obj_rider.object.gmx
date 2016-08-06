@@ -61,13 +61,10 @@ event_inherited();
     
     stamina_max = 100;
     stamina = stamina_max;
-    energy_regen_speed = 1;
-    
-    energy_regen_time = room_speed*3;
     
     move_speed_max = 6;
     move_speed_sprint = 8.5;
-    move_speed_aiming = 4;
+    move_speed_aiming = 3;
     
     //Sprites
     sprite_idle = spr_rider_idle;

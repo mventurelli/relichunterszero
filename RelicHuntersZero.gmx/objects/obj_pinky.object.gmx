@@ -44,14 +44,13 @@ event_inherited();
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     
-    
     stamina_max = 100;
     stamina = stamina_max;
     energy_regen_speed = 2;
 
-    energy_regen_time = room_speed*4;
+    energy_regen_time = room_speed*2;
     energy_regen_time_regular = energy_regen_time;
-    energy_regen_time_relic = round(energy_regen_time/2);
+    energy_regen_time_relic = energy_regen_time;
     
     base_accuracy = 1;
     //Weapon Skills, "1" is perfect, higher is worse
@@ -75,7 +74,7 @@ event_inherited();
     
     move_speed_max = 6; //5
     move_speed_sprint = 8; //6.5
-    move_speed_aiming = 3.5; //3
+    move_speed_aiming = 3; //3
     
     //Sprites
     sprite_idle = spr_pinky_idle;
