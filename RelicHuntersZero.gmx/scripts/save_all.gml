@@ -223,6 +223,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Challenges','challengeHaunted',global.challengeHaunted);
     
     // Game Options
+    ini_write_real('Quality','friendlyFire',global.friendlyFire);
     ini_write_real('Quality','reflections',global.reflections_toggle);
     ini_write_real('Quality','shadows',global.shadows_toggle);
     ini_write_real('Quality','persistent effects',global.persistent_toggle);

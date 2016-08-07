@@ -52,12 +52,12 @@ event_inherited();
     base_accuracy = 1;
     //Weapon Skills, "1" is perfect, higher is worse
     accPistol = 1;
-    accMachinegun = 3.5;
-    accShotgun = 3;
-    accSniper = 6;
+    accMachinegun = 2;
+    accShotgun = 1.5;
+    accSniper = 3;
     accSmg = 1;
-    accRocket = 7;
-    accRifle = 9;
+    accRocket = 3;
+    accRifle = 3;
     
     stamina_max = 100;
     stamina = stamina_max;

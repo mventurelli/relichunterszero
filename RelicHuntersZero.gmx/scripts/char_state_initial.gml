@@ -79,6 +79,12 @@
             ds_list_destroy(global.challengeList);
             global.challengeList = ds_list_create();
         }
+        
+        if (is_undefined(global.challengeForbiddenList)) global.challengeForbiddenList = ds_list_create();
+        else if (ds_exists(global.challengeForbiddenList,ds_type_list)) { 
+            ds_list_destroy(global.challengeForbiddenList);
+            global.challengeForbiddenList = ds_list_create();
+        }
     }
     
     //Clean Challenges (even for Adventure Mode, to avoid issues

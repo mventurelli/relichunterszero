@@ -85,6 +85,7 @@ if (owner) &amp;&amp; (instance_exists(owner))
     if (owner.energy_max) shieldMax = owner.energy_max + owner.overshield;
     else shieldMax = 0; 
 }
+else instance_destroy();
 
 //Set State
 
@@ -98,7 +99,6 @@ if (!shield) drawHealth = true;
 if (!shieldMax) if (hp &gt;= hpMax) drawHealth = false;
 
 //Animate Alpha
-
 if (drawShield) || (drawHealth) myAlpha = 1;
 else if (myAlpha != 0)
 {
@@ -160,10 +160,6 @@ if (instance_exists(owner)) //TODO: separate the update from the draw and get al
         
     if (!drawHealth) draw_set_alpha(0);
     draw_healthbar_delayed(barHp, topX-2,topY-2,topX+barWidth-2,topY+barHeight-2, hp, hpMax, healthColor, c_black, c_white, charBarDelaySpeed, charBarDelayTime, 0, false, false);
-    
-        
-        //OLD:
-        //draw_healthbar(topX-2,topY-2,topX+barWidth-2,topY+barHeight-2,(hp/hpMax)*100,c_black,healthColor,healthColor,0,false,false);
     
     //End
     draw_set_alpha(1);

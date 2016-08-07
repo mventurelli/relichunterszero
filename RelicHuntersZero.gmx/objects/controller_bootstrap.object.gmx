@@ -45,6 +45,7 @@ global.currentLoop = 0;
 
 //Global Data Structures
 global.challengeList = ds_list_create();
+global.challengeForbiddenList = ds_list_create();
 
 //Sync 
 ini_open(working_directory + "\saveData.ini");

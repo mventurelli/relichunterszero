@@ -142,60 +142,62 @@ if faction == f_player &amp;&amp; instance_exists(other)
           <argument>
             <kind>1</kind>
             <string>///Friendly Fire
-
-if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
+if (global.friendlyFire)
 {
-    if (other.myPlayerId != owner.myPlayerId)
+    if (instance_exists(other)) &amp;&amp; (instance_exists(owner))
     {
-        ffDamage = round(damage * global.friendlyFireDamageRatio);
-        
-        spreadX = irandom_range(-15,15);
-        spreadY = irandom_range(-15,15);
-            
-        if (!other.dodging)
+        if (other.myPlayerId != owner.myPlayerId)
         {
-            ds_list_add(damage_list,other.id);
+            ffDamage = round(damage * global.friendlyFireDamageRatio);
             
-            if (global.relic_midnight_beer == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Beer
-            if (global.relic_midnight_meal == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Meal
-            
-            if (other.shield)
-            {
-                if (distance_travelled &gt; range) ffDamage = ffDamage/3;
-                other.energy -= ffDamage;
-                audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
-                if (other.energy &lt;= 0) audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_destroy);
-            }
-            else
-            {
-                if (distance_travelled &gt; range) ffDamage = round(damage/3);
-                other.hp -= ffDamage;
-                audio_play(other.audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
+            spreadX = irandom_range(-15,15);
+            spreadY = irandom_range(-15,15);
                 
-                bloodAmount = min(round(ffDamage/5), (global.max_casings-global.count_casings), 5);
-                if (bloodAmount) repeat(bloodAmount) blood = instance_create(x,y,fx_blood);
-                
-                if (other.hp &lt;= 0) achievement_give("ACHIEVEMENT_TEAMKILL");
-            }
-            other.hit_taken = true;
-            
-            
-            damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
-            damage_fx.damage = ffDamage;
-    
-            ds_list_add(global.audio_cleaner,audio_emitter);
-            if (!instance_exists(hit)) &amp;&amp; (global.count_particles &lt; global.max_particles)
+            if (!other.dodging)
             {
-                hit = instance_create(x,y,fx_hit);
-                hit.type = ammo_type;
-            }
-            instance_destroy();
-        }
+                ds_list_add(damage_list,other.id);
+                
+                if (global.relic_midnight_beer == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Beer
+                if (global.relic_midnight_meal == 2) ffDamage += round(ffDamage*global.midnightDamageMultiplier ); //Midnight Meal
+                
+                if (other.shield)
+                {
+                    if (distance_travelled &gt; range) ffDamage = ffDamage/3;
+                    other.energy -= ffDamage;
+                    audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_hit1,sfx_shield_hit2);
+                    if (other.energy &lt;= 0) audio_play_exclusive(other.audio_emitter,false,1,sfx_shield_destroy);
+                }
+                else
+                {
+                    if (distance_travelled &gt; range) ffDamage = round(damage/3);
+                    other.hp -= ffDamage;
+                    audio_play(other.audio_emitter,false,1,sfx_impact_flesh1,sfx_impact_flesh2,sfx_impact_flesh3,sfx_impact_flesh4);
+                    
+                    bloodAmount = min(round(ffDamage/5), (global.max_casings-global.count_casings), 5);
+                    if (bloodAmount) repeat(bloodAmount) blood = instance_create(x,y,fx_blood);
+                    
+                    if (other.hp &lt;= 0) achievement_give("ACHIEVEMENT_TEAMKILL");
+                }
+                other.hit_taken = true;
+                
+                
+                damage_fx = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+                damage_fx.damage = ffDamage;
         
-        if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
-        {
-            ds_list_add(damage_list,other.id);
-            damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+                ds_list_add(global.audio_cleaner,audio_emitter);
+                if (!instance_exists(hit)) &amp;&amp; (global.count_particles &lt; global.max_particles)
+                {
+                    hit = instance_create(x,y,fx_hit);
+                    hit.type = ammo_type;
+                }
+                instance_destroy();
+            }
+            
+            if (other.dodging) &amp;&amp; (ds_list_find_index(damage_list,other.id) &lt; 0)
+            {
+                ds_list_add(damage_list,other.id);
+                damageEffect = instance_create(other.x+spreadX,other.y+spreadY,fx_damage);
+            }
         }
     }
 }

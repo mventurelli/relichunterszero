@@ -43,15 +43,15 @@ event_inherited();
     hp_max_relic = hp_max*2;
     
     
-    base_accuracy = 3;
+    base_accuracy = 2;
     //Weapon Skills, "1" is perfect, higher is worse
-    accPistol = 3;
-    accMachinegun = 2;
-    accShotgun = 2;
-    accSniper = 5;
-    accSmg = 2;
-    accRocket = 6;
-    accRifle = 4;
+    accPistol = 2;
+    accMachinegun = 1.5;
+    accShotgun = 1.5;
+    accSniper = 2.5;
+    accSmg = 1.5;
+    accRocket = 3;
+    accRifle = 2;
     
     stamina_max = 100;
     stamina = stamina_max;

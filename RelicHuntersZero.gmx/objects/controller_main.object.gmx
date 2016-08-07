@@ -231,6 +231,8 @@ global.price_yottabyte3 = 1750;
 
 //Players &amp; Ammo
 
+global.friendlyFire = false;
+
 global.reviveHealth = 0.5;
 global.reviveAmmoLight = 160;
 global.reviveAmmoMedium = 100;
@@ -412,15 +414,15 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_hackCommon[8] = 8000;
     global.endPrice_hackCommon[9] = 9999;
     
-    global.endPrice_hackUnique[0] = 1000;
-    global.endPrice_hackUnique[1] = 2400;
-    global.endPrice_hackUnique[2] = 3200;
-    global.endPrice_hackUnique[3] = 5000;
-    global.endPrice_hackUnique[4] = 7000;
-    global.endPrice_hackUnique[5] = 8500;
-    global.endPrice_hackUnique[6] = 9999;
-    global.endPrice_hackUnique[7] = 9999;
-    global.endPrice_hackUnique[8] = 9999;
+    global.endPrice_hackUnique[0] = 700;
+    global.endPrice_hackUnique[1] = 1600;
+    global.endPrice_hackUnique[2] = 2400;
+    global.endPrice_hackUnique[3] = 4000;
+    global.endPrice_hackUnique[4] = 4500;
+    global.endPrice_hackUnique[5] = 6500;
+    global.endPrice_hackUnique[6] = 7500;
+    global.endPrice_hackUnique[7] = 8500;
+    global.endPrice_hackUnique[8] = 9500;
     global.endPrice_hackUnique[9] = 9999;
     
     global.endPrice_hackHunted = 6000;
@@ -833,43 +835,43 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                 chUnique = true;
                 var randomChallenge = irandom(9);
                 switch (randomChallenge){
-                    case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) { 
+                    case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HUNGER") == -1) { 
                         global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescription="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
                         } break;
                         
-                    case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1) { 
+                    case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_THIRST") == -1) { 
                         global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescription="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
                         } break;
                     
-                    case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1) { 
+                    case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_OVERCHARGE") == -1) { 
                         global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescription="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
                         } break;
                         
-                    case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1) { 
+                    case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_MEDIEVAL") == -1) { 
                         global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescription="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
                         } break;
                         
-                    case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1) { 
+                    case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_SUPRESSOR") == -1) { 
                         global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescription="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
                         } break;
                     
-                    case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) { 
+                    case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_CATAPULT") == -1) { 
                         global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescription="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
                         } break;
                         
-                    case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1) { 
+                    case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_DUCANWEAPONS") == -1) { 
                         global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescription="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
                         } break;
                       
-                    case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1) { 
+                    case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_JAWS") == -1){ 
                         global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescription="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
                         } break;
                     
-                    case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) { 
+                    case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_BLOODLUST") == -1) { 
                         global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescription="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
                         } break;
                         
-                    case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1) { 
+                    case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HEAVYBURDEN") == -1) { 
                         global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescription="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
                         } break;
                 }
@@ -898,7 +900,11 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         }
         
         
-        if (listName != "") ds_list_add(global.challengeList, listName);
+        if (listName != "") 
+        {
+            ds_list_add(global.challengeList, listName);
+            ds_list_add(global.challengeForbiddenList, listName);
+        }
         
         var announceChallenge = instance_create(x,y,fx_bigMessage);
         announceChallenge.textBigColor = K_BETU_RED;

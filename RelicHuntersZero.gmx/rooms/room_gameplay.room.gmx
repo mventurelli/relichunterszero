@@ -59,7 +59,6 @@
     <instance objName="menu_btn_screenshake" x="720" y="352" name="inst_3CE3295E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_vibration" x="720" y="416" name="inst_AF65B997" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_targeting" x="720" y="480" name="inst_45E9D47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_btn_sticky" x="720" y="544" name="inst_ED15FCF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_minus" x="1040" y="224" name="inst_3216DDD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_minus" x="1040" y="288" name="inst_49F17F36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_minus" x="1040" y="416" name="inst_02C83A64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -80,6 +79,7 @@
     <instance objName="menu_btn_allowFreeze" x="720" y="608" name="inst_2B43372A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_minus" x="1040" y="608" name="inst_E69676EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="menu_btn_plus" x="1200" y="608" name="inst_898DA292" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_friendlyfire" x="720" y="544" name="inst_07865F16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

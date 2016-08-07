@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="56" name="datafiles">
-    <datafiles number="56" name="fonts">
+  <datafiles number="57" name="datafiles">
+    <datafiles number="57" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>477122</size>
+      <size>476821</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -1708,6 +1708,7 @@
           <object>objects\menu_btn_vibration</object>
           <object>objects\menu_btn_targeting</object>
           <object>objects\menu_btn_sticky</object>
+          <object>objects\menu_btn_friendlyfire</object>
           <object>objects\menu_btn_allowFreeze</object>
           <object>objects\menu_btn_showammo</object>
         </objects>

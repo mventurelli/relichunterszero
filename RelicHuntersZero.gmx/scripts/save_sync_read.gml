@@ -193,7 +193,6 @@ ini_open(working_directory + "\saveData.ini");
     
     // Game Options
     var defaultEffects = 1;
-    //if (os_type == os_macosx) defaultEffects = 0;
     
     global.masterVolume = ini_read_real('Quality','Master Volume',1); 
     global.musicVolume = ini_read_real('Quality','Master Music',1); 
@@ -202,7 +201,7 @@ ini_open(working_directory + "\saveData.ini");
     
     global.input[1] =  ini_read_real('Input','Input1',K_INPUT_KEYBOARD);
     global.input[2] =  ini_read_real('Input','Input2',K_INPUT_JOYSTICK1);
-    global.sticky_aim = ini_read_real('Input','Sticky Aim',true);
+    global.sticky_aim = true; //REMOVED THIS OPTION FROM THE GAME, DEFAULT TRUE! ini_read_real('Input','Sticky Aim',true);
     global.auto_aim = ini_read_real('Input','Auto Aim',K_AUTOAIM_ASSIST);
     global.sprint_toggle = ini_read_real('Input','Sprint Toggle',false);
     
@@ -212,6 +211,7 @@ ini_open(working_directory + "\saveData.ini");
     global.vibrationRatio = ini_read_real('Quality','controller vibration',1.0);
     
     global.allowKillFreeze = ini_read_real('Quality','allowKillFreeze',true);
+    global.friendlyFire = ini_read_real('Quality','friendlyFire',false);
     
     global.screenResolution = ini_read_real('Quality','resolution',1.0);
     global.fullscreen = ini_read_real('Quality','fullscreen',1);

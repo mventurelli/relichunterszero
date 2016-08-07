@@ -47,7 +47,7 @@ event_inherited();
     accShotgun = 1;
     accSniper = 1;
     accSmg = 1;
-    accRocket = 9;
+    accRocket = 1;
     accRifle = 1;
     
     stamina_max = 100;

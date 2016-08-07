@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1215752191</depth>
   <persistent>0</persistent>
   <parentName>gui_dynamicBar</parentName>
   <maskName>&lt;undefined&gt;</maskName>
