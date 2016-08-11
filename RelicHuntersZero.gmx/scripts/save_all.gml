@@ -49,6 +49,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','hacksOnThisRun',global.hacksOnThisRun);
     ini_write_real('Temp','spookylandsVisited',global.spookylandsVisited);
     
+    ini_write_real('Temp','entropy',global.entropy);
         
     ini_write_real('Character','playerCount',global.playerCount);
         
@@ -198,7 +199,7 @@ ini_open(working_directory + "\saveData.ini");
         if (room != room_start) && (room != room_tutorial) ini_write_real('Ass','first_stage',1);
         ini_write_real('Ass','shop_visits',global.shop_visits);
 
-    //Challenges
+    //Challenges & Timers
     ini_write_real('Challenges','challengeSteroids',global.challengeSteroids);
     ini_write_real('Challenges','challengeWanted',global.challengeWanted);
     ini_write_real('Challenges','challengeHighTech',global.challengeHighTech);
@@ -221,6 +222,20 @@ ini_open(working_directory + "\saveData.ini");
     
     ini_write_real('Challenges','challengeHunted',global.challengeHunted);
     ini_write_real('Challenges','challengeHaunted',global.challengeHaunted);
+    
+    ini_write_real('Challenges','challengeHungerTimer',global.challengeHungerTimer);
+    ini_write_real('Challenges','challengeThirstTimer',global.challengeThirstTimer);
+    ini_write_real('Challenges','challengeOverchargeTimer',global.challengeOverchargeTimer);
+    ini_write_real('Challenges','challengeMedievalTimer',global.challengeMedievalTimer);
+    ini_write_real('Challenges','challengeCatapultTimer',global.challengeCatapultTimer);
+    ini_write_real('Challenges','challengeDucanWeaponsTimer',global.challengeDucanWeaponsTimer);
+    ini_write_real('Challenges','challengeHeavyBurdenTimer',global.challengeHeavyBurdenTimer);
+    ini_write_real('Challenges','challengeSupressorTimer',global.challengeSupressorTimer);
+    ini_write_real('Challenges','challengeBloodlustTimer',global.challengeBloodlustTimer);
+    ini_write_real('Challenges','challengeJawsTimer',global.challengeJawsTimer);
+    ini_write_real('Challenges','challengeCountdownTimer',global.challengeCountdownTimer);
+    ini_write_real('Challenges','challengeHuntedTimer',global.challengeHuntedTimer);
+    ini_write_real('Challenges','challengeHauntedTimer',global.challengeHauntedTimer);
     
     // Game Options
     ini_write_real('Quality','friendlyFire',global.friendlyFire);

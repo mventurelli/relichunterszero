@@ -38,9 +38,10 @@ var rareWeaponChance = 0.1;
 var rareRelicChance = 0.04;
 
 if (global.relic_rabbit_foot == 2) diceRoll -= 0.2;
+diceRoll -= global.entropy;
 
-if (diceRoll &lt;= rareRelicChance) treasureType = "RELIC_RARE";
-else if (diceRoll &lt;= rareWeaponChance) treasureType = "WEAPON_RARE";
+if (diceRoll &lt;= rareRelicChance) { treasureType = "RELIC_RARE"; global.entropy = 0; }
+else if (diceRoll &lt;= rareWeaponChance) { treasureType = "WEAPON_RARE"; global.entropy = 0; }
 else if (diceRoll &lt;= relicChance) treasureType = "RELIC";
 else if (diceRoll &lt;= coinChance) treasureType = "COINS";
 else treasureType = "WEAPON";

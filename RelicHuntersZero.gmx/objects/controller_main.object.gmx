@@ -323,7 +323,7 @@ global.edgeTrackEnemyList = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Endless Economy Balance
+            <string>///Endless Economy &amp; Rare Challenge Timers Balance
 if (global.gameMode == gamemode_endless)
 {
     global.endPrice_lightAmmo[0] = 120;
@@ -414,19 +414,19 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_hackCommon[8] = 8000;
     global.endPrice_hackCommon[9] = 9999;
     
-    global.endPrice_hackUnique[0] = 700;
-    global.endPrice_hackUnique[1] = 1600;
-    global.endPrice_hackUnique[2] = 2400;
-    global.endPrice_hackUnique[3] = 4000;
-    global.endPrice_hackUnique[4] = 4500;
-    global.endPrice_hackUnique[5] = 6500;
-    global.endPrice_hackUnique[6] = 7500;
-    global.endPrice_hackUnique[7] = 8500;
-    global.endPrice_hackUnique[8] = 9500;
+    global.endPrice_hackUnique[0] = 500;
+    global.endPrice_hackUnique[1] = 1200;
+    global.endPrice_hackUnique[2] = 1600;
+    global.endPrice_hackUnique[3] = 3000;
+    global.endPrice_hackUnique[4] = 3300;
+    global.endPrice_hackUnique[5] = 4000;
+    global.endPrice_hackUnique[6] = 5000;
+    global.endPrice_hackUnique[7] = 6500;
+    global.endPrice_hackUnique[8] = 8000;
     global.endPrice_hackUnique[9] = 9999;
     
-    global.endPrice_hackHunted = 6000;
-    global.endPrice_hackHaunted = 4000;
+    global.endPrice_hackHunted = 2000;
+    global.endPrice_hackHaunted = 1000;
     
     
     //Gunnar
@@ -491,6 +491,23 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_crystalBacon = 4000;
     global.price_endless_midnightMeal = 3500;
     global.price_endless_yottabyteProcessor = 3000;
+    
+    //Rare Challenge Times (in Rounds)
+  
+    global.challengeHungerRounds = 6;
+    global.challengeThirstRounds = 6;
+    global.challengeOverchargeRounds = 4;
+    global.challengeMedievalRounds = 4;
+    global.challengeCatapultRounds = 6;
+    global.challengeDucanWeaponsRounds = 6;
+    global.challengeHeavyBurdenRounds = 4;
+    global.challengeSupressorRounds = 4;
+    global.challengeBloodlustRounds = 4;
+    global.challengeJawsRounds = 6;
+    global.challengeCountdownRounds = 4;
+    
+    global.challengeHuntedRounds = 4;
+    global.challengeHauntedRounds = 4;
 }
 
 
@@ -812,6 +829,128 @@ reloadBarSurface2 = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
             <string>///Endless Challenges
 if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeList,ds_type_list))
 {
+    //Update Timers for existing Challenges, remove Challenges with expired Timers
+    if (room != room_endShop)
+    {
+        if (global.challengeHunger) 
+        { 
+            global.challengeHungerTimer--; 
+            if (global.challengeHungerTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_HUNGER');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHunger = false;}
+            }
+        }
+        
+        if (global.challengeThirst) 
+        { 
+            global.challengeThirstTimer--;
+            if (global.challengeThirstTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_THIRST');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeThirst = false;}
+            }
+        }
+        
+        if (global.challengeOvercharge) 
+        { 
+            global.challengeOverchargeTimer--; 
+            if (global.challengeOverchargeTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_OVERCHARGE');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeOvercharge = false;}
+            }
+        }
+        
+        if (global.challengeMedieval) 
+        { 
+            global.challengeMedievalTimer--;
+            if (global.challengeMedievalTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_MEDIEVAL');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeMedieval = false;}
+            }
+        }
+        
+        if (global.challengeCatapult) 
+        { 
+            global.challengeCatapultTimer--; 
+            if (global.challengeCatapultTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_CATAPULT');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeCatapult = false;}
+            }
+        }
+        
+        if (global.challengeDucanWeapons) 
+        { 
+            global.challengeDucanWeaponsTimer--; 
+            if (global.challengeDucanWeaponsTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_DUCANWEAPONS');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeDucanWeapons = false;}
+            }
+        }
+        
+        if (global.challengeHeavyBurden) 
+        { 
+            global.challengeHeavyBurdenTimer--; 
+            if (global.challengeHeavyBurdenTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_HEAVYBURDEN');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHeavyBurden = false;}
+            }
+        }
+        
+        if (global.challengeSupressor) 
+        { 
+            global.challengeSupressorTimer--; 
+            if (global.challengeSupressorTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_SUPRESSOR');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeSupressor = false;}
+            }
+        }
+        
+        if (global.challengeBloodlust) 
+        { 
+            global.challengeBloodlustTimer--; 
+            if (global.challengeBloodlustTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_BLOODLUST');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeBloodlust = false;}
+            }
+        }
+        
+        if (global.challengeJaws) 
+        { 
+            global.challengeJawsTimer--; 
+            if (global.challengeJawsTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_JAWS');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeJaws = false;}
+            }
+        }
+        
+        if (global.challengeCountdown) 
+        { 
+            global.challengeCountdownTimer--; 
+            if (global.challengeCountdownTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_COUNTDOWN');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeCountdown = false;}
+            }
+        }
+        
+        if (global.challengeHunted) 
+        { 
+            global.challengeHuntedTimer--; 
+            if (global.challengeHuntedTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_HUNTED');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHunted = false;}
+            }
+        }
+        
+        if (global.challengeHaunted) 
+        { 
+            global.challengeHauntedTimer--; 
+            if (global.challengeHauntedTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_HAUNTED');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHaunted = false;}
+            }
+        }
+    }
+
+    //Add new Challenges
     if (
         room == level1_2 ||
         room == level2_1 ||
@@ -837,42 +976,52 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                 switch (randomChallenge){
                     case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HUNGER") == -1) { 
                         global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescription="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
+                        global.challengeHungerTimer = global.challengeHungerRounds;
                         } break;
                         
                     case 1 : if (ds_list_find_index(global.challengeList,"CHALLENGE_THIRST") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_THIRST") == -1) { 
                         global.challengeThirst = true; stringChallenge="CHALLENGE_THIRST"; stringDescription="CHALLENGE_THIRST_DESC"; listName="CHALLENGE_THIRST";
+                        global.challengeThirstTimer = global.challengeThirstRounds;
                         } break;
                     
                     case 2 : if (ds_list_find_index(global.challengeList,"CHALLENGE_OVERCHARGE") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_OVERCHARGE") == -1) { 
                         global.challengeOvercharge = true; stringChallenge="CHALLENGE_OVERCHARGE"; stringDescription="CHALLENGE_OVERCHARGE_DESC"; listName="CHALLENGE_OVERCHARGE";
+                        global.challengeOverchargeTimer = global.challengeOverchargeRounds;
                         } break;
                         
                     case 3 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIEVAL") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_MEDIEVAL") == -1) { 
                         global.challengeMedieval = true; stringChallenge="CHALLENGE_MEDIEVAL"; stringDescription="CHALLENGE_MEDIEVAL_DESC"; listName="CHALLENGE_MEDIEVAL";
+                        global.challengeMedievalTimer = global.challengeMedievalRounds;
                         } break;
                         
                     case 4 : if (ds_list_find_index(global.challengeList,"CHALLENGE_SUPRESSOR") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_SUPRESSOR") == -1) { 
                         global.challengeSupressor = true; stringChallenge="CHALLENGE_SUPRESSOR"; stringDescription="CHALLENGE_SUPRESSOR_DESC"; listName="CHALLENGE_SUPRESSOR";
+                        global.challengeSupressorTimer = global.challengeSupressorRounds;
                         } break;
                     
                     case 5 : if (ds_list_find_index(global.challengeList,"CHALLENGE_CATAPULT") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_CATAPULT") == -1) { 
                         global.challengeCatapult = true; stringChallenge="CHALLENGE_CATAPULT"; stringDescription="CHALLENGE_CATAPULT_DESC"; listName="CHALLENGE_CATAPULT";
+                        global.challengeCatapultTimer = global.challengeCatapultRounds;
                         } break;
                         
                     case 6 : if (ds_list_find_index(global.challengeList,"CHALLENGE_DUCANWEAPONS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_DUCANWEAPONS") == -1) { 
                         global.challengeDucanWeapons = true; stringChallenge="CHALLENGE_DUCANWEAPONS"; stringDescription="CHALLENGE_DUCANWEAPONS_DESC"; listName="CHALLENGE_DUCANWEAPONS";
+                        global.challengeDucanWeaponsTimer = global.challengeDucanWeaponsRounds;
                         } break;
                       
                     case 7 : if (ds_list_find_index(global.challengeList,"CHALLENGE_JAWS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_JAWS") == -1){ 
                         global.challengeJaws = true; stringChallenge="CHALLENGE_JAWS"; stringDescription="CHALLENGE_JAWS_DESC"; listName="CHALLENGE_JAWS";
+                        global.challengeJawsTimer = global.challengeJawsRounds;
                         } break;
                     
                     case 8 : if (ds_list_find_index(global.challengeList,"CHALLENGE_BLOODLUST") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_BLOODLUST") == -1) { 
                         global.challengeBloodlust = true; stringChallenge="CHALLENGE_BLOODLUST"; stringDescription="CHALLENGE_BLOODLUST_DESC"; listName="CHALLENGE_BLOODLUST";
+                        global.challengeBloodlustTimer = global.challengeBloodlustRounds;
                         } break;
                         
                     case 9 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYBURDEN") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HEAVYBURDEN") == -1) { 
                         global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescription="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
+                        global.challengeHeavyBurdenTimer = global.challengeHeavyBurdenRounds;
                         } break;
                 }
             }
@@ -888,7 +1037,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                     case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescription="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
                     case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescription="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
                 }
-            }
+            } else global.entropy += 0.1; // &lt;--- If a Rare Challenge indeed spawns, increase Entropy for the player
         }
         else{
             var randomChallenge = irandom(2);
@@ -1637,12 +1786,14 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             if (room==level4_1) || (room==level4_2) || (room==level4_3) { relicChance = 0.2 + global.relicChanceBonus;   global.dirtColor = make_color_rgb(159,55,60); }
             if (room==levelHalloween_1) { relicChance = 0.3;   shopList = global.shop_list_3;  global.dirtColor = make_color_rgb(10,10,10); }
                         
-            relicChance -= 0.2 * global.currentLoop
+            relicChance -= 0.2 * global.currentLoop;
             if (global.relic_rabbit_foot == 2) relicChance += 0.2;
+            relicChance += global.entropy;
             
             if (random(1) &lt;= relicChance)
             {
                 global.relicChanceBonus = -0.15;
+                global.entropy -= min(0.1,global.entropy);
  
                 //Define object to spawn
                 var spawnObject = noone;    
@@ -1677,7 +1828,7 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
                 audio_stop_all();
                 audio_play_sound(bgm_dig,99,true);
                 volume_update();
-                audio_play_sound(sfx_relic_on,00,false); //&lt;-- Relic Detected sound will go here someday
+                audio_play_sound(sfx_relic_on,00,false);
                 
                 global.relicDetected = true;
                 var announceRelic = instance_create(x,y,fx_bigMessage);
@@ -1694,7 +1845,7 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
             }
         }
         
-        //Special Rewards!!!
+        //Special Rewards
         if (room == levelHalloween_3)
         {
             instance_create(2432,1664,obj_chestHaunted);
@@ -3113,8 +3264,32 @@ if (global.pauseMenu) &amp;&amp; (global.gameMode == gamemode_endless)
                     chSprite = spr_challengeCommon;
             }
             
+            var timerCount = '';
+            if (chSprite == spr_challengeUnique)
+            {
+                switch (challenge)
+                {
+                    case "CHALLENGE_HUNGER" : timerCount = global.challengeHungerTimer; break;
+                    case "CHALLENGE_THIRST" : timerCount = global.challengeThirstTimer; break;
+                    case "CHALLENGE_OVERCHARGE" : timerCount = global.challengeOverchargeTimer; break;
+                    case "CHALLENGE_MEDIEVAL" : timerCount = global.challengeMedievalTimer; break;
+                    case "CHALLENGE_CATAPULT" : timerCount = global.challengeCatapultTimer; break;
+                    case "CHALLENGE_DUCANWEAPONS" : timerCount = global.challengeDucanWeaponsTimer; break;
+                    case "CHALLENGE_HEAVYBURDEN" : timerCount = global.challengeHeavyBurdenTimer; break;
+                    case "CHALLENGE_SUPRESSOR" : timerCount = global.challengeSupressorTimer; break;
+                    case "CHALLENGE_BLOODLUST" : timerCount = global.challengeBloodlustTimer; break;
+                    case "CHALLENGE_JAWS" : timerCount = global.challengeJawsTimer; break;
+                    case "CHALLENGE_COUNTDOWN" : timerCount = global.challengeCountdownTimer; break;
+                    case "CHALLENGE_HUNTED" : timerCount = global.challengeHuntedTimer; break;
+                    case "CHALLENGE_HAUNTED" : timerCount = global.challengeHauntedTimer; break;
+                }
+            }
+            
+            var drawChallengeText = loc_key(challenge);
+            if (timerCount != '') drawChallengeText += ( ' (' + string(timerCount) + ')' );
+            
             draw_sprite(chSprite,0,chIconX,chY+chSpacingCurrent);
-            draw_text(chX,chY+chSpacingCurrent, loc_key(challenge));
+            draw_text(chX,chY+chSpacingCurrent, drawChallengeText);
             chSpacingCurrent += chSpacing;
         }
     }

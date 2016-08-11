@@ -63,6 +63,8 @@ ini_open(working_directory + "\saveData.ini");
     global.hacksOnThisRun = ini_read_real('Temp','hacksOnThisRun',0);
     global.spookylandsVisited = ini_read_real('Temp','spookylandsVisited',false);
     
+    global.entropy = ini_read_real('Temp','entropy',0);
+    
     // Persistence
     
     global.lowPerfChecked = ini_read_real('Persistence','LowPerfChecked',0);
@@ -159,7 +161,7 @@ ini_open(working_directory + "\saveData.ini");
     global.relic_yottabyte_processor = ini_read_real('Relics','yottabyte_processor',0);
     global.relic_mega_quantum_chip = ini_read_real('Relics','mega_quantum_chip',0);
    
-    //Challenges
+    //Challenges & Timers
     global.challengeSteroids = ini_read_real('Challenges','challengeSteroids',0);
     global.challengeWanted = ini_read_real('Challenges','challengeWanted',0);
     global.challengeHighTech = ini_read_real('Challenges','challengeHighTech',0);
@@ -182,6 +184,20 @@ ini_open(working_directory + "\saveData.ini");
     
     global.challengeHunted = ini_read_real('Challenges','challengeHunted',0);
     global.challengeHaunted = ini_read_real('Challenges','challengeHaunted',0);
+    
+    global.challengeHungerTimer = ini_read_real('Challenges','challengeHungerTimer',0);
+    global.challengeThirstTimer = ini_read_real('Challenges','challengeThirstTimer',0);
+    global.challengeOverchargeTimer = ini_read_real('Challenges','challengeOverchargeTimer',0);
+    global.challengeMedievalTimer = ini_read_real('Challenges','challengeMedievalTimer',0);
+    global.challengeCatapultTimer = ini_read_real('Challenges','challengeCatapultTimer',0);
+    global.challengeDucanWeaponsTimer = ini_read_real('Challenges','challengeDucanWeaponsTimer',0);
+    global.challengeHeavyBurdenTimer = ini_read_real('Challenges','challengeHeavyBurdenTimer',0);
+    global.challengeSupressorTimer = ini_read_real('Challenges','challengeSupressorTimer',0);
+    global.challengeBloodlustTimer = ini_read_real('Challenges','challengeBloodlustTimer',0);
+    global.challengeJawsTimer = ini_read_real('Challenges','challengeJawsTimer',0);
+    global.challengeCountdownTimer = ini_read_real('Challenges','challengeCountdownTimer',0);
+    global.challengeHuntedTimer = ini_read_real('Challenges','challengeHuntedTimer',0);
+    global.challengeHauntedTimer = ini_read_real('Challenges','challengeHauntedTimer',0);
     
     
     // Game Progression

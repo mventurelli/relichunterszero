@@ -73,6 +73,8 @@
         
         global.relicChanceBonus = 0;
         
+        global.entropy = 0;
+        
         //Challenge list clear
         if (is_undefined(global.challengeList)) global.challengeList = ds_list_create();
         else if (ds_exists(global.challengeList,ds_type_list)) { 
@@ -110,6 +112,20 @@
     
     global.challengeHaunted = 0;
     global.challengeHunted = 0;
+    
+    global.challengeHungerTimer = 0;
+    global.challengeThirstTimer = 0;
+    global.challengeOverchargeTimer = 0;
+    global.challengeMedievalTimer = 0;
+    global.challengeCatapultTimer = 0;
+    global.challengeDucanWeaponsTimer = 0;
+    global.challengeHeavyBurdenTimer = 0;
+    global.challengeSupressorTimer = 0;
+    global.challengeBloodlustTimer = 0;
+    global.challengeJawsTimer = 0;
+    global.challengeCountdownTimer = 0;
+    global.challengeHuntedTimer = 0;
+    global.challengeHauntedTimer = 0;
     
 //Reset Relic Selection
 if (global.gameMode == gamemode_endless) || (global.playedEndless)
