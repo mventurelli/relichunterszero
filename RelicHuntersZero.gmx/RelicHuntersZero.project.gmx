@@ -712,6 +712,7 @@
       <sprite>sprites\spr_candySmall_ground</sprite>
       <sprite>sprites\spr_candyLarge1</sprite>
       <sprite>sprites\spr_candyLarge2</sprite>
+      <sprite>sprites\spr_pickup_ammo</sprite>
     </sprites>
     <sprites name="Player">
       <sprites name="Ass">
@@ -1122,6 +1123,7 @@
         <script>scripts\relic_slot_free.gml</script>
         <script>scripts\init_advanced_effects.gml</script>
         <script>scripts\check_weapon_owned.gml</script>
+        <script>scripts\roll_ammo_drop.gml</script>
       </scripts>
       <scripts name="Angles and Such">
         <script>scripts\angle_rotate.gml</script>
@@ -1781,6 +1783,7 @@
       <object>objects\class_pickup_shield</object>
       <object>objects\class_pickup_superShield</object>
       <object>objects\obj_pickup_coin</object>
+      <object>objects\obj_pickup_ammo</object>
       <object>objects\obj_pickup_candy</object>
       <object>objects\obj_pickup_candyLarge</object>
       <object>objects\obj_pickup_health</object>

@@ -351,6 +351,7 @@ if hp &lt;= 0
     }
     
     repeat(coins) instance_create(x,y,obj_pickup_coin);
+    roll_ammo_drop(x,y);
     
     if (drop_gun)
     {

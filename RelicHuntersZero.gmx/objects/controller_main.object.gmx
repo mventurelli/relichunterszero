@@ -243,6 +243,13 @@ global.ammo_medium_max = 280;
 global.ammo_heavy_max = 400;
 global.grenades_max = 5;
 
+global.ammoDropChanceLight = 0.1;
+global.ammoDropChanceMedium = 0.035;
+global.ammoDropChanceHeavy = 0.025;
+global.ammoDropLowThreshold = 0.15;
+global.ammoDropEquippedBonus = 0.1;
+global.ammoDropLowBonus = 0.1;
+
 ammo_light_max_regular = global.ammo_light_max;
 ammo_medium_max_regular = global.ammo_medium_max;
 ammo_heavy_max_regular = global.ammo_heavy_max;

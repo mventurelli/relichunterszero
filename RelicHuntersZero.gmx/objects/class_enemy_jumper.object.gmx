@@ -283,6 +283,7 @@ if hp &lt;= 0
     }
     
     repeat(3) instance_create(x,y,obj_pickup_coin);
+    roll_ammo_drop(x,y);
     myCorpse = instance_create(x,y,fx_corpse);
     myCorpse.image_xscale = image_xscale;
     myCorpse.sprite_index = corpseSprite;
