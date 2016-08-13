@@ -291,6 +291,26 @@
         <sprite>sprites\spr_skull_turtle</sprite>
         <sprite>sprites\spr_duck_death_precision</sprite>
       </sprites>
+      <sprites name="Boss">
+        <sprite>sprites\spr_boss_barFace</sprite>
+        <sprite>sprites\spr_boss_barGen</sprite>
+        <sprite>sprites\spr_boss_idle</sprite>
+        <sprite>sprites\spr_boss_walk</sprite>
+        <sprite>sprites\spr_boss_hit</sprite>
+        <sprite>sprites\spr_boss_death</sprite>
+        <sprite>sprites\spr_boss_egg_start</sprite>
+        <sprite>sprites\spr_boss_egg_crack</sprite>
+        <sprite>sprites\spr_boss_egg_idle</sprite>
+      </sprites>
+      <sprites name="Ducan Elite">
+        <sprite>sprites\spr_ducanElite_idle</sprite>
+        <sprite>sprites\spr_ducanElite_walk</sprite>
+        <sprite>sprites\spr_ducanElite_dash</sprite>
+        <sprite>sprites\spr_ducanElite_hit</sprite>
+        <sprite>sprites\spr_ducanElite_death</sprite>
+        <sprite>sprites\spr_ducanElite_death2</sprite>
+        <sprite>sprites\spr_ducanElite_death3</sprite>
+      </sprites>
       <sprites name="Duck">
         <sprite>sprites\spr_duck_idle</sprite>
         <sprite>sprites\spr_duck_walk</sprite>
@@ -318,14 +338,21 @@
         <sprite>sprites\spr_duck3_death3</sprite>
         <sprite>sprites\spr_duck3_walk</sprite>
       </sprites>
-      <sprites name="Ducan Elite">
-        <sprite>sprites\spr_ducanElite_idle</sprite>
-        <sprite>sprites\spr_ducanElite_walk</sprite>
-        <sprite>sprites\spr_ducanElite_dash</sprite>
-        <sprite>sprites\spr_ducanElite_hit</sprite>
-        <sprite>sprites\spr_ducanElite_death</sprite>
-        <sprite>sprites\spr_ducanElite_death2</sprite>
-        <sprite>sprites\spr_ducanElite_death3</sprite>
+      <sprites name="Ghost Ducan">
+        <sprite>sprites\spr_ghost_idle</sprite>
+        <sprite>sprites\spr_ghost_facing</sprite>
+        <sprite>sprites\spr_ghost_walking</sprite>
+      </sprites>
+      <sprites name="Kami Tank">
+        <sprite>sprites\spr_kamitank_idle</sprite>
+        <sprite>sprites\spr_kamitank_walk</sprite>
+        <sprite>sprites\spr_kamitank_shield</sprite>
+        <sprite>sprites\spr_kamitank_idle_defense</sprite>
+        <sprite>sprites\spr_kamitank_transform</sprite>
+        <sprite>sprites\spr_kamitank_hit</sprite>
+        <sprite>sprites\spr_kamitank_death1</sprite>
+        <sprite>sprites\spr_kamitank_death2</sprite>
+        <sprite>sprites\spr_kamitank_death3</sprite>
       </sprites>
       <sprites name="Kami_Kage">
         <sprite>sprites\spr_cage1</sprite>
@@ -335,17 +362,6 @@
         <sprite>sprites\spr_cage3</sprite>
         <sprite>sprites\spr_cage3_hit</sprite>
         <sprite>sprites\spr_cage_destroy</sprite>
-      </sprites>
-      <sprites name="Kamikaze Red">
-        <sprite>sprites\spr_kamired_idle</sprite>
-        <sprite>sprites\spr_kamired_walk</sprite>
-        <sprite>sprites\spr_kamired_precision</sprite>
-        <sprite>sprites\spr_kamired_precision2</sprite>
-        <sprite>sprites\spr_kamired_precision3</sprite>
-        <sprite>sprites\spr_kamired_death</sprite>
-        <sprite>sprites\spr_kamired_death2</sprite>
-        <sprite>sprites\spr_kamired_attack</sprite>
-        <sprite>sprites\spr_kamired_hit</sprite>
       </sprites>
       <sprites name="Kamikaze">
         <sprite>sprites\spr_kamikaze_idle</sprite>
@@ -357,6 +373,17 @@
         <sprite>sprites\spr_kamikaze_death2</sprite>
         <sprite>sprites\spr_kamikaze_attack</sprite>
         <sprite>sprites\spr_kamikaze_hit</sprite>
+      </sprites>
+      <sprites name="Kamikaze Red">
+        <sprite>sprites\spr_kamired_idle</sprite>
+        <sprite>sprites\spr_kamired_walk</sprite>
+        <sprite>sprites\spr_kamired_precision</sprite>
+        <sprite>sprites\spr_kamired_precision2</sprite>
+        <sprite>sprites\spr_kamired_precision3</sprite>
+        <sprite>sprites\spr_kamired_death</sprite>
+        <sprite>sprites\spr_kamired_death2</sprite>
+        <sprite>sprites\spr_kamired_attack</sprite>
+        <sprite>sprites\spr_kamired_hit</sprite>
       </sprites>
       <sprites name="Kamikaze_Elite">
         <sprite>sprites\spr_kamikazelite_death1</sprite>
@@ -398,28 +425,18 @@
         <sprite>sprites\spr_turtle3_death3</sprite>
         <sprite>sprites\spr_turtle3_precision</sprite>
       </sprites>
-      <sprites name="Boss">
-        <sprite>sprites\spr_boss_barFace</sprite>
-        <sprite>sprites\spr_boss_barGen</sprite>
-        <sprite>sprites\spr_boss_idle</sprite>
-        <sprite>sprites\spr_boss_walk</sprite>
-        <sprite>sprites\spr_boss_hit</sprite>
-        <sprite>sprites\spr_boss_death</sprite>
-        <sprite>sprites\spr_boss_egg_start</sprite>
-        <sprite>sprites\spr_boss_egg_crack</sprite>
-        <sprite>sprites\spr_boss_egg_idle</sprite>
-      </sprites>
-      <sprites name="Ghost Ducan">
-        <sprite>sprites\spr_ghost_idle</sprite>
-        <sprite>sprites\spr_ghost_facing</sprite>
-        <sprite>sprites\spr_ghost_walking</sprite>
-      </sprites>
       <sprites name="Worm">
         <sprite>sprites\spr_worm_idle</sprite>
         <sprite>sprites\spr_worm_walk</sprite>
         <sprite>sprites\spr_worm_death1</sprite>
         <sprite>sprites\spr_worm_death2</sprite>
         <sprite>sprites\spr_worm_spawn</sprite>
+      </sprites>
+      <sprites name="Worm Turtle">
+        <sprite>sprites\spr_wormTurtle_idle</sprite>
+        <sprite>sprites\spr_wormTurtle_walk</sprite>
+        <sprite>sprites\spr_wormTurtle_hit</sprite>
+        <sprite>sprites\spr_wormTurtle_death</sprite>
       </sprites>
       <sprites name="Zombie Turtle">
         <sprite>sprites\spr_zombieTurtle_idle</sprite>
@@ -428,12 +445,6 @@
         <sprite>sprites\spr_zombieTurtle_death</sprite>
         <sprite>sprites\spr_zombieTurtle_precision</sprite>
         <sprite>sprites\spr_zombieTurtle_rise</sprite>
-      </sprites>
-      <sprites name="Worm Turtle">
-        <sprite>sprites\spr_wormTurtle_idle</sprite>
-        <sprite>sprites\spr_wormTurtle_walk</sprite>
-        <sprite>sprites\spr_wormTurtle_hit</sprite>
-        <sprite>sprites\spr_wormTurtle_death</sprite>
       </sprites>
     </sprites>
     <sprites name="Environment">
@@ -1418,6 +1429,7 @@
           <object>objects\obj_kamikazelite</object>
           <object>objects\obj_kamikazelite_flying</object>
           <object>objects\obj_kamikaze1</object>
+          <object>objects\obj_kamitank</object>
           <object>objects\obj_kamiAlly</object>
         </objects>
         <objects name="Bosses">
@@ -1464,6 +1476,7 @@
       <object>objects\class_enemy_zombieShooter</object>
       <object>objects\class_enemy_shooter</object>
       <object>objects\class_enemy_kamikaze</object>
+      <object>objects\class_enemy_kamitank</object>
       <object>objects\class_enemy_zombie</object>
       <object>objects\class_enemy</object>
       <object>objects\class_summon</object>

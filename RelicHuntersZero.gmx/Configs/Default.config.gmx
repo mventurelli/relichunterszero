@@ -692,6 +692,11 @@
     <option_textureGroup52_parent>&lt;none&gt;</option_textureGroup52_parent>
     <option_textureGroup52_scaled>0</option_textureGroup52_scaled>
     <option_textureGroup52_targets>9223372036854775807</option_textureGroup52_targets>
+    <option_textureGroup53_border>2</option_textureGroup53_border>
+    <option_textureGroup53_nocropping>0</option_textureGroup53_nocropping>
+    <option_textureGroup53_parent>&lt;none&gt;</option_textureGroup53_parent>
+    <option_textureGroup53_scaled>0</option_textureGroup53_scaled>
+    <option_textureGroup53_targets>9223372036854775807</option_textureGroup53_targets>
     <option_textureGroup5_border>2</option_textureGroup5_border>
     <option_textureGroup5_nocropping>0</option_textureGroup5_nocropping>
     <option_textureGroup5_parent>&lt;none&gt;</option_textureGroup5_parent>
@@ -717,7 +722,7 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>53</option_textureGroup_count>
+    <option_textureGroup_count>54</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Stage Ship</option_textureGroups1>
     <option_textureGroups10>Guns</option_textureGroups10>
@@ -767,6 +772,7 @@
     <option_textureGroups50>Rewards</option_textureGroups50>
     <option_textureGroups51>Holograms</option_textureGroups51>
     <option_textureGroups52>Stage Tutorial</option_textureGroups52>
+    <option_textureGroups53>SpriteSheet - KamiTank</option_textureGroups53>
     <option_textureGroups6>Interface - HUD</option_textureGroups6>
     <option_textureGroups7>Spritesheet - Turtle</option_textureGroups7>
     <option_textureGroups8>VFX - General</option_textureGroups8>
