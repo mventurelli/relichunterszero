@@ -85,6 +85,9 @@ event_inherited();
     monster_kamikaze_2 = ds_list_create();
     ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
     
+    monster_kamikaze_3 = ds_list_create();
+    ds_list_add(monster_kamikaze_3, obj_kamitank, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );
+    
     /// /// /// ///
     
     elite_turtles = ds_list_create();
@@ -193,15 +196,15 @@ if (global.currentLoop &gt;= 2)  ////////// The Ducan Elite ////////////////////
             break;
             
         case level3_1:
-            ds_list_add(enemyPool, elite_plasma_2, elite_plasma_2, elite_sniper, elite_turtles, elite_turtles, elite_turtles );
+            ds_list_add(enemyPool, monster_kamikaze_3, monster_kamikaze_3, elite_plasma_2, elite_plasma_2, elite_sniper, elite_turtles, elite_turtles, elite_turtles );
             break;
             
         case level3_2:
-            ds_list_add(enemyPool, elite_turtles, elite_turtles, elite_turtles, elite_turtles, elite_shotgun, elite_shotgun, elite_squad_2);
+            ds_list_add(enemyPool, monster_kamikaze_3, monster_kamikaze_3, elite_turtles, elite_turtles, elite_turtles, elite_turtles, elite_shotgun, elite_shotgun, elite_squad_2);
             break;
             
         case level3_3:
-            ds_list_add(enemyPool, elite_rocket, elite_rocket, elite_plasma_2, elite_squad_2, elite_squad_2, elite_squad_2);
+            ds_list_add(enemyPool, monster_kamikaze_3, monster_kamikaze_3, elite_rocket, elite_rocket, elite_plasma_2, elite_squad_2, elite_squad_2, elite_squad_2);
             break;
         
         case level4_1:
@@ -235,7 +238,7 @@ else if (global.currentLoop == 1) &amp;&amp;  ////////// The War ///////////////
     (room != levelHalloween_3)
 {
         ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1,
-        monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
+        monster_kamikaze_1,monster_kamikaze_2,ducan_turtlesniper,monster_kamikaze_2,monster_kamikaze_3,monster_kamikaze_1,ducan_ducksquad3_1,ducan_ducksquad3_2,ducan_ducksquad2_1);
 }
 else{ /////////////////////////////////// Regular Spawn /////////////////
     switch (room) {
@@ -341,6 +344,7 @@ if (ds_exists(cleanUp,ds_type_list))
     ds_list_add(cleanUp, ducan_ducksquad3_2);
     ds_list_add(cleanUp, monster_kamikaze_1);
     ds_list_add(cleanUp, monster_kamikaze_2);
+    ds_list_add(cleanUp, monster_kamikaze_3);
     
     ds_list_add(cleanUp, elite_turtles);
     ds_list_add(cleanUp, elite_plasma);

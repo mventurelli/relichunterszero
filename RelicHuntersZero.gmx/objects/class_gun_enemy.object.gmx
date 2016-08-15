@@ -320,7 +320,8 @@ if (!instance_exists(owner)) instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,c_white,1);
+            <string>
+if (sprite_exists(sprite_index)) draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale,image_yscale,image_angle,c_white,1);
 
 if instance_exists(owner)
 {

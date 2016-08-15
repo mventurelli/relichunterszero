@@ -611,26 +611,6 @@
       <sprite>sprites\spr_kami_launcher</sprite>
     </sprites>
     <sprites name="Bullets&amp;Effects">
-      <sprite>sprites\spr_bullet</sprite>
-      <sprite>sprites\spr_bullet_blue</sprite>
-      <sprite>sprites\spr_bullet_small</sprite>
-      <sprite>sprites\spr_bullet_critical</sprite>
-      <sprite>sprites\spr_rocket</sprite>
-      <sprite>sprites\spr_fire</sprite>
-      <sprite>sprites\spr_sonicboom</sprite>
-      <sprite>sprites\spr_casing</sprite>
-      <sprite>sprites\spr_casing_blob</sprite>
-      <sprite>sprites\spr_blood_blob</sprite>
-      <sprite>sprites\spr_hit_light</sprite>
-      <sprite>sprites\spr_hit_medium</sprite>
-      <sprite>sprites\spr_hit_heavy</sprite>
-      <sprite>sprites\spr_blood_bits</sprite>
-      <sprite>sprites\spr_digPile</sprite>
-      <sprite>sprites\spr_dirt_bits</sprite>
-      <sprite>sprites\spr_fx_digItem</sprite>
-      <sprite>sprites\spr_bullet_plasma</sprite>
-      <sprite>sprites\spr_bulletSkull</sprite>
-      <sprite>sprites\spr_fx_weaponGround</sprite>
       <sprites name="Broken">
         <sprite>sprites\spr_broken_pistol</sprite>
         <sprite>sprites\spr_broken_shotgun</sprite>
@@ -647,6 +627,27 @@
         <sprite>sprites\spr_broken_highmag</sprite>
         <sprite>sprites\spr_broken_keytar</sprite>
       </sprites>
+      <sprite>sprites\spr_blood_bits</sprite>
+      <sprite>sprites\spr_blood_blob</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_bullet_blue</sprite>
+      <sprite>sprites\spr_bullet_critical</sprite>
+      <sprite>sprites\spr_bullet_needle</sprite>
+      <sprite>sprites\spr_bullet_plasma</sprite>
+      <sprite>sprites\spr_bullet_small</sprite>
+      <sprite>sprites\spr_bulletSkull</sprite>
+      <sprite>sprites\spr_casing</sprite>
+      <sprite>sprites\spr_casing_blob</sprite>
+      <sprite>sprites\spr_digPile</sprite>
+      <sprite>sprites\spr_dirt_bits</sprite>
+      <sprite>sprites\spr_fire</sprite>
+      <sprite>sprites\spr_fx_digItem</sprite>
+      <sprite>sprites\spr_fx_weaponGround</sprite>
+      <sprite>sprites\spr_hit_heavy</sprite>
+      <sprite>sprites\spr_hit_light</sprite>
+      <sprite>sprites\spr_hit_medium</sprite>
+      <sprite>sprites\spr_rocket</sprite>
+      <sprite>sprites\spr_sonicboom</sprite>
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_crosshair_reload</sprite>
@@ -1104,6 +1105,8 @@
       <script>scripts\find_enemy_autoaim.gml</script>
       <script>scripts\pickup_from_shop.gml</script>
       <script>scripts\projectile_bounce.gml</script>
+      <script>scripts\weapon_homing_setup.gml</script>
+      <script>scripts\weapon_homing_update.gml</script>
     </scripts>
     <scripts name="AI">
       <script>scripts\ai_test_dash_chance.gml</script>
@@ -1454,6 +1457,7 @@
       </objects>
       <objects name="Guns">
         <object>objects\obj_pistol_enemy</object>
+        <object>objects\obj_needler_enemy</object>
         <object>objects\obj_pistol_plasma_enemy</object>
         <object>objects\obj_pistol_spooky_enemy</object>
         <object>objects\obj_ducanPlasma_enemy</object>
@@ -1866,6 +1870,7 @@
       <object>objects\obj_flame</object>
       <object>objects\obj_sonicboom</object>
       <object>objects\obj_projectile_enemy</object>
+      <object>objects\obj_projectile_homingEnemy</object>
       <object>objects\obj_projectile_plasma</object>
       <object>objects\obj_projectile_skull</object>
       <object>objects\obj_projectile_skullEnemy</object>

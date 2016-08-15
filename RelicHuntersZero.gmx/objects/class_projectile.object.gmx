@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Main Shit
 owner = noone;
+myGun = noone;
 damage = 0;
 precisionDamage = 0;
 range = 0;

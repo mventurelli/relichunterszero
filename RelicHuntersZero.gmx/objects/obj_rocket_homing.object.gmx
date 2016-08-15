@@ -44,6 +44,10 @@ if (instance_exists(owner)) audio_play(owner.audio_emitter,false,1,sfx_rocket_st
 
 //Target Acquisition
 
+weapon_homing_setup(3,0.008,0.1,180,5,100,1200);
+
+
+/*
 curveRatio = 3;
 curveRatioDecay = 0.008; 
 curveRatioMin = 0.1;
@@ -83,8 +87,18 @@ curveTarget = noone;
 event_inherited();
 
 var myTargetType = -1;
+var isEnemy = true;
+
 if (faction == f_enemy) myTargetType = class_player;
-else if (faction == f_player) myTargetType = class_enemy;
+else if (faction == f_player)
+{
+    myTargetType = class_enemy;
+    isEnemy = false;
+}
+
+weapon_homing_update(myTargetType,isEnemy);
+
+/*
 
 if (myTargetType != -1)
 {

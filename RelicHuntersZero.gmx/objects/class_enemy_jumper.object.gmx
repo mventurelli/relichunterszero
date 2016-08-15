@@ -70,8 +70,8 @@ ai_cover_check_range = 400;
 ai_cover_hp_threshold = hp_max*0.5;
 
 ai_dash_chance = 0;
-ai_dash_cooldown = room_speed*1;
-ai_dash_cooldown_current = ai_dash_cooldown;
+ai_dash_cooldown = room_speed*5;
+ai_dash_cooldown_current = random(ai_dash_cooldown);
 ai_jump_distance_min = 400;
 ai_jump_distance_max = 900;
 
@@ -102,6 +102,20 @@ look_direction = 1;
 damage = 20;
 damage_timer = room_speed*1;
 damage_timer_current = damage_timer;
+
+//Weapons
+myHomingTargetClass = class_player;
+
+look_direction = 1;
+firing = false;
+fire_range = 350;
+my_gun = instance_create(x,y,obj_needler_enemy);
+my_gun.owner = id;
+
+randomize_supression = irandom_range(-1,1);
+ai_supression = randomize_supression;
+
+aggro_cost_sight_forbidden = 5;
 
 //Sprites
 sprite_hit = spr_kamikazelite_hit;
@@ -351,18 +365,28 @@ if ( (distance_to_player &lt; ai_shutdown_range) || (on_screen(x,y)) ) &amp;&amp
         {
             ai_target = fuckingEnemy;
             distance_to_target = distance_to_enemy;
+            myHomingTargetClass = faction_ducan;
         }
         else 
         {
             ai_target = myClosestPlayer;
             distance_to_target = distance_to_player;
+            myHomingTargetClass = class_player;
         }
     }
     else 
     {
         ai_target_change_current++;
-        if (ai_target = myClosestPlayer) distance_to_target = distance_to_player;
-        else distance_to_target = distance_to_enemy;
+        if (ai_target = myClosestPlayer) 
+        {
+            distance_to_target = distance_to_player;
+            myHomingTargetClass = class_player;
+        }
+        else 
+        {
+            distance_to_target = distance_to_enemy;
+            myHomingTargetClass = faction_ducan;
+        }
     }
         
     // Resolve AI with Target found
@@ -387,11 +411,32 @@ if ( (distance_to_player &lt; ai_shutdown_range) || (on_screen(x,y)) ) &amp;&amp
                 exit; 
             }
             
+            // Fire "Weapon"
+            var sight_forbidden = noone;
+            var sight_blocked = (collision_line(x,y,ai_target.x,ai_target.y,class_solid,false,true));
+            if (sight_blocked) sight_forbidden = (collision_line(x,y,ai_target.x,ai_target.y,obj_limit,false,true));
+            
+            if (distance_to_target &gt; fire_range) || ( (sight_blocked) &amp;&amp; (!ai_supression) ) || (sight_forbidden &amp;&amp; (!ai_supression)) || (sight_blocked &amp;&amp; ai_target != myClosestPlayer)
+            {
+                ai_movetarget_x = ai_target.x;
+                ai_movetarget_y = ai_target.y;
+                firing = false;
+            }
+            else
+            {
+                ai_movetarget_x = x;
+                ai_movetarget_y = y;
+                firing = true;
+                if (instance_exists(my_gun)) my_gun.myHomingTargetClass = myHomingTargetClass;
+            }
+            
+            if (sight_forbidden) &amp;&amp; (ai_supression) aggro -= aggro_cost_sight_forbidden;
+            
             //FLIGHT
             if (ai_test_dash_chance(1)) &amp;&amp; (distance_to_target &lt; ai_jump_distance_max) &amp;&amp; (distance_to_target &gt; ai_jump_distance_min)
             { 
-                fly_target_x = ai_target.x + (irandom_range(-128,128));
-                fly_target_y = ai_target.y + (irandom_range(-128,128));
+                fly_target_x = ai_target.x + (irandom_range(-300,300));
+                fly_target_y = ai_target.y + (irandom_range(-300,300));
                 
                 if ( collision_circle(fly_target_x, fly_target_y, 50, class_solid, false, true) &lt; 0 )
                 {
@@ -477,6 +522,17 @@ if instance_exists(ai_target)
 {
     if (ai_target.x &gt; x) look_direction = 1;   
     else look_direction = 0;
+}
+
+//Force to stop when firing a burst
+if (my_gun) &amp;&amp; (instance_exists(my_gun))
+{
+    if (my_gun.fire_burst_current)
+    {
+        ai_movetarget_x = x;
+        ai_movetarget_y = y;
+        firing = true;
+    }
 }
 
 //Resolve

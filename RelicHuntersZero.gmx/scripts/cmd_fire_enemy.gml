@@ -10,6 +10,7 @@ if instance_exists(owner)
             projectileY = y+(lengthdir_y(spawn_distance_from_barrel,shoot_direction));
             
             projectile = instance_create(projectileX,projectileY,projectile_obj);
+            projectile.myGun = id;
             projectile.speed = projectile_speed * global.enemyProjectileSpeed;
             projectile.decay = projectile_speed_decay * global.enemyProjectileSpeed;
             projectile.range = projectile_range;

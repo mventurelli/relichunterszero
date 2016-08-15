@@ -85,6 +85,9 @@ event_inherited();
     monster_kamikaze_2 = ds_list_create();
     ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
     
+    monster_kamikaze_3 = ds_list_create();
+    ds_list_add(monster_kamikaze_3, obj_kamitank, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );
+    
     
 
 </string>
@@ -146,7 +149,7 @@ switch (room)
         break;
         
     case level3_3:
-        ds_list_add(enemyPool, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1);
+        ds_list_add(enemyPool, monster_kamikaze_3, ducan_ducksquad2_2, ducan_ducksquad2_1, ducan_ducksquad2_3, ducan_turtlesquad3_1, ducan_turtlesquad3_1);
         break;
     
     case level4_1:
@@ -203,7 +206,7 @@ if (ds_exists(cleanUp,ds_type_list))
     ds_list_add(cleanUp, ducan_ducksquad3_2);
     ds_list_add(cleanUp, monster_kamikaze_1);
     ds_list_add(cleanUp, monster_kamikaze_2);
-    
+    ds_list_add(cleanUp, monster_kamikaze_3);
     
     ds_list_add(cleanUp, enemyPool);
 }
