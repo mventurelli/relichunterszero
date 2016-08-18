@@ -1,4 +1,4 @@
-///draw_text_dropshadow_ext_transformed(x, y, text, textColor, outlineColor, shadowColor, shadowIntensity, shadowDistance, xScale, yScale, rotation, alpha)
+///draw_text_dropshadow_ext_transformed(x,y,text,textColor,outlineColor,shadowColor,shadowIntensity,shadowDistance,xScale,yScale,rotation,alpha)
 // Draws colored text with a colored outline and a colored drop shadow
 
 var oldColor = draw_get_color();

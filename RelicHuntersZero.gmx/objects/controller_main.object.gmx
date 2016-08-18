@@ -29,8 +29,10 @@
 
 //Initialization
 draw_texture_flush();
+stringCurrentDate = string(current_day)+string(current_month)+string(current_year);
 
-randomize();
+if (!global.isDaily) randomize();
+//else random_set_seed(global.dailySeed);
 joy_init();
 
 
@@ -294,6 +296,13 @@ gameOverHint = '';
 global.scoreEndlessLevel = 600; 
 global.scoreEndlessLoop = 2000;
 global.scoreEndlessLoopMultiplier = 2;
+
+//Daily Score
+global.dailyChecked = 0;
+global.dailyPlayers = -1;
+global.dailyBadge = 0;
+global.dailyBadgeString = "";
+global.dailyRankDebug = -1;
 
 //Pause Menu
 game_pause_init();
@@ -836,6 +845,8 @@ reloadBarSurface2 = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
             <string>///Endless Challenges
 if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeList,ds_type_list))
 {
+    if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
+    
     //Update Timers for existing Challenges, remove Challenges with expired Timers
     if (room != room_endShop)
     {
@@ -1092,6 +1103,30 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tries to reconnect with Steam Leaderboards
+global.dailyChecked = 0;
 </string>
           </argument>
         </arguments>
@@ -1450,6 +1485,8 @@ var p = 1; while (p &lt;= global.playerCount)
 
 if (!level_built)
 {
+    if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
+    
     //Create global shop data objects
     if (room == room_endShop) instance_create(0,0,data_shopEndless);
     else instance_create(0,0,data_shop);
@@ -1783,6 +1820,8 @@ if (!(room == room_start)) &amp;&amp; (!(room == room_tutorial)) &amp;&amp; (!(r
         
         if (global.gameMode == gamemode_endless)
         {
+            if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
+            
             global.dirtColor = c_white;
             
             //Treasure Chance
@@ -2315,6 +2354,9 @@ steam_screenshot_check();
             <string>///Game Over
 if (global.gameOver)
 {
+    //Load Steam Async
+    if (global.isDaily) if (!instance_exists(controller_steamAsync)) instance_create(0,0,controller_steamAsync);
+    
     //TIPS
     if (gameOverHint == '')
     {
@@ -2384,16 +2426,23 @@ if (global.gameOver)
         if (!global.scoreEndlessBest || global.scoreEndless &gt; global.scoreEndlessBest) global.scoreEndlessBest = global.scoreEndless;
         if (!global.statBestLoop || global.currentLoop &gt; global.statBestLoop) global.statBestLoop = global.currentLoop;
         
+        if (global.isDaily)
+        {
+            global.dailyCompleted = string(current_day)+string(current_month)+string(current_year);
+            global.dailyCompletedScore = global.scoreEndless;
+            global.dailyCompletedBadge = global.dailyBadge;
+        }
+        
         global.currentLoop = 0;
         save_and_clean();
         
         //Resolve
-        if (wantToRestart)
+        if (wantToRestart) &amp;&amp; (!global.isDaily)
         {
             if (global.gameMode == gamemode_adventure) room_goto(room_start);
             else room_goto(level1_1);
         }
-        else if (wantToQuit)
+        else if (wantToQuit) || (global.isDaily)
         {
             game_restart();
         }
@@ -2606,6 +2655,32 @@ if ((!instance_exists(class_enemy)) &amp;&amp; (!instance_exists(obj_kamikazelit
        }
        else exit;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Daily Run Force Save
+if (global.isDaily)
+{
+    global.dailyCompleted = stringCurrentDate;
+    global.dailyCompletedScore = global.scoreEndless;
 }
 </string>
           </argument>
@@ -3313,7 +3388,7 @@ if (global.gameOver)
             
     var gameOverX = width*0.5;
     var gameOverY = height*0.42;
-    draw_text_dropoutline_ext_transformed(gameOverX,gameOverY,loc_key("HUD_GAMEOVER"),gameOverMagenta,gameOverMagenta,c_black,0.6,4,1,1,0,1);
+    if (!global.isDaily) draw_text_dropoutline_ext_transformed(gameOverX,gameOverY,loc_key("HUD_GAMEOVER"),gameOverMagenta,gameOverMagenta,c_black,0.6,4,1,1,0,1);
             
     draw_set_font(global.font_numberMedium);
     gameOverY2 = height*0.5;
@@ -3332,29 +3407,101 @@ if (global.gameOver)
         gameOverString2 = loc_key("HUD_GAMEOVER_MENU_JOY");
     }
             
-    draw_text_dropoutline_ext_transformed(gameOverX,gameOverY2,gameOverString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
-    draw_text_dropoutline_ext_transformed(gameOverX,gameOverY3,gameOverString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+    if (!global.isDaily) draw_text_dropoutline_ext_transformed(gameOverX,gameOverY2,gameOverString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
+    if (!global.isDaily) draw_text_dropoutline_ext_transformed(gameOverX,gameOverY3,gameOverString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
     
     //Endless Stats
     if (global.gameMode == gamemode_endless)
     {
-        var endlessY1 = height*0.26;
-        var endlessY2 = height*0.30;
-        var endlessY3 = height*0.34;
-        var endlessString1 = loc_key("HUD_ENDLESS_SCORE") + ": " + string(global.scoreEndless);
-        var endlessString2 = loc_key("HUD_LOOP") + ": " + string(global.currentLoop);
-        
-        var myTime = global.statRunTime;
-        var myTimeMinutes = myTime div 60;
-        var myTimeSeconds = myTime mod 60;
-        var myTimeString = string(myTimeMinutes) + 'm ' + string(myTimeSeconds);
-        
-        var endlessString3 = loc_key("HUD_ENDLESS_TIME") + ": " + myTimeString;
-        
-        draw_set_font(global.font_numberMedium);
-        draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
-        draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
-        draw_text_dropoutline_ext_transformed(gameOverX,endlessY3,endlessString3,c_white,c_white,c_black,0.6,4,1,1,0,1);
+        ///Daily Endless Game Over HUD
+        if (global.isDaily)
+        {
+            var badgeY = height*0.36;
+            
+            if (global.dailyPlayers != -1) &amp;&amp; (global.dailyRankDebug != -1)
+            {
+                var percentString = "";
+                var rankString = loc_key("DAILY_RANK_UNRANKED");
+                switch (global.dailyBadge)
+                {
+                    case 2 :
+                        percentString = " (TOP 70%)";
+                        rankString = loc_key("DAILY_RANK_BRONZE");
+                        break;
+                    case 3 :
+                        percentString = " (TOP 50%)";
+                        rankString = loc_key("DAILY_RANK_SILVER");
+                        break;
+                    case 4 :
+                        percentString = " (TOP 30%)";
+                        rankString = loc_key("DAILY_RANK_GOLD");
+                        break;
+                    case 5 : 
+                        percentString = " (TOP 15%)";
+                        rankString = loc_key("DAILY_RANK_PLATINUM");
+                        break;
+                    case 6 :
+                        percentString = " (TOP 10%)";
+                        rankString = loc_key("DAILY_RANK_DIAMOND");
+                        break;
+                    case 7 :
+                        percentString = " (TOP 5%)";
+                        rankString = loc_key("DAILY_RANK_MASTER");
+                        break;
+                }
+                
+                
+                if (instance_exists(gui_badgeLoading)) with (gui_badgeLoading) { instance_destroy(); } 
+                draw_sprite_ext(spr_badgeDaily,global.dailyBadge,gameOverX,badgeY,2,2,0,c_white,1);
+                
+                var endlessString1 = rankString;
+                var endlessString2 = loc_key("HUD_ENDLESS_SCORE") + ": " + string(global.scoreEndless) + percentString;
+                var endlessString3 = string(global.dailyPlayers) + " " + loc_key("DAILY_PLAYERS");
+                var endlessString4 = 'YOUR POSITION: ' + string(global.dailyRankDebug);
+                
+                var endlessY1 = height*0.44;
+                var endlessY2 = height*0.48;
+                var endlessY3 = height*0.52;
+                var endlessY4 = height*0.56;
+                
+                draw_set_font(global.font_numberMedium);
+                draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1.5,1.5,0,1);
+                draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+                draw_text_dropoutline_ext_transformed(gameOverX,endlessY3,endlessString3,c_white,c_white,c_black,0.6,4,1,1,0,1);
+                //DEBUG ONLY: draw_text_dropoutline_ext_transformed(gameOverX,endlessY4,endlessString4,c_white,c_white,c_black,0.6,4,1,1,0,1);
+            }
+            else 
+            {
+                //Loading messages
+                if (!instance_exists(gui_badgeLoading)) instance_create(0,0,gui_badgeLoading);
+                else{
+                    var loading = instance_find(gui_badgeLoading,0);
+                    draw_sprite_ext(loading.sprite_index,loading.image_index,gameOverX,badgeY,2,2,0,c_white,1);
+                 } 
+                draw_text_dropoutline_ext_transformed(gameOverX,height*0.44,loc_key("DAILY_CONNECTING"),c_white,c_white,c_black,0.6,4,1,1,0,1);
+                draw_text_dropoutline_ext_transformed(gameOverX,height*0.48,loc_key("DAILY_CONNECTING2"),c_white,c_white,c_black,0.6,4,1,1,0,1);
+            }
+        }
+        else{
+            ///Regular Endless Game Over HUD
+            var endlessY1 = height*0.26;
+            var endlessY2 = height*0.30;
+            var endlessY3 = height*0.34;
+            var endlessString1 = loc_key("HUD_ENDLESS_SCORE") + ": " + string(global.scoreEndless);
+            var endlessString2 = loc_key("HUD_LOOP") + ": " + string(global.currentLoop);
+            
+            var myTime = global.statRunTime;
+            var myTimeMinutes = myTime div 60;
+            var myTimeSeconds = myTime mod 60;
+            var myTimeString = string(myTimeMinutes) + 'm ' + string(myTimeSeconds);
+            
+            var endlessString3 = loc_key("HUD_ENDLESS_TIME") + ": " + myTimeString;
+            
+            draw_set_font(global.font_numberMedium);
+            draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
+            draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+            draw_text_dropoutline_ext_transformed(gameOverX,endlessY3,endlessString3,c_white,c_white,c_black,0.6,4,1,1,0,1);
+        }
     }
     
     //Gameplay Hints

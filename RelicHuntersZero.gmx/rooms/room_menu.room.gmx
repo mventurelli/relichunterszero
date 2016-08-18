@@ -64,6 +64,7 @@
     <instance objName="menu_fx_twitter" x="1136" y="520" name="inst_D148771D" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_facebook" x="1216" y="520" name="inst_AC576F95" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="menu_fx_opensource" x="1176" y="360" name="inst_A33C0F4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_btn_daily" x="472" y="368" name="inst_DEABE883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

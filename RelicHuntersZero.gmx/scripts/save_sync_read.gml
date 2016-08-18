@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "\saveData.ini");
     
-    global.currentVersionNumber = ini_read_string('Version','Version','UPDATE 14');
+    global.currentVersionNumber = ini_read_string('Version','Version','YEAR 2 - UPDATE 14');
     global.language = ini_read_real('Language','Language',lang_english);
     
     // Temporary Values
@@ -35,6 +35,7 @@ ini_open(working_directory + "\saveData.ini");
     }
     
     //Endless Temp
+    global.isDaily = ini_read_real('Temp','isDaily',false);
     global.playedEndless = ini_read_real('Temp','playedEndless',false);
     global.bountyEndless = ini_read_real('Temp','Bounty Endless',0);
     global.currentLoop = ini_read_real('Temp','Loop',0);
@@ -69,6 +70,10 @@ ini_open(working_directory + "\saveData.ini");
     
     global.lowPerfChecked = ini_read_real('Persistence','LowPerfChecked',0);
     
+    global.dailyCompleted = ini_read_string('Persistence','dailyCompleted',"");
+    global.dailyCompletedScore = ini_read_real('Persistence','dailyCompletedScore',0);
+    global.dailyCompletedBadge = ini_read_real('Persistence','dailyCompletedBadge',0);
+        
     global.unlockEndless = ini_read_real('Persistence','UnlockEndless',0);
     global.unlockPinky = ini_read_real('Persistence','UnlockPinky',1);
     global.unlockRaff = ini_read_real('Persistence','UnlockRaff',0);

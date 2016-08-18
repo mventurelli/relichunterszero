@@ -26,6 +26,7 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Temp','WeaponPickedUp',global.hasPickedWeapon);
     ini_write_real('Temp','CheckpointUsed',global.hasUsedCheckpoint);
     
+    ini_write_real('Temp','isDaily',global.isDaily);
     ini_write_real('Temp','playedEndless',global.playedEndless);
     ini_write_real('Temp','Bounty Endless',global.bountyEndless);
     ini_write_real('Temp','Loop',global.currentLoop);
@@ -101,6 +102,9 @@ ini_open(working_directory + "\saveData.ini");
     }
     
         ini_write_real('Persistence','LowPerfChecked',global.lowPerfChecked);
+        ini_write_string('Persistence','dailyCompleted',global.dailyCompleted);
+        ini_write_real('Persistence','dailyCompletedScore',global.dailyCompletedScore);
+        ini_write_real('Persistence','dailyCompletedBadge',global.dailyCompletedBadge);
         
         ini_write_real('Persistence','UnlockEndless',global.unlockEndless);
         ini_write_real('Persistence','UnlockPinky',global.unlockPinky);

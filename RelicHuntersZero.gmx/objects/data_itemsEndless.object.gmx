@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Create the lists
 event_inherited();
+if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
 
 //Item Group Design (Spawns One Item Randomly)
     

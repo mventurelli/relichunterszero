@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="57" name="datafiles">
-    <datafiles number="57" name="fonts">
+  <datafiles number="59" name="datafiles">
+    <datafiles number="59" name="fonts">
       <datafile>
         <name>8-BIT WONDER.TTF</name>
         <exists>-1</exists>
@@ -94,7 +94,7 @@
     <datafile>
       <name>locSheet.csv</name>
       <exists>-1</exists>
-      <size>476821</size>
+      <size>491268</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -702,6 +702,9 @@
       <sprite>sprites\spr_challengeCommon</sprite>
       <sprite>sprites\spr_challengeUnique</sprite>
       <sprite>sprites\spr_edgeTrackEnemy</sprite>
+      <sprite>sprites\spr_badgeDaily</sprite>
+      <sprite>sprites\spr_badgeLoading</sprite>
+      <sprite>sprites\spr_dailyBanner</sprite>
     </sprites>
     <sprites name="Items">
       <sprite>sprites\spr_pickup_health</sprite>
@@ -1002,6 +1005,7 @@
         <sprite>sprites\spr_card_punny</sprite>
         <sprite>sprites\spr_card_raff</sprite>
       </sprites>
+      <sprite>sprites\spr_menu_daily</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1326,6 +1330,7 @@
       <object>objects\controller_end</object>
       <object>objects\class_lightsource</object>
       <object>objects\controller_menuButtons</object>
+      <object>objects\controller_steamAsync</object>
     </objects>
     <objects name="Data Objects">
       <object>objects\class_dataObject</object>
@@ -1686,6 +1691,8 @@
         <object>objects\menu_btn_play</object>
         <object>objects\menu_btn_endless</object>
         <object>objects\menu_btn_settings</object>
+        <object>objects\menu_btn_daily</object>
+        <object>objects\menu_btn_confirm_daily</object>
         <object>objects\menu_btn_credits</object>
         <object>objects\menu_btn_quit</object>
         <object>objects\menu_fx_settings</object>
@@ -1702,6 +1709,7 @@
         <object>objects\menu_fx_facebook</object>
         <object>objects\menu_fx_zoeira</object>
         <object>objects\menu_fx_logo</object>
+        <object>objects\menu_fx_dailyBanner</object>
       </objects>
       <objects name="Settings Menu">
         <object>objects\menu_btn_cancel</object>
@@ -1791,6 +1799,7 @@
         <object>objects\pausemenu_btn_menu</object>
         <object>objects\pausemenu_btn_exit</object>
       </objects>
+      <object>objects\gui_badgeLoading</object>
     </objects>
     <objects name="Pickups">
       <object>objects\class_interactive_master</object>
@@ -2119,6 +2128,7 @@
     <room>rooms\room_charSelection</room>
     <room>rooms\room_settings</room>
     <room>rooms\room_delete</room>
+    <room>rooms\room_daily</room>
     <room>rooms\room_credits</room>
     <room>rooms\room_mapping</room>
     <room>rooms\room_gameplay</room>

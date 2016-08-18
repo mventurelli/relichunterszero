@@ -32,9 +32,9 @@ magnet_speed_max = 8;
 magnet_friction = 2;
 
 ammoType = type_light;
-myAmmo = 10;
+myAmmo = 4;
 isInteractive = true;
-interactionTime = room_speed*3;
+interactionTime = room_speed*2;
 
 alpha = 1;
 alpha_duration = room_speed*0.1;
@@ -63,6 +63,9 @@ randomizeDir = false;
 image_speed = 0.2;
 
 direction = random(360);
+
+//Relic Buff
+if (global.relic_watchful_eye == 2) myAmmo = round(myAmmo * global.watchfulEyePickupBonus);
 </string>
           </argument>
         </arguments>
@@ -152,19 +155,33 @@ if draw_height &gt;= 0 &amp;&amp; (vertical_speed_start)
 if (vertical_speed_start &lt; interactive_speed) &amp;&amp; instance_exists(class_player)
 {
     var player = instance_nearest(x,y,class_player);
-    
-    speed -= magnet_friction
-    if speed &lt; 0 speed = 0;
-    
-    if point_distance(x,y,player.x,player.y) &lt;= magnet_range
+    if (instance_exists(player))
     {
-        speed += magnet_accel;
-        if (speed &gt; magnet_speed_max) speed = magnet_speed_max;
-        direction = point_direction(x,y,player.x,player.y);
-    }   
+        var p = player.myPlayerId;
+        var isAmmoFull = false;
+        
+        if (ammoType == type_light) if (global.ammo_light[p] &gt;= global.ammo_light_max) isAmmoFull = true;
+        if (ammoType == type_medium) if (global.ammo_medium[p] &gt;= global.ammo_medium_max) isAmmoFull = true;
+        if (ammoType == type_heavy) if (global.ammo_heavy[p] &gt;= global.ammo_heavy_max) isAmmoFull = true;
     
-    if (!isInteractive) speed = 0;
+        if (!isAmmoFull)
+        {
+            isInteractive = true;
+            
+            speed -= magnet_friction
+            if speed &lt; 0 speed = 0;
+            
+            if point_distance(x,y,player.x,player.y) &lt;= magnet_range
+            {
+                speed += magnet_accel;
+                if (speed &gt; magnet_speed_max) speed = magnet_speed_max;
+                direction = point_direction(x,y,player.x,player.y);
+            }   
+        }
+    }
 }
+
+//if (!isInteractive) speed = 0;
 </string>
           </argument>
         </arguments>
@@ -275,7 +292,7 @@ else if (ammoType == type_heavy) sprite_subimage = 0;
           <argument>
             <kind>1</kind>
             <string>///Pickup
-if (vertical_speed_start &lt; interactive_speed) &amp;&amp; (isInteractive) &amp;&amp; (instance_exists(other))
+if (vertical_speed_start &lt; interactive_speed) &amp;&amp; (instance_exists(other)) &amp;&amp;  (isInteractive)
 {
     var p = other.myPlayerId;
     var isAmmoFull = false;

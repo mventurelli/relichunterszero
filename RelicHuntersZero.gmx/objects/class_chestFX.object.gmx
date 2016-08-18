@@ -124,7 +124,7 @@ if (!spawned) &amp;&amp; (image_index &gt;= spawnFrame){
                 stringChallenge="CHALLENGE_HAUNTED"; 
                 stringDescription="CHALLENGE_HAUNTED_DESC"; 
                 listName="CHALLENGE_HAUNTED"; 
-                global.challengeHauntedTimer = challengeHauntedRounds;
+                global.challengeHauntedTimer = global.challengeHauntedRounds;
                 }
             break;
         };
