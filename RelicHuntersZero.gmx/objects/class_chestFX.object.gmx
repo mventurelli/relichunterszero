@@ -116,7 +116,7 @@ if (!spawned) &amp;&amp; (image_index &gt;= spawnFrame){
                 stringChallenge="CHALLENGE_HUNTED"; 
                 stringDescription="CHALLENGE_HUNTED_DESC"; 
                 listName="CHALLENGE_HUNTED"; 
-                global.challengeHuntedTimer = challengeHuntedRounds;
+                global.challengeHuntedTimer = global.challengeHuntedRounds;
             }
             break;
             case "CHALLENGE_HAUNTED" : if (!global.challengeHaunted) &amp;&amp; (room != levelHalloween_3) { 

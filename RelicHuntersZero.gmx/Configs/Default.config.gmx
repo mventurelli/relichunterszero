@@ -376,7 +376,7 @@
     <option_mac_copyright_info>Rogue Snail</option_mac_copyright_info>
     <option_mac_create_app_store>0</option_mac_create_app_store>
     <option_mac_display_name>Relic Hunters Zero</option_mac_display_name>
-    <option_mac_enable_steam>-1</option_mac_enable_steam>
+    <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>-1</option_mac_fullscreen>
     <option_mac_icon_png>Configs\Default\mac\icon512.png</option_mac_icon_png>
     <option_mac_interpolate>0</option_mac_interpolate>
@@ -799,7 +799,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>42</option_version_build>
+    <option_version_build>43</option_version_build>
     <option_version_company>Rogue Snail</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>
@@ -875,12 +875,12 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
-    <option_windows_build_version>42</option_windows_build_version>
+    <option_windows_build_version>43</option_windows_build_version>
     <option_windows_company_info>Rogue Snail</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>True</option_windows_create_textures_on_demand>
     <option_windows_description_info></option_windows_description_info>
-    <option_windows_enable_steam>0</option_windows_enable_steam>
+    <option_windows_enable_steam>-1</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>
