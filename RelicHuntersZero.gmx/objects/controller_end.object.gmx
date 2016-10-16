@@ -258,7 +258,7 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
 
 if (allowInput)
 {
-    show_debug_message("ALLOWINPUT IS TRUE AND I STILL DIDNT CRASH");
+    //show_debug_message("ALLOWINPUT IS TRUE AND I STILL DIDNT CRASH");
     if (keyboard_check_pressed(vk_anykey)) || (mouse_check_button_pressed(mb_left))
     {
         goToNextRoom = true;
@@ -275,7 +275,7 @@ if (allowInput)
     }
     
     if (goToNextRoom) room_goto(room_splash);
-    show_debug_message("FINISHED ALLOWINPUT");
+    //show_debug_message("FINISHED ALLOWINPUT");
 }
 
 

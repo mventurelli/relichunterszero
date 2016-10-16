@@ -30,7 +30,7 @@
 elite = false;
 energy_max = 0;
 hp_max = 150;
-hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
+hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 
 ai_supression = 1;
 

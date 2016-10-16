@@ -29,7 +29,7 @@
 
 if (global.currentLoop &lt; 2)
 {
-    maxhp = 125;
+    maxhp = 180;
     sprite = spr_crate;
     sprite_hit = spr_crate;
     sprite_dirt = spr_crate_dirt;

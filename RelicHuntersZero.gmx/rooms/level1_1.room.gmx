@@ -980,6 +980,9 @@
     <instance objName="obj_spawn_botRight" x="4032" y="1664" name="inst_8629A838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_limit" x="704" y="832" name="inst_2BD70B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_pistol" x="663" y="1061" name="inst_C23365A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kamitank" x="1152" y="1280" name="inst_D2E2DC7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kamitank" x="2304" y="1152" name="inst_D3244791" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kamitank" x="3008" y="1408" name="inst_1138149A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_desert" x="896" y="960" w="64" h="64" xo="4" yo="76" id="10005569" name="inst_7B6C100B" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

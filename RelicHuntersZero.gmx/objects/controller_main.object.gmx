@@ -522,8 +522,14 @@ if (global.gameMode == gamemode_endless)
     global.challengeJawsRounds = 6;
     global.challengeCountdownRounds = 4;
     
+    global.challengeLightFocusRounds = 4;
+    global.challengeMediumFocusRounds = 4;
+    global.challengeHeavyFocusRounds = 4;
+    
     global.challengeHuntedRounds = 4;
     global.challengeHauntedRounds = 4;
+    
+    
 }
 
 
@@ -845,8 +851,14 @@ reloadBarSurface2 = surface_create(reloadBarSurfaceSize,reloadBarSurfaceSize);
             <string>///Endless Challenges
 if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeList,ds_type_list))
 {
-    if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
-    
+    if (global.isDaily) 
+    {
+        var setSeed = global.dailySeed+global.stage_current+global.currentLoop;
+        if (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_3) setSeed++;
+        else if (room == level1_2) || (room == level2_2) || (room == level3_2) || (room == level4_2) setSeed +=2;
+        else if (room == level1_3) || (room == level2_3) || (room == level3_3) || (room == level4_3) setSeed +=3;
+        random_set_seed(setSeed);
+    }
     //Update Timers for existing Challenges, remove Challenges with expired Timers
     if (room != room_endShop)
     {
@@ -966,6 +978,33 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                 if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHaunted = false;}
             }
         }
+        
+        if (global.challengeLightFocus) 
+        { 
+            global.challengeLightFocusTimer--; 
+            if (global.challengeLightFocusTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_LIGHTFOCUS');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeLightFocus = 0;}
+            }
+        }
+        
+        if (global.challengeMediumFocus) 
+        { 
+            global.challengeMediumFocusTimer--; 
+            if (global.challengeMediumFocusTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_MEDIUMFOCUS');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeMediumFocus = 0;}
+            }
+        }
+        
+        if (global.challengeHeavyFocus) 
+        { 
+            global.challengeHeavyFocusTimer--; 
+            if (global.challengeHeavyFocusTimer &lt;= 0) {
+                var challengePos = ds_list_find_index(global.challengeList,'CHALLENGE_HEAVYFOCUS');
+                if (challengePos != -1) { ds_list_delete(global.challengeList,challengePos); global.challengeHeavyFocus = 0;}
+            }
+        }
     }
 
     //Add new Challenges
@@ -977,7 +1016,8 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
         room == level4_1 ||
         room == level4_3 ||
         room == levelHalloween_2 ||
-        (global.currentLoop &gt;= 3 &amp;&amp; room != room_endShop)
+        (global.currentLoop &gt;= 3 &amp;&amp; room != room_endShop) ||
+        (global.isDaily &amp;&amp; room != room_endShop)
         )
     {
         var stringChallenge = "";
@@ -990,7 +1030,7 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
             var uniqueChallengeChance = random(1);
             if (uniqueChallengeChance &lt;= 0.35){
                 chUnique = true;
-                var randomChallenge = irandom(9);
+                var randomChallenge = irandom(12);
                 switch (randomChallenge){
                     case 0 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HUNGER") == -1) &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HUNGER") == -1) { 
                         global.challengeHunger = true; stringChallenge="CHALLENGE_HUNGER"; stringDescription="CHALLENGE_HUNGER_DESC"; listName="CHALLENGE_HUNGER";
@@ -1041,24 +1081,41 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
                         global.challengeHeavyBurden = true; stringChallenge="CHALLENGE_HEAVYBURDEN"; stringDescription="CHALLENGE_HEAVYBURDEN_DESC"; listName="CHALLENGE_HEAVYBURDEN";
                         global.challengeHeavyBurdenTimer = global.challengeHeavyBurdenRounds;
                         } break;
+                        
+                    case 10 : if (ds_list_find_index(global.challengeList,"CHALLENGE_LIGHTFOCUS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_LIGHTFOCUS") == -1) { 
+                        global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescription="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS";
+                        global.challengeLightFocusTimer = global.challengeLightFocusRounds;
+                        } break;
+                        
+                    case 11 : if (ds_list_find_index(global.challengeList,"CHALLENGE_MEDIUMFOCUS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_MEDIUMFOCUS") == -1) { 
+                        global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescription="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS";
+                        global.challengeMediumFocusTimer = global.challengeMediumFocusRounds;
+                        } break;
+                    
+                    case 12 : if (ds_list_find_index(global.challengeList,"CHALLENGE_HEAVYFOCUS") == -1)  &amp;&amp; (ds_list_find_index(global.challengeForbiddenList,"CHALLENGE_HEAVYFOCUS") == -1) { 
+                        global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescription="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS";
+                        global.challengeHeavyFocusTimer = global.challengeHeavyFocusRounds;
+                        } break;
                 }
             }
             
             //No luck? Roll the common ones
             if (stringChallenge == "") {
-                var randomChallenge = irandom(5);
+                chUnique = false;
+                var randomChallenge = irandom(2);
                 switch (randomChallenge){
                     case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescription="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
                     case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescription="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
                     case 2 : global.challengeHighTech++; stringChallenge="CHALLENGE_HIGHTECH"; stringDescription="CHALLENGE_HIGHTECH_DESC"; listName="CHALLENGE_HIGHTECH"; break;
-                    case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescription="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
-                    case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescription="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
-                    case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescription="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
+                    //case 3 : global.challengeLightFocus++; stringChallenge="CHALLENGE_LIGHTFOCUS"; stringDescription="CHALLENGE_LIGHTFOCUS_DESC"; listName="CHALLENGE_LIGHTFOCUS"; break;
+                    //case 4 : global.challengeMediumFocus++; stringChallenge="CHALLENGE_MEDIUMFOCUS"; stringDescription="CHALLENGE_MEDIUMFOCUS_DESC"; listName="CHALLENGE_MEDIUMFOCUS"; break;
+                    //case 5 : global.challengeHeavyFocus++; stringChallenge="CHALLENGE_HEAVYFOCUS"; stringDescription="CHALLENGE_HEAVYFOCUS_DESC"; listName="CHALLENGE_HEAVYFOCUS"; break;
                 }
             } else global.entropy += 0.1; // &lt;--- If a Rare Challenge indeed spawns, increase Entropy for the player
         }
         else{
             var randomChallenge = irandom(2);
+            chUnique = false;
             switch (randomChallenge){
                 case 0 : global.challengeSteroids++; stringChallenge="CHALLENGE_STEROIDS"; stringDescription="CHALLENGE_STEROIDS_DESC"; listName="CHALLENGE_STEROIDS"; break;
                 case 1 : global.challengeWanted++; stringChallenge="CHALLENGE_WANTED"; stringDescription="CHALLENGE_WANTED_DESC"; listName="CHALLENGE_WANTED"; break;
@@ -1084,11 +1141,11 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
 
 //Define Challenge Values
     global.challengeSteroidsMultiplier = 0.2;
-    global.challengeWantedMultiplier = 0.2;
+    global.challengeWantedMultiplier = 0.3;
     global.challengeHighTechMultiplier = 0.3;
-    global.challengeLightFocusMultiplier = 0.3;
-    global.challengeMediumFocusMultiplier = 0.3;
-    global.challengeHeavyFocusMultiplier = 0.3;
+    global.challengeLightFocusMultiplier = 0.7; //was 0.3
+    global.challengeMediumFocusMultiplier = 0.7; //was 0.3
+    global.challengeHeavyFocusMultiplier = 0.7; //was 0.3
     global.challengeThirstMultiplier = 1;
     global.challengeOverchargeDamage = 50;
     global.challengeMedievalPenalty = 0.4;
@@ -1097,6 +1154,9 @@ if (global.gameMode == gamemode_endless) &amp;&amp; (ds_exists(global.challengeL
     global.challengeHeavyBurdenPenalty = 0.55;
     global.challengeBloodlustRate = 1.5; //Im applying this to the fire rate at class_gun_enemy
     global.challengeDucanWeaponsSpeed = 1.2;
+    
+    global.challengeSteroidsMax = 100;
+    global.challengeHighTechMax = 50;
     
 //Apply these right here, right now
     if (global.challengeDucanWeapons) global.enemyProjectileSpeed = global.challengeDucanWeaponsSpeed;
@@ -1962,7 +2022,6 @@ if (global.level_complete)
     {
         //Test boss: room_goto(room_boss); exit;  
         //Test halloween: room_goto(levelHalloween_1); exit; 
-        
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
         else if (global.stage_current == 2) room_goto(level3_1);
@@ -3353,8 +3412,8 @@ if (global.pauseMenu) &amp;&amp; (global.gameMode == gamemode_endless)
             var challenge = ds_list_find_value(global.challengeList,i);
             
             var chSprite = spr_challengeUnique;
-            if (challenge == "CHALLENGE_STEROIDS") || (challenge == "CHALLENGE_WANTED") || (challenge == "CHALLENGE_LIGHTFOCUS") || (challenge == "CHALLENGE_HIGHTECH") ||
-            (challenge == "CHALLENGE_MEDIUMFOCUS") || (challenge == "CHALLENGE_HEAVYFOCUS") || (challenge == "CHALLENGE_REINFORCEMENTS"){
+            if (challenge == "CHALLENGE_STEROIDS") || (challenge == "CHALLENGE_WANTED") || (challenge == "CHALLENGE_HIGHTECH") || (challenge == "CHALLENGE_REINFORCEMENTS")
+            {
                     chSprite = spr_challengeCommon;
             }
             
@@ -3376,6 +3435,9 @@ if (global.pauseMenu) &amp;&amp; (global.gameMode == gamemode_endless)
                     case "CHALLENGE_COUNTDOWN" : timerCount = global.challengeCountdownTimer; break;
                     case "CHALLENGE_HUNTED" : timerCount = global.challengeHuntedTimer; break;
                     case "CHALLENGE_HAUNTED" : timerCount = global.challengeHauntedTimer; break;
+                    case "CHALLENGE_LIGHTFOCUS" : timerCount = global.challengeLightFocusTimer; break;
+                    case "CHALLENGE_MEDIUMFOCUS" : timerCount = global.challengeMediumFocusTimer; break;
+                    case "CHALLENGE_HEAVYFOCUS" : timerCount = global.challengeHeavyFocusTimer; break;
                 }
             }
             

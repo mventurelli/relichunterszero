@@ -35,7 +35,7 @@ image_yscale = 1.25;
 
 energy_max = 0;
 hp_max = 400;
-hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
+hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 damage = 20;
 
 speed_walk = 3;

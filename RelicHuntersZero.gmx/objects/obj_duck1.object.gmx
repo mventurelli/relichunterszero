@@ -30,9 +30,10 @@ drop_gun_chance = 0;
 
 elite = true;
 energy_max = 100;
-energy_max += round(energy_max*(global.challengeHighTech*global.challengeHighTechMultiplier));
+energy_max += global.challengeHighTech*(min( round(energy_max*global.challengeHighTechMultiplier), global.challengeHighTechMax) );
 hp_max = 100;
-hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
+hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
+
 
 aggro_distance = 400;
 aggro_add_patrol = 0.5;

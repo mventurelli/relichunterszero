@@ -37,8 +37,7 @@ if (instance_exists(obj_rider)){
 }
 else {
     hp_max = 42;
-    hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
-    damage = 18;
+hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));    damage = 18;
 }
 
 speed_walk = 3.25;

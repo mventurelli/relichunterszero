@@ -203,7 +203,9 @@ ini_open(working_directory + "\saveData.ini");
     global.challengeCountdownTimer = ini_read_real('Challenges','challengeCountdownTimer',0);
     global.challengeHuntedTimer = ini_read_real('Challenges','challengeHuntedTimer',0);
     global.challengeHauntedTimer = ini_read_real('Challenges','challengeHauntedTimer',0);
-    
+    global.challengeLightFocusTimer = ini_read_real('Challenges','challengeLightFocusTimer',0);
+    global.challengeMediumFocusTimer = ini_read_real('Challenges','challengeMediumFocusTimer',0);
+    global.challengeHeavyFocusTimer = ini_read_real('Challenges','challengeHeavyFocusTimer',0);
     
     // Game Progression
     

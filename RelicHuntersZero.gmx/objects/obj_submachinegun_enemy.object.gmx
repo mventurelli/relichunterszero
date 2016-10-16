@@ -29,7 +29,7 @@
 sound = 'smg';
 ammo_type = type_light;
 
-projectile_speed = 26;
+projectile_speed = 35;
 projectile_speed_decay = 0.2;
 projectile_damage = 4;
 projectile_range = 450;

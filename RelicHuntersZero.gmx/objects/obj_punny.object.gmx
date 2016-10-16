@@ -58,6 +58,10 @@ event_inherited();
     stamina = stamina_max;
     energy_regen_speed = 2;
     
+    move_speed_max = 6; 
+    move_speed_sprint = 8; 
+    move_speed_aiming = 3; 
+    
     //Sprites
     sprite_idle = spr_punny_idle;
     sprite_walk = spr_punny_walk;

@@ -19,6 +19,9 @@
   <maclinkerflags></maclinkerflags>
   <maccompilerflags></maccompilerflags>
   <androidinject></androidinject>
+  <androidmanifestinject></androidmanifestinject>
+  <iosplistinject></iosplistinject>
+  <androidactivityinject></androidactivityinject>
   <gradleinject></gradleinject>
   <iosSystemFrameworks/>
   <iosThirdPartyFrameworks/>

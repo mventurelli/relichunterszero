@@ -58,6 +58,7 @@
     <option_android_interpolate>-1</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
     <option_android_licensing_key></option_android_licensing_key>
+    <option_android_lint>-1</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
     <option_android_min_sdk_version>9</option_android_min_sdk_version>
     <option_android_minor_version>0</option_android_minor_version>
@@ -89,6 +90,7 @@
     <option_android_push_id></option_android_push_id>
     <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
+    <option_android_sleep_margin>4</option_android_sleep_margin>
     <option_android_splash_png>Configs\Default\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
@@ -139,6 +141,7 @@
     <option_androidfire_large_icon_png>Configs\Default\amazonfire\icons\large_icon.png</option_androidfire_large_icon_png>
     <option_androidfire_licensing_enable>false</option_androidfire_licensing_enable>
     <option_androidfire_licensing_key></option_androidfire_licensing_key>
+    <option_androidfire_lint>0</option_androidfire_lint>
     <option_androidfire_major_version>1</option_androidfire_major_version>
     <option_androidfire_min_sdk_version>9</option_androidfire_min_sdk_version>
     <option_androidfire_minor_version>0</option_androidfire_minor_version>
@@ -207,6 +210,7 @@
     <option_androidtv_large_icon_png>Configs\Default\androidtv\icons\large_icon.png</option_androidtv_large_icon_png>
     <option_androidtv_licensing_enable>0</option_androidtv_licensing_enable>
     <option_androidtv_licensing_key></option_androidtv_licensing_key>
+    <option_androidtv_lint>-1</option_androidtv_lint>
     <option_androidtv_major_version>1</option_androidtv_major_version>
     <option_androidtv_minor_version>0</option_androidtv_minor_version>
     <option_androidtv_moga>0</option_androidtv_moga>
@@ -343,11 +347,12 @@
     <option_ios_set_device_id></option_ios_set_device_id>
     <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
     <option_ios_splash_time>0</option_ios_splash_time>
+    <option_ios_team_id></option_ios_team_id>
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>0</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
     <option_linux_display_name>Relic Hunters Zero</option_linux_display_name>
-    <option_linux_enable_steam>-1</option_linux_enable_steam>
+    <option_linux_enable_steam>0</option_linux_enable_steam>
     <option_linux_fullscreen>0</option_linux_fullscreen>
     <option_linux_homepage>http://www.RelicHuntersZero.com</option_linux_homepage>
     <option_linux_icon>Configs\Default\linux\icon64.png</option_linux_icon>
@@ -376,6 +381,7 @@
     <option_mac_copyright_info>Rogue Snail</option_mac_copyright_info>
     <option_mac_create_app_store>0</option_mac_create_app_store>
     <option_mac_display_name>Relic Hunters Zero</option_mac_display_name>
+    <option_mac_enable_retina>0</option_mac_enable_retina>
     <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>-1</option_mac_fullscreen>
     <option_mac_icon_png>Configs\Default\mac\icon512.png</option_mac_icon_png>
@@ -410,6 +416,7 @@
     <option_ps3_revision_version>0</option_ps3_revision_version>
     <option_ps3_scale>0</option_ps3_scale>
     <option_ps3_texture_page>2048</option_ps3_texture_page>
+    <option_ps3_version>1.00</option_ps3_version>
     <option_ps4_build_version>0</option_ps4_build_version>
     <option_ps4_displaycursor>0</option_ps4_displaycursor>
     <option_ps4_interpolate>-1</option_ps4_interpolate>
@@ -796,6 +803,20 @@
     <option_tizen_splash_png>Configs\Default\tizen\splash.png</option_tizen_splash_png>
     <option_tizen_texture_page>1024</option_tizen_texture_page>
     <option_tizen_usesplash>False</option_tizen_usesplash>
+    <option_tvos_app_id></option_tvos_app_id>
+    <option_tvos_build_version>0</option_tvos_build_version>
+    <option_tvos_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_tvos_certificate>
+    <option_tvos_display_name>RelicHuntersZero</option_tvos_display_name>
+    <option_tvos_icon_1280>Configs\Default\tvos\icons\icon1280.png</option_tvos_icon_1280>
+    <option_tvos_icon_400>Configs\Default\tvos\icons\icon400.png</option_tvos_icon_400>
+    <option_tvos_interpolate>-1</option_tvos_interpolate>
+    <option_tvos_major_version>1</option_tvos_major_version>
+    <option_tvos_minor_version>0</option_tvos_minor_version>
+    <option_tvos_scale>-1</option_tvos_scale>
+    <option_tvos_splash_png>Configs\Default\tvos\splash.png</option_tvos_splash_png>
+    <option_tvos_splash_time>0</option_tvos_splash_time>
+    <option_tvos_texture_page>2048</option_tvos_texture_page>
+    <option_use_fast_collision>False</option_use_fast_collision>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
@@ -880,7 +901,7 @@
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>True</option_windows_create_textures_on_demand>
     <option_windows_description_info></option_windows_description_info>
-    <option_windows_enable_steam>-1</option_windows_enable_steam>
+    <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>

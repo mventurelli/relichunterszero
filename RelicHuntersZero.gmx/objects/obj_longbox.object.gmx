@@ -32,7 +32,7 @@ myFlag = noone;
 
 if (global.currentLoop &lt; 2)
 {
-    maxhp = 220;
+    maxhp = 350;
     sprite = spr_longbox;
     sprite_hit = spr_longbox_hit;
     sprite_dirt = spr_longbox_dirt;

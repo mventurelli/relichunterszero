@@ -240,6 +240,9 @@ ini_open(working_directory + "\saveData.ini");
     ini_write_real('Challenges','challengeCountdownTimer',global.challengeCountdownTimer);
     ini_write_real('Challenges','challengeHuntedTimer',global.challengeHuntedTimer);
     ini_write_real('Challenges','challengeHauntedTimer',global.challengeHauntedTimer);
+    ini_write_real('Challenges','challengeLightFocusTimer',global.challengeLightFocusTimer);
+    ini_write_real('Challenges','challengeMediumFocusTimer',global.challengeMediumFocusTimer);
+    ini_write_real('Challenges','challengeHeavyFocusTimer',global.challengeHeavyFocusTimer);
     
     // Game Options
     ini_write_real('Quality','friendlyFire',global.friendlyFire);

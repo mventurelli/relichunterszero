@@ -126,7 +126,7 @@ if (owner) &amp;&amp; (instance_exists(owner))
             statShield = 4;
             statMelee = 1;
             statStamina = 3;
-            statSpeed = 3;
+            statSpeed = 4;
             myWeaponSprite = spr_flamethrower;
             myString = loc_key("CHARSELECT_DESC_PUNNY");
         }

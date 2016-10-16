@@ -32,7 +32,7 @@ audio_emitter_falloff(audio_emitter, 1000, 2200, 1);
 elite = false;
 energy_max = 0;
 hp_max = 120;
-hp_max += hp_max*(global.challengeSteroids*global.challengeSteroidsMultiplier);
+hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 
 ai_activation_range = 1000;
 ai_supression = true;

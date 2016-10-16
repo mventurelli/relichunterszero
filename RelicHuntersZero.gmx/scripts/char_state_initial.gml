@@ -126,6 +126,9 @@
     global.challengeCountdownTimer = 0;
     global.challengeHuntedTimer = 0;
     global.challengeHauntedTimer = 0;
+    global.challengeLightFocusTimer = 0;
+    global.challengeMediumFocusTimer = 0;
+    global.challengeHeavyFocusTimer = 0;
     
 //Reset Relic Selection
 if (global.gameMode == gamemode_endless) || (global.playedEndless)
