@@ -1,0 +1,31 @@
+{
+    "id": "1c068a11-6e94-4eca-9a5e-d3afefe355b4",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "1c068a11-6e94-4eca-9a5e-d3afefe355b4",
+    "children": [
+        "c808024a-5c12-467a-8091-6eddfdb0caa5",
+        "334f0fe7-cce6-415a-a3b3-b1af7e829adc",
+        "0a67179b-8553-4ab7-8af0-1faa417886fd",
+        "3a27e1b7-ada4-4144-8748-c3440b481148",
+        "5a017e16-cfbf-4981-ba43-df240e6d7622",
+        "0fa255e2-45c4-4c6e-bda1-cf8f4278f251",
+        "4eb1515c-3834-46ba-b1d7-c1d248e06975",
+        "72ea7438-9b80-4b42-88aa-44aa96d21255",
+        "3ab1d75e-27c2-4850-b3fb-3e1fe6622f30",
+        "8cedd116-b729-4ad2-aef1-e8111b1f02d1",
+        "0d4f1d9d-dcf6-4142-9d56-872654381748",
+        "af789dba-e473-497d-b5ac-34bb967d2f40",
+        "5da75219-c9a6-4260-9a3d-1fda6a14f68d",
+        "4de29d84-837d-4930-8998-fdc43da3dc07",
+        "b665eaae-6e32-4aa8-ac06-32dadf5ab8bb",
+        "49375ee5-f33f-4c74-9c72-736d9244cdec",
+        "1f30b64b-6e9e-4829-a1e2-661bfa0179d8",
+        "4aa5f086-7db4-4a85-94b6-56c058160d4c",
+        "5e4994f5-0f76-4758-a35c-cc6b5953fd75"
+    ],
+    "filterType": "GMScript",
+    "folderName": "Joystick",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

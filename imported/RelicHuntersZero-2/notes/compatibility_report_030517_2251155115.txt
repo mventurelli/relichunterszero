@@ -1,0 +1,2745 @@
+Converting GML script : ${project_dir}\scripts\animation_update_player\animation_update_player.gml
+Converted string : line 32 : 'idle' -> "idle"
+Converted string : line 37 : 'walk' -> "walk"
+Converted string : line 42 : 'sprint' -> "sprint"
+Converted string : line 47 : 'dash' -> "dash"
+Converted string : line 52 : 'hit' -> "hit"
+Converted string : line 57 : 'death' -> "death"
+Converted string : line 62 : 'melee' -> "melee"
+Converted string : line 67 : 'dig' -> "dig"
+
+Converting GML script : ${project_dir}\scripts\joy_rpos\joy_rpos.gml
+Converted string : line 4 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_zpos\joy_zpos.gml
+Converted string : line 4 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_ypos\joy_ypos.gml
+Converted string : line 4 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_x2pos\joy_x2pos.gml
+Converted string : line 5 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_xpos\joy_xpos.gml
+Converted string : line 5 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_y2pos\joy_y2pos.gml
+Converted string : line 4 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_check_pressed\joy_check_pressed.gml
+Converted string : line 5 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_check\joy_check.gml
+Converted string : line 5 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_check_released\joy_check_released.gml
+Converted string : line 5 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\joy_rumble_update\joy_rumble_update.gml
+Converted string : line 10 : 'Xbox 360 Controller (XInput STANDARD GAMEPAD)' -> "Xbox 360 Controller (XInput STANDARD GAMEPAD)"
+
+Converting GML script : ${project_dir}\scripts\autoaim_angle\autoaim_angle.gml
+Converted string : line 53 : 'ERROR: Tried to autoaim to non-existing target ' -> "ERROR: Tried to autoaim to non-existing target "
+Converted string : line 59 : 'ERROR: Failed while trying to autoaim to target ' -> "ERROR: Failed while trying to autoaim to target "
+
+Converting GML script : ${project_dir}\scripts\cmd_fire_enemy\cmd_fire_enemy.gml
+Converted string : line 35 : 'pistol' -> "pistol"
+Converted string : line 40 : 'machinegun' -> "machinegun"
+Converted string : line 45 : 'shotgun' -> "shotgun"
+Converted string : line 46 : 'sniper' -> "sniper"
+Converted string : line 47 : 'smg' -> "smg"
+Converted string : line 48 : 'rocket' -> "rocket"
+Converted string : line 49 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\scripts\cmd_fire\cmd_fire.gml
+Converted string : line 67 : 'pistol' -> "pistol"
+Converted string : line 73 : 'machinegun' -> "machinegun"
+Converted string : line 79 : 'shotgun' -> "shotgun"
+Converted string : line 84 : 'sniper' -> "sniper"
+Converted string : line 89 : 'smg' -> "smg"
+Converted string : line 93 : 'rocket' -> "rocket"
+Converted string : line 97 : 'rifle' -> "rifle"
+Converted string : line 102 : 'reaper' -> "reaper"
+Converted string : line 106 : 'keytar' -> "keytar"
+Converted string : line 111 : 'plasma' -> "plasma"
+
+Converting GML script : ${project_dir}\scripts\draw_text_colortags\draw_text_colortags.gml
+Converted string : line 32 : '[c=' -> "[c="
+Converted string : line 33 : ']' -> "]"
+Converted string : line 34 : '[/c]' -> "[/c]"
+Converted string : line 37 : ' ' -> " "
+Converted string : line 45 : '#' -> "#"
+Converted string : line 45 : '\' -> "\\"
+Converted string : line 57 : '' -> ""
+
+Converting GML script : ${project_dir}\scripts\relic_slot_free\relic_slot_free.gml
+Converted string : line 11 : '' -> ""
+
+Converting GML script : ${project_dir}\scripts\achievement_give\achievement_give.gml
+Converted string : line 9 : 'Awarded the ' -> "Awarded the "
+Converted string : line 9 : ' achievement' -> " achievement"
+Converted string : line 11 : 'Tried to award the ' -> "Tried to award the "
+Converted string : line 11 : ' achievement, but player already has it.' -> " achievement, but player already has it."
+
+Converting GML script : ${project_dir}\scripts\relic_slot_equip\relic_slot_equip.gml
+Converted string : line 8 : '' -> ""
+
+Converting GML script : ${project_dir}\scripts\game_pause\game_pause.gml
+Converted builtin : line 5 : view_wview[0] = 1280 -> __view_set( e__VW.WView, 0, 1280 )
+Converted builtin : line 6 : view_hview[0] = 720 -> __view_set( e__VW.HView, 0, 720 )
+
+Converting GML script : ${project_dir}\scripts\save_sync_read\save_sync_read.gml
+Converted string : line 4 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 6 : 'Version' -> "Version"
+Converted string : line 6 : 'Version' -> "Version"
+Converted string : line 6 : 'YEAR 2 - UPDATE 14' -> "YEAR 2 - UPDATE 14"
+Converted string : line 7 : 'Language' -> "Language"
+Converted string : line 7 : 'Language' -> "Language"
+Converted string : line 11 : 'Character' -> "Character"
+Converted string : line 11 : 'playerCount' -> "playerCount"
+Converted string : line 15 : 'Character' -> "Character"
+Converted string : line 15 : 'Alive' -> "Alive"
+Converted string : line 16 : 'Character' -> "Character"
+Converted string : line 16 : 'Character' -> "Character"
+Converted string : line 17 : 'Character' -> "Character"
+Converted string : line 17 : 'Weapon1Player' -> "Weapon1Player"
+Converted string : line 18 : 'Character' -> "Character"
+Converted string : line 18 : 'Weapon2Player' -> "Weapon2Player"
+Converted string : line 19 : 'Character' -> "Character"
+Converted string : line 19 : 'Weapon1LevelPlayer' -> "Weapon1LevelPlayer"
+Converted string : line 20 : 'Character' -> "Character"
+Converted string : line 20 : 'Weapon2LevelPlayer' -> "Weapon2LevelPlayer"
+Converted string : line 21 : 'Character' -> "Character"
+Converted string : line 21 : 'Ammo1Player' -> "Ammo1Player"
+Converted string : line 22 : 'Character' -> "Character"
+Converted string : line 22 : 'Ammo2Player' -> "Ammo2Player"
+Converted string : line 23 : 'Character' -> "Character"
+Converted string : line 23 : 'Health' -> "Health"
+Converted string : line 24 : 'Character' -> "Character"
+Converted string : line 24 : 'Overshield' -> "Overshield"
+Converted string : line 26 : 'Character' -> "Character"
+Converted string : line 26 : 'Ammo Light' -> "Ammo Light"
+Converted string : line 27 : 'Character' -> "Character"
+Converted string : line 27 : 'Ammo Medium' -> "Ammo Medium"
+Converted string : line 28 : 'Character' -> "Character"
+Converted string : line 28 : 'Ammo Heavy' -> "Ammo Heavy"
+Converted string : line 29 : 'Character' -> "Character"
+Converted string : line 29 : 'Grenades' -> "Grenades"
+Converted string : line 31 : 'Character' -> "Character"
+Converted string : line 31 : 'currentlyEquippedWeapon' -> "currentlyEquippedWeapon"
+Converted string : line 38 : 'Temp' -> "Temp"
+Converted string : line 38 : 'isDaily' -> "isDaily"
+Converted string : line 39 : 'Temp' -> "Temp"
+Converted string : line 39 : 'playedEndless' -> "playedEndless"
+Converted string : line 40 : 'Temp' -> "Temp"
+Converted string : line 40 : 'Bounty Endless' -> "Bounty Endless"
+Converted string : line 41 : 'Temp' -> "Temp"
+Converted string : line 41 : 'Loop' -> "Loop"
+Converted string : line 42 : 'Temp' -> "Temp"
+Converted string : line 42 : 'endPriceTier_lightAmmo' -> "endPriceTier_lightAmmo"
+Converted string : line 43 : 'Temp' -> "Temp"
+Converted string : line 43 : 'endPriceTier_mediumAmmo' -> "endPriceTier_mediumAmmo"
+Converted string : line 44 : 'Temp' -> "Temp"
+Converted string : line 44 : 'endPriceTier_heavyAmmo' -> "endPriceTier_heavyAmmo"
+Converted string : line 45 : 'Temp' -> "Temp"
+Converted string : line 45 : 'endPriceTier_grenades' -> "endPriceTier_grenades"
+Converted string : line 46 : 'Temp' -> "Temp"
+Converted string : line 46 : 'endPriceTier_overshield' -> "endPriceTier_overshield"
+Converted string : line 47 : 'Temp' -> "Temp"
+Converted string : line 47 : 'endPriceTier_health' -> "endPriceTier_health"
+Converted string : line 48 : 'Temp' -> "Temp"
+Converted string : line 48 : 'endTierSlot1' -> "endTierSlot1"
+Converted string : line 49 : 'Temp' -> "Temp"
+Converted string : line 49 : 'endTierSlot2' -> "endTierSlot2"
+Converted string : line 50 : 'Temp' -> "Temp"
+Converted string : line 50 : 'endTierSlot3' -> "endTierSlot3"
+Converted string : line 51 : 'Temp' -> "Temp"
+Converted string : line 51 : 'endTierItem1' -> "endTierItem1"
+Converted string : line 52 : 'Temp' -> "Temp"
+Converted string : line 52 : 'endTierItem2' -> "endTierItem2"
+Converted string : line 53 : 'Temp' -> "Temp"
+Converted string : line 53 : 'endTierItem3' -> "endTierItem3"
+Converted string : line 54 : 'Temp' -> "Temp"
+Converted string : line 54 : 'endPriceTier_revive' -> "endPriceTier_revive"
+Converted string : line 55 : 'Temp' -> "Temp"
+Converted string : line 55 : 'endPriceTier_hack' -> "endPriceTier_hack"
+Converted string : line 56 : 'Temp' -> "Temp"
+Converted string : line 56 : 'relicChanceBonus' -> "relicChanceBonus"
+Converted string : line 59 : 'Temp' -> "Temp"
+Converted string : line 59 : 'Stage' -> "Stage"
+Converted string : line 60 : 'Temp' -> "Temp"
+Converted string : line 60 : 'WeaponPickedUp' -> "WeaponPickedUp"
+Converted string : line 61 : 'Temp' -> "Temp"
+Converted string : line 61 : 'CheckpointUsed' -> "CheckpointUsed"
+Converted string : line 62 : 'Temp' -> "Temp"
+Converted string : line 62 : 'Score Endless' -> "Score Endless"
+Converted string : line 63 : 'Temp' -> "Temp"
+Converted string : line 63 : 'hasPurchasedAnything' -> "hasPurchasedAnything"
+Converted string : line 64 : 'Temp' -> "Temp"
+Converted string : line 64 : 'hacksOnThisRun' -> "hacksOnThisRun"
+Converted string : line 65 : 'Temp' -> "Temp"
+Converted string : line 65 : 'spookylandsVisited' -> "spookylandsVisited"
+Converted string : line 67 : 'Temp' -> "Temp"
+Converted string : line 67 : 'entropy' -> "entropy"
+Converted string : line 71 : 'Persistence' -> "Persistence"
+Converted string : line 71 : 'LowPerfChecked' -> "LowPerfChecked"
+Converted string : line 73 : 'Persistence' -> "Persistence"
+Converted string : line 73 : 'dailyCompleted' -> "dailyCompleted"
+Converted string : line 74 : 'Persistence' -> "Persistence"
+Converted string : line 74 : 'dailyCompletedScore' -> "dailyCompletedScore"
+Converted string : line 75 : 'Persistence' -> "Persistence"
+Converted string : line 75 : 'dailyCompletedBadge' -> "dailyCompletedBadge"
+Converted string : line 77 : 'Persistence' -> "Persistence"
+Converted string : line 77 : 'UnlockEndless' -> "UnlockEndless"
+Converted string : line 78 : 'Persistence' -> "Persistence"
+Converted string : line 78 : 'UnlockPinky' -> "UnlockPinky"
+Converted string : line 79 : 'Persistence' -> "Persistence"
+Converted string : line 79 : 'UnlockRaff' -> "UnlockRaff"
+Converted string : line 80 : 'Persistence' -> "Persistence"
+Converted string : line 80 : 'UnlockBiu' -> "UnlockBiu"
+Converted string : line 81 : 'Persistence' -> "Persistence"
+Converted string : line 81 : 'UnlockPunny' -> "UnlockPunny"
+Converted string : line 82 : 'Persistence' -> "Persistence"
+Converted string : line 82 : 'UnlockAss' -> "UnlockAss"
+Converted string : line 83 : 'Persistence' -> "Persistence"
+Converted string : line 83 : 'UnlockRider' -> "UnlockRider"
+Converted string : line 85 : 'Persistence' -> "Persistence"
+Converted string : line 85 : 'Score' -> "Score"
+Converted string : line 86 : 'Persistence' -> "Persistence"
+Converted string : line 86 : 'Checkpoint1' -> "Checkpoint1"
+Converted string : line 87 : 'Persistence' -> "Persistence"
+Converted string : line 87 : 'Checkpoint2' -> "Checkpoint2"
+Converted string : line 88 : 'Persistence' -> "Persistence"
+Converted string : line 88 : 'Checkpoint3' -> "Checkpoint3"
+Converted string : line 90 : 'Weapons' -> "Weapons"
+Converted string : line 90 : 'pistol_assault' -> "pistol_assault"
+Converted string : line 91 : 'Weapons' -> "Weapons"
+Converted string : line 91 : 'pistol_heavy' -> "pistol_heavy"
+Converted string : line 92 : 'Weapons' -> "Weapons"
+Converted string : line 92 : 'pistol_plasma' -> "pistol_plasma"
+Converted string : line 93 : 'Weapons' -> "Weapons"
+Converted string : line 93 : 'shotgun' -> "shotgun"
+Converted string : line 94 : 'Weapons' -> "Weapons"
+Converted string : line 94 : 'shotgun_heavy' -> "shotgun_heavy"
+Converted string : line 95 : 'Weapons' -> "Weapons"
+Converted string : line 95 : 'submachinegun' -> "submachinegun"
+Converted string : line 96 : 'Weapons' -> "Weapons"
+Converted string : line 96 : 'highmag' -> "highmag"
+Converted string : line 97 : 'Weapons' -> "Weapons"
+Converted string : line 97 : 'machinegun' -> "machinegun"
+Converted string : line 98 : 'Weapons' -> "Weapons"
+Converted string : line 98 : 'assault_rifle' -> "assault_rifle"
+Converted string : line 99 : 'Weapons' -> "Weapons"
+Converted string : line 99 : 'rocketlauncher' -> "rocketlauncher"
+Converted string : line 100 : 'Weapons' -> "Weapons"
+Converted string : line 100 : 'sniper_rifle' -> "sniper_rifle"
+Converted string : line 102 : 'Weapons' -> "Weapons"
+Converted string : line 102 : 'shield1' -> "shield1"
+Converted string : line 103 : 'Weapons' -> "Weapons"
+Converted string : line 103 : 'shield2' -> "shield2"
+Converted string : line 104 : 'Weapons' -> "Weapons"
+Converted string : line 104 : 'light1' -> "light1"
+Converted string : line 105 : 'Weapons' -> "Weapons"
+Converted string : line 105 : 'light2' -> "light2"
+Converted string : line 106 : 'Weapons' -> "Weapons"
+Converted string : line 106 : 'medium1' -> "medium1"
+Converted string : line 107 : 'Weapons' -> "Weapons"
+Converted string : line 107 : 'medium2' -> "medium2"
+Converted string : line 108 : 'Weapons' -> "Weapons"
+Converted string : line 108 : 'heavy1' -> "heavy1"
+Converted string : line 109 : 'Weapons' -> "Weapons"
+Converted string : line 109 : 'heavy2' -> "heavy2"
+Converted string : line 110 : 'Weapons' -> "Weapons"
+Converted string : line 110 : 'heavy3' -> "heavy3"
+Converted string : line 111 : 'Weapons' -> "Weapons"
+Converted string : line 111 : 'heavy4' -> "heavy4"
+Converted string : line 112 : 'Weapons' -> "Weapons"
+Converted string : line 112 : 'grenades1' -> "grenades1"
+Converted string : line 113 : 'Weapons' -> "Weapons"
+Converted string : line 113 : 'grenades2' -> "grenades2"
+Converted string : line 114 : 'Weapons' -> "Weapons"
+Converted string : line 114 : 'grenades3' -> "grenades3"
+Converted string : line 118 : 'Relics' -> "Relics"
+Converted string : line 118 : 'slot1' -> "slot1"
+Converted string : line 118 : '' -> ""
+Converted string : line 119 : 'Relics' -> "Relics"
+Converted string : line 119 : 'slot2' -> "slot2"
+Converted string : line 119 : '' -> ""
+Converted string : line 120 : 'Relics' -> "Relics"
+Converted string : line 120 : 'slot3' -> "slot3"
+Converted string : line 120 : '' -> ""
+Converted string : line 122 : 'Relics' -> "Relics"
+Converted string : line 122 : 'alcoholic_carrot' -> "alcoholic_carrot"
+Converted string : line 123 : 'Relics' -> "Relics"
+Converted string : line 123 : 'alcoholic1' -> "alcoholic1"
+Converted string : line 124 : 'Relics' -> "Relics"
+Converted string : line 124 : 'alcoholic2' -> "alcoholic2"
+Converted string : line 125 : 'Relics' -> "Relics"
+Converted string : line 125 : 'alcoholic3' -> "alcoholic3"
+Converted string : line 127 : 'Relics' -> "Relics"
+Converted string : line 127 : 'yottabyte_drive' -> "yottabyte_drive"
+Converted string : line 128 : 'Relics' -> "Relics"
+Converted string : line 128 : 'yottabyte1' -> "yottabyte1"
+Converted string : line 129 : 'Relics' -> "Relics"
+Converted string : line 129 : 'yottabyte2' -> "yottabyte2"
+Converted string : line 130 : 'Relics' -> "Relics"
+Converted string : line 130 : 'yottabyte3' -> "yottabyte3"
+Converted string : line 132 : 'Relics' -> "Relics"
+Converted string : line 132 : 'pineapple_pudding' -> "pineapple_pudding"
+Converted string : line 133 : 'Relics' -> "Relics"
+Converted string : line 133 : 'pineapple1' -> "pineapple1"
+Converted string : line 134 : 'Relics' -> "Relics"
+Converted string : line 134 : 'pineapple2' -> "pineapple2"
+Converted string : line 135 : 'Relics' -> "Relics"
+Converted string : line 135 : 'pineapple3' -> "pineapple3"
+Converted string : line 137 : 'Relics' -> "Relics"
+Converted string : line 137 : 'infinity_battery' -> "infinity_battery"
+Converted string : line 138 : 'Relics' -> "Relics"
+Converted string : line 138 : 'infinity1' -> "infinity1"
+Converted string : line 139 : 'Relics' -> "Relics"
+Converted string : line 139 : 'infinity2' -> "infinity2"
+Converted string : line 140 : 'Relics' -> "Relics"
+Converted string : line 140 : 'infinity3' -> "infinity3"
+Converted string : line 142 : 'Relics' -> "Relics"
+Converted string : line 142 : 'crystal_bacon' -> "crystal_bacon"
+Converted string : line 143 : 'Relics' -> "Relics"
+Converted string : line 143 : 'crystal1' -> "crystal1"
+Converted string : line 144 : 'Relics' -> "Relics"
+Converted string : line 144 : 'crystal2' -> "crystal2"
+Converted string : line 145 : 'Relics' -> "Relics"
+Converted string : line 145 : 'crystal3' -> "crystal3"
+Converted string : line 147 : 'Relics' -> "Relics"
+Converted string : line 147 : 'midnight_beer' -> "midnight_beer"
+Converted string : line 148 : 'Relics' -> "Relics"
+Converted string : line 148 : 'midnight1' -> "midnight1"
+Converted string : line 149 : 'Relics' -> "Relics"
+Converted string : line 149 : 'midnight2' -> "midnight2"
+Converted string : line 150 : 'Relics' -> "Relics"
+Converted string : line 150 : 'midnight3' -> "midnight3"
+Converted string : line 152 : 'Relics' -> "Relics"
+Converted string : line 152 : 'watchful_eye' -> "watchful_eye"
+Converted string : line 153 : 'Relics' -> "Relics"
+Converted string : line 153 : 'watchful1' -> "watchful1"
+Converted string : line 154 : 'Relics' -> "Relics"
+Converted string : line 154 : 'watchful2' -> "watchful2"
+Converted string : line 155 : 'Relics' -> "Relics"
+Converted string : line 155 : 'watchful3' -> "watchful3"
+Converted string : line 157 : 'Relics' -> "Relics"
+Converted string : line 157 : 'dev_potion' -> "dev_potion"
+Converted string : line 158 : 'Relics' -> "Relics"
+Converted string : line 158 : 'dev1' -> "dev1"
+Converted string : line 159 : 'Relics' -> "Relics"
+Converted string : line 159 : 'dev2' -> "dev2"
+Converted string : line 160 : 'Relics' -> "Relics"
+Converted string : line 160 : 'dev3' -> "dev3"
+Converted string : line 162 : 'Relics' -> "Relics"
+Converted string : line 162 : 'morning_star' -> "morning_star"
+Converted string : line 163 : 'Relics' -> "Relics"
+Converted string : line 163 : 'pineapple_pie' -> "pineapple_pie"
+Converted string : line 164 : 'Relics' -> "Relics"
+Converted string : line 164 : 'rabbit_foot' -> "rabbit_foot"
+Converted string : line 165 : 'Relics' -> "Relics"
+Converted string : line 165 : 'midnight_meal' -> "midnight_meal"
+Converted string : line 166 : 'Relics' -> "Relics"
+Converted string : line 166 : 'yottabyte_processor' -> "yottabyte_processor"
+Converted string : line 167 : 'Relics' -> "Relics"
+Converted string : line 167 : 'mega_quantum_chip' -> "mega_quantum_chip"
+Converted string : line 170 : 'Challenges' -> "Challenges"
+Converted string : line 170 : 'challengeSteroids' -> "challengeSteroids"
+Converted string : line 171 : 'Challenges' -> "Challenges"
+Converted string : line 171 : 'challengeWanted' -> "challengeWanted"
+Converted string : line 172 : 'Challenges' -> "Challenges"
+Converted string : line 172 : 'challengeHighTech' -> "challengeHighTech"
+Converted string : line 173 : 'Challenges' -> "Challenges"
+Converted string : line 173 : 'challengeLightFocus' -> "challengeLightFocus"
+Converted string : line 174 : 'Challenges' -> "Challenges"
+Converted string : line 174 : 'challengeMediumFocus' -> "challengeMediumFocus"
+Converted string : line 175 : 'Challenges' -> "Challenges"
+Converted string : line 175 : 'challengeHeavyFocus' -> "challengeHeavyFocus"
+Converted string : line 176 : 'Challenges' -> "Challenges"
+Converted string : line 176 : 'challengeReinforcements' -> "challengeReinforcements"
+Converted string : line 178 : 'Challenges' -> "Challenges"
+Converted string : line 178 : 'challengeHunger' -> "challengeHunger"
+Converted string : line 179 : 'Challenges' -> "Challenges"
+Converted string : line 179 : 'challengeThirst' -> "challengeThirst"
+Converted string : line 180 : 'Challenges' -> "Challenges"
+Converted string : line 180 : 'challengeOvercharge' -> "challengeOvercharge"
+Converted string : line 181 : 'Challenges' -> "Challenges"
+Converted string : line 181 : 'challengeMedieval' -> "challengeMedieval"
+Converted string : line 182 : 'Challenges' -> "Challenges"
+Converted string : line 182 : 'challengeCatapult' -> "challengeCatapult"
+Converted string : line 183 : 'Challenges' -> "Challenges"
+Converted string : line 183 : 'challengeDucanWeapons' -> "challengeDucanWeapons"
+Converted string : line 184 : 'Challenges' -> "Challenges"
+Converted string : line 184 : 'challengeHeavyBurden' -> "challengeHeavyBurden"
+Converted string : line 185 : 'Challenges' -> "Challenges"
+Converted string : line 185 : 'challengeSupressor' -> "challengeSupressor"
+Converted string : line 186 : 'Challenges' -> "Challenges"
+Converted string : line 186 : 'challengeBloodlust' -> "challengeBloodlust"
+Converted string : line 187 : 'Challenges' -> "Challenges"
+Converted string : line 187 : 'challengeJaws' -> "challengeJaws"
+Converted string : line 188 : 'Challenges' -> "Challenges"
+Converted string : line 188 : 'challengeCountdown' -> "challengeCountdown"
+Converted string : line 190 : 'Challenges' -> "Challenges"
+Converted string : line 190 : 'challengeHunted' -> "challengeHunted"
+Converted string : line 191 : 'Challenges' -> "Challenges"
+Converted string : line 191 : 'challengeHaunted' -> "challengeHaunted"
+Converted string : line 193 : 'Challenges' -> "Challenges"
+Converted string : line 193 : 'challengeHungerTimer' -> "challengeHungerTimer"
+Converted string : line 194 : 'Challenges' -> "Challenges"
+Converted string : line 194 : 'challengeThirstTimer' -> "challengeThirstTimer"
+Converted string : line 195 : 'Challenges' -> "Challenges"
+Converted string : line 195 : 'challengeOverchargeTimer' -> "challengeOverchargeTimer"
+Converted string : line 196 : 'Challenges' -> "Challenges"
+Converted string : line 196 : 'challengeMedievalTimer' -> "challengeMedievalTimer"
+Converted string : line 197 : 'Challenges' -> "Challenges"
+Converted string : line 197 : 'challengeCatapultTimer' -> "challengeCatapultTimer"
+Converted string : line 198 : 'Challenges' -> "Challenges"
+Converted string : line 198 : 'challengeDucanWeaponsTimer' -> "challengeDucanWeaponsTimer"
+Converted string : line 199 : 'Challenges' -> "Challenges"
+Converted string : line 199 : 'challengeHeavyBurdenTimer' -> "challengeHeavyBurdenTimer"
+Converted string : line 200 : 'Challenges' -> "Challenges"
+Converted string : line 200 : 'challengeSupressorTimer' -> "challengeSupressorTimer"
+Converted string : line 201 : 'Challenges' -> "Challenges"
+Converted string : line 201 : 'challengeBloodlustTimer' -> "challengeBloodlustTimer"
+Converted string : line 202 : 'Challenges' -> "Challenges"
+Converted string : line 202 : 'challengeJawsTimer' -> "challengeJawsTimer"
+Converted string : line 203 : 'Challenges' -> "Challenges"
+Converted string : line 203 : 'challengeCountdownTimer' -> "challengeCountdownTimer"
+Converted string : line 204 : 'Challenges' -> "Challenges"
+Converted string : line 204 : 'challengeHuntedTimer' -> "challengeHuntedTimer"
+Converted string : line 205 : 'Challenges' -> "Challenges"
+Converted string : line 205 : 'challengeHauntedTimer' -> "challengeHauntedTimer"
+Converted string : line 206 : 'Challenges' -> "Challenges"
+Converted string : line 206 : 'challengeLightFocusTimer' -> "challengeLightFocusTimer"
+Converted string : line 207 : 'Challenges' -> "Challenges"
+Converted string : line 207 : 'challengeMediumFocusTimer' -> "challengeMediumFocusTimer"
+Converted string : line 208 : 'Challenges' -> "Challenges"
+Converted string : line 208 : 'challengeHeavyFocusTimer' -> "challengeHeavyFocusTimer"
+Converted string : line 212 : 'Ass' -> "Ass"
+Converted string : line 212 : 'tutorial' -> "tutorial"
+Converted string : line 213 : 'Ass' -> "Ass"
+Converted string : line 213 : 'first_stage' -> "first_stage"
+Converted string : line 214 : 'Ass' -> "Ass"
+Converted string : line 214 : 'shop_visits' -> "shop_visits"
+Converted string : line 220 : 'Quality' -> "Quality"
+Converted string : line 220 : 'Master Volume' -> "Master Volume"
+Converted string : line 221 : 'Quality' -> "Quality"
+Converted string : line 221 : 'Master Music' -> "Master Music"
+Converted string : line 222 : 'Quality' -> "Quality"
+Converted string : line 222 : 'Master Sound' -> "Master Sound"
+Converted string : line 225 : 'Input' -> "Input"
+Converted string : line 225 : 'Input1' -> "Input1"
+Converted string : line 226 : 'Input' -> "Input"
+Converted string : line 226 : 'Input2' -> "Input2"
+Converted string : line 228 : 'Input' -> "Input"
+Converted string : line 228 : 'Auto Aim' -> "Auto Aim"
+Converted string : line 229 : 'Input' -> "Input"
+Converted string : line 229 : 'Sprint Toggle' -> "Sprint Toggle"
+Converted string : line 231 : 'Input' -> "Input"
+Converted string : line 231 : 'Double Tap Dodge' -> "Double Tap Dodge"
+Converted string : line 232 : 'Input' -> "Input"
+Converted string : line 232 : 'Allow Mouse Wheel' -> "Allow Mouse Wheel"
+Converted string : line 233 : 'Quality' -> "Quality"
+Converted string : line 233 : 'screenshake' -> "screenshake"
+Converted string : line 234 : 'Quality' -> "Quality"
+Converted string : line 234 : 'controller vibration' -> "controller vibration"
+Converted string : line 236 : 'Quality' -> "Quality"
+Converted string : line 236 : 'allowKillFreeze' -> "allowKillFreeze"
+Converted string : line 237 : 'Quality' -> "Quality"
+Converted string : line 237 : 'friendlyFire' -> "friendlyFire"
+Converted string : line 239 : 'Quality' -> "Quality"
+Converted string : line 239 : 'resolution' -> "resolution"
+Converted string : line 240 : 'Quality' -> "Quality"
+Converted string : line 240 : 'fullscreen' -> "fullscreen"
+Converted string : line 241 : 'Quality' -> "Quality"
+Converted string : line 241 : 'reflections' -> "reflections"
+Converted string : line 242 : 'Quality' -> "Quality"
+Converted string : line 242 : 'shadows' -> "shadows"
+Converted string : line 243 : 'Quality' -> "Quality"
+Converted string : line 243 : 'persistent effects' -> "persistent effects"
+Converted string : line 244 : 'Quality' -> "Quality"
+Converted string : line 244 : 'max particles' -> "max particles"
+Converted string : line 245 : 'Quality' -> "Quality"
+Converted string : line 245 : 'max casings' -> "max casings"
+Converted string : line 246 : 'Quality' -> "Quality"
+Converted string : line 246 : 'Always Show Ammo' -> "Always Show Ammo"
+Converted string : line 252 : 'Mapping' -> "Mapping"
+Converted string : line 252 : 'Keyboard Fire1' -> "Keyboard Fire1"
+Converted string : line 253 : 'Mapping' -> "Mapping"
+Converted string : line 253 : 'Keyboard Fire2' -> "Keyboard Fire2"
+Converted string : line 255 : 'Mapping' -> "Mapping"
+Converted string : line 255 : 'Keyboard Aim1' -> "Keyboard Aim1"
+Converted string : line 256 : 'Mapping' -> "Mapping"
+Converted string : line 256 : 'Keyboard Aim2' -> "Keyboard Aim2"
+Converted string : line 258 : 'Mapping' -> "Mapping"
+Converted string : line 258 : 'Keyboard Right1' -> "Keyboard Right1"
+Converted string : line 258 : 'D' -> "D"
+Converted string : line 259 : 'Mapping' -> "Mapping"
+Converted string : line 259 : 'Keyboard Right2' -> "Keyboard Right2"
+Converted string : line 261 : 'Mapping' -> "Mapping"
+Converted string : line 261 : 'Keyboard Left1' -> "Keyboard Left1"
+Converted string : line 261 : 'A' -> "A"
+Converted string : line 262 : 'Mapping' -> "Mapping"
+Converted string : line 262 : 'Keyboard Left2' -> "Keyboard Left2"
+Converted string : line 264 : 'Mapping' -> "Mapping"
+Converted string : line 264 : 'Keyboard Up1' -> "Keyboard Up1"
+Converted string : line 264 : 'W' -> "W"
+Converted string : line 265 : 'Mapping' -> "Mapping"
+Converted string : line 265 : 'Keyboard Up2' -> "Keyboard Up2"
+Converted string : line 267 : 'Mapping' -> "Mapping"
+Converted string : line 267 : 'Keyboard Down1' -> "Keyboard Down1"
+Converted string : line 267 : 'S' -> "S"
+Converted string : line 268 : 'Mapping' -> "Mapping"
+Converted string : line 268 : 'Keyboard Down2' -> "Keyboard Down2"
+Converted string : line 270 : 'Mapping' -> "Mapping"
+Converted string : line 270 : 'Keyboard Grenade1' -> "Keyboard Grenade1"
+Converted string : line 270 : 'F' -> "F"
+Converted string : line 271 : 'Mapping' -> "Mapping"
+Converted string : line 271 : 'Keyboard Grenade2' -> "Keyboard Grenade2"
+Converted string : line 273 : 'Mapping' -> "Mapping"
+Converted string : line 273 : 'Keyboard Melee1' -> "Keyboard Melee1"
+Converted string : line 274 : 'Mapping' -> "Mapping"
+Converted string : line 274 : 'Keyboard Melee2' -> "Keyboard Melee2"
+Converted string : line 274 : 'V' -> "V"
+Converted string : line 276 : 'Mapping' -> "Mapping"
+Converted string : line 276 : 'Keyboard Sprint1' -> "Keyboard Sprint1"
+Converted string : line 277 : 'Mapping' -> "Mapping"
+Converted string : line 277 : 'Keyboard Sprint2' -> "Keyboard Sprint2"
+Converted string : line 279 : 'Mapping' -> "Mapping"
+Converted string : line 279 : 'Keyboard SprintToggle1' -> "Keyboard SprintToggle1"
+Converted string : line 280 : 'Mapping' -> "Mapping"
+Converted string : line 280 : 'Keyboard SprintToggle2' -> "Keyboard SprintToggle2"
+Converted string : line 282 : 'Mapping' -> "Mapping"
+Converted string : line 282 : 'Keyboard Use1' -> "Keyboard Use1"
+Converted string : line 282 : 'E' -> "E"
+Converted string : line 283 : 'Mapping' -> "Mapping"
+Converted string : line 283 : 'Keyboard Use2' -> "Keyboard Use2"
+Converted string : line 285 : 'Mapping' -> "Mapping"
+Converted string : line 285 : 'Keyboard Switch1' -> "Keyboard Switch1"
+Converted string : line 285 : 'Q' -> "Q"
+Converted string : line 286 : 'Mapping' -> "Mapping"
+Converted string : line 286 : 'Keyboard Switch2' -> "Keyboard Switch2"
+Converted string : line 288 : 'Mapping' -> "Mapping"
+Converted string : line 288 : 'Keyboard Reload1' -> "Keyboard Reload1"
+Converted string : line 288 : 'R' -> "R"
+Converted string : line 289 : 'Mapping' -> "Mapping"
+Converted string : line 289 : 'Keyboard Reload2' -> "Keyboard Reload2"
+Converted string : line 299 : 'Steam' -> "Steam"
+Converted string : line 299 : 'ScreenshotNumber' -> "ScreenshotNumber"
+Converted string : line 303 : 'Stats' -> "Stats"
+Converted string : line 303 : 'statTotalBounty' -> "statTotalBounty"
+Converted string : line 304 : 'Stats' -> "Stats"
+Converted string : line 304 : 'statTotalDeaths' -> "statTotalDeaths"
+Converted string : line 305 : 'Stats' -> "Stats"
+Converted string : line 305 : 'statKilledByBoss' -> "statKilledByBoss"
+Converted string : line 306 : 'Stats' -> "Stats"
+Converted string : line 306 : 'statBossKills' -> "statBossKills"
+Converted string : line 307 : 'Stats' -> "Stats"
+Converted string : line 307 : 'Kills' -> "Kills"
+Converted string : line 308 : 'Stats' -> "Stats"
+Converted string : line 308 : 'statTotalTime' -> "statTotalTime"
+Converted string : line 309 : 'Stats' -> "Stats"
+Converted string : line 309 : 'statRunTime' -> "statRunTime"
+Converted string : line 310 : 'Stats' -> "Stats"
+Converted string : line 310 : 'statRunBest' -> "statRunBest"
+Converted string : line 311 : 'Stats' -> "Stats"
+Converted string : line 311 : 'statLongestRun' -> "statLongestRun"
+Converted string : line 312 : 'Stats' -> "Stats"
+Converted string : line 312 : 'totalDigs' -> "totalDigs"
+Converted string : line 313 : 'Stats' -> "Stats"
+Converted string : line 313 : 'scoreEndlessBest' -> "scoreEndlessBest"
+Converted string : line 314 : 'Stats' -> "Stats"
+Converted string : line 314 : 'statBestLoop' -> "statBestLoop"
+Converted string : line 315 : 'Stats' -> "Stats"
+Converted string : line 315 : 'statTotalLoops' -> "statTotalLoops"
+Converted string : line 316 : 'Stats' -> "Stats"
+Converted string : line 316 : 'statTotalHacks' -> "statTotalHacks"
+Converted string : line 317 : 'Stats' -> "Stats"
+Converted string : line 317 : 'statTotalWeaponUpgrades' -> "statTotalWeaponUpgrades"
+
+Converting GML script : ${project_dir}\scripts\save_all\save_all.gml
+Converted string : line 4 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 6 : 'Version' -> "Version"
+Converted string : line 6 : 'Version' -> "Version"
+Converted string : line 7 : 'Language' -> "Language"
+Converted string : line 7 : 'Language' -> "Language"
+Converted string : line 9 : 'Input' -> "Input"
+Converted string : line 9 : 'Input1' -> "Input1"
+Converted string : line 10 : 'Input' -> "Input"
+Converted string : line 10 : 'Input2' -> "Input2"
+Converted string : line 11 : 'Input' -> "Input"
+Converted string : line 11 : 'Sticky Aim' -> "Sticky Aim"
+Converted string : line 12 : 'Input' -> "Input"
+Converted string : line 12 : 'Auto Aim' -> "Auto Aim"
+Converted string : line 13 : 'Input' -> "Input"
+Converted string : line 13 : 'Sprint Toggle' -> "Sprint Toggle"
+Converted string : line 14 : 'Input' -> "Input"
+Converted string : line 14 : 'Double Tap Dodge' -> "Double Tap Dodge"
+Converted string : line 15 : 'Input' -> "Input"
+Converted string : line 15 : 'Allow Mouse Wheel' -> "Allow Mouse Wheel"
+Converted string : line 16 : 'Quality' -> "Quality"
+Converted string : line 16 : 'Always Show Ammo' -> "Always Show Ammo"
+Converted string : line 17 : 'Quality' -> "Quality"
+Converted string : line 17 : 'screenshake' -> "screenshake"
+Converted string : line 18 : 'Quality' -> "Quality"
+Converted string : line 18 : 'controller vibration' -> "controller vibration"
+Converted string : line 19 : 'Quality' -> "Quality"
+Converted string : line 19 : 'fullscreen' -> "fullscreen"
+Converted string : line 20 : 'Quality' -> "Quality"
+Converted string : line 20 : 'resolution' -> "resolution"
+Converted string : line 22 : 'Quality' -> "Quality"
+Converted string : line 22 : 'Master Volume' -> "Master Volume"
+Converted string : line 23 : 'Quality' -> "Quality"
+Converted string : line 23 : 'Master Music' -> "Master Music"
+Converted string : line 24 : 'Quality' -> "Quality"
+Converted string : line 24 : 'Master Sound' -> "Master Sound"
+Converted string : line 26 : 'Temp' -> "Temp"
+Converted string : line 26 : 'WeaponPickedUp' -> "WeaponPickedUp"
+Converted string : line 27 : 'Temp' -> "Temp"
+Converted string : line 27 : 'CheckpointUsed' -> "CheckpointUsed"
+Converted string : line 29 : 'Temp' -> "Temp"
+Converted string : line 29 : 'isDaily' -> "isDaily"
+Converted string : line 30 : 'Temp' -> "Temp"
+Converted string : line 30 : 'playedEndless' -> "playedEndless"
+Converted string : line 31 : 'Temp' -> "Temp"
+Converted string : line 31 : 'Bounty Endless' -> "Bounty Endless"
+Converted string : line 32 : 'Temp' -> "Temp"
+Converted string : line 32 : 'Loop' -> "Loop"
+Converted string : line 33 : 'Temp' -> "Temp"
+Converted string : line 33 : 'Score Endless' -> "Score Endless"
+Converted string : line 34 : 'Temp' -> "Temp"
+Converted string : line 34 : 'endPriceTier_lightAmmo' -> "endPriceTier_lightAmmo"
+Converted string : line 35 : 'Temp' -> "Temp"
+Converted string : line 35 : 'endPriceTier_mediumAmmo' -> "endPriceTier_mediumAmmo"
+Converted string : line 36 : 'Temp' -> "Temp"
+Converted string : line 36 : 'endPriceTier_heavyAmmo' -> "endPriceTier_heavyAmmo"
+Converted string : line 37 : 'Temp' -> "Temp"
+Converted string : line 37 : 'endPriceTier_grenades' -> "endPriceTier_grenades"
+Converted string : line 38 : 'Temp' -> "Temp"
+Converted string : line 38 : 'endPriceTier_overshield' -> "endPriceTier_overshield"
+Converted string : line 39 : 'Temp' -> "Temp"
+Converted string : line 39 : 'endPriceTier_health' -> "endPriceTier_health"
+Converted string : line 40 : 'Temp' -> "Temp"
+Converted string : line 40 : 'endTierSlot1' -> "endTierSlot1"
+Converted string : line 41 : 'Temp' -> "Temp"
+Converted string : line 41 : 'endTierSlot2' -> "endTierSlot2"
+Converted string : line 42 : 'Temp' -> "Temp"
+Converted string : line 42 : 'endTierSlot3' -> "endTierSlot3"
+Converted string : line 43 : 'Temp' -> "Temp"
+Converted string : line 43 : 'endTierItem1' -> "endTierItem1"
+Converted string : line 44 : 'Temp' -> "Temp"
+Converted string : line 44 : 'endTierItem2' -> "endTierItem2"
+Converted string : line 45 : 'Temp' -> "Temp"
+Converted string : line 45 : 'endTierItem3' -> "endTierItem3"
+Converted string : line 46 : 'Temp' -> "Temp"
+Converted string : line 46 : 'endPriceTier_revive' -> "endPriceTier_revive"
+Converted string : line 47 : 'Temp' -> "Temp"
+Converted string : line 47 : 'endPriceTier_hack' -> "endPriceTier_hack"
+Converted string : line 48 : 'Temp' -> "Temp"
+Converted string : line 48 : 'relicChanceBonus' -> "relicChanceBonus"
+Converted string : line 49 : 'Temp' -> "Temp"
+Converted string : line 49 : 'hasPurchasedAnything' -> "hasPurchasedAnything"
+Converted string : line 50 : 'Temp' -> "Temp"
+Converted string : line 50 : 'hacksOnThisRun' -> "hacksOnThisRun"
+Converted string : line 51 : 'Temp' -> "Temp"
+Converted string : line 51 : 'spookylandsVisited' -> "spookylandsVisited"
+Converted string : line 53 : 'Temp' -> "Temp"
+Converted string : line 53 : 'entropy' -> "entropy"
+Converted string : line 55 : 'Character' -> "Character"
+Converted string : line 55 : 'playerCount' -> "playerCount"
+Converted string : line 61 : 'Character' -> "Character"
+Converted string : line 61 : 'Alive' -> "Alive"
+Converted string : line 62 : 'Character' -> "Character"
+Converted string : line 62 : 'Character' -> "Character"
+Converted string : line 63 : 'Character' -> "Character"
+Converted string : line 63 : 'Ammo Light' -> "Ammo Light"
+Converted string : line 64 : 'Character' -> "Character"
+Converted string : line 64 : 'Ammo Medium' -> "Ammo Medium"
+Converted string : line 65 : 'Character' -> "Character"
+Converted string : line 65 : 'Ammo Heavy' -> "Ammo Heavy"
+Converted string : line 66 : 'Character' -> "Character"
+Converted string : line 66 : 'Grenades' -> "Grenades"
+Converted string : line 77 : 'Character' -> "Character"
+Converted string : line 77 : 'Weapon1Player' -> "Weapon1Player"
+Converted string : line 78 : 'Character' -> "Character"
+Converted string : line 78 : 'Weapon1LevelPlayer' -> "Weapon1LevelPlayer"
+Converted string : line 79 : 'Character' -> "Character"
+Converted string : line 79 : 'Ammo1Player' -> "Ammo1Player"
+Converted string : line 81 : 'Character' -> "Character"
+Converted string : line 81 : 'Weapon1Player' -> "Weapon1Player"
+Converted string : line 85 : 'Character' -> "Character"
+Converted string : line 85 : 'Weapon2Player' -> "Weapon2Player"
+Converted string : line 86 : 'Character' -> "Character"
+Converted string : line 86 : 'Weapon2LevelPlayer' -> "Weapon2LevelPlayer"
+Converted string : line 87 : 'Character' -> "Character"
+Converted string : line 87 : 'Ammo2Player' -> "Ammo2Player"
+Converted string : line 89 : 'Character' -> "Character"
+Converted string : line 89 : 'Weapon2Player' -> "Weapon2Player"
+Converted string : line 91 : 'Character' -> "Character"
+Converted string : line 91 : 'Health' -> "Health"
+Converted string : line 92 : 'Character' -> "Character"
+Converted string : line 92 : 'Overshield' -> "Overshield"
+Converted string : line 97 : 'Character' -> "Character"
+Converted string : line 97 : 'currentlyEquippedWeapon' -> "currentlyEquippedWeapon"
+Converted string : line 104 : 'Persistence' -> "Persistence"
+Converted string : line 104 : 'LowPerfChecked' -> "LowPerfChecked"
+Converted string : line 105 : 'Persistence' -> "Persistence"
+Converted string : line 105 : 'dailyCompleted' -> "dailyCompleted"
+Converted string : line 106 : 'Persistence' -> "Persistence"
+Converted string : line 106 : 'dailyCompletedScore' -> "dailyCompletedScore"
+Converted string : line 107 : 'Persistence' -> "Persistence"
+Converted string : line 107 : 'dailyCompletedBadge' -> "dailyCompletedBadge"
+Converted string : line 109 : 'Persistence' -> "Persistence"
+Converted string : line 109 : 'UnlockEndless' -> "UnlockEndless"
+Converted string : line 110 : 'Persistence' -> "Persistence"
+Converted string : line 110 : 'UnlockPinky' -> "UnlockPinky"
+Converted string : line 111 : 'Persistence' -> "Persistence"
+Converted string : line 111 : 'UnlockRaff' -> "UnlockRaff"
+Converted string : line 112 : 'Persistence' -> "Persistence"
+Converted string : line 112 : 'UnlockBiu' -> "UnlockBiu"
+Converted string : line 113 : 'Persistence' -> "Persistence"
+Converted string : line 113 : 'UnlockPunny' -> "UnlockPunny"
+Converted string : line 114 : 'Persistence' -> "Persistence"
+Converted string : line 114 : 'UnlockAss' -> "UnlockAss"
+Converted string : line 115 : 'Persistence' -> "Persistence"
+Converted string : line 115 : 'UnlockRider' -> "UnlockRider"
+Converted string : line 117 : 'Persistence' -> "Persistence"
+Converted string : line 117 : 'Score' -> "Score"
+Converted string : line 119 : 'Persistence' -> "Persistence"
+Converted string : line 119 : 'Checkpoint1' -> "Checkpoint1"
+Converted string : line 120 : 'Persistence' -> "Persistence"
+Converted string : line 120 : 'Checkpoint2' -> "Checkpoint2"
+Converted string : line 121 : 'Persistence' -> "Persistence"
+Converted string : line 121 : 'Checkpoint3' -> "Checkpoint3"
+Converted string : line 123 : 'Weapons' -> "Weapons"
+Converted string : line 123 : 'pistol_assault' -> "pistol_assault"
+Converted string : line 124 : 'Weapons' -> "Weapons"
+Converted string : line 124 : 'pistol_heavy' -> "pistol_heavy"
+Converted string : line 125 : 'Weapons' -> "Weapons"
+Converted string : line 125 : 'pistol_plasma' -> "pistol_plasma"
+Converted string : line 126 : 'Weapons' -> "Weapons"
+Converted string : line 126 : 'shotgun' -> "shotgun"
+Converted string : line 127 : 'Weapons' -> "Weapons"
+Converted string : line 127 : 'shotgun_heavy' -> "shotgun_heavy"
+Converted string : line 128 : 'Weapons' -> "Weapons"
+Converted string : line 128 : 'submachinegun' -> "submachinegun"
+Converted string : line 129 : 'Weapons' -> "Weapons"
+Converted string : line 129 : 'highmag' -> "highmag"
+Converted string : line 130 : 'Weapons' -> "Weapons"
+Converted string : line 130 : 'machinegun' -> "machinegun"
+Converted string : line 131 : 'Weapons' -> "Weapons"
+Converted string : line 131 : 'assault_rifle' -> "assault_rifle"
+Converted string : line 132 : 'Weapons' -> "Weapons"
+Converted string : line 132 : 'rocketlauncher' -> "rocketlauncher"
+Converted string : line 133 : 'Weapons' -> "Weapons"
+Converted string : line 133 : 'sniper_rifle' -> "sniper_rifle"
+Converted string : line 135 : 'Weapons' -> "Weapons"
+Converted string : line 135 : 'shield1' -> "shield1"
+Converted string : line 136 : 'Weapons' -> "Weapons"
+Converted string : line 136 : 'shield2' -> "shield2"
+Converted string : line 137 : 'Weapons' -> "Weapons"
+Converted string : line 137 : 'light1' -> "light1"
+Converted string : line 138 : 'Weapons' -> "Weapons"
+Converted string : line 138 : 'light2' -> "light2"
+Converted string : line 139 : 'Weapons' -> "Weapons"
+Converted string : line 139 : 'medium1' -> "medium1"
+Converted string : line 140 : 'Weapons' -> "Weapons"
+Converted string : line 140 : 'medium2' -> "medium2"
+Converted string : line 141 : 'Weapons' -> "Weapons"
+Converted string : line 141 : 'heavy1' -> "heavy1"
+Converted string : line 142 : 'Weapons' -> "Weapons"
+Converted string : line 142 : 'heavy2' -> "heavy2"
+Converted string : line 143 : 'Weapons' -> "Weapons"
+Converted string : line 143 : 'heavy3' -> "heavy3"
+Converted string : line 144 : 'Weapons' -> "Weapons"
+Converted string : line 144 : 'heavy4' -> "heavy4"
+Converted string : line 145 : 'Weapons' -> "Weapons"
+Converted string : line 145 : 'grenades1' -> "grenades1"
+Converted string : line 146 : 'Weapons' -> "Weapons"
+Converted string : line 146 : 'grenades2' -> "grenades2"
+Converted string : line 147 : 'Weapons' -> "Weapons"
+Converted string : line 147 : 'grenades3' -> "grenades3"
+Converted string : line 149 : 'Relics' -> "Relics"
+Converted string : line 149 : 'slot1' -> "slot1"
+Converted string : line 150 : 'Relics' -> "Relics"
+Converted string : line 150 : 'slot2' -> "slot2"
+Converted string : line 151 : 'Relics' -> "Relics"
+Converted string : line 151 : 'slot3' -> "slot3"
+Converted string : line 153 : 'Relics' -> "Relics"
+Converted string : line 153 : 'alcoholic_carrot' -> "alcoholic_carrot"
+Converted string : line 154 : 'Relics' -> "Relics"
+Converted string : line 154 : 'alcoholic1' -> "alcoholic1"
+Converted string : line 155 : 'Relics' -> "Relics"
+Converted string : line 155 : 'alcoholic2' -> "alcoholic2"
+Converted string : line 156 : 'Relics' -> "Relics"
+Converted string : line 156 : 'alcoholic3' -> "alcoholic3"
+Converted string : line 158 : 'Relics' -> "Relics"
+Converted string : line 158 : 'yottabyte_drive' -> "yottabyte_drive"
+Converted string : line 159 : 'Relics' -> "Relics"
+Converted string : line 159 : 'yottabyte1' -> "yottabyte1"
+Converted string : line 160 : 'Relics' -> "Relics"
+Converted string : line 160 : 'yottabyte2' -> "yottabyte2"
+Converted string : line 161 : 'Relics' -> "Relics"
+Converted string : line 161 : 'yottabyte3' -> "yottabyte3"
+Converted string : line 163 : 'Relics' -> "Relics"
+Converted string : line 163 : 'pineapple_pudding' -> "pineapple_pudding"
+Converted string : line 164 : 'Relics' -> "Relics"
+Converted string : line 164 : 'pineapple1' -> "pineapple1"
+Converted string : line 165 : 'Relics' -> "Relics"
+Converted string : line 165 : 'pineapple2' -> "pineapple2"
+Converted string : line 166 : 'Relics' -> "Relics"
+Converted string : line 166 : 'pineapple3' -> "pineapple3"
+Converted string : line 168 : 'Relics' -> "Relics"
+Converted string : line 168 : 'infinity_battery' -> "infinity_battery"
+Converted string : line 169 : 'Relics' -> "Relics"
+Converted string : line 169 : 'infinity1' -> "infinity1"
+Converted string : line 170 : 'Relics' -> "Relics"
+Converted string : line 170 : 'infinity2' -> "infinity2"
+Converted string : line 171 : 'Relics' -> "Relics"
+Converted string : line 171 : 'infinity3' -> "infinity3"
+Converted string : line 173 : 'Relics' -> "Relics"
+Converted string : line 173 : 'crystal_bacon' -> "crystal_bacon"
+Converted string : line 174 : 'Relics' -> "Relics"
+Converted string : line 174 : 'crystal1' -> "crystal1"
+Converted string : line 175 : 'Relics' -> "Relics"
+Converted string : line 175 : 'crystal2' -> "crystal2"
+Converted string : line 176 : 'Relics' -> "Relics"
+Converted string : line 176 : 'crystal3' -> "crystal3"
+Converted string : line 178 : 'Relics' -> "Relics"
+Converted string : line 178 : 'midnight_beer' -> "midnight_beer"
+Converted string : line 179 : 'Relics' -> "Relics"
+Converted string : line 179 : 'midnight1' -> "midnight1"
+Converted string : line 180 : 'Relics' -> "Relics"
+Converted string : line 180 : 'midnight2' -> "midnight2"
+Converted string : line 181 : 'Relics' -> "Relics"
+Converted string : line 181 : 'midnight3' -> "midnight3"
+Converted string : line 183 : 'Relics' -> "Relics"
+Converted string : line 183 : 'watchful_eye' -> "watchful_eye"
+Converted string : line 184 : 'Relics' -> "Relics"
+Converted string : line 184 : 'watchful1' -> "watchful1"
+Converted string : line 185 : 'Relics' -> "Relics"
+Converted string : line 185 : 'watchful2' -> "watchful2"
+Converted string : line 186 : 'Relics' -> "Relics"
+Converted string : line 186 : 'watchful3' -> "watchful3"
+Converted string : line 188 : 'Relics' -> "Relics"
+Converted string : line 188 : 'dev_potion' -> "dev_potion"
+Converted string : line 189 : 'Relics' -> "Relics"
+Converted string : line 189 : 'dev1' -> "dev1"
+Converted string : line 190 : 'Relics' -> "Relics"
+Converted string : line 190 : 'dev2' -> "dev2"
+Converted string : line 191 : 'Relics' -> "Relics"
+Converted string : line 191 : 'dev3' -> "dev3"
+Converted string : line 193 : 'Relics' -> "Relics"
+Converted string : line 193 : 'morning_star' -> "morning_star"
+Converted string : line 194 : 'Relics' -> "Relics"
+Converted string : line 194 : 'pineapple_pie' -> "pineapple_pie"
+Converted string : line 195 : 'Relics' -> "Relics"
+Converted string : line 195 : 'rabbit_foot' -> "rabbit_foot"
+Converted string : line 196 : 'Relics' -> "Relics"
+Converted string : line 196 : 'midnight_meal' -> "midnight_meal"
+Converted string : line 197 : 'Relics' -> "Relics"
+Converted string : line 197 : 'midnight_meal' -> "midnight_meal"
+Converted string : line 198 : 'Relics' -> "Relics"
+Converted string : line 198 : 'yottabyte_processor' -> "yottabyte_processor"
+Converted string : line 199 : 'Relics' -> "Relics"
+Converted string : line 199 : 'mega_quantum_chip' -> "mega_quantum_chip"
+Converted string : line 201 : 'Temp' -> "Temp"
+Converted string : line 201 : 'Stage' -> "Stage"
+Converted string : line 203 : 'Ass' -> "Ass"
+Converted string : line 203 : 'first_stage' -> "first_stage"
+Converted string : line 204 : 'Ass' -> "Ass"
+Converted string : line 204 : 'shop_visits' -> "shop_visits"
+Converted string : line 207 : 'Challenges' -> "Challenges"
+Converted string : line 207 : 'challengeSteroids' -> "challengeSteroids"
+Converted string : line 208 : 'Challenges' -> "Challenges"
+Converted string : line 208 : 'challengeWanted' -> "challengeWanted"
+Converted string : line 209 : 'Challenges' -> "Challenges"
+Converted string : line 209 : 'challengeHighTech' -> "challengeHighTech"
+Converted string : line 210 : 'Challenges' -> "Challenges"
+Converted string : line 210 : 'challengeLightFocus' -> "challengeLightFocus"
+Converted string : line 211 : 'Challenges' -> "Challenges"
+Converted string : line 211 : 'challengeMediumFocus' -> "challengeMediumFocus"
+Converted string : line 212 : 'Challenges' -> "Challenges"
+Converted string : line 212 : 'challengeHeavyFocus' -> "challengeHeavyFocus"
+Converted string : line 213 : 'Challenges' -> "Challenges"
+Converted string : line 213 : 'challengeReinforcements' -> "challengeReinforcements"
+Converted string : line 215 : 'Challenges' -> "Challenges"
+Converted string : line 215 : 'challengeHunger' -> "challengeHunger"
+Converted string : line 216 : 'Challenges' -> "Challenges"
+Converted string : line 216 : 'challengeThirst' -> "challengeThirst"
+Converted string : line 217 : 'Challenges' -> "Challenges"
+Converted string : line 217 : 'challengeOvercharge' -> "challengeOvercharge"
+Converted string : line 218 : 'Challenges' -> "Challenges"
+Converted string : line 218 : 'challengeMedieval' -> "challengeMedieval"
+Converted string : line 219 : 'Challenges' -> "Challenges"
+Converted string : line 219 : 'challengeCatapult' -> "challengeCatapult"
+Converted string : line 220 : 'Challenges' -> "Challenges"
+Converted string : line 220 : 'challengeDucanWeapons' -> "challengeDucanWeapons"
+Converted string : line 221 : 'Challenges' -> "Challenges"
+Converted string : line 221 : 'challengeHeavyBurden' -> "challengeHeavyBurden"
+Converted string : line 222 : 'Challenges' -> "Challenges"
+Converted string : line 222 : 'challengeSupressor' -> "challengeSupressor"
+Converted string : line 223 : 'Challenges' -> "Challenges"
+Converted string : line 223 : 'challengeBloodlust' -> "challengeBloodlust"
+Converted string : line 224 : 'Challenges' -> "Challenges"
+Converted string : line 224 : 'challengeJaws' -> "challengeJaws"
+Converted string : line 225 : 'Challenges' -> "Challenges"
+Converted string : line 225 : 'challengeCountdown' -> "challengeCountdown"
+Converted string : line 227 : 'Challenges' -> "Challenges"
+Converted string : line 227 : 'challengeHunted' -> "challengeHunted"
+Converted string : line 228 : 'Challenges' -> "Challenges"
+Converted string : line 228 : 'challengeHaunted' -> "challengeHaunted"
+Converted string : line 230 : 'Challenges' -> "Challenges"
+Converted string : line 230 : 'challengeHungerTimer' -> "challengeHungerTimer"
+Converted string : line 231 : 'Challenges' -> "Challenges"
+Converted string : line 231 : 'challengeThirstTimer' -> "challengeThirstTimer"
+Converted string : line 232 : 'Challenges' -> "Challenges"
+Converted string : line 232 : 'challengeOverchargeTimer' -> "challengeOverchargeTimer"
+Converted string : line 233 : 'Challenges' -> "Challenges"
+Converted string : line 233 : 'challengeMedievalTimer' -> "challengeMedievalTimer"
+Converted string : line 234 : 'Challenges' -> "Challenges"
+Converted string : line 234 : 'challengeCatapultTimer' -> "challengeCatapultTimer"
+Converted string : line 235 : 'Challenges' -> "Challenges"
+Converted string : line 235 : 'challengeDucanWeaponsTimer' -> "challengeDucanWeaponsTimer"
+Converted string : line 236 : 'Challenges' -> "Challenges"
+Converted string : line 236 : 'challengeHeavyBurdenTimer' -> "challengeHeavyBurdenTimer"
+Converted string : line 237 : 'Challenges' -> "Challenges"
+Converted string : line 237 : 'challengeSupressorTimer' -> "challengeSupressorTimer"
+Converted string : line 238 : 'Challenges' -> "Challenges"
+Converted string : line 238 : 'challengeBloodlustTimer' -> "challengeBloodlustTimer"
+Converted string : line 239 : 'Challenges' -> "Challenges"
+Converted string : line 239 : 'challengeJawsTimer' -> "challengeJawsTimer"
+Converted string : line 240 : 'Challenges' -> "Challenges"
+Converted string : line 240 : 'challengeCountdownTimer' -> "challengeCountdownTimer"
+Converted string : line 241 : 'Challenges' -> "Challenges"
+Converted string : line 241 : 'challengeHuntedTimer' -> "challengeHuntedTimer"
+Converted string : line 242 : 'Challenges' -> "Challenges"
+Converted string : line 242 : 'challengeHauntedTimer' -> "challengeHauntedTimer"
+Converted string : line 243 : 'Challenges' -> "Challenges"
+Converted string : line 243 : 'challengeLightFocusTimer' -> "challengeLightFocusTimer"
+Converted string : line 244 : 'Challenges' -> "Challenges"
+Converted string : line 244 : 'challengeMediumFocusTimer' -> "challengeMediumFocusTimer"
+Converted string : line 245 : 'Challenges' -> "Challenges"
+Converted string : line 245 : 'challengeHeavyFocusTimer' -> "challengeHeavyFocusTimer"
+Converted string : line 248 : 'Quality' -> "Quality"
+Converted string : line 248 : 'friendlyFire' -> "friendlyFire"
+Converted string : line 249 : 'Quality' -> "Quality"
+Converted string : line 249 : 'reflections' -> "reflections"
+Converted string : line 250 : 'Quality' -> "Quality"
+Converted string : line 250 : 'shadows' -> "shadows"
+Converted string : line 251 : 'Quality' -> "Quality"
+Converted string : line 251 : 'persistent effects' -> "persistent effects"
+Converted string : line 252 : 'Quality' -> "Quality"
+Converted string : line 252 : 'max particles' -> "max particles"
+Converted string : line 253 : 'Quality' -> "Quality"
+Converted string : line 253 : 'max casings' -> "max casings"
+Converted string : line 254 : 'Quality' -> "Quality"
+Converted string : line 254 : 'allowKillFreeze' -> "allowKillFreeze"
+Converted string : line 257 : 'Mapping' -> "Mapping"
+Converted string : line 257 : 'Keyboard Fire1' -> "Keyboard Fire1"
+Converted string : line 258 : 'Mapping' -> "Mapping"
+Converted string : line 258 : 'Keyboard Fire2' -> "Keyboard Fire2"
+Converted string : line 259 : 'Mapping' -> "Mapping"
+Converted string : line 259 : 'Keyboard Aim1' -> "Keyboard Aim1"
+Converted string : line 260 : 'Mapping' -> "Mapping"
+Converted string : line 260 : 'Keyboard Aim2' -> "Keyboard Aim2"
+Converted string : line 261 : 'Mapping' -> "Mapping"
+Converted string : line 261 : 'Keyboard Right1' -> "Keyboard Right1"
+Converted string : line 262 : 'Mapping' -> "Mapping"
+Converted string : line 262 : 'Keyboard Right2' -> "Keyboard Right2"
+Converted string : line 263 : 'Mapping' -> "Mapping"
+Converted string : line 263 : 'Keyboard Left1' -> "Keyboard Left1"
+Converted string : line 264 : 'Mapping' -> "Mapping"
+Converted string : line 264 : 'Keyboard Left2' -> "Keyboard Left2"
+Converted string : line 265 : 'Mapping' -> "Mapping"
+Converted string : line 265 : 'Keyboard Up1' -> "Keyboard Up1"
+Converted string : line 266 : 'Mapping' -> "Mapping"
+Converted string : line 266 : 'Keyboard Up2' -> "Keyboard Up2"
+Converted string : line 267 : 'Mapping' -> "Mapping"
+Converted string : line 267 : 'Keyboard Down1' -> "Keyboard Down1"
+Converted string : line 268 : 'Mapping' -> "Mapping"
+Converted string : line 268 : 'Keyboard Down2' -> "Keyboard Down2"
+Converted string : line 269 : 'Mapping' -> "Mapping"
+Converted string : line 269 : 'Keyboard Grenade1' -> "Keyboard Grenade1"
+Converted string : line 270 : 'Mapping' -> "Mapping"
+Converted string : line 270 : 'Keyboard Grenade2' -> "Keyboard Grenade2"
+Converted string : line 271 : 'Mapping' -> "Mapping"
+Converted string : line 271 : 'Keyboard Melee1' -> "Keyboard Melee1"
+Converted string : line 272 : 'Mapping' -> "Mapping"
+Converted string : line 272 : 'Keyboard Melee2' -> "Keyboard Melee2"
+Converted string : line 273 : 'Mapping' -> "Mapping"
+Converted string : line 273 : 'Keyboard Sprint1' -> "Keyboard Sprint1"
+Converted string : line 274 : 'Mapping' -> "Mapping"
+Converted string : line 274 : 'Keyboard Sprint2' -> "Keyboard Sprint2"
+Converted string : line 275 : 'Mapping' -> "Mapping"
+Converted string : line 275 : 'Keyboard SprintToggle1' -> "Keyboard SprintToggle1"
+Converted string : line 276 : 'Mapping' -> "Mapping"
+Converted string : line 276 : 'Keyboard SprintToggle2' -> "Keyboard SprintToggle2"
+Converted string : line 277 : 'Mapping' -> "Mapping"
+Converted string : line 277 : 'Keyboard Use1' -> "Keyboard Use1"
+Converted string : line 278 : 'Mapping' -> "Mapping"
+Converted string : line 278 : 'Keyboard Use2' -> "Keyboard Use2"
+Converted string : line 279 : 'Mapping' -> "Mapping"
+Converted string : line 279 : 'Keyboard Switch1' -> "Keyboard Switch1"
+Converted string : line 280 : 'Mapping' -> "Mapping"
+Converted string : line 280 : 'Keyboard Switch2' -> "Keyboard Switch2"
+Converted string : line 281 : 'Mapping' -> "Mapping"
+Converted string : line 281 : 'Keyboard Reload1' -> "Keyboard Reload1"
+Converted string : line 282 : 'Mapping' -> "Mapping"
+Converted string : line 282 : 'Keyboard Reload2' -> "Keyboard Reload2"
+Converted string : line 288 : 'Steam' -> "Steam"
+Converted string : line 288 : 'ScreenshotNumber' -> "ScreenshotNumber"
+Converted string : line 291 : 'Stats' -> "Stats"
+Converted string : line 291 : 'statTotalBounty' -> "statTotalBounty"
+Converted string : line 292 : 'Stats' -> "Stats"
+Converted string : line 292 : 'statTotalDeaths' -> "statTotalDeaths"
+Converted string : line 293 : 'Stats' -> "Stats"
+Converted string : line 293 : 'statKilledByBoss' -> "statKilledByBoss"
+Converted string : line 294 : 'Stats' -> "Stats"
+Converted string : line 294 : 'statBossKills' -> "statBossKills"
+Converted string : line 295 : 'Stats' -> "Stats"
+Converted string : line 295 : 'Kills' -> "Kills"
+Converted string : line 296 : 'Stats' -> "Stats"
+Converted string : line 296 : 'statTotalTime' -> "statTotalTime"
+Converted string : line 297 : 'Stats' -> "Stats"
+Converted string : line 297 : 'statRunTime' -> "statRunTime"
+Converted string : line 298 : 'Stats' -> "Stats"
+Converted string : line 298 : 'statRunBest' -> "statRunBest"
+Converted string : line 299 : 'Stats' -> "Stats"
+Converted string : line 299 : 'statLongestRun' -> "statLongestRun"
+Converted string : line 300 : 'Stats' -> "Stats"
+Converted string : line 300 : 'totalDigs' -> "totalDigs"
+Converted string : line 301 : 'Stats' -> "Stats"
+Converted string : line 301 : 'scoreEndlessBest' -> "scoreEndlessBest"
+Converted string : line 302 : 'Stats' -> "Stats"
+Converted string : line 302 : 'statBestLoop' -> "statBestLoop"
+Converted string : line 303 : 'Stats' -> "Stats"
+Converted string : line 303 : 'statTotalLoops' -> "statTotalLoops"
+Converted string : line 304 : 'Stats' -> "Stats"
+Converted string : line 304 : 'statTotalHacks' -> "statTotalHacks"
+Converted string : line 305 : 'Stats' -> "Stats"
+Converted string : line 305 : 'statTotalWeaponUpgrades' -> "statTotalWeaponUpgrades"
+
+Converting GML script : ${project_dir}\scripts\on_screen_offset\on_screen_offset.gml
+Converted builtin : line 6 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 8 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 9 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 8 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 9 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\scripts\char_state_initial\char_state_initial.gml
+Converted string : line 139 : '' -> ""
+Converted string : line 140 : '' -> ""
+Converted string : line 141 : '' -> ""
+
+Converting GML script : ${project_dir}\scripts\on_screen\on_screen.gml
+Converted builtin : line 6 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 8 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 9 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 8 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 9 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\scripts\reflection_draw\reflection_draw.gml
+Converted builtin : line 6 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 6 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\scripts\shadow_draw_tall\shadow_draw_tall.gml
+Converted builtin : line 5 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 5 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\scripts\shadow_draw\shadow_draw.gml
+Converted builtin : line 4 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 4 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\scripts\reflection_update\reflection_update.gml
+Converted builtin : line 4 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 5 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 6 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 7 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\scripts\shadow_update\shadow_update.gml
+Converted builtin : line 4 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 5 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 6 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 7 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+!!! Font ftEN_numberSmall uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_shopPrice uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_numberMedium uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_menuSmall uses a font (8BIT WONDER) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\scripts\loc_init\loc_init.gml
+Converted string : line 7 : 'áéíóúâêîôûãõäëïöüçàèìòù' -> "áéíóúâêîôûãõäëïöüçàèìòù"
+Converted string : line 8 : 'úáůčýďžéěíňóřšť' -> "úáůčýďžéěíňóřšť"
+Converted string : line 298 : '' -> ""
+Converted string : line 299 : '' -> ""
+Converted string : line 306 : ',' -> ","
+Converted string : line 306 : ' ' -> " "
+Converted string : line 319 : '"' -> "\""
+Converted string : line 320 : '"' -> "\""
+
+!!! Font ftEN_balloonText uses a font (PF Arma Five) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_menuLarge uses a font (8BIT WONDER) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_menuMedium uses a font (8BIT WONDER) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_numberLarge uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_menuLargest uses a font (8BIT WONDER) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_menuVeryLarge uses a font (PF Arma Five) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_tinyText uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftEN_numberVeryLarge uses a font (wendy) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_numberLarge uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_numberMedium uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_numberSmall uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_shopPrice uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_numberVeryLarge uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_menuSmall uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_numberLarge uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_numberSmall uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_balloonText uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_menuMedium uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_numberMedium uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_menuLarge uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_numberVeryLarge uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_menuVeryLarge uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_tinyText uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_tinyText uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftRU_menuLargest uses a font (Fixedsys Excelsior 3.01) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_menuLarge uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_menuLargest uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_menuMedium uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftBR_menuSmall uses a font (Grand9K Pixel) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_numberSmall uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_tinyText uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_shopPrice uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_numberVeryLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_numberMedium uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_numberLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_menuSmall uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_menuMedium uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_menuLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_balloonText uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_numberLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_numberSmall uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_numberVeryLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_shopPrice uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_menuVeryLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftKR_menuLargest uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_tinyText uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_numberMedium uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_menuSmall uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_balloonText uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\objects\controller_bootstrap\Create_0.gml
+Converted string : line 25 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 26 : 'Version' -> "Version"
+Converted string : line 26 : 'Version' -> "Version"
+Converted string : line 27 : 'Character' -> "Character"
+Converted string : line 27 : 'playerCount' -> "playerCount"
+Converted string : line 28 : 'Temp' -> "Temp"
+Converted string : line 28 : 'isDaily' -> "isDaily"
+Converted string : line 29 : 'Temp' -> "Temp"
+Converted string : line 29 : 'Loop' -> "Loop"
+
+!!! Font ftJP_menuMedium uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\objects\controller_camera\Step_0.gml
+Converted builtin : line 12 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_xview[0] = x -> __view_set( e__VW.XView, 0, x )
+Converted builtin : line 13 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 8 : view_yview[0] = y -> __view_set( e__VW.YView, 0, y )
+Converted builtin : line 131 : view_wview[0] = 1280*zoom_current -> __view_set( e__VW.WView, 0, 1280*zoom_current )
+Converted builtin : line 132 : view_hview[0] = 720*zoom_current -> __view_set( e__VW.HView, 0, 720*zoom_current )
+
+!!! Font ftJP_menuLargest uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\objects\controller_pause\Create_0.gml
+Converted builtin : line 3 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 4 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\objects\controller_pause\Draw_0.gml
+Converted builtin : line 3 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 10 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 3 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 10 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 3 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 7 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 3 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin : line 7 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+!!! Font ftJP_menuVeryLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\objects\controller_effects\Draw_0.gml
+Converted builtin : line 7 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 7 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 7 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 7 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\objects\controller_steamAsync\Step_0.gml
+Converted string : line 9 : '-' -> "-"
+Converted string : line 9 : '-' -> "-"
+
+!!! Font ftCH_menuLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+!!! Font ftJP_menuLarge uses a font (Arial Unicode MS) not installed on this system. Font has NOT been regenerated.
+Converting GML script : ${project_dir}\objects\controller_main\Create_0.gml
+Converted builtin : line 49 : view_xview[0] = x -> __view_set( e__VW.XView, 0, x )
+Converted builtin : line 50 : view_yview[0] = y -> __view_set( e__VW.YView, 0, y )
+Converted string : line 25 : 'ERROR: Steam Stats Not Accessible At This Time' -> "ERROR: Steam Stats Not Accessible At This Time"
+Converted string : line 27 : 'ERROR: Steam not initialized' -> "ERROR: Steam not initialized"
+Converted string : line 83 : 'KILL' -> "KILL"
+Converted string : line 266 : '' -> ""
+Converted string : line 653 : 'Test if weapon was picked up before: ' -> "Test if weapon was picked up before: "
+Converted string : line 656 : 'Test if Checkpoint was used before: ' -> "Test if Checkpoint was used before: "
+Converted string : line 709 : 'CHALLENGE_HUNGER' -> "CHALLENGE_HUNGER"
+Converted string : line 718 : 'CHALLENGE_THIRST' -> "CHALLENGE_THIRST"
+Converted string : line 727 : 'CHALLENGE_OVERCHARGE' -> "CHALLENGE_OVERCHARGE"
+Converted string : line 736 : 'CHALLENGE_MEDIEVAL' -> "CHALLENGE_MEDIEVAL"
+Converted string : line 745 : 'CHALLENGE_CATAPULT' -> "CHALLENGE_CATAPULT"
+Converted string : line 754 : 'CHALLENGE_DUCANWEAPONS' -> "CHALLENGE_DUCANWEAPONS"
+Converted string : line 763 : 'CHALLENGE_HEAVYBURDEN' -> "CHALLENGE_HEAVYBURDEN"
+Converted string : line 772 : 'CHALLENGE_SUPRESSOR' -> "CHALLENGE_SUPRESSOR"
+Converted string : line 781 : 'CHALLENGE_BLOODLUST' -> "CHALLENGE_BLOODLUST"
+Converted string : line 790 : 'CHALLENGE_JAWS' -> "CHALLENGE_JAWS"
+Converted string : line 799 : 'CHALLENGE_COUNTDOWN' -> "CHALLENGE_COUNTDOWN"
+Converted string : line 808 : 'CHALLENGE_HUNTED' -> "CHALLENGE_HUNTED"
+Converted string : line 817 : 'CHALLENGE_HAUNTED' -> "CHALLENGE_HAUNTED"
+Converted string : line 826 : 'CHALLENGE_LIGHTFOCUS' -> "CHALLENGE_LIGHTFOCUS"
+Converted string : line 835 : 'CHALLENGE_MEDIUMFOCUS' -> "CHALLENGE_MEDIUMFOCUS"
+Converted string : line 844 : 'CHALLENGE_HEAVYFOCUS' -> "CHALLENGE_HEAVYFOCUS"
+
+Converting GML script : ${project_dir}\objects\controller_main\Step_0.gml
+Converted builtin : line 908 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 908 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 908 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 908 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted string : line 297 : 'relic' -> "relic"
+Converted string : line 471 : "I am on Level 1-3, it's shop time!" -> "I am on Level 1-3, it\'s shop time!"
+Converted string : line 472 : "I am on Level 2-3, it's shop time!" -> "I am on Level 2-3, it\'s shop time!"
+Converted string : line 473 : "I am on Level 3-3, it's shop time!" -> "I am on Level 3-3, it\'s shop time!"
+Converted string : line 474 : "I am on Level 4-3, it's shop time!" -> "I am on Level 4-3, it\'s shop time!"
+Converted string : line 475 : "I am on Level Halloween-3, it's shop time!" -> "I am on Level Halloween-3, it\'s shop time!"
+Converted string : line 584 : 'M' -> "M"
+Converted string : line 585 : 'B' -> "B"
+Converted string : line 600 : 'M' -> "M"
+Converted string : line 603 : 'N' -> "N"
+Converted string : line 606 : 'B' -> "B"
+Converted string : line 631 : 'M' -> "M"
+Converted string : line 656 : 'P' -> "P"
+Converted string : line 743 : '' -> ""
+Converted string : line 747 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\controller_main\Draw_64.gml
+Converted builtin : line 775 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 775 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 775 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 775 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 775 : view_xport[0] -> __view_get( e__VW.XPort, 0 )
+Converted builtin : line 775 : view_yport[0] -> __view_get( e__VW.YPort, 0 )
+Converted string : line 312 : '+' -> "+"
+Converted string : line 591 : '' -> ""
+Converted string : line 616 : '' -> ""
+Converted string : line 616 : ' (' -> " ("
+Converted string : line 616 : ')' -> ")"
+Converted string : line 705 : 'YOUR POSITION: ' -> "YOUR POSITION: "
+Converted string : line 741 : 'm ' -> "m "
+Converted string : line 753 : '' -> ""
+Converted string : line 842 : '/' -> "/"
+
+Converting GML script : ${project_dir}\objects\controller_main\Draw_0.gml
+Converted builtin : line 78 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 78 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 79 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 81 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 81 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 82 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 78 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 81 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\objects\data_shopEndless\Create_0.gml
+Converted string : line 95 : 'Found a pre-existing item on slot1, deleting' -> "Found a pre-existing item on slot1, deleting"
+Converted string : line 104 : 'Found a pre-existing item on slot2, deleting' -> "Found a pre-existing item on slot2, deleting"
+Converted string : line 113 : 'Found a pre-existing item on slot3, deleting' -> "Found a pre-existing item on slot3, deleting"
+
+Converting GML script : ${project_dir}\objects\class_player\Create_0.gml
+Converted string : line 99 : 'noone' -> "noone"
+Converted string : line 102 : 'idle' -> "idle"
+
+Converting GML script : ${project_dir}\objects\class_player\Step_0.gml
+Converted string : line 101 : 'dig' -> "dig"
+Converted string : line 296 : 'melee' -> "melee"
+Converted string : line 405 : 'hit' -> "hit"
+Converted string : line 413 : 'melee' -> "melee"
+Converted string : line 421 : 'sprint' -> "sprint"
+Converted string : line 427 : 'sprint' -> "sprint"
+Converted string : line 429 : 'dash' -> "dash"
+Converted string : line 430 : 'walk' -> "walk"
+Converted string : line 431 : 'walk' -> "walk"
+Converted string : line 433 : 'idle' -> "idle"
+Converted string : line 438 : 'walk' -> "walk"
+Converted string : line 438 : 'sprint' -> "sprint"
+Converted string : line 511 : 'melee' -> "melee"
+Converted string : line 609 : 'melee' -> "melee"
+Converted string : line 867 : 'dig' -> "dig"
+
+Converting GML script : ${project_dir}\objects\class_player\Draw_0.gml
+Converted string : line 6 : 'dig' -> "dig"
+Converted string : line 12 : 'dig' -> "dig"
+
+Converting GML script : ${project_dir}\objects\class_gun\Create_0.gml
+Converted string : line 15 : '' -> ""
+Converted string : line 78 : 'pistol' -> "pistol"
+Converted string : line 91 : 'undefined' -> "undefined"
+
+Converting GML script : ${project_dir}\objects\class_gun\Step_1.gml
+Converted string : line 19 : '' -> ""
+Converted string : line 36 : ' +' -> " +"
+Converted string : line 52 : 'undefined' -> "undefined"
+Converted string : line 53 : 'pistol' -> "pistol"
+Converted string : line 54 : 'machinegun' -> "machinegun"
+Converted string : line 55 : 'shotgun' -> "shotgun"
+Converted string : line 56 : 'sniper' -> "sniper"
+Converted string : line 57 : 'smg' -> "smg"
+Converted string : line 58 : 'rocket' -> "rocket"
+Converted string : line 59 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\class_gun\Step_0.gml
+Converted string : line 27 : 'melee' -> "melee"
+
+Converting GML script : ${project_dir}\objects\class_gun\Draw_0.gml
+Converted string : line 4 : 'dig' -> "dig"
+Converted string : line 13 : 'melee' -> "melee"
+
+Converting GML script : ${project_dir}\objects\class_melee\Create_0.gml
+Converted string : line 19 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_melee\Step_0.gml
+Converted string : line 3 : '' -> ""
+Converted string : line 21 : ' +' -> " +"
+Converted string : line 35 : 'idle' -> "idle"
+Converted string : line 36 : 'walk' -> "walk"
+Converted string : line 37 : 'sprint' -> "sprint"
+Converted string : line 38 : 'dash' -> "dash"
+Converted string : line 39 : 'hit' -> "hit"
+Converted string : line 40 : 'melee' -> "melee"
+
+Converting GML script : ${project_dir}\objects\class_melee\Draw_0.gml
+Converted string : line 4 : 'dig' -> "dig"
+
+Converting GML script : ${project_dir}\objects\obj_pinky\Other_10.gml
+Converted string : line 2 : 'Hey Im pinkyy and my player id is ' -> "Hey Im pinkyy and my player id is "
+Converted string : line 9 : 'weapon2[myPlayerId] returns ' -> "weapon2[myPlayerId] returns "
+Converted string : line 32 : 'weapon2[myPlayerId] returns ' -> "weapon2[myPlayerId] returns "
+
+Converting GML script : ${project_dir}\objects\obj_jimmy\Other_10.gml
+Converted string : line 12 : 'This is jimmy spawning his guns, and my playerId is ' -> "This is jimmy spawning his guns, and my playerId is "
+Converted string : line 16 : 'weapon2[myPlayerId] returns ' -> "weapon2[myPlayerId] returns "
+Converted string : line 27 : 'weapon1[myPlayerId] returns ' -> "weapon1[myPlayerId] returns "
+
+Converting GML script : ${project_dir}\objects\obj_rider\Other_10.gml
+Converted string : line 12 : 'This is Rider spawning her guns, and my playerId is ' -> "This is Rider spawning her guns, and my playerId is "
+Converted string : line 16 : 'weapon2[myPlayerId] returns ' -> "weapon2[myPlayerId] returns "
+Converted string : line 27 : 'weapon1[myPlayerId] returns ' -> "weapon1[myPlayerId] returns "
+
+Converting GML script : ${project_dir}\objects\obj_assault_rifle\Create_0.gml
+Converted string : line 31 : 'rifle' -> "rifle"
+Converted string : line 32 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_assault_rifle_crude\Create_0.gml
+Converted string : line 31 : 'rifle' -> "rifle"
+Converted string : line 32 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_ducanShotgun\Create_0.gml
+Converted string : line 27 : 'shotgun' -> "shotgun"
+Converted string : line 28 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_ducanRifle\Create_0.gml
+Converted string : line 29 : 'rifle' -> "rifle"
+Converted string : line 30 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_bouncer\Create_0.gml
+Converted string : line 28 : 'smg' -> "smg"
+Converted string : line 29 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_bossGun\Create_0.gml
+Converted string : line 31 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_blitz\Create_0.gml
+Converted string : line 31 : 'rifle' -> "rifle"
+Converted string : line 32 : 'heavy' -> "heavy"
+
+Converting GML script : ${project_dir}\objects\obj_ducanPlasma\Create_0.gml
+Converted string : line 29 : 'plasma' -> "plasma"
+Converted string : line 30 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_raff\Other_10.gml
+Converted string : line 2 : 'Hey Im raff and my player id is ' -> "Hey Im raff and my player id is "
+
+Converting GML script : ${project_dir}\objects\obj_flamethrower\Create_0.gml
+Converted string : line 30 : 'flamethrower' -> "flamethrower"
+
+Converting GML script : ${project_dir}\objects\obj_flakCannon\Create_0.gml
+Converted string : line 26 : 'shotgun' -> "shotgun"
+Converted string : line 27 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_minigun_relic\Create_0.gml
+Converted string : line 37 : 'smg' -> "smg"
+Converted string : line 38 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_minigun\Create_0.gml
+Converted string : line 32 : 'smg' -> "smg"
+Converted string : line 33 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_relic\Create_0.gml
+Converted string : line 9 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_keytar\Create_0.gml
+Converted string : line 30 : 'keytar' -> "keytar"
+
+Converting GML script : ${project_dir}\objects\obj_rocketlauncher\Create_0.gml
+Converted string : line 30 : 'rocket' -> "rocket"
+Converted string : line 31 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_blast\Create_0.gml
+Converted string : line 7 : 'plasma' -> "plasma"
+Converted string : line 27 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_machinegun\Create_0.gml
+Converted string : line 25 : 'machinegun' -> "machinegun"
+Converted string : line 26 : 'machinegun' -> "machinegun"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_bouncer\Create_0.gml
+Converted string : line 10 : 'pistol' -> "pistol"
+Converted string : line 31 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_highmag\Create_0.gml
+Converted string : line 25 : 'smg' -> "smg"
+Converted string : line 26 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_jimmy\Create_0.gml
+Converted string : line 7 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_heavy\Create_0.gml
+Converted string : line 28 : 'machinegun' -> "machinegun"
+Converted string : line 29 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_assault\Create_0.gml
+Converted string : line 7 : 'pistol' -> "pistol"
+Converted string : line 28 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_relicCannon\Create_0.gml
+Converted string : line 28 : 'shotgun' -> "shotgun"
+Converted string : line 29 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_plasma\Create_0.gml
+Converted string : line 29 : 'plasma' -> "plasma"
+Converted string : line 30 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_smg_crude\Create_0.gml
+Converted string : line 25 : 'smg' -> "smg"
+Converted string : line 26 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_pistol\Create_0.gml
+Converted string : line 7 : 'pistol' -> "pistol"
+Converted string : line 26 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_sawedoff\Create_0.gml
+Converted string : line 25 : 'shotgun' -> "shotgun"
+Converted string : line 26 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_shotgun\Create_0.gml
+Converted string : line 24 : 'shotgun' -> "shotgun"
+Converted string : line 25 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_shotgun_crude\Create_0.gml
+Converted string : line 24 : 'shotgun' -> "shotgun"
+Converted string : line 25 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_shotgun_heavy\Create_0.gml
+Converted string : line 24 : 'shotgun' -> "shotgun"
+Converted string : line 25 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_rocketlauncher_relic\Create_0.gml
+Converted string : line 32 : 'rocket' -> "rocket"
+Converted string : line 33 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_shotgun_relic\Create_0.gml
+Converted string : line 30 : 'shotgun' -> "shotgun"
+Converted string : line 31 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_kamilauncher\Create_0.gml
+Converted string : line 30 : 'rocket' -> "rocket"
+Converted string : line 31 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_smg_relic\Create_0.gml
+Converted string : line 30 : 'smg' -> "smg"
+Converted string : line 31 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_smg_plasma\Create_0.gml
+Converted string : line 27 : 'plasma' -> "plasma"
+Converted string : line 28 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_sniper_ghost\Create_0.gml
+Converted string : line 31 : 'sniper' -> "sniper"
+Converted string : line 32 : 'sniper' -> "sniper"
+
+Converting GML script : ${project_dir}\objects\obj_spookyPistol\Create_0.gml
+Converted string : line 7 : 'plasma' -> "plasma"
+
+Converting GML script : ${project_dir}\objects\obj_sniper_rifle\Create_0.gml
+Converted string : line 28 : 'sniper' -> "sniper"
+Converted string : line 29 : 'sniper' -> "sniper"
+
+Converting GML script : ${project_dir}\objects\obj_sniper_relic\Create_0.gml
+Converted string : line 32 : 'sniper' -> "sniper"
+Converted string : line 33 : 'sniper' -> "sniper"
+
+Converting GML script : ${project_dir}\objects\obj_spookyBeamer\Create_0.gml
+Converted string : line 7 : 'no projectile sound' -> "no projectile sound"
+Converted string : line 39 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_submachinegun\Create_0.gml
+Converted string : line 25 : 'smg' -> "smg"
+Converted string : line 26 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_spookyReaper\Create_0.gml
+Converted string : line 7 : 'reaper' -> "reaper"
+Converted string : line 38 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_buckler\Create_0.gml
+Converted string : line 13 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_buckler\Step_0.gml
+Converted string : line 8 : 'idle' -> "idle"
+Converted string : line 9 : 'walk' -> "walk"
+Converted string : line 10 : 'sprint' -> "sprint"
+Converted string : line 11 : 'dash' -> "dash"
+Converted string : line 12 : 'hit' -> "hit"
+Converted string : line 13 : 'melee' -> "melee"
+Converted string : line 24 : '' -> ""
+Converted string : line 42 : ' +' -> " +"
+
+Converting GML script : ${project_dir}\objects\obj_buckler\Draw_0.gml
+Converted string : line 4 : 'dig' -> "dig"
+
+Converting GML script : ${project_dir}\objects\obj_kamikazelite_flying\Create_0.gml
+Converted string : line 6 : 'up' -> "up"
+
+Converting GML script : ${project_dir}\objects\obj_kamikazelite_flying\Step_0.gml
+Converted string : line 9 : 'complete' -> "complete"
+Converted string : line 12 : 'up' -> "up"
+Converted string : line 22 : 'go' -> "go"
+Converted string : line 26 : 'go' -> "go"
+Converted string : line 43 : 'down' -> "down"
+Converted string : line 47 : 'down' -> "down"
+Converted string : line 66 : 'complete' -> "complete"
+Converted string : line 79 : 'complete' -> "complete"
+
+Converting GML script : ${project_dir}\objects\obj_kamikazelite_flying\Draw_0.gml
+Converted string : line 3 : 'go' -> "go"
+
+Converting GML script : ${project_dir}\objects\obj_rifle_relic\Create_0.gml
+Converted string : line 32 : 'rifle' -> "rifle"
+Converted string : line 33 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_spooky_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_ducanPlasma_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_reaper_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_plasma_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_needler_enemy\Create_0.gml
+Converted string : line 7 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_pistol_heavy_enemy\Create_0.gml
+Converted string : line 3 : 'machinegun' -> "machinegun"
+
+Converting GML script : ${project_dir}\objects\obj_ghost_ducan\Create_0.gml
+Converted string : line 31 : 'CHASE' -> "CHASE"
+
+Converting GML script : ${project_dir}\objects\obj_ghost_ducan\Step_0.gml
+Converted string : line 112 : 'CHASE' -> "CHASE"
+Converted string : line 115 : 'CHASE' -> "CHASE"
+
+Converting GML script : ${project_dir}\objects\obj_ducanRifle_enemy\Create_0.gml
+Converted string : line 2 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_shotgun_enemy\Create_0.gml
+Converted string : line 2 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_rocketlauncher_enemy\Create_0.gml
+Converted string : line 2 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_ducanRocket_enemy\Create_0.gml
+Converted string : line 2 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_sniperrifle_enemy\Create_0.gml
+Converted string : line 2 : 'sniper' -> "sniper"
+
+Converting GML script : ${project_dir}\objects\obj_boss\Create_0.gml
+Converted string : line 55 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\obj_boss\Step_0.gml
+Converted string : line 151 : 'Boss just toggled generator1 variable isVulnerable to ' -> "Boss just toggled generator1 variable isVulnerable to "
+Converted string : line 395 : 'PATROL' -> "PATROL"
+Converted string : line 395 : 'COVER' -> "COVER"
+Converted string : line 396 : 'CHASE' -> "CHASE"
+Converted string : line 398 : 'PATROL' -> "PATROL"
+Converted string : line 406 : 'COVER' -> "COVER"
+Converted string : line 414 : 'DASH' -> "DASH"
+Converted string : line 420 : 'CHASE' -> "CHASE"
+Converted string : line 424 : 'PATROL' -> "PATROL"
+Converted string : line 430 : 'DASH' -> "DASH"
+Converted string : line 436 : 'COVER' -> "COVER"
+Converted string : line 440 : 'PATROL' -> "PATROL"
+Converted string : line 445 : 'CHASE' -> "CHASE"
+Converted string : line 450 : 'PATROL' -> "PATROL"
+Converted string : line 454 : 'CHASE' -> "CHASE"
+Converted string : line 460 : 'CHASE' -> "CHASE"
+Converted string : line 495 : 'COVER' -> "COVER"
+Converted string : line 578 : 'PATROL' -> "PATROL"
+Converted string : line 605 : 'DASH' -> "DASH"
+Converted string : line 607 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\obj_ducanSniper_enemy\Create_0.gml
+Converted string : line 2 : 'sniper' -> "sniper"
+
+Converting GML script : ${project_dir}\objects\obj_machinegun_enemy\Create_0.gml
+Converted string : line 2 : 'machinegun' -> "machinegun"
+
+Converting GML script : ${project_dir}\objects\obj_submachinegun_enemy\Create_0.gml
+Converted string : line 2 : 'smg' -> "smg"
+
+Converting GML script : ${project_dir}\objects\obj_assaultpistol_enemy\Create_0.gml
+Converted string : line 2 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_ducanShotgun_enemy\Create_0.gml
+Converted string : line 2 : 'shotgun' -> "shotgun"
+
+Converting GML script : ${project_dir}\objects\obj_assaultrifle_boss\Create_0.gml
+Converted string : line 3 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_assaultrifle_enemy\Create_0.gml
+Converted string : line 2 : 'rifle' -> "rifle"
+
+Converting GML script : ${project_dir}\objects\obj_rocketlauncher_boss\Create_0.gml
+Converted string : line 3 : 'rocket' -> "rocket"
+
+Converting GML script : ${project_dir}\objects\obj_turtle_dummy\Step_2.gml
+Converted string : line 2 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\obj_turtle_dummy\Step_1.gml
+Converted string : line 4 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_zombieShooter\Step_0.gml
+Converted string : line 273 : 'PATROL' -> "PATROL"
+Converted string : line 273 : 'COVER' -> "COVER"
+Converted string : line 274 : 'CHASE' -> "CHASE"
+Converted string : line 276 : 'PATROL' -> "PATROL"
+Converted string : line 284 : 'COVER' -> "COVER"
+Converted string : line 292 : 'DASH' -> "DASH"
+Converted string : line 298 : 'CHASE' -> "CHASE"
+Converted string : line 302 : 'PATROL' -> "PATROL"
+Converted string : line 308 : 'DASH' -> "DASH"
+Converted string : line 314 : 'COVER' -> "COVER"
+Converted string : line 318 : 'PATROL' -> "PATROL"
+Converted string : line 323 : 'CHASE' -> "CHASE"
+Converted string : line 328 : 'PATROL' -> "PATROL"
+Converted string : line 332 : 'CHASE' -> "CHASE"
+Converted string : line 338 : 'CHASE' -> "CHASE"
+Converted string : line 372 : 'COVER' -> "COVER"
+Converted string : line 455 : 'PATROL' -> "PATROL"
+Converted string : line 482 : 'DASH' -> "DASH"
+Converted string : line 484 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\obj_turtle_dummy_immortal\Create_0.gml
+Converted string : line 10 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_shooter\Create_0.gml
+Converted string : line 47 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_shooter\Step_0.gml
+Converted string : line 266 : 'PATROL' -> "PATROL"
+Converted string : line 266 : 'COVER' -> "COVER"
+Converted string : line 267 : 'CHASE' -> "CHASE"
+Converted string : line 269 : 'PATROL' -> "PATROL"
+Converted string : line 277 : 'COVER' -> "COVER"
+Converted string : line 285 : 'DASH' -> "DASH"
+Converted string : line 291 : 'CHASE' -> "CHASE"
+Converted string : line 295 : 'PATROL' -> "PATROL"
+Converted string : line 301 : 'DASH' -> "DASH"
+Converted string : line 307 : 'COVER' -> "COVER"
+Converted string : line 311 : 'PATROL' -> "PATROL"
+Converted string : line 316 : 'CHASE' -> "CHASE"
+Converted string : line 321 : 'PATROL' -> "PATROL"
+Converted string : line 325 : 'CHASE' -> "CHASE"
+Converted string : line 331 : 'CHASE' -> "CHASE"
+Converted string : line 365 : 'COVER' -> "COVER"
+Converted string : line 448 : 'PATROL' -> "PATROL"
+Converted string : line 475 : 'DASH' -> "DASH"
+Converted string : line 477 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_kamitank\Create_0.gml
+Converted string : line 62 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_kamitank\Step_0.gml
+Converted string : line 255 : 'PATROL' -> "PATROL"
+Converted string : line 256 : 'CHASE' -> "CHASE"
+Converted string : line 263 : 'DASH' -> "DASH"
+Converted string : line 265 : 'CHASE' -> "CHASE"
+Converted string : line 269 : 'PATROL' -> "PATROL"
+Converted string : line 275 : 'DASH' -> "DASH"
+Converted string : line 282 : 'PATROL' -> "PATROL"
+Converted string : line 286 : 'CHASE' -> "CHASE"
+Converted string : line 292 : 'CHASE' -> "CHASE"
+Converted string : line 306 : 'PATROL' -> "PATROL"
+Converted string : line 333 : 'DASH' -> "DASH"
+Converted string : line 335 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_jumper\Create_0.gml
+Converted string : line 34 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_jumper\Step_0.gml
+Converted string : line 163 : 'PATROL' -> "PATROL"
+Converted string : line 164 : 'CHASE' -> "CHASE"
+Converted string : line 171 : 'CHASE' -> "CHASE"
+Converted string : line 175 : 'PATROL' -> "PATROL"
+Converted string : line 219 : 'PATROL' -> "PATROL"
+Converted string : line 223 : 'CHASE' -> "CHASE"
+Converted string : line 229 : 'CHASE' -> "CHASE"
+Converted string : line 243 : 'PATROL' -> "PATROL"
+Converted string : line 270 : 'DASH' -> "DASH"
+Converted string : line 272 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_kamikaze\Create_0.gml
+Converted string : line 39 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_kamikaze\Step_0.gml
+Converted string : line 178 : 'PATROL' -> "PATROL"
+Converted string : line 179 : 'CHASE' -> "CHASE"
+Converted string : line 186 : 'CHASE' -> "CHASE"
+Converted string : line 190 : 'PATROL' -> "PATROL"
+Converted string : line 196 : 'DASH' -> "DASH"
+Converted string : line 203 : 'PATROL' -> "PATROL"
+Converted string : line 207 : 'CHASE' -> "CHASE"
+Converted string : line 213 : 'CHASE' -> "CHASE"
+Converted string : line 227 : 'PATROL' -> "PATROL"
+Converted string : line 254 : 'DASH' -> "DASH"
+Converted string : line 256 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_summon\Create_0.gml
+Converted string : line 42 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_summon\Step_0.gml
+Converted string : line 136 : 'PATROL' -> "PATROL"
+Converted string : line 136 : 'FOLLOW' -> "FOLLOW"
+Converted string : line 137 : 'CHASE' -> "CHASE"
+Converted string : line 144 : 'CHASE' -> "CHASE"
+Converted string : line 148 : 'PATROL' -> "PATROL"
+Converted string : line 154 : 'DASH' -> "DASH"
+Converted string : line 161 : 'PATROL' -> "PATROL"
+Converted string : line 166 : 'FOLLOW' -> "FOLLOW"
+Converted string : line 174 : 'CHASE' -> "CHASE"
+Converted string : line 179 : 'FOLLOW' -> "FOLLOW"
+Converted string : line 185 : 'PATROL' -> "PATROL"
+Converted string : line 190 : 'PATROL' -> "PATROL"
+Converted string : line 196 : 'CHASE' -> "CHASE"
+Converted string : line 202 : 'CHASE' -> "CHASE"
+Converted string : line 216 : 'PATROL' -> "PATROL"
+Converted string : line 243 : 'DASH' -> "DASH"
+Converted string : line 245 : 'PATROL' -> "PATROL"
+Converted string : line 258 : 'FOLLOW' -> "FOLLOW"
+Converted string : line 293 : 'FOLLOW' -> "FOLLOW"
+
+Converting GML script : ${project_dir}\objects\obj_teleporter\Draw_0.gml
+Converted string : line 41 : ' / ' -> " / "
+Converted string : line 51 : ' ' -> " "
+
+Converting GML script : ${project_dir}\objects\class_enemy_zombie\Create_0.gml
+Converted string : line 45 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_enemy_zombie\Step_0.gml
+Converted string : line 195 : 'PATROL' -> "PATROL"
+Converted string : line 196 : 'CHASE' -> "CHASE"
+Converted string : line 203 : 'CHASE' -> "CHASE"
+Converted string : line 207 : 'PATROL' -> "PATROL"
+Converted string : line 213 : 'DASH' -> "DASH"
+Converted string : line 220 : 'PATROL' -> "PATROL"
+Converted string : line 224 : 'CHASE' -> "CHASE"
+Converted string : line 230 : 'CHASE' -> "CHASE"
+Converted string : line 257 : 'PATROL' -> "PATROL"
+Converted string : line 284 : 'DASH' -> "DASH"
+Converted string : line 286 : 'PATROL' -> "PATROL"
+
+Converting GML script : ${project_dir}\objects\class_gun_enemy\Create_0.gml
+Converted string : line 3 : 'pistol' -> "pistol"
+
+Converting GML script : ${project_dir}\objects\obj_teleporter_tutorial\Step_0.gml
+Converted string : line 16 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 17 : 'Ass' -> "Ass"
+Converted string : line 17 : 'tutorial' -> "tutorial"
+
+Converting GML script : ${project_dir}\objects\class_character_swap\Draw_0.gml
+Converted string : line 24 : '' -> ""
+Converted string : line 26 : 'I AM ERROR' -> "I AM ERROR"
+Converted string : line 30 : 'I AM ERROR' -> "I AM ERROR"
+Converted string : line 31 : 'I AM ERROR' -> "I AM ERROR"
+
+Converting GML script : ${project_dir}\objects\obj_endless_balloon\Step_0.gml
+Converted string : line 7 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_gunnar_balloon\Step_0.gml
+Converted string : line 17 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_sae_balloon\Step_0.gml
+Converted string : line 17 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_ass_balloon\Step_0.gml
+Converted string : line 7 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_balloon\Create_0.gml
+Converted string : line 15 : '' -> ""
+Converted string : line 16 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_balloon\Draw_0.gml
+Converted string : line 23 : '|' -> "|"
+Converted string : line 31 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\fx_corpse_boss\Create_0.gml
+Converted string : line 96 : '' -> ""
+Converted string : line 96 : '' -> ""
+Converted string : line 96 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_gui_floaty\Create_0.gml
+Converted string : line 3 : 'No String Inserted' -> "No String Inserted"
+
+Converting GML script : ${project_dir}\objects\class_gui_fader\Create_0.gml
+Converted string : line 10 : 'in' -> "in"
+
+Converting GML script : ${project_dir}\objects\class_gui_fader\Step_0.gml
+Converted string : line 8 : 'in' -> "in"
+Converted string : line 11 : 'still' -> "still"
+Converted string : line 15 : 'still' -> "still"
+Converted string : line 18 : 'out' -> "out"
+Converted string : line 22 : 'out' -> "out"
+
+Converting GML script : ${project_dir}\objects\class_gui_dynamic_relic\Step_0.gml
+Converted string : line 17 : 'pineapple' -> "pineapple"
+Converted string : line 18 : 'yottabyte' -> "yottabyte"
+Converted string : line 19 : 'alcoholic' -> "alcoholic"
+Converted string : line 20 : 'infinity' -> "infinity"
+Converted string : line 21 : 'midnight' -> "midnight"
+Converted string : line 22 : 'watchful' -> "watchful"
+Converted string : line 23 : 'crystal' -> "crystal"
+Converted string : line 24 : 'dev' -> "dev"
+Converted string : line 26 : 'morning_star' -> "morning_star"
+Converted string : line 27 : 'pineapple_pie' -> "pineapple_pie"
+Converted string : line 28 : 'rabbit_foot' -> "rabbit_foot"
+Converted string : line 29 : 'midnight_meal' -> "midnight_meal"
+Converted string : line 30 : 'yottabyte_processor' -> "yottabyte_processor"
+Converted string : line 31 : 'mega_quantum_chip' -> "mega_quantum_chip"
+
+Converting GML script : ${project_dir}\objects\class_menu_btnChar\Create_0.gml
+Converted string : line 5 : 'MISSING_LABEL' -> "MISSING_LABEL"
+
+Converting GML script : ${project_dir}\objects\class_menu_btnChar\Draw_0.gml
+Converted string : line 14 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\gui_credits_text\Draw_0.gml
+Converted string : line 48 : 'Music by Anders "Goto80" Carlsson' -> "Music by Anders \"Goto80\" Carlsson"
+Converted string : line 50 : '"Dig Dig Joy" track by Raphael Muller' -> "\"Dig Dig Joy\" track by Raphael Muller"
+
+Converting GML script : ${project_dir}\objects\menu_char_card1\Create_0.gml
+Converted string : line 5 : 'P1' -> "P1"
+
+Converting GML script : ${project_dir}\objects\menu_char_playerCard\Create_0.gml
+Converted string : line 16 : 'P1' -> "P1"
+
+Converting GML script : ${project_dir}\objects\menu_char_card2\Create_0.gml
+Converted string : line 5 : 'P2' -> "P2"
+
+Converting GML script : ${project_dir}\objects\menu_char_button\Create_0.gml
+Converted string : line 8 : 'MISSING_LANG' -> "MISSING_LANG"
+
+Converting GML script : ${project_dir}\objects\menu_char_random\Create_0.gml
+Converted string : line 4 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_char_buttonOk\Create_0.gml
+Converted string : line 3 : 'START' -> "START"
+
+Converting GML script : ${project_dir}\objects\menu_char_buttonOk\Step_2.gml
+Converted string : line 66 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 68 : 'Character' -> "Character"
+Converted string : line 68 : 'playerCount' -> "playerCount"
+Converted string : line 69 : 'Input' -> "Input"
+Converted string : line 69 : 'Input1' -> "Input1"
+Converted string : line 70 : 'Character' -> "Character"
+Converted string : line 70 : 'Character1' -> "Character1"
+Converted string : line 74 : 'Input' -> "Input"
+Converted string : line 74 : 'Input2' -> "Input2"
+Converted string : line 75 : 'Character' -> "Character"
+Converted string : line 75 : 'Character2' -> "Character2"
+Converted string : line 79 : 'Character' -> "Character"
+Converted string : line 79 : 'Character2' -> "Character2"
+
+Converting GML script : ${project_dir}\objects\menu_char_buttonCancel\Create_0.gml
+Converted string : line 3 : 'CHANGE' -> "CHANGE"
+
+Converting GML script : ${project_dir}\objects\class_menu_button_toggle\Create_0.gml
+Converted string : line 4 : '10' -> "10"
+
+Converting GML script : ${project_dir}\objects\class_menu_button_toggle\Draw_0.gml
+Converted string : line 10 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_char_playerStat\Step_0.gml
+Converted string : line 92 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_settings\Step_0.gml
+Converted string : line 6 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 7 : 'Input' -> "Input"
+Converted string : line 7 : 'Input1' -> "Input1"
+
+Converting GML script : ${project_dir}\objects\class_menu_button_nav\Draw_0.gml
+Converted string : line 17 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_menu_button\Create_0.gml
+Converted string : line 4 : 'MISSING LABEL' -> "MISSING LABEL"
+
+Converting GML script : ${project_dir}\objects\class_menu_button\Draw_0.gml
+Converted string : line 17 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_menu_button_main\Create_0.gml
+Converted builtin : line 8 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+
+Converting GML script : ${project_dir}\objects\class_menu_button_main\Draw_0.gml
+Converted string : line 18 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_daily\Step_0.gml
+Converted string : line 8 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 9 : 'Input' -> "Input"
+Converted string : line 9 : 'Input1' -> "Input1"
+
+Converting GML script : ${project_dir}\objects\menu_btn_daily\Draw_0.gml
+Converted string : line 19 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_credits\Step_0.gml
+Converted string : line 6 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 7 : 'Input' -> "Input"
+Converted string : line 7 : 'Input1' -> "Input1"
+
+Converting GML script : ${project_dir}\objects\menu_btn_confirm_daily\Step_0.gml
+Converted string : line 6 : 'Setting player input to KEYBOARD' -> "Setting player input to KEYBOARD"
+Converted string : line 7 : 'Setting player input to JOY1' -> "Setting player input to JOY1"
+Converted string : line 8 : 'Setting player input to JOY2' -> "Setting player input to JOY2"
+Converted string : line 30 : 'Setting player input to KEYBOARD' -> "Setting player input to KEYBOARD"
+Converted string : line 31 : 'Setting player input to JOY1' -> "Setting player input to JOY1"
+Converted string : line 33 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 35 : 'Input' -> "Input"
+Converted string : line 35 : 'Input1' -> "Input1"
+Converted string : line 36 : 'Character' -> "Character"
+Converted string : line 36 : 'Character1' -> "Character1"
+Converted string : line 37 : 'Character' -> "Character"
+Converted string : line 37 : 'Character2' -> "Character2"
+Converted string : line 38 : 'Temp' -> "Temp"
+Converted string : line 38 : 'isDaily' -> "isDaily"
+
+Converting GML script : ${project_dir}\objects\menu_btn_confirm_daily\Draw_0.gml
+Converted string : line 71 : 'YOUR POSITION: ' -> "YOUR POSITION: "
+
+Converting GML script : ${project_dir}\objects\menu_fx_pause\Create_0.gml
+Converted builtin : line 5 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted string : line 12 : 'I AM ERROR' -> "I AM ERROR"
+Converted string : line 21 : '1 - 1' -> "1 - 1"
+Converted string : line 22 : '1 - 2' -> "1 - 2"
+Converted string : line 23 : '1 - 3' -> "1 - 3"
+Converted string : line 24 : '2 - 1' -> "2 - 1"
+Converted string : line 25 : '2 - 2' -> "2 - 2"
+Converted string : line 26 : '2 - 3' -> "2 - 3"
+Converted string : line 27 : '3 - 1' -> "3 - 1"
+Converted string : line 28 : '3 - 2' -> "3 - 2"
+Converted string : line 29 : '3 - 3' -> "3 - 3"
+Converted string : line 30 : '4 - 1' -> "4 - 1"
+Converted string : line 31 : '4 - 2' -> "4 - 2"
+Converted string : line 32 : '4 - 3' -> "4 - 3"
+
+Converting GML script : ${project_dir}\objects\menu_statsBox\Create_0.gml
+Converted string : line 6 : 'h ' -> "h "
+Converted string : line 6 : 'm' -> "m"
+Converted string : line 22 : 'm ' -> "m "
+Converted string : line 27 : 'm ' -> "m "
+
+Converting GML script : ${project_dir}\objects\menu_btn_confirm_delete\Step_0.gml
+Converted string : line 6 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 8 : "\saveData.ini" -> "\\saveData.ini"
+
+Converting GML script : ${project_dir}\objects\menu_fx_settings\Create_0.gml
+Converted string : line 9 : 'SETTINGS' -> "SETTINGS"
+
+Converting GML script : ${project_dir}\objects\menu_btn_minus\Create_0.gml
+Converted string : line 3 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_language\Step_0.gml
+Converted string : line 9 : 'EN' -> "EN"
+Converted string : line 10 : 'PT' -> "PT"
+Converted string : line 11 : 'HUE' -> "HUE"
+Converted string : line 12 : 'RU' -> "RU"
+Converted string : line 13 : 'JP' -> "JP"
+Converted string : line 14 : 'DE' -> "DE"
+Converted string : line 15 : 'FR' -> "FR"
+Converted string : line 16 : 'ES' -> "ES"
+Converted string : line 17 : 'CZ' -> "CZ"
+Converted string : line 18 : 'KR' -> "KR"
+Converted string : line 19 : 'DU' -> "DU"
+Converted string : line 20 : 'IT' -> "IT"
+Converted string : line 21 : 'CHT' -> "CHT"
+Converted string : line 22 : 'CHS' -> "CHS"
+
+Converting GML script : ${project_dir}\objects\menu_btn_plus\Create_0.gml
+Converted string : line 3 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_menu_fx_keymap\Create_0.gml
+Converted string : line 2 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_menu_fx_keymap\Draw_0.gml
+Converted string : line 10 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_resolution\Create_0.gml
+Converted string : line 11 : '1920' -> "1920"
+Converted string : line 17 : '1600' -> "1600"
+Converted string : line 23 : '1280' -> "1280"
+Converted string : line 29 : '800' -> "800"
+
+Converting GML script : ${project_dir}\objects\menu_btn_resolution\Step_0.gml
+Converted string : line 12 : '1920' -> "1920"
+Converted string : line 18 : '1600' -> "1600"
+Converted string : line 24 : '1280' -> "1280"
+Converted string : line 30 : '800' -> "800"
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveup2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_dynamics\Create_0.gml
+Converted string : line 11 : '100' -> "100"
+Converted string : line 17 : '50' -> "50"
+Converted string : line 23 : '20' -> "20"
+Converted string : line 29 : '0' -> "0"
+
+Converting GML script : ${project_dir}\objects\menu_btn_dynamics\Step_0.gml
+Converted string : line 12 : '100' -> "100"
+Converted string : line 18 : '50' -> "50"
+Converted string : line 24 : '20' -> "20"
+Converted string : line 30 : '0' -> "0"
+
+Converting GML script : ${project_dir}\objects\menu_btn_movedown1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_movedown2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_mapping_default\Step_0.gml
+Converted string : line 6 : "\saveData.ini" -> "\\saveData.ini"
+Converted string : line 7 : 'Mapping' -> "Mapping"
+Converted string : line 11 : 'All keys reset to Default' -> "All keys reset to Default"
+
+Converting GML script : ${project_dir}\objects\menu_btn_mapping_default\Draw_0.gml
+Converted string : line 15 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveright1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveright2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveup1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_fire2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_aim1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_aim2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\class_button_remap\Create_0.gml
+Converted string : line 9 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_button_remap\Step_1.gml
+Converted string : line 8 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_button_remap\Draw_0.gml
+Converted string : line 15 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveleft1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_moveleft2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_grenade1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_melee1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_melee2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_fire1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_use1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_sprint1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_sprint2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_use2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_switch2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_switch1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_sprinttoggle1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_sprinttoggle2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_reload1\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_reload2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\menu_btn_grenade2\Create_0.gml
+Converted string : line 6 : 'LEFT MOUSE' -> "LEFT MOUSE"
+Converted string : line 7 : 'RIGHT MOUSE' -> "RIGHT MOUSE"
+Converted string : line 8 : 'MIDDLE MOUSE' -> "MIDDLE MOUSE"
+Converted string : line 9 : 'LEFT ARROW' -> "LEFT ARROW"
+Converted string : line 10 : 'RIGHT ARROW' -> "RIGHT ARROW"
+Converted string : line 11 : 'UP ARROW' -> "UP ARROW"
+Converted string : line 12 : 'DOWN ARROW' -> "DOWN ARROW"
+Converted string : line 13 : 'ENTER' -> "ENTER"
+Converted string : line 14 : 'SHIFT' -> "SHIFT"
+Converted string : line 15 : 'CTRL' -> "CTRL"
+Converted string : line 16 : 'ALT' -> "ALT"
+Converted string : line 17 : 'SPACEBAR' -> "SPACEBAR"
+Converted string : line 18 : 'BACKSPACE' -> "BACKSPACE"
+Converted string : line 19 : 'TAB' -> "TAB"
+Converted string : line 20 : 'HOME' -> "HOME"
+Converted string : line 21 : 'END' -> "END"
+Converted string : line 22 : 'DELETE' -> "DELETE"
+Converted string : line 23 : 'INSERT' -> "INSERT"
+Converted string : line 24 : 'PAGE UP' -> "PAGE UP"
+Converted string : line 25 : 'PAGE DOWN' -> "PAGE DOWN"
+
+Converting GML script : ${project_dir}\objects\class_pickup_ammo\Step_2.gml
+Converted string : line 27 : '+ ' -> "+ "
+Converted string : line 28 : '+ ' -> "+ "
+Converted string : line 29 : '+ ' -> "+ "
+Converted string : line 30 : '+ ' -> "+ "
+
+Converting GML script : ${project_dir}\objects\class_tutorial_static\Create_0.gml
+Converted string : line 11 : 'NO TEXT FOR KEYBOARD' -> "NO TEXT FOR KEYBOARD"
+Converted string : line 12 : 'NO TEXT FOR JOYSTICK' -> "NO TEXT FOR JOYSTICK"
+
+Converting GML script : ${project_dir}\objects\class_shop_ammo\Create_0.gml
+Converted string : line 23 : 'ammo' -> "ammo"
+
+Converting GML script : ${project_dir}\objects\class_shop_weapon\Create_0.gml
+Converted string : line 25 : 'weapon' -> "weapon"
+
+Converting GML script : ${project_dir}\objects\class_shop_shield\Create_0.gml
+Converted string : line 23 : 'shield' -> "shield"
+
+Converting GML script : ${project_dir}\objects\class_shop_relic\Create_0.gml
+Converted string : line 35 : 'relic' -> "relic"
+
+Converting GML script : ${project_dir}\objects\class_relic\Create_0.gml
+Converted string : line 9 : '' -> ""
+Converted string : line 10 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_relicReset\Step_2.gml
+Converted string : line 13 : '' -> ""
+Converted string : line 14 : '' -> ""
+Converted string : line 15 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\obj_relic_alcoholic_carrot\Step_1.gml
+Converted string : line 14 : 'alcoholic' -> "alcoholic"
+
+Converting GML script : ${project_dir}\objects\obj_relic_crystal_bacon\Step_1.gml
+Converted string : line 14 : 'crystal' -> "crystal"
+
+Converting GML script : ${project_dir}\objects\obj_relic_infinity_battery\Step_1.gml
+Converted string : line 14 : 'infinity' -> "infinity"
+
+Converting GML script : ${project_dir}\objects\obj_relic_dev_potion\Step_1.gml
+Converted string : line 15 : 'dev' -> "dev"
+
+Converting GML script : ${project_dir}\objects\obj_relic_watchful_eye\Step_1.gml
+Converted string : line 15 : 'watchful' -> "watchful"
+
+Converting GML script : ${project_dir}\objects\obj_relic_midnight_beer\Step_1.gml
+Converted string : line 15 : 'midnight' -> "midnight"
+
+Converting GML script : ${project_dir}\objects\obj_relic_yottabyte_drive\Step_1.gml
+Converted string : line 14 : 'yottabyte' -> "yottabyte"
+
+Converting GML script : ${project_dir}\objects\obj_relic_pineapple_pie\Step_1.gml
+Converted string : line 10 : 'pineapple_pie' -> "pineapple_pie"
+
+Converting GML script : ${project_dir}\objects\obj_relic_yottabyte_processor\Step_1.gml
+Converted string : line 10 : 'yottabyte_processor' -> "yottabyte_processor"
+
+Converting GML script : ${project_dir}\objects\obj_relic_midnight_meal\Step_1.gml
+Converted string : line 10 : 'midnight_meal' -> "midnight_meal"
+
+Converting GML script : ${project_dir}\objects\obj_relic_pineapple_pudding\Step_1.gml
+Converted string : line 16 : 'pineapple' -> "pineapple"
+
+Converting GML script : ${project_dir}\objects\obj_relic_morning_star\Step_1.gml
+Converted string : line 10 : 'morning_star' -> "morning_star"
+
+Converting GML script : ${project_dir}\objects\obj_relic_rabbit_foot\Step_1.gml
+Converted string : line 10 : 'rabbit_foot' -> "rabbit_foot"
+
+Converting GML script : ${project_dir}\objects\obj_relic_mega_quantum_chip\Step_1.gml
+Converted string : line 10 : 'mega_quantum_chip' -> "mega_quantum_chip"
+
+Converting GML script : ${project_dir}\objects\class_endShop_ammo\Step_2.gml
+Converted string : line 35 : '+ ' -> "+ "
+Converted string : line 36 : '+ ' -> "+ "
+Converted string : line 37 : '+ ' -> "+ "
+Converted string : line 38 : '+ ' -> "+ "
+
+Converting GML script : ${project_dir}\objects\class_treasureChest\Create_0.gml
+Converted string : line 7 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_chestFX\Create_0.gml
+Converted string : line 14 : '' -> ""
+
+Converting GML script : ${project_dir}\objects\class_chestFX\Step_0.gml
+Converted string : line 17 : '' -> ""
+Converted string : line 18 : '' -> ""
+Converted string : line 19 : '' -> ""
+Converted string : line 20 : '' -> ""
+Converted string : line 47 : '' -> ""
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+Imported layer depths for room(s) 'room_start, level1_1, level4_2, level4_3, level3_3, level3_1, level2_2, level1_2, level2_3, level4_1, level3_2, room_shop, levelHalloween_3, level1_3, levelHalloween_2, room_boss, levelHalloween_1, level2_1, room_endShop, room_tutorial' were not adequately spaced. Unless updated this will have undefined results in game.
+game speed set to 60
+added compatibility script action/action_if.gml
+added compatibility script action/action_kill_object.gml
+added compatibility script background/background_add.gml
+added compatibility script background/background_delete.gml
+added compatibility script background/background_exists.gml
+added compatibility script background/draw_background_stretched.gml
+added compatibility script background/draw_background_tiled.gml
+added compatibility script draw/draw_set_blend_mode.gml
+added compatibility script draw/draw_set_blend_mode_ext.gml
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script tile/tile_layer_hide.gml
+added compatibility script tile/tile_layer_shift.gml
+added compatibility script tile/tile_layer_show.gml
+added compatibility script view/__view_get.gml
+added compatibility script view/__view_set.gml
+added compatibility script view/__view_set_internal.gml
+added compatibility script action/__init_action.gml
+added compatibility script background/__init_background.gml
+added compatibility script view/__init_view.gml
+added compatibility script __init_global.gml
+added compatibility script __global_object_depths.gml

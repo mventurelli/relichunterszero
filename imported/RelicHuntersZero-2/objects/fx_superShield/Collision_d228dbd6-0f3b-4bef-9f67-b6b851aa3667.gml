@@ -1,0 +1,3 @@
+///Trigger Animation
+animationTrigger = true;
+

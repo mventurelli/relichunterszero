@@ -1,0 +1,2 @@
+brightness = 50;
+
