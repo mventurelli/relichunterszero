@@ -7,7 +7,7 @@
     "option_linux_display_cursor": true,
     "option_linux_display_name": "Relic Hunters Zero",
     "option_linux_display_splash": false,
-    "option_linux_enable_steam": true,
+    "option_linux_enable_steam": false,
     "option_linux_homepage": "http:\/\/www.RelicHuntersZero.com",
     "option_linux_icon": "${options_dir}\\linux\\icons\\64.png",
     "option_linux_interpolate_pixels": false,
