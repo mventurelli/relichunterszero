@@ -14,6 +14,4 @@ if (instance_exists(id))
     speed_sprint = 0;
 }
 
-if (!hp) achievement_give("ACHIEVEMENT_TUTORIAL");
-
 

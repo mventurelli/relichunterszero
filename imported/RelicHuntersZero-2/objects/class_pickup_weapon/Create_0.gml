@@ -35,6 +35,8 @@ sprite = sprite_index;
 arrowAnimation = 0; 
 arrowAnimationSpeed = 0.2;
 
+myRecycleInfo = noone;
+
 if global.gameMode == gamemode_endless
 {
 	myRecycleInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_recycle);

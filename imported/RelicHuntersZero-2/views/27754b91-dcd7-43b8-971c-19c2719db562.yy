@@ -29,7 +29,8 @@
         "a1b2fc1d-e62a-494b-a7be-8e8cc8f5d0e4",
         "0afa369e-9a3f-44de-8f6c-613738bc80f2",
         "ecb24610-a998-499d-af43-1efa1cf13ce1",
-        "ea18deef-f130-458d-8b72-b219d91830ef"
+        "ea18deef-f130-458d-8b72-b219d91830ef",
+        "ca555f21-c91a-4c48-a2de-faaac8c2b7ad"
     ],
     "filterType": "GMObject",
     "folderName": "Main Menu",

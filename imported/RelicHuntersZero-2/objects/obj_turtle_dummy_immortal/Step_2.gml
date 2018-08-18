@@ -1,3 +1,5 @@
+if (!hp) achievement_give("ACHIEVEMENT_TUTORIAL");
+
 event_inherited();
 
 if (instance_exists(id))
