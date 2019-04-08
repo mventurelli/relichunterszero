@@ -1,14 +1,16 @@
 {
     "id": "3c4f053f-3e12-4543-ab34-75833fbe28a0",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "ftEN_numberMedium",
     "AntiAlias": 0,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": false,
     "charset": 1,
     "first": 0,
     "fontName": "wendy",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1451,13 +1453,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

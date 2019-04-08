@@ -1,14 +1,16 @@
 {
     "id": "b0fd65a0-34ad-4c80-9e5a-0075643f2b78",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "ftEN_menuLargest",
     "AntiAlias": 0,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": false,
     "charset": 1,
     "first": 0,
     "fontName": "8BIT WONDER",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1451,13 +1453,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

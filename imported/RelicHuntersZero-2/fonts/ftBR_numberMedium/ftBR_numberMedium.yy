@@ -1,14 +1,16 @@
 {
     "id": "88723228-7b5e-48a1-9a6d-671d32545e23",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "ftBR_numberMedium",
     "AntiAlias": 0,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": true,
     "charset": 1,
     "first": 0,
     "fontName": "Grand9K Pixel",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1721,13 +1723,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

@@ -1,14 +1,16 @@
 {
     "id": "befd36e5-a6d1-4c37-9e82-ab76ee81d345",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "ftEN_balloonText",
     "AntiAlias": 0,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": false,
     "charset": 1,
     "first": 0,
     "fontName": "PF Arma Five",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1571,13 +1573,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

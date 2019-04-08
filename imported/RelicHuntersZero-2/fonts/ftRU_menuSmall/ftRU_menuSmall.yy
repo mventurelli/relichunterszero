@@ -1,14 +1,16 @@
 {
     "id": "8f3fce55-443d-45da-b9b2-d5478ebece2c",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "ftRU_menuSmall",
     "AntiAlias": 0,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": true,
     "charset": 1,
     "first": 0,
     "fontName": "Fixedsys Excelsior 3.01",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -2126,13 +2128,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,
