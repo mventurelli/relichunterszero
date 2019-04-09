@@ -605,8 +605,7 @@ global.count_particles = instance_number(fx_hit);
 //Maximum Number of Shot Casings
 //global.count_casings = instance_number(fx_casing) + instance_number(fx_blood);
 
-///DEBUG COMMANDS   
-  
+///DEBUG COMMANDS and CHEATS 
 if (debug_mode)
 {
 if keyboard_check_pressed(ord("M")) global.currentLoop++;
@@ -676,7 +675,7 @@ if keyboard_check_pressed(ord("N")) room_goto(room_endShop);
     {
         global.drawGridDebug = !global.drawGridDebug;
     }
-    
+	
     //Debug: Manually Restart the Game
     if keyboard_check_pressed(vk_f12)
     {
@@ -688,6 +687,18 @@ if keyboard_check_pressed(ord("N")) room_goto(room_endShop);
     
     //Debug: Toggle Hud, comment this to deactivate
     main_hud_alpha = 0;
+	
+	//Debug: Kill Everything
+    if keyboard_check_pressed(vk_f9)
+    {
+        if instance_exists(class_enemy)
+        {
+            with (class_enemy)
+            {
+                instance_destroy();
+            }
+        }
+    } 
 
     //Debug: Erase Steam Achievements
     if keyboard_check_pressed(ord("U"))
@@ -741,24 +752,9 @@ if keyboard_check_pressed(ord("N")) room_goto(room_endShop);
         steam_clear_achievement("ACHIEVEMENT_DESTROY_KAMIKAGES"); //set by the cage on its Destroy event (alongside Steam Stat);
     }
 }
-/*else {
 
-	//if keyboard_check_pressed(ord("M")) global.currentLoop++;
-    if keyboard_check_pressed(ord("B")) global.bountyEndless += 500;
-	if keyboard_check_pressed(ord("C")) instance_create_layer(global.characterPos[1,0], global.characterPos[1,1],"Interactive",obj_chestRegular);
-     //Debug: Kill Everything
-    if keyboard_check_pressed(vk_f9)
-    {
-        if instance_exists(class_enemy)
-        {
-            with (class_enemy)
-            {
-                instance_destroy();
-            }
-        }
-    } 
-}
-*/
+
+
 
 ///Take Screenshot
 //steam_screenshot_check();

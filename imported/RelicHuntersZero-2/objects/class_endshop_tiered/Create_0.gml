@@ -19,3 +19,4 @@ owner_add_owned_instance(myInfo);
 image_speed = 0;
 depth = -y-25;
 
+rarity = K_RARITY_COMMON;

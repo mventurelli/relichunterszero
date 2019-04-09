@@ -18,6 +18,7 @@ owner_add_owned_instance(myPrompt);
 
 name = "I AM ERROR";
 myInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_pickup);
+rarity = K_RARITY_COMMON;
 owner_add_owned_instance(myInfo);
 
 image_speed = 0;

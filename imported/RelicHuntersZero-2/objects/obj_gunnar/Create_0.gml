@@ -15,6 +15,7 @@ owner_add_owned_instance(myPrompt);
 
 name = loc_key("GUNNAR_INFO_POPUP");
 myInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_pickup);
+rarity = K_RARITY_COMMON;
 owner_add_owned_instance(myInfo);
 
 myBalloon = noone;

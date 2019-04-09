@@ -26,3 +26,5 @@ owner_add_owned_instance(myInfo);
 
 depth = -y-32;
 
+rarity = K_RARITY_COMMON;
+

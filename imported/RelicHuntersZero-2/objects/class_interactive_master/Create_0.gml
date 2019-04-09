@@ -15,3 +15,5 @@ activationOverride = false;
 //mod flag
 isMod = false;
 ugcItemId = 0;
+
+rarity = K_RARITY_COMMON;

@@ -20,4 +20,5 @@ myInfo = instance_create_layer(x,y,"GUI",fx_info_pickup);
 owner_add_owned_instance(myInfo);
 
 myBalloon = noone;
+rarity = K_RARITY_COMMON;
 
