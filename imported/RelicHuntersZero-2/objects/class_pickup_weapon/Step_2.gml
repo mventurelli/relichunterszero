@@ -25,53 +25,14 @@ if (instance_exists_fast(activationClient))
 		{
 			audio_play(activationClient.audio_emitter,false,1,sfx_pickup_weapon);
 			
-			var ScrapToDrop;																					//Some guns give more or less scrap
-			switch (gun)
-			{
-				case obj_pistol :
-					ScrapToDrop = 2;
-					break;
-					
-				case obj_smg_crude :
-				case obj_shotgun_crude :
-					ScrapToDrop = 3;
-					break;
-					
-				case obj_pistol_jimmy :
-				case obj_keytar :
-				case obj_flamethrower :
-				case obj_gloves :
-				case obj_shield_biu :
-					ScrapToDrop = 7;
-					break;
-					
-				case obj_sniper_ghost :
-				case obj_spookyBeamer :
-				case obj_spookyPistol :
-				case obj_spookyReaper :
-				case obj_kamilauncher :
-				case obj_smg_plasma :
-					ScrapToDrop = 10;
-					break;
-					
-				case obj_pistol_relic :
-				case obj_smg_relic :
-				case obj_rifle_relic :
-				case obj_shotgun_relic :
-				case obj_relicCannon:
-				case obj_rocketlauncher_relic :
-				case obj_minigun_relic :
-					ScrapToDrop = 15;
-					break;
-					
-				case obj_ducanElite_plasma :
-				case obj_ducanElite_rifle :
-				case obj_ducanElite_rocket :
-				case obj_ducanElite_shotgun :
-				case obj_ducanElite_sniper :
-					ScrapToDrop = 20;
-					break;
-			
+			var ScrapToDrop;	//Some guns give more or less scrap
+			switch (rarity)
+			{	
+				case K_RARITY_COMMON : ScrapToDrop = 3; break;
+				case K_RARITY_UNCOMMON : ScrapToDrop = 7; break;
+				case K_RARITY_RARE : ScrapToDrop = 10; break;
+				case K_RARITY_EPIC : ScrapToDrop = 15; break;
+				case K_RARITY_LEGENDARY : ScrapToDrop = 20; break;
 				default : ScrapToDrop = 5;
 			}
 			
@@ -220,6 +181,7 @@ if (instance_exists_fast(activationClient))
             new_pickup.sprite = activationClient.weapon1.sprite_index;
             new_pickup.weaponLevel = activationClient.weapon1.weaponLevel;
             new_pickup.name = activationClient.weapon1.name;
+			new_pickup.rarity = activationClient.weapon1.rarity;
 			new_pickup.isMod = activationClient.weapon1.isMod;
 			new_pickup.ugcItemId = activationClient.weapon1.ugcItemId;
             
@@ -281,6 +243,7 @@ if (instance_exists_fast(activationClient))
             new_pickup.sprite = activationClient.weapon2.sprite_index;
             new_pickup.weaponLevel = activationClient.weapon2.weaponLevel;
             new_pickup.name = activationClient.weapon2.name;
+			new_pickup.rarity = activationClient.weapon2.rarity;
 			new_pickup.isMod = activationClient.weapon2.isMod;
 			new_pickup.ugcItemId = activationClient.weapon2.ugcItemId;
             

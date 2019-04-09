@@ -2,8 +2,9 @@
 event_inherited();
 
 name = loc_key("WPNAME_PISTOL_BOUNCER");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
-
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
+rarity = K_RARITY_PISTOL_BOUNCER;
 projectileBounce = true;
 projectileBouceMax = 2;
 

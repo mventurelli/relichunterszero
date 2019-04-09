@@ -11,7 +11,7 @@ shake_recovery = 4;
 shake_max = 50;
 
 gameZoom = 1;
-zoom = 1;
+zoom = gameZoom;
 zoom_speed_in = 0.015;
 zoom_speed_out = 0.01;
 zoom_current = zoom;

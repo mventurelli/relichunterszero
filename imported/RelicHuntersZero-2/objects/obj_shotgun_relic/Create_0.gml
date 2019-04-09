@@ -4,7 +4,9 @@ event_inherited();
 isRelicWeapon = true;
 
 name = loc_key("WPNAME_SHOTGUN_RELIC");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarity = K_RARITY_SHOTGUN_RELIC;
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 projectileBounce = true;
 projectileBouceMax = 3;

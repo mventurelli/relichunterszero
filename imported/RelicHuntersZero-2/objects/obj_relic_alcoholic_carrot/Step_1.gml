@@ -16,16 +16,15 @@ object = "alcoholic";
 if (toggle)
 {
     toggle = false;
-    
-    if (global.relic_alcoholic_carrot != 2){
-        var equip = relic_slot_equip(object);
-        if (equip) global.relic_alcoholic_carrot = 2;
-        else global.relic_alcoholic_carrot = 1;
-    }
-    else{
-        global.relic_alcoholic_carrot = 1;
-        var unequip = relic_slot_free(object);
-        if (unequip) audio_play_sound(sfx_relic_off,1,false);
+
+	
+	if (global.relic_alcoholic_carrot != 2) {
+		global.relic_alcoholic_carrot = 2;
+		audio_play_sound(sfx_relic_on,1,false);
+	}
+	else {
+		global.relic_alcoholic_carrot = 1; 
+		audio_play_sound(sfx_relic_off,1,false);
     }
 }
 

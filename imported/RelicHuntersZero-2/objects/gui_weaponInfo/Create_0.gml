@@ -1,6 +1,7 @@
 ///Init
 myWeapon = noone;
 myName = "UNNAMED WEAPON";
+myRarity = K_RARITY_COMMON;
 mySprite = -1;
 
 myDamage = 999;

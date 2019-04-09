@@ -2,6 +2,9 @@
 if (myWeapon) && instance_exists(myWeapon)
 {
     myName = myWeapon.name;
+	myRarity = myWeapon.rarity;
+	myRarityColor = rarity_get_color(myRarity);
+	
     mySprite = myWeapon.sprite_index;
     myDamage = myWeapon.projectile_damage;
     myRange = myWeapon.projectile_range;

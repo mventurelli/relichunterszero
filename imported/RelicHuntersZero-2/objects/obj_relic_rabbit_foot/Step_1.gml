@@ -22,38 +22,15 @@ if (toggle)
     
     //Allow Toggle if Ace is not in the game
     if (!isAce)
-    {
-        if (global.relic_rabbit_foot != 2){
-            var equip = relic_slot_equip(object);
-            if (equip) global.relic_rabbit_foot = 2;
-            else global.relic_rabbit_foot = 1;
-        }
-        else{
-            global.relic_rabbit_foot = 1;
-            var unequip = relic_slot_free(object);
-            if (unequip) audio_play_sound(sfx_relic_off,1,false);
-        }
+    {		
+		if (global.relic_rabbit_foot != 2) {
+		global.relic_rabbit_foot = 2;
+		audio_play_sound(sfx_relic_on,1,false);
+		}
+		else {
+		global.relic_rabbit_foot = 1; 
+		audio_play_sound(sfx_relic_off,1,false);
+		}
     }
 
-    /* BUGGED CODE, DELETE AFTER DONE:
-    if ((activationClient != noone))
-    {
-        if (activationClient.myChar != char_ass)
-        {
-            if (global.relic_rabbit_foot != 2){
-                var equip = relic_slot_equip(object);
-                if (equip) global.relic_rabbit_foot = 2;
-                else global.relic_rabbit_foot = 1;
-            }
-            else{
-                global.relic_rabbit_foot = 1;
-                var unequip = relic_slot_free(object);
-                if (unequip) audio_play_sound(sfx_relic_off,1,false);
-            }
-        }
-    }
-    */
 }
-
-/* */
-/*  */

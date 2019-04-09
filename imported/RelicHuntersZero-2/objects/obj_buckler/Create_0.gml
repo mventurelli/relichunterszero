@@ -2,6 +2,7 @@
 event_inherited();
 
 name = loc_key("WPNAME_BUCKLER");
+rarity = K_RARITY_BUCKLER;
 owner = noone;
 isActive = true;
 object = obj_buckler;

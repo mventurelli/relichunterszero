@@ -2,7 +2,9 @@
 event_inherited();
 
 name = loc_key("WPNAME_MINIGUN");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarity = K_RARITY_MINIGUN;
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 object = obj_minigun;
 shake_amount = 5;

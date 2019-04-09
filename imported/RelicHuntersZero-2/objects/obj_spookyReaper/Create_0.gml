@@ -2,7 +2,8 @@
 event_inherited();
 
 name = loc_key("WPNAME_SPOOKY_REAPER");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 sound = "reaper";
 object = obj_spookyReaper;

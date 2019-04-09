@@ -4,7 +4,9 @@ event_inherited();
 isRelicWeapon = true;
 
 name = loc_key("WPNAME_RIFLE_RELIC");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarity = K_RARITY_RIFLE_RELIC;
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 object = obj_rifle_relic;
 shake_amount = 10;

@@ -2,7 +2,10 @@
 event_inherited();
 
 name = loc_key("WPNAME_FLAMETHROWER");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarity = K_RARITY_FLAMETHROWER;
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
+
 
 allowPrecision = false;
 dropCasing = false;

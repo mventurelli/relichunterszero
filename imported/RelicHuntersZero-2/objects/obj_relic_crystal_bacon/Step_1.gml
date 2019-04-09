@@ -16,16 +16,15 @@ object = "crystal";
 if (toggle)
 {
     toggle = false;
-    
-    if (global.relic_crystal_bacon != 2){
-        var equip = relic_slot_equip(object);
-        if (equip) global.relic_crystal_bacon = 2;
-        else global.relic_crystal_bacon = 1;
+	
+	if (global.relic_crystal_bacon != 2) {
+		global.relic_crystal_bacon = 2;
+		audio_play_sound(sfx_relic_on,1,false);
+	}
+	else {
+		global.relic_crystal_bacon = 1; 
+		audio_play_sound(sfx_relic_off,1,false);
     }
-    else{
-        global.relic_crystal_bacon = 1;
-        var unequip = relic_slot_free(object);
-        if (unequip) audio_play_sound(sfx_relic_off,1,false);
-    }
+	
 }
 

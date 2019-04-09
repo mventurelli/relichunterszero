@@ -10,7 +10,7 @@ lifeMax = 0.25;
 lifeCurrent = 0;
 
 myAlpha = 1;
-fadeSpeed = 0.2;//0.2; = 5 frames, 
+fadeSpeed = 0.2;
 lockToOwner = true;
 
 offsetY = 0;

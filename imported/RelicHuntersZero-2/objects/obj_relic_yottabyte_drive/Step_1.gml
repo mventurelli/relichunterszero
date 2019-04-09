@@ -16,16 +16,15 @@ object = "yottabyte";
 if (toggle)
 {
     toggle = false;
-    
-    if (global.relic_yottabyte_drive != 2){
-        var equip = relic_slot_equip(object);
-        if (equip) global.relic_yottabyte_drive = 2;
-        else global.relic_yottabyte_drive = 1;
+	
+	if (global.relic_yottabyte_drive != 2) {
+		global.relic_yottabyte_drive = 2;
+		audio_play_sound(sfx_relic_on,1,false);
+	}
+	else {
+		global.relic_yottabyte_drive = 1; 
+		audio_play_sound(sfx_relic_off,1,false);
     }
-    else{
-        global.relic_yottabyte_drive = 1;
-        var unequip = relic_slot_free(object);
-        if (unequip) audio_play_sound(sfx_relic_off,1,false);
-    }
+
 }
 

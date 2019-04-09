@@ -23,4 +23,4 @@ ammo_cost = 1;
 ammo = 0;
 ammo_current = ammo;
 
-
+rarity = K_RARITY_GLOVES;

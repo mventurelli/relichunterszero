@@ -3,7 +3,7 @@
 
 ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     
-    global.currentVersionNumber = ini_read_string("Version","Version","YEAR 3 - UPDATE 18");
+    global.currentVersionNumber = ini_read_string("Version","Version","YEAR 3 - UPDATE 21");
     global.language = ini_read_real("Language","Language",lang_english);
     
     // Temporary Values

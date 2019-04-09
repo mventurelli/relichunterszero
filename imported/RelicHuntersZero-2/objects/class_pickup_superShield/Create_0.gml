@@ -10,6 +10,7 @@ owner_add_owned_instance(myPrompt);
 image_speed = 0;
 
 name = loc_key("INFO_SUPERSHIELD");
+rarity = K_RARITY_COMMON;
 myInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_pickup);
 owner_add_owned_instance(myInfo);
 

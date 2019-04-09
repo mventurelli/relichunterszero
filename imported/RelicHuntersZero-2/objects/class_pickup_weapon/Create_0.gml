@@ -15,6 +15,7 @@ myPrompt = instance_create_layer(x+10,y-25,"Interactive_Over",fx_prompt_e);
 owner_add_owned_instance(myPrompt);
 
 name = "I AM ERROR";
+rarity = K_RARITY_COMMON;
 myWeaponInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_pickup);
 owner_add_owned_instance(myWeaponInfo);
 

@@ -83,7 +83,7 @@ if (countPlayers > 0)
         else followSpeedCurrent = 0;
         
         //Screen Zoom
-        if (class_player.sprinting) || (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = gameZoom*0.9;
+        if (class_player.dodging) || (class_player.aiming) || (class_player.melee_dash) zoom = gameZoom*0.9;
         else zoom = gameZoom;
     }
     

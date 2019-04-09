@@ -15,7 +15,7 @@ screen_update();
 game_set_speed(60, gamespeed_fps);
 
 //Version
-global.currentVersionNumber = "YEAR 3 - UPDATE 18";
+global.currentVersionNumber = "YEAR 3 - UPDATE 21";
 
 
 //Multiplayer & Mode

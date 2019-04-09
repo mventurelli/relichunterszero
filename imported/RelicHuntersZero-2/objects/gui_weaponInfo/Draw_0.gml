@@ -10,7 +10,7 @@ if (myWeapon != noone)
     draw_set_valign(fa_center);
     draw_set_halign(fa_left);
     
-    draw_text_dropshadow_ext_transformed(x+142,y+24,myName,c_white,c_black,0.7,1,1,1,0,1);
+    draw_text_dropshadow_ext_transformed(x+142,y+24,myName,myRarityColor,c_black,0.7,1,1,1,0,1);
     
     var firstGroupX = x+17;
     var firstGroupY = y+68;

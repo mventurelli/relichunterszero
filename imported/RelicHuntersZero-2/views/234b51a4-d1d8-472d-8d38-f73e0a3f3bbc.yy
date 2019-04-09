@@ -19,7 +19,8 @@
         "a060c055-158a-4e33-99f9-b85c52b4bb8b",
         "80de1d79-3bb3-40fb-9b65-1a1d96defc7d",
         "9c662517-e364-45a0-b657-c02453b8322d",
-        "d6880bed-f819-426a-9bed-acda3a4205bf"
+        "d6880bed-f819-426a-9bed-acda3a4205bf",
+        "66c6e1dc-4a49-4f9a-98a8-ef8ffd795c02"
     ],
     "filterType": "GMScript",
     "folderName": "RH Specific",

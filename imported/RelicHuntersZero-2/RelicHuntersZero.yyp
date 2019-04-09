@@ -6663,6 +6663,14 @@
             }
         },
         {
+            "Key": "66c6e1dc-4a49-4f9a-98a8-ef8ffd795c02",
+            "Value": {
+                "id": "37893a81-153d-49e9-8261-9f2d9922eea4",
+                "resourcePath": "scripts\\rarity_get_color\\rarity_get_color.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "66c81f86-71fd-4713-9729-a804f3a11b91",
             "Value": {
                 "id": "5f4a1d4b-c8ea-4be8-b227-8b32bc121fc6",
@@ -14175,6 +14183,14 @@
             }
         },
         {
+            "Key": "de6f12bf-5022-492a-ac8c-c22d5b5041b1",
+            "Value": {
+                "id": "5e7028ad-1f4f-484c-93ca-c59a4bb4f5b1",
+                "resourcePath": "rooms\\level_risk_1\\level_risk_1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "de888753-1ea1-4330-a285-73c3bc5353c3",
             "Value": {
                 "id": "1ccce75a-8b18-45a6-bf75-d5af723fb218",
@@ -16480,6 +16496,7 @@
         "80de1d79-3bb3-40fb-9b65-1a1d96defc7d",
         "9c662517-e364-45a0-b657-c02453b8322d",
         "d6880bed-f819-426a-9bed-acda3a4205bf",
+        "66c6e1dc-4a49-4f9a-98a8-ef8ffd795c02",
         "65951881-649f-40c0-bfb5-49c702676030",
         "a0378904-ea4f-4bef-83f2-b20e66cbccca",
         "1da3d66e-b07e-4666-bb86-0a9575fa7fab",

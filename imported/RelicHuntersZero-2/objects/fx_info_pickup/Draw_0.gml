@@ -1,8 +1,11 @@
 ///Main Draw
-if (owner != noone)
+if (owner != noone) if instance_exists_fast(owner)
 {
     myString = owner.name;
-    x = owner.bbox_right + 8;
+	rarity = owner.rarity;
+	rarityColor = rarity_get_color(rarity);
+	
+	x = owner.bbox_right + 8;
     y = owner.y;
     myStringLength = string_length(myString);
 	
@@ -41,7 +44,7 @@ if (allowDraw) {
 	        draw_set_valign(fa_center);
 	        draw_set_halign(fa_center);
 			draw_set_alpha(1);
-	        draw_rectangle_colour(x, y-(whiteBarHeight/2), x+whiteBarWidth, y+(whiteBarHeight/2), c_white, c_white, c_white, c_white, false );
-	        draw_set_color(c_black);
+	        draw_rectangle_colour(x, y-(whiteBarHeight/2), x+whiteBarWidth, y+(whiteBarHeight/2), rarityColor, rarityColor, rarityColor, rarityColor, false );
+	        if (rarity != K_RARITY_COMMON) draw_set_color(c_white) else draw_set_color(c_black);
 	        draw_text(x+(whiteBarWidth/2),y,string_hash_to_newline(myString));
 }

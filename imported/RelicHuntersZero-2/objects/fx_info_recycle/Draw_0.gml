@@ -6,6 +6,8 @@ if myString == "" if instance_exists_fast(owner)
     x = owner.x;
     y = owner.y+32;
     myStringLength = string_length(myString);
+	rarity = owner.rarity;
+	rarityColor = rarity_get_color(rarity);
 }
 else instance_destroy();
 
@@ -20,7 +22,7 @@ if (allowDraw) {
 	        draw_set_valign(fa_center);
 	        draw_set_halign(fa_center);
 			draw_set_alpha(1);
-	        draw_rectangle_colour(x-(whiteBarWidth/2), y-(whiteBarHeight/2), x+(whiteBarWidth/2), y+(whiteBarHeight/2), c_white, c_white, c_white, c_white, false );
-	        draw_set_color(c_black);
+	        draw_rectangle_colour(x-(whiteBarWidth/2), y-(whiteBarHeight/2), x+(whiteBarWidth/2), y+(whiteBarHeight/2), rarityColor, rarityColor, rarityColor, rarityColor, false );
+	        if (rarity != K_RARITY_COMMON) draw_set_color(c_white) else draw_set_color(c_black);
 	        draw_text(x,y,myString);
 }

@@ -2,7 +2,9 @@
 event_inherited();
 
 name = loc_key("WPNAME_ASSAULT_RIFLE");
-gui_info_weapon_create(instance_nearest(x,y,class_player),c_white,name);
+rarity = K_RARITY_ASSAULT_RIFLE;
+rarityColor = rarity_get_color(rarity);
+gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 object = obj_assault_rifle;
 shake_amount = 6;
