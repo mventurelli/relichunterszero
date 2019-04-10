@@ -69,9 +69,11 @@ instance_activate_object(global.pausePlayerInfo);
 
 //Dynamic GUIs
 instance_activate_object(global.dynamicBounty);
-instance_activate_object(global.dynamicRelic1);
-instance_activate_object(global.dynamicRelic2);
-instance_activate_object(global.dynamicRelic3);
+instance_activate_object(gui_relic_new);
+instance_activate_object(fx_info_tooltip);
+//instance_activate_object(global.dynamicRelic1);
+//instance_activate_object(global.dynamicRelic2);
+//instance_activate_object(global.dynamicRelic3);
 
 // Menu button manager
 instance_activate_object(global.pauseMenuButtonController);

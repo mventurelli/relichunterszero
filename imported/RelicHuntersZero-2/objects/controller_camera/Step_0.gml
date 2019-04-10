@@ -127,7 +127,9 @@ if zoom_current != zoom
     else zoom_current += min(zoom_speed_out,zoom-zoom_current);
 }
 
+camera_set_view_size(view_camera[0], 1280*zoom_current, 720*zoom_current);
 
+/*
 __view_set( e__VW.WView, 0, 1280*zoom_current ); //I am overriding this on the "game_pause()" script
 __view_set( e__VW.HView, 0, 720*zoom_current );
 

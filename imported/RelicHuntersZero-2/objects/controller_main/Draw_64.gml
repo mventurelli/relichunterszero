@@ -535,6 +535,7 @@ if (instance_exists(gui_dynamic_bounty))
 }
 
 //Dynamic Relics
+
 var dynamicRelicX1 = width*0.35;
 var dynamicRelicX2 = width*0.5;
 var dynamicRelicX3 = width*0.65;
@@ -552,7 +553,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 var relicTextSep = 30;
 var relicTextWidth = 132;
-
+/*
 if (instance_exists(gui_dynamic_relic1)) 
 {
     if (sprite_exists(gui_dynamic_relic1.sprite_index)) draw_sprite(gui_dynamic_relic1.sprite_index,gui_dynamic_relic1.image_index, dynamicRelicX1+gui_dynamic_relic1.offsetX, dynamicRelicY+gui_dynamic_relic1.offsetY); 
@@ -573,6 +574,7 @@ if (instance_exists(gui_dynamic_relic3))
     if (sprite_exists(gui_dynamic_relic3.mySprite)) draw_sprite_ext(gui_dynamic_relic3.mySprite,0, (dynamicRelicX3 +gui_dynamic_relic3.offsetX +offsetRelicSpriteX), (dynamicRelicY +gui_dynamic_relic3.offsetY +offsetRelicSpriteY),1.5,1.5,0,c_white,main_hud_alpha); 
     draw_text_ext((dynamicRelicX3 +gui_dynamic_relic3.offsetX +offsetRelicStringX), (dynamicRelicY +gui_dynamic_relic3.offsetY +offsetRelicStringY), string_hash_to_newline(gui_dynamic_relic3.myString), relicTextSep, relicTextWidth );
 }
+*/
 
 //Show Challenges on Pause Menu
 if (global.pauseMenu) && (global.gameMode == gamemode_endless)

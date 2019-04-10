@@ -228,9 +228,9 @@ main_hud_alpha = 0;
 
 //Dynamic GUI
 global.dynamicBounty = instance_create_layer(0,0,"GUI",gui_dynamic_bounty);
-global.dynamicRelic1 = instance_create_layer(0,0,"GUI",gui_dynamic_relic1);
-global.dynamicRelic2 = instance_create_layer(0,0,"GUI",gui_dynamic_relic2);
-global.dynamicRelic3 = instance_create_layer(0,0,"GUI",gui_dynamic_relic3);
+//global.dynamicRelic1 = instance_create_layer(0,0,"GUI",gui_dynamic_relic1);
+//global.dynamicRelic2 = instance_create_layer(0,0,"GUI",gui_dynamic_relic2);
+//global.dynamicRelic3 = instance_create_layer(0,0,"GUI",gui_dynamic_relic3);
 global.dynamicAmmo1 = instance_create_layer(0,0,"GUI",gui_dynamic_ammo1);
 global.dynamicAmmo2 = instance_create_layer(0,0,"GUI",gui_dynamic_ammo2);
 
@@ -1028,6 +1028,9 @@ if (global.gameMode == gamemode_endless) && (ds_exists(global.challengeList,ds_t
     
 //Apply these right here, right now
     if (global.challengeDucanWeapons) global.enemyProjectileSpeed = global.challengeDucanWeaponsSpeed;
+
+// Refresh Relics
+relic_refresh();
 /**/
 
 //create object pools

@@ -31,6 +31,7 @@ global.characterPos[2, 1] = distance_far;
 //Global Data Structures
 global.challengeList = ds_list_create();
 global.challengeForbiddenList = ds_list_create();
+global.relicList = ds_list_create();
 
 //Sync 
 ini_open(working_directory + "\\saveData.ini");

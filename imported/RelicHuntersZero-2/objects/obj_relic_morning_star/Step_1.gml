@@ -13,15 +13,7 @@ if (toggle)
 {
     toggle = false;
 
-	if (global.relic_morning_star != 2) {
-		global.relic_morning_star = 2;
-		audio_play_sound(sfx_relic_on,1,false);
-	}
-	else {
-		global.relic_morning_star = 1; 
-		audio_play_sound(sfx_relic_off,1,false);
-    }
-
+	relic_activate(K_RELIC_MORNING_STAR);
 }
 
 

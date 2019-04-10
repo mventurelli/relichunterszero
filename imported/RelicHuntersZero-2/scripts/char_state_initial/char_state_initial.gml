@@ -132,29 +132,24 @@
     global.challengeHeavyFocusTimer = 0;
     
 //Reset Relic Selection
-if (global.gameMode == gamemode_endless) || (global.playedEndless)
-{
-    if (global.gameMode == gamemode_endless) global.playedEndless = true;
-    else global.playedEndless = false;
-    
-    global.relic_slot[1] = "";
-    global.relic_slot[2] = "";
-    global.relic_slot[3] = "";
-    
-    global.relic_alcoholic_carrot = 0;
-    global.relic_yottabyte_drive = 0;
-    global.relic_pineapple_pudding = 0;
-    global.relic_infinity_battery = 0;
-    global.relic_crystal_bacon = 0;
-    global.relic_midnight_beer = 0;
-    global.relic_watchful_eye = 0;
-    global.relic_dev_potion = 0;
-    
-    global.relic_morning_star = 0;
-    global.relic_pineapple_pie = 0;
-    global.relic_rabbit_foot = 0;
-    global.relic_midnight_meal = 0;
-    global.relic_yottabyte_processor = 0;
-    global.relic_mega_quantum_chip = 0;
+if (is_undefined(global.relicList)) global.relicList = ds_list_create();
+else if (ds_exists(global.relicList,ds_type_list)) { 
+ds_list_destroy(global.relicList);
+global.relicList = ds_list_create();
 }
+	
+global.relic_alcoholic_carrot = 0;
+global.relic_yottabyte_drive = 0;
+global.relic_pineapple_pudding = 0;
+global.relic_infinity_battery = 0;
+global.relic_crystal_bacon = 0;
+global.relic_midnight_beer = 0;
+global.relic_watchful_eye = 0;
+global.relic_dev_potion = 0;
     
+global.relic_morning_star = 0;
+global.relic_pineapple_pie = 0;
+global.relic_rabbit_foot = 0;
+global.relic_midnight_meal = 0;
+global.relic_yottabyte_processor = 0;
+global.relic_mega_quantum_chip = 0;
