@@ -17,7 +17,17 @@
         "9e0daac9-2aa6-45e3-9dd7-1370c100c39f",
         "a205fad4-f575-42fb-a5dc-3adfc3864635",
         "d295da4c-9f38-47af-87e7-de34e670bd39",
-        "95dc107a-3ea9-48d9-8644-a2919551c20d"
+        "95dc107a-3ea9-48d9-8644-a2919551c20d",
+        "c423d524-ed31-405c-8e78-8a364c9c9442",
+        "77233dee-e164-487f-bcb5-3eea4389809e",
+        "f8b1c90b-ed49-4947-9b8f-8161392b487c",
+        "3eceea75-5281-435a-9e89-6ee0b5bbc9ae",
+        "0f54ae6d-fd00-4f48-bfd8-09fb2e4cf2fe",
+        "4dbc30b0-f149-4b11-b6e3-c5b09bbde167",
+        "4981fbec-18e5-4c34-a288-7ed8d1106da1",
+        "0b38b6ac-39ec-4516-aa69-4580d14caa3c",
+        "66a8f529-edb8-4284-854b-1652266ad6c5",
+        "a4f1b5ba-d98f-4daa-893e-08e618ed609b"
     ],
     "filterType": "GMSprite",
     "folderName": "New Relic HUD",

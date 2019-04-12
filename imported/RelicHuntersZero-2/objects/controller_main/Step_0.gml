@@ -1,4 +1,7 @@
 
+//Oi eu sou um hack
+global.relic_shell_candy = 2;
+
 /// Pause
 if (global.pause)
 {

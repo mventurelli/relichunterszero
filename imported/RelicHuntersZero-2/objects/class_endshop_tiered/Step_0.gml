@@ -16,10 +16,6 @@ if (activationClient != noone)
         }
         else{
 			gui_info_show_at(activationClient.id, activationClient.x, activationClient.y, "Interactive_Over", K_BETU_RED, loc_key("INFO_NOTENOUGHBOUNTY"));
-			//guiInfo = instance_create_layer(activationClient.x,activationClient.y,"Interactive_Over",gui_info);
-			//guiInfo.myString = loc_key("INFO_NOTENOUGHBOUNTY");;
-			//guiInfo.colorMain = K_BETU_RED;
-			//guiInfo.owner = activationClient;
 			audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full); 
         }    
     }

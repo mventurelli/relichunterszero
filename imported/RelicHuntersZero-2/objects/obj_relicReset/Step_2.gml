@@ -9,10 +9,6 @@ if (activationClient != noone)
     if (wantToActivate) && (in_range)
     {
         wantToActivate = false;
-        //Reset Adventure Mode Relic Selection
-        global.relic_slot[1] = "";
-        global.relic_slot[2] = "";
-        global.relic_slot[3] = "";
         
         global.relic_alcoholic_carrot = 0;
         global.relic_yottabyte_drive = 0;
@@ -28,10 +24,6 @@ if (activationClient != noone)
         image_index = 0;
         
 		gui_info_show_at(activationClient.id, activationClient.x, activationClient.y, "GUI", c_white, loc_key("TERMINAL_RELIC_INFO"));
-        //guiInfo = instance_create_layer(activationClient.x,activationClient.y,"GUI",gui_info);
-        //guiInfo.myString = loc_key("TERMINAL_RELIC_INFO");;
-        //guiInfo.colorMain = c_white;
-        //guiInfo.owner = activationClient;
         audio_play(activationClient.audio_emitter,false,1,sfx_relic_off);
     }
 }

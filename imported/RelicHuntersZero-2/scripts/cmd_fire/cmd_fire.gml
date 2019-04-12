@@ -11,40 +11,52 @@ if (owner != noone)
 	    fire_burst_current++;
 	    ammo_current--;
 	    can_fire = false;
-            
-	    repeat(fire_amount)
+		
+		//Prepare Shell Candy
+		var shellCandyActivated = false;
+		var shellCandyFireAmount = 0;
+       
+	    for (var i=0; i<(fire_amount+shellCandyFireAmount); i++;)
 	    {
-	        global.crosshair_scale[p] += crosshair_recoil;
-            
+			var recoil = crosshair_recoil;
+			if (shellCandyActivated) recoil = shellRecoil;
+	        global.crosshair_scale[p] += recoil;
+		  
 	        projectileX = x+(lengthdir_x(spawn_distance_from_barrel,shoot_direction));
 	        projectileY = y+(lengthdir_y(spawn_distance_from_barrel,shoot_direction));
 				
-			//show_debug_message("cmd_fire layer");
-			//show_debug_message(layer);
 			if (projectile_obj == obj_sonicboom) 
 				projectile = instance_create_layer(projectileX,projectileY,"Interactive_Over",projectile_obj);	
 			else 
-				projectile = instance_create_layer(projectileX,projectileY,"Interactive",projectile_obj);	
-	        projectile.speed_per_second = projectile_speed;
-	        projectile.decay = projectile_speed_decay;
-	        projectile.range = projectile_range;
+				projectile = instance_create_layer(projectileX,projectileY,"Interactive",projectile_obj);			
+			
+			if (shellCandyActivated)
+			{
+				projectile.ammo_type = shellType;
+				projectile.speed_per_second = shellSpeed;
+				projectile.range = shellCandyRange;
+			}
+			else {
+				projectile.ammo_type = ammo_type;
+				projectile.speed_per_second = projectile_speed;
+				projectile.range = projectile_range;
+			}
+			
+			projectile.decay = projectile_speed_decay;
 	        projectile.push_power = projectile_power;
 	        projectile.piercing = projectile_piercing;
 	        projectile.bounce = projectileBounce;
 	        projectile.bounceMax = projectileBouceMax;
-	        projectile.ammo_type = ammo_type;
+			
 	        projectile.allowPrecision = allowPrecision;
 	        projectile.goesThroughWalls = goesThroughWalls;
 	        projectile.owner = owner;
                             
 	        var precision;
                 
-	        if (global.relic_mega_quantum_chip == 2) //Check for Relic buff
-	        {
-	            precision = 0;
-	        }
-	        else
-	        {
+	        if (global.relic_mega_quantum_chip == 2) precision = 0;//Check for Relic buff
+	        else if (shellCandyActivated) precision = random_range(-shellCandyPrecision,shellCandyPrecision);
+			else{
 	            if (owner.aiming) precision = random_range(-accuracy_aiming*owner.base_accuracy,accuracy_aiming*owner.base_accuracy);
 	            else precision = random_range(-accuracy*owner.base_accuracy,accuracy*owner.base_accuracy);
 	        }
@@ -58,8 +70,27 @@ if (owner != noone)
 	        else if (ammo_type == type_medium) damageBonus += round(projectile_damage * (global.challengeMediumFocus*global.challengeMediumFocusMultiplier));
 	        else if (ammo_type == type_heavy) damageBonus += round(projectile_damage * (global.challengeHeavyFocus*global.challengeHeavyFocusMultiplier));
 	        if (global.challengeMedieval) damageBonus -= round(projectile_damage * global.challengeMedievalPenalty);
+			
 	        projectile.damage = projectile_damage + damageBonus;
+			if (shellCandyActivated) projectile.damage = round(shellCandyDamageMultiplier * projectile.damage);
+			
+			if (global.relic_shell_candy == 2) if (i=fire_amount-1)
+			{
+				shellCandyActivated = true;
+				shellCandyFireAmount = 9;
+				
+				var shellCandyPrecision = 20;
+				var shellCandyRange = 250;
+				var shellRecoil = 0;
+				var shellSpeed = 25;
+				var shellType = type_medium;
+				var shellCandyDamageMultiplier = 0.2;
+			}
 	    }
+		
+		
+		shellCandyActivated = false;
+		shellCandyFireAmount = 0;
             
 	    add_screen_shake(shake_amount,shoot_direction+180,false);
             
