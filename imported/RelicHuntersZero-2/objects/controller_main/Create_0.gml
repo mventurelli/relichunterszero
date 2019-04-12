@@ -63,6 +63,7 @@ global.crosshair_scale[1] = 1;
 global.crosshairX[2] = 0;
 global.crosshairY[2] = 0;
 global.crosshair_scale[2] = 1;
+global.crosshairScaleMax = 2;
 
 global.default_shadow_yscale = 0.3;
 global.music = true;

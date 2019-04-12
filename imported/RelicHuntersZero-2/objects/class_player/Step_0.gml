@@ -4,15 +4,6 @@
 if (room == room_start) hp = hp_max;
 
 // Relics
-if (!staminaRelicUpdated){
-    if (global.relic_alcoholic_carrot == 2) stamina_regen = stamina_regen_relic;
-    else stamina_regen = stamina_regen_regular;
-    
-    staminaRelicUpdated = true;
-}
-
-staminaChallengeUpdated = false;
-staminaRelicUpdated = false;
 
 if (global.relic_infinity_battery == 2) 
 {
@@ -188,6 +179,37 @@ if (allowMovement)
                 else direction = dodge_doubletap_direction;
                 
                 audio_play(audio_emitter,false,1,sfx_dash1,sfx_dash2,sfx_dash3);
+				
+				if (global.relic_rabbit_ears == 2)
+				{
+					var spawnAngle = point_direction(x,y,global.crosshairX[myPlayerId],global.crosshairY[myPlayerId]);
+					spawnAngle-=20;
+					repeat (4)
+					{
+						var child = instance_create_layer(x,y,"Interactive",obj_rocket_homing);
+				        child.immortalTimer = 50000;
+				        child.image_xscale = 0.5;
+				        child.image_yscale = 0.5;
+        
+				        child.faction = f_player;
+						var calculateDamage = 80;
+				       
+						if (global.relic_midnight_beer == 2) calculateDamage += round(calculateDamage*global.midnightDamageMultiplier ); //Midnight Beer
+				        if (global.relic_midnight_meal == 2) calculateDamage += round(calculateDamage*global.midnightDamageMultiplier ); //Midnight Meal
+				        if (global.relic_black_cat == 2) if (random(1) <= 0.25) calculateDamage += calculateDamage;
+						
+						child.damage = calculateDamage;
+						
+						child.speed_per_second = 8;
+						child.maxSpeed = 16;
+        
+				        child.curveRatio = 6;
+				        child.curveRatioDecay = 0.016;
+        
+				        child.direction = spawnAngle;
+				        spawnAngle += 10;
+					}
+				}
             }
             else{
                 //Low Stamina Feedback
@@ -364,8 +386,13 @@ if (dodging)
 if (sprinting) stamina -= sprint_stamina;
 if stamina < 0 stamina = 0;
 
-if (!sprinting) && (!dodging) && (!melee) && (!throw) && !((myGun == obj_buckler)&&(inputShield)) stamina += stamina_regen;
-
+if (!sprinting) && (!dodging) && (!melee) && (!throw) && !((myGun == obj_buckler)&&(inputShield)) 
+{
+	var staminaMultiplier = 1;
+	if (global.relic_alcoholic_carrot == 2) staminaMultiplier++;
+	if (global.relic_actual_carrot == 2) staminaMultiplier++;
+	stamina += stamina_regen*staminaMultiplier*delta_time*ms_to_s_60;
+}
 if stamina > stamina_max stamina = stamina_max;
 
 // Stop Aiming When Reloading
@@ -632,7 +659,8 @@ if (throw) && (animation_current == "melee")
 
         if (global.relic_midnight_beer == 2) myGrenade.damage += round(myGrenade.damage*global.midnightDamageMultiplier ); //Midnight Beer
         if (global.relic_midnight_meal == 2) myGrenade.damage += round(myGrenade.damage*global.midnightDamageMultiplier ); //Midnight Meal
-        if (instance_exists_fast(myGun)) myGrenade.damage += round((myGrenade.damage * myGun.weaponLevel)/3); //Weapon Level
+        if (global.relic_black_cat == 2) if (random(1) <= 0.25) myGrenade.damage += myGrenade.damage;
+		if (instance_exists_fast(myGun)) myGrenade.damage += round((myGrenade.damage * myGun.weaponLevel)/3); //Weapon Level
     }
 
     if (animation_index >= (animation_frames-1))

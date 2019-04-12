@@ -18,7 +18,8 @@ if (global.friendlyFire)
                     
                     if (global.relic_midnight_beer == 2) ffDamage += round(damage*global.midnightDamageMultiplier ); //Midnight Beer
                     if (global.relic_midnight_meal == 2) ffDamage += round(damage*global.midnightDamageMultiplier ); //Midnight Beer
-                    
+                    if (global.relic_black_cat == 2) if (random(1) <= 0.25) ffDamage += ffDamage;
+					
                     if (other.shield) 
                     {
                         other.energy -= ffDamage;

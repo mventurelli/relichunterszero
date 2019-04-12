@@ -20,8 +20,8 @@ if (owner != noone)
 	    {
 			var recoil = crosshair_recoil;
 			if (shellCandyActivated) recoil = shellRecoil;
-	        global.crosshair_scale[p] += recoil;
-		  
+	        global.crosshair_scale[p] = clamp(global.crosshair_scale[p],global.crosshair_scale[p]+recoil,global.crosshairScaleMax);
+		
 	        projectileX = x+(lengthdir_x(spawn_distance_from_barrel,shoot_direction));
 	        projectileY = y+(lengthdir_y(spawn_distance_from_barrel,shoot_direction));
 				

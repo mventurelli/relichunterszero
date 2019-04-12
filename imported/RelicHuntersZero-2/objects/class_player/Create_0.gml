@@ -44,8 +44,6 @@ accKeytar = 1;
 accFlame = 1;
 
 stamina_regen = 0.32;
-stamina_regen_regular = stamina_regen;
-stamina_regen_relic = stamina_regen*2;
 
 dodge_stamina = 50;
 sprint_stamina = 0.3;
@@ -227,8 +225,8 @@ joyCrosshairDistanceMin = 40;
 joyCrosshairSpeed = 24;
 
 //Relics and Challenges
-staminaChallengeUpdated = false;
-staminaRelicUpdated = false;
+//staminaChallengeUpdated = false;
+//staminaRelicUpdated = false;
 energyRegenUpdated = false;
 
 hpPuddingUpdated = false;

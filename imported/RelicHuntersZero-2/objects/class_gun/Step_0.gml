@@ -1,8 +1,5 @@
+///Multitool Relic
 
-/*var __b__;
-__b__ = action_if(global.pause);
-if !__b__
-*/
 if (!global.pause)
 {
 ///Animation and Rotation
@@ -131,8 +128,11 @@ if (isActive)
     {
         var p = owner.myPlayerId;
         
-        if (!owner.melee) reload_time_current += delta_time;
-        
+        if (!owner.melee) {
+			reload_time_current += delta_time;
+			if (global.relic_multitool ==2) reload_time_current += delta_time*2;
+		}
+		
         if reload_time_current >= reload_time
         {
             reload_time_current = 0;
@@ -269,10 +269,7 @@ if (isActive) && (owner) && instance_exists(owner)
     if (!can_fire)
     {
         fire_rate_current += delta_time;
-		//show_debug_message("fire_rate");
-		//show_debug_message(fire_rate);
-		//show_debug_message(fireRateDecayCurrent);
-        if fire_rate_current >= (fire_rate + fireRateDecayCurrent)
+        if fire_rate_current >= (fire_rate + fireRateDecayCurrent) || (global.relic_fire_freak == 2 && fire_rate_current >= (0.5*fire_rate + fireRateDecayCurrent))
         {
             fire_rate_current = 0;
             fire_burst_current = 0;
@@ -280,8 +277,7 @@ if (isActive) && (owner) && instance_exists(owner)
         }
     }
     
-    //Rate of Fire Decay Recovery
-           
+    //Rate of Fire Decay Recovery    
     if (!input_held) || (reloading) || (!ammo_current)
     {
         fireRateDecayCurrent += fireRateDecayRecovery * delta_time * ms_to_s_60;

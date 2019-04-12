@@ -5,7 +5,7 @@ if (explode)
     repeat(4)
     {
         child = instance_create_layer(x,y,"Interactive",obj_rocket_homing);
-        child.immortalTimer = 500000;//room_speed*0.5;
+        child.immortalTimer = 500000;
         child.image_xscale = 0.5;
         child.image_yscale = 0.5;
         

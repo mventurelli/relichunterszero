@@ -6,7 +6,8 @@ if instance_exists(other)
         
         if (global.relic_midnight_beer == 2) damage += round(damage*global.midnightDamageMultiplier ); //Midnight Beer
         if (global.relic_midnight_meal == 2) damage += round(damage*global.midnightDamageMultiplier ); //Midnight Meal
-        
+        if (global.relic_black_cat == 2) if (random(1) <= 0.25) damage += damage;
+		
         if (instance_exists(owner)) push_direction = point_direction(owner.x,owner.y,other.x,other.y);
         
         other.hp -= damage;

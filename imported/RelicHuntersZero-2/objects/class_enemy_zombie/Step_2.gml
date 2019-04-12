@@ -30,6 +30,9 @@ if (hp <= 0)
         }
     }
     
+	if (global.relic_blood_moon == 2) with (class_gun) ammo_current = ammo;
+	if (global.relic_loaf_of_bread == 2) with (class_player) energy = (energy_max+overshield);
+	
     repeat(myCoinDropAmount) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
     
     //Revive body

@@ -32,6 +32,7 @@ reloading = false;
 reload_time = 2500000;//room_speed*2.5;
 reload_time_current = 0;
 
+
 fire_automatic = false;
 fire_amount = 1;
 fire_burst = 1;
