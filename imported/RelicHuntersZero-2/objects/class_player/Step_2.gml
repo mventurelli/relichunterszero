@@ -33,13 +33,13 @@ if (global.input[myPlayerId] != K_INPUT_KEYBOARD) && instance_exists(class_playe
     
     if (aiming)
     {
-        joyLookAngularVelocity = 5;
+        joyLookAngularVelocity = 7;
         
         if (global.sticky_aim == true) && instance_exists(class_enemy)
         {
             if (collision_line(x, y, x+lengthdir_x(800,joyLookDirection), y+lengthdir_y(800,joyLookDirection), class_enemy, false, true))
             {
-                joyLookAngularVelocity = 2;
+                joyLookAngularVelocity = 5;
             }
         }
         

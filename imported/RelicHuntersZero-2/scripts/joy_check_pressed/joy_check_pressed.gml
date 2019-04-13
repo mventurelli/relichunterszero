@@ -1,7 +1,7 @@
 ///joy_check_pressed(index,button from 1 to 10)
 
 var to_return = false;
-
+/*
 if (global.version == os_windows) && (gamepad_get_description(0) == "Xbox 360 Controller (XInput STANDARD GAMEPAD)")
 {
     var button = joy_convert_to_xin(argument1);
@@ -9,7 +9,7 @@ if (global.version == os_windows) && (gamepad_get_description(0) == "Xbox 360 Co
     if (button != -1) to_return = xin_check_pressed(argument0, button);
     else to_return = false;
 }
-else
+else*/
 {
     var button = joy_convert_to_gamepad(argument1);
     

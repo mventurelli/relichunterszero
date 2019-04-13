@@ -222,7 +222,7 @@ joyCrosshairDistanceTarget = 0;
 joyCrosshairDistanceSpeed = 30;
 joyCrosshairDistanceMin = 40;
 
-joyCrosshairSpeed = 24;
+joyCrosshairSpeed = 64;
 
 //Relics and Challenges
 //staminaChallengeUpdated = false;

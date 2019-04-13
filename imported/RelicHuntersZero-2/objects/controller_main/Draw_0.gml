@@ -32,8 +32,9 @@ if (!global.pauseMenu) && (!global.gameOver) && (instance_exists(class_player))
                 
             if (global.input[p] != K_INPUT_KEYBOARD)
             {
-                if (pCur.aiming) drawCrosshair = false;
-                if (!pCur.joyIsRightStickAiming) drawCrosshair = false;
+				drawCrosshair = false;
+                //if (pCur.aiming) drawCrosshair = false;
+                //if (!pCur.joyIsRightStickAiming) drawCrosshair = false;
             }
             
             if instance_exists(pCur.myGun)
