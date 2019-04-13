@@ -153,3 +153,14 @@ global.relic_rabbit_foot = 0;
 global.relic_midnight_meal = 0;
 global.relic_yottabyte_processor = 0;
 global.relic_mega_quantum_chip = 0;
+
+global.relic_shell_candy  = 0;
+global.relic_purple_juice  = 0;
+global.relic_pure_sand  = 0;
+global.relic_loaf_of_bread  = 0;
+global.relic_blood_moon  = 0;
+global.relic_black_cat  = 0;
+global.relic_multitool  = 0;
+global.relic_actual_carrot  = 0;
+global.relic_fire_freak  = 0;
+global.relic_rabbit_ears  = 0;

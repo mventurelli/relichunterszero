@@ -204,6 +204,17 @@ ini_open(working_directory + "\\saveData.ini");
         ini_write_real("Relics","midnight_meal",global.relic_midnight_meal);
         ini_write_real("Relics","yottabyte_processor",global.relic_yottabyte_processor);
         ini_write_real("Relics","mega_quantum_chip",global.relic_mega_quantum_chip);
+		
+		ini_write_real("Relics","shell_candy",global.relic_shell_candy);
+		ini_write_real("Relics","purple_juice",global.relic_purple_juice);
+		ini_write_real("Relics","rabbit_ears",global.relic_rabbit_ears);
+		ini_write_real("Relics","pure_sand",global.relic_pure_sand);
+		ini_write_real("Relics","loaf_of_bread",global.relic_loaf_of_bread);
+		ini_write_real("Relics","blood_moon",global.relic_blood_moon);
+		ini_write_real("Relics","black_cat",global.relic_black_cat);
+		ini_write_real("Relics","multitool",global.relic_multitool);
+		ini_write_real("Relics","actual_carrot",global.relic_actual_carrot);
+		ini_write_real("Relics","fire_freak",global.relic_fire_freak);
         
         ini_write_real("Temp","Stage",global.stage_current);
         

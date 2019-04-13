@@ -23,7 +23,7 @@
     "option_windows_resize_window": false,
     "option_windows_save_location": 0,
     "option_windows_scale": 0,
-    "option_windows_sleep_margin": 10,
+    "option_windows_sleep_margin": 20,
     "option_windows_splash_screen": "${options_dir}\\windows\\splash.png",
     "option_windows_start_fullscreen": true,
     "option_windows_texture_page": "2048x2048",

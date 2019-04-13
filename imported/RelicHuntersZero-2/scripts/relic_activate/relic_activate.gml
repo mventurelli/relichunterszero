@@ -26,6 +26,16 @@ if ds_exists(global.relicList,ds_type_list)
 			case K_RELIC_WATCHFUL_EYE : global.relic_watchful_eye = 2; break;
 			case K_RELIC_YOTTABYTE_DRIVE : global.relic_yottabyte_drive = 2; break;
 			case K_RELIC_YOTTABYTE_PROCESSOR : global.relic_yottabyte_processor = 2; break;
+			case K_RELIC_SHELL_CANDY : global.relic_shell_candy = 2; break;
+			case K_RELIC_PURPLE_JUICE : global.relic_purple_juice = 2; break;
+			case K_RELIC_PURE_SAND : global.relic_pure_sand  = 2; break;
+			case K_RELIC_LOAF_OF_BREAD : global.relic_loaf_of_bread = 2; break;
+			case K_RELIC_BLOOD_MOON : global.relic_blood_moon = 2; break;
+			case K_RELIC_BLACK_CAT : global.relic_black_cat = 2; break;
+			case K_RELIC_MULTITOOL : global.relic_multitool = 2; break;
+			case K_RELIC_ACTUAL_CARROT : global.relic_actual_carrot = 2; break;
+			case K_RELIC_FIRE_FREAK : global.relic_fire_freak = 2; break;
+			case K_RELIC_RABBIT_EARS : global.relic_rabbit_ears = 2; break;	
 		}
 	}
 	else															//Deactivate Relic

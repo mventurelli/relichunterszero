@@ -11,7 +11,6 @@ else equipped = false;
 
 //Equip/Unequip The Relic
 full_relic = true;
-object = "infinity";
 
 if (toggle)
 {

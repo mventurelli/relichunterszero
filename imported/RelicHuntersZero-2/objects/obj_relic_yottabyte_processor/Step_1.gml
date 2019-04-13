@@ -7,7 +7,7 @@ else equipped = false;
 
 //Equip/Unequip The Relic
 full_relic = true;
-object = "yottabyte_processor";
+
 
 if (toggle)
 {

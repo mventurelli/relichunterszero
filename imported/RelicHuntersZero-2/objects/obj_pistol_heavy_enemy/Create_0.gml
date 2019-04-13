@@ -3,9 +3,9 @@ event_inherited();
 sound = "machinegun";
 ammo_type = type_medium;
 
-projectile_speed = 35;
+projectile_speed = 25;
 projectile_speed_decay = 0.2;
-projectile_damage = 20;
+projectile_damage = 25;
 projectile_range = 500;
 
 accuracy = 4;

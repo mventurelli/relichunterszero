@@ -4,7 +4,7 @@ event_inherited();
 
 image_speed = 0;
 
-price = 800;
+price = 400;
 
 range = 120;
 in_range = false;

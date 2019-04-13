@@ -9,7 +9,7 @@ ammo_type = type_light;
 
 projectile_speed = 25;
 projectile_speed_decay = 0.2;
-projectile_damage = 6;
+projectile_damage = 8;
 projectile_range = 450;
 
 accuracy = 5;

@@ -6,7 +6,7 @@ is_rocket = true;
 projectile_obj = obj_rocket_homing;
 projectile_speed = 2.5;
 projectile_speed_decay = -0.4;
-projectile_damage = 150;
+projectile_damage = 180;
 projectile_range = 1200;
 projectile_power = 10;
 

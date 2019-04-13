@@ -13,7 +13,7 @@ event_inherited();
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 200;
+    hp_max = 280;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     

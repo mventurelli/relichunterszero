@@ -17,7 +17,17 @@
         "9a8e22e9-e83e-4edd-8554-91058d3319e8",
         "357144ce-0825-4641-bf5f-be493d188395",
         "71afeb54-da73-4f44-aefc-bdb66382c29a",
-        "47b486be-585b-473c-a368-a7a749a45dfb"
+        "47b486be-585b-473c-a368-a7a749a45dfb",
+        "5ca0b215-e6bc-4118-95a5-f6fe08cfbb36",
+        "8d9817ab-2c6b-4ca7-ab15-0be87dbaab1c",
+        "8c35bf0d-29d2-4c62-83e2-3734c301438c",
+        "f4a45aac-b292-4be6-89b4-ca04972cd85d",
+        "df0e7ecc-eac4-47bc-a4e8-a34cd0da79c8",
+        "0832f9b3-4bc8-4865-a2d7-c59b98f2f3f5",
+        "11405d59-89c5-48bf-9425-f49c71696048",
+        "45c70e61-d560-45f3-ba99-479bb1f263da",
+        "1712f1b7-2060-4beb-b6d3-eec84574ebdf",
+        "2c2379d0-93cb-49b5-badc-710f85238124"
     ],
     "filterType": "GMObject",
     "folderName": "Relics",

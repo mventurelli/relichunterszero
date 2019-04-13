@@ -3,9 +3,9 @@ event_inherited();
 sound = "pistol";
 ammo_type = type_light;
 
-projectile_speed = 35;
+projectile_speed = 20;
 projectile_speed_decay = 0.2;
-projectile_damage = 6;
+projectile_damage = 7;
 projectile_range = 450;
 
 accuracy = 5;

@@ -2,9 +2,9 @@ event_inherited();
 sound = "machinegun";
 ammo_type = type_heavy;
 
-projectile_speed = 45;
+projectile_speed = 32;
 projectile_speed_decay = 0.4;
-projectile_damage = 7;
+projectile_damage = 9;
 projectile_range = 560;
 
 accuracy = 10;

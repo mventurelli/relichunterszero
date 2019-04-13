@@ -894,12 +894,21 @@ if (global.gameMode == gamemode_endless) && (!awarded4RelicsAchievement) {
     if (global.relic_watchful_eye) countRelics++;
     if (global.relic_dev_potion) countRelics++;
     if (global.relic_mega_quantum_chip) countRelics++;
+	if (global.relic_shell_candy) countRelics++;
+	if (global.relic_purple_juice) countRelics++;
+	if (global.relic_rabbit_ears) countRelics++;
+	if (global.relic_pure_sand) countRelics++;
+	if (global.relic_loaf_of_bread) countRelics++;
+	if (global.relic_blood_moon) countRelics++;
+	if (global.relic_black_cat) countRelics++;
+	if (global.relic_multitool) countRelics++;
+	if (global.relic_actual_carrot) countRelics++;
+	if (global.relic_fire_freak) countRelics++;
     if (countRelics >= 4) {
         achievement_give("ACHIEVEMENT_RELICS_4");
         awarded4RelicsAchievement = true;
     }
 }
-
 
 ///Count Game Time Every Second
 

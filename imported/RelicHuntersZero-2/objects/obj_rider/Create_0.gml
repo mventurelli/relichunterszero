@@ -4,7 +4,7 @@ event_inherited();
     playerName = "RED";
     myChar = char_rider;
     
-    riderGrenadeCost = 20;
+    riderGrenadeCost = 30;
     kamiAllyHp = 0.32;
     kamiAllyDmg = 0.15;
     
@@ -17,7 +17,7 @@ event_inherited();
     energy_max_relic = energy_max*2;
     energy = energy_max;
     
-    hp_max = 240;
+    hp_max = 250;
     hp_max_regular = hp_max;
     hp_max_relic = hp_max*2;
     

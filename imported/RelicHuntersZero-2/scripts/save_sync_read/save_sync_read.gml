@@ -171,6 +171,17 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     global.relic_midnight_meal = ini_read_real("Relics","midnight_meal",0);
     global.relic_yottabyte_processor = ini_read_real("Relics","yottabyte_processor",0);
     global.relic_mega_quantum_chip = ini_read_real("Relics","mega_quantum_chip",0);
+	
+	global.relic_shell_candy = ini_read_real("Relics","shell_candy",0);
+	global.relic_purple_juice = ini_read_real("Relics","purple_juice",0);
+	global.relic_rabbit_ears = ini_read_real("Relics","rabbit_ears",0);
+	global.relic_pure_sand = ini_read_real("Relics","pure_sand",0);
+	global.relic_loaf_of_bread = ini_read_real("Relics","loaf_of_bread",0);
+	global.relic_blood_moon = ini_read_real("Relics","blood_moon",0);
+	global.relic_black_cat = ini_read_real("Relics","black_cat",0);
+	global.relic_multitool = ini_read_real("Relics","multitool",0);
+	global.relic_actual_carrot = ini_read_real("Relics","actual_carrot",0);
+	global.relic_fire_freak = ini_read_real("Relics","fire_freak",0);
    
     //Challenges & Timers
     global.challengeSteroids = ini_read_real("Challenges","challengeSteroids",0);

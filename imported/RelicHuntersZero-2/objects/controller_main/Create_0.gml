@@ -372,16 +372,16 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_grenades[8] = 600;
     global.endPrice_grenades[9] = 700;
     
-    global.endPrice_overshield[0] = 120;
-    global.endPrice_overshield[1] = 160;
-    global.endPrice_overshield[2] = 190;
-    global.endPrice_overshield[3] = 220;
-    global.endPrice_overshield[4] = 280;
-    global.endPrice_overshield[5] = 350;
-    global.endPrice_overshield[6] = 410;
-    global.endPrice_overshield[7] = 500;
-    global.endPrice_overshield[8] = 600;
-    global.endPrice_overshield[9] = 700;
+    global.endPrice_overshield[0] = 100;
+    global.endPrice_overshield[1] = 120;
+    global.endPrice_overshield[2] = 160;
+    global.endPrice_overshield[3] = 190;
+    global.endPrice_overshield[4] = 220;
+    global.endPrice_overshield[5] = 280;
+    global.endPrice_overshield[6] = 350;
+    global.endPrice_overshield[7] = 410;
+    global.endPrice_overshield[8] = 500;
+    global.endPrice_overshield[9] = 600;
     
     global.endPrice_health[0] = 120;
     global.endPrice_health[1] = 160;
@@ -461,6 +461,10 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_rabbitFoot = 1200;
     global.price_endless_megaQuantumChip = 1000;
     
+	global.price_endless_actualCarrot = 1000;
+	global.price_endless_blackCat = 1200;
+	global.price_endless_multitool = 1000;
+	
     //Tier2
     global.price_endless_plasmaPistol = 3000;
     global.price_endless_machinegun = 3375;
@@ -478,6 +482,11 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_pineapplePudding = 2700;
     global.price_endless_pineapplePie = 2700;
     global.price_endless_midnightBeer = 3300;
+	
+	global.price_endless_shellCandy = 3000;
+	global.price_endless_purpleJuice = 2700;
+	global.price_endless_rabbitEars = 3000;
+	global.price_endless_fireFreak = 3000;
     
     //Tier3
     global.price_endless_plasmaSMG = 5250;
@@ -489,10 +498,14 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_relicCannon = 6000;
     global.price_endless_relicRocket = 7800;
     
-    global.price_endless_devPotion = 6000;
-    global.price_endless_crystalBacon = 6000;
+    global.price_endless_devPotion = 5250;
+    global.price_endless_crystalBacon = 5250;
     global.price_endless_midnightMeal = 5250;
     global.price_endless_yottabyteProcessor = 4500;
+	
+	global.price_endless_loafOfBread = 5250;
+	global.price_endless_bloodMoon = 5250;
+	global.price_endless_pureSand = 4500;
 	
 	global.price_endless_mod_gun = irandom_range(10, 30) * 100;
     
