@@ -109,6 +109,7 @@ if (explode)
     var explosion = instance_create_layer(x,y,"Interactive",fx_explosion_regular);
     explosion.radius = detonationRadius;
     explosion.damage = 300;
+	explosion.faction = f_all;
     
     instance_destroy();
 }

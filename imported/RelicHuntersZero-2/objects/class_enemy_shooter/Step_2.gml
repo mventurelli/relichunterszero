@@ -22,6 +22,7 @@ if hp <= 0
 		if (global.relic_black_cat == 2) if (random(1) <= 0.25) blastDamage += blastDamage;
 		blast.damage = blastDamage;
 	}
+	if (global.relic_crystal_bacon == 2) with (class_player) hp+= 2;
 	
     repeat(coins) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
     roll_ammo_drop(x,y);

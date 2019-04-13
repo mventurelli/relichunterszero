@@ -4167,6 +4167,14 @@
             }
         },
         {
+            "Key": "3dc48d95-6216-46d5-99e4-d5a7d4ed3ddb",
+            "Value": {
+                "id": "3039b9c9-3587-4b9e-8ba9-6302fd52de9a",
+                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "3dc7bfac-6181-43a9-a249-c99b01034fd0",
             "Value": {
                 "id": "28f93e69-1bc8-4f06-a4f6-1eb5516e30d1",
@@ -14499,14 +14507,6 @@
             "Value": {
                 "id": "6bb453e9-9a64-4b8e-a211-237b6a2dafdd",
                 "resourcePath": "datafiles_yy\\libfmns.dll.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
-            "Key": "e04a7166-fcfd-4538-9010-328dd825b758",
-            "Value": {
-                "id": "ad6182a9-3032-4e5b-a61b-0a6db35bcaf1",
-                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
                 "resourceType": "GMIncludedFile"
             }
         },

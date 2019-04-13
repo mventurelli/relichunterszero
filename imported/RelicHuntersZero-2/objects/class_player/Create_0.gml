@@ -234,8 +234,6 @@ hpPieUpdated = false;
 energyDriveUpdated = false;
 energyProcessorUpdated = false;
 
-receivedCrystalBaconHealing = false;
-
 //Special Character Stuff
 riderGrenadeCost = 0;
 riderDodgeAttack = noone;

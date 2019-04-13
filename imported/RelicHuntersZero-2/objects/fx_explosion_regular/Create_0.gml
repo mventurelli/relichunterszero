@@ -2,6 +2,8 @@
 maxTargets = 5;
 currentTargets = 0;
 
+faction = f_player;
+
 radiusStart = 12;
 radiusFinal = 122;
 

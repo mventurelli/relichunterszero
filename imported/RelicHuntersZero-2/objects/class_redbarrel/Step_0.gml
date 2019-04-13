@@ -107,6 +107,7 @@ if (hp < instantExplosionThreshold)
 {
     var explosion = instance_create_layer(x,y,"Interactive",fx_explosion_regular);
     explosion.radius = instantExplosionRadius;
+	explosion.faction = f_all;
     instance_destroy();
 }
 

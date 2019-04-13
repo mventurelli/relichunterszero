@@ -14,7 +14,8 @@ if (image_index >= trigger_frame)
 if (image_index >= trigger_frame) && (image_index <= end_frame) && (damage) && (currentTargets < maxTargets)
 {    
     is_enemy = true;
-    poor_guy = collision_circle(x,y,radiusFinal,faction_player,false,true);
+	poor_guy = noone;
+    if (faction != f_player) poor_guy = collision_circle(x,y,radiusFinal,faction_player,false,true);
     
     if (!poor_guy) || (ds_list_find_index(damage_list,poor_guy)) 
     {

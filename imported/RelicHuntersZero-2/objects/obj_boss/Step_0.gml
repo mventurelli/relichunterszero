@@ -308,6 +308,7 @@ if (fireRocket)
     if (my_gun != noone) myRocket.direction = fireAngleModifier + my_gun.shoot_direction;
     owner_add_owned_instance(myRocket);
     myRocket.damage = 160;
+	myRocket.faction = f_enemy;
     fireRocket = false;
 }
 

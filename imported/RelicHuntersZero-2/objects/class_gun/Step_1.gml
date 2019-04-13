@@ -5,7 +5,7 @@ if (global.relic_dev_potion == 2)
 {
     if ammo_current < ammo
     {
-        ammo_regen_time_current += delta_time;
+        ammo_regen_time_current += delta_time*2;
         if ammo_regen_time_current >= (ammo_regen_time*ammo_cost)
         {
             ammo_current += ammo_regen_amount;

@@ -1,16 +1,3 @@
-
-//Oi eu sou um hack
-global.relic_shell_candy = 2;
-global.relic_multitool = 2;
-global.relic_fire_freak = 2;
-global.relic_actual_carrot = 2;
-global.relic_black_cat = 2;
-global.relic_blood_moon = 2;
-global.relic_loaf_of_bread = 2;
-global.relic_pure_sand = 2;
-global.relic_rabbit_ears = 2;
-global.relic_purple_juice = 2;
-
 /// Pause
 if (global.pause)
 {

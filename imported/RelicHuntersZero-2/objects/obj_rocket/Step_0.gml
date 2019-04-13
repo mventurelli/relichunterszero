@@ -45,6 +45,7 @@ if (explode)
     big_bang.damage = damage;
     big_bang.radius = radius;
     big_bang.push_power = push_power;
+	big_bang.faction = faction;
     
     instance_destroy();
 }

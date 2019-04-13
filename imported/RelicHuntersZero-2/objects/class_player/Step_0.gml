@@ -39,29 +39,6 @@ if (global.relic_yottabyte_processor == 2) && (!energyProcessorUpdated){
     energyProcessorUpdated = true;
 }
 
-//Crystal Bacon on Level End
-if (global.relic_crystal_bacon ==2) && (instance_exists(controller_main)){
-    if (controller_main.level_end) && (!receivedCrystalBaconHealing){
-        hp += min(hp_max*0.2, hp_max-hp);
-                
-        audio_play(audio_emitter,false,1,sfx_pickup_health);
-                
-		gui_info_show_at(id, x, y, "Interactive_Over", c_white, loc_key("INFO_HEALTHPLUS"));
-        //guiInfo = instance_create_layer(x,y,"Interactive",gui_info);
-        //guiInfo.colorMain = c_white;
-        //guiInfo.myString = loc_key("INFO_HEALTHPLUS");
-        //guiInfo.owner = id;
-        
-        receivedCrystalBaconHealing = true;
-    }
-}
-
-//Watchful Eye: See controller_main;
-//Midnight Beer and Midnight Meal: See projectile_player and melee_arc
-//Dev Potion: See class_gun
-//Morning Star: See coin pickup
-//The Rabbit Foot: You won't find out what it does here :)
-
 // Challenges
 if (global.challengeMedieval) && (!meleeDamageUpdated) {
     melee_damage += round(melee_damage * global.challengeMedievalBonus);
