@@ -11,7 +11,7 @@ projectile_range = 1000;
 projectile_power = 10;
 
 accuracy = 4;
-fire_rate = 4000000;//room_speed*4;
+fire_rate = 2000000;//room_speed*4;
 
 
 

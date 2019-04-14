@@ -31,6 +31,7 @@
 #macro type_medium 1
 #macro type_heavy 2
 #macro type_grenade 3
+#macro type_enemy 4
 //colors
 #macro K_BETU_RED make_color_rgb(178,0,65)
 #macro K_BETU_GREEN2 make_color_rgb(99,210,0)

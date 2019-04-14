@@ -2,7 +2,7 @@
 
 event_inherited();
 
-hpValue = 5;
+hpValue = 1;
 
 eatSfx1 = sfx_kami_bite;
 eatSfx2 = sfx_kami_bite;

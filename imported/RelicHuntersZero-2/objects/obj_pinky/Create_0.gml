@@ -8,7 +8,7 @@ event_inherited();
     
     melee_damage = 120;
     
-    energy_max = 50;
+    energy_max = 30;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;

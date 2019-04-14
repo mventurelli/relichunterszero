@@ -46,7 +46,7 @@ accFlame = 1;
 stamina_regen = 0.32;
 
 dodge_stamina = 50;
-sprint_stamina = 0.3;
+sprint_stamina = 0.2;
 sprint_stamina_min = 10;
 
 move_speed_max = 5.5; //4.5

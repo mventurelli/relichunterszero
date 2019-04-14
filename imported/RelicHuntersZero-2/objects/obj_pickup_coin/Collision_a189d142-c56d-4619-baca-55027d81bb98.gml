@@ -6,7 +6,7 @@ if ((vertical_speed_start < interactive_speed) && (instance_exists_fast(other)))
     if (global.relic_morning_star == 2) myScore += 12;
     if (global.character[1] == char_rider || global.character[2] == char_rider) myScore = floor(myScore*0.7);
     
-	if (global.relic_pure_sand == 2) with (class_enemy) hp-=5;
+	if (global.relic_pure_sand == 2) with (class_enemy) hp-=2;
 	
 	score_add_coin(myScore);
     

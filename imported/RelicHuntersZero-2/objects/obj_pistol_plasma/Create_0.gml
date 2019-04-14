@@ -10,8 +10,8 @@ object = obj_pistol_plasma;
 projectile_obj = obj_projectile_plasma;
 shake_amount = 15;
 
-projectile_speed = 0.03;
-projectile_speed_decay = -0.15;
+projectile_speed = 0.06;
+projectile_speed_decay = -0.30;
 projectile_damage = 80;
 projectile_range = 1000;
 projectile_power = 5;

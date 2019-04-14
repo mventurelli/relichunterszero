@@ -1,6 +1,6 @@
 event_inherited();
 sound = "sniper";
-ammo_type = type_heavy;
+ammo_type = type_enemy;
 is_sniper = true;
 
 projectile_speed = 30;

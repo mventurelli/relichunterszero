@@ -12375,6 +12375,14 @@
             }
         },
         {
+            "Key": "bca139c3-9ea4-4fc7-8429-eb4a9645bf75",
+            "Value": {
+                "id": "77ec84e6-0296-40c4-a56b-f31a3bbda5ca",
+                "resourcePath": "sprites\\spr_bulletEnemy\\spr_bulletEnemy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bcb8286c-7582-4b84-8c92-d85e6b0b88e8",
             "Value": {
                 "id": "1697890b-143f-48d4-ba51-160fdb34a83d",

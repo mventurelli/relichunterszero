@@ -1023,7 +1023,7 @@ if (global.gameMode == gamemode_endless) && (ds_exists(global.challengeList,ds_t
 
 //Define Challenge Values
     global.challengeSteroidsMultiplier = 0.2;
-    global.challengeWantedMultiplier = 0.3;
+    global.challengeWantedMultiplier = 0.5;
     global.challengeHighTechMultiplier = 0.3;
     global.challengeLightFocusMultiplier = 0.7; //was 0.3
     global.challengeMediumFocusMultiplier = 0.7; //was 0.3

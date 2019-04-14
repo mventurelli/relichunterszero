@@ -25,7 +25,8 @@
         "abc9556c-9e04-483f-a356-1017f7eaa650",
         "76701f4b-4eca-48a2-ba2b-b780bc44a791",
         "5fbadf20-f56d-4a0f-88e6-770e39c98b44",
-        "db659cf1-dac1-48a7-97d9-d77ae8d3f169"
+        "db659cf1-dac1-48a7-97d9-d77ae8d3f169",
+        "bca139c3-9ea4-4fc7-8429-eb4a9645bf75"
     ],
     "filterType": "GMSprite",
     "folderName": "Bullets&Effects",

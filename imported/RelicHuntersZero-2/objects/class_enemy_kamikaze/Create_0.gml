@@ -10,8 +10,8 @@ critical_death = false;
 isVulnerable = false;
 alarm[0] = room_speed*1;
 
-speed_walk = 4;
-speed_sprint = 4;
+speed_walk = 5;
+speed_sprint = 5;
 
 dash_speed = 20;
 dodging = false;
@@ -49,7 +49,7 @@ ai_cover_check_range = 400;
 ai_cover_hp_threshold = hp_max*0.5;
 
 ai_dash_chance = 3;
-ai_dash_cooldown = 1000000;//room_speed*1;
+ai_dash_cooldown = 500000;//room_speed*1;
 ai_dash_cooldown_current = ai_dash_cooldown;
 
 ai_path = path_add();

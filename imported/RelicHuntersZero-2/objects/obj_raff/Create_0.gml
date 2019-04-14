@@ -4,7 +4,7 @@ event_inherited();
     playerName = "RAFF";
     myChar = char_raff;
     
-    energy_max = 60;
+    energy_max = 40;
     energy_max_regular = energy_max;
     energy_max_relic = energy_max*2;
     energy = energy_max;

@@ -10,8 +10,8 @@ object = obj_ducanPlasma;
 projectile_obj = obj_projectile_plasma;
 shake_amount = 6;
 
-projectile_speed = 0.03;
-projectile_speed_decay = -0.15;
+projectile_speed = 0.06;
+projectile_speed_decay = -0.30;
 projectile_damage = 80;
 projectile_range = 600;
 projectile_power = 2;
@@ -21,11 +21,11 @@ accuracy_aiming = 2;
 ammo = 21;
 ammo_type = type_heavy;
 ammo_cost = 3;
-reload_time = 2000000;//room_speed*2;
-fire_rate = 250000;//room_speed*0.25;
+reload_time = 2000000;
+fire_rate = 250000;
 fire_automatic = false;
 fire_burst = 3;
-fire_burst_rate = 80000;//room_speed*0.08;
+fire_burst_rate = 80000;
 crosshair_recoil = 0.2;
 
 sound = "plasma";

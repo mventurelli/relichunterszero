@@ -12,8 +12,8 @@ isWormZombie = false;
 isVulnerable = true;
 alarm[0] = room_speed*1;
 
-speed_walk = 3.5;
-speed_sprint = 4.2;
+speed_walk = 4;
+speed_sprint = 5;
 
 dash_speed = 20;
 dodging = false;
