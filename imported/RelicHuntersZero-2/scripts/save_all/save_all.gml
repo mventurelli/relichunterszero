@@ -26,6 +26,8 @@ ini_open(working_directory + "\\saveData.ini");
     ini_write_real("Temp","WeaponPickedUp",global.hasPickedWeapon);
     ini_write_real("Temp","CheckpointUsed",global.hasUsedCheckpoint);
     
+	ini_write_real("Temp","currentDifficulty",global.currentDifficulty);
+	ini_write_real("Temp","difficultyTimeCurrent",global.difficultyTimeCurrent);
     ini_write_real("Temp","isDaily",global.isDaily);
     ini_write_real("Temp","playedEndless",global.playedEndless);
     ini_write_real("Temp","Bounty Endless",global.bountyEndless);

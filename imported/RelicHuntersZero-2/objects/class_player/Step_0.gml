@@ -45,11 +45,6 @@ if (global.challengeMedieval) && (!meleeDamageUpdated) {
     meleeDamageUpdated = true;
 }
 
-if (global.challengeHeavyBurden) && (!staminaChallengeUpdated) {
-    stamina_regen -= stamina_regen * global.challengeHeavyBurdenPenalty;
-    staminaChallengeUpdated = true;
-}
-
 //Achievements
 if (global.gameMode == gamemode_endless) {
     if (instance_exists_fast(weapon1)) && (instance_exists_fast(weapon2)){

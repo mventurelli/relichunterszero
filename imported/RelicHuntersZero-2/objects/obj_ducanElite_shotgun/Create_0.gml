@@ -5,6 +5,7 @@ energy_max = 350;
 energy_max += global.challengeHighTech*(min( round(energy_max*global.challengeHighTechMultiplier), global.challengeHighTechMax) );
 hp_max = 1000;
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
+hp_max = round(hp_max * global.healthMultiplier);
 
 ai_cover_hp_threshold = 1;
 ai_cover_shield_threshold = 200;

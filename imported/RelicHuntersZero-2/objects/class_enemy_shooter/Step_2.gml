@@ -26,7 +26,7 @@ if hp <= 0
 	
     repeat(coins) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
     roll_ammo_drop(x,y);
-	if (global.gameMode == gamemode_endless) if random(1) <= 0.1 repeat(ceil(coins/2)) instance_create_layer(x,y,"Interactive",obj_pickup_scrap);
+	if (global.gameMode != gamemode_adventure) if random(1) <= 0.1 repeat(ceil(coins/2)) instance_create_layer(x,y,"Interactive",obj_pickup_scrap);
     
     if (drop_gun)
     {

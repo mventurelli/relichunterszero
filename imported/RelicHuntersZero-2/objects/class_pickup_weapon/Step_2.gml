@@ -19,7 +19,7 @@ if (instance_exists_fast(activationClient))
 	//Recycle
 	var playerId = activationClient.myPlayerId
 	
-	if global.gameMode == gamemode_endless if (in_range)
+	if global.gameMode == gamemode_endless || global.gameMode == gamemode_storm if (in_range)
 	{
 		if (global.input[playerId] == K_INPUT_KEYBOARD && input_key_recycle()) || (global.input[playerId] != K_INPUT_KEYBOARD && joy_check_pressed(global.input[playerId],6))
 		{

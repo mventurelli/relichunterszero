@@ -39,6 +39,10 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
         p++;
     }
     
+	//Storm Temp
+	global.currentDifficulty = ini_read_real("Temp","currentDifficulty",K_DIFFICULTY_VERY_EASY);
+	global.difficultyTimeCurrent = ini_read_real("Temp","difficultyTimeCurrent",0);
+	
     //Endless Temp
     global.isDaily = ini_read_real("Temp","isDaily",false);
     global.playedEndless = ini_read_real("Temp","playedEndless",false);
@@ -225,7 +229,6 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     global.challengeHeavyFocusTimer = ini_read_real("Challenges","challengeHeavyFocusTimer",0);
     
     // Game Progression
-    
     global.tutorial_done = ini_read_real("Ass","tutorial",0);
     global.first_stage_done = ini_read_real("Ass","first_stage",0);
     global.shop_visits = ini_read_real("Ass","shop_visits",0);

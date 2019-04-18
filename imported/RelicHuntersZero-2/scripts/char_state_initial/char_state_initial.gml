@@ -37,8 +37,7 @@
         global.ammo_heavy[2] = 0;
         global.grenades[2] = 2;
     }
-    
-    if (global.gameMode == gamemode_endless)
+    else
     {
         global.scoreEndless = 0;
         global.currentLoop = 0;
@@ -55,7 +54,10 @@
         global.ammo_medium[2] = 80;
         global.ammo_heavy[2] = 80;
         global.grenades[2] = 0;
+	}
         
+	if (global.gameMode == gamemode_endless)
+	{
         global.endPriceTier_lightAmmo = 0;
         global.endPriceTier_mediumAmmo = 0;
         global.endPriceTier_heavyAmmo = 0;
@@ -89,6 +91,12 @@
             global.challengeForbiddenList = ds_list_create();
         }
     }
+	
+	if (global.gameMode == gamemode_storm)
+	{
+		global.currentDifficulty = K_DIFFICULTY_VERY_EASY;	
+		global.difficultyTimeCurrent = 0;
+	}
     
     //Clean Challenges (even for Adventure Mode, to avoid issues
     global.challengeWanted = 0;

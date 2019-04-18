@@ -87,16 +87,26 @@ if (countPlayers > 0)
         else zoom = gameZoom;
     }
     
-    if (countPlayers == 2)
+    if (countPlayers == 2) //2-player camera 
     {
-        //2-player camera quick and unpolished
         var player1 = instance_find(class_player,0);
         var player2 = instance_find(class_player,1);
         
         if (player1 != noone) && (player2 != noone)// && (instance_exists(player1)) && (instance_exists(player1)) 
         {
-            x = (player1.x + player2.x)/2;
-            y = (player1.y + player2.y)/2;
+			var p1x = player1.x;
+			var p1y = player1.y;
+			var p2x = player2.x;
+			var p2y = player2.y;
+			
+            x = 0.5*(p1x + p2x);
+            y = 0.5*(p1y + p2y);
+			
+			var playerDist = point_distance(p1x,p1y,p2x,p2y);
+			var zoomDist = 320;
+			var zoomFactor = 0.001;
+			
+			if (playerDist>zoomDist) zoom = 1.0 + min(0.5, zoomFactor*(playerDist-zoomDist));
         }
     }
     

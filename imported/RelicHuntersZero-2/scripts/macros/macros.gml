@@ -9,6 +9,7 @@
 //game modes
 #macro gamemode_adventure 0
 #macro gamemode_endless 1
+#macro gamemode_storm 2
 //character choice
 #macro char_random 99
 #macro char_rider 7
@@ -199,3 +200,14 @@
 #macro K_RELIC_MULTITOOL 21
 #macro K_RELIC_ACTUAL_CARROT 22
 #macro K_RELIC_FIRE_FREAK 23
+
+// Difficulty Definitions
+#macro K_DIFFICULTY_VERY_EASY 0
+#macro K_DIFFICULTY_EASY 1
+#macro K_DIFFICULTY_REGULAR 2
+#macro K_DIFFICULTY_HARD 3
+#macro K_DIFFICULTY_VERY_HARD 4
+#macro K_DIFFICULTY_EXTREME 5
+#macro K_DIFFICULTY_VERY_EXTREME 6
+#macro K_DIFFICULTY_LEGENDARY 7
+#macro K_DIFFICULTY_ASCENDANT 8

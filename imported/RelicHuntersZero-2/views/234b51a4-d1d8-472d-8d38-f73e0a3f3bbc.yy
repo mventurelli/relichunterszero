@@ -22,7 +22,11 @@
         "d6880bed-f819-426a-9bed-acda3a4205bf",
         "66c6e1dc-4a49-4f9a-98a8-ef8ffd795c02",
         "29b7b9a2-b1ea-4987-b3de-a700c94364f1",
-        "b444fee2-f362-43f0-b0e2-a2128c62f0f1"
+        "b444fee2-f362-43f0-b0e2-a2128c62f0f1",
+        "a170c0ff-bfc0-42ba-be93-a9a033f8a503",
+        "2f363b89-b3e6-4c50-a873-5c8af7c7032c",
+        "7e91bd7d-21d7-46c6-888c-39e5e24faf69",
+        "e551b4e5-e138-4cc3-afac-875a8c58eba3"
     ],
     "filterType": "GMScript",
     "folderName": "RH Specific",

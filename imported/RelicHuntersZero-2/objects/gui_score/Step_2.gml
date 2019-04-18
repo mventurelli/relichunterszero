@@ -10,7 +10,7 @@ if (!setup)
             myString = loc_key("HUD_KILL2");
             value += global.score_doublekill;
             if (global.gameMode == gamemode_adventure) global.score_total += global.score_doublekill;
-            else if (global.gameMode == gamemode_endless) 
+            else //if (global.gameMode == gamemode_endless) 
             {
                 global.bountyEndless += global.score_doublekill;
                 global.scoreEndless += global.score_doublekill;
@@ -34,7 +34,7 @@ if (!setup)
             
             value += global.score_multikill;
             if (global.gameMode == gamemode_adventure) global.score_total += global.score_multikill;
-            else if (global.gameMode == gamemode_endless) 
+            else //if (global.gameMode == gamemode_endless) 
             {
                 global.bountyEndless += global.score_multikill;
                 global.scoreEndless += global.score_multikill;

@@ -67,7 +67,7 @@ if (hp < maxhp) {
 	{
 	    var spawnObj = obj_kamikaze1;
 	    var spawnAmount = 6;
-	    if (global.gameMode == gamemode_endless) && (global.currentLoop >= 2) { spawnObj = obj_kamitank; spawnAmount = 2};
+	    //if (global.gameMode == gamemode_endless) && (global.currentLoop >= 2) { spawnObj = obj_kamitank; spawnAmount = 2};
 	    if (global.character[1] == char_rider) || (global.character[2] == char_rider) spawnObj = obj_kamiAlly;
     
 	    repeat(spawnAmount)

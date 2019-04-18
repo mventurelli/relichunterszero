@@ -2,7 +2,7 @@
 var myScore = argument0;
 
 if (global.gameMode == gamemode_adventure) global.score_total += myScore;
-else if (global.gameMode == gamemode_endless) 
+else //if (global.gameMode == gamemode_endless) 
 {
     global.bountyEndless += myScore;
     global.scoreEndless += myScore;

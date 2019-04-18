@@ -5,6 +5,8 @@ energy_max = 0;
 hp_max = 150;
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 
+hp_max = round(hp_max * global.healthMultiplier);
+
 ai_supression = 1;
 
 aggro_distance = 400;

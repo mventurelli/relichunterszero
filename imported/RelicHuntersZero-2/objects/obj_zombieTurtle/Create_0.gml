@@ -6,6 +6,8 @@ energy = 0;
 hp_max = 60;
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 
+hp_max = round(hp_max * global.healthMultiplier);
+
 damage = 25;
 
 speed_walk = 2;

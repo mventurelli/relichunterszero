@@ -20,8 +20,8 @@ starScaleFinal = 1;
 
 
 
-moveSpeed = 5;
-moveDistance = 25;
+moveSpeed = 4;
+moveDistance = 12;
 
 startPositionX = x;
 startPositionY = y;

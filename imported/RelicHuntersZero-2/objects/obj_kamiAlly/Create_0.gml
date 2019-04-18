@@ -13,6 +13,8 @@ else {
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));    damage = 18;
 }
 
+hp_max = round(hp_max * global.healthMultiplier);
+
 speed_walk = 3.25;
 speed_sprint = 3.25;
 

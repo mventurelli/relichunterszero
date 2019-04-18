@@ -1,7 +1,7 @@
 event_inherited();
 
 sound = "machinegun";
-ammo_type = type_medium;
+ammo_type = type_enemy;
 
 projectile_speed = 18;
 projectile_speed_decay = 0.2;

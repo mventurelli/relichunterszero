@@ -38,7 +38,7 @@ arrowAnimationSpeed = 0.2;
 
 myRecycleInfo = noone;
 
-if global.gameMode == gamemode_endless
+if global.gameMode == gamemode_endless || global.gameMode == gamemode_storm
 {
 	myRecycleInfo = instance_create_layer(x,y,"Interactive_Over",fx_info_recycle);
 	myRecycleInfo.owner = id;

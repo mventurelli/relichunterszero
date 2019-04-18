@@ -1,7 +1,7 @@
 ///score_add(points,is_headshot)
 
 if (global.gameMode == gamemode_adventure) global.score_total += argument0;
-else if (global.gameMode == gamemode_endless) 
+else //if (global.gameMode == gamemode_endless) 
 {
     global.bountyEndless += argument0;
     global.scoreEndless += argument0;

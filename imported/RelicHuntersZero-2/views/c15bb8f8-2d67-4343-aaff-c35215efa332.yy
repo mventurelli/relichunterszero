@@ -15,7 +15,8 @@
         "2767f278-45e9-422f-9adf-0bb55ac16474",
         "5ec44419-8d8b-4923-8f98-d7060616903f",
         "a3dad49c-2377-4b82-b500-f3d61deab714",
-        "75973d18-5d3c-46bc-be5b-6a1387a7ad56"
+        "75973d18-5d3c-46bc-be5b-6a1387a7ad56",
+        "6291984f-f2e5-4026-b10a-61a4323fea06"
     ],
     "filterType": "GMSound",
     "folderName": "BGM",

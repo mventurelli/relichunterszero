@@ -3031,6 +3031,14 @@
             }
         },
         {
+            "Key": "2c4f0efa-53d9-4b0c-ab1e-02f5bd337e6b",
+            "Value": {
+                "id": "6addf843-df8a-4087-a971-6d4f83b3f9bd",
+                "resourcePath": "objects\\data_enemiesStorm\\data_enemiesStorm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2c5d6353-efa2-43f1-87af-90e3cf75e10c",
             "Value": {
                 "id": "7dee72c5-63ea-4ab3-85b5-1843e759c2c0",
@@ -3212,6 +3220,14 @@
                 "id": "9e670ee8-4224-4216-ad52-3a8d29e0d360",
                 "resourcePath": "fonts\\ftBR_tinyText\\ftBR_tinyText.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "2f363b89-b3e6-4c50-a873-5c8af7c7032c",
+            "Value": {
+                "id": "d839d825-b3ee-468b-8c62-66fa183c8c38",
+                "resourcePath": "scripts\\difficulty_get_damage_multiplier\\difficulty_get_damage_multiplier.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6663,6 +6679,14 @@
             }
         },
         {
+            "Key": "6291984f-f2e5-4026-b10a-61a4323fea06",
+            "Value": {
+                "id": "0c23d3ad-4639-4472-afde-e63482efb567",
+                "resourcePath": "sounds\\bgm_storm\\bgm_storm.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "62d4e5c5-fe96-4a40-abe7-62b19132c30c",
             "Value": {
                 "id": "bd6f3aae-1177-4e42-be4c-9c17f23fa2cb",
@@ -8436,6 +8460,14 @@
                 "id": "92b436ab-c35d-446f-96d4-33901a9b0b73",
                 "resourcePath": "fonts\\ftRU_numberMedium\\ftRU_numberMedium.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "7e91bd7d-21d7-46c6-888c-39e5e24faf69",
+            "Value": {
+                "id": "ff27707e-0f6f-4837-9080-2ec290676ed9",
+                "resourcePath": "scripts\\difficulty_get_health_multiplier\\difficulty_get_health_multiplier.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -10492,6 +10524,14 @@
                 "id": "ed313aee-cecd-48db-a7e9-814fee0d858d",
                 "resourcePath": "objects\\gui_weaponInfo\\gui_weaponInfo.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a170c0ff-bfc0-42ba-be93-a9a033f8a503",
+            "Value": {
+                "id": "de1cdf44-e60b-4355-8c91-39e6da4848f8",
+                "resourcePath": "scripts\\difficulty_update\\difficulty_update.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -13775,6 +13815,14 @@
             }
         },
         {
+            "Key": "d36c34ca-a8c2-4f1d-a7d7-6cb375092103",
+            "Value": {
+                "id": "2f01a66d-fd6b-4c5e-a41f-d3a3fa5463ec",
+                "resourcePath": "objects\\data_itemsStorm\\data_itemsStorm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d36c78f7-2dc5-447f-9940-64ecc0258412",
             "Value": {
                 "id": "bc987ea8-86c7-4d7c-ab80-4ad00a51921d",
@@ -14530,7 +14578,7 @@
             "Key": "de6f12bf-5022-492a-ac8c-c22d5b5041b1",
             "Value": {
                 "id": "5e7028ad-1f4f-484c-93ca-c59a4bb4f5b1",
-                "resourcePath": "rooms\\level_risk_1\\level_risk_1.yy",
+                "resourcePath": "rooms\\level_storm_1\\level_storm_1.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -15084,6 +15132,14 @@
                 "id": "08e1702b-6fbe-4170-91b6-62089968eb6e",
                 "resourcePath": "sounds\\sfx_shovel2\\sfx_shovel2.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "e551b4e5-e138-4cc3-afac-875a8c58eba3",
+            "Value": {
+                "id": "bb34c66f-7bb3-45ec-9e53-4f54bfbc57a9",
+                "resourcePath": "scripts\\data_clean_up\\data_clean_up.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -16679,6 +16735,14 @@
             }
         },
         {
+            "Key": "fdceaae1-79bd-4e63-b9e4-48108e54347a",
+            "Value": {
+                "id": "73d2cb1a-41bc-41d1-9dc9-5685d177ed26",
+                "resourcePath": "objects\\menu_btn_storm\\menu_btn_storm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fdf84ab7-b245-4e54-8876-fda8514951ea",
             "Value": {
                 "id": "abdafeb7-a39e-4c9f-b913-915ed7aa6c86",
@@ -16899,6 +16963,10 @@
         "66c6e1dc-4a49-4f9a-98a8-ef8ffd795c02",
         "29b7b9a2-b1ea-4987-b3de-a700c94364f1",
         "b444fee2-f362-43f0-b0e2-a2128c62f0f1",
+        "a170c0ff-bfc0-42ba-be93-a9a033f8a503",
+        "2f363b89-b3e6-4c50-a873-5c8af7c7032c",
+        "7e91bd7d-21d7-46c6-888c-39e5e24faf69",
+        "e551b4e5-e138-4cc3-afac-875a8c58eba3",
         "65951881-649f-40c0-bfb5-49c702676030",
         "a0378904-ea4f-4bef-83f2-b20e66cbccca",
         "1da3d66e-b07e-4666-bb86-0a9575fa7fab",

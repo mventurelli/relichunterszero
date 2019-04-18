@@ -1,7 +1,7 @@
 ///Main Attributes
 event_inherited();
 
-name = "BLITZ";
+name = loc_key("WPNAME_BLITZ");
 rarityColor = rarity_get_color(rarity);
 gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 

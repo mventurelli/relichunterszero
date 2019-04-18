@@ -519,7 +519,7 @@ var dynamicBountyX = width*0.5;
 var dynamicBountyY = -1*height*0.1;
 var bountyString, scrapString;
 
-if (global.gameMode == gamemode_endless)
+if (global.gameMode == gamemode_endless) || (global.gameMode == gamemode_storm)
 {
 	dynamicBountyX = width*0.45;	
 	bountyString = string(global.bountyEndless);
@@ -531,7 +531,7 @@ if (instance_exists(gui_dynamic_bounty))
 {
     draw_sprite(gui_dynamic_bounty.sprite_index,gui_dynamic_bounty.image_index, dynamicBountyX+gui_dynamic_bounty.offsetX, dynamicBountyY+gui_dynamic_bounty.offsetY);
     draw_text(dynamicBountyX+gui_dynamic_bounty.offsetX+103, dynamicBountyY+gui_dynamic_bounty.offsetY+2, bountyString);
-	if (global.gameMode == gamemode_endless) draw_text(dynamicBountyX+gui_dynamic_bounty.offsetX+300, dynamicBountyY+gui_dynamic_bounty.offsetY+2, scrapString);
+	if (global.gameMode != gamemode_adventure) draw_text(dynamicBountyX+gui_dynamic_bounty.offsetX+300, dynamicBountyY+gui_dynamic_bounty.offsetY+2, scrapString);
 }
 
 //Dynamic Relics

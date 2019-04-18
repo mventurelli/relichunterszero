@@ -74,7 +74,6 @@ global.pause = 0;
 global.pauseMenu = false;
 
 //Score
-
 global.coins_turtle1 = 1;
 global.coins_turtle2 = 2;
 global.coins_turtle3 = 3;
@@ -88,6 +87,58 @@ global.score_headshot = 5;
 global.score_doublekill = 5;
 global.score_triplekill = 5;
 global.score_multikill = 10;
+
+//Storm Mode & Difficulty
+global.maxSpawns = 24;
+
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 25;
+global.spawnTimeByDifficulty[K_DIFFICULTY_EASY] = 20;
+global.spawnTimeByDifficulty[K_DIFFICULTY_REGULAR] = 15;
+global.spawnTimeByDifficulty[K_DIFFICULTY_HARD] = 12;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 10;
+global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 8;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 6;
+global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 4;
+global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 2;
+
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EASY] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_EASY] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_REGULAR] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_HARD] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_HARD] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_EXTREME] = 4;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 4;
+global.spawnAmountByDifficulty[K_DIFFICULTY_LEGENDARY] = 4;
+global.spawnAmountByDifficulty[K_DIFFICULTY_ASCENDANT] = 4;
+
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 2;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_HARD] = 2.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 3;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 4;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 6;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
+
+global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1.2;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 1.4
+global.healthMultiplierByDifficulty[K_DIFFICULTY_HARD] = 2
+global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 2.8;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 3.6;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 4.5;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 5.5;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
+
+global.spawnTime = global.spawnTimeByDifficulty[global.currentDifficulty];
+global.spawnTimeCurrent = 18;
+global.spawnAmount = global.spawnAmountByDifficulty[global.currentDifficulty];
+
+global.difficultyUpgradeTime = 90;
+
+global.damageMultiplier = difficulty_get_damage_multiplier();
+global.healthMultiplier = difficulty_get_health_multiplier();
 
 //Prices
 global.price_checkpoint1 = 1000;
@@ -146,7 +197,6 @@ global.price_yottabyte2 = 1750;
 global.price_yottabyte3 = 1750;
 
 //Players & Ammo
-
 global.friendlyFire = false;
 
 global.reviveHealth = 0.5;
@@ -295,6 +345,7 @@ global.survivalWaves = 0;
 survivalWaveSize = 0;
 
 if (room == levelHalloween_3) {global.survivalWaves = 3; survivalWaveSize = 3;}
+if (global.gameMode == gamemode_storm) global.survivalWaves = 1;
 
 ///Particle Systems
 
@@ -551,7 +602,7 @@ global.ambientSound = noone;
 
 alarm[3] = room_speed*3;
 
-if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (room == levelHalloween_1) || (audio_is_playing(bgm_dig))
+if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (room == levelHalloween_1) || (audio_is_playing(bgm_dig)) || (room == level_storm_1)
 {
     audio_stop_all();
 }
@@ -604,6 +655,12 @@ if (room == room_start) || (room == room_shop) || (room == room_endShop) || (roo
     if (room == levelHalloween_1) || (room == levelHalloween_2) || (room == levelHalloween_3)
     {
         if !audio_is_playing(bgm_halloween) audio_play_sound(bgm_halloween,99,true);
+        audio_play_sound(sfx_amb_stage4,99,true);
+        global.ambientSound = sfx_amb_stage4;
+    }
+	if (room == level_storm_1)
+    {
+        if !audio_is_playing(bgm_storm) audio_play_sound(bgm_storm,99,true);
         audio_play_sound(sfx_amb_stage4,99,true);
         global.ambientSound = sfx_amb_stage4;
     }
@@ -689,7 +746,7 @@ if (room == room_start)
 
 
 //Char State Initial
-if (room == room_start) || (room == room_tutorial) || ((global.gameMode == gamemode_endless) && (room == level1_1))
+if (room == room_start) || (room == room_tutorial) || ((global.gameMode == gamemode_endless) && (room == level1_1)) || (global.gameMode == gamemode_storm && (room == level_storm_1))
 {
     global.stage_current = 1;
     if (!global.currentLoop) char_state_initial(); 

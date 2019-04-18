@@ -22,9 +22,11 @@ var p = 1; while (p <= global.playerCount)
     p++;
 }
 
+///Storm Mode Difficulty Update
+if (!global.pauseMenu) difficulty_update();
+
 
 ///Level Instantiator
-
 if (!level_built)
 {
     if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global.currentLoop);
@@ -77,8 +79,7 @@ if (!level_built)
         enemy_pool = enemyData.enemyPool;
         item_pool = itemData.itemPool;
     }
-    
-    if (global.gameMode == gamemode_endless)
+    else if (global.gameMode == gamemode_endless)
     {
         enemyData = instance_create_layer(0,0,"Controllers",data_enemiesEndless);
         itemData = instance_create_layer(0,0,"Controllers",data_itemsEndless);
@@ -86,7 +87,14 @@ if (!level_built)
         enemy_pool = enemyData.enemyPool;
         item_pool = itemData.itemPool;
     }
-    
+    else if (global.gameMode == gamemode_storm)
+	{
+		enemyData = instance_create_layer(0,0,"Controllers",data_enemiesStorm);
+        itemData = instance_create_layer(0,0,"Controllers",data_itemsStorm);
+        
+        enemy_pool = enemyData.enemyPool;
+        item_pool = itemData.itemPool;
+	}
     
         //Resolve Enemies
         
@@ -205,7 +213,6 @@ if (!level_built)
 }
 
 ///Level Exit + Dig System
-
 if (!(room == room_start)) && (!(room == room_tutorial)) && (!(room == room_shop)) && (!(room == room_boss)) && (!(room == room_endShop))
 {
 
@@ -341,8 +348,7 @@ if (!(room == room_start)) && (!(room == room_tutorial)) && (!(room == room_shop
                 else exit;
                 
                   
-                //Spawn Relic
-                
+                //Spawn Relic               
                 audio_stop_all();
                 audio_play_sound(bgm_dig,99,true);
                 volume_update();
@@ -443,12 +449,10 @@ if (!(room == room_start)) && (!(room == room_tutorial)) && (!(room == room_shop
 }
 
 ///Dust and Fog
-
 tile_layer_shift(-9024, -0.12, 0);
 tile_layer_shift(-9048, -0.2, 0);
 
 ///Save Data and Advance the Game
-
 if (global.stage_current == 1) && (global.checkpoint1 == 0) global.checkpoint1 = 1;
 if (global.stage_current == 2) && (global.checkpoint2 == 0) global.checkpoint2 = 1;
 if (global.stage_current == 3) && (global.checkpoint3 == 0) global.checkpoint3 = 1;
@@ -487,10 +491,10 @@ if (global.level_complete)
     if (global.gameMode == gamemode_endless)
     {
         show_debug_message("Time to change the room!");
-        if (room == level1_3) {  show_debug_message("I am on Level 1-3, it\'s shop time!"); room_goto(room_endShop); exit; }
-        if (room == level2_3) {  show_debug_message("I am on Level 2-3, it\'s shop time!"); room_goto(room_endShop); exit; }
-        if (room == level3_3) {  show_debug_message("I am on Level 3-3, it\'s shop time!"); room_goto(room_endShop);exit; }
-        if (room == level4_3) {  show_debug_message("I am on Level 4-3, it\'s shop time!"); room_goto(room_endShop);exit; }
+        if (room == level1_3) {  show_debug_message("I am on Level 1-3, it's shop time!"); room_goto(room_endShop); exit; }
+        if (room == level2_3) {  show_debug_message("I am on Level 2-3, it's shop time!"); room_goto(room_endShop); exit; }
+        if (room == level3_3) {  show_debug_message("I am on Level 3-3, it's shop time!"); room_goto(room_endShop);exit; }
+        if (room == level4_3) {  show_debug_message("I am on Level 4-3, it's shop time!"); room_goto(room_endShop);exit; }
         if (room == levelHalloween_3) { global.stage_current = min(4,global.stage_current+2); room_goto(room_endShop); show_debug_message("I am on Level Halloween-3, it\'s shop time!"); exit; }
     }
     
@@ -526,7 +530,6 @@ if (global.level_complete)
 }
 
 ///Particle Systems Manager
-
 if (!global.pause)
 {
 	var particle_systems = ds_map_size(global.particle_list) ;
@@ -536,20 +539,6 @@ if (!global.pause)
 		part_system_update(psKey);		
 		psKey = ds_map_find_next(global.particle_list, psKey);
 	}
-/*
-    for (i=0; i<ds_map_size(global.particle_list); i++)
-    {
-        particle_system = ds_list_find_value(global.particle_list,i);
-        part_system_update(particle_system);
-        
-        if !part_particles_count(particle_system)
-        {
-            //part_emitter_destroy_all(particle_system);
-            part_system_destroy(particle_system);
-            ds_list_delete(global.particle_list,i);
-        }
-    }
-*/
 }
 
 
@@ -651,6 +640,7 @@ if keyboard_check_pressed(ord("N")) room_goto(room_endShop);
         if audio_is_playing(bgm_stage2) audio_stop_sound(bgm_stage2);
         if audio_is_playing(bgm_stage3) audio_stop_sound(bgm_stage3);
         if audio_is_playing(bgm_stage4) audio_stop_sound(bgm_stage4);
+		if audio_is_playing(bgm_storm) audio_stop_sound(bgm_storm);
     }
     
     ///Toggle Reflections
@@ -950,49 +940,104 @@ if (instance_exists(class_enemy))
 }
 
 
-///Spawn Survival Wave Enemies
-
-if ((!instance_exists(class_enemy)) && (!instance_exists(obj_kamikazelite_flying)) && (instance_exists(class_player)) && (global.survivalWaves))
+///Spawn Waves
+if (global.survivalWaves) 
 {
-    global.survivalWaves--;
+	if (!global.pauseMenu) if (global.gameMode == gamemode_storm)	
+	{
+		// Spawn enemies for Storm
+		if (instance_number(class_enemy) < global.maxSpawns) 
+		{
+			global.spawnTimeCurrent += delta_time * ms_to_s;
+			if (global.spawnTimeCurrent >= global.spawnTime) if (instance_exists(class_player)) 
+			{
+				global.spawnTimeCurrent = 0;
+				if (ds_exists(enemy_pool,ds_type_list)) 
+				{
+					var selectRandom = irandom(ds_list_size(enemy_pool)-1);
+					var currentGroup = ds_list_find_value(enemy_pool,selectRandom);
+	
+					var spawnList = ds_list_create();
+					var playerX = class_player.x;
+					var playerY = class_player.y;
+					var minDistFromPlayer = 720;
+					var maxDistFromPlayer = 1200;
+					for (var s=0; s<instance_number(obj_spawn_enemy); s++)
+					{
+						var spawnCandidate = instance_find(obj_spawn_enemy,s);
+						var spawnDistance = point_distance(spawnCandidate.x,spawnCandidate.y,playerX,playerY);
+						if (spawnDistance >= minDistFromPlayer && spawnDistance <= maxDistFromPlayer) ds_list_add(spawnList,spawnCandidate); 
+					}
+	
+					var numberToSpawn = global.spawnAmount;
+					while (!ds_list_empty(spawnList) && numberToSpawn > 0)
+					{
+						var randomSpawn = irandom(ds_list_size(spawnList)-1);
+						var targetSpawn = ds_list_find_value(spawnList,randomSpawn);
+						if (instance_exists(targetSpawn)) for (var i=0; i<ds_list_size(currentGroup); i++)
+						{
+							var sX = targetSpawn.spawnX + random_range(-128,128);
+							var sY = targetSpawn.spawnY + random_range(-128,128);
+					
+							if collision_circle(sX,sY,40,class_solid,false,true) < 0 
+							{
+								var toSpawn = ds_list_find_value(currentGroup, i);
+								var spawnedAgent = instance_create_layer(sX,sY,"Interactive",toSpawn);
+								spawnedAgent.ai_activation_range = 3000;
+								spawnedAgent.ai_shutdown_range = 3000;
+							}
+						}
+						numberToSpawn--;
+						ds_list_delete(spawnList,randomSpawn);
+					}
+					ds_list_destroy(spawnList);
+				}
+			}
+		}
+	}
+	else if (!instance_exists(class_enemy)) if (!instance_exists(obj_kamikazelite_flying)) if (instance_exists(class_player)) 
+	{
+		// Spawn enemies for Halloween 3
+	    global.survivalWaves--;
     
-    repeat(survivalWaveSize){
-       if (!ds_list_empty(enemy_pool))
-       {
-            pick_random_group = irandom(ds_list_size(enemy_pool)-1);
-            random_group = ds_list_find_value(enemy_pool,pick_random_group);
-            ds_list_delete(enemy_pool,pick_random_group);
+	    repeat(survivalWaveSize){
+	       if (!ds_list_empty(enemy_pool))
+	       {
+	            pick_random_group = irandom(ds_list_size(enemy_pool)-1);
+	            random_group = ds_list_find_value(enemy_pool,pick_random_group);
+	            ds_list_delete(enemy_pool,pick_random_group);
                 
-            current_group = ds_list_create();
-            ds_list_copy(current_group, random_group);
+	            current_group = ds_list_create();
+	            ds_list_copy(current_group, random_group);
                 
-            enemy_spawn_number = instance_number(obj_spawn_enemy);
-            random_spawn = irandom(enemy_spawn_number-1);
-            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
+	            enemy_spawn_number = instance_number(obj_spawn_enemy);
+	            random_spawn = irandom(enemy_spawn_number-1);
+	            target_spawn = instance_find(obj_spawn_enemy,random_spawn);
                 
-            while (!ds_list_empty(current_group)) && (instance_exists(target_spawn))
-            {
-                spawnX = target_spawn.spawnX + random_range(-128,128);
-                spawnY = target_spawn.spawnY + random_range(-128,128);
+	            while (!ds_list_empty(current_group)) && (instance_exists(target_spawn))
+	            {
+	                spawnX = target_spawn.spawnX + random_range(-128,128);
+	                spawnY = target_spawn.spawnY + random_range(-128,128);
                     
-                if collision_circle(spawnX,spawnY,40,class_solid,false,true) < 0 
-                {
-                    list_position = ds_list_size(current_group)-1;
-                    spawnee = ds_list_find_value(current_group, list_position);
-                    spawnedEnemy = instance_create_layer(spawnX,spawnY,"Interactive",spawnee);
+	                if collision_circle(spawnX,spawnY,40,class_solid,false,true) < 0 
+	                {
+	                    list_position = ds_list_size(current_group)-1;
+	                    spawnee = ds_list_find_value(current_group, list_position);
+	                    spawnedEnemy = instance_create_layer(spawnX,spawnY,"Interactive",spawnee);
                     
-                    spawnedEnemy.ai_activation_range = 2000;
-                    spawnedEnemy.ai_shutdown_range = 2000;
+	                    spawnedEnemy.ai_activation_range = 2000;
+	                    spawnedEnemy.ai_shutdown_range = 2000;
                     
-                    ds_list_delete(current_group,list_position);
-                }
-            }
+	                    ds_list_delete(current_group,list_position);
+	                }
+	            }
             
-            ds_list_destroy(current_group);
-            with (target_spawn) { instance_destroy(); }
-       }
-       else exit;
-    }
+	            ds_list_destroy(current_group);
+	            with (target_spawn) { instance_destroy(); }
+	       }
+	       else exit;
+	    }
+	}
 }
 
 ///Daily Run Force Save

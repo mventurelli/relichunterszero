@@ -5,6 +5,8 @@ energy_max += global.challengeHighTech*(min( round(energy_max*global.challengeHi
 hp_max = 160;
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 
+hp_max = round(hp_max * global.healthMultiplier);
+
 aggro_distance = 500;
 aggro_add_patrol = 0.5;
 aggro_add_close = 2;

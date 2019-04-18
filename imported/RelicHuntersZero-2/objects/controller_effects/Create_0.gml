@@ -94,6 +94,11 @@ tall_object = instance_create_layer(x,y,"Interactive_Over",controller_shadow_tal
 
 global.surface_view_offset_shadows = 300;
 global.surface_view_offset_reflections = 500;
+if (global.playerCount > 1)
+{
+	global.surface_view_offset_shadows = 1280;
+	global.surface_view_offset_reflections = 1500;	
+}
 
 if surface_exists(global.persistent_draw) surface_free(global.persistent_draw);
 if surface_exists(global.reflection_surface) surface_free(global.reflection_surface);
