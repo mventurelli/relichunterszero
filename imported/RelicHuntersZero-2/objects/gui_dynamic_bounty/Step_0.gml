@@ -4,7 +4,7 @@ event_inherited();
 
 if (!timedActive) isActive = false;
 
-if (room==room_start) || (room==room_shop) || (room==room_endShop) || (global.pauseMenu)
+if (room==room_start) || (room==room_shop) || (room==room_endShop) || (global.pauseMenu) || (global.gameMode == gamemode_storm)
 {
     isActive = true;
 }

@@ -1,9 +1,13 @@
 ///Setup
 image_speed = 0.1;
 
-audio_stop_all();
-audio_play_sound(sfx_dig_done,99,false);
-if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
+if global.gameMode != gamemode_storm
+{
+	audio_stop_all();
+	audio_play_sound(sfx_dig_done,99,false);
+	if (global.ambientSound) audio_play_sound(global.ambientSound,9,true);
+}
+else audio_play_sound(sfx_dig_done,99,false);
 
 relic = noone;
 endlessRelic = noone;

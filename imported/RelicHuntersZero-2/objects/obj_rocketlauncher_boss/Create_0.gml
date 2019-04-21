@@ -9,7 +9,7 @@ isBossRocket = true;
 projectile_obj = obj_rocket;
 projectile_speed = 10;
 projectile_speed_decay = 0;
-projectile_damage = 150;
+projectile_damage = 110;
 projectile_range = 1000;
 projectile_power = 10;
 

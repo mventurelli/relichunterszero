@@ -91,54 +91,56 @@ global.score_multikill = 10;
 //Storm Mode & Difficulty
 global.maxSpawns = 24;
 
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 25;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 20;
 global.spawnTimeByDifficulty[K_DIFFICULTY_EASY] = 20;
-global.spawnTimeByDifficulty[K_DIFFICULTY_REGULAR] = 15;
-global.spawnTimeByDifficulty[K_DIFFICULTY_HARD] = 12;
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 10;
-global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 8;
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 6;
-global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 4;
-global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 2;
+global.spawnTimeByDifficulty[K_DIFFICULTY_REGULAR] = 16;
+global.spawnTimeByDifficulty[K_DIFFICULTY_HARD] = 16;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 13;
+global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 13;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 9;
+global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 8;
+global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
 
-global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EASY] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
 global.spawnAmountByDifficulty[K_DIFFICULTY_EASY] = 2;
-global.spawnAmountByDifficulty[K_DIFFICULTY_REGULAR] = 3;
-global.spawnAmountByDifficulty[K_DIFFICULTY_HARD] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_REGULAR] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_HARD] = 2;
 global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_HARD] = 3;
-global.spawnAmountByDifficulty[K_DIFFICULTY_EXTREME] = 4;
-global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 4;
-global.spawnAmountByDifficulty[K_DIFFICULTY_LEGENDARY] = 4;
-global.spawnAmountByDifficulty[K_DIFFICULTY_ASCENDANT] = 4;
+global.spawnAmountByDifficulty[K_DIFFICULTY_EXTREME] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_LEGENDARY] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_ASCENDANT] = 3;
 
 global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1.5;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 2;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_HARD] = 2.5;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 3;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 4;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 5;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 6;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_HARD] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 1;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 1.2;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 1.5;
 
 global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1.2;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 1.4
-global.healthMultiplierByDifficulty[K_DIFFICULTY_HARD] = 2
-global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 2.8;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 3.6;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 4.5;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 5.5;
-global.healthMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_EASY] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_HARD] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 1;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 1.5;
+global.healthMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 2;
 
 global.spawnTime = global.spawnTimeByDifficulty[global.currentDifficulty];
-global.spawnTimeCurrent = 18;
+global.spawnTimeCurrent = 0;
 global.spawnAmount = global.spawnAmountByDifficulty[global.currentDifficulty];
 
-global.difficultyUpgradeTime = 90;
+global.difficultyUpgradeTime = 120;
 
 global.damageMultiplier = difficulty_get_damage_multiplier();
 global.healthMultiplier = difficulty_get_health_multiplier();
+
+global.initialWaveSpawns = 4;
 
 //Prices
 global.price_checkpoint1 = 1000;
@@ -195,6 +197,17 @@ global.price_dev3 = 4500;
 global.price_yottabyte1 = 1750;
 global.price_yottabyte2 = 1750;
 global.price_yottabyte3 = 1750;
+
+//Gunnar Weapon Upgrade Prices
+global.price_weaponUpgrade[0] = 50;
+global.price_weaponUpgrade[1] = 80;
+global.price_weaponUpgrade[2] = 120;
+global.price_weaponUpgrade[3] = 160;
+global.price_weaponUpgrade[4] = 210;
+global.price_weaponUpgrade[5] = 260;
+global.price_weaponUpgrade[6] = 320;
+global.price_weaponUpgrade[7] = 380;
+global.price_weaponUpgrade[8] = 500;
 
 //Players & Ammo
 global.friendlyFire = false;
@@ -376,6 +389,8 @@ fakeBarFill = 0;
 //Center Mouse Position At Beggining
 display_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
+
+
 ///Endless Economy & Rare Challenge Timers Balance
 if (global.gameMode == gamemode_endless)
 {
@@ -482,16 +497,7 @@ if (global.gameMode == gamemode_endless)
     global.endPrice_hackHaunted = 1000;
     
     
-    //Gunnar
-    global.price_weaponUpgrade[0] = 50;			//Old bounty cost = 500
-    global.price_weaponUpgrade[1] = 80;			//Old bounty cost = 800
-    global.price_weaponUpgrade[2] = 120;			//Old bounty cost = 1200
-    global.price_weaponUpgrade[3] = 160;			//Old bounty cost = 1600
-    global.price_weaponUpgrade[4] = 210;			//Old bounty cost = 2100
-    global.price_weaponUpgrade[5] = 260;			//Old bounty cost = 2600
-    global.price_weaponUpgrade[6] = 320;			//Old bounty cost = 3200
-    global.price_weaponUpgrade[7] = 380;			//Old bounty cost = 3800
-    global.price_weaponUpgrade[8] = 500;			//Old bounty cost = 5000
+    
     
     //Tier1
     global.price_endless_assaultPistol = 600;

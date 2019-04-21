@@ -1,6 +1,6 @@
 ///Open
 
-event_inherited();
+//event_inherited();
 
 if (!canActivate) {
     if (activateTimeCurrent < activateTime) activateTimeCurrent += delta_time;

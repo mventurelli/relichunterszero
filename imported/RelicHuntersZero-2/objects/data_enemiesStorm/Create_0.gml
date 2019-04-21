@@ -3,57 +3,52 @@ event_inherited();
 
 //Enemy Group Design (Spawns Everything Within the Group)
 
-    ducan_turtlesquad1_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_1, obj_turtle1,obj_turtle1,obj_turtle1);
+//Rotation A1 (Ducans)
+A1_1_smallTurtles = ds_list_create();
+ds_list_add(A1_1_smallTurtles, obj_turtle1, obj_turtle1, obj_turtle1, obj_turtle1);
+
+A1_2_smallTurtlesWithShotgun = ds_list_create();
+ds_list_add(A1_2_smallTurtlesWithShotgun, obj_turtle1, obj_turtle1, obj_turtle1, obj_turtle1_shotgun);
+
+A1_3_oneDucanSquad = ds_list_create();
+ds_list_add(A1_3_oneDucanSquad, obj_duck1, obj_turtle1_pistoleer, obj_turtle1_pistoleer, obj_turtle1_pistoleer);
+
+//Rotation A2 (Ducans)
+A2_1_advancedTurtles = ds_list_create();
+ds_list_add(A2_1_advancedTurtles, obj_turtle2, obj_turtle2_assaultpistol, obj_turtle2, obj_turtle2_shotgun );
+	
+A2_2_smgDuck = ds_list_create();
+ds_list_add(A2_2_smgDuck, obj_duck1_submachinegun,obj_turtle1,obj_turtle1_pistoleer,obj_turtle1_shotgun);
+
+A2_3_heavyPistolDuck = ds_list_create();
+ds_list_add(A2_3_heavyPistolDuck, obj_duck2_heavy, obj_turtle1_pistoleer, obj_turtle1_pistoleer, obj_turtle2_shotgun);
+
+//Rotation A3 (Ducans)
+A3_1_turtleMachinegunners = ds_list_create();
+ds_list_add(A3_1_turtleMachinegunners, obj_turtle3, obj_turtle3, obj_turtle3, obj_turtle3 );
+
+A3_2_turtleSniper = ds_list_create();
+ds_list_add(A3_2_turtleSniper, obj_turtle3_sniper );
+
+A3_3_duckSquad = ds_list_create();
+ds_list_add(A3_3_duckSquad, obj_duck2_shotgun, obj_turtle3, obj_turtle2_submachinegun, obj_duck2_heavy);
+
+//Rotation A4 (Ducans)
+A4_1_turtleBigMachinegunSquad = ds_list_create();
+ds_list_add(A4_1_turtleBigMachinegunSquad, obj_turtle3, obj_turtle3, obj_turtle3, obj_turtle3, obj_turtle3 );
+
+A4_2_duckAssaultRifle = ds_list_create();
+ds_list_add(A4_2_duckAssaultRifle, obj_duck3, obj_duck2_shotgun, obj_duck2_shotgun, obj_turtle3);
     
-    ducan_turtlesquad1_2 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_2, obj_turtle1,obj_turtle1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_turtlesquad1_3 = ds_list_create();
-    ds_list_add(ducan_turtlesquad1_3, obj_duck1,obj_turtle1_pistoleer,obj_turtle1_pistoleer,obj_turtle1_pistoleer);
-    
-    ducan_turtlesquad2_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad2_1, obj_turtle2, obj_turtle2_assaultpistol, obj_turtle2, obj_turtle2_shotgun );
-    
-    ducan_turtlesquad2_2 = ds_list_create();
-    ds_list_add(ducan_turtlesquad2_2, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_shotgun );
-    
-    ducan_turtlesquad3_1 = ds_list_create();
-    ds_list_add(ducan_turtlesquad3_1, obj_turtle3, obj_turtle3, obj_turtle3, obj_turtle3 );
-    
-    ducan_turtlesniper = ds_list_create();
-    ds_list_add(ducan_turtlesniper, obj_turtle3_sniper );
-    
-    /// /// /// ///
-    
-    ducan_ducksquad1_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_1, obj_duck1,obj_turtle1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_ducksquad1_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_2, obj_duck1_submachinegun,obj_turtle1,obj_turtle1_pistoleer,obj_turtle1_shotgun);
-    
-    ducan_ducksquad1_3 = ds_list_create();
-    ds_list_add(ducan_ducksquad1_3, obj_duck1_submachinegun,obj_duck1,obj_turtle1,obj_turtle1_shotgun);
-    
-    ducan_ducksquad2_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_1, obj_duck2_heavy, obj_turtle1_pistoleer, obj_turtle1_pistoleer, obj_turtle2_shotgun);
-    
-    ducan_ducksquad2_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_2, obj_duck2_submachinegun, obj_duck1, obj_duck1, obj_turtle2_assaultpistol);
-    
-    ducan_ducksquad2_3 = ds_list_create();
-    ds_list_add(ducan_ducksquad2_3, obj_duck2_shotgun, obj_turtle2_submachinegun, obj_turtle2_submachinegun, obj_turtle2_submachinegun);
-    
-    ducan_ducksquad3_1 = ds_list_create();
-    ds_list_add(ducan_ducksquad3_1, obj_duck3, obj_duck2_shotgun, obj_duck2_shotgun, obj_turtle3);
-    
-    ducan_ducksquad3_2 = ds_list_create();
-    ds_list_add(ducan_ducksquad3_2, obj_duck3_rocket, obj_turtle3, obj_turtle3);
-    
+A4_3_duckRocket = ds_list_create();
+ds_list_add(A4_3_duckRocket, obj_duck3_rocket, obj_turtle3, obj_turtle3);
+	
+
+    /*
     /// /// /// ///
     
     monster_kamikaze_1 = ds_list_create();
-    ds_list_add(monster_kamikaze_1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
+    ds_list_add(monster_kamikaze_1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
     
     monster_kamikaze_2 = ds_list_create();
     ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
@@ -115,92 +110,41 @@ event_inherited();
     
     spooky_shooters_3 = ds_list_create();
     ds_list_add(spooky_shooters_3, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
-    
+    */
 
 
 ///Create the pool depending on room
 
 enemyPool = ds_list_create();
 
-switch (global.currentDifficulty)
-{
-	case (K_DIFFICULTY_VERY_EASY) : 
-		ds_list_add(enemyPool, ducan_turtlesquad1_1, ducan_turtlesquad1_2, ducan_turtlesquad1_3, ducan_turtlesquad1_1, ducan_ducksquad1_1 );
-		break;
-		
-	case (K_DIFFICULTY_EASY) : 
-		ds_list_add(enemyPool, ducan_turtlesquad2_1, ducan_turtlesquad2_1, ducan_ducksquad2_1, ducan_ducksquad2_2, ducan_ducksquad2_3 );
-		break;
-		
-	case (K_DIFFICULTY_REGULAR) : 
-		ds_list_add(enemyPool, ducan_turtlesniper, ducan_turtlesquad3_1, ducan_ducksquad2_1, ducan_ducksquad2_2, ducan_ducksquad2_3 );
-		break;
-		
-	case (K_DIFFICULTY_HARD) : 
-		ds_list_add(enemyPool, ducan_ducksquad3_1, ducan_ducksquad3_1, ducan_ducksquad3_2, ducan_turtlesniper, ducan_turtlesquad3_1, ducan_turtlesquad3_1 );
-		break;
-		
-	case (K_DIFFICULTY_VERY_HARD) : 
-		ds_list_add(enemyPool, ducan_turtlesquad1_1 );
-		break;
-		
-	case (K_DIFFICULTY_EXTREME) : 
-		ds_list_add(enemyPool, ducan_turtlesquad1_1 );
-		break;
-		
-	case (K_DIFFICULTY_VERY_EXTREME) : 
-		ds_list_add(enemyPool, ducan_turtlesquad1_1 );
-		break;
-		
-	case (K_DIFFICULTY_LEGENDARY) : 
-		ds_list_add(enemyPool, ducan_turtlesquad1_1 );
-		break;
-		
-	default : //Ascendant or higher
-		ds_list_add(enemyPool, ducan_turtlesquad1_1 );
-}
+
+if (global.currentDifficulty <= K_DIFFICULTY_EASY) 
+	ds_list_add(enemyPool, A1_1_smallTurtles, A1_1_smallTurtles, A1_1_smallTurtles, A1_3_oneDucanSquad, A1_2_smallTurtlesWithShotgun, A1_2_smallTurtlesWithShotgun );
+else if (global.currentDifficulty <= K_DIFFICULTY_HARD) 
+	ds_list_add(enemyPool, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_2_smgDuck, A2_2_smgDuck, A2_3_heavyPistolDuck ); 
+else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
+	ds_list_add(enemyPool, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_3_duckSquad, A3_3_duckSquad, A3_2_turtleSniper );
+else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
+	ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
+else 
+	ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
 
 ///Add everything to cleanUp list
 
 if (ds_exists(cleanUp,ds_type_list))
 {
-    ds_list_add(cleanUp, ducan_turtlesquad1_1);
-    ds_list_add(cleanUp, ducan_turtlesquad1_2);
-    ds_list_add(cleanUp, ducan_turtlesquad1_3);
-    ds_list_add(cleanUp, ducan_turtlesquad2_1);
-    ds_list_add(cleanUp, ducan_turtlesquad2_2);
-    ds_list_add(cleanUp, ducan_turtlesquad3_1);
-    ds_list_add(cleanUp, ducan_turtlesniper);
-    ds_list_add(cleanUp, ducan_ducksquad1_1);
-    ds_list_add(cleanUp, ducan_ducksquad1_2);
-    ds_list_add(cleanUp, ducan_ducksquad1_3);
-    ds_list_add(cleanUp, ducan_ducksquad2_1);
-    ds_list_add(cleanUp, ducan_ducksquad2_2);
-    ds_list_add(cleanUp, ducan_ducksquad2_3);
-    ds_list_add(cleanUp, ducan_ducksquad3_1);
-    ds_list_add(cleanUp, ducan_ducksquad3_2);
-    ds_list_add(cleanUp, monster_kamikaze_1);
-    ds_list_add(cleanUp, monster_kamikaze_2);
-    ds_list_add(cleanUp, monster_kamikaze_3);
-    
-    ds_list_add(cleanUp, elite_turtles);
-    ds_list_add(cleanUp, elite_plasma);
-    ds_list_add(cleanUp, elite_plasma_2);
-    ds_list_add(cleanUp, elite_shotgun);
-    ds_list_add(cleanUp, elite_squad_1);
-    ds_list_add(cleanUp, elite_squad_2);
-    ds_list_add(cleanUp, elite_sniper);
-    ds_list_add(cleanUp, elite_sniper_2);
-    ds_list_add(cleanUp, elite_rocket);
-    ds_list_add(cleanUp, elite_rocket_2);
-    ds_list_add(cleanUp, elite_rocket_3);
-    
-    ds_list_add(cleanUp, spooky_worms);
-    ds_list_add(cleanUp, spooky_zombies_1);
-    ds_list_add(cleanUp, spooky_zombies_2);
-    ds_list_add(cleanUp, spooky_shooters_1);
-    ds_list_add(cleanUp, spooky_shooters_2);
-    ds_list_add(cleanUp, spooky_shooters_3);
+    ds_list_add(cleanUp, A1_1_smallTurtles);
+    ds_list_add(cleanUp, A1_2_smallTurtlesWithShotgun);
+	ds_list_add(cleanUp, A1_3_oneDucanSquad);
+	ds_list_add(cleanUp, A2_1_advancedTurtles);
+	ds_list_add(cleanUp, A2_2_smgDuck);
+	ds_list_add(cleanUp, A2_3_heavyPistolDuck);
+	ds_list_add(cleanUp, A3_1_turtleMachinegunners);
+	ds_list_add(cleanUp, A3_2_turtleSniper);
+	ds_list_add(cleanUp, A3_3_duckSquad);
+	ds_list_add(cleanUp, A4_1_turtleBigMachinegunSquad);
+	ds_list_add(cleanUp, A4_2_duckAssaultRifle);
+	ds_list_add(cleanUp, A4_3_duckRocket);
     
     ds_list_add(cleanUp, enemyPool);
 }

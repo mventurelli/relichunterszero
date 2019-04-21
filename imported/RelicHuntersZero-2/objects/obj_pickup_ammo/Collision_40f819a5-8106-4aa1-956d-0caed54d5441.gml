@@ -9,6 +9,7 @@ if (vertical_speed_start < interactive_speed) && (instance_exists(other)) &&  (i
 		if (global.ammo_light[p] < global.ammo_light_max) 
 		{ 
 			global.ammo_light[p] += myAmmo; 
+			if (global.gameMode == gamemode_storm) global.ammo_light[p] += myAmmo*2;
 		} 
 		else 
 		{
@@ -20,6 +21,7 @@ if (vertical_speed_start < interactive_speed) && (instance_exists(other)) &&  (i
 		if (global.ammo_medium[p] < global.ammo_medium_max) 
 		{ 
 			global.ammo_medium[p] += myAmmo; 
+			if (global.gameMode == gamemode_storm) global.ammo_medium[p] += myAmmo*2;
 		} 
 		else 
 		{
@@ -31,6 +33,7 @@ if (vertical_speed_start < interactive_speed) && (instance_exists(other)) &&  (i
 		if (global.ammo_heavy[p] < global.ammo_heavy_max) 
 		{ 
 		global.ammo_heavy[p] += myAmmo; 
+		if (global.gameMode == gamemode_storm) global.ammo_heavy[p] += myAmmo*2;
 		} 
 		else {
 			isAmmoFull = true;

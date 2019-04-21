@@ -92,13 +92,17 @@
         }
     }
 	
-	if (global.gameMode == gamemode_storm)
+	//if (global.gameMode == gamemode_storm)
 	{
 		global.currentDifficulty = K_DIFFICULTY_VERY_EASY;	
 		global.difficultyTimeCurrent = 0;
+		show_debug_message("Rodei o Char State Initial");
 	}
+	
+	
+	
     
-    //Clean Challenges (even for Adventure Mode, to avoid issues
+    //Clean Challenges (even for Adventure Mode, to avoid issues)
     global.challengeWanted = 0;
     global.challengeSteroids = 0;
     global.challengeHighTech = 0;

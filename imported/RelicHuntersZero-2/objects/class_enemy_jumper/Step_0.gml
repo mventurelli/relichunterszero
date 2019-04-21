@@ -294,7 +294,7 @@ if (myEnemy) && (damage_timer_current >= damage_timer) && instance_exists_fast(m
     if (!myEnemy.dodging)
     {
         var originalDamage = damage;
-        
+        damage = round(damage*global.damageMultiplier);
         damage_timer_current = 0;
         
         if (myEnemy.energy)

@@ -1,8 +1,13 @@
-///Buy
+///Open if you have money
 
-priceCurrent = priceArray [ min(priceTier,9) ];
+if (!canActivate) {
+    if (activateTimeCurrent < activateTime) activateTimeCurrent += delta_time;
+    else canActivate = true;
+}
 
-if (activationClient != noone)
+// <---------------- Set priceCurrent dynamically?
+
+if (activationClient != noone) && (canActivate)
 {
     var displayWarning = false;
     
@@ -12,15 +17,9 @@ if (activationClient != noone)
     {
         if (global.bountyEndless >= priceCurrent)
         {
-            if (canActivate)
-            {
-                global.bountyEndless -= priceCurrent;
-                unlock = true;
-                audio_play(activationClient.audio_emitter,false,1,sfx_buy);
-                priceTier++;
-                global.hasPurchasedAnything = true;
-            }
-            else displayWarning = true;
+			global.bountyEndless -= priceCurrent;
+            unlock = true;
+            audio_play(activationClient.audio_emitter,false,1,sfx_buy);
         }
         else{
             displayWarning = true;
@@ -33,8 +32,3 @@ if (activationClient != noone)
         audio_play(activationClient.audio_emitter, false, 1, sfx_pickup_full);
     }
 }
-
-//Animation
-if (in_range) image_index = 1;
-else image_index = 0;
-

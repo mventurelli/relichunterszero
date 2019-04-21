@@ -46,6 +46,12 @@ ai_target_change = 2000000;//room_speed*2;
 ai_target_change_current = ai_target_change;
 ai_shutdown_range = 1000;
 
+if (global.gameMode == gamemode_storm)
+{
+	aiActivationTimeCurrent = aiActivationTime;
+	ai_shutdown_range = 999999;
+}
+
 ai_state = "PATROL";
 ai_patrol_range = 400;
 ai_patrol_max = 600;

@@ -25,7 +25,6 @@ var p = 1; while (p <= global.playerCount)
 ///Storm Mode Difficulty Update
 if (!global.pauseMenu) difficulty_update();
 
-
 ///Level Instantiator
 if (!level_built)
 {
@@ -91,9 +90,33 @@ if (!level_built)
 	{
 		enemyData = instance_create_layer(0,0,"Controllers",data_enemiesStorm);
         itemData = instance_create_layer(0,0,"Controllers",data_itemsStorm);
+		instance_create_layer(0,0,"Controllers",data_chestItemsStorm);
         
         enemy_pool = enemyData.enemyPool;
         item_pool = itemData.itemPool;
+		
+		if instance_exists(obj_gunnarSpawn)
+		{
+			var gunnarCount = instance_number(obj_gunnarSpawn);	
+			var randomGunnar = irandom(gunnarCount-1);
+			var chosenGunnarSpawn = instance_find(obj_gunnarSpawn,randomGunnar);
+			if (instance_exists(chosenGunnarSpawn)) instance_create_layer(chosenGunnarSpawn.x,chosenGunnarSpawn.y,"Interactive",obj_gunnar);
+			with (obj_gunnarSpawn) instance_destroy();
+		}
+		
+		var chestSpawnNumber = 10;
+		while (instance_exists(obj_chestSpawn) && chestSpawnNumber>0 )
+		{	
+			var chestCount = instance_number(obj_chestSpawn);	
+			var randomChest = irandom(chestCount-1);
+			var chosenChestSpawn = instance_find(obj_chestSpawn,randomChest);
+			if (instance_exists(chosenChestSpawn)) instance_create_layer(chosenChestSpawn.x,chosenChestSpawn.y,"Interactive",obj_chestStorm);
+			with (chosenChestSpawn) instance_destroy();
+			chestSpawnNumber--;
+		}
+		if (!chestSpawnNumber) with (obj_chestSpawn) instance_destroy();
+		
+		
 	}
     
         //Resolve Enemies
@@ -949,7 +972,7 @@ if (global.survivalWaves)
 		if (instance_number(class_enemy) < global.maxSpawns) 
 		{
 			global.spawnTimeCurrent += delta_time * ms_to_s;
-			if (global.spawnTimeCurrent >= global.spawnTime) if (instance_exists(class_player)) 
+			if (global.spawnTimeCurrent >= global.spawnTime) || (global.initialWaveSpawns > 0) if (instance_exists(class_player)) 
 			{
 				global.spawnTimeCurrent = 0;
 				if (ds_exists(enemy_pool,ds_type_list)) 
@@ -960,8 +983,18 @@ if (global.survivalWaves)
 					var spawnList = ds_list_create();
 					var playerX = class_player.x;
 					var playerY = class_player.y;
-					var minDistFromPlayer = 720;
-					var maxDistFromPlayer = 1200;
+					
+					var minDistFromPlayer = 500;
+					var maxDistFromPlayer = 900;
+					
+					if (global.initialWaveSpawns > 0)
+					{
+						minDistFromPlayer = 800;
+						maxDistFromPlayer = 1500;
+						global.initialWaveSpawns--;
+					}
+					
+					
 					for (var s=0; s<instance_number(obj_spawn_enemy); s++)
 					{
 						var spawnCandidate = instance_find(obj_spawn_enemy,s);
@@ -1024,9 +1057,6 @@ if (global.survivalWaves)
 	                    list_position = ds_list_size(current_group)-1;
 	                    spawnee = ds_list_find_value(current_group, list_position);
 	                    spawnedEnemy = instance_create_layer(spawnX,spawnY,"Interactive",spawnee);
-                    
-	                    spawnedEnemy.ai_activation_range = 2000;
-	                    spawnedEnemy.ai_shutdown_range = 2000;
                     
 	                    ds_list_delete(current_group,list_position);
 	                }

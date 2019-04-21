@@ -78,51 +78,36 @@ if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global
 
 itemPool = ds_list_create();
 
-if (!global.currentLoop){
-    ds_list_add(itemPool, 
-        item_endlessAmmo_1, 
-        item_endlessAmmo_1,
+if (room == level_storm_1)  {
+    ds_list_add(itemPool,
 		item_endlessAmmo_1,
-        item_endlessTrash, 
-        item_endlessAid_1,
-		item_endlessAid_1
-    );
-}
-else{
-    ds_list_add(itemPool, 
-        item_endlessAmmo_1, 
-        item_endlessAmmo_1,
 		item_endlessAmmo_1,
-        item_endlessAmmo_1,
-        item_endlessTrashPlus, 
-        item_endlessAid_1,
-		item_endlessAid_1
-    );
-}
-
-if (room == room_boss){
-    ds_list_add(itemPool, 
-        item_endlessAmmo_1, 
-        item_endlessAmmo_1,
-        item_endlessAmmo_1,
-        item_endlessAmmo_1,
-        item_endlessAmmo_1,
-        item_endlessAmmo_1,
-        item_endlessAmmo_1,
 		item_endlessAmmo_1,
-        item_endlessTrashPlus, 
-        item_endlessTrashPlus, 
-        item_endlessTrashPlus, 
-        item_endlessAid_1,
-        item_endlessAid_1,
-        item_endlessAid_1,
-        item_endlessAid_1,
-        item_endlessAid_1
-    );
-}
-
-if (room == levelHalloween_1) || (room == levelHalloween_2) {
-    ds_list_add(itemPool,item_endlessAmmo_1,item_endlessAmmo_1,item_endlessAmmo_1,item_endlessAmmo_1);
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAmmo_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessAid_1,
+		item_endlessTrash,
+		item_endlessTrash,
+		item_endlessTrash,
+		item_endlessTrash,
+		item_endlessTrash
+	);
 }
 
 ///Add everything to cleanUp list

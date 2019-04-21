@@ -2,7 +2,8 @@
 
 if (vertical_speed_start < interactive_speed) && (instance_exists(other))
 {
-    global.scrapEndless += scrapValue;    
+    global.scrapEndless += scrapValue;  
+	if (global.gameMode == gamemode_storm) global.scrapEndless += scrapValue;  
     global.dynamicBounty.timedActive = true;
     if audio_emitter_exists(other.audio_emitter) audio_play(other.audio_emitter, false, 1, eatSfx1, eatSfx2, eatSfx3);
     

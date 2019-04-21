@@ -567,6 +567,14 @@
             }
         },
         {
+            "Key": "08f956cd-1c07-445d-aebe-ecea02b9aa51",
+            "Value": {
+                "id": "a204db00-23cf-4440-9600-59e13142cfda",
+                "resourcePath": "views\\08f956cd-1c07-445d-aebe-ecea02b9aa51.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "08fac656-ca75-42a2-a214-4d3828f7856a",
             "Value": {
                 "id": "79382127-83aa-4204-bed9-bcc4b79577af",
@@ -2643,6 +2651,14 @@
             "Value": {
                 "id": "f2904ea8-43cf-4054-a2e9-aa06e7791571",
                 "resourcePath": "objects\\obj_shop_highmag\\obj_shop_highmag.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2615dae3-e65c-49c6-8e53-5fee84b43cb8",
+            "Value": {
+                "id": "fec47b2e-d248-4c7d-8613-d48c2a2cbd27",
+                "resourcePath": "objects\\obj_chestSpawn\\obj_chestSpawn.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6951,6 +6967,14 @@
             }
         },
         {
+            "Key": "67950bc3-1af3-46ac-952a-042f48a2ee0c",
+            "Value": {
+                "id": "bca4ee7e-22af-4efa-bafb-9d076279f9dd",
+                "resourcePath": "objects\\obj_gunnarSpawn\\obj_gunnarSpawn.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "679e92ef-d01b-443d-9702-72ff0271d01e",
             "Value": {
                 "id": "72193cee-634c-4091-9a47-cd2d7253697d",
@@ -7251,6 +7275,14 @@
             "Value": {
                 "id": "804d78a2-6dc0-47ce-9331-dfae36b455e5",
                 "resourcePath": "objects\\class_gui_floaty\\class_gui_floaty.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6c9238af-06a7-4665-a1f9-e65db7edcb03",
+            "Value": {
+                "id": "143764de-cccd-4b2a-9de1-79410d7fa533",
+                "resourcePath": "objects\\obj_chestStorm\\obj_chestStorm.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -16612,6 +16644,14 @@
                 "id": "49124a82-2b07-4348-b986-2bfbd76f603d",
                 "resourcePath": "fonts\\ftKR_numberSmall\\ftKR_numberSmall.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "faf5d0f6-916c-4b27-a4c4-ca4144d7c329",
+            "Value": {
+                "id": "c5eaf19d-1014-47cc-8bd5-5c23fdd7bcd6",
+                "resourcePath": "objects\\data_chestItemsStorm\\data_chestItemsStorm.yy",
+                "resourceType": "GMObject"
             }
         },
         {
