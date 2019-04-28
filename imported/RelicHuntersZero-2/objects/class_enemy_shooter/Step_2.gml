@@ -80,7 +80,7 @@ else {
 
 	///Anti-Bug: Destroy If Inside Wall
 
-	if collision_point(x,y,obj_limit,false,true)
+	if (!isBoss) if collision_point(x,y,obj_limit,false,true)
 	{
 	    myCorpse = instance_create_layer(x,y,"Interactive",fx_corpse);
 	    myCorpse.image_xscale = image_xscale;

@@ -2,7 +2,7 @@ event_inherited();
 sound = "machinegun";
 ammo_type = type_enemy;
 
-projectile_speed = 14;
+projectile_speed = 11;
 projectile_speed_decay = 0;
 projectile_damage = 7;
 projectile_range = 560;

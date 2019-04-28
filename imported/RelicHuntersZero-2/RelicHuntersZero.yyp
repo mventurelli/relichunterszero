@@ -4271,14 +4271,6 @@
             }
         },
         {
-            "Key": "3dc48d95-6216-46d5-99e4-d5a7d4ed3ddb",
-            "Value": {
-                "id": "3039b9c9-3587-4b9e-8ba9-6302fd52de9a",
-                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "3dc7bfac-6181-43a9-a249-c99b01034fd0",
             "Value": {
                 "id": "28f93e69-1bc8-4f06-a4f6-1eb5516e30d1",
@@ -5788,6 +5780,14 @@
                 "id": "35d75959-9673-43c1-9dc6-54d6f5769c7e",
                 "resourcePath": "objects\\obj_grenadeKami\\obj_grenadeKami.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "563a06d7-a31d-475f-bcb2-b00b71263fca",
+            "Value": {
+                "id": "40145200-211c-401a-83db-3285a08937cf",
+                "resourcePath": "rooms\\level_storm_3\\level_storm_3.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -7871,6 +7871,14 @@
             }
         },
         {
+            "Key": "75dbde84-3f3c-4913-a828-cbb921baeb50",
+            "Value": {
+                "id": "be1bf6f5-fd00-4c62-9dd8-cf905d3d5ac2",
+                "resourcePath": "objects\\obj_bossTeleporterSpawn\\obj_bossTeleporterSpawn.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "75e58497-4097-4850-85c6-00f58092cbef",
             "Value": {
                 "id": "f81c20e9-d40f-4093-8bf5-14715066ea60",
@@ -8119,6 +8127,14 @@
             }
         },
         {
+            "Key": "78f57e80-062c-4778-8cc5-fe1614fc66af",
+            "Value": {
+                "id": "f8a8441a-30f3-4a09-bb55-d6759f475eac",
+                "resourcePath": "objects\\obj_krekStorm\\obj_krekStorm.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "78fb4259-4ad7-4f63-ac6c-261359488743",
             "Value": {
                 "id": "808db19a-b435-43e3-8d2a-31925c29affd",
@@ -8267,6 +8283,14 @@
             "Value": {
                 "id": "ccc8d518-7a6f-4fee-b430-e91ccd3eb643",
                 "resourcePath": "views\\7abd9119-05de-4ea7-9942-9c04fae7a616.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7adcdc30-636b-4e7f-bc79-84fd761a0846",
+            "Value": {
+                "id": "80f0e722-e77d-43c9-a6b7-6c1e0efd3e82",
+                "resourcePath": "views\\7adcdc30-636b-4e7f-bc79-84fd761a0846.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -8532,6 +8556,14 @@
                 "id": "cf8b940e-40cf-48ab-9f90-47951f9b2b1f",
                 "resourcePath": "objects\\fx_bigMessage\\fx_bigMessage.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7f5c444c-e785-44db-b320-d96959f66ec1",
+            "Value": {
+                "id": "fb5f5dd8-3a34-4521-b456-39ac8d6b3be1",
+                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -9315,6 +9347,14 @@
             "Value": {
                 "id": "769ce3d0-9c00-4888-962e-4d60770911c8",
                 "resourcePath": "objects\\class_endShop_weapon\\class_endShop_weapon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8cb2b27a-869e-4472-aae5-8f73f991b4ac",
+            "Value": {
+                "id": "e3db3dbb-0cf3-4c6d-98a6-58c98774bcfa",
+                "resourcePath": "objects\\obj_bossTeleporter\\obj_bossTeleporter.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -11895,6 +11935,14 @@
             }
         },
         {
+            "Key": "b49f65fc-85fc-4218-84a8-c596da7014c8",
+            "Value": {
+                "id": "6264f0c6-2a42-4d3f-b7a6-e100d613a3e8",
+                "resourcePath": "objects\\fx_enemyTeleport\\fx_enemyTeleport.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b4a2bd33-63ed-4c46-95c6-27f954f3310f",
             "Value": {
                 "id": "3a5b7a8e-f4c9-45fb-95d3-d26ecf315f38",
@@ -13327,6 +13375,14 @@
             }
         },
         {
+            "Key": "ca61d414-6e28-44f2-84cb-7d8067091109",
+            "Value": {
+                "id": "7bd07770-0a98-44e2-8c8c-1eefe2d3ecda",
+                "resourcePath": "rooms\\level_storm_2\\level_storm_2.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "ca714ec2-c505-4809-a5d1-85934041255f",
             "Value": {
                 "id": "6f7a8a6e-36c7-4053-bfde-1a3fd91251e6",
@@ -14332,6 +14388,14 @@
                 "id": "18beb8dc-2a9f-4c63-aaf5-56580f463362",
                 "resourcePath": "sprites\\spr_tp_stage4\\spr_tp_stage4.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "da7f07b2-3add-4282-830d-916fc80e5ed7",
+            "Value": {
+                "id": "b496d6aa-d308-49e7-9a96-ab7bf52d59df",
+                "resourcePath": "rooms\\level_storm_4\\level_storm_4.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

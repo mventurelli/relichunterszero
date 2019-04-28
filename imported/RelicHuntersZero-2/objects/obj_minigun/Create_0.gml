@@ -7,7 +7,7 @@ rarityColor = rarity_get_color(rarity);
 gui_info_weapon_create(instance_nearest(x,y,class_player),rarityColor,name);
 
 object = obj_minigun;
-shake_amount = 5;
+shake_amount = 4;
 projectile_speed = 50;
 projectile_speed_decay = 0.3;
 projectile_damage = 14;
@@ -24,8 +24,8 @@ reload_time = 4200000;
 fire_rate = 300000;
 fire_automatic = true;
 
-fireRateDecay = -20000;
-fireRateDecayRecovery = 2000;
+fireRateDecay = -40000;
+fireRateDecayRecovery = 1500;
 fireRateDecayMin = -250000;
 fireRateDecayMax = 0;
 

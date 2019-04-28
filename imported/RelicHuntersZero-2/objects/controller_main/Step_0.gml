@@ -104,6 +104,15 @@ if (!level_built)
 			with (obj_gunnarSpawn) instance_destroy();
 		}
 		
+		if instance_exists(obj_bossTeleporterSpawn)
+		{
+			var teleCount = instance_number(obj_bossTeleporterSpawn);	
+			var randomTele = irandom(teleCount-1);
+			var chosenTeleSpawn = instance_find(obj_bossTeleporterSpawn,randomTele);
+			if (instance_exists(chosenTeleSpawn)) instance_create_layer(chosenTeleSpawn.x,chosenTeleSpawn.y,"Interactive",obj_bossTeleporter);
+			with (obj_bossTeleporterSpawn) instance_destroy();
+		}
+		
 		var chestSpawnNumber = 10;
 		while (instance_exists(obj_chestSpawn) && chestSpawnNumber>0 )
 		{	
@@ -249,34 +258,37 @@ if (!(room == room_start)) && (!(room == room_tutorial)) && (!(room == room_shop
 	
     if ((!instance_exists(class_enemy)) && (!instance_exists(obj_kamikazelite_flying)) && (instance_exists(class_player)) && (!global.survivalWaves) && (!level_end)) || (debug_forceLevelExit && !level_end)
     {
-        //Instantiates Ass
-		if (!instance_exists(obj_ass)) {
-	        var tries;
-	        tries=0;
-	        while (!level_end)
-	        {
-	            randomX = class_player.x + irandom_range(-100,100);
-	            randomY = class_player.y + irandom_range(-100,100);
+        //Instantiates Ace
+		if (global.gameMode != gamemode_storm)
+		{
+			if (!instance_exists(obj_ass)) {
+		        var tries;
+		        tries=0;
+		        while (!level_end)
+		        {
+		            randomX = class_player.x + irandom_range(-100,100);
+		            randomY = class_player.y + irandom_range(-100,100);
             
-	            if collision_circle(randomX,randomY,63,class_solid,false,true) < 0
-	            {
-	                level_end = true
-	            }
-	            tries++;
-	            if (tries >= 10)
-	            {
-	                randomX = class_player.x;
-	                randomY = class_player.y;
-	                level_end = true;
-	            }
-	        }
-	        ass = instance_create_layer(randomX,randomY,"Interactive", obj_ass);   
+		            if collision_circle(randomX,randomY,63,class_solid,false,true) < 0
+		            {
+		                level_end = true
+		            }
+		            tries++;
+		            if (tries >= 10)
+		            {
+		                randomX = class_player.x;
+		                randomY = class_player.y;
+		                level_end = true;
+		            }
+		        }
+		        ass = instance_create_layer(randomX,randomY,"Interactive", obj_ass);   
+			}
 		}
+		else level_end = true;
  
-		
-        if (global.gameMode == gamemode_adventure)
+		//Revives any dead player
+        if (global.gameMode != gamemode_endless)
         {
-            //Revives any dead player
             var revivePlayerX = class_player.x;
             var revivePlayerY = class_player.y;
             
@@ -317,8 +329,10 @@ if (!(room == room_start)) && (!(room == room_tutorial)) && (!(room == room_shop
                 }
                 p++;
             }
-        
-        
+		}
+		
+        if (global.gameMode == gamemode_adventure)
+		{
             //RELIC DETECTED!!!
             global.dirtColor = c_white;
             
@@ -491,8 +505,6 @@ if (global.level_complete)
 
     if (room == room_shop) || (room == room_start) || (room == room_endShop)
     {
-        //Test boss: room_goto(room_boss); exit;  
-        //Test halloween: room_goto(levelHalloween_1); exit; 
         if (global.stage_current == 0) room_goto(level1_1);
         else if (global.stage_current == 1) room_goto(level2_1);
         else if (global.stage_current == 2) room_goto(level3_1);
@@ -547,6 +559,8 @@ if (global.level_complete)
         }
     }
     
+	//
+	
     if room_exists(room_next(room)) room_goto_next();
     else room_goto(room == room_start);
     
@@ -801,7 +815,7 @@ if (global.gameOver)
                 }
             }
             
-            if (global.gameMode == gamemode_endless){
+            if (global.gameMode == gamemode_endless) || (global.gameMode == gamemode_storm) {
                 var randomHint = irandom_range(1,7);
                 switch (randomHint){
                     case 1: gameOverHint = loc_key("TIPS_ENDLESS1"); break;
@@ -860,7 +874,8 @@ if (global.gameOver)
         if (wantToRestart) && (!global.isDaily)
         {
             if (global.gameMode == gamemode_adventure) room_goto(room_start);
-            else room_goto(level1_1);
+            else if (global.gameMode == gamemode_endless) room_goto(level1_1);
+			else room_goto(level_storm_1);
         }
         else if (wantToQuit) || (global.isDaily)
         {
@@ -938,6 +953,7 @@ if (timeCounter >= room_speed)
 ///Edge Tracking for Enemies
 
 var maxEdgeTrackingDistance = 1000;
+if (global.gameMode == gamemode_storm) if (global.stormPhase == K_STORMPHASE_KILL) maxEdgeTrackingDistance = 5000;
 
 if (!ds_exists(global.edgeTrackEnemyList,ds_type_list)) global.edgeTrackEnemyList = ds_list_create();
 ds_list_clear(global.edgeTrackEnemyList);
@@ -966,10 +982,10 @@ if (instance_exists(class_enemy))
 ///Spawn Waves
 if (global.survivalWaves) 
 {
-	if (!global.pauseMenu) if (global.gameMode == gamemode_storm)	
+	if (!global.pauseMenu) if (global.gameMode == gamemode_storm) && (global.stormPhase != K_STORMPHASE_KILL) && (global.stormPhase != K_STORMPHASE_CLEAR) 
 	{
 		// Spawn enemies for Storm
-		if (instance_number(class_enemy) < global.maxSpawns) 
+		if (instance_number(class_enemy) < global.maxSpawns)
 		{
 			global.spawnTimeCurrent += delta_time * ms_to_s;
 			if (global.spawnTimeCurrent >= global.spawnTime) || (global.initialWaveSpawns > 0) if (instance_exists(class_player)) 
@@ -989,8 +1005,8 @@ if (global.survivalWaves)
 					
 					if (global.initialWaveSpawns > 0)
 					{
-						minDistFromPlayer = 800;
-						maxDistFromPlayer = 1500;
+						minDistFromPlayer = 900;
+						maxDistFromPlayer = 2400;
 						global.initialWaveSpawns--;
 					}
 					
@@ -1015,9 +1031,8 @@ if (global.survivalWaves)
 							if collision_circle(sX,sY,40,class_solid,false,true) < 0 
 							{
 								var toSpawn = ds_list_find_value(currentGroup, i);
-								var spawnedAgent = instance_create_layer(sX,sY,"Interactive",toSpawn);
-								spawnedAgent.ai_activation_range = 3000;
-								spawnedAgent.ai_shutdown_range = 3000;
+								var spawnTeleport = instance_create_layer(sX,sY,"Interactive",fx_enemyTeleport);
+								spawnTeleport.enemy = toSpawn;
 							}
 						}
 						numberToSpawn--;
@@ -1077,4 +1092,22 @@ if (global.isDaily)
     global.dailyCompletedScore = global.scoreEndless;
 }
 
+///Update Storm Mode Timer
+if (global.gameMode == gamemode_storm)
+{
+	//**NOTE** BATTLE switches to TIMER on the activation event of the boss teleporter
+	if (global.stormPhase == K_STORMPHASE_TIMER) 
+	{
+		if (global.stormBossPhaseTimeCurrent < global.stormBossPhaseTime) global.stormBossPhaseTimeCurrent += delta_time * ms_to_s;
+		else {
+			global.stormBossPhaseTimeCurrent = 0;
+			global.stormPhase = K_STORMPHASE_KILL;
+		}
+	}
+	else if (global.stormPhase == K_STORMPHASE_KILL)
+	{
+		global.enemyCount = instance_number(class_enemy);
+		if (global.enemyCount <= 0) global.stormPhase = K_STORMPHASE_CLEAR;
+	}
+}
 //*/

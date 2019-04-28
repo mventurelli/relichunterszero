@@ -11,7 +11,8 @@
         "a7d986b8-ebb1-4ac4-b916-45caeca65994",
         "5892d820-a0c1-4475-8489-cff687cf0f58",
         "bd2c76ba-5dbd-4ddc-ae03-1c505e47c8de",
-        "cb4a515b-15a3-4aa0-9c76-78d4869a3923"
+        "cb4a515b-15a3-4aa0-9c76-78d4869a3923",
+        "7adcdc30-636b-4e7f-bc79-84fd761a0846"
     ],
     "filterType": "GMObject",
     "folderName": "Factions",

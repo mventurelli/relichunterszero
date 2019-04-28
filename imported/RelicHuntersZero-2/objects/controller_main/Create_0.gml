@@ -95,20 +95,20 @@ global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 20;
 global.spawnTimeByDifficulty[K_DIFFICULTY_EASY] = 20;
 global.spawnTimeByDifficulty[K_DIFFICULTY_REGULAR] = 16;
 global.spawnTimeByDifficulty[K_DIFFICULTY_HARD] = 16;
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 13;
-global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 13;
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 9;
-global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 8;
-global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 7;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 15;
+global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 15;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 15;
+global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 15;
+global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 12;
 
 global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
 global.spawnAmountByDifficulty[K_DIFFICULTY_EASY] = 2;
 global.spawnAmountByDifficulty[K_DIFFICULTY_REGULAR] = 2;
 global.spawnAmountByDifficulty[K_DIFFICULTY_HARD] = 2;
-global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_HARD] = 3;
-global.spawnAmountByDifficulty[K_DIFFICULTY_EXTREME] = 3;
-global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 3;
-global.spawnAmountByDifficulty[K_DIFFICULTY_LEGENDARY] = 3;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_HARD] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_EXTREME] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 2;
+global.spawnAmountByDifficulty[K_DIFFICULTY_LEGENDARY] = 2;
 global.spawnAmountByDifficulty[K_DIFFICULTY_ASCENDANT] = 3;
 
 global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
@@ -131,16 +131,13 @@ global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 1;
 global.healthMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 1.5;
 global.healthMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 2;
 
-global.spawnTime = global.spawnTimeByDifficulty[global.currentDifficulty];
-global.spawnTimeCurrent = 0;
-global.spawnAmount = global.spawnAmountByDifficulty[global.currentDifficulty];
-
 global.difficultyUpgradeTime = 120;
+global.initialWaveSpawns = 3;
+global.stormPhase = K_STORMPHASE_BATTLE;
+global.stormBossPhaseTime = 72;
+global.stormBossPhaseTimeCurrent = 0;
 
-global.damageMultiplier = difficulty_get_damage_multiplier();
-global.healthMultiplier = difficulty_get_health_multiplier();
-
-global.initialWaveSpawns = 4;
+global.enemyCount = 0;
 
 //Prices
 global.price_checkpoint1 = 1000;
@@ -764,6 +761,12 @@ if (room == level2_3) global.stage_current = 2;
 if (room == level3_3) global.stage_current = 3;
 if (room == level4_3) global.stage_current = 4;
 
+//Prepare STORM Variables
+global.spawnTime = global.spawnTimeByDifficulty[min(global.currentDifficulty,K_DIFFICULTY_ASCENDANT)];
+global.spawnTimeCurrent = 0;
+global.spawnAmount = global.spawnAmountByDifficulty[min(global.currentDifficulty,K_DIFFICULTY_ASCENDANT)];
+global.damageMultiplier = difficulty_get_damage_multiplier();
+global.healthMultiplier = difficulty_get_health_multiplier();
 
 //Prepare for Achievements
 if (room == room_start) global.hasPickedWeapon = false;

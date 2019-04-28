@@ -3,3 +3,4 @@
 
 owned = [];
 activated = [];
+isBoss = false;

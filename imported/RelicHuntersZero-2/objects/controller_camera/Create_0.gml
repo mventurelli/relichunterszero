@@ -8,7 +8,7 @@ weaponRange = 0;
 screen_shake = 0;
 shake_direction = 0;
 shake_recovery = 4;
-shake_max = 50;
+shake_max = 30;
 
 gameZoom = 1;
 zoom = gameZoom;

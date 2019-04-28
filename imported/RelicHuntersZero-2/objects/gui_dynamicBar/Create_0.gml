@@ -26,3 +26,5 @@ charBarDelayTime = 600000;//room_speed*0.6;
 healthColor = make_color_rgb(184,49,35);
 shieldColor = make_color_rgb(50,133,158);
 
+isBoss = false;
+

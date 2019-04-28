@@ -3,7 +3,7 @@ sound = "rifle";
 ammo_type = type_enemy;
 is_sniper = true;
 
-projectile_speed = 18;
+projectile_speed = 15;
 projectile_speed_decay = 0;
 projectile_damage = 9;
 projectile_range = 620;

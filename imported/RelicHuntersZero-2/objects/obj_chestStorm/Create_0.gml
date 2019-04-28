@@ -9,15 +9,22 @@ var diceRoll = random(1);
 var relicChance = 0.3;
 
 var uncommonDropChance = 0.40;
-var rareDropChance = 0.15;
-var epicDropChance = 0.05;
+var rareDropChance = 0.10;
+var epicDropChance = 0.03;
 
-priceCurrent = 200;
+priceCurrent = 250;
+if (room == level_storm_2) priceCurrent = 750;
+else if (room == level_storm_3) priceCurrent = 1250;
+else if (room == level_storm_4) priceCurrent = 2000;
 
 if (global.relic_rabbit_foot == 2) diceRoll -= 0.2;
 diceRoll -= global.entropy;
 
 if (diceRoll <= relicChance) { treasureType = "RELIC"; global.entropy = max(0,global.entropy-0.1); }
+
+diceRoll = random(1);
+if (global.relic_rabbit_foot == 2) diceRoll -= 0.2;
+diceRoll -= global.entropy;
 
 if (diceRoll <= epicDropChance) { treasureRarity = K_RARITY_EPIC; global.entropy = 0; }
 else if (diceRoll <= rareDropChance) { treasureRarity = K_RARITY_RARE; global.entropy = max(0,global.entropy-0.1); }

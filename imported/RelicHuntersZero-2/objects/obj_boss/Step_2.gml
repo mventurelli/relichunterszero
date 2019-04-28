@@ -21,8 +21,6 @@ if hp <= 0
         myCorpse.speed = push_speed*2 * delta_time * ms_to_s_60;
         myCorpse.direction = push_direction;
     }
-    
-    //audio_play(audio_emitter,false,1,sfx_duck_death);
 	
     instance_destroy();
 }

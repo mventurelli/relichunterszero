@@ -10,6 +10,7 @@ if (!surface_exists(guiSurface))
 {
     guiSurface = surface_create(1920,1080);
 }
+
 surface_set_target(guiSurface);
 draw_clear_alpha(c_white,0);
 
@@ -507,6 +508,24 @@ while (p <= global.playerCount)
     playerInstanceNumber++;
 }
 
+//Storm Mode Help Text
+if (global.gameMode == gamemode_storm)
+{
+	var stormHelpX = width*0.076;
+    var stormHelpY = height*0.15;
+	var stormHelpText = "";
+	
+	if (global.stormPhase == K_STORMPHASE_BATTLE) stormHelpText = loc_key("HUD_STORM_FIND_THE_TELEPORTER");
+	else if (global.stormPhase == K_STORMPHASE_TIMER) stormHelpText = loc_key("HUD_STORM_SURVIVE") + " " + string(round(global.stormBossPhaseTime-global.stormBossPhaseTimeCurrent));
+	else if (global.stormPhase == K_STORMPHASE_KILL) stormHelpText = loc_key("HUD_STORM_DEFEAT_ALL_ENEMIES") + " " + string(global.enemyCount) + " " + loc_key("HUD_STORM_DEFEAT_ALL_ENEMIES_LEFT");
+	else if (global.stormPhase == K_STORMPHASE_CLEAR) stormHelpText = loc_key("HUD_STORM_GO_THROUGH_TELEPORTER");
+	
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_font(global.font_numberMedium);
+	draw_text_dropshadow_ext_transformed(stormHelpX, stormHelpY, stormHelpText, c_white, c_black, 0.7, 2, 1, 1, 0, main_hud_alpha);
+}
+
 //Dynamic Bounty
 draw_set_halign(fa_right);
 draw_set_valign(fa_center);
@@ -553,28 +572,6 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 var relicTextSep = 30;
 var relicTextWidth = 132;
-/*
-if (instance_exists(gui_dynamic_relic1)) 
-{
-    if (sprite_exists(gui_dynamic_relic1.sprite_index)) draw_sprite(gui_dynamic_relic1.sprite_index,gui_dynamic_relic1.image_index, dynamicRelicX1+gui_dynamic_relic1.offsetX, dynamicRelicY+gui_dynamic_relic1.offsetY); 
-    if (sprite_exists(gui_dynamic_relic1.mySprite)) draw_sprite_ext(gui_dynamic_relic1.mySprite,0, (dynamicRelicX1 +gui_dynamic_relic1.offsetX +offsetRelicSpriteX), (dynamicRelicY +gui_dynamic_relic1.offsetY +offsetRelicSpriteY),1.5,1.5,0,c_white,main_hud_alpha); 
-    draw_text_ext((dynamicRelicX1 +gui_dynamic_relic1.offsetX +offsetRelicStringX), (dynamicRelicY +gui_dynamic_relic1.offsetY +offsetRelicStringY), string_hash_to_newline(gui_dynamic_relic1.myString), relicTextSep, relicTextWidth );
-}
-
-if (instance_exists(gui_dynamic_relic2))
-{
-    if (sprite_exists(gui_dynamic_relic2.sprite_index)) draw_sprite(gui_dynamic_relic2.sprite_index,gui_dynamic_relic2.image_index, dynamicRelicX2+gui_dynamic_relic2.offsetX, dynamicRelicY+gui_dynamic_relic2.offsetY);
-    if (sprite_exists(gui_dynamic_relic2.mySprite)) draw_sprite_ext(gui_dynamic_relic2.mySprite,0, (dynamicRelicX2 +gui_dynamic_relic2.offsetX +offsetRelicSpriteX), (dynamicRelicY +gui_dynamic_relic2.offsetY +offsetRelicSpriteY),1.5,1.5,0,c_white,main_hud_alpha);
-    draw_text_ext((dynamicRelicX2 +gui_dynamic_relic2.offsetX +offsetRelicStringX), (dynamicRelicY +gui_dynamic_relic2.offsetY +offsetRelicStringY), string_hash_to_newline(gui_dynamic_relic2.myString), relicTextSep, relicTextWidth );
-}
-
-if (instance_exists(gui_dynamic_relic3)) 
-{
-    if (sprite_exists(gui_dynamic_relic3.sprite_index))  draw_sprite(gui_dynamic_relic3.sprite_index,gui_dynamic_relic3.image_index, dynamicRelicX3+gui_dynamic_relic3.offsetX, dynamicRelicY+gui_dynamic_relic3.offsetY);
-    if (sprite_exists(gui_dynamic_relic3.mySprite)) draw_sprite_ext(gui_dynamic_relic3.mySprite,0, (dynamicRelicX3 +gui_dynamic_relic3.offsetX +offsetRelicSpriteX), (dynamicRelicY +gui_dynamic_relic3.offsetY +offsetRelicSpriteY),1.5,1.5,0,c_white,main_hud_alpha); 
-    draw_text_ext((dynamicRelicX3 +gui_dynamic_relic3.offsetX +offsetRelicStringX), (dynamicRelicY +gui_dynamic_relic3.offsetY +offsetRelicStringY), string_hash_to_newline(gui_dynamic_relic3.myString), relicTextSep, relicTextWidth );
-}
-*/
 
 //Show Challenges on Pause Menu
 if (global.pauseMenu) && (global.gameMode == gamemode_endless)

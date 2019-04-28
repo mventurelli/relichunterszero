@@ -7,7 +7,7 @@ myHomingTargetClass = class_player;
 sound = "smg";
 ammo_type = type_enemy;
 
-projectile_speed = 24;
+projectile_speed = 20;
 projectile_speed_decay = 0.2;
 projectile_damage = 7;
 projectile_range = 450;

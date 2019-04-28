@@ -46,9 +46,12 @@ if (faction == f_player) /*&& instance_exists(other)*/
         }
         other.hit_taken = true;
         
-        other.pushed = true;
-        other.push_direction = direction;
-        other.push_speed += push_power;
+		if (!other.isBoss)
+		{
+	        other.pushed = true;
+	        other.push_direction = direction;
+	        other.push_speed += push_power;
+		}
         
         bloodAmount = round(damage/15);
         

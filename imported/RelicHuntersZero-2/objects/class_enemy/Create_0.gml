@@ -20,7 +20,6 @@ shield = false;
 
 myDynamicBar = instance_create_layer(x,y,"Interactive_Over",gui_dynamicBarEnemy);
 owner_add_owned_instance(myDynamicBar);
-//myDynamicBar.owner = id;
 
 pushed = false;
 push_direction = 0;
@@ -33,3 +32,4 @@ ai_target = noone;
 
 //Audio
 audio_emitter = 0;
+

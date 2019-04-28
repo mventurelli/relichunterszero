@@ -4,6 +4,8 @@ if (owner != noone) && (myAlpha > 0) //TODO: separate the update from the draw a
 {
     var topX = owner.x - barWidth/2;
     var topY = owner.y - 90;
+	
+	if (owner.isBoss) topY -= 45;
 
     draw_set_alpha(0.6 * myAlpha);
     draw_set_colour(c_black);
