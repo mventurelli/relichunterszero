@@ -6,23 +6,23 @@ mySpawnY = y;
 elite = true;
 isBoss = true;
 
-var baseHp = 5000;
-var baseEnergy = 400;
+var baseHp = 4000;
+var baseEnergy = 300;
 
 if (room == level_storm_2)
 {
-	baseHp = 20000;
-	baseEnergy = 800;
+	baseHp = 16000;
+	baseEnergy = 400;
 }
 else if (room == level_storm_3)
 {
-	baseHp = 40000;
-	baseEnergy = 800;
+	baseHp = 30000;
+	baseEnergy = 600;
 }
 else if (room == level_storm_4)
 {
-	baseHp = 60000;
-	baseEnergy = 1000;
+	baseHp = 40000;
+	baseEnergy = 700;
 }
 
 energy_max = baseEnergy;

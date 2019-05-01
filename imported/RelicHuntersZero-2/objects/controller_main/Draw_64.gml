@@ -508,9 +508,10 @@ while (p <= global.playerCount)
     playerInstanceNumber++;
 }
 
-//Storm Mode Help Text
+//Storm Mode
 if (global.gameMode == gamemode_storm)
 {
+	//Help Text
 	var stormHelpX = width*0.076;
     var stormHelpY = height*0.15;
 	var stormHelpText = "";
@@ -524,6 +525,53 @@ if (global.gameMode == gamemode_storm)
 	draw_set_valign(fa_top);
 	draw_set_font(global.font_numberMedium);
 	draw_text_dropshadow_ext_transformed(stormHelpX, stormHelpY, stormHelpText, c_white, c_black, 0.7, 2, 1, 1, 0, main_hud_alpha);
+	
+	//Difficulty Bar
+    var diffBarTopX = width*0.43;
+	var diffBarTopY = height*0.87;
+	var diffBarWidthSingle = 32;
+	var diffBarWidthSpacing = 4;
+	var diffBarWidthTotal = (diffBarWidthSingle+diffBarWidthSpacing)*9;
+	var diffBarHeight = 16;
+	var diffBackBarOffset = 6;
+	var diffBarColorFull = make_color_rgb(144,18,233);
+	var diffBarColorFilling = make_color_rgb(100,27,166);
+	var diffBackColor = make_color_rgb(73,62,34);
+	
+	draw_rectangle_color(diffBarTopX+diffBackBarOffset, diffBarTopY+diffBackBarOffset, diffBarTopX+diffBarWidthTotal+diffBackBarOffset, diffBarTopY+diffBarHeight+diffBackBarOffset,diffBackColor,diffBackColor,diffBackColor,diffBackColor,false);
+	
+	for (i=0; i<=global.currentDifficulty; i++)
+	{	
+		if (i > K_DIFFICULTY_ASCENDANT) break;
+		
+		if (i != global.currentDifficulty)
+			draw_healthbar(diffBarTopX+(i*(diffBarWidthSingle+diffBarWidthSpacing)),diffBarTopY,diffBarTopX+diffBarWidthSingle+(i*(diffBarWidthSingle+diffBarWidthSpacing)),diffBarTopY+diffBarHeight,100,c_black,diffBarColorFull,diffBarColorFull, 0, false, false);
+		else 	
+			draw_healthbar(diffBarTopX+(i*(diffBarWidthSingle+diffBarWidthSpacing)),diffBarTopY,diffBarTopX+diffBarWidthSingle+(i*(diffBarWidthSingle+diffBarWidthSpacing)),diffBarTopY+diffBarHeight,((global.difficultyTimeCurrent-(global.currentDifficulty*global.difficultyUpgradeTime))/global.difficultyUpgradeTime)*100,c_black,diffBarColorFilling,diffBarColorFilling, 0, false, false);
+	}
+
+	var difficultySpriteOffsetX = -31;
+	var difficultySpriteOffsetY = 18;
+	draw_sprite(spr_challengeCommon,0,diffBarTopX+difficultySpriteOffsetX,diffBarTopY+difficultySpriteOffsetY);
+	
+	var diffText = loc_key("HUD_STORM_DIFF_8");
+	switch (global.currentDifficulty)
+	{
+		case (K_DIFFICULTY_VERY_EASY) : diffText = loc_key("HUD_STORM_DIFF_0"); break;
+		case (K_DIFFICULTY_EASY) : diffText = loc_key("HUD_STORM_DIFF_1"); break;
+		case (K_DIFFICULTY_REGULAR) : diffText = loc_key("HUD_STORM_DIFF_2"); break;
+		case (K_DIFFICULTY_HARD) : diffText = loc_key("HUD_STORM_DIFF_3"); break;
+		case (K_DIFFICULTY_VERY_HARD) : diffText = loc_key("HUD_STORM_DIFF_4"); break;
+		case (K_DIFFICULTY_EXTREME) : diffText = loc_key("HUD_STORM_DIFF_5"); break;
+		case (K_DIFFICULTY_VERY_EXTREME) : diffText = loc_key("HUD_STORM_DIFF_6"); break;
+		case (K_DIFFICULTY_LEGENDARY) : diffText = loc_key("HUD_STORM_DIFF_7"); break;
+	}
+	var finalDiffText = loc_key("HUD_STORM_DIFFICULTY") +": " + diffText;
+	
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_font(global.font_numberSmall);
+	draw_text_dropshadow_ext_transformed(diffBarTopX+6, diffBarTopY+diffBarHeight, finalDiffText, c_white, c_black, 0.7, 2, 1, 1, 0, main_hud_alpha);
 }
 
 //Dynamic Bounty
