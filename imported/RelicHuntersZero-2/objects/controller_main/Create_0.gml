@@ -73,6 +73,8 @@ global.level_complete = false;
 global.pause = 0;
 global.pauseMenu = false;
 
+global.gunAccuracyMultiplier = 0.85;
+
 //Score
 global.coins_turtle1 = 1;
 global.coins_turtle2 = 2;
@@ -89,17 +91,19 @@ global.score_triplekill = 5;
 global.score_multikill = 10;
 
 //Storm Mode & Difficulty
+global.gunnarFound = false;
+global.teleporterFound = false;
 global.maxSpawns = 24;
 
-global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 20;
-global.spawnTimeByDifficulty[K_DIFFICULTY_EASY] = 20;
+global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EASY] = 14;
+global.spawnTimeByDifficulty[K_DIFFICULTY_EASY] = 18;
 global.spawnTimeByDifficulty[K_DIFFICULTY_REGULAR] = 16;
 global.spawnTimeByDifficulty[K_DIFFICULTY_HARD] = 16;
 global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_HARD] = 15;
 global.spawnTimeByDifficulty[K_DIFFICULTY_EXTREME] = 15;
 global.spawnTimeByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 15;
 global.spawnTimeByDifficulty[K_DIFFICULTY_LEGENDARY] = 15;
-global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 12;
+global.spawnTimeByDifficulty[K_DIFFICULTY_ASCENDANT] = 15;
 
 global.spawnAmountByDifficulty[K_DIFFICULTY_VERY_EASY] = 1;
 global.spawnAmountByDifficulty[K_DIFFICULTY_EASY] = 2;
@@ -113,13 +117,13 @@ global.spawnAmountByDifficulty[K_DIFFICULTY_ASCENDANT] = 3;
 
 global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 0.5;
 global.damageMultiplierByDifficulty[K_DIFFICULTY_EASY] = 0.5;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 0.7;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_HARD] = 0.7;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 0.8;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 1;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 1;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 1.2;
-global.damageMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 1.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_REGULAR] = 0.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_HARD] = 0.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_HARD] = 0.5;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_EXTREME] = 0.6;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_VERY_EXTREME] = 0.7;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_LEGENDARY] = 0.8;
+global.damageMultiplierByDifficulty[K_DIFFICULTY_ASCENDANT] = 0.9;
 
 global.healthMultiplierByDifficulty[K_DIFFICULTY_VERY_EASY] = 0.5;
 global.healthMultiplierByDifficulty[K_DIFFICULTY_EASY] = 0.5;

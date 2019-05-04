@@ -10,8 +10,8 @@ hp_max = round(hp_max * global.healthMultiplier);
 
 damage = 25;
 
-speed_walk = 2;
-speed_sprint = 3.5;
+speed_walk = 3;
+speed_sprint = 4.5;
 
 myCoinDropAmount = 1;
 

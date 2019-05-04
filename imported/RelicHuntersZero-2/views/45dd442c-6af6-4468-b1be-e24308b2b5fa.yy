@@ -11,7 +11,8 @@
         "d6d801ca-ca75-443f-bd33-fcaa4d6cbd95",
         "2cc07fdd-1423-4f97-8fc9-e357d693ee84",
         "09c8ad11-91d2-45d7-922c-cdb276653d36",
-        "b61b8d2a-8a18-45c8-97ca-eb32bf4bb928"
+        "b61b8d2a-8a18-45c8-97ca-eb32bf4bb928",
+        "ef631107-4883-46a0-acd8-08b09b4949a9"
     ],
     "filterType": "GMSprite",
     "folderName": "Kamikaze_Elite",

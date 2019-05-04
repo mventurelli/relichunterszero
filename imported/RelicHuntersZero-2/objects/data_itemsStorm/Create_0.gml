@@ -78,7 +78,8 @@ if (global.isDaily) random_set_seed(global.dailySeed+global.stage_current+global
 
 itemPool = ds_list_create();
 
-if (room == level_storm_1)  {
+//if (room == level_storm_1)  
+{
     ds_list_add(itemPool,
 		item_endlessAmmo_1,
 		item_endlessAmmo_1,

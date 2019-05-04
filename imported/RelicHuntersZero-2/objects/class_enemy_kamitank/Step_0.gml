@@ -207,7 +207,7 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
 	    if (fuckingEnemy != noone) distance_to_enemy = point_distance(x,y,fuckingEnemy.x,fuckingEnemy.y);
 	    else distance_to_enemy = 9999;   
         
-        if (distance_to_enemy < distance_to_player)
+        if (distance_to_enemy < distance_to_player) && (global.gameMode != gamemode_storm) 
         {
             ai_target = fuckingEnemy;
             distance_to_target = distance_to_enemy;
@@ -395,7 +395,7 @@ if (damage_timer_current >= damage_timer) && (!hit_taken) {
 	show_debug_message("Kamitank damage_timer_current > damage_timer");
 
 	myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_player,false,true);
-	if (myEnemy == noone) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_ducan,false,true);
+	if (myEnemy == noone) && (global.gameMode != gamemode_storm) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_ducan,false,true);
 	else is_player = true;
 
 	var isWall = false;

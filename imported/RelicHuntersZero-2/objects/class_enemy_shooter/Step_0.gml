@@ -188,7 +188,7 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
 
         ai_target_change_current = 0;
         
-        if (distance_to_enemy < distance_to_player)
+        if (distance_to_enemy < distance_to_player) && (global.gameMode != gamemode_storm)
         {
             ai_target = fuckingEnemy;
             distance_to_target = distance_to_enemy;
@@ -211,22 +211,22 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
     {
 		
         //Aggro Control
-        if (distance_to_target <= aggro_distance) aggro += aggro_add_close;
+        if (distance_to_target <= aggro_distance) aggro += aggro_add_close*delta_time*ms_to_s_60;
         if (ai_state == "PATROL") {
-			aggro += aggro_add_patrol;
+			aggro += aggro_add_patrol*delta_time*ms_to_s_60;
 			if (distance_to_target > ai_patrol_max) {
-				aggro += aggro_add_close;
+				aggro += aggro_add_close*delta_time*ms_to_s_60;
 			}
 		}
 		else if (ai_state == "COVER") 
-			aggro += aggro_add_patrol;
+			aggro += aggro_add_patrol*delta_time*ms_to_s_60;
         else if (ai_state == "CHASE") 
-			aggro -= aggro_cost_chase;        
+			aggro -= aggro_cost_chase*delta_time*ms_to_s_60;        
         
         if (aggro < 0) aggro = 0;
         if (aggro > aggro_max) aggro = aggro_max;
         
-        if (energy <= ai_cover_shield_threshold) && (hp > ai_cover_hp_threshold) && (elite)
+        if (energy <= ai_cover_shield_threshold) && (hp > ai_cover_hp_threshold) && (elite) && (!isBoss)
         {
             ai_state = "COVER";
         }
@@ -405,7 +405,7 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
         {
             if (ai_patrol_x) && (ai_patrol_y)
             {
-                if (collision_point(ai_patrol_x,ai_patrol_y,class_solid,false,true) < 0)
+                if (collision_circle(ai_patrol_x,ai_patrol_y,32,class_solid,false,true) < 0) //if (collision_point(ai_patrol_x,ai_patrol_y,class_solid,false,true) < 0) 
                 {
                     ai_movetarget_x = ai_patrol_x;
                     ai_movetarget_y = ai_patrol_y;
@@ -414,6 +414,8 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
                 {
                     ai_movetarget_x = x;
                     ai_movetarget_y = y;
+					ai_patrol_x = -1;
+					ai_patrol_y = -1;
                 }
             }
             else
@@ -467,13 +469,13 @@ if (my_gun) && (instance_exists(my_gun))
 
 
 //Resolve
-path_update();
-
 moving = false;
 if (ai_movetarget_x) && (ai_movetarget_y) && point_distance(x,y,ai_movetarget_x,ai_movetarget_y) > 3
 {
+	path_update();
     moving = true;
 }
+else path_end();
 
 
 // Push

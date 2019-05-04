@@ -2,7 +2,7 @@
 event_inherited();
 
 energy_max = 0;
-hp_max = 100;
+hp_max = 140;
 hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplier,global.challengeSteroidsMax));
 damage = 30;
 

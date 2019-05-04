@@ -33,7 +33,7 @@ hp_max += global.challengeSteroids*(min(hp_max*global.challengeSteroidsMultiplie
 ai_cover_hp_threshold = 1;
 ai_cover_shield_threshold = 200;
 
-aggro_distance = 400;
+aggro_distance = 280;
 aggro_add_patrol = 0.5;
 aggro_add_close = 2;
 aggro_add_hit = aggro_max;

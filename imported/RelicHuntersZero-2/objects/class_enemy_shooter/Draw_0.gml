@@ -10,3 +10,5 @@ if (global.pause)
 }
 else image_speed = old_image_speed;
 
+/*
+draw_text(x,y-64,"AGG "+string(aggro)+" "+ai_state);

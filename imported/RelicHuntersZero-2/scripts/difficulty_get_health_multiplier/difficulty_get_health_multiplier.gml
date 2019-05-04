@@ -7,7 +7,7 @@ toReturn = global.healthMultiplierByDifficulty[min(diff,K_DIFFICULTY_ASCENDANT)]
 
 if diff > K_DIFFICULTY_ASCENDANT
 {
-	toReturn += diff-K_DIFFICULTY_ASCENDANT;
+	toReturn += 0.5*(diff-K_DIFFICULTY_ASCENDANT);
 }
 
 return toReturn;

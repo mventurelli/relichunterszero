@@ -1,3 +1,4 @@
+if (global.gameMode != gamemode_storm) 
 if (!scheduled_to_destroy) {
 	if faction == f_enemy //&& instance_exists(other)
 	{

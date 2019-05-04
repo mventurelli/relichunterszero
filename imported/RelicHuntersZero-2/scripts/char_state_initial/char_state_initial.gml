@@ -96,6 +96,11 @@
 	{
 		global.currentDifficulty = K_DIFFICULTY_VERY_EASY;	
 		global.difficultyTimeCurrent = 0;
+		global.bossKrekSpawned = false;
+		global.bossTurlekSpawned = false;
+		global.bossKamikingSpawned = false;
+		global.bossSkeletonSpawned = false;
+		global.spawnRotation = irandom(3);
 		show_debug_message("Rodei o Char State Initial");
 	}
 	

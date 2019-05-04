@@ -1,5 +1,5 @@
 ///Enemy Damage
-if instance_exists(other)
+if faction == f_player && instance_exists(other)
 {
     if (!other.dodging) && (ds_list_find_index(damage_list,other.id) < 0)
     {

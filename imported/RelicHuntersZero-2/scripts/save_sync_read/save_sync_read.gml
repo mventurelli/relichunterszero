@@ -42,6 +42,7 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
 	//Storm Temp
 	global.currentDifficulty = ini_read_real("Temp","currentDifficulty",K_DIFFICULTY_VERY_EASY);
 	global.difficultyTimeCurrent = ini_read_real("Temp","difficultyTimeCurrent",0);
+	global.spawnRotation = ini_read_real("Temp","spawnRotation",0);
 	
     //Endless Temp
     global.isDaily = ini_read_real("Temp","isDaily",false);

@@ -3,7 +3,7 @@ event_inherited();
 
 myFlag = noone;
 
-if (global.currentLoop < 2)
+if (global.currentLoop < 2) && (room != level_storm_4)
 {
     maxhp = 350;
     sprite = spr_longbox;

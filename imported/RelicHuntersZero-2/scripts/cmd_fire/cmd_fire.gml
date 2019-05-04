@@ -60,7 +60,7 @@ if (owner != noone)
 	            if (owner.aiming) precision = random_range(-accuracy_aiming*owner.base_accuracy,accuracy_aiming*owner.base_accuracy);
 	            else precision = random_range(-accuracy*owner.base_accuracy,accuracy*owner.base_accuracy);
 	        }
-	        projectile.direction = shoot_direction+precision;
+	        projectile.direction = shoot_direction+(precision*global.gunAccuracyMultiplier);
                             
 	        projectile.faction = f_player;
 	        //projectile.type = shot_type;

@@ -75,6 +75,8 @@ if (ds_exists(global.edgeTrackEnemyList,ds_type_list)) && (!global.pauseMenu) &&
             var trackee = ds_list_find_value(global.edgeTrackEnemyList,i);
             if (instance_exists(trackee))
             {
+				draw_edge_tracking(trackee,spr_edgeTrackEnemy);
+				/*
                 var trackX, trackY;
                 
                 if (trackee.x >= __view_get( e__VW.XView, 0 )) trackX = min(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 ), trackee.x);
@@ -86,8 +88,28 @@ if (ds_exists(global.edgeTrackEnemyList,ds_type_list)) && (!global.pauseMenu) &&
                 var trackDir = point_direction(trackX, trackY, trackee.x, trackee.y);
                 
                 draw_sprite_ext(spr_edgeTrackEnemy,0,trackX,trackY,0.5,0.5,trackDir,c_white,1);
+				*/
             }
         }
     }
 }
-/**/
+
+///Edge Tracking Gunnar and Teleporter on Storm Mode
+if (global.gameMode == gamemode_storm)
+{
+	if (global.gunnarFound)
+	{
+		if (instance_exists(obj_gunnar))
+		{
+			if (!on_screen_offset(obj_gunnar.x,obj_gunnar.y,32)) draw_edge_tracking(obj_gunnar,spr_edgeTrackGunnar);
+		}
+	}
+	
+	if (global.teleporterFound)
+	{
+		if (instance_exists(obj_bossTeleporter))
+		{
+			if (!on_screen_offset(obj_bossTeleporter.x,obj_bossTeleporter.y,32)) draw_edge_tracking(obj_bossTeleporter,spr_edgeTrackTeleport);
+		}
+	}
+}

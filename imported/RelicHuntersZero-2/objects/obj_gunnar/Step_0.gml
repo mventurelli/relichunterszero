@@ -50,6 +50,7 @@ if instance_exists(class_player)
     {
             myBalloon = instance_create_layer(x,y,"Interactive_Over",obj_gunnar_balloon);
             if (!image_xscale) myBalloon.x -= 50;
+			global.gunnarFound = true;
     }
 }
 

@@ -23,7 +23,7 @@ var p = 1; while (p <= global.playerCount)
 }
 
 ///Storm Mode Difficulty Update
-if (!global.pauseMenu) difficulty_update();
+if (!global.pauseMenu) difficulty_update(false);
 
 ///Level Instantiator
 if (!level_built)
@@ -211,7 +211,8 @@ if (!level_built)
         }
         
        //Resolve Items 
-        while (!ds_list_empty(item_pool))
+        show_debug_message("Started to deploy items from the item pool!");
+		while (!ds_list_empty(item_pool))
         {
             pick_random_group = irandom(ds_list_size(item_pool)-1);
             random_group = ds_list_find_value(item_pool,pick_random_group);
@@ -235,8 +236,11 @@ if (!level_built)
                 with (target_spawn) { instance_destroy(); }
             }
             ds_list_destroy(current_group);
+			show_debug_message("One item deployed.");
         }
         
+		show_debug_message("All done with the item pool!");
+		
         with (obj_spawn_item) instance_destroy();
 
         

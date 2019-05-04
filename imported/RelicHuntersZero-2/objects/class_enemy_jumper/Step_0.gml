@@ -82,7 +82,7 @@ if ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y)) )
 	    if (fuckingEnemy != noone) distance_to_enemy = point_distance(x,y,fuckingEnemy.x,fuckingEnemy.y);
 	    else distance_to_enemy = 9999;
         
-        if (distance_to_enemy < distance_to_player)
+        if (distance_to_enemy < distance_to_player) && (global.gameMode != gamemode_storm) 
         {
             ai_target = fuckingEnemy;
             distance_to_target = distance_to_enemy;
@@ -103,7 +103,7 @@ if ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y)) )
             distance_to_target = distance_to_player;
             myHomingTargetClass = class_player;
         }
-        else 
+        else  if (global.gameMode != gamemode_storm) 
         {
             distance_to_target = distance_to_enemy;
             myHomingTargetClass = faction_ducan;
@@ -253,13 +253,13 @@ if (my_gun) && (my_gun != noone)
 }
 
 //Resolve
-path_update();
-
 moving = false;
 if (ai_movetarget_x) && (ai_movetarget_y) && point_distance(x,y,ai_movetarget_x,ai_movetarget_y) > 3
 {
+	path_update();
     moving = true;
 }
+else path_end();
 
 
 // Push
@@ -286,7 +286,7 @@ else push_speed = 0;
 is_player = false;
 myEnemy = noone;
 myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_player,false,true);
-if (!myEnemy) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_ducan,false,true);
+if (!myEnemy) && (global.gameMode != gamemode_storm) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_ducan,false,true);
 else is_player = true;
 
 if (myEnemy) && (damage_timer_current >= damage_timer) && instance_exists_fast(myEnemy) && (!hit_taken)

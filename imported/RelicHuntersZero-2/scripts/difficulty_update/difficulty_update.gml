@@ -1,13 +1,21 @@
-///difficulty_update()
+///difficulty_update(bool force)
 //Updates the Difficulty in Storm mode over time
+
+var forceUpdate = argument0;
 
 global.difficultyTimeCurrent += delta_time * ms_to_s;
 
 var newDifficulty = global.difficultyTimeCurrent div global.difficultyUpgradeTime;
-if (newDifficulty > global.currentDifficulty)
+if (newDifficulty > global.currentDifficulty) || (forceUpdate)
 {
 	global.currentDifficulty = newDifficulty;
+	if (forceUpdate) show_debug_message("Forcing a difficulty update!");
 	show_debug_message("Switching to new Difficulty, Tier "+string(global.currentDifficulty));
+	
+	if instance_exists(obj_skeletonStorm) global.spawnRotation = 3;
+	else if instance_exists(obj_kamikingStorm) || instance_exists(obj_kamikingStorm_flying) global.spawnRotation = 2;
+	else if instance_exists(obj_turlekStorm) || instance_exists(obj_krekStorm) global.spawnRotation = 0;
+	else global.spawnRotation = irandom(3);
 	
 	global.spawnTime = global.spawnTimeByDifficulty[min(newDifficulty,K_DIFFICULTY_ASCENDANT)];
 	global.spawnAmount = global.spawnAmountByDifficulty[min(newDifficulty,K_DIFFICULTY_ASCENDANT)];

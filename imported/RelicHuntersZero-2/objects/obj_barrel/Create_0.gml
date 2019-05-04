@@ -1,6 +1,6 @@
 event_inherited();
 
-if (global.currentLoop < 2)
+if (global.currentLoop < 2)  && (room != level_storm_4)
 {
     maxhp = 140;
     sprite = spr_barrel;

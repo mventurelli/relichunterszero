@@ -43,6 +43,16 @@ ds_list_add(A4_2_duckAssaultRifle, obj_duck3, obj_duck2_shotgun, obj_duck2_shotg
 A4_3_duckRocket = ds_list_create();
 ds_list_add(A4_3_duckRocket, obj_duck3_rocket, obj_turtle3, obj_turtle3);
 	
+	
+//Rotation B1 (Kami)
+B1_1_kamikaze = ds_list_create();
+ds_list_add(B1_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
+
+
+
+//Rotation C1 (Undead)
+C1_1_spookyZombies = ds_list_create();
+ds_list_add(C1_1_spookyZombies, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
 
     /*
     /// /// /// ///
@@ -117,17 +127,27 @@ ds_list_add(A4_3_duckRocket, obj_duck3_rocket, obj_turtle3, obj_turtle3);
 
 enemyPool = ds_list_create();
 
-
-if (global.currentDifficulty <= K_DIFFICULTY_EASY) 
-	ds_list_add(enemyPool, A1_1_smallTurtles, A1_1_smallTurtles, A1_1_smallTurtles, A1_3_oneDucanSquad, A1_2_smallTurtlesWithShotgun, A1_2_smallTurtlesWithShotgun );
-else if (global.currentDifficulty <= K_DIFFICULTY_HARD) 
-	ds_list_add(enemyPool, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_2_smgDuck, A2_2_smgDuck, A2_3_heavyPistolDuck ); 
-else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
-	ds_list_add(enemyPool, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_3_duckSquad, A3_3_duckSquad, A3_2_turtleSniper );
-else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
-	ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
-else 
-	ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
+if (global.spawnRotation <= 1) // Rotation A, Ducans
+{
+	if (global.currentDifficulty <= K_DIFFICULTY_EASY) 
+		ds_list_add(enemyPool, A1_1_smallTurtles, A1_1_smallTurtles, A1_1_smallTurtles, A1_3_oneDucanSquad, A1_2_smallTurtlesWithShotgun, A1_2_smallTurtlesWithShotgun );
+	else if (global.currentDifficulty <= K_DIFFICULTY_HARD) 
+		ds_list_add(enemyPool, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_1_advancedTurtles, A2_2_smgDuck, A2_2_smgDuck, A2_3_heavyPistolDuck ); 
+	else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
+		ds_list_add(enemyPool, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_1_turtleMachinegunners, A3_3_duckSquad, A3_3_duckSquad, A3_2_turtleSniper );
+	else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
+		ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
+	else 
+		ds_list_add(enemyPool, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_1_turtleBigMachinegunSquad, A4_2_duckAssaultRifle, A4_2_duckAssaultRifle, A4_3_duckRocket );
+}
+else if (global.spawnRotation == 2) // Rotation B, Kami
+{
+	ds_list_add(enemyPool, B1_1_kamikaze );
+}
+else if (global.spawnRotation == 3) // Rotation C, Undead
+{	
+	ds_list_add(enemyPool, C1_1_spookyZombies );
+}
 
 ///Add everything to cleanUp list
 
@@ -145,7 +165,11 @@ if (ds_exists(cleanUp,ds_type_list))
 	ds_list_add(cleanUp, A4_1_turtleBigMachinegunSquad);
 	ds_list_add(cleanUp, A4_2_duckAssaultRifle);
 	ds_list_add(cleanUp, A4_3_duckRocket);
+	
+	ds_list_add(cleanUp, B1_1_kamikaze);
     
+	ds_list_add(cleanUp, C1_1_spookyZombies);
+	
     ds_list_add(cleanUp, enemyPool);
 }
 

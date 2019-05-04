@@ -10,7 +10,8 @@
         "ed9543d6-b4e1-4b72-b739-a67e634c880c",
         "08228f5c-1433-4494-b480-892db3ce95c4",
         "5cfa1ea7-0632-459d-bf35-c8973eb059a3",
-        "5fe3bda5-f65f-4808-99cc-16461d01a2a5"
+        "5fe3bda5-f65f-4808-99cc-16461d01a2a5",
+        "87907767-5c6f-4944-85a6-daeeae1dd6b5"
     ],
     "filterType": "GMSprite",
     "folderName": "Turtle3",

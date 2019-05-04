@@ -5,7 +5,7 @@ event_inherited();
     myChar = char_rider;
     
     riderGrenadeCost = 30;
-    kamiAllyHp = 0.32;
+    kamiAllyHp = 0.5;
     kamiAllyDmg = 0.15;
     
     melee_damage = 120;

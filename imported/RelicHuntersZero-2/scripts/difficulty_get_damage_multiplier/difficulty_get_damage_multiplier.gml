@@ -7,7 +7,7 @@ toReturn = global.damageMultiplierByDifficulty[min(diff,K_DIFFICULTY_ASCENDANT)]
 
 if diff > K_DIFFICULTY_ASCENDANT
 {
-	toReturn += 0.15*(diff-K_DIFFICULTY_ASCENDANT);
+	toReturn += 0.12*(diff-K_DIFFICULTY_ASCENDANT);
 }
 
 return toReturn;

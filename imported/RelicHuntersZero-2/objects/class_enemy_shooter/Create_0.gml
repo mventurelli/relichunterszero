@@ -32,11 +32,11 @@ aiActivationTimeCurrent = 0;
 
 aggro = random_range(0,50);
 aggro_max = 200;
-aggro_distance = 600;
+aggro_distance = 280;
 aggro_add_patrol = 0.25;
 aggro_add_close = 2;
 aggro_add_hit = aggro_max;
-aggro_cost_attack = 20;
+aggro_cost_attack = 50;
 aggro_cost_chase = 1;
 aggro_cost_sight_forbidden = 5;
 aggro_min_chase = 120;

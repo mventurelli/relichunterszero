@@ -100,7 +100,7 @@ if (isActive)
         if (owner.reloadKey) input_reloading = true;
     }
 
-    if ( ((!ammo_current) && !(global.relic_dev_potion == 2)) || (input_reloading) ) && (!reloading) && (ammo_current < ammo) && instance_exists(owner)
+    if ( (!ammo_current) || (input_reloading) ) && (!reloading) && (ammo_current < ammo) && instance_exists(owner)
     {
         var p = owner.myPlayerId;
         

@@ -1,4 +1,4 @@
-if faction == f_enemy && instance_exists(other)
+if faction == f_enemy && instance_exists(other) && (global.gameMode != gamemode_storm) 
 {
     spreadX = irandom_range(-15,15);
     spreadY = irandom_range(-15,15);
