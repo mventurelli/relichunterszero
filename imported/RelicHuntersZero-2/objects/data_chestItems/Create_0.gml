@@ -24,7 +24,9 @@ ds_list_add(weapons[2],
     obj_pickup_rocketlauncher,
     obj_pickup_pistol_relic,
     obj_pickup_flakCannon,
-    obj_pickup_minigun
+    obj_pickup_minigun,
+	obj_pickup_pistol_fire,
+	obj_pickup_smg_blast
 );
 
 weapons[3] = ds_list_create();
@@ -38,7 +40,9 @@ ds_list_add(weapons[3],
     obj_pickup_pistol_relic,
     obj_pickup_pistol_plasma,
     obj_pickup_minigun_relic,
-    obj_pickup_relicCannon
+    obj_pickup_relicCannon,
+	obj_pickup_smg_fire,
+	obj_pickup_rifle_blast
 );
 
 // add as much mod weapons as available

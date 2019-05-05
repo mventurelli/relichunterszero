@@ -9,7 +9,6 @@ var newDifficulty = global.difficultyTimeCurrent div global.difficultyUpgradeTim
 if (newDifficulty > global.currentDifficulty) || (forceUpdate)
 {
 	global.currentDifficulty = newDifficulty;
-	if (forceUpdate) show_debug_message("Forcing a difficulty update!");
 	show_debug_message("Switching to new Difficulty, Tier "+string(global.currentDifficulty));
 	
 	if instance_exists(obj_skeletonStorm) global.spawnRotation = 3;

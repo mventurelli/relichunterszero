@@ -6,7 +6,7 @@ activated = [];
 //Boss variables
 var bossBar = 666;
 draw_healthbar_delayed_init(bossBar);
-
+isBoss = false; //Yup, I know. Figures.
 isVulnerable = true;
 
 //Shooter Class Derivative

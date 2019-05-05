@@ -535,6 +535,8 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_heavyShotgun = 4500;
     global.price_endless_relicPistol = 5250;
     global.price_endless_kamilauncher = 4500;
+	global.price_endless_pistolFire = 3500;
+	global.price_endless_smgBlast = 4800;
     
     global.price_endless_yottabyteDrive = 3750;
     global.price_endless_pineapplePudding = 2700;
@@ -555,6 +557,8 @@ if (global.gameMode == gamemode_endless)
     global.price_endless_relicMinigun = 6000;
     global.price_endless_relicCannon = 6000;
     global.price_endless_relicRocket = 7800;
+	global.price_endless_blastRifle = 5800;
+	global.price_endless_fireSmg = 5250;
     
     global.price_endless_devPotion = 5250;
     global.price_endless_crystalBacon = 5250;

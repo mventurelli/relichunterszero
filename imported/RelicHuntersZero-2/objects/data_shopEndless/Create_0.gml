@@ -55,6 +55,8 @@ if (!check_weapon_owned(obj_sniper_rifle,1)) ds_list_add(global.endShop_tier[2],
 if (!check_weapon_owned(obj_flakCannon,1)) ds_list_add(global.endShop_tier[2], obj_endShop_flakCannon);
 if (!check_weapon_owned(obj_minigun,1)) ds_list_add(global.endShop_tier[2], obj_endShop_minigun);
 if (!check_weapon_owned(obj_highmag,1)) ds_list_add(global.endShop_tier[2], obj_endShop_highmag);
+if (!check_weapon_owned(obj_smg_blast,1)) ds_list_add(global.endShop_tier[2], obj_endShop_smgBlast);
+if (!check_weapon_owned(obj_pistol_fire,1)) ds_list_add(global.endShop_tier[2], obj_endShop_pistolFire);
 
 if (!global.relic_yottabyte_drive) ds_list_add(global.endShop_tier[2],obj_endShop_yottabyteDrive);
 if (!global.relic_pineapple_pie) ds_list_add(global.endShop_tier[2],obj_endShop_pineapplePie);
@@ -81,6 +83,8 @@ if (!check_weapon_owned(obj_shotgun_relic,1)) ds_list_add(global.endShop_tier[3]
 if (!check_weapon_owned(obj_rocketlauncher,1)) ds_list_add(global.endShop_tier[3], obj_endShop_rocketLauncher);
 if (!check_weapon_owned(obj_relicCannon,1)) ds_list_add(global.endShop_tier[3], obj_endShop_relicCannon);
 if (!check_weapon_owned(obj_minigun_relic,1)) ds_list_add(global.endShop_tier[3], obj_endShop_relicMinigun);
+if (!check_weapon_owned(obj_rifle_blast,1)) ds_list_add(global.endShop_tier[3], obj_endShop_rifleBlast);
+if (!check_weapon_owned(obj_smg_fire,1)) ds_list_add(global.endShop_tier[3], obj_endShop_smgFire);
 
 if (!global.relic_dev_potion) ds_list_add(global.endShop_tier[3],obj_endShop_devPotion);
 if (!global.relic_midnight_meal) ds_list_add(global.endShop_tier[3],obj_endShop_midnightMeal);

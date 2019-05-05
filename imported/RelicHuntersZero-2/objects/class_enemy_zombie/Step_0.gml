@@ -112,7 +112,7 @@ if (ai_active) && ( (distance_to_player < ai_shutdown_range) || (on_screen(x,y))
 	    else distance_to_enemy = 9999;
 
         
-        if (distance_to_enemy < distance_to_player)
+        if (distance_to_enemy < distance_to_player) && (global.gameMode != gamemode_storm)
         {
             ai_target = fuckingEnemy;
             distance_to_target = distance_to_enemy;
@@ -304,7 +304,7 @@ else push_speed = 0;
 is_player = false;
 myEnemy = noone;
 myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_player,false,true);
-if (!myEnemy) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_monster,false,true);
+if (!myEnemy) && (global.gameMode != gamemode_storm) myEnemy = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,faction_monster,false,true);
 else is_player = true;
 
 if (myEnemy) && (damage_timer_current >= damage_timer) && instance_exists(myEnemy) && (!hit_taken)

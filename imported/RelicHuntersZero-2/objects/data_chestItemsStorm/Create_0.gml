@@ -34,7 +34,11 @@ ds_list_add(weapons[K_RARITY_RARE],
 	obj_pickup_shotgun_heavy,
 	obj_pickup_pistol_relic,
 	obj_pickup_kamilauncher,
-	obj_pickup_smg_plasma						//Add all new guns (blast smg, blast rifle, fire smg and fire pistol) here!!!!
+	obj_pickup_smg_plasma,
+	obj_pickup_smg_blast,
+	obj_pickup_pistol_fire,
+	obj_pickup_rifle_blast,
+	obj_pickup_smg_fire
 );
 
 weapons[K_RARITY_EPIC] = ds_list_create();
