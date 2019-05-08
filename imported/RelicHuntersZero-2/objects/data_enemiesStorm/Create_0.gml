@@ -48,79 +48,33 @@ ds_list_add(A4_3_duckRocket, obj_duck3_rocket, obj_turtle3, obj_turtle3);
 B1_1_kamikaze = ds_list_create();
 ds_list_add(B1_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
 
+B2_1_kamikaze = ds_list_create();
+ds_list_add(B2_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
 
+B3_1_kamikaze = ds_list_create();
+ds_list_add(B3_1_kamikaze, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
+
+B4_1_kamikaze = ds_list_create();
+ds_list_add(B4_1_kamikaze, obj_kamitankNEW, obj_kamitankNEW, obj_kamitankNEW, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
 
 //Rotation C1 (Undead)
 C1_1_spookyZombies = ds_list_create();
 ds_list_add(C1_1_spookyZombies, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
 
-    /*
-    /// /// /// ///
-    
-    monster_kamikaze_1 = ds_list_create();
-    ds_list_add(monster_kamikaze_1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
-    
-    monster_kamikaze_2 = ds_list_create();
-    ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
-    
-    monster_kamikaze_3 = ds_list_create();
-    ds_list_add(monster_kamikaze_3, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );			//OLD: had a obj_kamitank
-    
-    /// /// /// ///
-    
-    elite_turtles = ds_list_create();
-    ds_list_add(elite_turtles, obj_turtle3_plasma, obj_turtle3_plasma, obj_turtle3_plasma, obj_turtle3_plasma );
-    
-    elite_plasma = ds_list_create();
-    ds_list_add(elite_plasma, obj_turtle3_plasma, obj_turtle3_plasma, obj_turtle3_plasma, obj_ducanElite_plasma );
-    
-    elite_plasma_2 = ds_list_create();
-    ds_list_add(elite_plasma, obj_ducanElite_plasma, obj_ducanElite_plasma );
-    
-    elite_shotgun = ds_list_create();
-    ds_list_add(elite_shotgun, obj_ducanElite_shotgun, obj_ducanElite_shotgun );
-    
-    elite_squad_1 = ds_list_create();
-    ds_list_add(elite_squad_1, obj_ducanElite_rifle, obj_ducanElite_shotgun);
-    
-    elite_squad_2 = ds_list_create();
-    ds_list_add(elite_squad_1, obj_ducanElite_rifle, obj_ducanElite_rifle, obj_ducanElite_rifle);
-    
-    elite_sniper = ds_list_create();
-    ds_list_add(elite_sniper, obj_ducanElite_sniper );
-    
-    elite_sniper_2 = ds_list_create();
-    ds_list_add(elite_sniper, obj_ducanElite_sniper, obj_ducanElite_sniper );
-    
-    elite_rocket = ds_list_create();
-    ds_list_add(elite_rocket, obj_ducanElite_shotgun, obj_ducanElite_rocket);
-    
-    elite_rocket_2 = ds_list_create();
-    ds_list_add(elite_rocket_2, obj_ducanElite_rifle, obj_ducanElite_rifle, obj_ducanElite_rocket);
-    
-    elite_rocket_3 = ds_list_create();
-    ds_list_add(elite_rocket_3, obj_ducanElite_rocket, obj_ducanElite_rocket);
-    
-    /// /// /// ///
-    
-    spooky_worms = ds_list_create();
-    ds_list_add(spooky_worms, obj_wormTurtle, obj_wormTurtle, obj_wormTurtle );
-    
-    spooky_zombies_1 = ds_list_create();
-    ds_list_add(spooky_zombies_1, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
-    
-    spooky_zombies_2 = ds_list_create();
-    ds_list_add(spooky_zombies_2, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
-    
-    spooky_shooters_1 = ds_list_create();
-    ds_list_add(spooky_shooters_1, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtle );
-    
-    spooky_shooters_2 = ds_list_create();
-    ds_list_add(spooky_shooters_2, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtleReaper );
-    
-    spooky_shooters_3 = ds_list_create();
-    ds_list_add(spooky_shooters_3, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
-    */
+C1_2_spookyWorm = ds_list_create();
+ds_list_add(C1_2_spookyWorm, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
+
+C2_1_spookyShooters = ds_list_create();
+ds_list_add(C2_1_spookyShooters, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtleReaper );
+
+C3_1_spookyShooters = ds_list_create();
+ds_list_add(C3_1_spookyShooters, obj_zombieTurtlePistol, obj_zombieTurtlePistol, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
+
+C3_2_spookySHootersAndWorm = ds_list_create();
+ds_list_add(C3_2_spookySHootersAndWorm, obj_wormTurtle, obj_zombieTurtlePistol, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
+
+C4_1_spookyReapers = ds_list_create();
+ds_list_add(C4_1_spookyReapers, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
 
 
 ///Create the pool depending on room
@@ -142,11 +96,29 @@ if (global.spawnRotation <= 1) // Rotation A, Ducans
 }
 else if (global.spawnRotation == 2) // Rotation B, Kami
 {
-	ds_list_add(enemyPool, B1_1_kamikaze );
+	if (global.currentDifficulty <= K_DIFFICULTY_EASY) 
+		ds_list_add(enemyPool, B1_1_kamikaze );
+	else if (global.currentDifficulty <= K_DIFFICULTY_HARD) 
+		ds_list_add(enemyPool, B2_1_kamikaze ); 
+	else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
+		ds_list_add(enemyPool, B3_1_kamikaze );
+	else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
+		ds_list_add(enemyPool, B4_1_kamikaze );
+	else 
+		ds_list_add(enemyPool, B4_1_kamikaze );
 }
 else if (global.spawnRotation == 3) // Rotation C, Undead
 {	
-	ds_list_add(enemyPool, C1_1_spookyZombies );
+	if (global.currentDifficulty <= K_DIFFICULTY_EASY) 
+		ds_list_add(enemyPool, C1_1_spookyZombies, C1_2_spookyWorm );
+	else if (global.currentDifficulty <= K_DIFFICULTY_HARD) 
+		ds_list_add(enemyPool, C2_1_spookyShooters ); 
+	else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
+		ds_list_add(enemyPool, C3_1_spookyShooters, C3_2_spookySHootersAndWorm );
+	else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
+		ds_list_add(enemyPool, C4_1_spookyReapers );
+	else 
+		ds_list_add(enemyPool, C4_1_spookyReapers );
 }
 
 ///Add everything to cleanUp list
@@ -167,8 +139,16 @@ if (ds_exists(cleanUp,ds_type_list))
 	ds_list_add(cleanUp, A4_3_duckRocket);
 	
 	ds_list_add(cleanUp, B1_1_kamikaze);
-    
+	ds_list_add(cleanUp, B2_1_kamikaze);
+    ds_list_add(cleanUp, B3_1_kamikaze);
+	ds_list_add(cleanUp, B4_1_kamikaze);
+	
 	ds_list_add(cleanUp, C1_1_spookyZombies);
+	ds_list_add(cleanUp, C1_2_spookyWorm);
+	ds_list_add(cleanUp, C2_1_spookyShooters);
+	ds_list_add(cleanUp, C3_1_spookyShooters);
+	ds_list_add(cleanUp, C3_2_spookySHootersAndWorm);
+	ds_list_add(cleanUp, C4_1_spookyReapers);
 	
     ds_list_add(cleanUp, enemyPool);
 }

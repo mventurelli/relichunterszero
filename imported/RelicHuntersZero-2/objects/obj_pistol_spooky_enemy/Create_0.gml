@@ -7,7 +7,7 @@ projectile_obj = obj_projectile_skullEnemy;
 
 projectile_speed = 0.02;
 projectile_speed_decay = -0.060;
-projectile_damage = 25;
+projectile_damage = 10;
 projectile_range = 600;
 
 accuracy = 8;

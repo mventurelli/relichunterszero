@@ -1,7 +1,8 @@
 ///Button Action
 event_inherited();
 
-if (global.unlockEndless) isAvailable = true;
+//if (global.unlockEndless) isAvailable = true;
+isAvailable = true;
 
 if (executeAction)
 {

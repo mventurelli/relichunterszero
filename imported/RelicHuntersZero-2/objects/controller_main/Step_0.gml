@@ -564,6 +564,13 @@ if (global.level_complete)
     }
     
 	//
+	if (room == level_storm_4) 
+	{ 
+		//Storm Mode Completion Achievements and End Screen
+		
+		room_goto(room_end); 
+		exit; 
+	}
 	
     if room_exists(room_next(room)) room_goto_next();
     else room_goto(room == room_start);
@@ -943,7 +950,9 @@ if (global.gameMode == gamemode_endless) && (!awarded4RelicsAchievement) {
 }
 
 ///Count Game Time Every Second
-
+global.statTotalTime += delta_time * ms_to_s;
+if (!global.gameOver) && (!global.pauseMenu) global.statRunTime += delta_time * ms_to_s;
+/*
 timeCounter++
 
 if (timeCounter >= room_speed)
@@ -953,6 +962,7 @@ if (timeCounter >= room_speed)
     
     if (!global.gameOver) && (!global.pauseMenu) global.statRunTime++;
 }
+*/
 
 ///Edge Tracking for Enemies
 

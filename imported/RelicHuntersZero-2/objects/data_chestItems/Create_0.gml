@@ -72,6 +72,9 @@ if (!global.relic_alcoholic_carrot) ds_list_add(relics[1], obj_relic_alcoholic_c
 if (!global.relic_infinity_battery) ds_list_add(relics[1], obj_relic_infinity_battery);
 if (!global.relic_morning_star) ds_list_add(relics[1], obj_relic_morning_star);
 if (!global.relic_mega_quantum_chip) ds_list_add(relics[1], obj_relic_mega_quantum_chip);
+if (!global.relic_black_cat) ds_list_add(relics[1], obj_relic_black_cat);
+if (!global.relic_multitool) ds_list_add(relics[1], obj_relic_multitool);
+if (!global.relic_actual_carrot) ds_list_add(relics[1], obj_relic_actual_carrot);
 
 relics[2] = ds_list_create();
 
@@ -84,6 +87,10 @@ if (!global.relic_pineapple_pudding) ds_list_add(relics[2], obj_relic_pineapple_
 if (!global.relic_pineapple_pie) ds_list_add(relics[2], obj_relic_pineapple_pie);
 if (!global.relic_midnight_beer) ds_list_add(relics[2], obj_relic_midnight_beer);
 if (!global.relic_rabbit_foot) ds_list_add(relics[2], obj_relic_rabbit_foot);
+if (!global.relic_shell_candy) ds_list_add(relics[2], obj_relic_shell_candy);
+if (!global.relic_purple_juice) ds_list_add(relics[2], obj_relic_purple_juice);
+if (!global.relic_rabbit_ears) ds_list_add(relics[2], obj_relic_rabbit_ears);
+if (!global.relic_fire_freak) ds_list_add(relics[2], obj_relic_fire_freak);
 
 relics[3] = ds_list_create();
 
@@ -100,6 +107,9 @@ if (!global.relic_dev_potion) ds_list_add(relics[3], obj_relic_dev_potion);
 if (!global.relic_midnight_meal) ds_list_add(relics[3], obj_relic_midnight_meal);
 if (!global.relic_yottabyte_processor) ds_list_add(relics[3], obj_relic_yottabyte_processor);
 if (!global.relic_crystal_bacon) ds_list_add(relics[3], obj_relic_crystal_bacon);
+if (!global.relic_loaf_of_bread) ds_list_add(relics[3], obj_relic_loaf_of_bread);
+if (!global.relic_blood_moon) ds_list_add(relics[3], obj_relic_blood_moon);
+if (!global.relic_pure_sand) ds_list_add(relics[3], obj_relic_pure_sand);
 
 ///Add everything to cleanUp list
 

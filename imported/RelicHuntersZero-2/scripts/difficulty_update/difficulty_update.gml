@@ -14,7 +14,7 @@ if (newDifficulty > global.currentDifficulty) || (forceUpdate)
 	if instance_exists(obj_skeletonStorm) global.spawnRotation = 3;
 	else if instance_exists(obj_kamikingStorm) || instance_exists(obj_kamikingStorm_flying) global.spawnRotation = 2;
 	else if instance_exists(obj_turlekStorm) || instance_exists(obj_krekStorm) global.spawnRotation = 0;
-	else global.spawnRotation = irandom(3);
+	else global.spawnRotation = irandom_range(0,3);
 	
 	global.spawnTime = global.spawnTimeByDifficulty[min(newDifficulty,K_DIFFICULTY_ASCENDANT)];
 	global.spawnAmount = global.spawnAmountByDifficulty[min(newDifficulty,K_DIFFICULTY_ASCENDANT)];

@@ -613,7 +613,7 @@ global.ambientSound = noone;
 
 alarm[3] = room_speed*3;
 
-if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (room == levelHalloween_1) || (audio_is_playing(bgm_dig)) || (room == level_storm_1)
+if (room == room_start) || (room == room_shop) || (room == room_endShop) || (room == level1_1) || (room == level2_1) || (room == level3_1) || (room == level4_1) || (room == room_boss) || (room == levelHalloween_1) || (audio_is_playing(bgm_dig)) || (global.gameMode == gamemode_storm)
 {
     audio_stop_all();
 }
@@ -624,52 +624,45 @@ if (room == room_start) || (room == room_shop) || (room == room_endShop) || (roo
     {
         audio_play_sound(bgm_main,99,true);
     }
-    
-    if (room == room_shop) || (room == room_endShop) 
+    else if (room == room_shop) || (room == room_endShop) 
     {
         audio_play_sound(bgm_shop,99,true);
     }
-    
-    if (room == level1_1) || (room == level1_2) || (room == level1_3)
+    else if (room == level1_1) || (room == level1_2) || (room == level1_3)
     {
         if !audio_is_playing(bgm_stage1) audio_play_sound(bgm_stage1,99,true);
         audio_play_sound(sfx_amb_stage1,99,true);
         global.ambientSound = sfx_amb_stage1;
     }
-    
-    if (room == level2_1) || (room == level2_2) || (room == level2_3)
+    else if (room == level2_1) || (room == level2_2) || (room == level2_3) || (room == level_storm_2)
     {
         if !audio_is_playing(bgm_stage3) audio_play_sound(bgm_stage3,99,true);
         audio_play_sound(sfx_amb_stage2,99,true);
         global.ambientSound = sfx_amb_stage2;
     }
-    
-    if (room == level3_1) || (room == level3_2) || (room == level3_3)
+    else if (room == level3_1) || (room == level3_2) || (room == level3_3) || (room == level_storm_3)
     {
         if !audio_is_playing(bgm_stage2) audio_play_sound(bgm_stage2,99,true);
         audio_play_sound(sfx_amb_stage3,99,true);
         global.ambientSound = sfx_amb_stage3;
     }
-    
-    if (room == level4_1) || (room == level4_2) || (room == level4_3)
+    else if (room == level4_1) || (room == level4_2) || (room == level4_3)
     {
         if !audio_is_playing(bgm_stage4) audio_play_sound(bgm_stage4,99,true);
         audio_play_sound(sfx_amb_stage4,99,true);
         global.ambientSound = sfx_amb_stage4;
     }
-    
-    if (room == room_boss)
+    else if (room == room_boss)
     {
         if !audio_is_playing(bgm_boss) audio_play_sound(bgm_boss,99,true);
     }
-    
-    if (room == levelHalloween_1) || (room == levelHalloween_2) || (room == levelHalloween_3)
+    else if (room == levelHalloween_1) || (room == levelHalloween_2) || (room == levelHalloween_3)
     {
         if !audio_is_playing(bgm_halloween) audio_play_sound(bgm_halloween,99,true);
         audio_play_sound(sfx_amb_stage4,99,true);
         global.ambientSound = sfx_amb_stage4;
     }
-	if (room == level_storm_1)
+	else if (room == level_storm_1) || (room == level_storm_4)
     {
         if !audio_is_playing(bgm_storm) audio_play_sound(bgm_storm,99,true);
         audio_play_sound(sfx_amb_stage4,99,true);

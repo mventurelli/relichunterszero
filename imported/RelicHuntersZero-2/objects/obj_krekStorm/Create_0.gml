@@ -21,8 +21,8 @@ else if (room == level_storm_3)
 }
 else if (room == level_storm_4)
 {
-	baseHp = 40000;
-	baseEnergy = 700;
+	baseHp = 32000;
+	baseEnergy = 600;
 }
 
 energy_max = baseEnergy;

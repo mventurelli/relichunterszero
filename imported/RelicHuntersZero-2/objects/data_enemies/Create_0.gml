@@ -59,7 +59,7 @@ event_inherited();
     ds_list_add(monster_kamikaze_2, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
     
     monster_kamikaze_3 = ds_list_create();
-    ds_list_add(monster_kamikaze_3, obj_kamitank, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );
+    ds_list_add(monster_kamikaze_3, obj_kamitankNEW, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );
     
     
 

@@ -75,7 +75,9 @@ draw_set_colour(c_white);
 draw_text(x,y+currentSpacing,string_hash_to_newline("Luca-Leon Happel")); currentSpacing+=lineSpacing;
 draw_text(x,y+currentSpacing,string_hash_to_newline("Jonathan Quach")); currentSpacing+=lineSpacing;
 draw_text(x,y+currentSpacing,string_hash_to_newline("Alexander Drogin")); currentSpacing+=lineSpacing;
-currentSpacing += 4*lineSpacing;
+draw_text(x,y+currentSpacing,string_hash_to_newline("Ian Szafranski")); currentSpacing+=lineSpacing;
+
+currentSpacing+=lineSpacing;
 
 //Thanks to
 draw_set_colour(make_color_rgb(250,253,0));
@@ -111,11 +113,11 @@ currentSpacing += 5*lineSpacing;
 draw_set_font(global.font_menuMedium);
 draw_set_colour(c_white);
 draw_text(x,y+currentSpacing,string_hash_to_newline("This game is Open Source")); currentSpacing+=lineSpacing;
-draw_text(x,y+currentSpacing,string_hash_to_newline("Find out more at our forums")); currentSpacing+=lineSpacing;
+draw_text(x,y+currentSpacing,string_hash_to_newline("Find out more at our Discord")); currentSpacing+=lineSpacing;
 currentSpacing += 5*lineSpacing;
 
 //Relic Hunters Website
 draw_set_font(global.font_menuVeryLarge);
 draw_set_colour(make_color_rgb(0,253,178));
-draw_text(x,y+currentSpacing,string_hash_to_newline("WWW.RELICHUNTERS.COM.BR/FORUMS"));
+draw_text(x,y+currentSpacing,string_hash_to_newline("DISCORD.GG/RELICHUNTERS"));
 

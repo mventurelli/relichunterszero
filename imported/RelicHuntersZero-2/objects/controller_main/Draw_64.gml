@@ -715,7 +715,7 @@ if (global.gameOver)
     if (!global.isDaily) draw_text_dropoutline_ext_transformed(gameOverX,gameOverY3,gameOverString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
     
     //Endless Stats
-    if (global.gameMode == gamemode_endless)
+    if (global.gameMode != gamemode_adventure)
     {
         ///Daily Endless Game Over HUD
         if (global.isDaily)
@@ -794,7 +794,7 @@ if (global.gameOver)
             var endlessString1 = loc_key("HUD_ENDLESS_SCORE") + ": " + string(global.scoreEndless);
             var endlessString2 = loc_key("HUD_LOOP") + ": " + string(global.currentLoop);
             
-            var myTime = global.statRunTime;
+            var myTime = round(global.statRunTime);
             var myTimeMinutes = myTime div 60;
             var myTimeSeconds = myTime mod 60;
             var myTimeString = string(myTimeMinutes) + "m " + string(myTimeSeconds);
@@ -802,8 +802,13 @@ if (global.gameOver)
             var endlessString3 = loc_key("HUD_ENDLESS_TIME") + ": " + myTimeString;
             
             draw_set_font(global.font_numberMedium);
-            draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
-            draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+			
+			if (global.gameMode == gamemode_endless)
+			{
+	            draw_text_dropoutline_ext_transformed(gameOverX,endlessY1,endlessString1,c_white,c_white,c_black,0.6,4,1,1,0,1);
+	            draw_text_dropoutline_ext_transformed(gameOverX,endlessY2,endlessString2,c_white,c_white,c_black,0.6,4,1,1,0,1);
+			}
+			
             draw_text_dropoutline_ext_transformed(gameOverX,endlessY3,endlessString3,c_white,c_white,c_black,0.6,4,1,1,0,1);
         }
     }

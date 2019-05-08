@@ -261,7 +261,7 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     global.fullscreen = ini_read_real("Quality","fullscreen",1);
     global.reflections_toggle = ini_read_real("Quality","reflections",defaultEffects);
     global.shadows_toggle = ini_read_real("Quality","shadows",defaultEffects);
-    global.persistent_toggle = ini_read_real("Quality","persistent effects",false);
+    global.persistent_toggle = false; //ini_read_real("Quality","persistent effects",false);
     global.max_particles = ini_read_real("Quality","max particles",5);
     global.max_casings = ini_read_real("Quality","max casings",1000);
     global.alwaysShowAmmo = ini_read_real("Quality","Always Show Ammo",false);
