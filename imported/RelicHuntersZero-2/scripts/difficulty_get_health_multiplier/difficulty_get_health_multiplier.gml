@@ -10,4 +10,6 @@ if diff > K_DIFFICULTY_ASCENDANT
 	toReturn += 0.5*(diff-K_DIFFICULTY_ASCENDANT);
 }
 
+if (global.masterDifficulty == K_DIFFICULTY_MASTER_EPIC) toReturn = toReturn * 2;
+
 return toReturn;

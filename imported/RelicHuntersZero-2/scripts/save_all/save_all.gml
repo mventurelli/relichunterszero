@@ -26,6 +26,7 @@ ini_open(working_directory + "\\saveData.ini");
     ini_write_real("Temp","WeaponPickedUp",global.hasPickedWeapon);
     ini_write_real("Temp","CheckpointUsed",global.hasUsedCheckpoint);
     
+	ini_write_real("Temp","masterDifficulty",global.masterDifficulty);
 	ini_write_real("Temp","currentDifficulty",global.currentDifficulty);
 	ini_write_real("Temp","difficultyTimeCurrent",global.difficultyTimeCurrent);
 	ini_write_real("Temp","spawnRotation",global.spawnRotation);
@@ -111,6 +112,9 @@ ini_open(working_directory + "\\saveData.ini");
         playerInstanceNumber++;
     }
     
+	
+		ini_write_real("Persistence","stormAllowHardDifficulty",global.stormAllowHardDifficulty);
+		ini_write_real("Persistence","stormAllowEpicDifficulty",global.stormAllowEpicDifficulty);
         ini_write_real("Persistence","LowPerfChecked",global.lowPerfChecked);
         ini_write_string("Persistence","dailyCompleted",global.dailyCompleted);
         ini_write_real("Persistence","dailyCompletedScore",global.dailyCompletedScore);

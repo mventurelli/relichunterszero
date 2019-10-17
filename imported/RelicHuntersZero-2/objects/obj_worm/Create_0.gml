@@ -19,7 +19,7 @@ image_yscale = 1;
 //Sprites & Death
 myRegularScore = round(global.score_kill/2);
 myPrecisionScore = round(global.score_headshot/2);
-myCoinDropAmount = 0;
+myCoinDropAmount = 0.2;
 deathSfx = sfx_precision_kill3;
 
 sprite_hit = spr_worm_idle;

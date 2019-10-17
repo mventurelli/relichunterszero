@@ -17,6 +17,7 @@
     "androidsourcedir": "",
     "author": "",
     "classname": "",
+    "copyToTargets": -1,
     "date": "2017-51-03 10:05:09",
     "description": "",
     "extensionName": "",
@@ -33,6 +34,7 @@
     "iosThirdPartyFrameworkEntries": [
         
     ],
+    "iosdelegatename": null,
     "iosplistinject": "",
     "license": "Free to use, also for commercial games.",
     "maccompilerflags": "",
@@ -41,5 +43,17 @@
     "packageID": "",
     "productID": "",
     "sourcedir": "",
+    "tvosProps": false,
+    "tvosSystemFrameworkEntries": [
+        
+    ],
+    "tvosThirdPartyFrameworkEntries": [
+        
+    ],
+    "tvosclassname": null,
+    "tvosdelegatename": null,
+    "tvosmaccompilerflags": null,
+    "tvosmaclinkerflags": null,
+    "tvosplistinject": null,
     "version": "1.1.0"
 }

@@ -13,7 +13,7 @@ damage = 25;
 speed_walk = 3;
 speed_sprint = 4.5;
 
-myCoinDropAmount = 1;
+myCoinDropAmount = 0.5;
 
 ai_sprint_distance = 240;
 

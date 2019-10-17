@@ -8,28 +8,52 @@ var diceRoll = random(1);
 
 var relicChance = 0.3;
 
-var uncommonDropChance = 0.40;
-var rareDropChance = 0.10;
-var epicDropChance = 0.03;
+var uncommonDropChance, rareDropChance, epicDropChance;
 
-priceCurrent = 250;
-if (room == level_storm_2) priceCurrent = 750;
-else if (room == level_storm_3) priceCurrent = 1250;
-else if (room == level_storm_4) priceCurrent = 2000;
+if (room == level_storm_1)
+{
+	priceCurrent = 250;
+	uncommonDropChance = 0.35;
+	rareDropChance = 0.08;
+	epicDropChance = 0.01;
+}
+else if (room == level_storm_2)
+{
+	priceCurrent = 750;
+	uncommonDropChance = 0.40;
+	rareDropChance = 0.09;
+	epicDropChance = 0.02;
+}
+else if (room == level_storm_3)
+{
+	priceCurrent = 1250;
+	uncommonDropChance = 0.80;
+	rareDropChance = 0.12;
+	epicDropChance = 0.03;
+}
+else if (room == level_storm_4)
+{
+	priceCurrent = 2000;
+	uncommonDropChance = 1.0;
+	rareDropChance = 0.50;
+	epicDropChance = 0.10;
+}
 
-if (global.relic_rabbit_foot == 2) diceRoll -= 0.2;
+if (global.entropy < 0) global.entropy = 0;
+
+if (global.relic_rabbit_foot == 2) diceRoll -= 0.1;
 diceRoll -= global.entropy;
 
 if (diceRoll <= relicChance) { treasureType = "RELIC"; global.entropy = max(0,global.entropy-0.1); }
 
 diceRoll = random(1);
-if (global.relic_rabbit_foot == 2) diceRoll -= 0.2;
+if (global.relic_rabbit_foot == 2) diceRoll -= 0.15;
 diceRoll -= global.entropy;
 
 if (diceRoll <= epicDropChance) { treasureRarity = K_RARITY_EPIC; global.entropy = 0; }
 else if (diceRoll <= rareDropChance) { treasureRarity = K_RARITY_RARE; global.entropy = max(0,global.entropy-0.1); }
 else if (diceRoll <= uncommonDropChance) treasureRarity = K_RARITY_UNCOMMON;
-else global.entropy += 0.1;
+else global.entropy += 0.05;
 
 
 //Treasure

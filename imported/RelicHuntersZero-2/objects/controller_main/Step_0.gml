@@ -113,7 +113,8 @@ if (!level_built)
 			with (obj_bossTeleporterSpawn) instance_destroy();
 		}
 		
-		var chestSpawnNumber = 10;
+		var chestSpawnNumber = global.chestSpawnsPerStage;
+		
 		while (instance_exists(obj_chestSpawn) && chestSpawnNumber>0 )
 		{	
 			var chestCount = instance_number(obj_chestSpawn);	
@@ -122,6 +123,7 @@ if (!level_built)
 			if (instance_exists(chosenChestSpawn)) instance_create_layer(chosenChestSpawn.x,chosenChestSpawn.y,"Interactive",obj_chestStorm);
 			with (chosenChestSpawn) instance_destroy();
 			chestSpawnNumber--;
+			global.chestsAvailable++;
 		}
 		if (!chestSpawnNumber) with (obj_chestSpawn) instance_destroy();
 		
@@ -567,7 +569,9 @@ if (global.level_complete)
 	if (room == level_storm_4) 
 	{ 
 		//Storm Mode Completion Achievements and End Screen
-		
+		if (global.masterDifficulty == K_DIFFICULTY_MASTER_BEGINNER) global.stormAllowHardDifficulty = true;
+		else if (global.masterDifficulty == K_DIFFICULTY_MASTER_HARD) global.stormAllowEpicDifficulty = true;
+		save_all();
 		room_goto(room_end); 
 		exit; 
 	}

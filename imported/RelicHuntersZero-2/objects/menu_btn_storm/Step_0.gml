@@ -8,6 +8,6 @@ if (executeAction)
 {
     global.gameMode = gamemode_storm;
     global.isDaily = false;
-    room_goto(room_charSelection);
+    room_goto(room_difficulty);
 }
 

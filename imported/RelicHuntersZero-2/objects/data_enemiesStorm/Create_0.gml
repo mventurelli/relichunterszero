@@ -46,20 +46,20 @@ ds_list_add(A4_3_duckRocket, obj_duck3_rocket, obj_turtle3, obj_turtle3);
 	
 //Rotation B1 (Kami)
 B1_1_kamikaze = ds_list_create();
-ds_list_add(B1_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1 );
+ds_list_add(B1_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1  );
 
 B2_1_kamikaze = ds_list_create();
-ds_list_add(B2_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
+ds_list_add(B2_1_kamikaze, obj_kamikaze1, obj_kamikaze1, obj_kamikaze1, obj_kamikazelite, obj_kamikazelite );
 
 B3_1_kamikaze = ds_list_create();
-ds_list_add(B3_1_kamikaze, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
+ds_list_add(B3_1_kamikaze, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
 
 B4_1_kamikaze = ds_list_create();
-ds_list_add(B4_1_kamikaze, obj_kamitankNEW, obj_kamitankNEW, obj_kamitankNEW, obj_kamikazelite, obj_kamikazelite, obj_kamikazelite );
+ds_list_add(B4_1_kamikaze, obj_kamitankNEW, obj_kamitankNEW, obj_kamitankNEW, obj_kamitankNEW );
 
 //Rotation C1 (Undead)
 C1_1_spookyZombies = ds_list_create();
-ds_list_add(C1_1_spookyZombies, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
+ds_list_add(C1_1_spookyZombies, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
 
 C1_2_spookyWorm = ds_list_create();
 ds_list_add(C1_2_spookyWorm, obj_wormTurtle, obj_zombieTurtle, obj_zombieTurtle, obj_zombieTurtle );
@@ -74,7 +74,7 @@ C3_2_spookySHootersAndWorm = ds_list_create();
 ds_list_add(C3_2_spookySHootersAndWorm, obj_wormTurtle, obj_zombieTurtlePistol, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
 
 C4_1_spookyReapers = ds_list_create();
-ds_list_add(C4_1_spookyReapers, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
+ds_list_add(C4_1_spookyReapers, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper, obj_zombieTurtleReaper );
 
 
 ///Create the pool depending on room
@@ -103,9 +103,9 @@ else if (global.spawnRotation == 2) // Rotation B, Kami
 	else if (global.currentDifficulty <= K_DIFFICULTY_EXTREME) 
 		ds_list_add(enemyPool, B3_1_kamikaze );
 	else if (global.currentDifficulty <= K_DIFFICULTY_LEGENDARY) 
-		ds_list_add(enemyPool, B4_1_kamikaze );
+		ds_list_add(enemyPool, B4_1_kamikaze, B3_1_kamikaze );
 	else 
-		ds_list_add(enemyPool, B4_1_kamikaze );
+		ds_list_add(enemyPool, B4_1_kamikaze, B3_1_kamikaze );
 }
 else if (global.spawnRotation == 3) // Rotation C, Undead
 {	

@@ -44,8 +44,14 @@ if hp <= 0
 	}
 	if (global.relic_crystal_bacon == 2) with (class_player) hp+= 2;
 	
-    repeat(myCoinDropAmount) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
-    roll_ammo_drop(x,y);
+	if (myCoinDropAmount < 1.0)
+	{
+		var rollCoin = random(1);
+		if (rollCoin <= myCoinDropAmount) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
+	}
+    else repeat(myCoinDropAmount) instance_create_layer(x,y,"Interactive",obj_pickup_coin);
+    
+	roll_ammo_drop(x,y);
     
     myCorpse = instance_create_layer(x,y,"Interactive",fx_corpse);
     myCorpse.image_xscale = image_xscale;

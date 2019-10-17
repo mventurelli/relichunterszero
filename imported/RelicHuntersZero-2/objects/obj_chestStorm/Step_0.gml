@@ -19,6 +19,7 @@ if (activationClient != noone) && (canActivate)
         {
 			global.bountyEndless -= priceCurrent;
             unlock = true;
+			global.chestsAvailable--;
             audio_play(activationClient.audio_emitter,false,1,sfx_buy);
         }
         else{

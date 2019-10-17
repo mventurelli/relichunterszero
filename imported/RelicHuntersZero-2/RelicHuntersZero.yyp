@@ -1199,6 +1199,14 @@
             }
         },
         {
+            "Key": "1036c05f-47dc-4e5d-aa5a-5da85490c742",
+            "Value": {
+                "id": "e5f961c9-bfd5-429e-94ab-b7500e583531",
+                "resourcePath": "objects\\menu_btn_difficulty_epic\\menu_btn_difficulty_epic.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1049f4e5-b496-4e2b-8ecc-ce31b806fc74",
             "Value": {
                 "id": "fd2ad942-e044-4de0-bfb5-9bc50c70bc8b",
@@ -5143,6 +5151,14 @@
             }
         },
         {
+            "Key": "4a62c7e5-e3df-4eb2-8b76-8257fb29a15c",
+            "Value": {
+                "id": "84ed6b7c-2bcb-42be-8bbe-08b21647903f",
+                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "4a7eada8-78e5-4489-9ca4-8b9ba2fa793b",
             "Value": {
                 "id": "afd6c836-8a23-4ca9-9b8e-68049e54f8e2",
@@ -5211,6 +5227,14 @@
             "Value": {
                 "id": "0d50a25b-4911-468c-a4a7-010c3b7cd4c9",
                 "resourcePath": "sprites\\spr_assault_rifle\\spr_assault_rifle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4b6193de-ee55-4db5-850e-775fca236a85",
+            "Value": {
+                "id": "a6d59943-61c5-457a-9c4b-079c172ba26b",
+                "resourcePath": "sprites\\spr_difficultyBeginner\\spr_difficultyBeginner.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -7519,6 +7543,14 @@
             }
         },
         {
+            "Key": "6e0065a6-b225-4510-b0ac-f08257c2a387",
+            "Value": {
+                "id": "025330f5-4912-4a74-bfa5-ae2ec3d9d904",
+                "resourcePath": "objects\\menu_btn_difficulty_beginner\\menu_btn_difficulty_beginner.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6e8a783e-4f85-4039-b153-18c819e7c7bd",
             "Value": {
                 "id": "cfb92bee-c182-4b7a-8729-f5fcf6377027",
@@ -8356,14 +8388,6 @@
                 "id": "0729d596-f383-4f53-aee5-0020f35d25fd",
                 "resourcePath": "views\\790da71d-59ac-4744-a9ca-9aac76133a3a.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "79290d2a-ba14-497b-ae5a-17fa543633f4",
-            "Value": {
-                "id": "fe66036f-1fb2-4f32-9dc8-345f067ba535",
-                "resourcePath": "datafiles_yy\\locSheet.csv.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -13071,6 +13095,14 @@
             }
         },
         {
+            "Key": "c0082f37-c212-440a-bbdf-7ff5aa091cab",
+            "Value": {
+                "id": "c6c5e818-84bc-4feb-a5ce-ab21289ba2d3",
+                "resourcePath": "objects\\controller_difficulty\\controller_difficulty.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c0413cc7-e28a-4abb-a7a0-11efbaebf8bf",
             "Value": {
                 "id": "1f998a39-97bf-4b62-8737-e28e0fab09eb",
@@ -14527,6 +14559,14 @@
             }
         },
         {
+            "Key": "d6cae7e0-eaba-4340-bf8c-7b9c2fd85621",
+            "Value": {
+                "id": "bf4004eb-4f08-4796-949b-bef6630aa838",
+                "resourcePath": "objects\\menu_btn_difficulty_hard\\menu_btn_difficulty_hard.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d6d801ca-ca75-443f-bd33-fcaa4d6cbd95",
             "Value": {
                 "id": "22c34387-7ddb-47b9-a495-5b5d88a19d13",
@@ -15468,6 +15508,14 @@
                 "id": "7fcf40fc-8f60-4b79-b6fd-bfa4c248a23d",
                 "resourcePath": "sprites\\spr_barrel\\spr_barrel.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e3879980-e590-4683-b0e0-08e5a04192d8",
+            "Value": {
+                "id": "fa93f9fb-d1f3-43d2-a2a4-566193ba02c8",
+                "resourcePath": "rooms\\room_difficulty\\room_difficulty.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

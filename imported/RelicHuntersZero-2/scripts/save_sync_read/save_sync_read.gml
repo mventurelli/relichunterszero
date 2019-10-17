@@ -40,6 +40,7 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     }
     
 	//Storm Temp
+	global.masterDifficulty = ini_read_real("Temp","masterDifficulty",K_DIFFICULTY_MASTER_BEGINNER);
 	global.currentDifficulty = ini_read_real("Temp","currentDifficulty",K_DIFFICULTY_VERY_EASY);
 	global.difficultyTimeCurrent = ini_read_real("Temp","difficultyTimeCurrent",0);
 	global.spawnRotation = ini_read_real("Temp","spawnRotation",0);
@@ -79,7 +80,10 @@ ini_open(working_directory + "saveData.ini"); //tava com \\saveData.ini
     
     // Persistence
     
-    global.lowPerfChecked = ini_read_real("Persistence","LowPerfChecked",0);
+	global.stormAllowHardDifficulty = ini_read_real("Persistence","stormAllowHardDifficulty", false);
+	global.stormAllowEpicDifficulty = ini_read_real("Persistence","stormAllowEpicDifficulty", false);
+	
+    global.lowPerfChecked = ini_read_real("Persistence","LowPerfChecked",1);
     
     global.dailyCompleted = ini_read_string("Persistence","dailyCompleted","");
     global.dailyCompletedScore = ini_read_real("Persistence","dailyCompletedScore",0);

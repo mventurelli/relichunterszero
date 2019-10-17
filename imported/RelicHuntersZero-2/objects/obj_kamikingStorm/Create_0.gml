@@ -26,6 +26,12 @@ else if (room == level_storm_4)
 	baseEnergy = 200;
 }
 
+if (global.masterDifficulty == K_DIFFICULTY_MASTER_BEGINNER)
+{
+	baseHp = round(baseHp * 0.5);
+	baseEnergy = round(baseEnergy * 0.5);
+}
+
 energy_max = baseEnergy;
 energy_max += global.challengeHighTech*(min( round(energy_max*global.challengeHighTechMultiplier), global.challengeHighTechMax) );
 hp_max = baseHp;

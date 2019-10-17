@@ -6,6 +6,6 @@ if (executeAction)
 {
     global.gameMode = gamemode_adventure;
     global.isDaily = false;
-    room_goto(room_charSelection);
+    room_goto(room_difficulty);
 }
 

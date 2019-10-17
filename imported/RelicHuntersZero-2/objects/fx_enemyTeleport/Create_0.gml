@@ -5,5 +5,5 @@
 image_speed = 0.2;
 enemy = noone;
 
-teleportTime = 2;
+teleportTime = 3;
 teleportTimeCurrent = 0;

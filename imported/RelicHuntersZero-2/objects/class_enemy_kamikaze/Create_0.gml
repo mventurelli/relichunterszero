@@ -82,7 +82,7 @@ damage_timer_current = damage_timer;
 //Sprites & Death
 myRegularScore = global.score_kill;
 myPrecisionScore = global.score_headshot;
-myCoinDropAmount = 1;
+myCoinDropAmount = 0.5;
 deathSfx = sfx_kami_death;
 
 sprite_hit = spr_kamikaze_hit;

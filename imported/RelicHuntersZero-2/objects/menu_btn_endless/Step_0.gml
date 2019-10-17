@@ -7,6 +7,6 @@ if (executeAction)
 {
     global.gameMode = gamemode_endless;
     global.isDaily = false;
-    room_goto(room_charSelection);
+    room_goto(room_difficulty);
 }
 

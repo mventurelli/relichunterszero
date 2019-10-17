@@ -93,7 +93,7 @@ while (p <= global.playerCount)
         if (curPlayer.overshield) && (energy > curPlayer.energy_max) charShieldColor = make_color_rgb(86,216,255);
         if (curPlayer.superShield) charShieldColor = K_BETU_ORANGE;
         var charBarDelaySpeed = 0.008;
-        var charBarDelayTime = 600000;//room_speed*0.6;
+        var charBarDelayTime = 600000;
         
         //Health
         draw_set_color(c_black);
@@ -509,7 +509,7 @@ while (p <= global.playerCount)
 }
 
 //Storm Mode
-if (global.gameMode == gamemode_storm)
+if (global.gameMode == gamemode_storm) && (!global.pauseMenu)
 {
 	//Help Text
 	var stormHelpX = width*0.076;
@@ -521,10 +521,14 @@ if (global.gameMode == gamemode_storm)
 	else if (global.stormPhase == K_STORMPHASE_KILL) stormHelpText = loc_key("HUD_STORM_DEFEAT_ALL_ENEMIES") + " " + string(global.enemyCount) + " " + loc_key("HUD_STORM_DEFEAT_ALL_ENEMIES_LEFT");
 	else if (global.stormPhase == K_STORMPHASE_CLEAR) stormHelpText = loc_key("HUD_STORM_GO_THROUGH_TELEPORTER");
 	
+	var stormHelp2Y = height*0.18;
+	var stormHelpText2 = loc_key("HUD_STORM_CHESTS") + " " + string(global.chestsAvailable) + "/" + string(global.chestSpawnsPerStage);
+	
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(global.font_numberMedium);
 	draw_text_dropshadow_ext_transformed(stormHelpX, stormHelpY, stormHelpText, c_white, c_black, 0.7, 2, 1, 1, 0, main_hud_alpha);
+	draw_text_dropshadow_ext_transformed(stormHelpX, stormHelp2Y, stormHelpText2, c_white, c_black, 0.7, 2, 1, 1, 0, main_hud_alpha);
 	
 	//Difficulty Bar
     var diffBarTopX = width*0.43;
@@ -552,7 +556,10 @@ if (global.gameMode == gamemode_storm)
 
 	var difficultySpriteOffsetX = -31;
 	var difficultySpriteOffsetY = 18;
-	draw_sprite(spr_challengeCommon,0,diffBarTopX+difficultySpriteOffsetX,diffBarTopY+difficultySpriteOffsetY);
+	var difficultySprite = spr_difficultyBeginner;
+	if (global.masterDifficulty == K_DIFFICULTY_MASTER_HARD) difficultySprite = spr_challengeCommon;
+	if (global.masterDifficulty == K_DIFFICULTY_MASTER_HARD) difficultySprite = spr_challengeUnique;
+	draw_sprite(difficultySprite,0,diffBarTopX+difficultySpriteOffsetX,diffBarTopY+difficultySpriteOffsetY);
 	
 	var diffText = loc_key("HUD_STORM_DIFF_8");
 	switch (global.currentDifficulty)
