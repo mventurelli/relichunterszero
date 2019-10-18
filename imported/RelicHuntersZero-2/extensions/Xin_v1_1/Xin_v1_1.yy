@@ -1,7 +1,7 @@
 {
     "id": "7a87a7d6-80a7-495f-a7d0-b84847109240",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "Xin_v1_1",
     "IncludedResources": [
         
@@ -20,6 +20,7 @@
     "copyToTargets": -1,
     "date": "2017-51-03 10:05:10",
     "description": "An XInput extension that enables the full use of Xbox 360 controllers within games.",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         {
@@ -347,9 +348,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "",
     "productID": "",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         

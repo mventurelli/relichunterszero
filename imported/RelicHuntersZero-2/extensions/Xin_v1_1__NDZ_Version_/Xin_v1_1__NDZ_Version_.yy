@@ -1,7 +1,7 @@
 {
     "id": "7042ff43-0c97-43f0-b5ae-c30f6e566a71",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "Xin_v1_1__NDZ_Version_",
     "IncludedResources": [
         
@@ -20,6 +20,7 @@
     "copyToTargets": -1,
     "date": "2017-51-03 10:05:10",
     "description": "An XInput extension that enables the full use of Xbox 360 controllers within games.\\u000d\\u000a[WARNING]  This version features no deadzones on the controller thumbsticks. In most circumstances, it is recommended NOT to use this version of Xin.",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         {
@@ -347,9 +348,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "",
     "productID": "",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         

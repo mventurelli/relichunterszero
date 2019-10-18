@@ -1,4 +1,5 @@
 /// @description Init Variables
+event_inherited();
 
 offsetX = 0.5;
 offsetY = 0.95;

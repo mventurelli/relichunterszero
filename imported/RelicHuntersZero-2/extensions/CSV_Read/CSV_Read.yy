@@ -1,7 +1,7 @@
 {
     "id": "c31c0243-73b7-4abf-b1a3-e83514607592",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "CSV_Read",
     "IncludedResources": [
         "Scripts\\DataManipulation\\CSVRead"
@@ -20,6 +20,7 @@
     "copyToTargets": -1,
     "date": "2017-51-03 10:05:09",
     "description": "",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         
@@ -40,9 +41,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "",
     "productID": "",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         
