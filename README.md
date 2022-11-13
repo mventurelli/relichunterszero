@@ -15,7 +15,7 @@ Project Setup
 ============
 
 A complete tutorial on download and installation can be found here:
-http://www.roguesnail.com/relic-hunters-zero-open-source-how-to-download-and-use/
+https://roguesnail.com/blog/relic-hunters-zero-open-source-how-to-download-and-use/
 
 Contributing
 ============
